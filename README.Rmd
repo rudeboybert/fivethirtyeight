@@ -1,0 +1,57 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+
+# fivethirtyeight
+
+[![Build Status](https://travis-ci.org/rudeboybert/fivethirtyeight.png?branch=master)](https://travis-ci.org/rudeboybert/fivethirtyeight)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/fivethirtyeight)](http://cran.r-project.org/package=fivethirtyeight)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/fivethirtyeight)](http://www.r-pkg.org/pkg/fivethirtyeight)
+
+
+
+R package of data sets in <https://github.com/fivethirtyeight/data>.
+
+
+## Installation
+
+Get the released version from CRAN:
+
+```{r, eval = FALSE}
+install.packages("fivethirtyeight")
+```
+
+Or the development version from GitHub:
+
+```{r, eval = FALSE}
+# If you haven't installed devtools yet, do so:
+# install.packages("devtools")
+devtools::install_github("rudeboybert/fivethirtyeight")
+```
+
+## Data Sets
+
+To see a list of all data sets, type:
+
+```{r, eval = FALSE}
+data(package = "fivethirtyeight")
+```
+
+<!--
+To load a particular data set, `FlightDelays` for example, type:
+
+```{r, eval = FALSE}
+data(FlightDelays)
+```
+-->
