@@ -10,7 +10,7 @@ Authors@R: c(
     )
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
-    R (>= 3.3.2)
+    R (>= 3.2.4)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
