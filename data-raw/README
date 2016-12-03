@@ -1,0 +1,3 @@
+This folder of raw data is structured exactly like in the repository
+https://github.com/fivethirtyeight/data along with process_data_sets.R files
+that ready the data for R package use.

@@ -1,9 +1,19 @@
 Package: fivethirtyeight
-Title: What the Package Does (one line, title case)
+Title: Data and code behind the stories and interactives at FiveThirtyEight
+Description: Data and code behind the stories and interactives at FiveThirtyEight
+    \url{https://github.com/fivethirtyeight/data}.
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.3.2)
-License: What license is it under?
+Authors@R: c(
+    person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = "cre"),
+    person("Chester", "Ismay", email = "cismay@reed.edu", role = "aut"),
+    person("Jennifer", "Chunn", email = "jenchunn@gmail.com", role = "aut")
+    )
+Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
+Depends:
+    R (>= 3.3.2)
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/rudeboybert/fivethirtyeight
+BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
+RoxygenNote: 5.0.1
