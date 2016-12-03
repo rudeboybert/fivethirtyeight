@@ -47,6 +47,35 @@
 "biopics"
 
 
+#' Both Republicans And Democrats Have an Age Problem
+#'
+#' The raw data behind the story
+#' "Both Republicans And Democrats Have an Age Problem"
+#' \url{http://fivethirtyeight.com/features/both-republicans-and-democrats-have-an-age-problem/}.
+#'
+#' @format A data frame with 18,635 rows representing members of Congress 
+#' (House and Senate) and 13 variables:
+#' \describe{
+#'   \item{congress}{Congress number.}
+#'   \item{chamber}{Chamber of congress: House of Representatives or Senate.}
+#'   \item{bioguide}{bioguide}
+#'   \item{firstname}{First name}
+#'   \item{middlename}{Middle name}
+#'   \item{lastname}{Last name}
+#'   \item{suffix}{Suffix}
+#'   \item{birthday}{Birthday}
+#'   \item{state}{State abbreviation}
+#'   \item{party}{Party abbreviation}
+#'   \item{incumbent}{Boolean variable of whether member was an incumbent.}
+#'   \item{termstart}{Start date of session.}
+#'   \item{age}{Age at start of session.}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/congress-age}
+"congress_age"
+
+
+
+
 #' Every Guest Jon Stewart Ever Had On 'The Daily Show'
 #'
 #' The raw data behind the story

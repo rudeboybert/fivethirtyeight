@@ -42,6 +42,34 @@ devtools::use_data(biopics, overwrite = TRUE)
 
 
 
+# biopics ----------------------------------------------------------------------
+# Manually edited original CSV:
+# Line 7054: (Pierre,Samuel, IV,du Pont,,) to (Pierre,Samuel,du Pont,IV,)
+# Line 7581: (Pierre,Samuel, IV,du Pont,,) to (Pierre,Samuel,du Pont,IV,)
+# Line 8088: (Pierre,Samuel, IV,du Pont,,) to (Pierre,Samuel,du Pont,IV,)
+# Line 9719: (Harold,John, Jr.,,Daub,,) to (Harold,John, Daub, Jr.,)
+# Line 10019: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
+# Line 10235: (Harold,John, Jr.,,Daub,,) to (Harold,John, Daub, Jr.,)
+# Line 10550: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
+# Line 10641: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III) 
+# Line 10764: (Harold,John, Jr.,,Daub,,) to (Harold,John, Daub, Jr.,)
+# Line 11075: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
+# Line 11168: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III) 
+# Line 11290: (Harold,John, Jr.,,Daub,,) to (Harold,John, Daub, Jr.,)
+# Line 11606: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
+# Line 11697: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III)
+# Line 12141: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
+# Line 12230: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III)
+# Line 12664: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,) 
+# Line 12738: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III)
+congress_age <- readr::read_csv("data-raw/congress-age/congress-terms.csv") %>% 
+  mutate(incumbent = ifelse(incumbent == "Yes", TRUE, FALSE))
+devtools::use_data(congress_age, overwrite = TRUE)
+
+
+
+
+
 # daily_show_guests ------------------------------------------------------------
 daily_show_guests <- readr::read_csv("data-raw/daily-show-guests/daily_show_guests.csv") %>%
   mutate(
