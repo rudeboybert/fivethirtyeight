@@ -1,11 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+R Package Development Instructions
+==================================
+
+[Google Doc](https://docs.google.com/document/d/1eCRZUvhEp7A21Sq4duQAX1P2mDplB9OxHrX-rPkXFvo/edit#)
+
 fivethirtyeight
 ===============
 
 [![Build Status](https://travis-ci.org/rudeboybert/fivethirtyeight.png?branch=master)](https://travis-ci.org/rudeboybert/fivethirtyeight) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/fivethirtyeight)](http://cran.r-project.org/package=fivethirtyeight) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/fivethirtyeight)](http://www.r-pkg.org/pkg/fivethirtyeight)
 
-R package of data sets in <https://github.com/fivethirtyeight/data>.
+R package of data and code behind the stories and interactives at [FiveThirtyEight](https://github.com/fivethirtyeight/data).
 
 Installation
 ------------

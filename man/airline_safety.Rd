@@ -3,7 +3,7 @@
 \docType{data}
 \name{airline_safety}
 \alias{airline_safety}
-\title{Airline Safety}
+\title{Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?}
 \format{A data frame with 56 rows representing airlines and 9 variables:
 \describe{
   \item{airline}{airline}

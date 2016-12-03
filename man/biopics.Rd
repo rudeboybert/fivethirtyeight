@@ -3,7 +3,7 @@
 \docType{data}
 \name{biopics}
 \alias{biopics}
-\title{Biopics}
+\title{'Straight Outta Compton' Is The Rare Biopic Not About White Dudes}
 \format{A data frame with 761 rows representing movies and 14 variables:
 \describe{
   \item{title}{Title of the film.}

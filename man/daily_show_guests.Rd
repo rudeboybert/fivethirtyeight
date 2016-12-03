@@ -3,7 +3,7 @@
 \docType{data}
 \name{daily_show_guests}
 \alias{daily_show_guests}
-\title{Daily Show Guests}
+\title{Every Guest Jon Stewart Ever Had On 'The Daily Show'}
 \format{A data frame with 2693 rows representing guests and 5 variables:
 \describe{
   \item{year}{The year the episode aired}

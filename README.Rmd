@@ -12,6 +12,11 @@ knitr::opts_chunk$set(
 )
 ```
 
+# R Package Development Instructions
+
+[Google Doc](https://docs.google.com/document/d/1eCRZUvhEp7A21Sq4duQAX1P2mDplB9OxHrX-rPkXFvo/edit#)
+
+
 
 # fivethirtyeight
 
@@ -21,7 +26,8 @@ knitr::opts_chunk$set(
 
 
 
-R package of data sets in <https://github.com/fivethirtyeight/data>.
+R package of data and code behind the stories and interactives at [FiveThirtyEight](https://github.com/fivethirtyeight/data).
+
 
 
 ## Installation

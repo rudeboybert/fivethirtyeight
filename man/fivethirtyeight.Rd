@@ -6,7 +6,7 @@
 \alias{fivethirtyeight-package}
 \title{fivethirtyeight: Data and code behind the stories and interactives at FiveThirtyEight}
 \description{
-Data and code behind the stories and interactives at FiveThirtyEight
+Data and code behind the stories and interactives at FiveThirtyEight \url{https://github.com/fivethirtyeight/data}.
 }
 \section{Data sets}{
 

@@ -1,4 +1,4 @@
-#' Airline Safety
+#' Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?
 #'
 #' The raw data behind the story
 #' "Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?"
@@ -20,7 +20,7 @@
 "airline_safety"
 
 
-#' Biopics
+#' 'Straight Outta Compton' Is The Rare Biopic Not About White Dudes
 #'
 #' The raw data behind the story
 #' "'Straight Outta Compton' Is The Rare Biopic Not About White Dudes"
@@ -47,7 +47,7 @@
 "biopics"
 
 
-#' Daily Show Guests
+#' Every Guest Jon Stewart Ever Had On 'The Daily Show'
 #'
 #' The raw data behind the story
 #' "Every Guest Jon Stewart Ever Had On 'The Daily Show'"

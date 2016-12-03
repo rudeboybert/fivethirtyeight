@@ -3,28 +3,7 @@ library(stringr)
 library(lubridate)
 
 # Albert: airline_safety thru food-world-cup
-# Chester: forecast-methodology thru police-killings
-# Jen: police-locals thru world-cup-predictions
 
-# Instructions:
-# -Read README.md file for story
-# -Go to data-raw/process_data_sets.R
-# -Create new section with R object name
-# -Load CSV into R using readr::read_csv()
-# -Check that all variable types are correct using glimpse()
-# -Modify data as needed
-# -Write to RData format for package using devtools::use_data(DATASET, overwrite=TRUE)
-#
-# -Go to data/data.R
-# -Setup roxygen documentation template
-# -Fill in values based on README.md for story
-
-# Standards:
-# -Tidy data format: http://r4ds.had.co.nz/tidy.html
-# -variable names all lower case if possible, underscores instead of camelcase,
-# -Convert dates that are beyond just YEAR to POSIX objects using lubridate
-# package if possible. Example: if there are YEAR and MONTH variable, then
-# convert to date with YEAR-MONTH-01
 
 
 

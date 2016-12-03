@@ -1,6 +1,6 @@
 #' fivethirtyeight: Data and code behind the stories and interactives at FiveThirtyEight
 #'
-#' Data and code behind the stories and interactives at FiveThirtyEight
+#' Data and code behind the stories and interactives at FiveThirtyEight \url{https://github.com/fivethirtyeight/data}.
 #'
 #' @section Data sets:
 #' Type \code{data(package="fivethirtyeight")} to view all datasets.
