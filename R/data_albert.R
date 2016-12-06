@@ -20,6 +20,111 @@
 "airline_safety"
 
 
+
+#' Joining The Avengers Is As Deadly As Jumping Off A Four-Story Building
+#'
+#' The raw data behind the story
+#' "Joining The Avengers Is As Deadly As Jumping Off A Four-Story Building"
+#' \url{http://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/}.
+#'
+#' @format A data frame with 173 rows representing characters and 21 variables:
+#' \describe{
+#'   \item{url}{The URL of the comic character on the Marvel Wikia}
+#'   \item{name_alias}{The full name or alias of the character}
+#'   \item{appearances}{The number of comic books that character appeared in as of April 30 }
+#'   \item{current}{Is the member currently active on an avengers affiliated team?}
+#'   \item{gender}{The recorded gender of the character}
+#'   \item{probationary_intro}{Sometimes the character was given probationary status as an Avenger, this is the date that happened}
+#'   \item{full_reserve_avengers_intro}{The month and year the character was introduced as a full or reserve member of the Avnegers}
+#'   \item{year}{The year the character was introduced as a full or reserve member of the Avengers}
+#'   \item{years_since_joining}{2015 minus the year}
+#'   \item{honorary}{The status of the avenger, if they were given "Honorary" Avenger status, if they are simply in the "Academy," or "Full" otherwise}
+#'   \item{death1}{TRUE if the Avenger died, FALSE if not.} 
+#'   \item{return1}{TRUE if the Avenger returned from their first death, FALSE if they did not, blank if not applicable}
+#'   \item{death2}{TRUE if the Avenger died a second time after their revival, FALSE if they did not, blank if not applicable}
+#'   \item{return2}{TRUE if the Avenger returned from their second death, FALSE if they did not, blank if not applicable}
+#'   \item{death3}{TRUE if the Avenger died a third time after their second revival, FALSE if they did not, blank if not applicable}
+#'   \item{return3}{TRUE if the Avenger returned from their third death, FALSE if they did not, blank if not applicable}
+#'   \item{death4}{TRUE if the Avenger died a fourth time after their third revival, FALSE if they did not, blank if not applicable}
+#'   \item{return4}{TRUE if the Avenger returned from their fourth death, FALSE if they did not, blank if not applicable}
+#'   \item{death5}{TRUE if the Avenger died a fifth time after their fourth revival, FALSE if they did not, blank if not applicable}
+#'   \item{return5}{TRUE if the Avenger returned from their fifth death, FALSE if they did not, blank if not applicable}
+#'   \item{notes}{Descriptions of deaths and resurrections.}
+#' }
+#' @source Deaths of Marvel comic book characters between the time they joined the Avengers and April 30, 2015, the week before Secret Wars #1.
+"avengers"
+
+
+#' Dear Mona, Which State Has The Worst Drivers?
+#'
+#' The raw data behind the story
+#' "Dear Mona, Which State Has The Worst Drivers?"
+#' \url{http://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/}.
+#'
+#' @format A data frame with 51 rows representing the 50 states + D.C. and 8 variables:
+#' \describe{
+#'   \item{state}{State}
+#'   \item{num_drivers}{Number of drivers involved in fatal collisions per billion miles}
+#'   \item{perc_speeding}{Percentage of drivers involved in fatal collisions who were speeding}
+#'   \item{perc_alcohol}{Percentage of drivers involved in fatal collisions who were alcohol-impaired}
+#'   \item{perc_not_distracted}{Percentage of drivers involved in fatal collisions who were not distracted}
+#'   \item{perc_no_previous}{Percentage of drivers involved in fatal collisions who had not been involved in any previous accidents}
+#'   \item{insurance_premiums}{Car insurance premiums ($)}
+#'   \item{losses}{Losses incurred by insurance companies for collisions per insured driver ($)}
+#' }
+#' @source National Highway Traffic Safety Administration 2012, National Highway 
+#' Traffic Safety Administration 2009 & 2012, National Association of Insurance 
+#' Commissioners 2010 & 2011.
+"bad_drivers"
+
+
+#' The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women
+#'
+#' The raw data behind the story
+#' "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"
+#' \url{http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/}.
+#'
+#' @format A data frame with 1794 rows representing movies and 15 variables:
+#' \describe{
+#'   \item{year}{}
+#'   \item{imdb}{}
+#'   \item{title}{}
+#'   \item{test}{}
+#'   \item{clean_test}{}
+#'   \item{binary}{}
+#'   \item{budget}{} 
+#'   \item{domgross}{}
+#'   \item{intgross}{}
+#'   \item{code}{}
+#'   \item{budget_2013}{}
+#'   \item{domgross_2013}{} 
+#'   \item{intgross_2013}{}
+#'   \item{period_code}{}
+#'   \item{decade_code}{}
+#' }
+#' @source \url{www.bechdeltest.com} and \url{www.the-numbers.com}
+"bechdel"
+
+
+
+#' Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?
+#'
+#' The raw data behind the story
+#' "Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?"
+#' \url{http://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/}.
+#'
+#' @format A data frame with 193 rows representing countries and 5 variables:
+#' \describe{
+#'   \item{country}{country}
+#'   \item{beer_servings}{Servings of beer in average serving sizes per person}
+#'   \item{spirit_servings}{Servings of spirits in average serving sizes per person}
+#'   \item{wine_servings}{Servings of wine in average serving sizes per person}
+#'   \item{total_litres_of_pure_alcohol}{Total number of fatal accidents, 1985–1999}
+#' }
+#' @source World Health Organisation, Global Information System on Alcohol and Health (GISAH), 2010.
+"drinks"
+
+
 #' 'Straight Outta Compton' Is The Rare Biopic Not About White Dudes
 #'
 #' The raw data behind the story
