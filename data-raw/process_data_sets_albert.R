@@ -9,8 +9,9 @@ library(lubridate)
 
 # airline_safety ---------------------------------------------------------------
 airline_safety <- read_csv("data-raw/airline-safety/airline-safety.csv") 
-colnames(airline_safety) <- colnames(airline_safety) %>% tolower() %>% str_replace_all(" ", "_")
-
+colnames(airline_safety) <- colnames(airline_safety) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 airline_safety <- airline_safety %>%
   mutate(
     # Convert asterisks to own variable indicating if regional subsidiaries are
@@ -26,8 +27,9 @@ devtools::use_data(airline_safety, overwrite = TRUE)
 
 # alcohol_consumption ----------------------------------------------------------
 drinks <- read_csv("data-raw/alcohol-consumption/drinks.csv")
-colnames(drinks) <- colnames(drinks) %>% tolower() %>% str_replace_all(" ", "_")
-
+colnames(drinks) <- colnames(drinks) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 devtools::use_data(drinks, overwrite = TRUE)
 
 
@@ -35,7 +37,9 @@ devtools::use_data(drinks, overwrite = TRUE)
 
 # avengers ---------------------------------------------------------------------
 avengers <- read_csv("data-raw/avengers/avengers.csv")
-colnames(avengers) <- colnames(avengers) %>% tolower() %>% str_replace_all(" ", "_")
+colnames(avengers) <- colnames(avengers) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 
 avengers <- avengers %>% 
   rename(
@@ -71,7 +75,9 @@ devtools::use_data(avengers, overwrite = TRUE)
 
 # bad-drivers ------------------------------------------------------------------
 bad_drivers <- read_csv("data-raw/bad-drivers/bad-drivers.csv") 
-colnames(bad_drivers) <- colnames(bad_drivers) %>% tolower() %>% str_replace_all(" ", "_")
+colnames(bad_drivers) <- colnames(bad_drivers) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 
 bad_drivers <- bad_drivers %>% 
   rename(
@@ -90,7 +96,9 @@ devtools::use_data(bad_drivers, overwrite = TRUE)
 
 # bechdel ----------------------------------------------------------------------
 bechdel <- read_csv("data-raw/bechdel/movies.csv") 
-colnames(bechdel) <- colnames(bechdel) %>% tolower() %>% str_replace_all(" ", "_")
+colnames(bechdel) <- colnames(bechdel) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 
 bechdel <- bechdel %>% 
   rename(
@@ -115,7 +123,9 @@ devtools::use_data(bechdel, overwrite = TRUE)
 
 # biopics ----------------------------------------------------------------------
 biopics <- read_csv("data-raw/biopics/biopics.csv") 
-colnames(biopics) <- colnames(biopics) %>% tolower() %>% str_replace_all(" ", "_")
+colnames(biopics) <- colnames(biopics) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 
 biopics <- biopics %>%
   mutate(
@@ -138,7 +148,9 @@ devtools::use_data(biopics, overwrite = TRUE)
 
 # births -----------------------------------------------------------------------
 US_births_1994_2003 <- read_csv("data-raw/births/US_births_1994-2003_CDC_NCHS.csv")
-colnames(US_births_1994_2003) <- colnames(US_births_1994_2003) %>% tolower() %>% str_replace_all(" ", "_")
+colnames(US_births_1994_2003) <- colnames(US_births_1994_2003) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 US_births_1994_2003 <- US_births_1994_2003 %>% 
   mutate(
     date = ymd(paste(year, month, date_of_month)),
@@ -156,6 +168,60 @@ US_births_2000_2014 <- US_births_2000_2014 %>%
   ) %>% 
   select(year, month, date_of_month, date, everything())
 devtools::use_data(US_births_2000_2014, overwrite = TRUE)
+
+
+
+# bob-ross ---------------------------------------------------------------------
+bob_ross <- read_csv("data-raw/bob-ross/elements-by-episode.csv")
+colnames(bob_ross) <- colnames(bob_ross) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+bob_ross <- bob_ross %>% 
+  mutate(
+    title = str_sub(title, 2, -2),
+    season = as.numeric(str_sub(episode, 2, 3)),
+    episode_num = as.numeric(str_sub(episode, 5, 6))
+  ) %>% 
+  select(episode, season, episode_num, everything())
+devtools::use_data(bob_ross, overwrite = TRUE)
+
+
+
+# buster_posey_mvp -------------------------------------------------------------
+# No Data
+
+
+
+# classic-rock -----------------------------------------------------------------
+classic_rock_raw_data <- read_csv("data-raw/classic-rock/classic-rock-raw-data.csv")
+colnames(classic_rock_raw_data) <- colnames(classic_rock_raw_data) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+classic_rock_raw_data <- classic_rock_raw_data %>% 
+  select(-c(song_raw, artist_raw, `first?`)) %>% 
+  rename(
+    song = song_clean,
+    artist = artist_clean
+    ) %>% 
+  mutate(date_time = as.POSIXct(time, origin = "1970-01-01")) %>% 
+  select(song, artist, callsign, time, date_time, unique_id, combined)
+devtools::use_data(classic_rock_raw_data, overwrite = TRUE)
+
+classic_rock_song_list <- read_csv("data-raw/classic-rock/classic-rock-song-list.csv")
+colnames(classic_rock_song_list) <- colnames(classic_rock_song_list) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+classic_rock_song_list <- classic_rock_song_list %>% 
+  select(-c(`first?`)) %>% 
+  rename(
+    song = song_clean,
+    artist = artist_clean,
+    has_year = `year?`,
+    playcount_has_year = `f*g`
+  ) %>% 
+  mutate(has_year = as.logical(has_year))
+devtools::use_data(classic_rock_song_list, overwrite = TRUE)
+
 
 
 # congress-age ----------------------------------------------------------------------
@@ -191,8 +257,9 @@ devtools::use_data(congress_age, overwrite = TRUE)
 
 # daily_show_guests ------------------------------------------------------------
 daily_show_guests <- read_csv("data-raw/daily-show-guests/daily_show_guests.csv") 
-colnames(daily_show_guests) <- colnames(daily_show_guests) %>% tolower() %>% str_replace_all(" ", "_")
-
+colnames(daily_show_guests) <- colnames(daily_show_guests) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 daily_show_guests <- daily_show_guests %>%
   rename(google_knowledge_occupation = googleknowlege_occupation) %>% 
   mutate(

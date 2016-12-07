@@ -152,6 +152,133 @@
 "biopics"
 
 
+#' A Statistical Analysis of the Work of Bob Ross
+#'
+#' The raw data behind the story
+#' "A Statistical Analysis of the Work of Bob Ross"
+#' \url{http://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/}.
+#'
+#' @format A data frame with 403 rows representing episodes and 71 variables:
+#' \describe{
+#'   \item{episode}{Episode code}
+#'   \item{season}{Season number}
+#'   \item{episode_num}{Episode number}
+#'   \item{title}{Title of episode}
+#'   \item{apple_frame}{Present (1) or not (0)}
+#'   \item{aurora_borealis}{Present (1) or not (0)}
+#'   \item{barn}{Present (1) or not (0)}
+#'   \item{beach}{Present (1) or not (0)}
+#'   \item{boat}{Present (1) or not (0)}
+#'   \item{bridge}{Present (1) or not (0)}
+#'   \item{building}{Present (1) or not (0)}
+#'   \item{bushes}{Present (1) or not (0)}
+#'   \item{cabin}{Present (1) or not (0)}
+#'   \item{cactus}{Present (1) or not (0)}
+#'   \item{circle_frame}{Present (1) or not (0)}
+#'   \item{cirrus}{Present (1) or not (0)}
+#'   \item{cliff}{Present (1) or not (0)}
+#'   \item{clouds}{Present (1) or not (0)}
+#'   \item{conifer}{Present (1) or not (0)}
+#'   \item{cumulus}{Present (1) or not (0)}
+#'   \item{deciduous}{Present (1) or not (0)}
+#'   \item{diane_andre}{Present (1) or not (0)}
+#'   \item{dock}{Present (1) or not (0)}
+#'   \item{double_oval_frame}{Present (1) or not (0)}
+#'   \item{farm}{Present (1) or not (0)}
+#'   \item{fence}{Present (1) or not (0)}
+#'   \item{fire}{Present (1) or not (0)}
+#'   \item{florida_frame}{Present (1) or not (0)}
+#'   \item{flowers}{Present (1) or not (0)}
+#'   \item{fog}{Present (1) or not (0)}
+#'   \item{framed}{Present (1) or not (0)}
+#'   \item{grass}{Present (1) or not (0)}
+#'   \item{guest}{Present (1) or not (0)}
+#'   \item{half_circle_frame}{Present (1) or not (0)}
+#'   \item{half_oval_frame}{Present (1) or not (0)}
+#'   \item{hills}{Present (1) or not (0)}
+#'   \item{lake}{Present (1) or not (0)}
+#'   \item{lakes}{Present (1) or not (0)}
+#'   \item{lighthouse}{Present (1) or not (0)}
+#'   \item{mill}{Present (1) or not (0)}
+#'   \item{moon}{Present (1) or not (0)}
+#'   \item{mountain}{Present (1) or not (0)}
+#'   \item{mountains}{Present (1) or not (0)}
+#'   \item{night}{Present (1) or not (0)}
+#'   \item{ocean}{Present (1) or not (0)}
+#'   \item{oval_frame}{Present (1) or not (0)}
+#'   \item{palm_trees}{Present (1) or not (0)}
+#'   \item{path}{Present (1) or not (0)}
+#'   \item{person}{Present (1) or not (0)}
+#'   \item{portrait}{Present (1) or not (0)}
+#'   \item{rectangle_3d_frame}{Present (1) or not (0)}
+#'   \item{rectangular_frame}{Present (1) or not (0)}
+#'   \item{river}{Present (1) or not (0)}
+#'   \item{rocks}{Present (1) or not (0)}
+#'   \item{seashell_frame}{Present (1) or not (0)}
+#'   \item{snow}{Present (1) or not (0)}
+#'   \item{snowy_mountain}{Present (1) or not (0)}
+#'   \item{split_frame}{Present (1) or not (0)}
+#'   \item{steve_ross}{Present (1) or not (0)}
+#'   \item{structure}{Present (1) or not (0)}
+#'   \item{sun}{Present (1) or not (0)}
+#'   \item{tomb_frame}{Present (1) or not (0)}
+#'   \item{tree}{Present (1) or not (0)}
+#'   \item{trees}{Present (1) or not (0)}
+#'   \item{triple_frame}{Present (1) or not (0)}
+#'   \item{waterfall}{Present (1) or not (0)}
+#'   \item{waves}{Present (1) or not (0)}
+#'   \item{windmill}{Present (1) or not (0)}
+#'   \item{window_frame}{Present (1) or not (0)}
+#'   \item{winter}{Present (1) or not (0)}
+#'   \item{wood_framed}{Present (1) or not (0)}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/bob-ross}
+"bob_ross"
+
+
+#' Why Classic Rock Isn’t What It Used To Be
+#'
+#' The raw data behind the story
+#' "Why Classic Rock Isn’t What It Used To Be"
+#' \url{http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/}.
+#'
+#' @format A data frame with 37,673 rows representing song plays and 8 variables:
+#' \describe{
+#'   \item{song}{Song name}
+#'   \item{artist}{Artist name}
+#'   \item{callsign}{Station callsign}
+#'   \item{time}{Time of song play in seconds elapsed since January 1, 1970}
+#'   \item{date_time}{Time of song play in date/time format}
+#'   \item{unique_id}{Unique ID for each song play} 
+#'   \item{combined}{Song and artist name combined}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/classic-rock}
+#' @seealso \code{\link{classic_rock_song_list}}
+"classic_rock_raw_data"
+
+
+#' Why Classic Rock Isn’t What It Used To Be
+#'
+#' The raw data behind the story
+#' "Why Classic Rock Isn’t What It Used To Be"
+#' \url{http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/}.
+#'
+#' @format A data frame with 2230 rows representing unique songs and 7 variables:
+#' \describe{
+#'   \item{song}{Song name}
+#'   \item{artist}{Artist name}
+#'   \item{release_year}{Release year as listed in SongFacts}
+#'   \item{combined}{Song and artist name combined}
+#'   \item{has_year}{Logical variable of whether release year is included}
+#'   \item{playcount}{Number of plays across all stations}
+#'   \item{playcount_has_year}{Number of plays across all stations if a year was found}
+#' }
+#' @source SongFacts and \url{https://github.com/fivethirtyeight/data/tree/master/classic-rock}
+#' @seealso \code{\link{classic_rock_raw_data}}
+"classic_rock_song_list"
+
+
+
 #' Both Republicans And Democrats Have an Age Problem
 #'
 #' The raw data behind the story
@@ -241,7 +368,7 @@
 #'   \item{day_of_week}{Abbreviation of day of week} 
 #'   \item{births}{Number of births}
 #' }
-#' @seealso \code{\link{US_births_2000_2014}}.
+#' @seealso \code{\link{US_births_2000_2014}}
 #' @source Centers for Disease Control and Prevention's National Center for Health Statistics
 "US_births_1994_2003"
 

@@ -25,7 +25,7 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
 }
 \seealso{
-\code{\link{US_births_2000_2014}}.
+\code{\link{US_births_2000_2014}}
 }
 \keyword{datasets}
 
