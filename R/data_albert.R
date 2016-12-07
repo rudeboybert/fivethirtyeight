@@ -198,3 +198,50 @@
 #' }
 #' @source Google Knowlege Graph, The Daily Show clip library, Wikipedia.
 "daily_show_guests"
+
+
+
+
+#' Some People Are Too Superstitious To Have A Baby On Friday The 13th
+#'
+#' The raw data behind the story
+#' "Some People Are Too Superstitious To Have A Baby On Friday The 13th"
+#' \url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
+#'
+#'
+#' @format A data frame with 5479 rows representing dates and 6 variables:
+#' \describe{
+#'   \item{year}{Year} 
+#'   \item{month}{Month}
+#'   \item{date_of_month}{Day} 
+#'   \item{date}{POSIX date} 
+#'   \item{day_of_week}{Abbreviation of day of week} 
+#'   \item{births}{Number of births}
+#' }
+#' @seealso \code{\link{US_births_1994_2003}}.
+#' @source Social Security Administration
+"US_births_2000_2014"
+
+
+
+
+#' Some People Are Too Superstitious To Have A Baby On Friday The 13th
+#'
+#' The raw data behind the story
+#' "Some People Are Too Superstitious To Have A Baby On Friday The 13th"
+#' \url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
+#'
+#'
+#' @format A data frame with 3652 rows representing guests and 6 variables:
+#' \describe{
+#'   \item{year}{Year} 
+#'   \item{month}{Month}
+#'   \item{date_of_month}{Day} 
+#'   \item{date}{POSIX date} 
+#'   \item{day_of_week}{Abbreviation of day of week} 
+#'   \item{births}{Number of births}
+#' }
+#' @seealso \code{\link{US_births_2000_2014}}.
+#' @source Centers for Disease Control and Prevention's National Center for Health Statistics
+"US_births_1994_2003"
+

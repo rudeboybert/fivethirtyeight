@@ -112,6 +112,7 @@ devtools::use_data(bechdel, overwrite = TRUE)
 
 
 
+
 # biopics ----------------------------------------------------------------------
 biopics <- read_csv("data-raw/biopics/biopics.csv") 
 colnames(biopics) <- colnames(biopics) %>% tolower() %>% str_replace_all(" ", "_")
@@ -134,6 +135,27 @@ biopics <- biopics %>%
 devtools::use_data(biopics, overwrite = TRUE)
 
 
+
+# births -----------------------------------------------------------------------
+US_births_1994_2003 <- read_csv("data-raw/births/US_births_1994-2003_CDC_NCHS.csv")
+colnames(US_births_1994_2003) <- colnames(US_births_1994_2003) %>% tolower() %>% str_replace_all(" ", "_")
+US_births_1994_2003 <- US_births_1994_2003 %>% 
+  mutate(
+    date = ymd(paste(year, month, date_of_month)),
+    day_of_week = wday(date, label=TRUE)
+    ) %>% 
+  select(year, month, date_of_month, date, everything())
+devtools::use_data(US_births_1994_2003, overwrite = TRUE)
+
+US_births_2000_2014 <- read_csv("data-raw/births/US_births_2000-2014_SSA.csv")
+colnames(US_births_2000_2014) <- colnames(US_births_2000_2014) %>% tolower() %>% str_replace_all(" ", "_")
+US_births_2000_2014 <- US_births_2000_2014 %>% 
+  mutate(
+    date = ymd(paste(year, month, date_of_month)),
+    day_of_week = wday(date, label=TRUE)
+  ) %>% 
+  select(year, month, date_of_month, date, everything())
+devtools::use_data(US_births_2000_2014, overwrite = TRUE)
 
 
 # congress-age ----------------------------------------------------------------------
