@@ -2,9 +2,6 @@ library(tidyverse)
 library(stringr)
 library(lubridate)
 
-# Albert: airline_safety thru food-world-cup
-
-
 
 
 # airline_safety ---------------------------------------------------------------
@@ -24,14 +21,12 @@ devtools::use_data(airline_safety, overwrite = TRUE)
 
 
 
-
 # alcohol_consumption ----------------------------------------------------------
 drinks <- read_csv("data-raw/alcohol-consumption/drinks.csv")
 colnames(drinks) <- colnames(drinks) %>% 
   tolower() %>% 
   str_replace_all(" ", "_")
 devtools::use_data(drinks, overwrite = TRUE)
-
 
 
 
@@ -65,11 +60,11 @@ avengers <- avengers %>%
     # month = str_replace_all(full_reserve_avengers_intro, "[:digit:]", ""),
     # month = str_replace_all(month, "-", ""),
     # 14 cases where month was missing
-    # date = ifelse(is.na(month), paste(year, "Jan", "01", sep="-"), paste(year, month, "01", sep="-")),
+    # date = ifelse(is.na(month), paste(year, "Jan", "01", sep="-"), 
+    # paste(year, month, "01", sep="-")),
     # full_reserve_avengers_intro2 = parse_date_time(date, "y-b-d")
   )
 devtools::use_data(avengers, overwrite = TRUE)
-
 
 
 
@@ -90,7 +85,6 @@ bad_drivers <- bad_drivers %>%
     losses = `losses_incurred_by_insurance_companies_for_collisions_per_insured_driver_($)`
   )
 devtools::use_data(bad_drivers, overwrite = TRUE)
-
 
 
 
@@ -117,7 +111,6 @@ bechdel <- bechdel %>%
     intgross_2013 = as.integer(intgross_2013)
   )
 devtools::use_data(bechdel, overwrite = TRUE)
-
 
 
 
@@ -160,7 +153,9 @@ US_births_1994_2003 <- US_births_1994_2003 %>%
 devtools::use_data(US_births_1994_2003, overwrite = TRUE)
 
 US_births_2000_2014 <- read_csv("data-raw/births/US_births_2000-2014_SSA.csv")
-colnames(US_births_2000_2014) <- colnames(US_births_2000_2014) %>% tolower() %>% str_replace_all(" ", "_")
+colnames(US_births_2000_2014) <- colnames(US_births_2000_2014) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 US_births_2000_2014 <- US_births_2000_2014 %>% 
   mutate(
     date = ymd(paste(year, month, date_of_month)),
@@ -224,7 +219,19 @@ devtools::use_data(classic_rock_song_list, overwrite = TRUE)
 
 
 
-# congress-age ----------------------------------------------------------------------
+# college-majors ---------------------------------------------------------------
+
+
+
+# comic-characters -------------------------------------------------------------
+
+
+
+# comma-survey-data ------------------------------------------------------------
+
+
+
+# congress-age -----------------------------------------------------------------
 # Manually edited original CSV:
 # Line 7054: (Pierre,Samuel, IV,du Pont,,) to (Pierre,Samuel,du Pont,IV,)
 # Line 7581: (Pierre,Samuel, IV,du Pont,,) to (Pierre,Samuel,du Pont,IV,)
@@ -245,11 +252,17 @@ devtools::use_data(classic_rock_song_list, overwrite = TRUE)
 # Line 12664: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,) 
 # Line 12738: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III)
 congress_age <- read_csv("data-raw/congress-age/congress-terms.csv")
-colnames(congress_age) <- colnames(congress_age) %>% tolower() %>% str_replace_all(" ", "_")
+colnames(congress_age) <- colnames(congress_age) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
 
 congress_age <- congress_age %>% 
   mutate(incumbent = ifelse(incumbent == "Yes", TRUE, FALSE))
 devtools::use_data(congress_age, overwrite = TRUE)
+
+
+
+# cousin-marriage --------------------------------------------------------------
 
 
 
@@ -269,6 +282,99 @@ daily_show_guests <- daily_show_guests %>%
     google_knowledge_occupation = tolower(google_knowledge_occupation)
     )
 devtools::use_data(daily_show_guests, overwrite = TRUE)
+
+
+
+# democratic-bench -------------------------------------------------------------
+
+
+
+# drug-use-by-age --------------------------------------------------------------
+
+
+
+# early-senate-polls -----------------------------------------------------------
+
+
+
+# elo-blatter ------------------------------------------------------------------
+elo_blatter <- read_csv("data-raw/elo-blatter/elo_blatter.csv")
+colnames(elo_blatter) <- colnames(elo_blatter) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+devtools::use_data(elo_blatter, overwrite = TRUE)
+
+
+
+# endorsements-june-30 ---------------------------------------------------------
+endorsements <- read_csv("data-raw/endorsements-june-30/endorsements-june-30.csv")
+colnames(endorsements) <- colnames(endorsements) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+endorsements <- endorsements %>% 
+  mutate(won_primary = ifelse(won_primary == "Yes", TRUE, FALSE))
+devtools::use_data(endorsements, overwrite = TRUE)
+
+
+
+# fandango ---------------------------------------------------------------------
+
+
+
+# fifa -------------------------------------------------------------------------
+fifa_audience <- read_csv("data-raw/fifa/fifa_countries_audience.csv")
+colnames(fifa_audience) <- colnames(fifa_audience) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+devtools::use_data(fifa_audience, overwrite = TRUE)
+
+
+
+# flying-etiquette-survey ------------------------------------------------------
+
+
+
+# food-world-cup ---------------------------------------------------------------
+food_world_cup <- read_csv("data-raw/food-world-cup/food-world-cup-data.csv")
+
+# Modify variable names
+varnames <- colnames(food_world_cup)
+country_indices <- 
+  str_sub(varnames, 1, 29) == "Please rate how much you like"
+varnames[country_indices] <- str_sub(varnames[country_indices], 58, -2)
+varnames[c(1, 2, 3, 48)] <- c("respondent_id", "knowledge", "interest", "location")
+colnames(food_world_cup) <- varnames %>%
+  tolower() %>% 
+  str_replace_all(" ", "_") 
+
+food_world_cup <- food_world_cup %>% 
+  mutate(
+    interest = str_replace_all(interest, "\xca", ""),
+    knowledge = factor(knowledge, levels = c(
+      "Novice", "Intermediate", "Advanced", "Expert"
+      )), 
+    interest = factor(interest, levels = c(
+      "Not at all", "Not much", "Some", "A lot"
+      )), 
+    age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60")),
+    household_income = factor(household_income, levels = c(
+      "$0 - $24,999", "$25,000 - $49,999", "$50,000 - $99,999", 
+      "$100,000 - $149,999", "$150,000+")),
+    education = factor(education, levels=c(
+      "Less than high school degree", "High school degree", 
+      "Some college or Associate degree","Bachelor degree", "Graduate degree"
+    ))
+  ) %>% 
+  select(respondent_id, knowledge, interest, gender, age, household_income, 
+         education, location, algeria, argentina, australia, belgium, 
+         bosnia_and_herzegovina, 
+         brazil, cameroon, chile, china, colombia, costa_rica, 
+         croatia, cuba, ecuador, england, ethiopia, france, 
+         germany, ghana, greece, honduras, india, iran, ireland, 
+         italy, ivory_coast, japan, mexico, nigeria, portugal, 
+         russia, south_korea, spain, switzerland, thailand, 
+         the_netherlands, turkey, united_states, uruguay, vietnam)
+devtools::use_data(food_world_cup, overwrite = TRUE)
 
 
 

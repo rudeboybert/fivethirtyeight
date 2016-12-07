@@ -55,6 +55,7 @@
 "avengers"
 
 
+
 #' Dear Mona, Which State Has The Worst Drivers?
 #'
 #' The raw data behind the story
@@ -76,6 +77,7 @@
 #' Traffic Safety Administration 2009 & 2012, National Association of Insurance 
 #' Commissioners 2010 & 2011.
 "bad_drivers"
+
 
 
 #' The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women
@@ -125,6 +127,7 @@
 "drinks"
 
 
+
 #' 'Straight Outta Compton' Is The Rare Biopic Not About White Dudes
 #'
 #' The raw data behind the story
@@ -150,6 +153,7 @@
 #' }
 #' @source IMDB \url{http://www.imdb.com/}
 "biopics"
+
 
 
 #' A Statistical Analysis of the Work of Bob Ross
@@ -236,6 +240,7 @@
 "bob_ross"
 
 
+
 #' Why Classic Rock Isn’t What It Used To Be
 #'
 #' The raw data behind the story
@@ -255,6 +260,7 @@
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/classic-rock}
 #' @seealso \code{\link{classic_rock_song_list}}
 "classic_rock_raw_data"
+
 
 
 #' Why Classic Rock Isn’t What It Used To Be
@@ -307,7 +313,6 @@
 
 
 
-
 #' Every Guest Jon Stewart Ever Had On 'The Daily Show'
 #'
 #' The raw data behind the story
@@ -325,7 +330,6 @@
 #' }
 #' @source Google Knowlege Graph, The Daily Show clip library, Wikipedia.
 "daily_show_guests"
-
 
 
 
@@ -351,7 +355,6 @@
 
 
 
-
 #' Some People Are Too Superstitious To Have A Baby On Friday The 13th
 #'
 #' The raw data behind the story
@@ -371,4 +374,135 @@
 #' @seealso \code{\link{US_births_2000_2014}}
 #' @source Centers for Disease Control and Prevention's National Center for Health Statistics
 "US_births_1994_2003"
+
+
+
+#' Blatter’s Reign At FIFA Hasn’t Helped Soccer’s Poor
+#'
+#' The raw data behind the story
+#' "Blatter’s Reign At FIFA Hasn’t Helped Soccer’s Poor"
+#' \url{http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/}.
+#'
+#' @format A data frame with 209 rows representing countries and 8 variables:
+#' \describe{
+#'   \item{country}{FIFA member country}
+#'   \item{elo98}{The team's Elo in 1998}
+#'   \item{elo15}{The team's Elo in 2015}
+#'   \item{confederation}{Confederation to which country belongs}
+#'   \item{gdp06}{The country's purchasing power parity GDP as of 2006}
+#'   \item{popu06}{The country's 2006 population}
+#'   \item{gdp_source}{Source for gdp06}
+#'   \item{popu_source}{Source for popu06}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/elo-blatter}.
+"elo_blatter"
+
+
+
+#' Pols And Polls Say The Same Thing: Jeb Bush Is A Weak Front-Runner
+#'
+#' The raw data behind the story
+#' "Pols And Polls Say The Same Thing: Jeb Bush Is A Weak Front-Runner"
+#' \url{http://fivethirtyeight.com/features/pols-and-polls-say-the-same-thing-jeb-bush-is-a-weak-front-runner/}.
+#' This data includes something we call "endorsement points," an attempt to quantify the importance of endorsements 
+#' by weighting each one according to the position held by the endorser: 
+#' 10 points for each governor, 5 points for each senator and 1 point for each 
+#' representative
+#'
+#' @format A data frame with 109 rows representing candidates and 9 variables:
+#' \describe{
+#'   \item{year}{Election year}
+#'   \item{party}{Political party}
+#'   \item{candidate}{Candidate running in primary}
+#'   \item{endorsement_points}{Weighted endorsements through June 30th of the year before the primary}
+#'   \item{percentage_endorsement_points}{Percentage of total weighted endorsement points for the candidate's political party through June 30th of the year before the primary}
+#'   \item{money_raised}{Money raised through June 30th of the year before the primary}
+#'   \item{percentage_of_money}{Percentage of total money raised by the candidate's political party through June 30th of the year before the primary}
+#'   \item{primary_vote_percentage}{Percentage of votes won in the primary}
+#'   \item{won_primary}{Did the candidate win the primary?}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/endorsements-june-30}
+"endorsements"
+
+
+
+#' How To Break FIFA
+#'
+#' The raw data behind the story
+#' "How To Break FIFA"
+#' \url{http://fivethirtyeight.com/features/how-to-break-fifa/}.
+#'
+#'
+#' @format A data frame with 3652 rows representing guests and 6 variables:
+#' \describe{
+#'   \item{country}{FIFA member country}
+#'   \item{confederation}{Confederation to which country belongs}
+#'   \item{population_share}{Country's share of global population (percentage)}
+#'   \item{tv_audience_share}{Country's share of global world cup TV Audience (percentage)}
+#'   \item{gdp_weighted_share}{Country's GDP-weighted audience share (percentage)}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/fifa}
+"fifa_audience"
+
+
+
+#' The FiveThirtyEight International Food Association’s 2014 World Cup
+#'
+#' The raw data behind the story
+#' "The FiveThirtyEight International Food Association’s 2014 World Cup"
+#' \url{http://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/}.
+#'
+#' @format A data frame with 1373 rows representing respondents and 48 variables:
+#' \describe{
+#'   \item{respondent_id}{}
+#'   \item{knowledge}{}
+#'   \item{interest}{}
+#'   \item{gender}{}
+#'   \item{age}{}
+#'   \item{household_income}{} 
+#'   \item{education}{}
+#'   \item{location}{}
+#'   \item{algeria}{}
+#'   \item{argentina}{} 
+#'   \item{australia}{}
+#'   \item{belgium}{}
+#'   \item{bosnia_and_herzegovina}{}
+#'   \item{brazil}{}
+#'   \item{cameroon}{} 
+#'   \item{chile}{}
+#'   \item{china}{}
+#'   \item{colombia}{}
+#'   \item{costa_rica}{}
+#'   \item{croatia}{}
+#'   \item{cuba}{}
+#'   \item{ecuador}{}
+#'   \item{england}{} 
+#'   \item{ethiopia}{}
+#'   \item{france}{}
+#'   \item{germany}{}
+#'   \item{ghana}{}
+#'   \item{greece}{}
+#'   \item{honduras}{}
+#'   \item{india}{}
+#'   \item{iran}{}
+#'   \item{ireland}{}
+#'   \item{italy}{} 
+#'   \item{ivory_coast}{}
+#'   \item{japan}{}
+#'   \item{mexico}{}
+#'   \item{nigeria}{} 
+#'   \item{portugal}{}
+#'   \item{russia}{}
+#'   \item{south_korea}{}
+#'   \item{spain}{}
+#'   \item{switzerland}{} 
+#'   \item{thailand}{}
+#'   \item{the_netherlands}{}
+#'   \item{turkey}{} 
+#'   \item{united_states}{}
+#'   \item{uruguay}{}
+#'   \item{vietnam}{}
+#' }
+#' @seealso See \url{https://github.com/fivethirtyeight/data/tree/master/food-world-cup}
+"food_world_cup"
 
