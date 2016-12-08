@@ -228,6 +228,50 @@ devtools::use_data(classic_rock_song_list, overwrite = TRUE)
 
 
 # comma-survey-data ------------------------------------------------------------
+comma_survey <- read_csv("data-raw/comma-survey-data/comma-survey-data.csv")
+colnames(comma_survey) <- colnames(comma_survey) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+
+comma_survey <- comma_survey %>%
+  rename(
+    respondent_id = respondentid,
+    location = `location_(census_region)`,
+    more_grammar_correct = `in_your_opinion,_which_sentence_is_more_gramatically_correct?`,
+    heard_oxford_comma=`prior_to_reading_about_it_above,_had_you_heard_of_the_serial_(or_oxford)_comma?`,
+    care_oxford_comma=`how_much,_if_at_all,_do_you_care_about_the_use_(or_lack_thereof)_of_the_serial_(or_oxford)_comma_in_grammar?`,
+    write_following=`how_would_you_write_the_following_sentence?`,
+    data_singular_plural=`when_faced_with_using_the_word_\"data\",_have_you_ever_spent_time_considering_if_the_word_was_a_singular_or_plural_noun?`,
+    care_data = `how_much,_if_at_all,_do_you_care_about_the_debate_over_the_use_of_the_word_\"data\"_as_a_singluar_or_plural_noun?`,
+    care_proper_grammar =`in_your_opinion,_how_important_or_unimportant_is_proper_use_of_grammar?`
+    ) %>% 
+  mutate(
+    # Set levels to factors
+    age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60")),
+    household_income = factor(household_income, levels = c(
+      "$0 - $24,999", "$25,000 - $49,999", "$50,000 - $99,999", 
+      "$100,000 - $149,999", "$150,000+")),
+    education = factor(education, levels=c(
+      "Less than high school degree", "High school degree", 
+      "Some college or Associate degree","Bachelor degree", "Graduate degree"
+    )),
+    heard_oxford_comma = ifelse(heard_oxford_comma=="Yes", TRUE, FALSE),
+    data_singular_plural = ifelse(data_singular_plural=="Yes", TRUE, FALSE),
+    care_oxford_comma = factor(care_oxford_comma, levels=c(
+      "Not at all", "Not much", "Some", "A lot"      
+    )),
+    care_data = factor(care_data, levels=c(
+      "Not at all", "Not much", "Some", "A lot"      
+    )),
+    care_proper_grammar = factor(care_proper_grammar, levels=c(
+      "Very unimportant", "Somewhat unimportant", 
+      "Neither important nor unimportant (neutral)", "Somewhat important", 
+      "Very important"
+    ))
+  ) %>% 
+  select(respondent_id, gender, age, household_income, 
+         education, location, everything())
+devtools::use_data(comma_survey, overwrite = TRUE)
 
 
 

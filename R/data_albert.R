@@ -285,6 +285,33 @@
 
 
 
+#' Elitist, Superfluous, Or Popular? We Polled Americans on the Oxford Comma
+#'
+#' The raw data behind the story
+#' "Elitist, Superfluous, Or Popular? We Polled Americans on the Oxford Comma"
+#' \url{http://fivethirtyeight.com/datalab/elitist-superfluous-or-popular-we-polled-americans-on-the-oxford-comma/}.
+#'
+#' @format A data frame with 1129 rows representing guests and 13 variables:
+#' \describe{
+#'   \item{respondent_id}{Respondent ID}
+#'   \item{gender}{Gender}
+#'   \item{age}{Age}
+#'   \item{household_income}{Household income bracket}
+#'   \item{education}{Education level}
+#'   \item{location}{Location (census region)}
+#'   \item{more_grammar_correct}{In your opinion, which sentence is more gramatically correct?}
+#'   \item{heard_oxford_comma}{Prior to reading about it above, had you heard of the serial (or Oxford) comma?}
+#'   \item{care_oxford_comma}{How much, if at all, do you care about the use (or lack thereof) of the serial (or Oxford) comma in grammar?}
+#'   \item{write_following}{How would you write the following sentence?}
+#'   \item{data_singular_plural}{When faced with using the word "data", have you ever spent time considering if the word was a singular or plural noun?}
+#'   \item{care_data}{How much, if at all, do you care about the debate over the use of the word "data" as a singluar or plural noun?}
+#'   \item{care_proper_grammar}{In your opinion, how important or unimportant is proper use of grammar?}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/comma-survey-data}.
+"comma_survey"
+
+
+
 #' Both Republicans And Democrats Have an Age Problem
 #'
 #' The raw data behind the story
@@ -505,4 +532,3 @@
 #' }
 #' @seealso See \url{https://github.com/fivethirtyeight/data/tree/master/food-world-cup}
 "food_world_cup"
-
