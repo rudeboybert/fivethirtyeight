@@ -3,7 +3,7 @@ library(stringr)
 library(lubridate)
 
 
-
+# Hello Jen
 # airline_safety ---------------------------------------------------------------
 airline_safety <- read_csv("data-raw/airline-safety/airline-safety.csv") 
 colnames(airline_safety) <- colnames(airline_safety) %>% 
