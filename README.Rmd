@@ -14,8 +14,9 @@ knitr::opts_chunk$set(
 
 # R Package Development Instructions
 
-[Google Doc](https://docs.google.com/document/d/1eCRZUvhEp7A21Sq4duQAX1P2mDplB9OxHrX-rPkXFvo/edit#)
-
+* [Google Doc](https://docs.google.com/document/d/1eCRZUvhEp7A21Sq4duQAX1P2mDplB9OxHrX-rPkXFvo/edit#)
+* [Google Sheet](https://docs.google.com/spreadsheets/d/1G8as9tYfbC7GXGdpaKHlFRvhAZHiV6JrznJM7Ou5K24/edit#gid=0) of data set information
+* [Google Drive Folder](https://drive.google.com/drive/folders/0B5sV4c0umdLeNTZMTWhvcE5kUUE)
 
 
 # fivethirtyeight
