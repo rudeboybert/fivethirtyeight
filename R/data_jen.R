@@ -1,0 +1,277 @@
+
+
+
+#' Most Police Don’t Live In The Cities They Serve
+#'
+#' The raw data behind the story
+#' "Most Police Don’t Live In The Cities They Serve"
+#' \url{http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/}.
+#' Note: Missing values means that there are fewer than 100 police officers of that race serving that city.
+#' 
+#' @format A data frame with 75 rows representing cities and 8 variables:
+#' \describe{
+#'   \item{city}{U.S. city}
+#'   \item{police_force_size}{Number of police officers serving that city}
+#'   \item{all}{Percentage of the total police force that lives in the city}
+#'   \item{white}{Percentage of white (non-Hispanic) police officers who live in the city}
+#'   \item{non_white}{Percentage of non-white police officers who live in the city}
+#'   \item{black}{Percentage of black police officers who live in the city}
+#'   \item{hispanic}{Percentage of Hispanic police officers who live in the city}
+#'   \item{asian}{Percentage of Asian police officers who live in the city}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/police-locals}
+"police_locals"
+
+
+
+
+#' Sitting Presidents Give Way More Commencement Speeches Than They Used To
+#'
+#' The raw data behind the story
+#' "Sitting Presidents Give Way More Commencement Speeches Than They Used To"
+#' \url{http://fivethirtyeight.com/features/sitting-presidents-give-way-more-commencement-speeches-than-they-used-to/}.
+#'
+#' @format A data frame with 154 rows representing speeches and 8 variables:
+#' \describe{
+#'   \item{president}{Number of president (33 is Harry Truman, the 33rd president; 44 is Barack Obama, the 44th president)}
+#'   \item{president_name}{Name of president}
+#'   \item{title}{Description of commencement speech}
+#'   \item{date}{Date speech was delivered}
+#'   \item{city}{City where speech was delivered}
+#'   \item{state}{state where speech was delivered}
+#'   \item{building}{Name of building in which speech was delivered}
+#'   \item{room}{Room in which speech was delivered}
+#' }
+#' @source American Presidency Project, Gerhard Peters and John T. Woolley \url{http://www.presidency.ucsb.edu}
+"presidential_commencement_speeches"
+
+
+#' Do Pulitzers Help Newspapers Keep Readers?
+#'
+#' The raw data behind the story
+#' "Do Pulitzers Help Newspapers Keep Readers?"
+#' \url{http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/}.
+#'
+#' @format A data frame with 50 rows representing newspapers and 7 variables:
+#' \describe{
+#'   \item{newspaper}{}
+#'   \item{daily_circulation_2004}{}
+#'   \item{daily_circulation_2013}{}
+#'   \item{pctchange_in_daily_circulation_2004_2013}{}
+#'   \item{winners_and_finalists_1990_2003}{}
+#'   \item{winners_and_finalists_2004_2014}{}
+#'   \item{winners_and_finalists_1990_2014}{}
+#' }
+#' @source See \url{http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/}
+"pulitzer"
+
+
+#' The Rock Isn’t Alone: Lots Of People Are Worried About ‘The Big One’
+#'
+#' The raw data behind the story
+#' "The Rock Isn’t Alone: Lots Of People Are Worried About ‘The Big One’"
+#' \url{http://fivethirtyeight.com/datalab/the-rock-isnt-alone-lots-of-people-are-worried-about-the-big-one/}.
+#'
+#' @format A data frame with 1013 rows representing respondents and 11 variables:
+#' \describe{
+#'   \item{worry_general}{In general, how worried are you about earthquakes?}
+#'   \item{worry_bigone}{How worried are you about the “Big One,” a massive, catastrophic earthquake?}
+#'   \item{will_occur}{Do you think the "Big One" will occur in your lifetime?}
+#'   \item{experience}{Have you ever experienced an earthquake?}
+#'   \item{prepared }{Have you or anyone in your household taken any precautions for an earthquake (packed an earthquake survival kit, prepared an evacuation plan, etc.)?}
+#'   \item{fam_san_andreas}{How familiar are you with the San Andreas Fault line?}
+#'   \item{fam_yellowstone}{How familiar are you with the Yellowstone Supervolcano?}
+#'   \item{age}{Age}
+#'   \item{female}{Gender}
+#'   \item{hhold_income}{How much total combined money did all members of your HOUSEHOLD earn last year?}
+#'   \item{region}{US Region}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/san-andreas}
+"san_andreas"
+
+
+#' How Americans Like Their Steak
+#'
+#' The raw data behind the story
+#' "How Americans Like Their Steak"
+#' \url{http://fivethirtyeight.com/datalab/how-americans-like-their-steak/}.
+#'
+#' @format A data frame with 550 rows representing respondents and 15 variables:
+#' \describe{
+#'   \item{respondent_id}{RespondentID}
+#'   \item{lottery_a}{Consider the following hypothetical situations: In Lottery A, you have a 50% chance of success, with a payout of $100. In Lottery B, you have a 90% chance of success, with a payout of $20. Assuming you have $10 to bet, would you play Lottery A or Lottery B?}
+#'   \item{smoke}{Do you ever smoke cigarettes?}
+#'   \item{alcohol}{Do you ever drink alcohol?}
+#'   \item{gamble}{Do you ever gamble?}
+#'   \item{skydiving}{Have you ever been skydiving?}
+#'   \item{speed}{Do you ever drive above the speed limit?}
+#'   \item{cheated}{Have you ever cheated on your significant other?}
+#'   \item{steak}{Do you eat steak?}
+#'   \item{steak_prep}{How do you like your steak prepared?}
+#'   \item{female}{Gender}
+#'   \item{age}{Age}
+#'   \item{hhold_income}{Household Income}
+#'   \item{educ}{Education}
+#'   \item{region}{Location (Census Region)}
+#' }
+#' @source See \url{http://fivethirtyeight.com/datalab/how-americans-like-their-steak/}
+"steak_survey"
+
+
+#' A Complete Catalog Of Every Time Someone Cursed Or Bled Out In A Quentin Tarantino Movie
+#'
+#' The raw data behind the story
+#' "A Complete Catalog Of Every Time Someone Cursed Or Bled Out In A Quentin Tarantino Movie"
+#' \url{http://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/}.
+#'
+#' @format A data frame with 1894 rows representing curse/death instances and 4 variables:
+#' \describe{
+#'   \item{movie}{Film title}
+#'   \item{type_word}{Whether the event was a profane word (TRUE) or a death (FALSE)}
+#'   \item{word}{The specific profane word, if the event was a word}
+#'   \item{minutes_in}{The number of minutes into the film the event occurred}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/tarantino}
+"tarantino"
+
+
+#' Why Some Tennis Matches Take Forever
+#'
+#' The raw data behind the story
+#' "Why Some Tennis Matches Take Forever"
+#' \url{http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/}.
+#'
+#' @format A data frame with 205 rows representing tournaments and 5 variables:
+#' \describe{
+#'   \item{tournament}{Name of event}
+#'   \item{surface}{Court surface used at the event}
+#'   \item{seconds_added_per_point}{Seconds added per point for this event on this surface in years shown, from regression model controlling for players, year and other factors}
+#'   \item{year_start}{Start year for data used from this tournament in regression}
+#'   \item{year_end}{End year for data used from this tournament in regression}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/tennis-time}
+#' @seealso \code{\link{tennis_players_time}} and \code{\link{tennis_serve_time}}
+"tennis_events_time"
+
+#' Why Some Tennis Matches Take Forever
+#'
+#' The raw data behind the story
+#' "Why Some Tennis Matches Take Forever"
+#' \url{http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/}.
+#'
+#' @format A data frame with 218 rows representing players and 2 variables:
+#' \describe{
+#'   \item{player}{Player Name}
+#'   \item{seconds_added_per_point}{Weighted average of seconds added per point as loser and winner of matches, 1991-2015, from regression model controlling for tournament, surface, year and other factors}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/tennis-time}
+#' @seealso \code{\link{tennis_events_time}} and \code{\link{tennis_serve_time}}
+"tennis_players_time"
+
+#' Why Some Tennis Matches Take Forever
+#'
+#' The raw data behind the story
+#' "Why Some Tennis Matches Take Forever"
+#' \url{http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/}.
+#'
+#' @format A data frame with 120 rows representing serves and 7 variables:
+#' \describe{
+#'   \item{server}{Name of player serving at 2015 French Open}
+#'   \item{seconds_before_next_point}{Time in seconds between end of marked point and next serve, timed by stopwatch app}
+#'   \item{opponent}{Opponent, receiving serve}
+#'   \item{game_score}{Score in the current game during the timed interval between points}
+#'   \item{set}{Set number, out of five}
+#'   \item{game}{Score in games within the set}
+#'   \item{date}{Date}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/tennis-time}
+#' @seealso \code{\link{tennis_events_time}} and \code{\link{tennis_players_time}}
+"tennis_serve_time"
+
+
+
+#' How Trump Hacked The Media
+#'
+#' The raw data behind the story
+#' "How Trump Hacked The Media"
+#' \url{http://fivethirtyeight.com/features/how-donald-trump-hacked-the-media/}.
+#' 
+#' @format A data frame with 386 rows representing lead stories and 3 variables:
+#' \describe{
+#'   \item{date}{Date of lead story about Donald Trump.}
+#'   \item{major_category}{Story classification}
+#'   \item{detail}{}
+#' }
+#' @source Memeorandum \url{http://www.memeorandum.com/}.  See \url{memeorandum}
+"trump_news"
+
+
+#' Donald Trump twitter
+#'
+#' Tweets posted on twitter by Donald Trump (@@realDonaldTrump)
+#' 
+#' @format A data frame with 448 rows representing tweets and 3 variables:
+#' \describe{
+#'   \item{id}{}
+#'   \item{created_at}{}
+#'   \item{text}{}
+#' }
+#' @source Twitter \url{https://twitter.com/realdonaldtrump}
+"trump_twitter"
+
+
+#' The Most Common Unisex Names In America: Is Yours One Of Them?
+#'
+#' The raw data behind the story
+#' "The Most Common Unisex Names In America: Is Yours One Of Them?"
+#' \url{http://fivethirtyeight.com/features/there-are-922-unisex-names-in-america-is-yours-one-of-them/}.
+#'
+#' @format A data frame with 919 rows representing names and 5 variables:
+#' \describe{
+#'   \item{name}{First names from the Social Security Administration}
+#'   \item{total}{Total number of living Americans with the name}
+#'   \item{male_share}{Percentage of people with the name who are male}
+#'   \item{female_share}{Percentage of people with the name who are female}
+#'   \item{gap}{Gap between male_share and female_share}
+#' }
+#' @source Social Security Administration \url{https://www.ssa.gov/oact/babynames/limits.html}.  See \url{https://github.com/fivethirtyeight/data/tree/master/unisex-names}.
+"unisex_names"
+
+	
+	
+#' Where People Go To Check The Weather
+#'
+#' The raw data behind the story
+#' "Where People Go To Check The Weather"
+#' \url{http://fivethirtyeight.com/datalab/weather-forecast-news-app-habits/}.
+#'
+#' @format A data frame with 928 rows representing respondents and 9 variables:
+#' \describe{
+#'   \item{respondent_id}{Respondent ID}
+#'   \item{ck_weather}{Do you typically check a daily weather report?}
+#'   \item{weather_source}{How do you typically check the weather?}
+#'   \item{weather_source_site}{A specific website or app (please provide the answer)	If they responded this value for the second question, they were asked to write-in the app or website they used.}
+#'   \item{ck_weather_smartwatch}{If you had a smartwatch (like the soon to be released Apple Watch), how likely or unlikely would you be to check the weather on that device?}
+#'   \item{age}{Age}
+#'   \item{female}{Gender}
+#'   \item{hhold_income}{How much total combined money did all members of your HOUSEHOLD earn last year?}
+#'   \item{region}{US Region}
+#' }
+#' @source LINKTEXT \url{SOURCEURL}
+"weather_check"
+
+
+
+#' TITLE
+#'
+#' The raw data behind the story
+#' "TITLE"
+#' \url{http://fivethirtyeight.com/LINK}.
+#'
+#' @format A data frame with XXXX rows representing OBSUNIT and XXX variables:
+#' \describe{
+#'   \item{VARNAME}{VAR DESCRIPTION}
+#'   \item{VARNAME}{VAR DESCRIPTION}
+#' }
+#' @source LINKTEXT \url{SOURCEURL}
+"DATASETNAME"
