@@ -245,7 +245,7 @@ devtools::use_data(tennis_serve_time, overwrite = TRUE)
 
 # thanksgiving-2015 ---------------------------------------------------------------
 thanksgiving_2015 <- read_csv("data-raw/thanksgiving-2015/thanksgiving-2015-poll-data.csv")
-
+#
 #need to create all variable names
 #devtools::use_data(thanksgiving_2015, overwrite = TRUE)
 
