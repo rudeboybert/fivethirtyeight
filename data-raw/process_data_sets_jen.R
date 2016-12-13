@@ -29,7 +29,18 @@ devtools::use_data(police_locals, overwrite = TRUE)
 
 
 # potential-candidates ---------------------------------------------------------------
-#-- MULTIPLE DATA FILES
+cand_events_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/events.csv")
+
+devtools::use_data(cand_events_20150114, overwrite = TRUE)
+
+cand_statements_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/statements.csv")
+devtools::use_data(cand_statements_20150114, overwrite = TRUE)
+
+cand_events_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/events.csv")
+devtools::use_data(cand_events_20150130, overwrite = TRUE)
+
+cand_statements_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/statements.csv")
+devtools::use_data(cand_statements_20150130, overwrite = TRUE)
 
 
 
