@@ -106,21 +106,6 @@
 #'
 #' @format A data frame with 550 rows representing respondents and 15 variables:
 #' \describe{
-#'   \item{respondent_id}{RespondentID}
-#'   \item{lottery_a}{Consider the following hypothetical situations: In Lottery A, you have a 50% chance of success, with a payout of $100. In Lottery B, you have a 90% chance of success, with a payout of $20. Assuming you have $10 to bet, would you play Lottery A or Lottery B?}
-#'   \item{smoke}{Do you ever smoke cigarettes?}
-#'   \item{alcohol}{Do you ever drink alcohol?}
-#'   \item{gamble}{Do you ever gamble?}
-#'   \item{skydiving}{Have you ever been skydiving?}
-#'   \item{speed}{Do you ever drive above the speed limit?}
-#'   \item{cheated}{Have you ever cheated on your significant other?}
-#'   \item{steak}{Do you eat steak?}
-#'   \item{steak_prep}{How do you like your steak prepared?}
-#'   \item{female}{Gender}
-#'   \item{age}{Age}
-#'   \item{hhold_income}{Household Income}
-#'   \item{educ}{Education}
-#'   \item{region}{Location (Census Region)}
 #' }
 #' @source See \url{http://fivethirtyeight.com/datalab/how-americans-like-their-steak/}
 "steak_survey"
@@ -270,16 +255,3 @@
 
 
 
-#' TITLE
-#'
-#' The raw data behind the story
-#' "TITLE"
-#' \url{http://fivethirtyeight.com/LINK}.
-#'
-#' @format A data frame with XXXX rows representing OBSUNIT and XXX variables:
-#' \describe{
-#'   \item{VARNAME}{VAR DESCRIPTION}
-#'   \item{VARNAME}{VAR DESCRIPTION}
-#' }
-#' @source LINKTEXT \url{SOURCEURL}
-"DATASETNAME"

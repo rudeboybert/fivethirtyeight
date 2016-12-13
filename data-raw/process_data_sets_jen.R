@@ -3,7 +3,7 @@ library(stringr)
 library(lubridate)
 
 # Jen: police-locals thru world-cup-predictions
-setwd("/Users/JC/Google Drive/Research/fivethirtyeight")
+#setwd("/Users/JC/Google Drive/Research/fivethirtyeight")
 
 
 # police-locals ---------------------------------------------------------------
@@ -36,9 +36,7 @@ cand_events_20150114 <- cand_events_20150114 %>%
          state = factor(state),
          type = factor(type),
          date = dmy(paste(date,"2015"))
-         date = dmy(paste(date,"2015"))
   )
-glimpse(cand_events_20150114)
 devtools::use_data(cand_events_20150114, overwrite = TRUE)
 
 cand_statements_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/statements.csv")
