@@ -156,18 +156,19 @@ colnames(murder_2015_final) <- colnames(murder_2015_final) %>%
 devtools::use_data(murder_2015_final, overwrite = TRUE) 
 
 
-########################
-
-
 # nba_draft_2015 -------------------------------------------------------------------
-nba_draft_2015 <-
-  
-  devtools::use_data(nba_draft_2015, overwrite = TRUE) 
+nba_draft_2015 <- read_csv("data-raw/nba-draft-2015/historical_projections.csv")
+colnames(nba_draft_2015) <- colnames(nba_draft_2015) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")    
+devtools::use_data(nba_draft_2015, overwrite = TRUE) 
 
 # nba_elo --------------------------------------------------------------------------
-nba_elo <-
-  
-  devtools::use_data(nba_elo, overwrite = TRUE) 
+nba_elo <- read_csv("data-raw/nba-elo/nbaallelo.csv")
+colnames(nba_elo) <- colnames(nba_elo) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")     
+devtools::use_data(nba_elo, overwrite = TRUE) 
 
 # nba_tattoos ----------------------------------------------------------------------
 nba_tattoos <-
