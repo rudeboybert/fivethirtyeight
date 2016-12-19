@@ -6,6 +6,7 @@
 \title{The Rams Are Dead To Me, So I Answered 3,352 Questions To Find A New NFL Team}
 \format{A data frame with 32 rows representing National Football League teams and 17 variables:
 \describe{
+  \item{team}{Name of NFL team} 
   \item{fan_relations}{Fan relations - Courtesy by players, coaches and front offices toward fans, and how well a team uses technology to reach them} 
   \item{ownership}{Ownership - Honesty; loyalty to core players and the community} 
   \item{players}{Players - Effort on the field, likability off it} 
@@ -20,7 +21,7 @@
   \item{small_market}{Small Market - Size of market in terms of population, where smaller is better} 
   \item{stadium_exp}{Stadium experience - Quality of venue; fan-friendliness of environment; frequency of game-day promotions} 
   \item{coaching}{Coaching - Strength of on-field leadership} 
-  \item{tradition}{Uniform - Stylishness of uniform design, according to Uni Watch's Paul Lukas} 
+  \item{uniform}{Uniform - Stylishness of uniform design, according to Uni Watch's Paul Lukas} 
   \item{big_market}{Big Market - Size of market in terms of population, where bigger is better} 
 }}
 \source{

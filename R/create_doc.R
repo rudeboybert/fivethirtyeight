@@ -1,7 +1,6 @@
 library(tidyverse)
 library(googlesheets)
 
-#gs_title("Data to feed R pkg documentation")
 meta <- gs_key("1bZd1U0EnRglD6xhgHGCMZ8xDGfRkgrQFBLgTzYB_dXo") %>% 
   gs_read(ws = "Meta data")
 

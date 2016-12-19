@@ -6,20 +6,20 @@
 \title{The Best MLB All-Star Teams Ever}
 \format{A data frame with 172 rows representing Major League Baseball seasons and 16 variables:
 \describe{
-  \item{yearID}{The season in question} 
-  \item{gameNum}{Order of All-Star Game for the season (in years w/ multiple ASGs; set to 0 when only 1 per year)} 
-  \item{gameID}{Game ID at Baseball-Reference.com} 
-  \item{lgID}{League of All-Star team} 
-  \item{tm_OFF_talent}{Total runs of offensive talent above average per game (36 plate appearances)} 
-  \item{tm_DEF_talent}{Total runs of fielding talent above average per game (36 plate appearances)} 
-  \item{tm_PIT_talent}{Total runs of pitching talent above average per game (9 innings)} 
-  \item{MLB_avg_RPG}{MLB average runs scored/game that season} 
-  \item{talent_RSPG}{Expected runs scored per game based on talent (MLB R/G + team OFF talent)} 
-  \item{talent_RAPG}{Expected runs allowed per game based on talent (MLB R/G - team DEF talent- team PIT talent)} 
-  \item{unadj_PYTH}{Unadjusted pythagorean talent rating; PYTH =(RSPG^1.83)/(RSPG^1.83+RAPG^1.83)} 
+  \item{yearid}{The season in question} 
+  \item{gamenum}{Order of All-Star Game for the season (in years w/ multiple ASGs; set to 0 when only 1 per year)} 
+  \item{gameid}{Game ID at Baseball-Reference.com} 
+  \item{lgid}{League of All-Star team} 
+  \item{tm_off_talent}{Total runs of offensive talent above average per game (36 plate appearances)} 
+  \item{tm_def_talent}{Total runs of fielding talent above average per game (36 plate appearances)} 
+  \item{tm_pit_talent}{Total runs of pitching talent above average per game (9 innings)} 
+  \item{mlb_avg_rpg}{MLB average runs scored/game that season} 
+  \item{talent_rspg}{Expected runs scored per game based on talent (MLB R/G + team OFF talent)} 
+  \item{talent_rapg}{Expected runs allowed per game based on talent (MLB R/G - team DEF talent- team PIT talent)} 
+  \item{unadj_pyth}{Unadjusted pythagorean talent rating; PYTH =(RSPG^1.83)/(RSPG^1.83+RAPG^1.83)} 
   \item{timeline_adj}{Estimate of relative league quality where 2015 MLB = 1.00} 
-  \item{SOS}{Strength of schedule faced; adjusts an assumed .500 SOS downward based on timeline adjustment} 
-  \item{adj_PYTH}{Adjusted pythagorean record; =(SOS*unadj_Pyth)/((2*unadj_Pyth*SOS)-SOS-unadj_Pyth+1)} 
+  \item{sos}{Strength of schedule faced; adjusts an assumed .500 SOS downward based on timeline adjustment} 
+  \item{adj_pyth}{Adjusted pythagorean record; =(SOS*unadj_Pyth)/((2*unadj_Pyth*SOS)-SOS-unadj_Pyth+1)} 
   \item{no_1_player}{Best player according to combo of actual PA/IP and talent} 
   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent} 
 }}

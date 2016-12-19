@@ -176,6 +176,7 @@ nba_elo <- read_csv("data-raw/nba-elo/nbaallelo.csv") %>%
 colnames(nba_elo) <- colnames(nba_elo) %>% 
   tolower() %>% 
   str_replace_all(" ", "_")     
+# Not included due to size
 #devtools::use_data(nba_elo, overwrite = TRUE) 
 
 # nba_tattoos ----------------------------------------------------------------------
@@ -194,7 +195,7 @@ nba_winprobs <- read_tsv("data-raw/nba-winprobs/nba.tsv")
 colnames(nba_winprobs) <- colnames(nba_winprobs) %>% 
   tolower() %>% 
   str_replace_all(" ", "_") 
-devtools::use_data(nba_winprobs, overwrite = TRUE) 
+#devtools::use_data(nba_winprobs, overwrite = TRUE) 
 
 # nfl_favorite_team ----------------------------------------------------------------
 nfl_fav_team <- 

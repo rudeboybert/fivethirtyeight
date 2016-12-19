@@ -135,20 +135,20 @@
 #'
 #' @format A data frame with 172 rows representing Major League Baseball seasons and 16 variables:
 #' \describe{
-#'   \item{yearID}{The season in question} 
-#'   \item{gameNum}{Order of All-Star Game for the season (in years w/ multiple ASGs; set to 0 when only 1 per year)} 
-#'   \item{gameID}{Game ID at Baseball-Reference.com} 
-#'   \item{lgID}{League of All-Star team} 
-#'   \item{tm_OFF_talent}{Total runs of offensive talent above average per game (36 plate appearances)} 
-#'   \item{tm_DEF_talent}{Total runs of fielding talent above average per game (36 plate appearances)} 
-#'   \item{tm_PIT_talent}{Total runs of pitching talent above average per game (9 innings)} 
-#'   \item{MLB_avg_RPG}{MLB average runs scored/game that season} 
-#'   \item{talent_RSPG}{Expected runs scored per game based on talent (MLB R/G + team OFF talent)} 
-#'   \item{talent_RAPG}{Expected runs allowed per game based on talent (MLB R/G - team DEF talent- team PIT talent)} 
-#'   \item{unadj_PYTH}{Unadjusted pythagorean talent rating; PYTH =(RSPG^1.83)/(RSPG^1.83+RAPG^1.83)} 
+#'   \item{yearid}{The season in question} 
+#'   \item{gamenum}{Order of All-Star Game for the season (in years w/ multiple ASGs; set to 0 when only 1 per year)} 
+#'   \item{gameid}{Game ID at Baseball-Reference.com} 
+#'   \item{lgid}{League of All-Star team} 
+#'   \item{tm_off_talent}{Total runs of offensive talent above average per game (36 plate appearances)} 
+#'   \item{tm_def_talent}{Total runs of fielding talent above average per game (36 plate appearances)} 
+#'   \item{tm_pit_talent}{Total runs of pitching talent above average per game (9 innings)} 
+#'   \item{mlb_avg_rpg}{MLB average runs scored/game that season} 
+#'   \item{talent_rspg}{Expected runs scored per game based on talent (MLB R/G + team OFF talent)} 
+#'   \item{talent_rapg}{Expected runs allowed per game based on talent (MLB R/G - team DEF talent- team PIT talent)} 
+#'   \item{unadj_pyth}{Unadjusted pythagorean talent rating; PYTH =(RSPG^1.83)/(RSPG^1.83+RAPG^1.83)} 
 #'   \item{timeline_adj}{Estimate of relative league quality where 2015 MLB = 1.00} 
-#'   \item{SOS}{Strength of schedule faced; adjusts an assumed .500 SOS downward based on timeline adjustment} 
-#'   \item{adj_PYTH}{Adjusted pythagorean record; =(SOS*unadj_Pyth)/((2*unadj_Pyth*SOS)-SOS-unadj_Pyth+1)} 
+#'   \item{sos}{Strength of schedule faced; adjusts an assumed .500 SOS downward based on timeline adjustment} 
+#'   \item{adj_pyth}{Adjusted pythagorean record; =(SOS*unadj_Pyth)/((2*unadj_Pyth*SOS)-SOS-unadj_Pyth+1)} 
 #'   \item{no_1_player}{Best player according to combo of actual PA/IP and talent} 
 #'   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent} 
 #' }
@@ -207,6 +207,25 @@
 
 
 
+#' A Handful Of Cities Are Driving 2016's Rise In Murder
+#'
+#' The raw data behind the story
+#' "A Handful Of Cities Are Driving 2016's Rise In Murder"
+#' \url{http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/}.
+#'
+#' @format A data frame with 83 rows representing large US cities and 5 variables:
+#' \describe{
+#'   \item{city}{Name of city} 
+#'   \item{state}{Name of state} 
+#'   \item{murders_2014}{Total murders in 2014} 
+#'   \item{murders_2015}{Total murders in 2015} 
+#'   \item{change}{2015 - 2014} 
+#' }
+#' @source Unknown 
+"murder_2015_final"
+
+
+
 #' Projecting The Top 50 Players In The 2015 NBA Draft Class
 #'
 #' The raw data behind the story
@@ -227,43 +246,6 @@
 #' }
 #' @source See \url{http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}
 "nba_draft_2015"
-
-
-
-#' Complete History Of The NBA
-#'
-#' The raw data behind the story
-#' "Complete History Of The NBA"
-#' \url{http://fivethirtyeight.com/interactives/the-complete-history-of-every-nba-team-by-elo}.
-#'
-#' @format A data frame with 126314 rows representing games in US professional basketball history and 23 variables:
-#' \describe{
-#'   \item{gameorder}{Play order of game in NBA history} 
-#'   \item{game_id}{Unique ID for each game} 
-#'   \item{lg_id}{Which league the game was played in} 
-#'   \item{_iscopy}{Each row of data is tied to a single team for a single game, so _iscopy flags if this game_id has already occured for the opposing team in the same matchup} 
-#'   \item{year_id}{Season id, named based on year in which the season ended} 
-#'   \item{date_game}{Game date} 
-#'   \item{seasongame}{Number of game in season} 
-#'   \item{is_playoffs}{Flag for playoff games} 
-#'   \item{team_id}{Three letter code for team name, from Basketball Reference} 
-#'   \item{fran_id}{Franchise id. Multiple team_ids can fall under the same fran_id due to name changes or moves. Interactive is grouped by fran_id.} 
-#'   \item{pts}{Points scored by team} 
-#'   \item{elo_i}{Team elo entering the game} 
-#'   \item{elo_n}{Team elo following the game} 
-#'   \item{win_equiv}{Equivalent number of wins in a 82-game season for a team of elo_n quality} 
-#'   \item{opp_id}{Team id of opponent} 
-#'   \item{opp_fran}{Franchise id of opponent} 
-#'   \item{opp_pts}{Points scored by opponent} 
-#'   \item{opp_elo_i}{Opponent elo entering the game} 
-#'   \item{opp_elo_n}{Opponent elo following the game} 
-#'   \item{game_location}{Home (H), away (A), or neutral (N)} 
-#'   \item{game_result}{Win or loss for team in the team_id column} 
-#'   \item{forecast}{Elo-based chances of winning for the team in the team_id column, based on elo ratings and game location} 
-#'   \item{notes}{Additional information} 
-#' }
-#' @source Basketball Reference \url{http://basketball-reference.com}
-"nba_elo"
 
 
 
@@ -291,6 +273,7 @@
 #'
 #' @format A data frame with 32 rows representing National Football League teams and 17 variables:
 #' \describe{
+#'   \item{team}{Name of NFL team} 
 #'   \item{fan_relations}{Fan relations - Courtesy by players, coaches and front offices toward fans, and how well a team uses technology to reach them} 
 #'   \item{ownership}{Ownership - Honesty; loyalty to core players and the community} 
 #'   \item{players}{Players - Effort on the field, likability off it} 
@@ -305,7 +288,7 @@
 #'   \item{small_market}{Small Market - Size of market in terms of population, where smaller is better} 
 #'   \item{stadium_exp}{Stadium experience - Quality of venue; fan-friendliness of environment; frequency of game-day promotions} 
 #'   \item{coaching}{Coaching - Strength of on-field leadership} 
-#'   \item{tradition}{Uniform - Stylishness of uniform design, according to Uni Watch's Paul Lukas} 
+#'   \item{uniform}{Uniform - Stylishness of uniform design, according to Uni Watch's Paul Lukas} 
 #'   \item{big_market}{Big Market - Size of market in terms of population, where bigger is better} 
 #' }
 #' @source \url{http://www.espn.com/sportsnation/teamrankings}, \url{http://www.allourideas.org/nflteampickingsample} 
