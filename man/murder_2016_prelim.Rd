@@ -8,11 +8,11 @@
 \describe{
   \item{city}{Name of city} 
   \item{state}{Name of state} 
-  \item{murders_2015}{Total murders in 2015} 
-  \item{murders_2016}{Total murders in 2016 (as of \code{as_of} date)} 
+  \item{murders_2015}{Number of murders in 2015} 
+  \item{murders_2016}{Number of murder in 2016 (as of \code{as_of} date)} 
   \item{change}{2016 - 2015} 
-  \item{source}{Data source for row} 
-  \item{as_of}{2016 collection date} 
+  \item{source}{Source of data} 
+  \item{as_of}{2016 murders up to this date} 
 }}
 \source{
 Listed as \code{source} variable in dataset

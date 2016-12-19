@@ -24,7 +24,7 @@
   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent} 
 }}
 \source{
-http://baseball-reference.com , http://chadwick-bureau.com, Fangraphs
+\url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
 }
 \usage{
 mlb_as_team_talent

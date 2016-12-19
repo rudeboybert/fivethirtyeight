@@ -93,17 +93,17 @@
 #'   \item{performer}{The name of the actor, according to IMDb. This is not a unique identifier - two performers appeared in more than one program} 
 #'   \item{show}{The television show where this actor appeared in more than half the episodes} 
 #'   \item{show_start}{The year the television show began} 
-#'   \item{show_end}{The year the television show ended, "PRESENT" if the show remains on the air as of May 10. } 
-#'   \item{status}{Why the actor is no longer on the program:  "END" if the show has concluded, "LEFT" if the show remains on the air.} 
-#'   \item{charend}{The year the character left the show. Equal to "Show End" if the performer stayed on until the final season. } 
+#'   \item{show_end}{The year the television show ended, "PRESENT" if the show remains on the air as of May 10.} 
+#'   \item{status}{Why the actor is no longer on the program: "END" if the show has concluded, "LEFT" if the show remains on the air.} 
+#'   \item{charend}{The year the character left the show. Equal to "Show End" if the performer stayed on until the final season.} 
 #'   \item{years_since}{2015 minus CharEnd} 
 #'   \item{num_lead}{The number of leading roles in films the performer has appeared in since and including "CharEnd", according to OpusData} 
 #'   \item{num_support}{The number of leading roles in films the performer has appeared in since and including "CharEnd", according to OpusData} 
 #'   \item{num_shows}{The number of seasons of television of which the performer appeared in at least half the episodes since and including "CharEnd", according to OpusData} 
 #'   \item{score}{#LEAD + #Shows + 0.25*(#SUPPORT)} 
 #'   \item{score_div_y}{"Score" divided by "Years Since"} 
-#'   \item{lead_notes}{The list of films  counted in #LEAD} 
-#'   \item{support_notes}{The list of films  counted in #SUPPORT} 
+#'   \item{lead_notes}{The list of films counted in #LEAD} 
+#'   \item{support_notes}{The list of films counted in #SUPPORT} 
 #'   \item{show_notes}{The seasons of shows counted in #Shows} 
 #' }
 #' @source IMDB \url{http://imdb.com}
@@ -120,7 +120,7 @@
 #' @format A data frame with 320 rows representing job categories and 2 variables:
 #' \describe{
 #'   \item{job_category}{Category of job} 
-#'   \item{percentage_male}{Percentage of US employees that are male} 
+#'   \item{percentage_male}{Percentage of workforce that are male} 
 #' }
 #' @source IPUMS 2012 \url{https://usa.ipums.org/usa/}
 "male_flight_attend"
@@ -152,7 +152,7 @@
 #'   \item{no_1_player}{Best player according to combo of actual PA/IP and talent} 
 #'   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent} 
 #' }
-#' @source http://baseball-reference.com , http://chadwick-bureau.com, Fangraphs 
+#' @source \url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs 
 "mlb_as_team_talent"
 
 
@@ -181,7 +181,7 @@
 #'   \item{pitper9innasg}{Expected pitching runs added above average (from talent) based on IP in ASG, scaled to a 9-inning game} 
 #'   \item{totper9innasg}{Expected runs added above average (from talent) based on PA/IP in ASG, scaled to a 9-inning game} 
 #' }
-#' @source http://baseball-reference.com , http://chadwick-bureau.com, Fangraphs 
+#' @source \url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs 
 "mlb_as_play_talent"
 
 
@@ -196,11 +196,11 @@
 #' \describe{
 #'   \item{city}{Name of city} 
 #'   \item{state}{Name of state} 
-#'   \item{murders_2015}{Total murders in 2015} 
-#'   \item{murders_2016}{Total murders in 2016 (as of \code{as_of} date)} 
+#'   \item{murders_2015}{Number of murders in 2015} 
+#'   \item{murders_2016}{Number of murder in 2016 (as of \code{as_of} date)} 
 #'   \item{change}{2016 - 2015} 
-#'   \item{source}{Data source for row} 
-#'   \item{as_of}{2016 collection date} 
+#'   \item{source}{Source of data} 
+#'   \item{as_of}{2016 murders up to this date} 
 #' }
 #' @source Listed as \code{source} variable in dataset 
 "murder_2016_prelim"
@@ -227,6 +227,266 @@
 #' }
 #' @source See \url{http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}
 "nba_draft_2015"
+
+
+
+#' Complete History Of The NBA
+#'
+#' The raw data behind the story
+#' "Complete History Of The NBA"
+#' \url{http://fivethirtyeight.com/interactives/the-complete-history-of-every-nba-team-by-elo}.
+#'
+#' @format A data frame with 126314 rows representing games in US professional basketball history and 23 variables:
+#' \describe{
+#'   \item{gameorder}{Play order of game in NBA history} 
+#'   \item{game_id}{Unique ID for each game} 
+#'   \item{lg_id}{Which league the game was played in} 
+#'   \item{_iscopy}{Each row of data is tied to a single team for a single game, so _iscopy flags if this game_id has already occured for the opposing team in the same matchup} 
+#'   \item{year_id}{Season id, named based on year in which the season ended} 
+#'   \item{date_game}{Game date} 
+#'   \item{seasongame}{Number of game in season} 
+#'   \item{is_playoffs}{Flag for playoff games} 
+#'   \item{team_id}{Three letter code for team name, from Basketball Reference} 
+#'   \item{fran_id}{Franchise id. Multiple team_ids can fall under the same fran_id due to name changes or moves. Interactive is grouped by fran_id.} 
+#'   \item{pts}{Points scored by team} 
+#'   \item{elo_i}{Team elo entering the game} 
+#'   \item{elo_n}{Team elo following the game} 
+#'   \item{win_equiv}{Equivalent number of wins in a 82-game season for a team of elo_n quality} 
+#'   \item{opp_id}{Team id of opponent} 
+#'   \item{opp_fran}{Franchise id of opponent} 
+#'   \item{opp_pts}{Points scored by opponent} 
+#'   \item{opp_elo_i}{Opponent elo entering the game} 
+#'   \item{opp_elo_n}{Opponent elo following the game} 
+#'   \item{game_location}{Home (H), away (A), or neutral (N)} 
+#'   \item{game_result}{Win or loss for team in the team_id column} 
+#'   \item{forecast}{Elo-based chances of winning for the team in the team_id column, based on elo ratings and game location} 
+#'   \item{notes}{Additional information} 
+#' }
+#' @source Basketball Reference \url{http://basketball-reference.com}
+"nba_elo"
+
+
+
+#' Accurately Counting NBA Tattoos Isn't Easy, Even If You're Up Close
+#'
+#' The raw data behind the story
+#' "Accurately Counting NBA Tattoos Isn't Easy, Even If You're Up Close"
+#' \url{http://fivethirtyeight.com/datalab/accurately-counting-nba-tattoos-isnt-easy-even-if-youre-up-close/}.
+#'
+#' @format A data frame with 636 rows representing National Basketball Association players and 2 variables:
+#' \describe{
+#'   \item{player_name}{Name of player} 
+#'   \item{tattoos}{TRUE corresponds to player having tattoos, FALSE corresponds to not} 
+#' }
+#' @source Ethan Swan \url{http://nbatattoos.tumblr.com/}
+"nba_tattoos"
+
+
+
+#' The Rams Are Dead To Me, So I Answered 3,352 Questions To Find A New NFL Team
+#'
+#' The raw data behind the story
+#' "The Rams Are Dead To Me, So I Answered 3,352 Questions To Find A New NFL Team"
+#' \url{http://fivethirtyeight.com/features/the-rams-are-dead-to-me-so-i-answered-3352-questions-to-find-a-new-team/}.
+#'
+#' @format A data frame with 32 rows representing National Football League teams and 17 variables:
+#' \describe{
+#'   \item{fan_relations}{Fan relations - Courtesy by players, coaches and front offices toward fans, and how well a team uses technology to reach them} 
+#'   \item{ownership}{Ownership - Honesty; loyalty to core players and the community} 
+#'   \item{players}{Players - Effort on the field, likability off it} 
+#'   \item{future_wins}{Future wins - Projected wins over next 5 seasons} 
+#'   \item{bandwagon}{Bandwagon Factor - Are the team's next 5 years likely to be better than their previous 5?} 
+#'   \item{tradition}{Tradition - Championships/division titles/wins in team's entire history} 
+#'   \item{bang_buck}{Bang for the buck - Wins per fan dollars spent} 
+#'   \item{behavior}{Behavior - Suspensions by players on team since 2007, with extra weight to transgressions vs. women} 
+#'   \item{nyc_prox}{Proximity to New York City} 
+#'   \item{stlouis_prox}{Proximity to St. Louis} 
+#'   \item{afford}{Affordability - Price of tickets, parking and concessions} 
+#'   \item{small_market}{Small Market - Size of market in terms of population, where smaller is better} 
+#'   \item{stadium_exp}{Stadium experience - Quality of venue; fan-friendliness of environment; frequency of game-day promotions} 
+#'   \item{coaching}{Coaching - Strength of on-field leadership} 
+#'   \item{tradition}{Uniform - Stylishness of uniform design, according to Uni Watch's Paul Lukas} 
+#'   \item{big_market}{Big Market - Size of market in terms of population, where bigger is better} 
+#' }
+#' @source \url{http://www.espn.com/sportsnation/teamrankings}, \url{http://www.allourideas.org/nflteampickingsample} 
+"nfl_fav_team"
+
+
+
+#' The NFL's Uneven History Of Punishing Domestic Violence
+#'
+#' The raw data behind the story
+#' "The NFL's Uneven History Of Punishing Domestic Violence"
+#' \url{http://fivethirtyeight.com/features/nfl-domestic-violence-policy-suspensions/}.
+#'
+#' @format A data frame with 269 rows representing National Football League players and 7 variables:
+#' \describe{
+#'   \item{name}{first initial.last name} 
+#'   \item{team}{team at time of suspension} 
+#'   \item{games}{number of games suspended (one regular season = 16 games)} 
+#'   \item{category}{personal conduct, substance abuse, peformance enhancing drugs or in-game violence} 
+#'   \item{description}{description of suspension} 
+#'   \item{year}{year of suspension} 
+#'   \item{source}{news source} 
+#' }
+#' @source \url{http://en.wikipedia.org/wiki/List_of_players_and_coaches_suspended_by_the_NFL}, \url{http://www.spotrac.com/fines-tracker/nfl/suspensions/} 
+"nfl_suspensions"
+
+
+
+#' Who Goes To Meaningless NFL Games And Why?
+#'
+#' The raw data behind the story
+#' "Who Goes To Meaningless NFL Games And Why?"
+#' \url{http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/}.
+#'
+#' @format A data frame with 108 rows representing National Football League games and 3 variables:
+#' \describe{
+#'   \item{event}{NFL divisional game info} 
+#'   \item{division}{NFL division} 
+#'   \item{avg_tix_price}{Average ticket price} 
+#' }
+#' @source StubHub \url{http://stubhub.com}
+"nfltix_div_avgprice"
+
+
+
+#' Who Goes To Meaningless NFL Games And Why?
+#'
+#' The raw data behind the story
+#' "Who Goes To Meaningless NFL Games And Why?"
+#' \url{http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/}.
+#'
+#' @format A data frame with 32 rows representing National Football League teams and 2 variables:
+#' \describe{
+#'   \item{team}{Name of NFL team} 
+#'   \item{avg_tix_price}{Average ticket price} 
+#' }
+#' @source StubHub \url{http://stubhub.com}
+"nfltix_usa_avg"
+
+
+
+#' The Football Hall Of Fame Has A Receiver Problem
+#'
+#' The raw data behind the story
+#' "The Football Hall Of Fame Has A Receiver Problem"
+#' \url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
+#'
+#' @format A data frame with 6496 rows representing National Football League wide receivers and 6 variables:
+#' \describe{
+#'   \item{pfr_player_id}{Player identification code at \url{Pro-Football-Reference.com}} 
+#'   \item{player_name}{The player's name} 
+#'   \item{career_try}{Career True Receiving Yards} 
+#'   \item{career_ranypa}{Adjusted Net Yards Per Attempt (relative to average) of player's career teams, weighted by TRY w/ each team} 
+#'   \item{career_wowy}{The amount by which \code{career_ranypa} exceeds what would be expected from his QBs' (age-adjusted) performance without the receiver} 
+#'   \item{bcs_rating}{The number of yards per game by which a player would outgain an average receiver on the same team, after adjusting for teammate quality and age (update of \url{http://www.sabernomics.com/sabernomics/index.php/2005/02/ranking-the-all-time-great-wide-receivers/})} 
+#' }
+#' @source See \url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}
+"nflwr_hist"
+
+
+
+#' The Football Hall Of Fame Has A Receiver Problem
+#'
+#' The raw data behind the story
+#' "The Football Hall Of Fame Has A Receiver Problem"
+#' \url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
+#'
+#' @format A data frame with 24 rows representing National Football League wide receiver ages and 3 variables:
+#' \describe{
+#'   \item{age_from}{Beginning age} 
+#'   \item{age_to}{Ending age} 
+#'   \item{trypg_change}{Change in TRY per game from one age-year to next} 
+#' }
+#' @source Unknown 
+"nflwr_aging_curve"
+
+
+
+#' You Can't Trust What You Read About Nutrition
+#'
+#' The raw data behind the story
+#' "You Can't Trust What You Read About Nutrition"
+#' \url{http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}.
+#'
+#' @format A data frame with 27716 rows representing Regression fits for p-hacking and 3 variables:
+#' \describe{
+#'   \item{food}{Name of food (response/dependent variable)} 
+#'   \item{characteristic}{Name of characteristic (predictor/independent variable)} 
+#'   \item{p_values}{P-value from regression fit} 
+#' }
+#' @source See \url{http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}
+"nutrition_pvalues"
+
+
+
+#' The Dallas Shooting Was Among The Deadliest For Police In U.S. History
+#'
+#' The raw data behind the story
+#' "The Dallas Shooting Was Among The Deadliest For Police In U.S. History"
+#' \url{https://fivethirtyeight.com/features/the-dallas-shooting-was-among-the-deadliest-for-police-in-u-s-history/}.
+#'
+#' @format A data frame with 22800 rows representing Police officers/dogs who lost their lives and 7 variables:
+#' \describe{
+#'   \item{person}{Name of person/canine who died} 
+#'   \item{cause_of_death}{Cause of death} 
+#'   \item{date}{Date of event} 
+#'   \item{year}{Year of event} 
+#'   \item{canine}{TRUE if canine, FALSE if human} 
+#'   \item{dept_name}{Name of police department} 
+#'   \item{state}{State of police department} 
+#' }
+#' @source Officer Down Memorial Page \url{https://www.odmp.org/}
+"police_deaths"
+
+
+
+#' Where Police Have Killed Americans In 2015
+#'
+#' The raw data behind the story
+#' "Where Police Have Killed Americans In 2015"
+#' \url{http://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015}.
+#'
+#' @format A data frame with 467 rows representing People who died from interactions with police and 34 variables:
+#' \describe{
+#'   \item{name}{Name of deceased} 
+#'   \item{age}{Age of deceased} 
+#'   \item{gender}{Gender of deceased} 
+#'   \item{raceethnicity}{Race/ethnicity of deceased} 
+#'   \item{month}{Month of killing} 
+#'   \item{day}{Day of incident} 
+#'   \item{year}{Year of incident} 
+#'   \item{streetaddress}{Address/intersection where incident occurred} 
+#'   \item{city}{City where incident occurred} 
+#'   \item{state}{State where incident occurred} 
+#'   \item{latitude}{Latitude, geocoded from address} 
+#'   \item{longitude}{Longitude, geocoded from address} 
+#'   \item{state_fp}{State FIPS code} 
+#'   \item{county_fp}{County FIPS code} 
+#'   \item{tract_ce}{Tract ID code} 
+#'   \item{geo_id}{Combined tract ID code} 
+#'   \item{county_id}{Combined county ID code} 
+#'   \item{namelsad}{Tract description} 
+#'   \item{lawenforcementagency}{Agency involved in incident} 
+#'   \item{cause}{Cause of death} 
+#'   \item{armed}{How/whether deceased was armed} 
+#'   \item{pop}{Tract population} 
+#'   \item{share_white}{Share of pop that is non-Hispanic white} 
+#'   \item{share_black}{Share of pop that is black (alone, not in combination)} 
+#'   \item{share_hispanic}{Share of pop that is Hispanic/Latino (any race)} 
+#'   \item{p_income}{Tract-level median personal income} 
+#'   \item{h_income}{Tract-level median household income} 
+#'   \item{county_income}{County-level median household income} 
+#'   \item{comp_income}{`h_income` / `county_income`} 
+#'   \item{county_bucket}{Household income, quintile within county} 
+#'   \item{nat_bucket}{Household income, quintile nationally} 
+#'   \item{pov}{Tract-level poverty rate (official)} 
+#'   \item{urate}{Tract-level unemployment rate} 
+#'   \item{college}{Share of 25+ pop with BA or higher} 
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/police-killings}
+"police_killings"
 
 
 

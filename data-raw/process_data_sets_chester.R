@@ -2,6 +2,9 @@ library(tidyverse)
 library(stringr)
 library(lubridate)
 
+# Get list of variable names in df with newline
+get_names <- function(x) {cat(names(x), sep = "\n")}
+
 # Chester: forecast-methodology thru police-killings
 chester_folders <- list.files(path = "data-raw")[c(26:30, 32:51)]
 dirs <- paste0("data-raw/", chester_folders, "\n")
@@ -72,14 +75,16 @@ colnames(state_payrolls) <- colnames(state_payrolls) %>%
 
 # librarians -----------------------------------------------------------------------
 librarians <- read_csv("data-raw/librarians/new-librarians-by-msa.csv") %>% 
+  # Remove missing data rows
+  slice(-c(1,2)) %>% 
   # Drop row number variable
   select(-X1) %>%
-  # Remove two rows with no data
-  na.omit()
+  rename(loc_quotient = loc.quotient) %>% 
+  mutate(jobs_1000 = as.numeric(jobs_1000),
+         loc_quotient = as.numeric(loc_quotient))
 colnames(librarians) <- colnames(librarians) %>% 
   tolower() %>% 
-  str_replace_all(" ", "_")  %>% 
-  str_replace_all(".", "_")  
+  str_replace_all(" ", "_")  
 devtools::use_data(librarians, overwrite = TRUE) 
 
 
@@ -164,58 +169,132 @@ colnames(nba_draft_2015) <- colnames(nba_draft_2015) %>%
 devtools::use_data(nba_draft_2015, overwrite = TRUE) 
 
 # nba_elo --------------------------------------------------------------------------
-nba_elo <- read_csv("data-raw/nba-elo/nbaallelo.csv")
+nba_elo <- read_csv("data-raw/nba-elo/nbaallelo.csv") %>% 
+  rename(is_copy = `_iscopy`) %>% 
+  mutate(is_playoffs = ifelse(is_playoffs == 1, TRUE, FALSE),
+         is_copy = ifelse(is_copy == 1, TRUE, FALSE)) 
 colnames(nba_elo) <- colnames(nba_elo) %>% 
   tolower() %>% 
   str_replace_all(" ", "_")     
-devtools::use_data(nba_elo, overwrite = TRUE) 
+#devtools::use_data(nba_elo, overwrite = TRUE) 
 
 # nba_tattoos ----------------------------------------------------------------------
-nba_tattoos <-
-  
-  devtools::use_data(nba_tattoos, overwrite = TRUE) 
+nba_tattoos <- read_csv("data-raw/nba-tattoos/nba-tattoos-data.csv") %>% 
+  rename(player_name = `Player Name`,
+         tattoos = `Tattoos yes/no`) %>% 
+  mutate(tattoos = ifelse(tattoos == "yes", TRUE, FALSE))
+colnames(nba_tattoos) <- colnames(nba_tattoos) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")   
+devtools::use_data(nba_tattoos, overwrite = TRUE) 
 
 # nba_winprobs ---------------------------------------------------------------------
-nba_winprobs <-
-  
-  devtools::use_data(nba_winprobs, overwrite = TRUE) 
+# Needs tidying (documentation not created)
+nba_winprobs <- read_tsv("data-raw/nba-winprobs/nba.tsv")
+colnames(nba_winprobs) <- colnames(nba_winprobs) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_") 
+devtools::use_data(nba_winprobs, overwrite = TRUE) 
 
 # nfl_favorite_team ----------------------------------------------------------------
-nfl_favorite_team <-
-  
-  devtools::use_data(nfl_favorite_team, overwrite = TRUE) 
+nfl_fav_team <- 
+  read_csv("data-raw/nfl-favorite-team/team-picking-categories.csv") %>% 
+  rename(big_market = BMK,
+         uniform = UNI,
+         coaching = CCH,
+         stadium_exp = STX,
+         small_market  = SMK,
+         afford = AFF,
+         stlouis_prox = SLP,
+         nyc_prox = NYP,
+         fan_relations = FRL,
+         bang_buck = BNG,
+         tradition = TRD,
+         bandwagon = BWG,
+         future_wins = FUT,
+         players = PLA,
+         ownership = OWN,
+         behavior = BEH)
+colnames(nfl_fav_team) <- colnames(nfl_fav_team) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_") 
+devtools::use_data(nfl_fav_team, overwrite = TRUE) 
 
 # nfl_suspensions ------------------------------------------------------------------
-nfl_suspensions <-
-  
-  devtools::use_data(nfl_suspensions, overwrite = TRUE) 
+nfl_suspensions <- read_csv("data-raw/nfl-suspensions/nfl-suspensions-data.csv") %>% 
+  rename(description = `desc.`)
+colnames(nfl_suspensions) <- colnames(nfl_suspensions) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")   
+devtools::use_data(nfl_suspensions, overwrite = TRUE) 
 
 # nfl_ticket_prices ----------------------------------------------------------------
-nfl_ticket_prices <-
-  
-  devtools::use_data(nfl_ticket_prices, overwrite = TRUE) 
+nfltix_div_avgprice <- 
+  read_csv("data-raw/nfl-ticket-prices/2014-average-ticket-price.csv") %>% 
+  rename(avg_tix_price = `Avg TP, $`)
+colnames(nfltix_div_avgprice) <- colnames(nfltix_div_avgprice) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")  
+devtools::use_data(nfltix_div_avgprice, overwrite = TRUE) 
+ 
+nfltix_jets_buy <- read_csv("data-raw/nfl-ticket-prices/jets-buyer.csv")
+# Needs cleaning, multiple subtables
+
+nfltix_usa_avg <- read_csv("data-raw/nfl-ticket-prices/national-average.csv") %>% 
+  rename(avg_tix_price = `Avg TP, $`,
+         team = Genre) %>% 
+  mutate(team = str_replace_all(team, pattern = " Tickets", replacement = ""))
+colnames(nfltix_usa_avg) <- colnames(nfltix_usa_avg) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_") 
+devtools::use_data(nfltix_usa_avg, overwrite = TRUE)
+
 
 # nfl_wide_receivers ---------------------------------------------------------------
-nfl_wide_receivers <-
-  
-  devtools::use_data(nfl_wide_receivers, overwrite = TRUE) 
+nflwr_hist <- read_csv("data-raw/nfl-wide-receivers/advanced-historical.csv",
+                        na = "NULL")
+colnames(nflwr_hist) <- colnames(nfl_wr_hist) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")   
+devtools::use_data(nflwr_hist, overwrite = TRUE) 
+
+nflwr_aging_curve <- read_csv("data-raw/nfl-wide-receivers/try-per-game-aging-curve.csv")
+colnames(nflwr_aging_curve) <- colnames(nflwr_aging_curve) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")   
+devtools::use_data(nflwr_aging_curve, overwrite = TRUE) 
 
 # nutrition_studies ----------------------------------------------------------------
-nutrition_studies <-
-  
-  devtools::use_data(nutrition_studies, overwrite = TRUE) 
+nutrition_survey <- read_csv("data-raw/nutrition-studies/raw_anonymized_data.csv")
+colnames(nutrition_survey) <- colnames(nutrition_survey) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_") 
+# Needs to be flipped with survey respondent as OU
+
+nutrition_pvalues <- read_csv("data-raw/nutrition-studies/p_values_analysis.csv")
+colnames(nutrition_pvalues) <- colnames(nutrition_pvalues) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")   
+devtools::use_data(nutrition_pvalues, overwrite = TRUE) 
 
 # pew_religions --------------------------------------------------------------------
-pew_religions <-
-  
-  devtools::use_data(pew_religions, overwrite = TRUE) 
+# A transition matrix of data is included here.
+
 
 # police_deaths --------------------------------------------------------------------
-police_deaths <-
-  
-  devtools::use_data(police_deaths, overwrite = TRUE) 
+police_deaths <- read_csv("data-raw/police-deaths/clean_data.csv") %>%
+  # Removed extra variables
+  select(person, cause_short, date:state) %>% 
+  rename(cause_of_death = cause_short)
+colnames(police_deaths) <- colnames(police_deaths) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")    
+devtools::use_data(police_deaths, overwrite = TRUE) 
 
 # police_killings ------------------------------------------------------------------
-police_killings <-
-  
-  devtools::use_data(police_killings, overwrite = TRUE) 
+police_killings <- read_csv("data-raw/police-killings/police_killings.csv",
+                            na = "Unknown")
+colnames(police_killings) <- colnames(police_killings) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")     
+devtools::use_data(police_killings, overwrite = TRUE) 

@@ -3,11 +3,11 @@
 \docType{data}
 \name{san_andreas}
 \alias{san_andreas}
-\title{The Rock Isn’t Alone: Lots Of People Are Worried About ‘The Big One’}
+\title{The Rock Isn't Alone: Lots Of People Are Worried About 'The Big One'}
 \format{A data frame with 1013 rows representing respondents and 11 variables:
 \describe{
   \item{worry_general}{In general, how worried are you about earthquakes?}
-  \item{worry_bigone}{How worried are you about the “Big One,” a massive, catastrophic earthquake?}
+  \item{worry_bigone}{How worried are you about the "Big One," a massive, catastrophic earthquake?}
   \item{will_occur}{Do you think the "Big One" will occur in your lifetime?}
   \item{experience}{Have you ever experienced an earthquake?}
   \item{prepared }{Have you or anyone in your household taken any precautions for an earthquake (packed an earthquake survival kit, prepared an evacuation plan, etc.)?}
@@ -26,7 +26,7 @@ san_andreas
 }
 \description{
 The raw data behind the story
-"The Rock Isn’t Alone: Lots Of People Are Worried About ‘The Big One’"
+"The Rock Isn’t Alone: Lots Of People Are Worried About 'The Big One'"
 \url{http://fivethirtyeight.com/datalab/the-rock-isnt-alone-lots-of-people-are-worried-about-the-big-one/}.
 }
 \keyword{datasets}

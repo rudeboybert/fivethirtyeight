@@ -3,3 +3,5 @@
 ^data-raw$
 README.Rmd
 cran-comments.md
+.httr-oauth
+data/..rda

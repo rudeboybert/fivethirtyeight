@@ -23,7 +23,7 @@
   \item{totper9innasg}{Expected runs added above average (from talent) based on PA/IP in ASG, scaled to a 9-inning game} 
 }}
 \source{
-http://baseball-reference.com , http://chadwick-bureau.com, Fangraphs
+\url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
 }
 \usage{
 mlb_as_play_talent
