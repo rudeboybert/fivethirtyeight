@@ -4,4 +4,4 @@
 .Ruserdata
 *.Rproj
 .httr-oauth
-data/..rda
+data/.DS_Store
