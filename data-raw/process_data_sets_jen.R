@@ -34,14 +34,34 @@ cand_events_20150114 <- cand_events_20150114 %>%
   mutate(date = dmy(paste(date,"2015")) )
 devtools::use_data(cand_events_20150114, overwrite = TRUE)
 
-#cand_state_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/statements.csv")
-#devtools::use_data(cand_statements_20150114, overwrite = TRUE)
+cand_state_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/statements.csv")
+colnames(cand_state_20150114) <- colnames(cand_state_20150114) %>% tolower()
+cand_state_20150114 <- cand_state_20150114 %>% 
+  rename(date = `statement date`,
+         latest = `latest statement`,
+         score = `statement score`) %>% 
+  mutate(date = dmy(paste(date,"2015")),
+         score = factor(score, labels = c("Not running", "Haven't ruled out running but leaning towards no",
+                                          "Unsure","Actively exploring or seriously considering")))
+devtools::use_data(cand_state_20150114, overwrite = TRUE)
 
-#cand_events_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/events.csv")
-#devtools::use_data(cand_events_20150130, overwrite = TRUE)
 
-#cand_state_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/statements.csv")
-#devtools::use_data(cand_statements_20150130, overwrite = TRUE)
+cand_events_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/events.csv")
+colnames(cand_events_20150130) <- colnames(cand_events_20150130) %>% tolower()
+cand_events_20150130 <- cand_events_20150130 %>% 
+  mutate(date = dmy(paste(date,"2015")) )
+devtools::use_data(cand_events_20150130, overwrite = TRUE)
+
+cand_state_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/statements.csv")
+colnames(cand_state_20150130) <- colnames(cand_state_20150130) %>% tolower()
+cand_state_20150130 <- cand_state_20150130 %>% 
+  rename(date = `statement date`,
+         latest = `latest statement`,
+         score = `statement score`) %>% 
+  mutate(date = dmy(paste(date,"2015")),
+         score = factor(score, labels = c("Not running", "Haven't ruled out running but leaning towards no",
+                                          "Unsure","Actively exploring or seriously considering")))
+devtools::use_data(cand_state_20150130, overwrite = TRUE)
 
 
 
@@ -85,7 +105,7 @@ devtools::use_data(pulitzer, overwrite = TRUE)
 
 
 # religion-survey ---------------------------------------------------------------
-religion_survey <- read_csv("data-raw/religion-survey/religion-survey-results.csv")
+#religion_survey <- read_csv("data-raw/religion-survey/religion-survey-results.csv")
 #need to create all variable names
 #devtools::use_data(religion_survey, overwrite = TRUE)
 
@@ -127,24 +147,20 @@ san_andreas <- san_andreas %>%
                                levels = c("$0 to $9,999", "$10,000 to $24,999", "$25,000 to $49,999", 
                                           "$50,000 to $74,999", "$75,000 to $99,999", "$100,000 to $124,999", 
                                           "$125,000 to $149,999", "$150,000 to $174,999", "$175,000 to $199,999",
-                                          "$200,000 and up", "Prefer not to answer")),
-         region = factor(region, levels = c("New England", "Middle Atlantic", "South Atlantic",    
-                                            "East North Central", "West North Central",
-                                            "East South Central", "West South Central",  
-                                            "Mountain", "Pacific")))
+                                          "$200,000 and up", "Prefer not to answer")))
 devtools::use_data(san_andreas, overwrite = TRUE)
 
 
 
 # sleeping-alone-data ---------------------------------------------------------------
-sleeping_alone_data <- read_csv("data-raw/sleeping-alone-data/sleeping-alone-data.csv")
+# sleeping_alone_data <- read_csv("data-raw/sleeping-alone-data/sleeping-alone-data.csv")
 # much data editing needed
 #devtools::use_data(sleeping_alone_data, overwrite = TRUE)
 
 
 
 # star-wars-survey ---------------------------------------------------------------
-star_wars_survey <- read_csv("data-raw/star-wars-survey/StarWars.csv")
+# star_wars_survey <- read_csv("data-raw/star-wars-survey/StarWars.csv")
 # much data editing needed
 #devtools::use_data(star_wars_survey, overwrite = TRUE)
 
@@ -189,11 +205,7 @@ steak_survey <- steak_survey %>%
                                           "$100,000 - $149,999", "$150,000+")),
          educ = factor(educ, levels = c("Less than high school degree", "High school degree",
                                         "Some college or Associate degree","Bachelor degree", 
-                                        "Graduate degree")),
-         region = factor(region, levels = c("New England", "Middle Atlantic", "South Atlantic",    
-                                              "East North Central", "West North Central",
-                                              "East South Central", "West South Central",  
-                                              "Mountain", "Pacific")))
+                                        "Graduate degree")))
 devtools::use_data(steak_survey, overwrite = TRUE)
 
 
@@ -206,8 +218,8 @@ devtools::use_data(steak_survey, overwrite = TRUE)
 # tarantino ---------------------------------------------------------------
 tarantino <- read_csv("data-raw/tarantino/tarantino.csv")
 tarantino <- tarantino %>% 
-  mutate(type_word = ifelse(type == "word", TRUE, FALSE)) %>% 
-  select(movie, type_word, word, minutes_in)
+  mutate(profane = ifelse(type == "word", TRUE, FALSE)) %>% 
+  select(movie, profane, word, minutes_in)
 devtools::use_data(tarantino, overwrite = TRUE)
 
 
@@ -222,6 +234,7 @@ tennis_events_time <- tennis_events_time %>%
   mutate(surface = factor(surface),
          year_start = as.integer(year_start),
          year_end = as.integer(year_end)) %>% 
+  rename(sec_added = seconds_added_per_point) %>% 
   select(-years)
 
 devtools::use_data(tennis_events_time, overwrite = TRUE)
@@ -229,11 +242,14 @@ devtools::use_data(tennis_events_time, overwrite = TRUE)
 
 
 tennis_players_time <- read_csv("data-raw/tennis-time/players_time.csv")
+tennis_players_time <- tennis_players_time %>% rename(sec_added = seconds_added_per_point)
 devtools::use_data(tennis_players_time, overwrite = TRUE)
 
 tennis_serve_time <- read_csv("data-raw/tennis-time/serve_times.csv")
 tennis_serve_time <- tennis_serve_time %>% 
-  mutate(date = dmy(day)) %>% select(-day)
+  mutate(date = dmy(day)) %>% 
+  rename(sec_between = seconds_before_next_point) %>% 
+  select(-day)
 devtools::use_data(tennis_serve_time, overwrite = TRUE)
 
 
@@ -245,7 +261,7 @@ devtools::use_data(tennis_serve_time, overwrite = TRUE)
 
 
 # thanksgiving-2015 ---------------------------------------------------------------
-thanksgiving_2015 <- read_csv("data-raw/thanksgiving-2015/thanksgiving-2015-poll-data.csv")
+#thanksgiving_2015 <- read_csv("data-raw/thanksgiving-2015/thanksgiving-2015-poll-data.csv")
 #
 #need to create all variable names
 #devtools::use_data(thanksgiving_2015, overwrite = TRUE)
@@ -255,8 +271,8 @@ thanksgiving_2015 <- read_csv("data-raw/thanksgiving-2015/thanksgiving-2015-poll
 # trump-news ---------------------------------------------------------------
 trump_news <- read_csv("data-raw/trump-news/trump_news_data.csv")
 trump_news <- trump_news %>%
-  mutate(date = mdy(date),
-         major_category = factor(major_category)) 
+  mutate(date = mdy(date)) %>% 
+  rename(major_cat = major_category)
 devtools::use_data(trump_news, overwrite = TRUE)
 
 
@@ -284,28 +300,24 @@ colnames(weather_check) <- c("respondent_id",
                              "ck_weather",
                              "weather_source",
                              "weather_source_site",
-                             "ck_weather_smartwatch",
+                             "ck_weather_watch",
                              "age",
                              "female",
                              "hhold_income",
                              "region")
 weather_check <- weather_check %>%
   mutate(ck_weather = ifelse(ck_weather == "Yes", TRUE, FALSE),
-         weather_source = factor(weather_source),
-         ck_weather_smartwatch = factor(ck_weather_smartwatch, 
+         ck_weather_watch = factor(ck_weather_watch, 
                                         levels = c("Very unlikely", "Somewhat unlikely",
                                                    "Somewhat likely", "Very likely")),
-         age = factor(age),
+         age = factor(age,
+                      levels = c("18 - 29", "30 - 44", "45 - 59", "60+")),
          female = ifelse(female == "Female", TRUE, FALSE),
          hhold_income = factor(hhold_income, 
                                levels = c("$0 to $9,999", "$10,000 to $24,999", "$25,000 to $49,999", 
                                           "$50,000 to $74,999", "$75,000 to $99,999", "$100,000 to $124,999", 
                                           "$125,000 to $149,999", "$150,000 to $174,999", "$175,000 to $199,999",
-                                          "$200,000 and up", "Prefer not to answer")),
-         region = factor(region, levels = c("New England", "Middle Atlantic", "South Atlantic",    
-                                            "East North Central", "West North Central",
-                                            "East South Central", "West South Central",  
-                                            "Mountain", "Pacific")))
+                                          "$200,000 and up", "Prefer not to answer")))
 
 devtools::use_data(weather_check, overwrite = TRUE)
 

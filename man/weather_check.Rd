@@ -9,15 +9,15 @@
   \item{respondent_id}{Respondent ID}
   \item{ck_weather}{Do you typically check a daily weather report?}
   \item{weather_source}{How do you typically check the weather?}
-  \item{weather_source_site}{A specific website or app (please provide the answer)	If they responded this value for the second question, they were asked to write-in the app or website they used.}
-  \item{ck_weather_smartwatch}{If you had a smartwatch (like the soon to be released Apple Watch), how likely or unlikely would you be to check the weather on that device?}
+  \item{weather_source_site}{If they responded "A specific website or app" when asked how they typically check the weather, they were asked to write-in the app or website they used.}
+  \item{ck_weather_watch}{If you had a smartwatch (like the soon to be released Apple Watch), how likely or unlikely would you be to check the weather on that device?}
   \item{age}{Age}
   \item{female}{Gender}
   \item{hhold_income}{How much total combined money did all members of your HOUSEHOLD earn last year?}
   \item{region}{US Region}
 }}
 \source{
-LINKTEXT \url{SOURCEURL}
+The source of the data is a Survey Monkey Audience poll commissioned by FiveThirtyEight and conducted from April 6 to April 10, 2015.  See \url{https://github.com/fivethirtyeight/data/tree/master/weather-check}
 }
 \usage{
 weather_check

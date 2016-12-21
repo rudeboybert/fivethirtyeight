@@ -7,7 +7,7 @@
 \format{A data frame with 120 rows representing serves and 7 variables:
 \describe{
   \item{server}{Name of player serving at 2015 French Open}
-  \item{seconds_before_next_point}{Time in seconds between end of marked point and next serve, timed by stopwatch app}
+  \item{sec_between}{Time in seconds between end of marked point and next serve, timed by stopwatch app}
   \item{opponent}{Opponent, receiving serve}
   \item{game_score}{Score in the current game during the timed interval between points}
   \item{set}{Set number, out of five}

@@ -8,7 +8,7 @@
 \describe{
   \item{tournament}{Name of event}
   \item{surface}{Court surface used at the event}
-  \item{seconds_added_per_point}{Seconds added per point for this event on this surface in years shown, from regression model controlling for players, year and other factors}
+  \item{sec_added}{Seconds added per point for this event on this surface in years shown, from regression model controlling for players, year and other factors}
   \item{year_start}{Start year for data used from this tournament in regression}
   \item{year_end}{End year for data used from this tournament in regression}
 }}

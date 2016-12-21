@@ -41,7 +41,7 @@
 #'
 #' @format A data frame with 42 rows representing events attended in Iowa and New Hampshire by potential presidential primary candidates and 8 variables:
 #' \describe{
-#'   \item{person}{potential presidential candidate}
+#'   \item{person}{Potential presidential candidate}
 #'   \item{party}{Political party}
 #'   \item{state}{State of event}
 #'   \item{event}{Name of event}
@@ -51,7 +51,65 @@
 #'   \item{snippet}{Snippet of event description}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/potential-candidates}
+#' @seealso \code{\link{cand_state_20150114}}, \code{\link{cand_events_20150130}}, and \code{\link{cand_state_20150130}}
 "cand_events_20150114"
+
+#' Looking For Clues: Who Is Going To Run For President In 2016?
+#'
+#' The raw data behind the story
+#' "Looking For Clues: Who Is Going To Run For President In 2016?"
+#' \url{http://fivethirtyeight.com/datalab/2016-president-who-is-going-to-run/}.
+#'
+#' @format A data frame with 25 rows representing potential presidential primary candidates and 5 variables:
+#' \describe{
+#'   \item{person}{Potential presidential candidate}
+#'   \item{party}{Political party}
+#'   \item{date}{Date of event}
+#'   \item{latest}{Latest statement}
+#'   \item{score}{Likelihood of running score, 1 = Not running, 5 = Definitely running}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/potential-candidates}
+#' @seealso \code{\link{cand_events_20150114}}, \code{\link{cand_events_20150130}}, and \code{\link{cand_state_20150130}}
+"cand_state_20150114"
+
+#' Who Will Run For President: Romney Is Out
+#'
+#' The raw data behind the story
+#' "Who Will Run For President: Romney Is Out"
+#' \url{http://fivethirtyeight.com/datalab/romney-not-running-for-president/}.
+#'
+#' @format A data frame with 27 rows representing potential presidential primary candidates and 5 variables:
+#' \describe{
+#'   \item{person}{Potential presidential candidate}
+#'   \item{party}{Political party}
+#'   \item{date}{Date of event}
+#'   \item{latest}{Latest statement}
+#'   \item{score}{Likelihood of running score, 1 = Not running, 5 = Definitely running}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/potential-candidates}
+#' @seealso \code{\link{cand_events_20150130}}, \code{\link{cand_events_20150114}}, and \code{\link{cand_state_20150114}}
+"cand_state_20150130"
+
+#' Who Will Run For President: Romney Is Out
+#'
+#' The raw data behind the story
+#' "Who Will Run For President: Romney Is Out"
+#' \url{http://fivethirtyeight.com/datalab/romney-not-running-for-president/}.
+#'
+#' @format A data frame with 74 rows representing events attended by potential presidential primary candidates and 8 variables:
+#' \describe{
+#'   \item{person}{Potential presidential candidate}
+#'   \item{party}{Political party}
+#'   \item{state}{State of event}
+#'   \item{event}{Name of event}
+#'   \item{type}{Type of event}
+#'   \item{date}{Date of event}
+#'   \item{link}{Link to event}
+#'   \item{snippet}{Snippet of event description}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/potential-candidates}
+#' @seealso \code{\link{cand_state_20150130}}, \code{\link{cand_events_20150114}}, and \code{\link{cand_state_20150114}}
+"cand_events_20150130"
 
 
 
@@ -89,9 +147,9 @@
 #'   \item{circ2004}{Daily Circulation in 2004}
 #'   \item{circ2013}{Daily Circulation in 2013}
 #'   \item{pctchg_circ}{Percent change in Daily Circulation from 2004 to 2013}
-#'   \item{num_finals1990_2003}{Number of winners and finalists from 1990 to 2003}
-#'   \item{num_finals2004_2014}{Number of winners and finalists from 2004 to 2014}
-#'   \item{num_finals1990_2014}{Number of winners and finalists from 1990 to 2014}
+#'   \item{num_finals1990_2003}{Number of Pulitzer Prize winners and finalists from 1990 to 2003}
+#'   \item{num_finals2004_2014}{Number of Pulitzer Prize winners and finalists from 2004 to 2014}
+#'   \item{num_finals1990_2014}{Number of Pulitzer Prize winners and finalists from 1990 to 2014}
 #' }
 #' @source See \url{http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/}
 "pulitzer"
@@ -143,7 +201,7 @@
 #' @format A data frame with 1894 rows representing curse/death instances and 4 variables:
 #' \describe{
 #'   \item{movie}{Film title}
-#'   \item{type_word}{Whether the event was a profane word (TRUE) or a death (FALSE)}
+#'   \item{profane}{Whether the event was a profane word (TRUE) or a death (FALSE)}
 #'   \item{word}{The specific profane word, if the event was a word}
 #'   \item{minutes_in}{The number of minutes into the film the event occurred}
 #' }
@@ -161,7 +219,7 @@
 #' \describe{
 #'   \item{tournament}{Name of event}
 #'   \item{surface}{Court surface used at the event}
-#'   \item{seconds_added_per_point}{Seconds added per point for this event on this surface in years shown, from regression model controlling for players, year and other factors}
+#'   \item{sec_added}{Seconds added per point for this event on this surface in years shown, from regression model controlling for players, year and other factors}
 #'   \item{year_start}{Start year for data used from this tournament in regression}
 #'   \item{year_end}{End year for data used from this tournament in regression}
 #' }
@@ -178,7 +236,7 @@
 #' @format A data frame with 218 rows representing players and 2 variables:
 #' \describe{
 #'   \item{player}{Player Name}
-#'   \item{seconds_added_per_point}{Weighted average of seconds added per point as loser and winner of matches, 1991-2015, from regression model controlling for tournament, surface, year and other factors}
+#'   \item{sec_added}{Weighted average of seconds added per point as loser and winner of matches, 1991-2015, from regression model controlling for tournament, surface, year and other factors}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/tennis-time}
 #' @seealso \code{\link{tennis_events_time}} and \code{\link{tennis_serve_time}}
@@ -193,7 +251,7 @@
 #' @format A data frame with 120 rows representing serves and 7 variables:
 #' \describe{
 #'   \item{server}{Name of player serving at 2015 French Open}
-#'   \item{seconds_before_next_point}{Time in seconds between end of marked point and next serve, timed by stopwatch app}
+#'   \item{sec_between}{Time in seconds between end of marked point and next serve, timed by stopwatch app}
 #'   \item{opponent}{Opponent, receiving serve}
 #'   \item{game_score}{Score in the current game during the timed interval between points}
 #'   \item{set}{Set number, out of five}
@@ -212,10 +270,10 @@
 #' "How Trump Hacked The Media"
 #' \url{http://fivethirtyeight.com/features/how-donald-trump-hacked-the-media/}.
 #' 
-#' @format A data frame with 386 rows representing lead stories and 3 variables:
+#' @format A data frame with 286 rows representing lead stories and 3 variables:
 #' \describe{
 #'   \item{date}{Date of lead story about Donald Trump.}
-#'   \item{major_category}{Story classification}
+#'   \item{major_cat}{Story classification}
 #'   \item{detail}{}
 #' }
 #' @source Memeorandum \url{http://www.memeorandum.com/}.  See \url{memeorandum}
@@ -266,14 +324,14 @@
 #'   \item{respondent_id}{Respondent ID}
 #'   \item{ck_weather}{Do you typically check a daily weather report?}
 #'   \item{weather_source}{How do you typically check the weather?}
-#'   \item{weather_source_site}{A specific website or app (please provide the answer)	If they responded this value for the second question, they were asked to write-in the app or website they used.}
-#'   \item{ck_weather_smartwatch}{If you had a smartwatch (like the soon to be released Apple Watch), how likely or unlikely would you be to check the weather on that device?}
+#'   \item{weather_source_site}{If they responded "A specific website or app" when asked how they typically check the weather, they were asked to write-in the app or website they used.}
+#'   \item{ck_weather_watch}{If you had a smartwatch (like the soon to be released Apple Watch), how likely or unlikely would you be to check the weather on that device?}
 #'   \item{age}{Age}
 #'   \item{female}{Gender}
 #'   \item{hhold_income}{How much total combined money did all members of your HOUSEHOLD earn last year?}
 #'   \item{region}{US Region}
 #' }
-#' @source LINKTEXT \url{SOURCEURL}
+#' @source The source of the data is a Survey Monkey Audience poll commissioned by FiveThirtyEight and conducted from April 6 to April 10, 2015.  See \url{https://github.com/fivethirtyeight/data/tree/master/weather-check}
 "weather_check"
 
 

@@ -10,9 +10,9 @@
   \item{circ2004}{Daily Circulation in 2004}
   \item{circ2013}{Daily Circulation in 2013}
   \item{pctchg_circ}{Percent change in Daily Circulation from 2004 to 2013}
-  \item{num_finals1990_2003}{Number of winners and finalists from 1990 to 2003}
-  \item{num_finals2004_2014}{Number of winners and finalists from 2004 to 2014}
-  \item{num_finals1990_2014}{Number of winners and finalists from 1990 to 2014}
+  \item{num_finals1990_2003}{Number of Pulitzer Prize winners and finalists from 1990 to 2003}
+  \item{num_finals2004_2014}{Number of Pulitzer Prize winners and finalists from 2004 to 2014}
+  \item{num_finals1990_2014}{Number of Pulitzer Prize winners and finalists from 1990 to 2014}
 }}
 \source{
 See \url{http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/}
