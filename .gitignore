@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 *.Rproj
+.httr-oauth
+data/.DS_Store
