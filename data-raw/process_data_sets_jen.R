@@ -2,8 +2,6 @@ library(tidyverse)
 library(stringr)
 library(lubridate)
 
-# Jen: police-locals thru world-cup-predictions
-#setwd("/Users/JC/Google Drive/Research/fivethirtyeight")
 
 
 # police-locals ---------------------------------------------------------------
@@ -12,6 +10,7 @@ police_locals <- read_csv("data-raw/police-locals/police-locals.csv",
 colnames(police_locals) <- colnames(police_locals) %>% 
   tolower() %>% 
   str_replace_all("-", "_")
+police_locals <- police_locals %>% rename(force_size=police_force_size)
 
 devtools::use_data(police_locals, overwrite = TRUE)
 
@@ -32,32 +31,29 @@ devtools::use_data(police_locals, overwrite = TRUE)
 cand_events_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/events.csv")
 colnames(cand_events_20150114) <- colnames(cand_events_20150114) %>% tolower()
 cand_events_20150114 <- cand_events_20150114 %>% 
-  mutate(party = factor(party),
-         state = factor(state),
-         type = factor(type),
-         date = dmy(paste(date,"2015"))
-  )
+  mutate(date = dmy(paste(date,"2015")) )
 devtools::use_data(cand_events_20150114, overwrite = TRUE)
 
-cand_statements_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/statements.csv")
-devtools::use_data(cand_statements_20150114, overwrite = TRUE)
+#cand_state_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/statements.csv")
+#devtools::use_data(cand_statements_20150114, overwrite = TRUE)
 
-cand_events_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/events.csv")
-devtools::use_data(cand_events_20150130, overwrite = TRUE)
+#cand_events_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/events.csv")
+#devtools::use_data(cand_events_20150130, overwrite = TRUE)
 
-cand_statements_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/statements.csv")
-devtools::use_data(cand_statements_20150130, overwrite = TRUE)
+#cand_state_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/statements.csv")
+#devtools::use_data(cand_statements_20150130, overwrite = TRUE)
 
 
 
 # presidential-commencement-speeches ---------------------------------------------------------------
-presidential_commencement_speeches <- read_csv("data-raw/presidential-commencement-speeches/commencement_speeches.csv")
+pres_commencement <- read_csv("data-raw/presidential-commencement-speeches/commencement_speeches.csv")
 
-presidential_commencement_speeches <- presidential_commencement_speeches %>%
+pres_commencement <- pres_commencement %>%
   # Convert Show date to POSIX date object
-  mutate(date = mdy(date))
+  mutate(date = mdy(date)) %>% 
+  rename(pres = president, pres_name = president_name)
 
-devtools::use_data(presidential_commencement_speeches, overwrite = TRUE)
+devtools::use_data(pres_commencement, overwrite = TRUE)
 
 
 
@@ -71,8 +67,13 @@ colnames(pulitzer) <- colnames(pulitzer) %>%
   str_replace_all("-", "_") 
 
 pulitzer <- pulitzer %>% 
-  rename(pctchange_in_daily_circulation_2004_2013 = change_in_daily_circulation_2004_2013) %>% 
-  mutate(pctchange_in_daily_circulation_2004_2013 = as.integer(str_replace(pctchange_in_daily_circulation_2004_2013, "%","")))
+  rename(circ2004 = daily_circulation_2004,
+         circ2013 = daily_circulation_2013,
+         pctchg_circ = change_in_daily_circulation_2004_2013,
+         num_finals1990_2003 = winners_and_finalists_1990_2003,
+         num_finals2004_2014 = winners_and_finalists_2004_2014, 
+         num_finals1990_2014 = winners_and_finalists_1990_2014) %>% 
+  mutate(pctchg_circ = as.integer(str_replace(pctchg_circ, "%","")))
   
 devtools::use_data(pulitzer, overwrite = TRUE)
 

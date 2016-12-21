@@ -6,7 +6,10 @@
 #' The raw data behind the story
 #' "Most Police Don’t Live In The Cities They Serve"
 #' \url{http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/}.
-#' Includes the cities with the 75 largest police forces, with the exception of Honolulu for which data is not available. All calculations are based on data from the U.S. Census.
+#' 
+#' @details
+#' The dataset includes the cities with the 75 largest police forces, with the exception of Honolulu for which data is not available. All calculations are based on data from the U.S. Census.
+#' 
 #' The Census Bureau numbers are potentially going to differ from other counts for three reasons:
 #' \enumerate{
 #'    \item The census category for police officers also includes sheriffs, transit police and others who might not be under the same jurisdiction as a city’s police department proper. The census category won’t include private security officers.
@@ -19,7 +22,7 @@
 #' @format A data frame with 75 rows representing cities and 8 variables:
 #' \describe{
 #'   \item{city}{U.S. city}
-#'   \item{police_force_size}{Number of police officers serving that city}
+#'   \item{force_size}{Number of police officers serving that city}
 #'   \item{all}{Percentage of the total police force that lives in the city}
 #'   \item{white}{Percentage of white (non-Hispanic) police officers who live in the city}
 #'   \item{non_white}{Percentage of non-white police officers who live in the city}
@@ -29,6 +32,26 @@
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/police-locals}
 "police_locals"
+
+#' Looking For Clues: Who Is Going To Run For President In 2016?
+#'
+#' The raw data behind the story
+#' "Looking For Clues: Who Is Going To Run For President In 2016?"
+#' \url{http://fivethirtyeight.com/datalab/2016-president-who-is-going-to-run/}.
+#'
+#' @format A data frame with 42 rows representing events attended in Iowa and New Hampshire by potential presidential primary candidates and 8 variables:
+#' \describe{
+#'   \item{person}{potential presidential candidate}
+#'   \item{party}{Political party}
+#'   \item{state}{State of event}
+#'   \item{event}{Name of event}
+#'   \item{type}{Type of event}
+#'   \item{date}{Date of event}
+#'   \item{link}{Link to event}
+#'   \item{snippet}{Snippet of event description}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/potential-candidates}
+"cand_events_20150114"
 
 
 
@@ -41,17 +64,17 @@
 #'
 #' @format A data frame with 154 rows representing speeches and 8 variables:
 #' \describe{
-#'   \item{president}{Number of president (33 is Harry Truman, the 33rd president; 44 is Barack Obama, the 44th president)}
-#'   \item{president_name}{Name of president}
+#'   \item{pres}{Number of president (33 is Harry Truman, the 33rd president; 44 is Barack Obama, the 44th president)}
+#'   \item{pres_name}{Name of president}
 #'   \item{title}{Description of commencement speech}
 #'   \item{date}{Date speech was delivered}
 #'   \item{city}{City where speech was delivered}
-#'   \item{state}{state where speech was delivered}
+#'   \item{state}{State where speech was delivered}
 #'   \item{building}{Name of building in which speech was delivered}
 #'   \item{room}{Room in which speech was delivered}
 #' }
 #' @source American Presidency Project, Gerhard Peters and John T. Woolley \url{http://www.presidency.ucsb.edu}
-"presidential_commencement_speeches"
+"pres_commencement"
 
 
 #' Do Pulitzers Help Newspapers Keep Readers?
@@ -62,13 +85,13 @@
 #'
 #' @format A data frame with 50 rows representing newspapers and 7 variables:
 #' \describe{
-#'   \item{newspaper}{}
-#'   \item{daily_circulation_2004}{}
-#'   \item{daily_circulation_2013}{}
-#'   \item{pctchange_in_daily_circulation_2004_2013}{}
-#'   \item{winners_and_finalists_1990_2003}{}
-#'   \item{winners_and_finalists_2004_2014}{}
-#'   \item{winners_and_finalists_1990_2014}{}
+#'   \item{newspaper}{Newspaper}
+#'   \item{circ2004}{Daily Circulation in 2004}
+#'   \item{circ2013}{Daily Circulation in 2013}
+#'   \item{pctchg_circ}{Percent change in Daily Circulation from 2004 to 2013}
+#'   \item{num_finals1990_2003}{Number of winners and finalists from 1990 to 2003}
+#'   \item{num_finals2004_2014}{Number of winners and finalists from 2004 to 2014}
+#'   \item{num_finals1990_2014}{Number of winners and finalists from 1990 to 2014}
 #' }
 #' @source See \url{http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/}
 "pulitzer"
