@@ -375,11 +375,24 @@ devtools::use_data(democratic_bench, overwrite = TRUE)
 
 
 # drug-use-by-age --------------------------------------------------------------
+drug_use <- read_csv("data-raw/drug-use-by-age/drug-use-by-age.csv", na = c("", "NA", "-")) 
+colnames(drug_use) <- colnames(drug_use) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_") %>% 
+  str_replace_all("-", "_") %>% 
+  str_replace_all("frequency", "freq")
+drug_use <- drug_use %>% 
+  mutate(age = factor(age))
+devtools::use_data(drug_use, overwrite = TRUE)
 
 
 
 # early-senate-polls -----------------------------------------------------------
-
+senate_polls <- read_csv("data-raw/early-senate-polls/early-senate-polls.csv")
+colnames(senate_polls) <- colnames(senate_polls) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+devtools::use_data(senate_polls, overwrite = TRUE)
 
 
 # elo-blatter ------------------------------------------------------------------
@@ -442,7 +455,126 @@ devtools::use_data(fifa_audience, overwrite = TRUE)
 
 
 # flying-etiquette-survey ------------------------------------------------------
-flying <- read_csv("data-raw/flying-etiquette-survey/flying-etiquette.csv")
+flying <- read_csv("data-raw/flying-etiquette-survey/flying-etiquette.csv") %>% 
+  rename(
+    respondent_id = RespondentID,
+    location = `Location (Census Region)`,
+    frequency = `How often do you travel by plane?`,
+    recline_frequency = `Do you ever recline your seat when you fly?`,                                                                                        
+    height = `How tall are you?`,                                                                                                                     
+    children_under_18 = `Do you have any children under 18?`,                                                                                                   
+    two_arm_rests = `In a row of three seats, who should get to use the two arm rests?`,                                                                      
+    middle_arm_rest = `In a row of two seats, who should get to use the middle arm rest?`,                                                                       
+    shade = `Who should have control over the window shade?`,                                                                                    
+    unsold_seat = `Is itrude to move to an unsold seat on a plane?`,                                                                                   
+    talk_stranger = `Generally speaking, is it rude to say more than a few words tothe stranger sitting next to you on a plane?`,                              
+    get_up = `On a 6 hour flight from NYC to LA, how many times is it acceptable to get up if you're not in an aisle seat?`,                            
+    recline_obligation = `Under normal circumstances, does a person who reclines their seat during a flight have any obligation to the person sitting behind them?`,
+    recline_rude = `Is itrude to recline your seat on a plane?`,                                                                                              
+    recline_eliminate = `Given the opportunity, would you eliminate the possibility of reclining seats on planes entirely?`,                                       
+    switch_seats_friends = `Is it rude to ask someone to switch seats with you in order to be closer to friends?`,                                                   
+    switch_seats_family = `Is itrude to ask someone to switch seats with you in order to be closer to family?`,                                                   
+    wake_up_bathroom = `Is it rude to wake a passenger up if you are trying to go to the bathroom?`,                                                     
+    wake_up_walk = `Is itrude to wake a passenger up if you are trying to walk around?`,                                                             
+    baby = `In general, is itrude to bring a baby on a plane?`,                                                                     
+    unruly_child = `In general, is it rude to knowingly bring unruly children on a plane?`,                                                  
+    electronics = `Have you ever used personal electronics during take off or landing in violation of a flight attendant's direction?`,              
+    smoked = `Have you ever smoked a cigarette in an airplane bathroom when it was against the rules?`
+  )
+colnames(flying) <- colnames(flying) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+
+flying <- flying %>% 
+  mutate(
+    # Demographic Info
+    age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60")),
+    household_income = factor(household_income, levels = c(
+      "$0 - $24,999", "$25,000 - $49,999", "$50,000 - $99,999", 
+      "$100,000 - $149,999", "$150,000+")),
+    education = factor(education, levels=c(
+      "Less than high school degree", "High school degree", 
+      "Some college or Associate degree","Bachelor degree", "Graduate degree"
+    )),
+    # Convert Yes/No to booleans
+    electronics = ifelse(electronics == "Yes", TRUE, FALSE),
+    smoked = ifelse(smoked == "Yes", TRUE, FALSE),
+    children_under_18 = ifelse(children_under_18 == "Yes", TRUE, FALSE),
+    recline_obligation = 
+      ifelse(recline_obligation == 
+               "Yes, they should not recline their chair if the person behind them asks them not to", 
+             TRUE, FALSE),
+    recline_eliminate = ifelse(recline_eliminate == "Yes", TRUE, FALSE),
+    # Convert ordinal categorical to factor
+    height = factor(height, levels=c(
+      "Under 5 ft.", "5'0\"", "5'1\"", "5'2\"", "5'3\"", "5'4\"", "5'5\"", 
+      "5'6\"", "5'7\"", "5'8\"", "5'9\"", "5'10\"", "5'11\"", 
+      "6'0\"", "6'1\"", "6'2\"", "6'3\"", "6'4\"", "6'5\"", "6'6\" and above"
+    )),
+    frequency = factor(frequency, levels=c(
+      "Never", "Once a year or less", "Once a month or less", "A few times per month",
+      "A few times per week", "Every day"      
+    )),
+    recline_frequency = factor(recline_frequency, levels=c(
+      "Never", "Once in a while", "About half the time", "Usually", "Always"
+    )),
+    unsold_seat = factor(unsold_seat, levels=c(
+      "No, not rude at all", "Yes, somewhat rude", "Yes, very rude"
+    )),
+    talk_stranger = factor(talk_stranger, levels=c(
+      "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
+    )),   
+    get_up = factor(get_up, levels=c(
+      "It is not okay to get up during flight", "Once", "Twice", "Three times", "Four times", 
+      "More than five times times"
+    )),  
+    recline_rude = factor(recline_rude, levels=c(
+      "No, not rude at all", "Yes, somewhat rude", "Yes, very rude"
+    )),       
+    switch_seats_friends = factor(switch_seats_friends, levels=c(
+      "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
+    )),    
+    switch_seats_family = factor(switch_seats_family, levels=c(
+      "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
+    )),    
+    wake_up_bathroom = factor(wake_up_bathroom, levels=c(
+      "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
+    )),    
+    wake_up_walk = factor(wake_up_walk, levels=c(
+      "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
+    )),    
+    baby = factor(baby, levels=c(
+      "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
+    )),    
+    unruly_child = factor(unruly_child, levels=c(
+      "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
+    ))
+  ) %>% 
+  select(respondent_id, gender, age, height, children_under_18, household_income, education, location, 
+         frequency, recline_frequency, recline_obligation, recline_rude, recline_eliminate, 
+         switch_seats_friends, switch_seats_family,
+         wake_up_bathroom, wake_up_walk,
+         baby, unruly_child, 
+         two_arm_rests, middle_arm_rest,
+         everything()
+         )
+
+levels(flying$recline_rude) <- c("No", "Somewhat", "Very")
+levels(flying$switch_seats_friends) <- c("No", "Somewhat", "Very")
+levels(flying$switch_seats_family) <- c("No", "Somewhat", "Very")
+levels(flying$wake_up_bathroom) <- c("No", "Somewhat", "Very")
+levels(flying$wake_up_walk) <- c("No", "Somewhat", "Very")
+levels(flying$baby) <- c("No", "Somewhat", "Very")
+levels(flying$unruly_child) <- c("No", "Somewhat", "Very")
+levels(flying$unsold_seat) <- c("No", "Somewhat", "Very")
+levels(flying$talk_stranger) <- c("No", "Somewhat", "Very")
+
+flying %>% 
+  select(recline_rude, switch_seats_friends, switch_seats_family, wake_up_bathroom,
+         wake_up_walk, baby, unruly_child, unsold_seat, talk_stranger) %>% 
+  apply(2, table)
+
+devtools::use_data(flying, overwrite = TRUE)
 
 
 

@@ -408,7 +408,6 @@
 #' "Every Guest Jon Stewart Ever Had On 'The Daily Show'"
 #' \url{http://fivethirtyeight.com/datalab/every-guest-jon-stewart-ever-had-on-the-daily-show/}.
 #'
-#'
 #' @format A data frame with 2693 rows representing guests and 5 variables:
 #' \describe{
 #'   \item{year}{The year the episode aired}
@@ -428,7 +427,6 @@
 #' "Some Democrats Who Could Step Up If Hillary Isn’t Ready For Hillary"
 #' \url{http://fivethirtyeight.com/datalab/some-democrats-who-could-step-up-if-hillary-isnt-ready-for-hillary/}.
 #'
-#'
 #' @format A data frame with 67 rows representing members of the Democratic Party and 3 variables:
 #' \describe{
 #'   \item{cand}{Candidate}
@@ -437,6 +435,68 @@
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/democratic-bench}.
 "democratic_bench"
+
+
+
+#' How Baby Boomers Get High
+#'
+#' The raw data behind the story
+#' "How Baby Boomers Get High"
+#' \url{http://fivethirtyeight.com/datalab/how-baby-boomers-get-high/}.
+#' It covers usage of 13 drugs in the past 12 months across 17 age groups.
+#'
+#' @format A data frame with 17 rows representing age groups and 28 variables:
+#' \describe{
+#'   \item{age}{Age group}
+#'   \item{n}{Number of people surveyed}
+#'   \item{alcohol_use}{Percentage who used alcohol}
+#'   \item{alcohol_freq}{Median number of times a user used alcohol}
+#'   \item{marijuana_use}{Percentage who used marijuana}
+#'   \item{marijuana_freq}{Median number of times a user used marijuana}
+#'   \item{cocaine_use}{Percentage who used cocaine}
+#'   \item{cocaine_freq}{Median number of times a user used cocaine}
+#'   \item{crack_use}{Percentage who used crack}
+#'   \item{crack_freq}{Median number of times a user used crack}
+#'   \item{heroin_use}{Percentage who used heroin}
+#'   \item{heroin_freq}{Median number of times a user used heroin}
+#'   \item{hallucinogen_use}{Percentage who used hallucinogens}
+#'   \item{hallucinogen_freq}{Median number of times a user used hallucinogens}
+#'   \item{inhalant_use}{Percentage who used inhalants}
+#'   \item{inhalant_freq}{Median number of times a user used inhalants}
+#'   \item{pain_releiver_use}{Percentage who used pain relievers}
+#'   \item{pain_releiver_freq}{Median number of times a user used pain relievers}
+#'   \item{oxycontin_use}{Percentage who used oxycontin}
+#'   \item{oxycontin_freq}{Median number of times a user used oxycontin}
+#'   \item{tranquilizer_use}{Percentage who used tranquilizer}
+#'   \item{tranquilizer_freq}{Median number of times a user used tranquilizer}
+#'   \item{stimulant_use}{Percentage who used stimulants}
+#'   \item{stimulant_freq}{Median number of times a user used stimulants}
+#'   \item{meth_use}{Percentage who used meth}
+#'   \item{meth_freq}{Median number of times a user used meth}
+#'   \item{sedative_use}{Percentage who used sedatives}
+#'   \item{sedative_freq}{Median number of times a user used sedatives}
+#' }
+#' @source National Survey on Drug Use and Health from the Substance Abuse and 
+#' Mental Health Data Archive \url{http://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}. 
+"drug_use"
+
+
+
+#' Early Senate Polls Have Plenty to Tell Us About November
+#'
+#' The raw data behind the story
+#' "Early Senate Polls Have Plenty to Tell Us About November"
+#' \url{http://fivethirtyeight.com/features/early-senate-polls-have-plenty-to-tell-us-about-november/}.
+#'
+#' @format A data frame with 107 rows representing a poll and 4 variables:
+#' \describe{
+#'   \item{year}{Year}
+#'   \item{election_result}{}
+#'   \item{presidential_approval}{}
+#'   \item{poll_average}{}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/early-senate-polls}
+#' "senate_polls"
 
 
 
@@ -593,62 +653,114 @@
 
 
 
+
+#' 41 Percent Of Fliers Think You’re Rude If You Recline Your Seat
+#'
+#' The raw data behind the story
+#' "41 Percent Of Fliers Think You’re Rude If You Recline Your Seat"
+#' \url{http://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat}.
+#'
+#' @format A data frame with 1040 rows representing respondents and 27 variables:
+#' \describe{
+#'   \item{respondent_id}{RespondentID}
+#'   \item{gender}{Gender}
+#'   \item{age}{Age}
+#'   \item{height}{Height}
+#'   \item{children_under_18}{Do you have any children under 18?}                                                                                                   
+#'   \item{household_income}{Household income bracket}
+#'   \item{education}{Education Level}
+#'   \item{location}{Location (census region)}   
+#'   \item{frequency}{How often do you travel by plane?}
+#'   \item{recline_frequency}{Do you ever recline your seat when you fly?}                                                                                        
+#'   \item{recline_obligation}{Under normal circumstances, does a person who reclines their seat during a flight have any obligation to the person sitting behind them?}
+#'   \item{recline_rude}{Is it rude to recline your seat on a plane?}                                                                                              
+#'   \item{recline_eliminate}{Given the opportunity, would you eliminate the possibility of reclining seats on planes entirely?}                                      
+#'   \item{switch_seats_friends}{Is it rude to ask someone to switch seats with you in order to be closer to friends?}                                                   
+#'   \item{switch_seats_family}{Is it rude to ask someone to switch seats with you in order to be closer to family?}  
+#'   \item{wake_up_bathroom}{Is it rude to wake a passenger up if you are trying to go to the bathroom?}                                                     
+#'   \item{wake_up_walk}{Is it rude to wake a passenger up if you are trying to walk around?}  
+#'   \item{baby}{In general, is it rude to bring a baby on a plane?}                                                                     
+#'   \item{unruly_child}{In general, is it rude to knowingly bring unruly children on a plane?}  
+#'   \item{two_arm_rests}{In a row of three seats, who should get to use the two arm rests?}                                                                      
+#'   \item{middle_arm_rest}{In a row of two seats, who should get to use the middle arm rest?}                                                                       
+#'   \item{shade}{Who should have control over the window shade?}                                                                                    
+#'   \item{unsold_seat}{Is it rude to move to an unsold seat on a plane?}                                                                                   
+#'   \item{talk_stranger}{Generally speaking, is it rude to say more than a few words tothe stranger sitting next to you on a plane?}                              
+#'   \item{get_up}{On a 6 hour flight from NYC to LA, how many times is it acceptable to get up if you're not in an aisle seat?}                            
+#'   \item{electronics}{Have you ever used personal electronics during take off or landing in violation of a flight attendant's direction?}              
+#'   \item{smoked}{Have you ever smoked a cigarette in an airplane bathroom when it was against the rules?}
+#' }
+#' @source SurveyMonkey survey
+"flying"
+
+
+
 #' The FiveThirtyEight International Food Association’s 2014 World Cup
 #'
 #' The raw data behind the story
 #' "The FiveThirtyEight International Food Association’s 2014 World Cup"
 #' \url{http://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/}.
+#' For all the countries below, the response to the following question is presented:
+#' "Please rate how much you like the traditional cuisine of X"
+#' \itemize{
+#'  \item{5: }{I love this country's traditional cuisine. I think it's one of the best in the world.}
+#'  \item{4: }{I like this country's traditional cuisine. I think it's considerably above average.}
+#'  \item{3: }{I'm OK with this county's traditional cuisine. I think it's about average.}
+#'  \item{2: }{I dislike this country's traditional cuisine. I think it's considerably below average.}
+#'  \item{1: }{I hate this country's traditional cuisine. I think it's one of the worst in the world.}
+#'  \item{N/A: }{I'm unfamiliar with this country's traditional cuisine.}
+#' }
 #'
 #' @format A data frame with 1373 rows representing respondents and 48 variables:
 #' \describe{
-#'   \item{respondent_id}{}
-#'   \item{knowledge}{}
-#'   \item{interest}{}
-#'   \item{gender}{}
-#'   \item{age}{}
-#'   \item{household_income}{} 
-#'   \item{education}{}
-#'   \item{location}{}
-#'   \item{algeria}{}
-#'   \item{argentina}{} 
-#'   \item{australia}{}
-#'   \item{belgium}{}
-#'   \item{bosnia_and_herzegovina}{}
-#'   \item{brazil}{}
-#'   \item{cameroon}{} 
-#'   \item{chile}{}
-#'   \item{china}{}
-#'   \item{colombia}{}
-#'   \item{costa_rica}{}
-#'   \item{croatia}{}
-#'   \item{cuba}{}
-#'   \item{ecuador}{}
-#'   \item{england}{} 
-#'   \item{ethiopia}{}
-#'   \item{france}{}
-#'   \item{germany}{}
-#'   \item{ghana}{}
-#'   \item{greece}{}
-#'   \item{honduras}{}
-#'   \item{india}{}
-#'   \item{iran}{}
-#'   \item{ireland}{}
-#'   \item{italy}{} 
-#'   \item{ivory_coast}{}
-#'   \item{japan}{}
-#'   \item{mexico}{}
-#'   \item{nigeria}{} 
-#'   \item{portugal}{}
-#'   \item{russia}{}
-#'   \item{south_korea}{}
-#'   \item{spain}{}
-#'   \item{switzerland}{} 
-#'   \item{thailand}{}
-#'   \item{the_netherlands}{}
-#'   \item{turkey}{} 
-#'   \item{united_states}{}
-#'   \item{uruguay}{}
-#'   \item{vietnam}{}
+#'   \item{respondent_id}{Respondent ID}
+#'   \item{knowledge}{Generally speaking, how would you rate your level of knowledge of cuisines from different parts of the world?}
+#'   \item{interest}{How much, if at all, are you interested in cuisines from different parts of the world?}
+#'   \item{gender}{Gender}
+#'   \item{age}{Age}
+#'   \item{household_income}{Household income bracket}
+#'   \item{education}{Education Level}
+#'   \item{location}{Location (census region)}
+#'   \item{algeria}{Cuisine of Algeria}
+#'   \item{argentina}{Cuisine of Argentina} 
+#'   \item{australia}{Cuisine of Australia}
+#'   \item{belgium}{Cuisine of Belgium}
+#'   \item{bosnia_and_herzegovina}{Cuisine of Bosnia & Herzegovina}
+#'   \item{brazil}{Cuisine of Brazil}
+#'   \item{cameroon}{Cuisine of Cameroon} 
+#'   \item{chile}{Cuisine of Chile}
+#'   \item{china}{Cuisine of China}
+#'   \item{colombia}{Cuisine of Colombia}
+#'   \item{costa_rica}{Cuisine of Costa Rica}
+#'   \item{croatia}{Cuisine of Croatia}
+#'   \item{cuba}{Cuisine of Cuba}
+#'   \item{ecuador}{Cuisine of Ecuador}
+#'   \item{england}{Cuisine of England} 
+#'   \item{ethiopia}{Cuisine of Ethiopia}
+#'   \item{france}{Cuisine of France}
+#'   \item{germany}{Cuisine of Germany}
+#'   \item{ghana}{Cuisine of Ghana}
+#'   \item{greece}{Cuisine of Greece}
+#'   \item{honduras}{Cuisine of Honduras}
+#'   \item{india}{Cuisine of India}
+#'   \item{iran}{Cuisine of Iran}
+#'   \item{ireland}{Cuisine of Ireland}
+#'   \item{italy}{Cuisine of Italy} 
+#'   \item{ivory_coast}{Cuisine of Ivory Coast}
+#'   \item{japan}{Cuisine of Japan}
+#'   \item{mexico}{Cuisine of Mexico}
+#'   \item{nigeria}{Cuisine of Nigeria} 
+#'   \item{portugal}{Cuisine of Portugal}
+#'   \item{russia}{Cuisine of Russia}
+#'   \item{south_korea}{Cuisine of South Korea}
+#'   \item{spain}{Cuisine of Spain}
+#'   \item{switzerland}{Cuisine of Switzerland} 
+#'   \item{thailand}{Cuisine of Thailand}
+#'   \item{the_netherlands}{Cuisine of the Netherlands}
+#'   \item{turkey}{Cuisine of Turkey} 
+#'   \item{united_states}{Cuisine of the United States}
+#'   \item{uruguay}{Cuisine of Uruguay}
+#'   \item{vietnam}{Cuisine of Vietnam}
 #' }
 #' @seealso See \url{https://github.com/fivethirtyeight/data/tree/master/food-world-cup}
 "food_world_cup"

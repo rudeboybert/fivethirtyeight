@@ -4,7 +4,7 @@
 \name{comic_characters}
 \alias{comic_characters}
 \title{Comic Books Are Still Made By Men, For Men And About Men}
-\format{A data frame with 173 rows representing majors and 11 variables:
+\format{A data frame with 23272 rows representing characters and 16 variables:
 \describe{
   \item{publisher}{Comic publisher: DC Comics or Marvel}
   \item{page_id}{The unique identifier for that characters page within the wikia}
