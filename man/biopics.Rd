@@ -7,7 +7,7 @@
 \format{A data frame with 761 rows representing movies and 14 variables:
 \describe{
   \item{title}{Title of the film.}
-  \item{site}{URL from IMDB.}
+  \item{site}{Text to append \url{http://www.imdb.com/title/} to for IMDB url. E.g. \url{http://www.imdb.com/title/tt1711425}}
   \item{country}{Country of origin.}
   \item{year_release}{Year of release.}
   \item{box_office}{Gross earnings at U.S. box office.}

@@ -88,19 +88,19 @@
 #'
 #' @format A data frame with 1794 rows representing movies and 15 variables:
 #' \describe{
-#'   \item{year}{}
-#'   \item{imdb}{}
-#'   \item{title}{}
-#'   \item{test}{}
-#'   \item{clean_test}{}
-#'   \item{binary}{}
-#'   \item{budget}{} 
-#'   \item{domgross}{}
-#'   \item{intgross}{}
-#'   \item{code}{}
-#'   \item{budget_2013}{}
-#'   \item{domgross_2013}{} 
-#'   \item{intgross_2013}{}
+#'   \item{year}{Year of release}
+#'   \item{imdb}{Text to append \url{http://www.imdb.com/title/} to for IMDB url. E.g. \url{http://www.imdb.com/title/tt1711425}}
+#'   \item{title}{Movie test}
+#'   \item{test}{bechdel test result}
+#'   \item{clean_test}{bechdel test result}
+#'   \item{binary}{Bechdel Test PASS vs FAIL binary}
+#'   \item{budget}{Film budget} 
+#'   \item{domgross}{Domestic gross}
+#'   \item{intgross}{International gross}
+#'   \item{code}{Bechdel Code}
+#'   \item{budget_2013}{Budget in 2013 inflation adjusted dollars}
+#'   \item{domgross_2013}{Domestic gross in 2013 inflation adjusted dollars} 
+#'   \item{intgross_2013}{International gross in 2013 inflation adjusted dollars}
 #'   \item{period_code}{}
 #'   \item{decade_code}{}
 #' }
@@ -137,7 +137,7 @@
 #' @format A data frame with 761 rows representing movies and 14 variables:
 #' \describe{
 #'   \item{title}{Title of the film.}
-#'   \item{site}{URL from IMDB.}
+#'   \item{site}{Text to append \url{http://www.imdb.com/title/} to for IMDB url. E.g. \url{http://www.imdb.com/title/tt1711425}}
 #'   \item{country}{Country of origin.}
 #'   \item{year_release}{Year of release.}
 #'   \item{box_office}{Gross earnings at U.S. box office.}

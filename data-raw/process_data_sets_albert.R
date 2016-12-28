@@ -2,6 +2,8 @@ library(tidyverse)
 library(stringr)
 library(lubridate)
 
+
+
 # airline_safety ---------------------------------------------------------------
 airline_safety <- read_csv("data-raw/airline-safety/airline-safety.csv") 
 colnames(airline_safety) <- colnames(airline_safety) %>% 
@@ -130,7 +132,9 @@ biopics <- biopics %>%
     units = ifelse(units == "M", 10^6, ifelse(units=="K", 10^3, NA)),
     box_office = box_office*units,
     # Convert 0/1 to TRUE/FALSE
-    person_of_color = as.logical(person_of_color)
+    person_of_color = as.logical(person_of_color),
+    # Shorten IMDB link
+    site = str_sub(site, 27, 35) 
   ) %>%
   select(-units)
 devtools::use_data(biopics, overwrite = TRUE)
@@ -440,7 +444,6 @@ colnames(fandango_scrape) <- colnames(fandango_scrape) %>%
 #     year = as.numeric(year)
 #   )
 # devtools::use_data(fandango_scrape, overwrite = TRUE)
-
 
 
 
