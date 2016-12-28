@@ -1,5 +1,6 @@
 ### Daily Show Guests
 
+The raw data behind the story [Every Guest Jon Stewart Ever Had On ‘The Daily Show’](http://fivethirtyeight.com/datalab/every-guest-jon-stewart-ever-had-on-the-daily-show/)
 
 Header | Definition
 ---|---------
@@ -9,4 +10,4 @@ Header | Definition
 `Group` | A larger group designation for the occupation. For instance, us senators, us presidents, and former presidents are all under "politicians"
 `Raw_Guest_List` | The person or list of people who appeared on the show, according to Wikipedia. The GoogleKnowlege_Occupation only refers to one of them in a given row. 
 
-Source: 
+Source: Google Knowlege Graph, The Daily Show clip library, Wikipedia.
