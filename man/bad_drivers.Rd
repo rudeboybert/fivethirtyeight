@@ -26,7 +26,7 @@ bad_drivers
 \description{
 The raw data behind the story
 "Dear Mona, Which State Has The Worst Drivers?"
-\url{http://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/}.
+\url{http://fivethirtyeight.com/datalab/which-state-has-the-worst-drivers/}
 }
 \keyword{datasets}
 
