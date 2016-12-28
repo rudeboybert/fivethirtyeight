@@ -285,6 +285,68 @@
 
 
 
+#' The Economic Guide To Picking A College Major
+#'
+#' The raw data behind the story
+#' "The Economic Guide To Picking A College Major"
+#' \url{http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/}.
+#'
+#' @format A data frame with 173 rows representing majors and 11 variables:
+#' \describe{
+#'   \item{respondent_id}{Respondent ID}
+#'   \item{gender}{Gender}
+#'   \item{age}{Age}
+#'   \item{household_income}{Household income bracket}
+#'   \item{education}{Education level}
+#'   \item{location}{Location (census region)}
+#'   \item{more_grammar_correct}{In your opinion, which sentence is more gramatically correct?}
+#'   \item{heard_oxford_comma}{Prior to reading about it above, had you heard of the serial (or Oxford) comma?}
+#'   \item{care_oxford_comma}{How much, if at all, do you care about the use (or lack thereof) of the serial (or Oxford) comma in grammar?}
+#'   \item{write_following}{How would you write the following sentence?}
+#'   \item{data_singular_plural}{When faced with using the word "data", have you ever spent time considering if the word was a singular or plural noun?}
+#'   \item{care_data}{How much, if at all, do you care about the debate over the use of the word "data" as a singluar or plural noun?}
+#'   \item{care_proper_grammar}{In your opinion, how important or unimportant is proper use of grammar?}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/comma-survey-data}.
+"college_all_ages"
+
+
+
+#' Comic Books Are Still Made By Men, For Men And About Men
+#'
+#' The raw data behind the story
+#' "Comic Books Are Still Made By Men, For Men And About Men"
+#' \url{http://fivethirtyeight.com/features/women-in-comic-books/}.
+#'
+#' @format A data frame with 23272 rows representing characters and 16 variables:
+#' \describe{
+#'   \item{publisher}{Comic publisher: DC Comics or Marvel}
+#'   \item{page_id}{The unique identifier for that characters page within the wikia}
+#'   \item{name}{The name of the character}
+#'   \item{urlslug}{The unique url within the wikia that takes you to the character}
+#'   \item{id}{The identity status of the character (Secret Identity, Public identity, [on marvel only: No Dual Identity])}
+#'   \item{align}{If the character is Good, Bad or Neutral}
+#'   \item{eye}{Eye color of the character}
+#'   \item{hair}{Hair color of the character}
+#'   \item{sex}{Sex of the character (e.g. Male, Female, etc.)}
+#'   \item{gsm}{If the character is a gender or sexual minority (e.g. Homosexual characters, bisexual characters)}
+#'   \item{alive}{If the character is alive or deceased}
+#'   \item{appearances}{The number of appareances of the character in comic books (as of Sep. 2, 2014. Number will become increasingly out of date as time goes on.)}
+#'   \item{first_appearance}{The month and year of the character's first appearance in a comic book, if available}
+#'   \item{month}{The month of the character's first appearance in a comic book, if available}
+#'   \item{year}{The year of the character's first appearance in a comic book, if available}
+#'   \item{date}{The date of the character's first appearance in a comic book, if available}
+#' }
+#' @source DC Wikia \url{http://dc.wikia.com/wiki/Main_Page} and Marvel Wikia 
+#' \url{http://marvel.wikia.com/Main_Page}. Characters were scraped on August 24, 
+#' 2014. Appearance counts were scraped on September 2, 2014. The 
+#' month and year of the first issue each character appeared in was pulled on 
+#' October 6, 2014.
+"comic_characters"
+
+
+
+
 #' Elitist, Superfluous, Or Popular? We Polled Americans on the Oxford Comma
 #'
 #' The raw data behind the story
@@ -357,6 +419,24 @@
 #' }
 #' @source Google Knowlege Graph, The Daily Show clip library, Wikipedia.
 "daily_show_guests"
+
+
+
+#' Some Democrats Who Could Step Up If Hillary Isn’t Ready For Hillary
+#'
+#' The raw data behind the story
+#' "Some Democrats Who Could Step Up If Hillary Isn’t Ready For Hillary"
+#' \url{http://fivethirtyeight.com/datalab/some-democrats-who-could-step-up-if-hillary-isnt-ready-for-hillary/}.
+#'
+#'
+#' @format A data frame with 67 rows representing members of the Democratic Party and 3 variables:
+#' \describe{
+#'   \item{cand}{Candidate}
+#'   \item{raised_exp}{Amount the candidate was expected to raise}
+#'   \item{raised_act}{Amount the candidate actually raised}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/democratic-bench}.
+"democratic_bench"
 
 
 
@@ -450,6 +530,46 @@
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/endorsements-june-30}
 "endorsements"
+
+
+
+#' Be Suspicious Of Online Movie Ratings, Especially Fandango's
+#'
+#' The raw data behind the story
+#' "Be Suspicious Of Online Movie Ratings, Especially Fandango's"
+#' \url{http://fivethirtyeight.com/features/fandango-movies-ratings/}.
+#' contains every film that has a Rotten Tomatoes rating, a RT User rating, a 
+#' Metacritic score, a Metacritic User score, and IMDb score, and at least 30 
+#' fan reviews on Fandango.
+#'
+#' @format A data frame with 146 rows representing movies and 23 variables:
+#' \describe{
+#'   \item{film}{The film in question}
+#'   \item{year}{Year of film}
+#'   \item{rottentomatoes}{The Rotten Tomatoes Tomatometer score  for the film }
+#'   \item{rottentomatoes_user}{The Rotten Tomatoes user score for the film }
+#'   \item{metacritic}{The Metacritic critic score for the film}
+#'   \item{metacritic_user}{The Metacritic user score for the film}
+#'   \item{imdb}{The IMDb user score for the film}
+#'   \item{fandango_stars}{The number of stars the film had on its Fandango movie page}
+#'   \item{fandango_ratingvalue}{The Fandango ratingValue for the film, as pulled from the HTML of each page. This is the actual average score the movie obtained. }
+#'   \item{rt_norm}{The Rotten Tomatoes Tomatometer score  for the film , normalized to a 0 to 5 point system}
+#'   \item{rt_user_norm}{The Rotten Tomatoes user score for the film , normalized to a 0 to 5 point system}
+#'   \item{metacritic_norm}{The Metacritic critic score for the film, normalized to a 0 to 5 point system}
+#'   \item{metacritic_user_nom}{The Metacritic user score for the film, normalized to a 0 to 5 point system}
+#'   \item{imdb_norm}{The IMDb user score for the film, normalized to a 0 to 5 point system}
+#'   \item{rt_norm_round}{The Rotten Tomatoes Tomatometer score  for the film , normalized to a 0 to 5 point system and rounded to the nearest half-star}
+#'   \item{rt_user_norm_round}{The Rotten Tomatoes user score for the film , normalized to a 0 to 5 point system and rounded to the nearest half-star}
+#'   \item{metacritic_norm_round}{The Metacritic critic score for the film, normalized to a 0 to 5 point system and rounded to the nearest half-star}
+#'   \item{metacritic_user_norm_round}{The Metacritic user score for the film, normalized to a 0 to 5 point system and rounded to the nearest half-star}
+#'   \item{imdb_norm_round}{The IMDb user score for the film, normalized to a 0 to 5 point system and rounded to the nearest half-star}
+#'   \item{metacritic_user_vote_count}{The number of user votes the film had on Metacritic}
+#'   \item{imdb_user_vote_count}{The number of user votes the film had on IMDb}
+#'   \item{fandango_votes}{The number of user votes the film had on Fandango}
+#'   \item{fandango_difference}{The difference between the presented Fandango_Stars and the actual Fandango_Ratingvalue}
+#' }
+#' @source The data from Fandango was pulled on Aug. 24, 2015.
+"fandango"
 
 
 

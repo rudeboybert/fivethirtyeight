@@ -218,10 +218,56 @@ devtools::use_data(classic_rock_song_list, overwrite = TRUE)
 
 
 # college-majors ---------------------------------------------------------------
+college_all_ages <- read_csv("data-raw/college-majors/all-ages.csv")
+colnames(college_all_ages) <- colnames(college_all_ages) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+devtools::use_data(college_all_ages, overwrite = TRUE)
+
+# TODO: more here
 
 
 
 # comic-characters -------------------------------------------------------------
+comic_characters_dc <- read_csv("data-raw/comic-characters/dc-wikia-data.csv")
+colnames(comic_characters_dc) <- colnames(comic_characters_dc) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+comic_characters_dc <- comic_characters_dc %>% 
+  separate(first_appearance, c("year2", "month"), ", ", remove = FALSE) %>% 
+  mutate(
+    publisher = "DC", 
+    # If month was missing, set as January. Set day as 01
+    month = ifelse(is.na(month), "01", month), 
+    day = "01",
+    # Note some years missing
+    date = ymd(paste(year, month, day, sep="-"))
+  ) %>% 
+  select(-c(year2, day))
+
+comic_characters_marvel <- read_csv("data-raw/comic-characters/marvel-wikia-data.csv")
+colnames(comic_characters_marvel) <- colnames(comic_characters_marvel) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+comic_characters_marvel <- comic_characters_marvel %>% 
+  separate(first_appearance, c("month", "year2"), "-", remove = FALSE) %>% 
+  mutate(
+    publisher = "Marvel", 
+    # If month was missing, set as January. Set day as 01
+    month = ifelse(is.na(month), "Jan", month), 
+    day = "01",
+    # Note some years missing
+    date = ymd(paste(year, month, day, sep="-")),
+    # Make first_appearance variable format match that of DC comics
+    month = month.name[month(date)],
+    first_appearance = paste(year, month, sep=", ")
+  ) %>% 
+  select(-c(year2, day))
+
+comic_characters <- bind_rows(comic_characters_marvel, comic_characters_dc) %>% 
+  select(publisher, everything())
+devtools::use_data(comic_characters, overwrite = TRUE)
+
 
 
 
@@ -275,24 +321,14 @@ devtools::use_data(comma_survey, overwrite = TRUE)
 
 # congress-age -----------------------------------------------------------------
 # Manually edited original CSV:
-# Line 7054: (Pierre,Samuel, IV,du Pont,,) to (Pierre,Samuel,du Pont,IV,)
-# Line 7581: (Pierre,Samuel, IV,du Pont,,) to (Pierre,Samuel,du Pont,IV,)
-# Line 8088: (Pierre,Samuel, IV,du Pont,,) to (Pierre,Samuel,du Pont,IV,)
-# Line 9719: (Harold,John, Jr.,,Daub,,) to (Harold,John, Daub, Jr.,)
-# Line 10019: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
-# Line 10235: (Harold,John, Jr.,,Daub,,) to (Harold,John, Daub, Jr.,)
-# Line 10550: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
-# Line 10641: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III) 
-# Line 10764: (Harold,John, Jr.,,Daub,,) to (Harold,John, Daub, Jr.,)
-# Line 11075: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
-# Line 11168: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III) 
-# Line 11290: (Harold,John, Jr.,,Daub,,) to (Harold,John, Daub, Jr.,)
-# Line 11606: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
-# Line 11697: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III)
-# Line 12141: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
-# Line 12230: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III)
-# Line 12664: (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,) 
-# Line 12738: (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III)
+# -Lines 7054, 7581, 8088:
+#  (Pierre,Samuel, IV,du Pont,,) to (Pierre,Samuel,du Pont,IV,)
+# -Lines 9719, 10235, 10764, 11290:
+#  (Harold,John, Jr.,,Daub,,) to (Harold,John, Daub, Jr.,)
+# -Lines 10019, 10550, 11075, 11606, 12141, 12664: 
+#  (Itimous,Thaddeus, Jr.,,Valentine,,) to (Itimous,Thaddeus,Valentine,Jr.,)
+# -Lines 10641, 11168, 11697, 12230, 12738: 
+#  (John,Alexander, III,McMillan,,) to (John,Alexander,McMillan,III) 
 congress_age <- read_csv("data-raw/congress-age/congress-terms.csv")
 colnames(congress_age) <- colnames(congress_age) %>% 
   tolower() %>% 
@@ -328,6 +364,13 @@ devtools::use_data(daily_show_guests, overwrite = TRUE)
 
 
 # democratic-bench -------------------------------------------------------------
+democratic_bench <- read_csv("data-raw/democratic-bench/democratic-bench.csv") 
+colnames(democratic_bench) <- colnames(democratic_bench) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+democratic_bench <- democratic_bench %>% 
+  rename(candidate = cand)
+devtools::use_data(democratic_bench, overwrite = TRUE)
 
 
 
@@ -360,6 +403,32 @@ devtools::use_data(endorsements, overwrite = TRUE)
 
 
 # fandango ---------------------------------------------------------------------
+fandango <- read_csv("data-raw/fandango/fandango_score_comparison.csv")
+colnames(fandango) <- colnames(fandango) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+fandango <- fandango %>% 
+  separate(film, c("film", "year"), sep=" \\(") %>% 
+  mutate(
+    year = str_replace_all(year, "\\)", ""),
+    year = as.numeric(year)
+    )
+devtools::use_data(fandango, overwrite = TRUE)
+
+fandango_scrape <- read_csv("data-raw/fandango/fandango_scrape.csv")
+colnames(fandango_scrape) <- colnames(fandango_scrape) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+# double parentheses at some points
+# fandango_scrape <- fandango_scrape %>% 
+#   separate(film, c("film", "year"), sep=" \\(") %>% 
+#   mutate(
+#     year = str_replace_all(year, "\\)", ""),
+#     year = as.numeric(year)
+#   )
+# devtools::use_data(fandango_scrape, overwrite = TRUE)
+
+
 
 
 
@@ -373,6 +442,7 @@ devtools::use_data(fifa_audience, overwrite = TRUE)
 
 
 # flying-etiquette-survey ------------------------------------------------------
+flying <- read_csv("data-raw/flying-etiquette-survey/flying-etiquette.csv")
 
 
 
