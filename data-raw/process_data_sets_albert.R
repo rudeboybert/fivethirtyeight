@@ -626,3 +626,24 @@ devtools::use_data(food_world_cup, overwrite = TRUE)
 
 
 
+# love-actually -------------------------------------------------------------------------
+love_actually_adj <- read_csv("data-raw/love-actually/love_actually_adjacencies.csv")
+
+# HACK: Make adjacency matrix symmetric
+love_actually_adj <- replace(love_actually_adj, is.na(love_actually_adj), 0)
+for(i in 1:nrow(love_actually_adj)){
+  love_actually_adj[i, -1] <- t(love_actually_adj[, i+1])
+}
+devtools::use_data(love_actually_adj, overwrite = TRUE)
+
+
+love_actually_appearance <- read_csv("data-raw/love-actually/love_actually_appearances.csv") %>% 
+  # Only first 71 rows had data
+  slice(1:71)
+# Replace all NA's with FALSE 
+love_actually_appearance <- replace(love_actually_appearance, is.na(love_actually_appearance), FALSE)
+
+devtools::use_data(love_actually_appearance, overwrite = TRUE)
+
+
+

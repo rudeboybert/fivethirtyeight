@@ -764,3 +764,64 @@
 #' }
 #' @seealso See \url{https://github.com/fivethirtyeight/data/tree/master/food-world-cup}
 "food_world_cup"
+
+
+
+#' The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time
+#'
+#' The raw data behind the story
+#' "The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time"
+#' \url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
+#' A table of the central actors in "Love Actually" and which scenes they appear in.
+#'
+#' @format A data frame with 71 rows representing scenes and 15 variables:
+#' \describe{
+#'   \item{scenes}{} 
+#'   \item{bill_nighy}{} 
+#'   \item{keira_knightley}{} 
+#'   \item{andrew_lincoln}{} 
+#'   \item{hugh_grant}{} 
+#'   \item{colin_firth}{} 
+#'   \item{alan_rickman}{} 
+#'   \item{heike_makatsch}{} 
+#'   \item{laura_linney}{} 
+#'   \item{emma_thompson}{} 
+#'   \item{liam_neeson}{} 
+#'   \item{kris_marshall}{} 
+#'   \item{abdul_salis}{} 
+#'   \item{martin_freeman}{} 
+#'   \item{rowan_atkinson}{}
+#' }
+#' @seealso \code{\link{love_actually_adj}}.
+"love_actually_appearance"
+
+
+
+#' The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time
+#'
+#' The raw data behind the story
+#' "The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time"
+#' \url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
+#' The adjacency matrix of which actors appear in the same scene together.
+#'
+#' @format A data frame with 14 rows representing actors and 15 variables:
+#' \describe{
+#'   \item{actors}{} 
+#'   \item{bill_nighy}{} 
+#'   \item{keira_knightley}{} 
+#'   \item{andrew_lincoln}{} 
+#'   \item{hugh_grant}{} 
+#'   \item{colin_firth}{} 
+#'   \item{alan_rickman}{} 
+#'   \item{heike_makatsch}{} 
+#'   \item{laura_linney}{} 
+#'   \item{emma_thompson}{} 
+#'   \item{liam_neeson}{} 
+#'   \item{kris_marshall}{} 
+#'   \item{abdul_salis}{} 
+#'   \item{martin_freeman}{} 
+#'   \item{rowan_atkinson}{}
+#' }
+#' @seealso \code{\link{love_actually_appearance}}.
+"love_actually_adj"
+
