@@ -60,8 +60,8 @@
 #'
 #' The raw data behind the story
 #' "Dear Mona, Which State Has The Worst Drivers?"
-#' \url{http://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/}.
-#'
+#' \url{http://fivethirtyeight.com/datalab/which-state-has-the-worst-drivers/}
+#' 
 #' @format A data frame with 51 rows representing the 50 states + D.C. and 8 variables:
 #' \describe{
 #'   \item{state}{State}
@@ -771,7 +771,7 @@
 #'
 #' The raw data behind the story
 #' "The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time"
-#' \url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
+#' \url{http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/}.
 #' A table of the central actors in "Love Actually" and which scenes they appear in.
 #'
 #' @format A data frame with 71 rows representing scenes and 15 variables:
