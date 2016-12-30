@@ -45,6 +45,12 @@ To see a list of all data sets, type:
 data(package = "fivethirtyeight")
 ```
 
+or load the package vignette
+
+``` r
+vignette("fivethirtyeight", package = "fivethirtyeight")
+```
+
 <!--
 To load a particular data set, `FlightDelays` for example, type:
 
