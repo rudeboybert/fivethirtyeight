@@ -17,3 +17,8 @@ LazyData: true
 URL: https://github.com/rudeboybert/fivethirtyeight
 BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
 RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown,
+    dplyr,
+    readr
+VignetteBuilder: knitr

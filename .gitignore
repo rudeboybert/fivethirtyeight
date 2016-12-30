@@ -5,3 +5,4 @@
 *.Rproj
 .httr-oauth
 data/.DS_Store
+inst/doc

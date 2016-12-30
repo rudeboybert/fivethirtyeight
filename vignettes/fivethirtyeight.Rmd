@@ -1,0 +1,29 @@
+---
+title: "fivethirtyeight"
+author: "Albert Y. Kim, Chester Ismay, and Jennifer Chunn"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: |
+  %\VignetteIndexEntry{Data Sets Included}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(dplyr)
+library(readr)
+library(knitr)
+datasets <- read_csv("datasets.csv") %>% 
+  select(-Notes)
+```
+
+
+## Data Sets
+
+Information on the data sets.
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+kable(datasets)
+```
+
+
