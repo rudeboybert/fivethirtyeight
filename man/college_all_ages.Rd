@@ -6,19 +6,17 @@
 \title{The Economic Guide To Picking A College Major}
 \format{A data frame with 173 rows representing majors and 11 variables:
 \describe{
-  \item{respondent_id}{Respondent ID}
-  \item{gender}{Gender}
-  \item{age}{Age}
-  \item{household_income}{Household income bracket}
-  \item{education}{Education level}
-  \item{location}{Location (census region)}
-  \item{more_grammar_correct}{In your opinion, which sentence is more gramatically correct?}
-  \item{heard_oxford_comma}{Prior to reading about it above, had you heard of the serial (or Oxford) comma?}
-  \item{care_oxford_comma}{How much, if at all, do you care about the use (or lack thereof) of the serial (or Oxford) comma in grammar?}
-  \item{write_following}{How would you write the following sentence?}
-  \item{data_singular_plural}{When faced with using the word "data", have you ever spent time considering if the word was a singular or plural noun?}
-  \item{care_data}{How much, if at all, do you care about the debate over the use of the word "data" as a singluar or plural noun?}
-  \item{care_proper_grammar}{In your opinion, how important or unimportant is proper use of grammar?}
+  \item{major_code}{Major code, FO1DP in ACS PUMS}
+  \item{major}{Major description}
+  \item{major_category}{Category of major from Carnevale et al}
+  \item{total}{Total number of people with major}
+  \item{employed}{Number employed (ESR == 1 or 2)}
+  \item{employed_full_time_year_round}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
+  \item{unemployed}{Number unemployed (ESR == 3)}
+  \item{unemployment_rate}{Unemployed / (Unemployed + Employed)}
+  \item{median}{Median earnings of full-time, year-round workers}
+  \item{p25th}{25th percentile of earnigns}
+  \item{p75th}{75th percentile of earnings}
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/comma-survey-data}.

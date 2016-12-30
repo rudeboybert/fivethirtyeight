@@ -6,7 +6,7 @@
 \title{Some Democrats Who Could Step Up If Hillary Isn’t Ready For Hillary}
 \format{A data frame with 67 rows representing members of the Democratic Party and 3 variables:
 \describe{
-  \item{cand}{Candidate}
+  \item{candidate}{Candidate}
   \item{raised_exp}{Amount the candidate was expected to raise}
   \item{raised_act}{Amount the candidate actually raised}
 }}

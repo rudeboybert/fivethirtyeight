@@ -3,23 +3,17 @@
 \docType{data}
 \name{US_births_2000_2014}
 \alias{US_births_2000_2014}
-\title{Early Senate Polls Have Plenty to Tell Us About November}
-\format{A data frame with 107 rows representing a poll and 4 variables:
+\title{Some People Are Too Superstitious To Have A Baby On Friday The 13th}
+\format{A data frame with 5479 rows representing dates and 6 variables:
 \describe{
-  \item{year}{Year}
-  \item{election_result}{}
-  \item{presidential_approval}{}
-  \item{poll_average}{}
+  \item{year}{Year} 
+  \item{month}{Month}
+  \item{date_of_month}{Day} 
+  \item{date}{POSIX date} 
+  \item{day_of_week}{Abbreviation of day of week} 
+  \item{births}{Number of births}
 }}
 \source{
-See \url{https://github.com/fivethirtyeight/data/tree/master/early-senate-polls}
-"senate_polls"
-Some People Are Too Superstitious To Have A Baby On Friday The 13th
-
-The raw data behind the story
-"Some People Are Too Superstitious To Have A Baby On Friday The 13th"
-\url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
-
 Social Security Administration
 }
 \usage{
@@ -27,8 +21,8 @@ US_births_2000_2014
 }
 \description{
 The raw data behind the story
-"Early Senate Polls Have Plenty to Tell Us About November"
-\url{http://fivethirtyeight.com/features/early-senate-polls-have-plenty-to-tell-us-about-november/}.
+"Some People Are Too Superstitious To Have A Baby On Friday The 13th"
+\url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
 }
 \seealso{
 \code{\link{US_births_1994_2003}}.
