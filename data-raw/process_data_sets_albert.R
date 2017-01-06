@@ -104,11 +104,12 @@ bechdel <- bechdel %>%
     # Clean some movie titles
     title = str_replace_all(title, "&amp;", "&"),
     title = str_replace_all(title, "&#39;", "'"),
-    # Convert strings to integer
-    domgross = as.integer(domgross),
-    intgross = as.integer(intgross),
-    domgross_2013 = as.integer(domgross_2013),
-    intgross_2013 = as.integer(intgross_2013)
+    # Convert strings to numeric
+    # Avatar and Titanic overflow integer capacity
+    domgross = as.numeric(domgross),
+    intgross = as.numeric(intgross),
+    domgross_2013 = as.numeric(domgross_2013),
+    intgross_2013 = as.numeric(intgross_2013)
   )
 devtools::use_data(bechdel, overwrite = TRUE)
 

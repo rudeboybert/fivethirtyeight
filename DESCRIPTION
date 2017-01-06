@@ -20,5 +20,8 @@ RoxygenNote: 5.0.1
 Suggests: knitr,
     rmarkdown,
     dplyr,
-    readr
+    readr,
+    ggplot2,
+    broom,
+    magrittr
 VignetteBuilder: knitr
