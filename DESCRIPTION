@@ -23,5 +23,8 @@ Suggests: knitr,
     readr,
     ggplot2,
     broom,
-    magrittr
+    magrittr,
+    scales,
+    stringr,
+    ggthemes
 VignetteBuilder: knitr

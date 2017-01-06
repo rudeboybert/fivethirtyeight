@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Albert Y. Kim, Chester Ismay, and Jennifer Chunn" />
+
+<meta name="date" content="2017-01-06" />
+
+<title>fivethirtyeight</title>
+
+
+
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">fivethirtyeight</h1>
+<h4 class="author"><em>Albert Y. Kim, Chester Ismay, and Jennifer Chunn</em></h4>
+<h4 class="date"><em>2017-01-06</em></h4>
+
+
+
+<div id="data-sets" class="section level2">
+<h2>Data Sets</h2>
+<p>Information on the data sets.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Data Frame Name</th>
+<th align="left">Article Title</th>
+<th align="left">Filed Under</th>
+<th align="left">Author 1</th>
+<th align="left">Author 2</th>
+<th align="left">Author 3</th>
+<th align="left">Date</th>
+<th align="left">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">airline_safety</td>
+<td align="left">Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?</td>
+<td align="left">Airline Safety</td>
+<td align="left">Nate Silver</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-07-18</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/" class="uri">http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/</a></td>
+</tr>
+<tr class="even">
+<td align="left">avengers</td>
+<td align="left">Joining The Avengers Is As Deadly As Jumping Off A Four-Story Building</td>
+<td align="left">Movies</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-05-12</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/" class="uri">http://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">bad_drivers</td>
+<td align="left">Dear Mona, Which State Has The Worst Drivers?</td>
+<td align="left">Hope the Numbers Help</td>
+<td align="left">Mona Chalabi</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-10-24</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/which-state-has-the-worst-drivers/" class="uri">http://fivethirtyeight.com/datalab/which-state-has-the-worst-drivers/</a></td>
+</tr>
+<tr class="even">
+<td align="left">bechdel</td>
+<td align="left">The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women</td>
+<td align="left">Movies</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-04-01</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/" class="uri">http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">biopics</td>
+<td align="left">Straight Outta Compton’ Is The Rare Biopic Not About White Dudes</td>
+<td align="left">Movies</td>
+<td align="left">Hannah Fingerhut</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-08-14</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/" class="uri">http://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/</a></td>
+</tr>
+<tr class="even">
+<td align="left">bob_ross</td>
+<td align="left">A Statistical Analysis of the Work of Bob Ross</td>
+<td align="left">Happy Spreadsheets</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-04-14</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/" class="uri">http://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">cand_events_20150114</td>
+<td align="left">Looking For Clues: Who Is Going To Run For President In 2016?</td>
+<td align="left">The Visible Primary</td>
+<td align="left">Harry Enten</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-01-14</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/2016-president-who-is-going-to-run/" class="uri">http://fivethirtyeight.com/datalab/2016-president-who-is-going-to-run/</a></td>
+</tr>
+<tr class="even">
+<td align="left">cand_events_20150130</td>
+<td align="left">Who Will Run For President: Romney Is Out</td>
+<td align="left">The Visible Primary</td>
+<td align="left">Harry Enten</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-01-30</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/romney-not-running-for-president/" class="uri">http://fivethirtyeight.com/datalab/romney-not-running-for-president/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">cand_state_20150114</td>
+<td align="left">Looking For Clues: Who Is Going To Run For President In 2016?</td>
+<td align="left">The Visible Primary</td>
+<td align="left">Harry Enten</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-01-14</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/2016-president-who-is-going-to-run/" class="uri">http://fivethirtyeight.com/datalab/2016-president-who-is-going-to-run/</a></td>
+</tr>
+<tr class="even">
+<td align="left">cand_state_20150130</td>
+<td align="left">Who Will Run For President: Romney Is Out</td>
+<td align="left">The Visible Primary</td>
+<td align="left">Harry Enten</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-01-30</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/romney-not-running-for-president/" class="uri">http://fivethirtyeight.com/datalab/romney-not-running-for-president/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">classic_rock_raw_data</td>
+<td align="left">Why Classic Rock Isn’t What It Used To Be</td>
+<td align="left">Music</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-07-07</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/" class="uri">http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/</a></td>
+</tr>
+<tr class="even">
+<td align="left">classic_rock_song_list</td>
+<td align="left">Why Classic Rock Isn’t What It Used To Be</td>
+<td align="left">Music</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-07-07</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/" class="uri">http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">college_all_ages</td>
+<td align="left">The Economic Guide To Picking A College Major</td>
+<td align="left">NA</td>
+<td align="left">Ben Casselman</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-09-12</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/" class="uri">http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/</a></td>
+</tr>
+<tr class="even">
+<td align="left">comic_characters</td>
+<td align="left">Comic Books Are Still Made By Men, For Men And About Men</td>
+<td align="left">Comic Books</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-10-13</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/women-in-comic-books/" class="uri">http://fivethirtyeight.com/features/women-in-comic-books/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">comma_survey</td>
+<td align="left">Elitist, Superfluous, Or Popular? We Polled Americans on the Oxford Comma</td>
+<td align="left">NA</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-06-17</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/elitist-superfluous-or-popular-we-polled-americans-on-the-oxford-comma/" class="uri">http://fivethirtyeight.com/datalab/elitist-superfluous-or-popular-we-polled-americans-on-the-oxford-comma/</a></td>
+</tr>
+<tr class="even">
+<td align="left">congress_age</td>
+<td align="left">Both Republicans And Democrats Have an Age Problem</td>
+<td align="left">Age</td>
+<td align="left">Nate Silver</td>
+<td align="left">Dhrumil Mehta</td>
+<td align="left">NA</td>
+<td align="left">2014-04-28</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/both-republicans-and-democrats-have-an-age-problem/" class="uri">http://fivethirtyeight.com/features/both-republicans-and-democrats-have-an-age-problem/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">daily_show_guests</td>
+<td align="left">Every Guest Jon Stewart Ever Had On ‘The Daily Show’</td>
+<td align="left">TV</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-08-06</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/every-guest-jon-stewart-ever-had-on-the-daily-show/" class="uri">http://fivethirtyeight.com/datalab/every-guest-jon-stewart-ever-had-on-the-daily-show/</a></td>
+</tr>
+<tr class="even">
+<td align="left">democratic_bench</td>
+<td align="left">Some Democrats Who Could Step Up If Hillary Isn’t Ready For Hillary</td>
+<td align="left">2016 Election</td>
+<td align="left">Harry Enten</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-03-27</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/some-democrats-who-could-step-up-if-hillary-isnt-ready-for-hillary/" class="uri">http://fivethirtyeight.com/datalab/some-democrats-who-could-step-up-if-hillary-isnt-ready-for-hillary/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">drinks</td>
+<td align="left">Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?</td>
+<td align="left">Drinks</td>
+<td align="left">Mona Chalabi</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-08-13</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/" class="uri">http://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/</a></td>
+</tr>
+<tr class="even">
+<td align="left">drug_use</td>
+<td align="left">How Baby Boomers Get High</td>
+<td align="left">Public Health</td>
+<td align="left">Anna Maria Barry-Jester</td>
+<td align="left">Andrew Flowers</td>
+<td align="left">NA</td>
+<td align="left">2015-04-23</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/how-baby-boomers-get-high/" class="uri">http://fivethirtyeight.com/datalab/how-baby-boomers-get-high/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">elo_blatter</td>
+<td align="left">Blatter’s Reign At FIFA Hasn’t Helped Soccer’s Poor</td>
+<td align="left">World Soccer</td>
+<td align="left">Nate Silver</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-06-09</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/" class="uri">http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/</a></td>
+</tr>
+<tr class="even">
+<td align="left">endorsements</td>
+<td align="left">Pols And Polls Say The Same Thing: Jeb Bush Is A Weak Front-Runner</td>
+<td align="left">2016 Kickoff</td>
+<td align="left">Harry Enten</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-06-15</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/pols-and-polls-say-the-same-thing-jeb-bush-is-a-weak-front-runner/" class="uri">http://fivethirtyeight.com/features/pols-and-polls-say-the-same-thing-jeb-bush-is-a-weak-front-runner/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">fandango</td>
+<td align="left">Be Suspicious Of Online Movie Ratings, Especially Fandango’s</td>
+<td align="left">Movies</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-10-15</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/fandango-movies-ratings/" class="uri">http://fivethirtyeight.com/features/fandango-movies-ratings/</a></td>
+</tr>
+<tr class="even">
+<td align="left">fifa_audience</td>
+<td align="left">How To Break FIFA</td>
+<td align="left">The Beautiful Game</td>
+<td align="left">Nate Silver</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-05-28</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/how-to-break-fifa/" class="uri">http://fivethirtyeight.com/features/how-to-break-fifa/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">flying</td>
+<td align="left">41 Percent Of Fliers Think You’re Rude If You Recline Your Seat</td>
+<td align="left">NA</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-09-06</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/" class="uri">http://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/</a></td>
+</tr>
+<tr class="even">
+<td align="left">food_world_cup</td>
+<td align="left">The FiveThirtyEight International Food Association’s 2014 World Cup</td>
+<td align="left">FiveThirtyAte</td>
+<td align="left">Nate Silver</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">2014-06-25</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/" class="uri">http://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">hiphop_cand_lyrics</td>
+<td align="left">Every mention of the 2016 primary candidates in hip-hop songs</td>
+<td align="left">NA</td>
+<td align="left">Allison McCann</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2016-07-14</td>
+<td align="left"><a href="https://projects.fivethirtyeight.com/clinton-trump-hip-hop-lyrics/" class="uri">https://projects.fivethirtyeight.com/clinton-trump-hip-hop-lyrics/</a></td>
+</tr>
+<tr class="even">
+<td align="left">hist_ncaa_bball_casts</td>
+<td align="left">The NCAA Bracket: Checking Our Work</td>
+<td align="left">March Madness</td>
+<td align="left">Nate Silver</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-05-27</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/the-ncaa-bracket-checking-our-work/" class="uri">http://fivethirtyeight.com/datalab/the-ncaa-bracket-checking-our-work/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">hist_senate_preds</td>
+<td align="left">How The FiveThirtyEight Senate Forecast Model Works</td>
+<td align="left">2014 Midterms</td>
+<td align="left">Nate Silver</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-09-17</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/" class="uri">http://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/</a></td>
+</tr>
+<tr class="even">
+<td align="left">librarians</td>
+<td align="left">Where Are America’s Librarians?</td>
+<td align="left">Jobs</td>
+<td align="left">Mona Chalabi</td>
+<td align="left">Andrew Flowers</td>
+<td align="left">NA</td>
+<td align="left">2014-04-11</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/where-are-americas-librarians/" class="uri">http://fivethirtyeight.com/datalab/where-are-americas-librarians/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">love_actually_adj</td>
+<td align="left">The Definitive Analysis Of ‘Love Actually,’ The Greatest Christmas Movie Of Our Time</td>
+<td align="left">Movies</td>
+<td align="left">Walt Hickey</td>
+<td align="left">Gus Wezerek</td>
+<td align="left">NA</td>
+<td align="left">2016-12-22</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/" class="uri">http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/</a></td>
+</tr>
+<tr class="even">
+<td align="left">love_actually_appearance</td>
+<td align="left">The Definitive Analysis Of ‘Love Actually,’ The Greatest Christmas Movie Of Our Time</td>
+<td align="left">Movies</td>
+<td align="left">Walt Hickey</td>
+<td align="left">Gus Wezerek</td>
+<td align="left">NA</td>
+<td align="left">2016-12-22</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/" class="uri">http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">mad_men</td>
+<td align="left">Mad Men Is Ending. What’s Next For The Cast?</td>
+<td align="left">TV</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-05-15</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/mad-men-is-ending-whats-next-for-the-cast/" class="uri">http://fivethirtyeight.com/datalab/mad-men-is-ending-whats-next-for-the-cast/</a></td>
+</tr>
+<tr class="even">
+<td align="left">male_flight_attend</td>
+<td align="left">Dear Mona, How Many Flight Attendants Are Men?</td>
+<td align="left">Hope the Numbers Help</td>
+<td align="left">Mona Chalabi</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-10-03</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/dear-mona-how-many-flight-attendants-are-men/" class="uri">http://fivethirtyeight.com/datalab/dear-mona-how-many-flight-attendants-are-men/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">mlb_as_play_talent</td>
+<td align="left">The Best MLB All-Star Teams Ever</td>
+<td align="left">Baseball</td>
+<td align="left">Neil Paine</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-07-18</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/" class="uri">http://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/</a></td>
+</tr>
+<tr class="even">
+<td align="left">mlb_as_team_talent</td>
+<td align="left">The Best MLB All-Star Teams Ever</td>
+<td align="left">Baseball</td>
+<td align="left">Neil Paine</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-07-18</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/" class="uri">http://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">murder_2015_final</td>
+<td align="left">A Handful Of Cities Are Driving 2016’s Rise In Murder</td>
+<td align="left">Crime</td>
+<td align="left">Jeff Asher</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2016-10-06</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/" class="uri">http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/</a></td>
+</tr>
+<tr class="even">
+<td align="left">murder_2016_prelim</td>
+<td align="left">A Handful Of Cities Are Driving 2016’s Rise In Murder</td>
+<td align="left">Crime</td>
+<td align="left">Jeff Asher</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2016-10-06</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/" class="uri">http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">nba_draft_2015</td>
+<td align="left">Projecting The Top 50 Players In The 2015 NBA Draft Class</td>
+<td align="left">Basketball</td>
+<td align="left">Neil Paine</td>
+<td align="left">Zach Bradshaw</td>
+<td align="left">NA</td>
+<td align="left">2015-06-19</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/" class="uri">http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/</a></td>
+</tr>
+<tr class="even">
+<td align="left">nba_tattoos</td>
+<td align="left">Accurately Counting NBA Tattoos Isn’t Easy, Even If You’re Up Close</td>
+<td align="left">NA</td>
+<td align="left">Mike Wilson</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-06-07</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/accurately-counting-nba-tattoos-isnt-easy-even-if-youre-up-close/" class="uri">http://fivethirtyeight.com/datalab/accurately-counting-nba-tattoos-isnt-easy-even-if-youre-up-close/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">nfl_fav_team</td>
+<td align="left">The Rams Are Dead To Me, So I Answered 3,352 Questions To Find A New NFL Team</td>
+<td align="left">NFL</td>
+<td align="left">Blythe Terrell</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2016-09-08</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-rams-are-dead-to-me-so-i-answered-3352-questions-to-find-a-new-team/" class="uri">http://fivethirtyeight.com/features/the-rams-are-dead-to-me-so-i-answered-3352-questions-to-find-a-new-team/</a></td>
+</tr>
+<tr class="even">
+<td align="left">nfl_suspensions</td>
+<td align="left">The NFL’s Uneven History Of Punishing Domestic Violence</td>
+<td align="left">Suspensions</td>
+<td align="left">Allison McCann</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-08-28</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/nfl-domestic-violence-policy-suspensions/" class="uri">http://fivethirtyeight.com/features/nfl-domestic-violence-policy-suspensions/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">nfltix_div_avgprice</td>
+<td align="left">Who Goes To Meaningless NFL Games And Why?</td>
+<td align="left">Bar Fights With Walt</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-12-30</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/" class="uri">http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/</a></td>
+</tr>
+<tr class="even">
+<td align="left">nfltix_usa_avg</td>
+<td align="left">Who Goes To Meaningless NFL Games And Why?</td>
+<td align="left">Bar Fights With Walt</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-12-30</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/" class="uri">http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">nflwr_aging_curve</td>
+<td align="left">The Football Hall Of Fame Has A Receiver Problem</td>
+<td align="left">Canton</td>
+<td align="left">Neil Paine</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-08-04</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/" class="uri">http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/</a></td>
+</tr>
+<tr class="even">
+<td align="left">nflwr_hist</td>
+<td align="left">The Football Hall Of Fame Has A Receiver Problem</td>
+<td align="left">Canton</td>
+<td align="left">Neil Paine</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-08-04</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/" class="uri">http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">nutrition_pvalues</td>
+<td align="left">You Can’t Trust What You Read About Nutrition</td>
+<td align="left">Nutrition</td>
+<td align="left">Christie Aschwanden</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2016-01-06</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition" class="uri">http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition</a></td>
+</tr>
+<tr class="even">
+<td align="left">police_deaths</td>
+<td align="left">The Dallas Shooting Was Among The Deadliest For Police In U.S. History</td>
+<td align="left">Law Enforcement</td>
+<td align="left">Carl Bialik</td>
+<td align="left">Ritchie King</td>
+<td align="left">Andrew Flowers</td>
+<td align="left">2016-07-08</td>
+<td align="left"><a href="https://fivethirtyeight.com/features/the-dallas-shooting-was-among-the-deadliest-for-police-in-u-s-history/" class="uri">https://fivethirtyeight.com/features/the-dallas-shooting-was-among-the-deadliest-for-police-in-u-s-history/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">police_killings</td>
+<td align="left">Where Police Have Killed Americans In 2015</td>
+<td align="left">Police Killings</td>
+<td align="left">Ben Casselman</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-06-03</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015" class="uri">http://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015</a></td>
+</tr>
+<tr class="even">
+<td align="left">police_locals</td>
+<td align="left">Most Police Don’t Live In The Cities They Serve</td>
+<td align="left">Ferguson</td>
+<td align="left">Nate Silver</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-08-20</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/" class="uri">http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">pres_commencement</td>
+<td align="left">Sitting Presidents Give Way More Commencement Speeches Than They Used To</td>
+<td align="left">Higher Education</td>
+<td align="left">Carl Bialik</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2016-05-11</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/sitting-presidents-give-way-more-commencement-speeches-than-they-used-to/" class="uri">http://fivethirtyeight.com/features/sitting-presidents-give-way-more-commencement-speeches-than-they-used-to/</a></td>
+</tr>
+<tr class="even">
+<td align="left">pulitzer</td>
+<td align="left">Do Pulitzers Help Newspapers Keep Readers?</td>
+<td align="left">Awards</td>
+<td align="left">Nate Silver</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-04-15</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/" class="uri">http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">san_andreas</td>
+<td align="left">The Rock Isn’t Alone: Lots Of People Are Worried About ‘The Big One’</td>
+<td align="left">Movies</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-06-02</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/the-rock-isnt-alone-lots-of-people-are-worried-about-the-big-one/" class="uri">http://fivethirtyeight.com/datalab/the-rock-isnt-alone-lots-of-people-are-worried-about-the-big-one/</a></td>
+</tr>
+<tr class="even">
+<td align="left">senate_polls</td>
+<td align="left">Early Senate Polls Have Plenty to Tell Us About November</td>
+<td align="left">2014 Midterms</td>
+<td align="left">Harry Enten</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-04-16</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/early-senate-polls-have-plenty-to-tell-us-about-november/" class="uri">http://fivethirtyeight.com/features/early-senate-polls-have-plenty-to-tell-us-about-november/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">steak_survey</td>
+<td align="left">How Americans Like Their Steak</td>
+<td align="left">FiveThirtyAte</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2014-05-16</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/how-americans-like-their-steak/" class="uri">http://fivethirtyeight.com/datalab/how-americans-like-their-steak/</a></td>
+</tr>
+<tr class="even">
+<td align="left">tarantino</td>
+<td align="left">A Complete Catalog Of Every Time Someone Cursed Or Bled Out In A Quentin Tarantino Movie</td>
+<td align="left">Word Count</td>
+<td align="left">Oliver Roeder</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-12-09</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/" class="uri">http://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">tennis_events_time</td>
+<td align="left">Why Some Tennis Matches Take Forever</td>
+<td align="left">Tick Tock</td>
+<td align="left">Carl Bialik</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-06-06</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/" class="uri">http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/</a></td>
+</tr>
+<tr class="even">
+<td align="left">tennis_players_time</td>
+<td align="left">Why Some Tennis Matches Take Forever</td>
+<td align="left">Tick Tock</td>
+<td align="left">Carl Bialik</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-06-06</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/" class="uri">http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">tennis_serve_time</td>
+<td align="left">Why Some Tennis Matches Take Forever</td>
+<td align="left">Tick Tock</td>
+<td align="left">Carl Bialik</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-06-06</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/" class="uri">http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/</a></td>
+</tr>
+<tr class="even">
+<td align="left">trump_news</td>
+<td align="left">How Trump Hacked The Media</td>
+<td align="left">2016 Election</td>
+<td align="left">Nate Silver</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2016-03-30</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/how-donald-trump-hacked-the-media/" class="uri">http://fivethirtyeight.com/features/how-donald-trump-hacked-the-media/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">trump_twitter</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">unisex_names</td>
+<td align="left">The Most Common Unisex Names In America: Is Yours One Of Them?</td>
+<td align="left">Names</td>
+<td align="left">Andrew Flowers</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-06-10</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/there-are-922-unisex-names-in-america-is-yours-one-of-them/" class="uri">http://fivethirtyeight.com/features/there-are-922-unisex-names-in-america-is-yours-one-of-them/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">US_births_1994_2003</td>
+<td align="left">Some People Are Too Superstitious To Have A Baby On Friday The 13th</td>
+<td align="left">Parenting</td>
+<td align="left">Carl Bialik</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2016-05-13</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a></td>
+</tr>
+<tr class="even">
+<td align="left">US_births_2000_2014</td>
+<td align="left">Some People Are Too Superstitious To Have A Baby On Friday The 13th</td>
+<td align="left">Parenting</td>
+<td align="left">Carl Bialik</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2016-05-13</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">weather_check</td>
+<td align="left">Where People Go To Check The Weather</td>
+<td align="left">Weather</td>
+<td align="left">Walt Hickey</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2015-04-20</td>
+<td align="left"><a href="http://fivethirtyeight.com/datalab/weather-forecast-news-app-habits/" class="uri">http://fivethirtyeight.com/datalab/weather-forecast-news-app-habits/</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

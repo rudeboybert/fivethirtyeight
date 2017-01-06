@@ -1,21 +1,4 @@
----
-title: "Bechdel analysis using the `tidyverse`"
-author: "Albert Y. Kim, Chester Ismay, and Jennifer Chunn"
-date: "`r Sys.Date()`"
-output: 
-  rmarkdown::html_vignette:
-    df_print: kable
-vignette: |
-  %\VignetteIndexEntry{Bechdel tidyverse analysis}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
-
-This vignette is based on tidyverse-ifying the R code [here](https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/analyze-bechdel.R) and reproducing some of the plots and analysis done in the 538 story entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" by Walt Hickey available [here](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
-
-Load required packages to reproduce analysis.  Also load the `bechdel` dataset for analysis.
-
-```{r, message=FALSE, warning=FALSE}
+## ---- message=FALSE, warning=FALSE---------------------------------------
 library(dplyr)
 library(ggplot2)
 library(knitr)
@@ -28,41 +11,24 @@ library(scales)
 data("bechdel")
 # Turn off scientific notation
 options(scipen = 99)
-```
 
-
-## Filter to only 1990 - 2013
-
-Focus only on films from 1990 to 2013
-
-```{r bechdel90_13}
+## ----bechdel90_13--------------------------------------------------------
 bechdel90_13 <- bechdel %>% filter(between(year, 1990, 2013))
-```
 
-## Calculate variables
-
-Create international gross only and return on investment (ROI) columns and add to `bechdel_90_13` data frame
-
-```{r mutate}
+## ----mutate--------------------------------------------------------------
 bechdel90_13 %<>% 
   mutate(int_only = intgross_2013 - domgross_2013,
          roi_total = intgross_2013 / budget_2013,
          roi_dom = domgross_2013 / budget_2013,
          roi_int = int_only / budget_2013)
-```
 
-## Create `generous` variable
-
-```{r generous}
+## ----generous------------------------------------------------------------
 bechdel90_13 %<>%
   mutate(generous = ifelse(test = clean_test %in% c("ok", "dubious"),
                            yes = TRUE,
                            no = FALSE))
-```
 
-## Determine median ROI and budget based on categories
-
-```{r summary_ROI}
+## ----summary_ROI---------------------------------------------------------
 ROI_by_binary <- bechdel90_13 %>% 
   group_by(binary) %>% 
   summarize(median_ROI = median(roi_total, na.rm = TRUE))
@@ -70,136 +36,92 @@ ROI_by_binary
 bechdel90_13 %>% 
   summarize(
     `Median Overall Return on Investment` = median(roi_total, na.rm = TRUE))
-```
 
-```{r summary_budget}
+## ----summary_budget------------------------------------------------------
 budget_by_binary <- bechdel90_13 %>% 
   group_by(binary) %>% 
   summarize(median_budget = median(budget_2013, na.rm = TRUE))
 budget_by_binary
 bechdel90_13 %>% 
   summarize(`Median Overall Budget` = median(budget_2013, na.rm = TRUE))
-```
 
-## View Distributions
-
-Look at the distributions of budget, international gross, ROI, and their logarithms
-
-```{r budget-plot, fig.width = 5, warning = FALSE}
+## ----budget-plot, fig.width = 5, warning = FALSE-------------------------
 ggplot(data = bechdel90_13, mapping = aes(x = budget)) +
   geom_histogram(color = "white", bins = 20) +
   labs(title = "Histogram of budget")
-```
 
-```{r log-budget-plot, fig.width = 5, warning = FALSE}
+## ----log-budget-plot, fig.width = 5, warning = FALSE---------------------
 ggplot(data = bechdel90_13, mapping = aes(x = log(budget))) +
   geom_histogram(color = "white", bins = 20) +
   labs(title = "Histogram of Logarithm of Budget")
-```
 
-```{r intgross-plot, fig.width = 5, warning = FALSE}
+## ----intgross-plot, fig.width = 5, warning = FALSE-----------------------
 ggplot(data = bechdel90_13, mapping = aes(x = intgross_2013)) +
   geom_histogram(color = "white", bins = 20) +
   labs(title = "Histogram of International Gross")
-```
 
-```{r log-intgross-plot, fig.width = 5, warning = FALSE}
+## ----log-intgross-plot, fig.width = 5, warning = FALSE-------------------
 ggplot(data = bechdel90_13, mapping = aes(x = log(intgross_2013))) +
   geom_histogram(color = "white", bins = 20) +
   labs(title = "Histogram of Logarithm of International Gross")
-```
 
-```{r roi-plot, fig.width = 5, warning = FALSE}
+## ----roi-plot, fig.width = 5, warning = FALSE----------------------------
 ggplot(data = bechdel90_13, mapping = aes(x = roi_total)) +
   geom_histogram(color = "white", bins = 20) +
   labs(title = "Histogram of ROI")
-```
 
-```{r log-roi-plot, fig.width = 5, warning = FALSE}
+## ----log-roi-plot, fig.width = 5, warning = FALSE------------------------
 ggplot(data = bechdel90_13, mapping = aes(x = log(roi_total))) +
   geom_histogram(color = "white", bins = 20) +
   labs(title = "Histogram of Logarithm of ROI")
-```
 
-## Linear Regression Models
-
-### Movies with higher budgets make more international gross revenues using logarithms on both variables
-
-```{r scatplot1, fig.width = 5, warning=FALSE}
+## ----scatplot1, fig.width = 5, warning=FALSE-----------------------------
 ggplot(data = bechdel90_13, 
        mapping = aes(x = log(budget_2013), y = log(intgross_2013))) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE)
-```
 
-```{r reg1}
+## ----reg1----------------------------------------------------------------
 gross_vs_budget <- lm(log(intgross_2013) ~ log(budget_2013), 
                       data = bechdel90_13)
 tidy(gross_vs_budget)
-```
 
-### Bechdel dummy is not a significant predictor of `log(intgross_2013)` assuming `log(budget_2013)` is in the model
-
-Note that the regression lines nearly completely overlap.
-
-```{r scatplot2, fig.width = 5, warning=FALSE}
+## ----scatplot2, fig.width = 5, warning=FALSE-----------------------------
 ggplot(data = bechdel90_13, 
        mapping = aes(x = log(budget_2013), y = log(intgross_2013), 
                      color = binary)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE)
-```
 
-```{r reg2}
+## ----reg2----------------------------------------------------------------
 gross_vs_budget_binary <- lm(log(intgross_2013) ~ log(budget_2013) + factor(binary), 
                       data = bechdel90_13)
 tidy(gross_vs_budget_binary)
-```
 
-Note the $p$-value on `factor(binary)PASS` here that is around 0.40.
-
-### Movies with higher budgets have lower ROI
-
-```{r scatplot3, warning=FALSE}
+## ----scatplot3, warning=FALSE--------------------------------------------
 ggplot(data = bechdel90_13, 
        mapping = aes(x = log(budget_2013), y = log(roi_total))) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE)
-```
 
-```{r reg3}
+## ----reg3----------------------------------------------------------------
 roi_vs_budget <- lm(log(roi_total) ~ log(budget_2013), 
                       data = bechdel90_13)
 tidy(roi_vs_budget)
-```
 
-Note the negative coefficient here on `log(budget_2013)` and its corresponding small $p$-value.
-
-### Bechdel dummy is not a significant predictor of `log(roi_total)` assuming `log(budget_2013)` is in the model
-
-Note that the regression lines nearly completely overlap.
-
-```{r scatplot4, warning=FALSE}
+## ----scatplot4, warning=FALSE--------------------------------------------
 ggplot(data = bechdel90_13, 
        mapping = aes(x = log(budget_2013), y = log(roi_total), 
                      color = binary)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE)
-```
 
-```{r reg4}
+## ----reg4----------------------------------------------------------------
 roi_vs_budget_binary <- lm(log(roi_total) ~ log(budget_2013) + factor(binary), 
                       data = bechdel90_13)
 tidy(roi_vs_budget_binary)
-```
 
-Note the $p$-value on `factor(binary)PASS` here that is around 0.40.
-
-## Dollars Earned for Every Dollar Spent graphic 
-
-Calculating the values and creating a tidy data frame
-
-```{r roi-graphic}
+## ----roi-graphic---------------------------------------------------------
 passes_bechtel_rom <- bechdel90_13 %>% 
   filter(generous == TRUE) %>% 
   summarize(median_roi = median(roi_dom, na.rm = TRUE))
@@ -211,9 +133,8 @@ pass_bech_rom <- data_frame(clean_test = "pass",
                   median_roi = passes_bechtel_rom$median_roi)
 med_groups_dom_full <- bind_rows(pass_bech_rom, median_groups_dom) %>% 
   mutate(group = "U.S. and Canada")
-```
 
-```{r roi-graphic2, fig.width=5}
+## ----roi-graphic2, fig.width=5-------------------------------------------
 passes_bechtel_int <- bechdel90_13 %>% 
   filter(generous == TRUE) %>% 
   summarize(median_roi = median(roi_int, na.rm = TRUE))
@@ -242,11 +163,8 @@ med_groups %<>% mutate(clean_test = factor(clean_test,
                                             "Passes Bechdel Test"))) %>% 
   mutate(group = factor(group, levels = c("U.S. and Canada", "International"))) %>% 
   mutate(median_roi_dol = dollar(median_roi))
-```
 
-Using only a few functions to plot
-
-```{r basic-538, fig.width=8}
+## ----basic-538, fig.width=8----------------------------------------------
 ggplot(data = med_groups, mapping = aes(x = clean_test, y = median_roi, 
                                         fill = group)) +
   geom_bar(stat = "identity") +
@@ -255,11 +173,8 @@ ggplot(data = med_groups, mapping = aes(x = clean_test, y = median_roi,
   labs(title = "Dollars Earned for Every Dollar Spent", subtitle = "2013 dollars") +
   scale_fill_fivethirtyeight() +
   theme_fivethirtyeight()
-```
 
-Attempt to fully reproduce **Dollars Earned for Every Dollar Spent** plot using `ggplot`
-
-```{r roi-plot-538, fig.width=8}
+## ----roi-plot-538, fig.width=8-------------------------------------------
 ggplot(data = med_groups, mapping = aes(x = clean_test, y = median_roi, 
                                         fill = group)) +
   geom_bar(stat = "identity") +
@@ -279,5 +194,4 @@ ggplot(data = med_groups, mapping = aes(x = clean_test, y = median_roi,
         axis.text.x = element_blank(),
         axis.ticks.x = element_blank()) +
   guides(fill = FALSE)
-```
 
