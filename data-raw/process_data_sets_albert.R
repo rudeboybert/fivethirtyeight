@@ -637,7 +637,6 @@ for(i in 1:nrow(love_actually_adj)){
 }
 devtools::use_data(love_actually_adj, overwrite = TRUE)
 
-
 love_actually_appearance <- read_csv("data-raw/love-actually/love_actually_appearances.csv") %>% 
   # Only first 71 rows had data
   slice(1:71)

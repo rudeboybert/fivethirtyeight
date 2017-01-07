@@ -28,7 +28,7 @@ balance being
 It has been our experience that many data sets that exist in R packages, such as the 
  [`nycflights13`](https://github.com/hadley/nycflights13), 
 [`babynames`](https://github.com/hadley/babynames), and [`gapminder`](https://github.com/jennybc/gapminder)
-packages, are of great pedagogical value as they
+packages, are of great pedagogical value as they:
 
 * Satisfy the above two goals.
 * Are in standardized format as they fit into the [tidyverse](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html) ecosystem.
@@ -36,7 +36,7 @@ packages, are of great pedagogical value as they
 
 It is along these lines that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at [FiveThirtyEight.com](http://fivethirtyeight.com/), a data-driven journalism website created by Nate Silver and run by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on [GitHub](https://github.com/fivethirtyeight/data), a web-based repository for collaboration on code and data. 
 
-With consultation from [Andrew Flowers](http://fivethirtyeight.com/contributors/andrew-flowers/) and [Andrei Scheinkman](http://fivethirtyeight.com/contributors/andrei-scheinkman/) of FiveThirtyEight, we go one step further by 
+With consultation from [Andrew Flowers](http://fivethirtyeight.com/contributors/andrew-flowers/) and [Andrei Scheinkman](http://fivethirtyeight.com/contributors/andrei-scheinkman/) of FiveThirtyEight, we go one step further by:
 
 1. Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data.
 2. Packaging it all in an easy to load format: package installation instead of working with CSV's.
@@ -61,11 +61,11 @@ guidelines:
     + Use underscores instead of CamelCase or spaces
 * Variables:
     + Factors vs characters:
-        + Ordinal categorical variables are `factor` with the intuitive ordering of `levels`.
+        + Ordinal categorical variables are `factor` with the intuitive ordering of `levels`. We did this to ensure barplots and boxplots would display in an intuitive order. 
         + Regular categorical variables are left as `character` vectors.
     + Convert date variables that are beyond just `year` to [POSIX date](http://www.epochconverter.com/) objects using the  [lubridate](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html) package. That way users can easily create time series plots. Example:
-        + If just `year`, then leave as is
-        + If there are `year` and `month` variables, then convert to POSIX date type with `year-month-01`
+        + If just a `year` variable exits, then we leave it as is
+        + If there are `year` and `month` variables, we convert them POSIX date type as `year-month-01`
 
 **Note**: The code used to pre-process the data can be found on the [GitHub repository](https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw) for the package in the `process_data_sets.R` files. These can serve as data manipulation/wrangling exercises and examples for more advanced students.
 
