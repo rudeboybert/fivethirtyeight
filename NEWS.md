@@ -1,3 +1,4 @@
-# fivethirtyeight 0.0.0.9000
+# fivethirtyeight 0.1.0
 
-* Developmental version; don't expect much to change however.
+* Included all data sets as of late December 2016. love-actually being the latest
+* Included one code example as a Vignette: bechdel
