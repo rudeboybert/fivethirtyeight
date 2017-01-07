@@ -14,7 +14,7 @@
 
 <meta name="date" content="2017-01-07" />
 
-<title>fivethirtyeight</title>
+<title>fivethirtyeight Package</title>
 
 
 
@@ -30,7 +30,7 @@
 
 
 
-<h1 class="title toc-ignore">fivethirtyeight</h1>
+<h1 class="title toc-ignore"><code>fivethirtyeight</code> Package</h1>
 <h4 class="author"><em>Albert Y. Kim, Chester Ismay, and Jennifer Chunn</em></h4>
 <h4 class="date"><em>2017-01-07</em></h4>
 
@@ -43,23 +43,23 @@
 <li><strong>Rich enough</strong> to answer meaningful questions with, <strong>real enough</strong> to ensure that there is context, and <strong>realistic enough</strong> to convey to students that data as it exists “in the wild” needs processing.</li>
 <li>Easily and quickly accessible to novices, so that we <a href="https://arxiv.org/abs/1507.05346">minimize the prerequisites to research</a>.</li>
 </ol>
-<p>It has been our experience that many data sets that exist in R packages, such as the <a href="https://github.com/hadley/nycflights13"><code>nycflights13</code></a>, <a href="https://github.com/hadley/babynames"><code>babynames</code></a>, and <a href="https://github.com/jennybc/gapminder"><code>gapminder</code></a> packages, are of great pedagogical value as they</p>
+<p>It has been our experience that many data sets that exist in R packages, such as the <a href="https://github.com/hadley/nycflights13"><code>nycflights13</code></a>, <a href="https://github.com/hadley/babynames"><code>babynames</code></a>, and <a href="https://github.com/jennybc/gapminder"><code>gapminder</code></a> packages, are of great pedagogical value as they:</p>
 <ul>
 <li>Satisfy the above two goals.</li>
-<li>Are in standardized format as they fit into the <a href="https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html">tidyverse</a> ecosystem.</li>
+<li>Are in standardized format as they fit into the <a href="https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html">tidy tools</a> ecosystem.</li>
 <li>Are really fun to play with!</li>
 </ul>
-<p>It is along these lines that we present <code>fivethirtyeight</code>: an R package of data and code behind the stories and interactives at <a href="http://fivethirtyeight.com/">FiveThirtyEight.com</a>, a data-driven journalism website created by Nate Silver and run by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on <a href="https://github.com/fivethirtyeight/data">GitHub</a>, a web-based repository for collaboration on code and data.</p>
-<p>With consultation from <a href="http://fivethirtyeight.com/contributors/andrew-flowers/">Andrew Flowers</a> and <a href="http://fivethirtyeight.com/contributors/andrei-scheinkman/">Andrei Scheinkman</a> of FiveThirtyEight, we go one step further by</p>
+<p>It is along these lines that we present <code>fivethirtyeight</code>: an R package of data and code behind the stories and interactives at <a href="http://fivethirtyeight.com/">FiveThirtyEight.com</a>, a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on <a href="https://github.com/fivethirtyeight/data">GitHub</a>, a web-based repository for collaboration on code and data.</p>
+<p>With consultation from <a href="http://fivethirtyeight.com/contributors/andrew-flowers/">Andrew Flowers</a> and <a href="http://fivethirtyeight.com/contributors/andrei-scheinkman/">Andrei Scheinkman</a> of FiveThirtyEight, we go one step further by:</p>
 <ol style="list-style-type: decimal">
 <li>Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data.</li>
 <li>Packaging it all in an easy to load format: package installation instead of working with CSV’s.</li>
-<li>Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit, all variables, the original article, and (if listed) the data sources.</li>
+<li>Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.</li>
 </ol>
 </div>
 <div id="guidelines" class="section level2">
 <h2>Guidelines</h2>
-<p>In order to make the data easily accessible to R novices, we pre-process the original data sets as they exist on the <a href="https://github.com/fivethirtyeight/data">538 GitHub repository</a> to adhere to the following guidelines:</p>
+<p>In order to make the data easily accessible to R novices, we pre-process the original data sets as they exist in the <a href="https://github.com/fivethirtyeight/data">538 GitHub repository</a> to adhere to the following guidelines:</p>
 <ul>
 <li>Naming conventions for data frames and variables:
 <ul>
@@ -71,17 +71,17 @@
 <ul>
 <li>Factors vs characters:
 <ul>
-<li>Ordinal categorical variables are <code>factor</code> with the intuitive ordering of <code>levels</code>.</li>
+<li>Ordinal categorical variables are <code>factor</code> with the intuitive ordering of <code>levels</code>. We did this to ensure barplots and boxplots would display in an intuitive order.</li>
 <li>Regular categorical variables are left as <code>character</code> vectors.</li>
 </ul></li>
 <li>Convert date variables that are beyond just <code>year</code> to <a href="http://www.epochconverter.com/">POSIX date</a> objects using the <a href="https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html">lubridate</a> package. That way users can easily create time series plots. Example:
 <ul>
-<li>If just <code>year</code>, then leave as is</li>
-<li>If there are <code>year</code> and <code>month</code> variables, then convert to POSIX date type with <code>year-month-01</code></li>
+<li>If only a <code>year</code> variable exits, then we leave it as is.</li>
+<li>If there are <code>year</code> and <code>month</code> variables, we convert them POSIX date objects as <code>year-month-01</code>.</li>
 </ul></li>
 </ul></li>
 </ul>
-<p><strong>Note</strong>: The code used to pre-process the data can be found on the <a href="https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw">GitHub repository</a> for the package in the <code>process_data_sets.R</code> files. These can serve as data manipulation/wrangling exercises and examples for more advanced students.</p>
+<p><strong>Note</strong>: The code used to pre-process the data can be found on the <a href="https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw">GitHub repository</a> for the package in the <code>process_data_sets.R</code> files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.</p>
 </div>
 <div id="data-sets" class="section level2">
 <h2>Data Sets</h2>

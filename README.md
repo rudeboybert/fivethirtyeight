@@ -29,7 +29,7 @@ Example usage:
 ``` r
 library(fivethirtyeight)
 data(package = "fivethirtyeight")
-# Bechdel data set
+# Bechdel data set:
 data(bechdel)
 head(bechdel)
 ?bechdel
@@ -42,26 +42,33 @@ More Information
 
 See the package vignette for:
 
-1.  Our motivation for creating this package
-2.  Guidelines we followed preparing the data sets and links to the code
-3.  A more detailed outline of all data sets
+1.  Our motivation for creating this package.
+2.  Guidelines we followed preparing the data sets and links to the code.
+3.  A more detailed outline of all data sets.
 
 ``` r
 vignette("fivethirtyeight", package = "fivethirtyeight")
 ```
 
-Colloborate
+Collaborate
 -----------
 
-#### Convert Code to R Markdown
+### Code
 
-In many instances, the data sets had the R code used in the analysis. We would love to convert these to [R Markdown](http://rmarkdown.rstudio.com/) format and add them to the package. For example, we convert the [R code](https://github.com/fivethirtyeight/data/blob/master/bechdel/analyze-bechdel.R) used in [The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women) here:
+In many instances, the data sets had the R code used in the analysis. We would love to
+
+1.  Convert the code to use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) package tools
+2.  Present the code in [R Markdown](http://rmarkdown.rstudio.com/) format
+
+For example, we did this using the [R code](https://github.com/fivethirtyeight/data/blob/master/bechdel/analyze-bechdel.R) for the article [The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women) here:
 
 ``` r
 vignette("bechdel", package = "fivethirtyeight")
 ```
 
-### Adding to the Package
+### Contributing to the Package
+
+If you want to contribute to the package:
 
 -   We followed the principles in Hadley Wickham's [R packages](http://r-pkgs.had.co.nz/) book
--   Preliminary instructions for automating R package documentation and collecting data about the data sets is available [here](https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md)
+-   Preliminary instructions for automating R package documentation and collecting data about the data sets is available [here](https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md).

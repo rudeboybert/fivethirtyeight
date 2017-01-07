@@ -1,5 +1,5 @@
 ---
-title: "fivethirtyeight"
+title: "`fivethirtyeight` Package"
 author: "Albert Y. Kim, Chester Ismay, and Jennifer Chunn"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -31,16 +31,16 @@ It has been our experience that many data sets that exist in R packages, such as
 packages, are of great pedagogical value as they:
 
 * Satisfy the above two goals.
-* Are in standardized format as they fit into the [tidyverse](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html) ecosystem.
+* Are in standardized format as they fit into the [tidy tools](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html) ecosystem.
 * Are really fun to play with!
 
-It is along these lines that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at [FiveThirtyEight.com](http://fivethirtyeight.com/), a data-driven journalism website created by Nate Silver and run by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on [GitHub](https://github.com/fivethirtyeight/data), a web-based repository for collaboration on code and data. 
+It is along these lines that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at [FiveThirtyEight.com](http://fivethirtyeight.com/), a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on [GitHub](https://github.com/fivethirtyeight/data), a web-based repository for collaboration on code and data. 
 
 With consultation from [Andrew Flowers](http://fivethirtyeight.com/contributors/andrew-flowers/) and [Andrei Scheinkman](http://fivethirtyeight.com/contributors/andrei-scheinkman/) of FiveThirtyEight, we go one step further by:
 
 1. Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data.
 2. Packaging it all in an easy to load format: package installation instead of working with CSV's.
-3. Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit, all variables, the original article, and (if listed) the data sources.
+3. Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.
 
 
 
@@ -51,7 +51,7 @@ With consultation from [Andrew Flowers](http://fivethirtyeight.com/contributors/
 ## Guidelines
 
 In order to make the data easily accessible to R novices, we pre-process the
-original data sets as they exist on the [538 GitHub 
+original data sets as they exist in the [538 GitHub 
 repository](https://github.com/fivethirtyeight/data) to adhere to the following 
 guidelines:
 
@@ -64,10 +64,10 @@ guidelines:
         + Ordinal categorical variables are `factor` with the intuitive ordering of `levels`. We did this to ensure barplots and boxplots would display in an intuitive order. 
         + Regular categorical variables are left as `character` vectors.
     + Convert date variables that are beyond just `year` to [POSIX date](http://www.epochconverter.com/) objects using the  [lubridate](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html) package. That way users can easily create time series plots. Example:
-        + If just a `year` variable exits, then we leave it as is
-        + If there are `year` and `month` variables, we convert them POSIX date type as `year-month-01`
+        + If only a `year` variable exits, then we leave it as is.
+        + If there are `year` and `month` variables, we convert them POSIX date objects as `year-month-01`.
 
-**Note**: The code used to pre-process the data can be found on the [GitHub repository](https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw) for the package in the `process_data_sets.R` files. These can serve as data manipulation/wrangling exercises and examples for more advanced students.
+**Note**: The code used to pre-process the data can be found on the [GitHub repository](https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw) for the package in the `process_data_sets.R` files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.
 
 
 
