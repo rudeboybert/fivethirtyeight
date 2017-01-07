@@ -2,9 +2,9 @@
 library(dplyr)
 library(readr)
 library(knitr)
-datasets <- read_csv("datasets.csv") %>% 
-  select(-Notes)
 
 ## ---- message=FALSE, warning=FALSE, echo=FALSE---------------------------
+datasets <- read_csv("datasets.csv") %>% 
+  select(-Notes)
 kable(datasets)
 
