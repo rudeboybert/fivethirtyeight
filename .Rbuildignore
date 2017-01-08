@@ -2,6 +2,9 @@
 ^\.Rproj\.user$
 ^data-raw$
 README.Rmd
+^README\.Rmd$
+README.md
+^README\.md$
 cran-comments.md
 .httr-oauth
 R/create_doc.R
