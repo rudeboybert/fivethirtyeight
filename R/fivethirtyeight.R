@@ -1,4 +1,4 @@
-#' fivethirtyeight: Data and code behind the stories and interactives at FiveThirtyEight
+#' fivethirtyeight: Data and Code Behind the Stories and Interactives at FiveThirtyEight
 #'
 #' Data and code behind the stories and interactives at FiveThirtyEight \url{https://github.com/fivethirtyeight/data}.
 #'

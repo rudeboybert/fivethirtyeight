@@ -4,7 +4,7 @@
 \name{fivethirtyeight}
 \alias{fivethirtyeight}
 \alias{fivethirtyeight-package}
-\title{fivethirtyeight: Data and code behind the stories and interactives at FiveThirtyEight}
+\title{fivethirtyeight: Data and Code Behind the Stories and Interactives at FiveThirtyEight}
 \description{
 Data and code behind the stories and interactives at FiveThirtyEight \url{https://github.com/fivethirtyeight/data}.
 }

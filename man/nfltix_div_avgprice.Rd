@@ -11,7 +11,7 @@
   \item{avg_tix_price}{Average ticket price} 
 }}
 \source{
-StubHub \url{http://stubhub.com}
+StubHub \url{https://www.stubhub.com/}
 }
 \usage{
 nfltix_div_avgprice
