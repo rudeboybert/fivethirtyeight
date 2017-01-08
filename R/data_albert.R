@@ -80,10 +80,10 @@
 
 
 
-#' The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women
+#' The Dollar-And-Cents Case Against Hollywood's Exclusion of Women
 #'
 #' The raw data behind the story
-#' "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"
+#' "The Dollar-And-Cents Case Against Hollywood's Exclusion of Women"
 #' \url{http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/}.
 #'
 #' @format A data frame with 1794 rows representing movies and 15 variables:
@@ -145,7 +145,7 @@
 #'   \item{number_of_subjects}{The number of subjects featured in the film.}
 #'   \item{subject}{The actual name of the featured subject.}
 #'   \item{type_of_subject}{The occupation of subject or reason for recognition.}
-#'   \item{race_known}{Indicates whether the subject’s race was discernible based on background of self, parent, or grandparent.}
+#'   \item{race_known}{Indicates whether the subject's race was discernible based on background of self, parent, or grandparent.}
 #'   \item{subject_race}{Race of the subject.}
 #'   \item{person_of_color}{Dummy variable that indicates person of color.}
 #'   \item{subject_sex}{Sex of subject.}
@@ -241,10 +241,10 @@
 
 
 
-#' Why Classic Rock Isn’t What It Used To Be
+#' Why Classic Rock Isn't What It Used To Be
 #'
 #' The raw data behind the story
-#' "Why Classic Rock Isn’t What It Used To Be"
+#' "Why Classic Rock Isn't What It Used To Be"
 #' \url{http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/}.
 #'
 #' @format A data frame with 37,673 rows representing song plays and 8 variables:
@@ -263,10 +263,10 @@
 
 
 
-#' Why Classic Rock Isn’t What It Used To Be
+#' Why Classic Rock Isn't What It Used To Be
 #'
 #' The raw data behind the story
-#' "Why Classic Rock Isn’t What It Used To Be"
+#' "Why Classic Rock Isn't What It Used To Be"
 #' \url{http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/}.
 #'
 #' @format A data frame with 2230 rows representing unique songs and 7 variables:
@@ -419,10 +419,10 @@
 
 
 
-#' Some Democrats Who Could Step Up If Hillary Isn’t Ready For Hillary
+#' Some Democrats Who Could Step Up If Hillary Isn't Ready For Hillary
 #'
 #' The raw data behind the story
-#' "Some Democrats Who Could Step Up If Hillary Isn’t Ready For Hillary"
+#' "Some Democrats Who Could Step Up If Hillary Isn't Ready For Hillary"
 #' \url{http://fivethirtyeight.com/datalab/some-democrats-who-could-step-up-if-hillary-isnt-ready-for-hillary/}.
 #'
 #' @format A data frame with 67 rows representing members of the Democratic Party and 3 variables:
@@ -542,10 +542,10 @@
 
 
 
-#' Blatter’s Reign At FIFA Hasn’t Helped Soccer’s Poor
+#' Blatter's Reign At FIFA Hasn't Helped Soccer's Poor
 #'
 #' The raw data behind the story
-#' "Blatter’s Reign At FIFA Hasn’t Helped Soccer’s Poor"
+#' "Blatter's Reign At FIFA Hasn't Helped Soccer's Poor"
 #' \url{http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/}.
 #'
 #' @format A data frame with 209 rows representing countries and 8 variables:
@@ -652,10 +652,10 @@
 
 
 
-#' 41 Percent Of Fliers Think You’re Rude If You Recline Your Seat
+#' 41 Percent Of Fliers Think You're Rude If You Recline Your Seat
 #'
 #' The raw data behind the story
-#' "41 Percent Of Fliers Think You’re Rude If You Recline Your Seat"
+#' "41 Percent Of Fliers Think You're Rude If You Recline Your Seat"
 #' \url{http://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat}.
 #'
 #' @format A data frame with 1040 rows representing respondents and 27 variables:
@@ -693,10 +693,10 @@
 
 
 
-#' The FiveThirtyEight International Food Association’s 2014 World Cup
+#' The FiveThirtyEight International Food Association's 2014 World Cup
 #'
 #' The raw data behind the story
-#' "The FiveThirtyEight International Food Association’s 2014 World Cup"
+#' "The FiveThirtyEight International Food Association's 2014 World Cup"
 #' \url{http://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/}.
 #' For all the countries below, the response to the following question is presented:
 #' "Please rate how much you like the traditional cuisine of X"
