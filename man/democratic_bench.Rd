@@ -3,7 +3,7 @@
 \docType{data}
 \name{democratic_bench}
 \alias{democratic_bench}
-\title{Some Democrats Who Could Step Up If Hillary Isn’t Ready For Hillary}
+\title{Some Democrats Who Could Step Up If Hillary Isn't Ready For Hillary}
 \format{A data frame with 67 rows representing members of the Democratic Party and 3 variables:
 \describe{
   \item{candidate}{Candidate}
@@ -18,7 +18,7 @@ democratic_bench
 }
 \description{
 The raw data behind the story
-"Some Democrats Who Could Step Up If Hillary Isn’t Ready For Hillary"
+"Some Democrats Who Could Step Up If Hillary Isn't Ready For Hillary"
 \url{http://fivethirtyeight.com/datalab/some-democrats-who-could-step-up-if-hillary-isnt-ready-for-hillary/}.
 }
 \keyword{datasets}

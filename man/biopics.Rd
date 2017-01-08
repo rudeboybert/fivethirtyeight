@@ -15,7 +15,7 @@
   \item{number_of_subjects}{The number of subjects featured in the film.}
   \item{subject}{The actual name of the featured subject.}
   \item{type_of_subject}{The occupation of subject or reason for recognition.}
-  \item{race_known}{Indicates whether the subject’s race was discernible based on background of self, parent, or grandparent.}
+  \item{race_known}{Indicates whether the subject's race was discernible based on background of self, parent, or grandparent.}
   \item{subject_race}{Race of the subject.}
   \item{person_of_color}{Dummy variable that indicates person of color.}
   \item{subject_sex}{Sex of subject.}

@@ -3,7 +3,7 @@
 \docType{data}
 \name{classic_rock_song_list}
 \alias{classic_rock_song_list}
-\title{Why Classic Rock Isn’t What It Used To Be}
+\title{Why Classic Rock Isn't What It Used To Be}
 \format{A data frame with 2230 rows representing unique songs and 7 variables:
 \describe{
   \item{song}{Song name}
@@ -22,7 +22,7 @@ classic_rock_song_list
 }
 \description{
 The raw data behind the story
-"Why Classic Rock Isn’t What It Used To Be"
+"Why Classic Rock Isn't What It Used To Be"
 \url{http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/}.
 }
 \seealso{

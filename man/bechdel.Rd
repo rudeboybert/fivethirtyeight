@@ -3,7 +3,7 @@
 \docType{data}
 \name{bechdel}
 \alias{bechdel}
-\title{The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women}
+\title{The Dollar-And-Cents Case Against Hollywood's Exclusion of Women}
 \format{A data frame with 1794 rows representing movies and 15 variables:
 \describe{
   \item{year}{Year of release}
@@ -30,7 +30,7 @@ bechdel
 }
 \description{
 The raw data behind the story
-"The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women"
+"The Dollar-And-Cents Case Against Hollywood's Exclusion of Women"
 \url{http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/}.
 }
 \keyword{datasets}

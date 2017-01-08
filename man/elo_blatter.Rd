@@ -3,7 +3,7 @@
 \docType{data}
 \name{elo_blatter}
 \alias{elo_blatter}
-\title{Blatter’s Reign At FIFA Hasn’t Helped Soccer’s Poor}
+\title{Blatter's Reign At FIFA Hasn't Helped Soccer's Poor}
 \format{A data frame with 209 rows representing countries and 8 variables:
 \describe{
   \item{country}{FIFA member country}
@@ -23,7 +23,7 @@ elo_blatter
 }
 \description{
 The raw data behind the story
-"Blatter’s Reign At FIFA Hasn’t Helped Soccer’s Poor"
+"Blatter's Reign At FIFA Hasn't Helped Soccer's Poor"
 \url{http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/}.
 }
 \keyword{datasets}

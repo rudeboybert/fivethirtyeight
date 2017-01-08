@@ -3,7 +3,7 @@
 \docType{data}
 \name{food_world_cup}
 \alias{food_world_cup}
-\title{The FiveThirtyEight International Food Association’s 2014 World Cup}
+\title{The FiveThirtyEight International Food Association's 2014 World Cup}
 \format{A data frame with 1373 rows representing respondents and 48 variables:
 \describe{
   \item{respondent_id}{Respondent ID}
@@ -60,7 +60,7 @@ food_world_cup
 }
 \description{
 The raw data behind the story
-"The FiveThirtyEight International Food Association’s 2014 World Cup"
+"The FiveThirtyEight International Food Association's 2014 World Cup"
 \url{http://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/}.
 For all the countries below, the response to the following question is presented:
 "Please rate how much you like the traditional cuisine of X"

@@ -3,7 +3,7 @@
 \docType{data}
 \name{flying}
 \alias{flying}
-\title{41 Percent Of Fliers Think You’re Rude If You Recline Your Seat}
+\title{41 Percent Of Fliers Think You're Rude If You Recline Your Seat}
 \format{A data frame with 1040 rows representing respondents and 27 variables:
 \describe{
   \item{respondent_id}{RespondentID}
@@ -42,7 +42,7 @@ flying
 }
 \description{
 The raw data behind the story
-"41 Percent Of Fliers Think You’re Rude If You Recline Your Seat"
+"41 Percent Of Fliers Think You're Rude If You Recline Your Seat"
 \url{http://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat}.
 }
 \keyword{datasets}
