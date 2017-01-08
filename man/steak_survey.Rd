@@ -6,6 +6,21 @@
 \title{How Americans Like Their Steak}
 \format{A data frame with 550 rows representing respondents and 15 variables:
 \describe{
+  \item{respondent_id}{Respondent ID}
+  \item{lottery_a}{not sure}
+  \item{smoke}{Is respondent a smoker?}
+  \item{alcohol}{Is respondent a drinker?}
+  \item{gamble}{Is respondent a gambler?} 
+  \item{skydiving}{Is respondent a skydiver?}
+  \item{speed}{not sure}
+  \item{cheated}{not sure}
+  \item{steak}{not sure}
+  \item{steak_prep}{Preferred steak preparation}
+  \item{female}{Is respondent female?} 
+  \item{age}{Age}
+  \item{hhold_income}{Household income}
+  \item{educ}{Education level}
+  \item{region}{Region of US}
 }}
 \source{
 See \url{http://fivethirtyeight.com/datalab/how-americans-like-their-steak/}
