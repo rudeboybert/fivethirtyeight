@@ -12,7 +12,7 @@
 
 <meta name="author" content="Albert Y. Kim, Chester Ismay, and Jennifer Chunn" />
 
-<meta name="date" content="2017-01-07" />
+<meta name="date" content="2017-01-08" />
 
 <title>fivethirtyeight Package</title>
 
@@ -32,28 +32,28 @@
 
 <h1 class="title toc-ignore"><code>fivethirtyeight</code> Package</h1>
 <h4 class="author"><em>Albert Y. Kim, Chester Ismay, and Jennifer Chunn</em></h4>
-<h4 class="date"><em>2017-01-07</em></h4>
+<h4 class="date"><em>2017-01-08</em></h4>
 
 
 
 <div id="motivation" class="section level2">
 <h2>Motivation</h2>
-<p>We are all involved in statistics and data science education, in particular at the introductory undergraduate level. As such, we are always looking for data sets that balance being</p>
+<p>We are involved in statistics and data science education, in particular at the introductory undergraduate level. As such, we are always looking for data sets that balance being</p>
 <ol style="list-style-type: decimal">
-<li><strong>Rich enough</strong> to answer meaningful questions with, <strong>real enough</strong> to ensure that there is context, and <strong>realistic enough</strong> to convey to students that data as it exists “in the wild” needs processing.</li>
+<li><strong>Rich enough</strong> to answer meaningful questions with, <strong>real enough</strong> to ensure that there is context, and <strong>realistic enough</strong> to convey to students that data as it exists “in the wild” often needs processing.</li>
 <li>Easily and quickly accessible to novices, so that we <a href="https://arxiv.org/abs/1507.05346">minimize the prerequisites to research</a>.</li>
 </ol>
 <p>It has been our experience that many data sets that exist in R packages, such as the <a href="https://github.com/hadley/nycflights13"><code>nycflights13</code></a>, <a href="https://github.com/hadley/babynames"><code>babynames</code></a>, and <a href="https://github.com/jennybc/gapminder"><code>gapminder</code></a> packages, are of great pedagogical value as they:</p>
 <ul>
 <li>Satisfy the above two goals.</li>
-<li>Are in standardized format as they fit into the <a href="https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html">tidy tools</a> ecosystem.</li>
+<li>Are in standardized format as they fit into the <a href="https://CRAN.R-project.org/package=tidyverse/vignettes/manifesto.html">tidy tools</a> ecosystem.</li>
 <li>Are really fun to play with!</li>
 </ul>
 <p>It is along these lines that we present <code>fivethirtyeight</code>: an R package of data and code behind the stories and interactives at <a href="http://fivethirtyeight.com/">FiveThirtyEight.com</a>, a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on <a href="https://github.com/fivethirtyeight/data">GitHub</a>, a web-based repository for collaboration on code and data.</p>
 <p>With consultation from <a href="http://fivethirtyeight.com/contributors/andrew-flowers/">Andrew Flowers</a> and <a href="http://fivethirtyeight.com/contributors/andrei-scheinkman/">Andrei Scheinkman</a> of FiveThirtyEight, we go one step further by:</p>
 <ol style="list-style-type: decimal">
-<li>Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data.</li>
-<li>Packaging it all in an easy to load format: package installation instead of working with CSV’s.</li>
+<li>Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data right away.</li>
+<li>Packaging it all in an easy to load format: package installation instead of working with CSV files.</li>
 <li>Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.</li>
 </ol>
 </div>
@@ -74,10 +74,11 @@
 <li>Ordinal categorical variables are <code>factor</code> with the intuitive ordering of <code>levels</code>. We did this to ensure barplots and boxplots would display in an intuitive order.</li>
 <li>Regular categorical variables are left as <code>character</code> vectors.</li>
 </ul></li>
-<li>Convert date variables that are beyond just <code>year</code> to <a href="http://www.epochconverter.com/">POSIX date</a> objects using the <a href="https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html">lubridate</a> package. That way users can easily create time series plots. Example:
+<li>Convert date variables that are beyond just <code>year</code> to <a href="http://www.epochconverter.com/">POSIX date</a> objects using the <a href="https://CRAN.R-project.org/package=lubridate/vignettes/lubridate.html">lubridate</a> package. That way users can easily create time series plots. Example:
 <ul>
 <li>If only a <code>year</code> variable exits, then we leave it as is.</li>
 <li>If there are <code>year</code> and <code>month</code> variables, we convert them POSIX date objects as <code>year-month-01</code>.</li>
+<li>If there are <code>year</code>, <code>month</code>, and <code>day</code> variables, we convert them POSIX date objects as <code>year-month-day</code>.</li>
 </ul></li>
 </ul></li>
 </ul>

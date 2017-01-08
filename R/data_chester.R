@@ -329,7 +329,7 @@
 #'   \item{division}{NFL division} 
 #'   \item{avg_tix_price}{Average ticket price} 
 #' }
-#' @source StubHub \url{http://www.stubhub.com/}
+#' @source StubHub stubhub.com
 "nfltix_div_avgprice"
 
 
@@ -345,7 +345,7 @@
 #'   \item{team}{Name of NFL team} 
 #'   \item{avg_tix_price}{Average ticket price} 
 #' }
-#' @source StubHub \url{http://www.stubhub.com/}
+#' @source StubHub stubhub.com
 "nfltix_usa_avg"
 
 
