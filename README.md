@@ -29,6 +29,7 @@ Example usage:
 ``` r
 library(fivethirtyeight)
 data(package = "fivethirtyeight")
+
 # Bechdel data set:
 data(bechdel)
 head(bechdel)

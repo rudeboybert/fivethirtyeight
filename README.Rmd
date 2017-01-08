@@ -44,6 +44,7 @@ Example usage:
 ```{r, eval = FALSE}
 library(fivethirtyeight)
 data(package = "fivethirtyeight")
+
 # Bechdel data set:
 data(bechdel)
 head(bechdel)
