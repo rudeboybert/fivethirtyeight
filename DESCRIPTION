@@ -1,8 +1,8 @@
 Package: fivethirtyeight
-Title: Data and Code Behind the Stories and Interactives at FiveThirtyEight
+Title: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight'
 Description: Data and code behind the stories and interactives at 'FiveThirtyEight'
     <https://github.com/fivethirtyeight/data>.
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = "cre"),
     person("Chester", "Ismay", email = "cismay@reed.edu", role = "aut"),
