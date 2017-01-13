@@ -5,7 +5,7 @@ fivethirtyeight
 
 [![Build Status](https://travis-ci.org/rudeboybert/fivethirtyeight.png?branch=master)](https://travis-ci.org/rudeboybert/fivethirtyeight) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/fivethirtyeight)](http://cran.r-project.org/package=fivethirtyeight) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/fivethirtyeight)](http://www.r-pkg.org/pkg/fivethirtyeight)
 
-R package of data and code behind the stories and interactives at [FiveThirtyEight](https://github.com/fivethirtyeight/data).
+An R library that provides access to the code and data sets published by FiveThirtyEight <https://github.com/fivethirtyeight/data>. Note that while we received guidance from editors at 538, this package is not officially published by 538.
 
 Installation & Usage
 --------------------
