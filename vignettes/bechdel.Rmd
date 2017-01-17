@@ -25,7 +25,6 @@ library(stringr)
 library(fivethirtyeight)
 library(ggthemes)
 library(scales)
-data("bechdel")
 # Turn off scientific notation
 options(scipen = 99)
 ```
