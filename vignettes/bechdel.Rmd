@@ -93,23 +93,28 @@ ggplot(data = bechdel90_13, mapping = aes(x = budget)) +
 ```{r log-budget-plot, fig.width = 5, warning = FALSE}
 ggplot(data = bechdel90_13, mapping = aes(x = log(budget))) +
   geom_histogram(color = "white", bins = 20) +
-  labs(title = "Histogram of Logarithm of Budget") + 
-  xlim(c(10, 20))
+  labs(title = "Histogram of Logarithm of Budget")
 ```
 
 ```{r intgross-plot, fig.width = 5, warning = FALSE}
 ggplot(data = bechdel90_13, mapping = aes(x = intgross_2013)) +
   geom_histogram(color = "white", bins = 20) +
-  labs(title = "Histogram of International Gross")+
-  xlim(c(0, 1.3e9))
+  labs(title = "Histogram of International Gross")
 ```
 
 ```{r log-intgross-plot, fig.width = 5, warning = FALSE}
 ggplot(data = bechdel90_13, mapping = aes(x = log(intgross_2013))) +
   geom_histogram(color = "white", bins = 20) +
-  labs(title = "Histogram of Logarithm of International Gross") + 
-  xlim(c(11, 23))
+  labs(title = "Histogram of Logarithm of International Gross")
 ```
+
+```{r roi-plot, fig.width = 5, warning = FALSE}
+ggplot(data = bechdel90_13, mapping = aes(x = roi_total)) +
+  geom_histogram(color = "white", bins = 20) +
+  labs(title = "Histogram of ROI")
+```
+
+The previous distributions were skewed, but ROI is so skewed that purposefully limiting the x-axis may reveal a bit more information about the distribution: 
 
 ```{r roi-plot, fig.width = 5, warning = FALSE}
 ggplot(data = bechdel90_13, mapping = aes(x = roi_total)) +
@@ -121,8 +126,7 @@ ggplot(data = bechdel90_13, mapping = aes(x = roi_total)) +
 ```{r log-roi-plot, fig.width = 5, warning = FALSE}
 ggplot(data = bechdel90_13, mapping = aes(x = log(roi_total))) +
   geom_histogram(color = "white", bins = 20) +
-  labs(title = "Histogram of Logarithm of ROI") + 
-  xlim(-5, 5)
+  labs(title = "Histogram of Logarithm of ROI")
 ```
 
 ## Linear Regression Models
