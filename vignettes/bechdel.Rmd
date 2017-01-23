@@ -114,6 +114,15 @@ ggplot(data = bechdel90_13, mapping = aes(x = roi_total)) +
   labs(title = "Histogram of ROI")
 ```
 
+The previous distributions were skewed, but ROI is so skewed that purposefully limiting the x-axis may reveal a bit more information about the distribution: 
+
+```{r roi-plot, fig.width = 5, warning = FALSE}
+ggplot(data = bechdel90_13, mapping = aes(x = roi_total)) +
+  geom_histogram(color = "white", bins = 20) +
+  labs(title = "Histogram of ROI")+
+  xlim(0, 25)
+```
+
 ```{r log-roi-plot, fig.width = 5, warning = FALSE}
 ggplot(data = bechdel90_13, mapping = aes(x = log(roi_total))) +
   geom_histogram(color = "white", bins = 20) +
