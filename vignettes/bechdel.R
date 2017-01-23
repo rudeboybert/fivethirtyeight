@@ -8,7 +8,6 @@ library(stringr)
 library(fivethirtyeight)
 library(ggthemes)
 library(scales)
-data("bechdel")
 # Turn off scientific notation
 options(scipen = 99)
 
@@ -69,6 +68,12 @@ ggplot(data = bechdel90_13, mapping = aes(x = log(intgross_2013))) +
 ggplot(data = bechdel90_13, mapping = aes(x = roi_total)) +
   geom_histogram(color = "white", bins = 20) +
   labs(title = "Histogram of ROI")
+
+## ----roi-plot2, fig.width = 5, warning = FALSE---------------------------
+ggplot(data = bechdel90_13, mapping = aes(x = roi_total)) +
+  geom_histogram(color = "white", bins = 20) +
+  labs(title = "Histogram of ROI") +
+  xlim(0, 25)
 
 ## ----log-roi-plot, fig.width = 5, warning = FALSE------------------------
 ggplot(data = bechdel90_13, mapping = aes(x = log(roi_total))) +
