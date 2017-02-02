@@ -91,19 +91,23 @@
 #'   \item{year}{Year of release}
 #'   \item{imdb}{Text to append \url{http://www.imdb.com/title/} to for IMDB url. E.g. \url{http://www.imdb.com/title/tt1711425}}
 #'   \item{title}{Movie test}
-#'   \item{test}{bechdel test result}
-#'   \item{clean_test}{bechdel test result}
+#'   \item{test}{bechdel test result (detailed, with discrepancies indicated)}
+#'   \item{clean_test}{bechdel test result (detailed)}
 #'   \item{binary}{Bechdel Test PASS vs FAIL binary}
 #'   \item{budget}{Film budget} 
-#'   \item{domgross}{Domestic gross}
-#'   \item{intgross}{International gross}
+#'   \item{domgross}{Domestic (US) gross}
+#'   \item{intgross}{Total International (i.e., worldwide) gross}
 #'   \item{code}{Bechdel Code}
 #'   \item{budget_2013}{Budget in 2013 inflation adjusted dollars}
-#'   \item{domgross_2013}{Domestic gross in 2013 inflation adjusted dollars} 
-#'   \item{intgross_2013}{International gross in 2013 inflation adjusted dollars}
+#'   \item{domgross_2013}{Domestic gross (US) in 2013 inflation adjusted dollars} 
+#'   \item{intgross_2013}{Total International (i.e., worldwide) gross in 2013 inflation adjusted dollars}
 #'   \item{period_code}{}
 #'   \item{decade_code}{}
 #' }
+#' 
+#' @details 
+#' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running: 
+#' \code{vignette("bechdel", package = "fivethirtyeight")}
 #' @source \url{www.bechdeltest.com} and \url{www.the-numbers.com}
 "bechdel"
 
