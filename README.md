@@ -31,6 +31,7 @@ library(fivethirtyeight)
 data(package = "fivethirtyeight")
 
 # Bechdel data set:
+## Data is lazy loaded so one can just access `bechdel` without running `data(bechdel)`
 data(bechdel)
 head(bechdel)
 ?bechdel
