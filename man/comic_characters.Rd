@@ -24,10 +24,10 @@
   \item{date}{The date of the character's first appearance in a comic book, if available}
 }}
 \source{
-DC Wikia \url{http://dc.wikia.com/wiki/Main_Page} and Marvel Wikia 
-\url{http://marvel.wikia.com/Main_Page}. Characters were scraped on August 24, 
-2014. Appearance counts were scraped on September 2, 2014. The 
-month and year of the first issue each character appeared in was pulled on 
+DC Wikia \url{http://dc.wikia.com/wiki/Main_Page} and Marvel Wikia
+\url{http://marvel.wikia.com/Main_Page}. Characters were scraped on August 24,
+2014. Appearance counts were scraped on September 2, 2014. The
+month and year of the first issue each character appeared in was pulled on
 October 6, 2014.
 }
 \usage{
@@ -39,4 +39,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/women-in-comic-books/}.
 }
 \keyword{datasets}
-

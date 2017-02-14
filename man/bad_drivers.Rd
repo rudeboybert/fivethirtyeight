@@ -16,8 +16,8 @@
   \item{losses}{Losses incurred by insurance companies for collisions per insured driver ($)}
 }}
 \source{
-National Highway Traffic Safety Administration 2012, National Highway 
-Traffic Safety Administration 2009 & 2012, National Association of Insurance 
+National Highway Traffic Safety Administration 2012, National Highway
+Traffic Safety Administration 2009 & 2012, National Association of Insurance
 Commissioners 2010 & 2011.
 }
 \usage{
@@ -29,4 +29,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/datalab/which-state-has-the-worst-drivers/}
 }
 \keyword{datasets}
-

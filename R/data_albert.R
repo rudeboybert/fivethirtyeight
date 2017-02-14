@@ -16,7 +16,7 @@
 #'   \item{fatal_accidents_00_14}{Total number of fatal accidents, 2000–2014}
 #'   \item{fatalities_00_14}{Total number of fatalities, 2000–2014}
 #' }
-#' @source Aviation Safety Network \url{http://aviation-safety.net}
+#' @source Aviation Safety Network \url{http://aviation-safety.net}.
 "airline_safety"
 
 
@@ -39,7 +39,7 @@
 #'   \item{year}{The year the character was introduced as a full or reserve member of the Avengers}
 #'   \item{years_since_joining}{2015 minus the year}
 #'   \item{honorary}{The status of the avenger, if they were given "Honorary" Avenger status, if they are simply in the "Academy," or "Full" otherwise}
-#'   \item{death1}{TRUE if the Avenger died, FALSE if not.} 
+#'   \item{death1}{TRUE if the Avenger died, FALSE if not.}
 #'   \item{return1}{TRUE if the Avenger returned from their first death, FALSE if they did not, blank if not applicable}
 #'   \item{death2}{TRUE if the Avenger died a second time after their revival, FALSE if they did not, blank if not applicable}
 #'   \item{return2}{TRUE if the Avenger returned from their second death, FALSE if they did not, blank if not applicable}
@@ -61,7 +61,7 @@
 #' The raw data behind the story
 #' "Dear Mona, Which State Has The Worst Drivers?"
 #' \url{http://fivethirtyeight.com/datalab/which-state-has-the-worst-drivers/}
-#' 
+#'
 #' @format A data frame with 51 rows representing the 50 states + D.C. and 8 variables:
 #' \describe{
 #'   \item{state}{State}
@@ -73,8 +73,8 @@
 #'   \item{insurance_premiums}{Car insurance premiums ($)}
 #'   \item{losses}{Losses incurred by insurance companies for collisions per insured driver ($)}
 #' }
-#' @source National Highway Traffic Safety Administration 2012, National Highway 
-#' Traffic Safety Administration 2009 & 2012, National Association of Insurance 
+#' @source National Highway Traffic Safety Administration 2012, National Highway
+#' Traffic Safety Administration 2009 & 2012, National Association of Insurance
 #' Commissioners 2010 & 2011.
 "bad_drivers"
 
@@ -94,21 +94,22 @@
 #'   \item{test}{bechdel test result (detailed, with discrepancies indicated)}
 #'   \item{clean_test}{bechdel test result (detailed)}
 #'   \item{binary}{Bechdel Test PASS vs FAIL binary}
-#'   \item{budget}{Film budget} 
+#'   \item{budget}{Film budget}
 #'   \item{domgross}{Domestic (US) gross}
 #'   \item{intgross}{Total International (i.e., worldwide) gross}
 #'   \item{code}{Bechdel Code}
 #'   \item{budget_2013}{Budget in 2013 inflation adjusted dollars}
-#'   \item{domgross_2013}{Domestic gross (US) in 2013 inflation adjusted dollars} 
+#'   \item{domgross_2013}{Domestic gross (US) in 2013 inflation adjusted dollars}
 #'   \item{intgross_2013}{Total International (i.e., worldwide) gross in 2013 inflation adjusted dollars}
 #'   \item{period_code}{}
 #'   \item{decade_code}{}
 #' }
-#' 
-#' @details 
-#' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running: 
+#'
+#' @details
+#' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running:
 #' \code{vignette("bechdel", package = "fivethirtyeight")}
-#' @source \url{www.bechdeltest.com} and \url{www.the-numbers.com}
+#'
+#' @source \url{www.bechdeltest.com} and \url{www.the-numbers.com}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
 "bechdel"
 
 
@@ -258,7 +259,7 @@
 #'   \item{callsign}{Station callsign}
 #'   \item{time}{Time of song play in seconds elapsed since January 1, 1970}
 #'   \item{date_time}{Time of song play in date/time format}
-#'   \item{unique_id}{Unique ID for each song play} 
+#'   \item{unique_id}{Unique ID for each song play}
 #'   \item{combined}{Song and artist name combined}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/classic-rock}
@@ -339,10 +340,10 @@
 #'   \item{year}{The year of the character's first appearance in a comic book, if available}
 #'   \item{date}{The date of the character's first appearance in a comic book, if available}
 #' }
-#' @source DC Wikia \url{http://dc.wikia.com/wiki/Main_Page} and Marvel Wikia 
-#' \url{http://marvel.wikia.com/Main_Page}. Characters were scraped on August 24, 
-#' 2014. Appearance counts were scraped on September 2, 2014. The 
-#' month and year of the first issue each character appeared in was pulled on 
+#' @source DC Wikia \url{http://dc.wikia.com/wiki/Main_Page} and Marvel Wikia
+#' \url{http://marvel.wikia.com/Main_Page}. Characters were scraped on August 24,
+#' 2014. Appearance counts were scraped on September 2, 2014. The
+#' month and year of the first issue each character appeared in was pulled on
 #' October 6, 2014.
 "comic_characters"
 
@@ -355,7 +356,7 @@
 #' "Elitist, Superfluous, Or Popular? We Polled Americans on the Oxford Comma"
 #' \url{http://fivethirtyeight.com/datalab/elitist-superfluous-or-popular-we-polled-americans-on-the-oxford-comma/}.
 #'
-#' @format A data frame with 1129 rows representing guests and 13 variables:
+#' @format A data frame with 1129 rows representing respondents and 13 variables:
 #' \describe{
 #'   \item{respondent_id}{Respondent ID}
 #'   \item{gender}{Gender}
@@ -382,7 +383,7 @@
 #' "Both Republicans And Democrats Have an Age Problem"
 #' \url{http://fivethirtyeight.com/features/both-republicans-and-democrats-have-an-age-problem/}.
 #'
-#' @format A data frame with 18,635 rows representing members of Congress 
+#' @format A data frame with 18,635 rows representing members of Congress
 #' (House and Senate) and 13 variables:
 #' \describe{
 #'   \item{congress}{Congress number.}
@@ -478,8 +479,8 @@
 #'   \item{sedative_use}{Percentage who used sedatives}
 #'   \item{sedative_freq}{Median number of times a user used sedatives}
 #' }
-#' @source National Survey on Drug Use and Health from the Substance Abuse and 
-#' Mental Health Data Archive \url{http://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}. 
+#' @source National Survey on Drug Use and Health from the Substance Abuse and
+#' Mental Health Data Archive \url{http://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
 "drug_use"
 
 
@@ -511,11 +512,11 @@
 #'
 #' @format A data frame with 5479 rows representing dates and 6 variables:
 #' \describe{
-#'   \item{year}{Year} 
+#'   \item{year}{Year}
 #'   \item{month}{Month}
-#'   \item{date_of_month}{Day} 
-#'   \item{date}{POSIX date} 
-#'   \item{day_of_week}{Abbreviation of day of week} 
+#'   \item{date_of_month}{Day}
+#'   \item{date}{POSIX date}
+#'   \item{day_of_week}{Abbreviation of day of week}
 #'   \item{births}{Number of births}
 #' }
 #' @seealso \code{\link{US_births_1994_2003}}.
@@ -531,13 +532,13 @@
 #' \url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
 #'
 #'
-#' @format A data frame with 3652 rows representing guests and 6 variables:
+#' @format A data frame with 3652 rows representing dates and 6 variables:
 #' \describe{
-#'   \item{year}{Year} 
+#'   \item{year}{Year}
 #'   \item{month}{Month}
-#'   \item{date_of_month}{Day} 
-#'   \item{date}{POSIX date} 
-#'   \item{day_of_week}{Abbreviation of day of week} 
+#'   \item{date_of_month}{Day}
+#'   \item{date}{POSIX date}
+#'   \item{day_of_week}{Abbreviation of day of week}
 #'   \item{births}{Number of births}
 #' }
 #' @seealso \code{\link{US_births_2000_2014}}
@@ -552,7 +553,7 @@
 #' "Blatter's Reign At FIFA Hasn't Helped Soccer's Poor"
 #' \url{http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/}.
 #'
-#' @format A data frame with 209 rows representing countries and 8 variables:
+#' @format A data frame with 191 rows representing countries and 5 variables:
 #' \describe{
 #'   \item{country}{FIFA member country}
 #'   \item{elo98}{The team's Elo in 1998}
@@ -573,9 +574,9 @@
 #' The raw data behind the story
 #' "Pols And Polls Say The Same Thing: Jeb Bush Is A Weak Front-Runner"
 #' \url{http://fivethirtyeight.com/features/pols-and-polls-say-the-same-thing-jeb-bush-is-a-weak-front-runner/}.
-#' This data includes something we call "endorsement points," an attempt to quantify the importance of endorsements 
-#' by weighting each one according to the position held by the endorser: 
-#' 10 points for each governor, 5 points for each senator and 1 point for each 
+#' This data includes something we call "endorsement points," an attempt to quantify the importance of endorsements
+#' by weighting each one according to the position held by the endorser:
+#' 10 points for each governor, 5 points for each senator and 1 point for each
 #' representative
 #'
 #' @format A data frame with 109 rows representing candidates and 9 variables:
@@ -600,8 +601,8 @@
 #' The raw data behind the story
 #' "Be Suspicious Of Online Movie Ratings, Especially Fandango's"
 #' \url{http://fivethirtyeight.com/features/fandango-movies-ratings/}.
-#' contains every film that has a Rotten Tomatoes rating, a RT User rating, a 
-#' Metacritic score, a Metacritic User score, and IMDb score, and at least 30 
+#' contains every film that has a Rotten Tomatoes rating, a RT User rating, a
+#' Metacritic score, a Metacritic User score, and IMDb score, and at least 30
 #' fan reviews on Fandango.
 #'
 #' @format A data frame with 146 rows representing movies and 23 variables:
@@ -668,28 +669,28 @@
 #'   \item{gender}{Gender}
 #'   \item{age}{Age}
 #'   \item{height}{Height}
-#'   \item{children_under_18}{Do you have any children under 18?}                                                                                                   
+#'   \item{children_under_18}{Do you have any children under 18?}
 #'   \item{household_income}{Household income bracket}
 #'   \item{education}{Education Level}
-#'   \item{location}{Location (census region)}   
+#'   \item{location}{Location (census region)}
 #'   \item{frequency}{How often do you travel by plane?}
-#'   \item{recline_frequency}{Do you ever recline your seat when you fly?}                                                                                        
+#'   \item{recline_frequency}{Do you ever recline your seat when you fly?}
 #'   \item{recline_obligation}{Under normal circumstances, does a person who reclines their seat during a flight have any obligation to the person sitting behind them?}
-#'   \item{recline_rude}{Is it rude to recline your seat on a plane?}                                                                                              
-#'   \item{recline_eliminate}{Given the opportunity, would you eliminate the possibility of reclining seats on planes entirely?}                                      
-#'   \item{switch_seats_friends}{Is it rude to ask someone to switch seats with you in order to be closer to friends?}                                                   
-#'   \item{switch_seats_family}{Is it rude to ask someone to switch seats with you in order to be closer to family?}  
-#'   \item{wake_up_bathroom}{Is it rude to wake a passenger up if you are trying to go to the bathroom?}                                                     
-#'   \item{wake_up_walk}{Is it rude to wake a passenger up if you are trying to walk around?}  
-#'   \item{baby}{In general, is it rude to bring a baby on a plane?}                                                                     
-#'   \item{unruly_child}{In general, is it rude to knowingly bring unruly children on a plane?}  
-#'   \item{two_arm_rests}{In a row of three seats, who should get to use the two arm rests?}                                                                      
-#'   \item{middle_arm_rest}{In a row of two seats, who should get to use the middle arm rest?}                                                                       
-#'   \item{shade}{Who should have control over the window shade?}                                                                                    
-#'   \item{unsold_seat}{Is it rude to move to an unsold seat on a plane?}                                                                                   
-#'   \item{talk_stranger}{Generally speaking, is it rude to say more than a few words tothe stranger sitting next to you on a plane?}                              
-#'   \item{get_up}{On a 6 hour flight from NYC to LA, how many times is it acceptable to get up if you're not in an aisle seat?}                            
-#'   \item{electronics}{Have you ever used personal electronics during take off or landing in violation of a flight attendant's direction?}              
+#'   \item{recline_rude}{Is it rude to recline your seat on a plane?}
+#'   \item{recline_eliminate}{Given the opportunity, would you eliminate the possibility of reclining seats on planes entirely?}
+#'   \item{switch_seats_friends}{Is it rude to ask someone to switch seats with you in order to be closer to friends?}
+#'   \item{switch_seats_family}{Is it rude to ask someone to switch seats with you in order to be closer to family?}
+#'   \item{wake_up_bathroom}{Is it rude to wake a passenger up if you are trying to go to the bathroom?}
+#'   \item{wake_up_walk}{Is it rude to wake a passenger up if you are trying to walk around?}
+#'   \item{baby}{In general, is it rude to bring a baby on a plane?}
+#'   \item{unruly_child}{In general, is it rude to knowingly bring unruly children on a plane?}
+#'   \item{two_arm_rests}{In a row of three seats, who should get to use the two arm rests?}
+#'   \item{middle_arm_rest}{In a row of two seats, who should get to use the middle arm rest?}
+#'   \item{shade}{Who should have control over the window shade?}
+#'   \item{unsold_seat}{Is it rude to move to an unsold seat on a plane?}
+#'   \item{talk_stranger}{Generally speaking, is it rude to say more than a few words tothe stranger sitting next to you on a plane?}
+#'   \item{get_up}{On a 6 hour flight from NYC to LA, how many times is it acceptable to get up if you're not in an aisle seat?}
+#'   \item{electronics}{Have you ever used personal electronics during take off or landing in violation of a flight attendant's direction?}
 #'   \item{smoked}{Have you ever smoked a cigarette in an airplane bathroom when it was against the rules?}
 #' }
 #' @source SurveyMonkey survey
@@ -724,12 +725,12 @@
 #'   \item{education}{Education Level}
 #'   \item{location}{Location (census region)}
 #'   \item{algeria}{Cuisine of Algeria}
-#'   \item{argentina}{Cuisine of Argentina} 
+#'   \item{argentina}{Cuisine of Argentina}
 #'   \item{australia}{Cuisine of Australia}
 #'   \item{belgium}{Cuisine of Belgium}
 #'   \item{bosnia_and_herzegovina}{Cuisine of Bosnia & Herzegovina}
 #'   \item{brazil}{Cuisine of Brazil}
-#'   \item{cameroon}{Cuisine of Cameroon} 
+#'   \item{cameroon}{Cuisine of Cameroon}
 #'   \item{chile}{Cuisine of Chile}
 #'   \item{china}{Cuisine of China}
 #'   \item{colombia}{Cuisine of Colombia}
@@ -737,7 +738,7 @@
 #'   \item{croatia}{Cuisine of Croatia}
 #'   \item{cuba}{Cuisine of Cuba}
 #'   \item{ecuador}{Cuisine of Ecuador}
-#'   \item{england}{Cuisine of England} 
+#'   \item{england}{Cuisine of England}
 #'   \item{ethiopia}{Cuisine of Ethiopia}
 #'   \item{france}{Cuisine of France}
 #'   \item{germany}{Cuisine of Germany}
@@ -747,19 +748,19 @@
 #'   \item{india}{Cuisine of India}
 #'   \item{iran}{Cuisine of Iran}
 #'   \item{ireland}{Cuisine of Ireland}
-#'   \item{italy}{Cuisine of Italy} 
+#'   \item{italy}{Cuisine of Italy}
 #'   \item{ivory_coast}{Cuisine of Ivory Coast}
 #'   \item{japan}{Cuisine of Japan}
 #'   \item{mexico}{Cuisine of Mexico}
-#'   \item{nigeria}{Cuisine of Nigeria} 
+#'   \item{nigeria}{Cuisine of Nigeria}
 #'   \item{portugal}{Cuisine of Portugal}
 #'   \item{russia}{Cuisine of Russia}
 #'   \item{south_korea}{Cuisine of South Korea}
 #'   \item{spain}{Cuisine of Spain}
-#'   \item{switzerland}{Cuisine of Switzerland} 
+#'   \item{switzerland}{Cuisine of Switzerland}
 #'   \item{thailand}{Cuisine of Thailand}
 #'   \item{the_netherlands}{Cuisine of the Netherlands}
-#'   \item{turkey}{Cuisine of Turkey} 
+#'   \item{turkey}{Cuisine of Turkey}
 #'   \item{united_states}{Cuisine of the United States}
 #'   \item{uruguay}{Cuisine of Uruguay}
 #'   \item{vietnam}{Cuisine of Vietnam}
@@ -778,20 +779,20 @@
 #'
 #' @format A data frame with 71 rows representing scenes and 15 variables:
 #' \describe{
-#'   \item{scenes}{} 
-#'   \item{bill_nighy}{} 
-#'   \item{keira_knightley}{} 
-#'   \item{andrew_lincoln}{} 
-#'   \item{hugh_grant}{} 
-#'   \item{colin_firth}{} 
-#'   \item{alan_rickman}{} 
-#'   \item{heike_makatsch}{} 
-#'   \item{laura_linney}{} 
-#'   \item{emma_thompson}{} 
-#'   \item{liam_neeson}{} 
-#'   \item{kris_marshall}{} 
-#'   \item{abdul_salis}{} 
-#'   \item{martin_freeman}{} 
+#'   \item{scenes}{}
+#'   \item{bill_nighy}{}
+#'   \item{keira_knightley}{}
+#'   \item{andrew_lincoln}{}
+#'   \item{hugh_grant}{}
+#'   \item{colin_firth}{}
+#'   \item{alan_rickman}{}
+#'   \item{heike_makatsch}{}
+#'   \item{laura_linney}{}
+#'   \item{emma_thompson}{}
+#'   \item{liam_neeson}{}
+#'   \item{kris_marshall}{}
+#'   \item{abdul_salis}{}
+#'   \item{martin_freeman}{}
 #'   \item{rowan_atkinson}{}
 #' }
 #' @seealso \code{\link{love_actually_adj}}.
@@ -808,20 +809,20 @@
 #'
 #' @format A data frame with 14 rows representing actors and 15 variables:
 #' \describe{
-#'   \item{actors}{} 
-#'   \item{bill_nighy}{} 
-#'   \item{keira_knightley}{} 
-#'   \item{andrew_lincoln}{} 
-#'   \item{hugh_grant}{} 
-#'   \item{colin_firth}{} 
-#'   \item{alan_rickman}{} 
-#'   \item{heike_makatsch}{} 
-#'   \item{laura_linney}{} 
-#'   \item{emma_thompson}{} 
-#'   \item{liam_neeson}{} 
-#'   \item{kris_marshall}{} 
-#'   \item{abdul_salis}{} 
-#'   \item{martin_freeman}{} 
+#'   \item{actors}{}
+#'   \item{bill_nighy}{}
+#'   \item{keira_knightley}{}
+#'   \item{andrew_lincoln}{}
+#'   \item{hugh_grant}{}
+#'   \item{colin_firth}{}
+#'   \item{alan_rickman}{}
+#'   \item{heike_makatsch}{}
+#'   \item{laura_linney}{}
+#'   \item{emma_thompson}{}
+#'   \item{liam_neeson}{}
+#'   \item{kris_marshall}{}
+#'   \item{abdul_salis}{}
+#'   \item{martin_freeman}{}
 #'   \item{rowan_atkinson}{}
 #' }
 #' @seealso \code{\link{love_actually_appearance}}.

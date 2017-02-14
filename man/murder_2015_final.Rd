@@ -24,4 +24,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/}.
 }
 \keyword{datasets}
-

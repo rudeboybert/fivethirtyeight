@@ -4,7 +4,7 @@
 \name{elo_blatter}
 \alias{elo_blatter}
 \title{Blatter's Reign At FIFA Hasn't Helped Soccer's Poor}
-\format{A data frame with 209 rows representing countries and 8 variables:
+\format{A data frame with 191 rows representing countries and 5 variables:
 \describe{
   \item{country}{FIFA member country}
   \item{elo98}{The team's Elo in 1998}
@@ -27,4 +27,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/}.
 }
 \keyword{datasets}
-

@@ -16,7 +16,7 @@
   \item{year}{The year the character was introduced as a full or reserve member of the Avengers}
   \item{years_since_joining}{2015 minus the year}
   \item{honorary}{The status of the avenger, if they were given "Honorary" Avenger status, if they are simply in the "Academy," or "Full" otherwise}
-  \item{death1}{TRUE if the Avenger died, FALSE if not.} 
+  \item{death1}{TRUE if the Avenger died, FALSE if not.}
   \item{return1}{TRUE if the Avenger returned from their first death, FALSE if they did not, blank if not applicable}
   \item{death2}{TRUE if the Avenger died a second time after their revival, FALSE if they did not, blank if not applicable}
   \item{return2}{TRUE if the Avenger returned from their second death, FALSE if they did not, blank if not applicable}
@@ -40,4 +40,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/}.
 }
 \keyword{datasets}
-

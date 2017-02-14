@@ -17,7 +17,7 @@
   \item{fatalities_00_14}{Total number of fatalities, 2000–2014}
 }}
 \source{
-Aviation Safety Network \url{http://aviation-safety.net}
+Aviation Safety Network \url{http://aviation-safety.net}.
 }
 \usage{
 airline_safety
@@ -28,4 +28,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/}.
 }
 \keyword{datasets}
-

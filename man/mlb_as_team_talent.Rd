@@ -35,4 +35,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/}.
 }
 \keyword{datasets}
-

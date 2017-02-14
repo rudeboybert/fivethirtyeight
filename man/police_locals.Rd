@@ -39,4 +39,3 @@ The Census Bureau numbers are potentially going to differ from other counts for 
 Note: Missing values means that there are fewer than 100 police officers of that race serving that city.
 }
 \keyword{datasets}
-

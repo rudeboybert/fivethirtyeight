@@ -11,7 +11,7 @@
   \item{callsign}{Station callsign}
   \item{time}{Time of song play in seconds elapsed since January 1, 1970}
   \item{date_time}{Time of song play in date/time format}
-  \item{unique_id}{Unique ID for each song play} 
+  \item{unique_id}{Unique ID for each song play}
   \item{combined}{Song and artist name combined}
 }}
 \source{
@@ -29,4 +29,3 @@ The raw data behind the story
 \code{\link{classic_rock_song_list}}
 }
 \keyword{datasets}
-

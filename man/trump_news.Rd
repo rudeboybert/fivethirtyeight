@@ -22,4 +22,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/how-donald-trump-hacked-the-media/}.
 }
 \keyword{datasets}
-

@@ -40,9 +40,8 @@ fandango
 The raw data behind the story
 "Be Suspicious Of Online Movie Ratings, Especially Fandango's"
 \url{http://fivethirtyeight.com/features/fandango-movies-ratings/}.
-contains every film that has a Rotten Tomatoes rating, a RT User rating, a 
-Metacritic score, a Metacritic User score, and IMDb score, and at least 30 
+contains every film that has a Rotten Tomatoes rating, a RT User rating, a
+Metacritic score, a Metacritic User score, and IMDb score, and at least 30
 fan reviews on Fandango.
 }
 \keyword{datasets}
-

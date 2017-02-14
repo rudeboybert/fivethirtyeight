@@ -6,11 +6,11 @@
 \title{Some People Are Too Superstitious To Have A Baby On Friday The 13th}
 \format{A data frame with 5479 rows representing dates and 6 variables:
 \describe{
-  \item{year}{Year} 
+  \item{year}{Year}
   \item{month}{Month}
-  \item{date_of_month}{Day} 
-  \item{date}{POSIX date} 
-  \item{day_of_week}{Abbreviation of day of week} 
+  \item{date_of_month}{Day}
+  \item{date}{POSIX date}
+  \item{day_of_week}{Abbreviation of day of week}
   \item{births}{Number of births}
 }}
 \source{
@@ -28,4 +28,3 @@ The raw data behind the story
 \code{\link{US_births_1994_2003}}.
 }
 \keyword{datasets}
-

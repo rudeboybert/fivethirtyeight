@@ -36,7 +36,7 @@
   \item{sedative_freq}{Median number of times a user used sedatives}
 }}
 \source{
-National Survey on Drug Use and Health from the Substance Abuse and 
+National Survey on Drug Use and Health from the Substance Abuse and
 Mental Health Data Archive \url{http://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
 }
 \usage{
@@ -49,4 +49,3 @@ The raw data behind the story
 It covers usage of 13 drugs in the past 12 months across 17 age groups.
 }
 \keyword{datasets}
-

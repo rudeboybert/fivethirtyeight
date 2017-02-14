@@ -24,4 +24,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/datalab/every-guest-jon-stewart-ever-had-on-the-daily-show/}.
 }
 \keyword{datasets}
-

@@ -15,12 +15,12 @@
   \item{education}{Education Level}
   \item{location}{Location (census region)}
   \item{algeria}{Cuisine of Algeria}
-  \item{argentina}{Cuisine of Argentina} 
+  \item{argentina}{Cuisine of Argentina}
   \item{australia}{Cuisine of Australia}
   \item{belgium}{Cuisine of Belgium}
   \item{bosnia_and_herzegovina}{Cuisine of Bosnia & Herzegovina}
   \item{brazil}{Cuisine of Brazil}
-  \item{cameroon}{Cuisine of Cameroon} 
+  \item{cameroon}{Cuisine of Cameroon}
   \item{chile}{Cuisine of Chile}
   \item{china}{Cuisine of China}
   \item{colombia}{Cuisine of Colombia}
@@ -28,7 +28,7 @@
   \item{croatia}{Cuisine of Croatia}
   \item{cuba}{Cuisine of Cuba}
   \item{ecuador}{Cuisine of Ecuador}
-  \item{england}{Cuisine of England} 
+  \item{england}{Cuisine of England}
   \item{ethiopia}{Cuisine of Ethiopia}
   \item{france}{Cuisine of France}
   \item{germany}{Cuisine of Germany}
@@ -38,19 +38,19 @@
   \item{india}{Cuisine of India}
   \item{iran}{Cuisine of Iran}
   \item{ireland}{Cuisine of Ireland}
-  \item{italy}{Cuisine of Italy} 
+  \item{italy}{Cuisine of Italy}
   \item{ivory_coast}{Cuisine of Ivory Coast}
   \item{japan}{Cuisine of Japan}
   \item{mexico}{Cuisine of Mexico}
-  \item{nigeria}{Cuisine of Nigeria} 
+  \item{nigeria}{Cuisine of Nigeria}
   \item{portugal}{Cuisine of Portugal}
   \item{russia}{Cuisine of Russia}
   \item{south_korea}{Cuisine of South Korea}
   \item{spain}{Cuisine of Spain}
-  \item{switzerland}{Cuisine of Switzerland} 
+  \item{switzerland}{Cuisine of Switzerland}
   \item{thailand}{Cuisine of Thailand}
   \item{the_netherlands}{Cuisine of the Netherlands}
-  \item{turkey}{Cuisine of Turkey} 
+  \item{turkey}{Cuisine of Turkey}
   \item{united_states}{Cuisine of the United States}
   \item{uruguay}{Cuisine of Uruguay}
   \item{vietnam}{Cuisine of Vietnam}
@@ -77,4 +77,3 @@ For all the countries below, the response to the following question is presented
 See \url{https://github.com/fivethirtyeight/data/tree/master/food-world-cup}
 }
 \keyword{datasets}
-

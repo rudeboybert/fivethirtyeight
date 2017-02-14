@@ -4,7 +4,7 @@
 \name{comma_survey}
 \alias{comma_survey}
 \title{Elitist, Superfluous, Or Popular? We Polled Americans on the Oxford Comma}
-\format{A data frame with 1129 rows representing guests and 13 variables:
+\format{A data frame with 1129 rows representing respondents and 13 variables:
 \describe{
   \item{respondent_id}{Respondent ID}
   \item{gender}{Gender}
@@ -32,4 +32,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/datalab/elitist-superfluous-or-popular-we-polled-americans-on-the-oxford-comma/}.
 }
 \keyword{datasets}
-

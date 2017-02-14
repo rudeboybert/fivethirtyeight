@@ -6,20 +6,20 @@
 \title{The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time}
 \format{A data frame with 14 rows representing actors and 15 variables:
 \describe{
-  \item{actors}{} 
-  \item{bill_nighy}{} 
-  \item{keira_knightley}{} 
-  \item{andrew_lincoln}{} 
-  \item{hugh_grant}{} 
-  \item{colin_firth}{} 
-  \item{alan_rickman}{} 
-  \item{heike_makatsch}{} 
-  \item{laura_linney}{} 
-  \item{emma_thompson}{} 
-  \item{liam_neeson}{} 
-  \item{kris_marshall}{} 
-  \item{abdul_salis}{} 
-  \item{martin_freeman}{} 
+  \item{actors}{}
+  \item{bill_nighy}{}
+  \item{keira_knightley}{}
+  \item{andrew_lincoln}{}
+  \item{hugh_grant}{}
+  \item{colin_firth}{}
+  \item{alan_rickman}{}
+  \item{heike_makatsch}{}
+  \item{laura_linney}{}
+  \item{emma_thompson}{}
+  \item{liam_neeson}{}
+  \item{kris_marshall}{}
+  \item{abdul_salis}{}
+  \item{martin_freeman}{}
   \item{rowan_atkinson}{}
 }}
 \usage{
@@ -35,4 +35,3 @@ The adjacency matrix of which actors appear in the same scene together.
 \code{\link{love_actually_appearance}}.
 }
 \keyword{datasets}
-

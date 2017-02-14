@@ -4,7 +4,7 @@
 \name{congress_age}
 \alias{congress_age}
 \title{Both Republicans And Democrats Have an Age Problem}
-\format{A data frame with 18,635 rows representing members of Congress 
+\format{A data frame with 18,635 rows representing members of Congress
 (House and Senate) and 13 variables:
 \describe{
   \item{congress}{Congress number.}
@@ -33,4 +33,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/both-republicans-and-democrats-have-an-age-problem/}.
 }
 \keyword{datasets}
-
