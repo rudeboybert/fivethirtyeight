@@ -101,12 +101,15 @@ vignette("fivethirtyeight", package = "fivethirtyeight")
 
 ## Collaborate
 
-### Code
+### Data Analysis Examples in Vignettes
 
-In many instances, the data sets on the original 538 GitHub repository had the R code used in the analysis. We would love to have these in the form of package vignettes that:
+In many instances, the data sets on the original 538 GitHub repository had the R code used in the analysis. We would love to have these, or any other interesting analyses, in the form of package vignettes. We ask you follow these guidelines as much as possible:
 
-1. Convert the code to use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) package tools
-1. Present the code in [R Markdown](http://rmarkdown.rstudio.com/) format 
+1. Use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) packages: `ggplot2`, `dplyr`, `tidyr`, `modelr`, etc.
+1. Use [R Markdown](http://rmarkdown.rstudio.com/):
+    + In particular the Package Vignette (HTML) template option when creating an R Markdown document.
+    + Have the name of the R Markdown file match the name of the data set. Ex: `vignettes/bechdel.Rmd`
+1. Follow the GitHub fork/pull request [model](https://guides.github.com/introduction/flow/). Otherwise, contact us directly.
 
 
 
