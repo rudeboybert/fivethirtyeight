@@ -63,11 +63,15 @@ browseVignettes(package = "fivethirtyeight")
 More Information
 ----------------
 
-See the package vignette for:
-
-1.  Our motivation for creating this package.
-2.  Guidelines we followed preparing the data sets and links to the code.
-3.  A more detailed list of all data sets.
+-   We're now featured on [Kaggle](https://www.kaggle.com/fivethirtyeight/fivethirtyeight)!
+-   Click this [Google Sheet](https://docs.google.com/spreadsheets/d/1IMWAHNPIDzplafWW6AGnGyHmB1BMjohEw_V5HmT70Gs/edit#gid=840984416) for a master spreadsheet connecting
+    1.  the original 538 data on [GitHub](https://github.com/fivethirtyeight/data) with
+    2.  the data frames in the package with
+    3.  information on the corresponding article.
+-   See the package vignette for:
+    1.  Our motivation for creating this package.
+    2.  Guidelines we followed preparing the data sets and links to the code.
+    3.  A more detailed list of all data sets.
 
 ``` r
 vignette("fivethirtyeight", package = "fivethirtyeight")
