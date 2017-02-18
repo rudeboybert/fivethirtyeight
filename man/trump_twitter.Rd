@@ -20,3 +20,4 @@ trump_twitter
 Tweets posted on twitter by Donald Trump (@realDonaldTrump)
 }
 \keyword{datasets}
+

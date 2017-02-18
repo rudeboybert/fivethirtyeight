@@ -24,7 +24,7 @@ An R package that provides access to the code and data sets published by FiveThi
 
 
 
-## Installation & Usage
+## Installation
 
 Get the released version from CRAN:
 
@@ -40,19 +40,47 @@ Or the development version from GitHub:
 devtools::install_github("rudeboybert/fivethirtyeight")
 ```
 
-Example usage:
+
+
+
+## Usage
+
+### Example Usage
 
 ```{r, eval = FALSE}
 library(fivethirtyeight)
-data(package = "fivethirtyeight")
 
-# Bechdel data set:
-## Data is lazy loaded so one can just access `bechdel` without running `data(bechdel)`
+# Bechdel data set (note that data is lazy loaded so one can also just access `bechdel` without running `data(bechdel)`):
 data(bechdel)
 head(bechdel)
 ?bechdel
 # If using RStudio:
 View(bechdel)
+
+# To see a list of all data sets:
+data(package = "fivethirtyeight")
+
+# To see a more detailed list of all data sets, see the package vignette:
+vignette("fivethirtyeight", package = "fivethirtyeight")
+```
+
+
+### Data Analysis Examples in Vignettes
+
+For some data sets, there is an example analysis in a package vignette. For example, we did this using the
+[R code](https://github.com/fivethirtyeight/data/blob/master/bechdel/analyze-bechdel.R) for the article 
+[The Dollar-And-Cents Case Against Hollywood’s Exclusion of
+Women](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women)
+here:
+
+```{r, eval = FALSE}
+vignette("bechdel", package = "fivethirtyeight")
+```
+
+For a complete list of vignettes run:
+
+```{r, eval = FALSE}
+browseVignettes(package = "fivethirtyeight")
 ```
 
 
@@ -63,7 +91,7 @@ See the package vignette for:
 
 1. Our motivation for creating this package.
 1. Guidelines we followed preparing the data sets and links to the code.
-1. A more detailed outline of all data sets.
+1. A more detailed list of all data sets.
 
 ```{r, eval = FALSE}
 vignette("fivethirtyeight", package = "fivethirtyeight")
@@ -75,21 +103,11 @@ vignette("fivethirtyeight", package = "fivethirtyeight")
 
 ### Code
 
-In many instances, the data sets had the R code used in the analysis. We would
-love to
+In many instances, the data sets on the original 538 GitHub repository had the R code used in the analysis. We would love to have these in the form of package vignettes that:
 
 1. Convert the code to use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) package tools
 1. Present the code in [R Markdown](http://rmarkdown.rstudio.com/) format 
 
-For example, we did this using the
-[R code](https://github.com/fivethirtyeight/data/blob/master/bechdel/analyze-bechdel.R) for the article 
-[The Dollar-And-Cents Case Against Hollywood’s Exclusion of
-Women](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women)
-here:
-
-```{r, eval = FALSE}
-vignette("bechdel", package = "fivethirtyeight")
-```
 
 
 ### Contributing to the Package

@@ -24,3 +24,4 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/}.
 }
 \keyword{datasets}
+

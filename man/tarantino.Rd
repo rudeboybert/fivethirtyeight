@@ -23,3 +23,4 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/}.
 }
 \keyword{datasets}
+

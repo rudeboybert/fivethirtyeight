@@ -26,3 +26,4 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/nfl-domestic-violence-policy-suspensions/}.
 }
 \keyword{datasets}
+
