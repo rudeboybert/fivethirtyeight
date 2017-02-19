@@ -185,7 +185,7 @@ devtools::use_data(bob_ross, overwrite = TRUE)
 
 
 
-# buster_posey_mvp -------------------------------------------------------------
+# buster-posey_mvp -------------------------------------------------------------
 # No Data
 
 
@@ -227,9 +227,94 @@ college_all_ages <- read_csv("data-raw/college-majors/all-ages.csv")
 colnames(college_all_ages) <- colnames(college_all_ages) %>% 
   tolower() %>% 
   str_replace_all(" ", "_")
+college_all_ages <- college_all_ages %>% 
+  rename(employed_fulltime_yearround = employed_full_time_year_round) %>% 
+  mutate(
+    median = as.double(median),
+    p25th = as.double(p25th),
+    major = str_to_title(major)
+    ) %>% 
+  select(major_code, major, major_category, total, employed, 
+         employed_fulltime_yearround, unemployed, unemployment_rate, 
+         p25th, median, p75th)
 devtools::use_data(college_all_ages, overwrite = TRUE)
 
-# TODO: more here
+college_grad_students <- read_csv("data-raw/college-majors/grad-students.csv")
+colnames(college_grad_students) <- colnames(college_grad_students) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+college_grad_students <- college_grad_students %>% 
+  rename(
+    grad_employed_fulltime_yearround = grad_full_time_year_round,
+    nongrad_employed_fulltime_yearround = nongrad_full_time_year_round,
+    grad_p25th= grad_p75,
+    grad_p75th= grad_p25,
+    nongrad_p25th= nongrad_p25,
+    nongrad_p75th= nongrad_p75
+    ) %>% 
+  mutate(
+    grad_p25th = as.double(grad_p25th),
+    nongrad_p25th = as.double(nongrad_p25th),
+    major = str_to_title(major)
+  ) %>% 
+  select(major_code, major, major_category, 
+         grad_total, grad_sample_size, grad_employed, grad_employed_fulltime_yearround,
+         grad_unemployed, grad_unemployment_rate, 
+         grad_p25th, grad_median, grad_p75th,
+         nongrad_total, nongrad_employed, nongrad_employed_fulltime_yearround, 
+         nongrad_unemployed, nongrad_unemployment_rate, 
+         nongrad_p25th, nongrad_median, nongrad_p75th,
+         grad_share, grad_premium
+         ) 
+devtools::use_data(college_grad_students, overwrite = TRUE)
+
+# Redundant: These are the first three columns of college_all_ages and 
+# college_grad_students
+# college_majors <- read_csv("data-raw/college-majors/majors-list.csv")
+# colnames(college_majors) <- colnames(college_majors) %>% 
+#   tolower() %>% 
+#   str_replace_all(" ", "_")
+# college_majors <- college_majors %>% 
+#   rename(major_code = fod1p) %>% 
+#   mutate(major = str_to_title(major))
+# devtools::use_data(college_majors, overwrite = TRUE)
+
+college_recent_grads <- read_csv("data-raw/college-majors/recent-grads.csv")
+colnames(college_recent_grads) <- colnames(college_recent_grads) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+college_recent_grads <- college_recent_grads %>% 
+  rename(
+    employed_fulltime_yearround = full_time_year_round,
+    employed_fulltime = full_time,
+    employed_parttime = part_time
+    ) %>% 
+  mutate(
+    p25th = as.double(p25th),
+    median = as.double(median),
+    p75th = as.double(p75th),
+    major = str_to_title(major)
+  ) %>% 
+  select(rank, major_code, major, major_category, total, sample_size,
+         men, women, sharewomen, 
+         employed, employed_fulltime, employed_parttime, employed_fulltime_yearround, 
+         unemployed, unemployment_rate, 
+         p25th, median, p75th,
+         college_jobs, non_college_jobs, low_wage_jobs
+         )
+devtools::use_data(college_recent_grads, overwrite = TRUE)
+
+# Redundant: Simply a subset of college_recent_grads
+# college_women_stem <- read_csv("data-raw/college-majors/women-stem.csv")
+# colnames(college_women_stem) <- colnames(college_women_stem) %>% 
+#   tolower() %>% 
+#   str_replace_all(" ", "_")
+# college_women_stem <- college_women_stem %>% 
+#   mutate(
+#     median = as.double(median),
+#     major = str_to_title(major)
+#     )
+# devtools::use_data(college_women_stem, overwrite = TRUE)
 
 
 
@@ -346,7 +431,11 @@ devtools::use_data(congress_age, overwrite = TRUE)
 
 
 # cousin-marriage --------------------------------------------------------------
-
+cousin_marriage <- read_csv("data-raw/cousin-marriage/cousin-marriage-data.csv") 
+colnames(cousin_marriage) <- colnames(cousin_marriage) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+devtools::use_data(cousin_marriage, overwrite = TRUE)
 
 
 

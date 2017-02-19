@@ -296,22 +296,96 @@
 #' "The Economic Guide To Picking A College Major"
 #' \url{http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/}.
 #'
-#' @format A data frame with 173 rows representing majors and 11 variables:
+#' @format A data frame with 173 rows representing majors and 11 variables for students of all ages:
 #' \describe{
 #'   \item{major_code}{Major code, FO1DP in ACS PUMS}
 #'   \item{major}{Major description}
 #'   \item{major_category}{Category of major from Carnevale et al}
 #'   \item{total}{Total number of people with major}
 #'   \item{employed}{Number employed (ESR == 1 or 2)}
-#'   \item{employed_full_time_year_round}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
+#'   \item{employed_fulltime_yearround}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
 #'   \item{unemployed}{Number unemployed (ESR == 3)}
 #'   \item{unemployment_rate}{Unemployed / (Unemployed + Employed)}
-#'   \item{median}{Median earnings of full-time, year-round workers}
 #'   \item{p25th}{25th percentile of earnigns}
+#'   \item{median}{Median earnings of full-time, year-round workers}
 #'   \item{p75th}{75th percentile of earnings}
 #' }
-#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/comma-survey-data}.
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}.
+#' @seealso \code{\link{college_grad_students}}, \code{\link{college_recent_grads}}
 "college_all_ages"
+
+
+
+#' The Economic Guide To Picking A College Major
+#'
+#' The raw data behind the story
+#' "The Economic Guide To Picking A College Major"
+#' \url{http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/}.
+#'
+#' @format A data frame with 173 rows representing majors and 22 variables for graduate vs nongraduate students:
+#' \describe{
+#'   \item{major_code}{Major code, FO1DP in ACS PUMS}
+#'   \item{major}{Major description}
+#'   \item{major_category}{Category of major from Carnevale et al}
+#'   \item{grad_total}{Total number of people with major}
+#'   \item{grad_sample_size}{Sample size (unweighted) of full-time, year-round ONLY (used for earnings)}
+#'   \item{grad_employed}{Number employed (ESR == 1 or 2)}
+#'   \item{grad_employed_fulltime_yearround}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
+#'   \item{grad_unemployed}{Number unemployed (ESR == 3)}
+#'   \item{grad_unemployment_rate}{Unemployed / (Unemployed + Employed)}
+#'   \item{grad_p25th}{25th percentile of earnigns}
+#'   \item{grad_median}{Median earnings of full-time, year-round workers}
+#'   \item{grad_p75th}{75th percentile of earnings}
+#'   \item{nongrad_total}{Total number of people with major}
+#'   \item{nongrad_employed}{Number employed (ESR == 1 or 2)}
+#'   \item{nongrad_employed_fulltime_yearround}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
+#'   \item{nongrad_unemployed}{Number unemployed (ESR == 3)}
+#'   \item{nongrad_unemployment_rate}{Unemployed / (Unemployed + Employed)}
+#'   \item{nongrad_p25th}{25th percentile of earnigns}
+#'   \item{nongrad_median}{Median earnings of full-time, year-round workers}
+#'   \item{nongrad_p75th}{75th percentile of earnings}
+#'   \item{grad_share}{grad_total / (grad_total + nongrad_total)}
+#'   \item{grad_premium}{(grad_median-nongrad_median)/nongrad_median}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}.
+#' @seealso \code{\link{college_all_ages}}, \code{\link{college_recent_grads}}
+"college_grad_students"
+
+
+
+#' The Economic Guide To Picking A College Major
+#'
+#' The raw data behind the story
+#' "The Economic Guide To Picking A College Major"
+#' \url{http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/}.
+#'
+#' @format A data frame with 173 rows representing majors and 21 variables for recent graduates:
+#' \describe{
+#'   \item{rank}{Rank by median earnings}
+#'   \item{major_code}{Major code, FO1DP in ACS PUMS}
+#'   \item{major}{Major description}
+#'   \item{major_category}{Category of major from Carnevale et al}
+#'   \item{total}{Total number of people with major}
+#'   \item{sample_size}{Sample size (unweighted) of full-time, year-round ONLY (used for earnings)}
+#'   \item{men}{Men with major}
+#'   \item{women}{Women with major}
+#'   \item{sharewomen}{Proportion women}
+#'   \item{employed}{Number employed (ESR == 1 or 2)}
+#'   \item{employed_fulltime}{Employed 35 hours or more}
+#'   \item{employed_parttime}{Employed less than 35 hours}
+#'   \item{employed_fulltime_yearround}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
+#'   \item{unemployed}{Number unemployed (ESR == 3)}
+#'   \item{unemployment_rate}{Unemployed / (Unemployed + Employed)}
+#'   \item{p25th}{25th percentile of earnigns}
+#'   \item{median}{Median earnings of full-time, year-round workers}
+#'   \item{p75th}{75th percentile of earnings}
+#'   \item{college_jobs}{Number with job requiring a college degree}
+#'   \item{non_college_jobs}{Number with job not requiring a college degree}
+#'   \item{low_wage_jobs}{Number in low-wage service jobs}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}.
+#' @seealso \code{\link{college_grad_students}}, \code{\link{college_all_ages}}
+"college_recent_grads"
 
 
 
@@ -402,6 +476,22 @@
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/congress-age}
 "congress_age"
+
+
+
+#' How Many Americans Are Married To Their Cousins?
+#'
+#' The raw data behind the story
+#' "How Many Americans Are Married To Their Cousins?"
+#' \url{https://fivethirtyeight.com/features/how-many-americans-are-married-to-their-cousins/}.
+#'
+#' @format A data frame with 70 rows representing countries and 2 variables:
+#' \describe{
+#'   \item{country}{Country}
+#'   \item{percent}{Percent of marriages that are consanguineous}
+#' }
+#' @source \url{http://www.consang.net/index.php/Main_Page}
+"cousin_marriage"
 
 
 
