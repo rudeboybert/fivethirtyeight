@@ -63,11 +63,12 @@ browseVignettes(package = "fivethirtyeight")
 More Information
 ----------------
 
+-   [Andrew Flowers](https://www.linkedin.com/in/andrew-flowers-1319934/) gave a great demonstration of the package and the `bechdel` vignette during his rstudio::conf talk in Orlando, Florida in January. The video of his talk is available [here](https://www.rstudio.com/resources/videos/finding-and-telling-stories-with-r/).
 -   We're now featured on [Kaggle](https://www.kaggle.com/fivethirtyeight/fivethirtyeight)!
 -   Click this [Google Sheet](https://docs.google.com/spreadsheets/d/1IMWAHNPIDzplafWW6AGnGyHmB1BMjohEw_V5HmT70Gs/edit#gid=840984416) for a master spreadsheet connecting
     1.  the original 538 data on [GitHub](https://github.com/fivethirtyeight/data) with
     2.  the data frames in the package with
-    3.  information on the corresponding article.
+    3.  information on the corresponding article
 -   See the package vignette for:
     1.  Our motivation for creating this package.
     2.  Guidelines we followed preparing the data sets and links to the code.
