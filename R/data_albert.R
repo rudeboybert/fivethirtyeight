@@ -296,7 +296,7 @@
 #' "The Economic Guide To Picking A College Major"
 #' \url{http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/}.
 #'
-#' @format A data frame with 173 rows representing majors and 11 variables for students of all ages:
+#' @format A data frame with 173 rows representing majors (all ages) and 11 variables:
 #' \describe{
 #'   \item{major_code}{Major code, FO1DP in ACS PUMS}
 #'   \item{major}{Major description}
@@ -322,7 +322,7 @@
 #' "The Economic Guide To Picking A College Major"
 #' \url{http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/}.
 #'
-#' @format A data frame with 173 rows representing majors and 22 variables for graduate vs nongraduate students:
+#' @format A data frame with 173 rows representing majors (graduate vs nongraduate students) and 22 variables:
 #' \describe{
 #'   \item{major_code}{Major code, FO1DP in ACS PUMS}
 #'   \item{major}{Major description}
@@ -359,7 +359,7 @@
 #' "The Economic Guide To Picking A College Major"
 #' \url{http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/}.
 #'
-#' @format A data frame with 173 rows representing majors and 21 variables for recent graduates:
+#' @format A data frame with 173 rows representing majors (recent graduates) and 21 variables:
 #' \describe{
 #'   \item{rank}{Rank by median earnings}
 #'   \item{major_code}{Major code, FO1DP in ACS PUMS}

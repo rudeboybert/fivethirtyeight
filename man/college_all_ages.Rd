@@ -4,7 +4,7 @@
 \name{college_all_ages}
 \alias{college_all_ages}
 \title{The Economic Guide To Picking A College Major}
-\format{A data frame with 173 rows representing majors and 11 variables for students of all ages:
+\format{A data frame with 173 rows representing majors (all ages) and 11 variables:
 \describe{
   \item{major_code}{Major code, FO1DP in ACS PUMS}
   \item{major}{Major description}

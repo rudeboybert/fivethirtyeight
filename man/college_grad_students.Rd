@@ -4,7 +4,7 @@
 \name{college_grad_students}
 \alias{college_grad_students}
 \title{The Economic Guide To Picking A College Major}
-\format{A data frame with 173 rows representing majors and 22 variables for graduate vs nongraduate students:
+\format{A data frame with 173 rows representing majors (graduate vs nongraduate students) and 22 variables:
 \describe{
   \item{major_code}{Major code, FO1DP in ACS PUMS}
   \item{major}{Major description}

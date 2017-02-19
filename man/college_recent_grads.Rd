@@ -4,7 +4,7 @@
 \name{college_recent_grads}
 \alias{college_recent_grads}
 \title{The Economic Guide To Picking A College Major}
-\format{A data frame with 173 rows representing majors and 21 variables for recent graduates:
+\format{A data frame with 173 rows representing majors (recent graduates) and 21 variables:
 \describe{
   \item{rank}{Rank by median earnings}
   \item{major_code}{Major code, FO1DP in ACS PUMS}
