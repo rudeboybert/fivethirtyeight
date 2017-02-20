@@ -11,7 +11,7 @@
   \item{detail}{}
 }}
 \source{
-Memeorandum \url{http://www.memeorandum.com/}.  See \url{memeorandum}
+Memeorandum \url{http://www.memeorandum.com/}.
 }
 \usage{
 trump_news

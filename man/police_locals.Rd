@@ -38,5 +38,10 @@ The Census Bureau numbers are potentially going to differ from other counts for 
 
 Note: Missing values means that there are fewer than 100 police officers of that race serving that city.
 }
+\examples{
+#To transform data to follow tidy data principles.
+police_locals_tidy <- police_locals \%>\% 
+   gather(key = "race", value = "perc_in", all:asian)
+}
 \keyword{datasets}
 

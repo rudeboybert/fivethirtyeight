@@ -31,6 +31,11 @@
 #'   \item{asian}{Percentage of Asian police officers who live in the city}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/police-locals}
+#' 
+#' @examples
+#' #To transform data to follow tidy data principles.
+#' police_locals_tidy <- police_locals %>% 
+#'    gather(key = "race", value = "perc_in", all:asian)
 "police_locals"
 
 #' Looking For Clues: Who Is Going To Run For President In 2016?
@@ -291,7 +296,7 @@
 #'   \item{major_cat}{Story classification}
 #'   \item{detail}{}
 #' }
-#' @source Memeorandum \url{http://www.memeorandum.com/}.  See \url{memeorandum}
+#' @source Memeorandum \url{http://www.memeorandum.com/}.
 "trump_news"
 
 
