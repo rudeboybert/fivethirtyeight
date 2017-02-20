@@ -40,8 +40,10 @@ Note: Missing values means that there are fewer than 100 police officers of that
 }
 \examples{
 #To transform data to follow tidy data principles.
+library(tidyr)
+library(dplyr)
 police_locals_tidy <- police_locals \%>\% 
-   gather(key = "race", value = "perc_in", all:asian)
+   tidyr::gather(key = "race", value = "perc_in", all:asian)
 }
 \keyword{datasets}
 

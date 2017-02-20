@@ -33,9 +33,11 @@
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/police-locals}
 #' 
 #' @examples
-#' #To transform data to follow tidy data principles.
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyr)
+#' library(dplyr)
 #' police_locals_tidy <- police_locals %>% 
-#'    gather(key = "race", value = "perc_in", all:asian)
+#'    tidyr::gather(key = "race", value = "perc_in", all:asian)
 "police_locals"
 
 #' Looking For Clues: Who Is Going To Run For President In 2016?
