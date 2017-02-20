@@ -377,9 +377,10 @@
 #'   \item{castle8}{Number of troops out of 100 send to castle 8}
 #'   \item{castle9}{Number of troops out of 100 send to castle 9}
 #'   \item{castle10}{Number of troops out of 100 send to castle 10}
-#'   \item{reason}{response to the question "Why did you choose your troop deployment?"}
+#'   \item{reason}{Why did you choose your troop deployment?}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/riddler-castles}
+#' 
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(stringr)
