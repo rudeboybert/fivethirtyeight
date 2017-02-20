@@ -301,8 +301,11 @@
 "trump_news"
 
 
-#' Donald Trump twitter
+#' The World’s Favorite Donald Trump Tweets
 #'
+#' The raw data behind the story
+#' "The World’s Favorite Donald Trump Tweets"
+#' \url{https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/}.
 #' Tweets posted on twitter by Donald Trump (@@realDonaldTrump)
 #' 
 #' @format A data frame with 448 rows representing tweets and 3 variables:
@@ -355,5 +358,33 @@
 #' @source The source of the data is a Survey Monkey Audience poll commissioned by FiveThirtyEight and conducted from April 6 to April 10, 2015.  See \url{https://github.com/fivethirtyeight/data/tree/master/weather-check}
 "weather_check"
 
+#' Can You Rule Riddler Nation?
+#'
+#' The raw data behind the story
+#' "Can You Rule Riddler Nation?"
+#' \url{https://fivethirtyeight.com/features/can-you-rule-riddler-nation/}.
+#'
+#' @format A data frame with 1387 rows representing submissions and 11 variables:
+#' \describe{
+#'   \item{castle1}{Number of troops out of 100 send to castle 1}
+#'   \item{castle2}{Number of troops out of 100 send to castle 2}
+#'   \item{castle3}{Number of troops out of 100 send to castle 3}
+#'   \item{castle4}{Number of troops out of 100 send to castle 4}
+#'   \item{castle5}{Number of troops out of 100 send to castle 5}
+#'   \item{castle6}{Number of troops out of 100 send to castle 6}
+#'   \item{castle7}{Number of troops out of 100 send to castle 7}
+#'   \item{castle8}{Number of troops out of 100 send to castle 8}
+#'   \item{castle9}{Number of troops out of 100 send to castle 9}
+#'   \item{castle10}{Number of troops out of 100 send to castle 10}
+#'   \item{reason}{response to the question "Why did you choose your troop deployment?"}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/riddler-castles}
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' riddler_castles_tidy<-riddler_castles %>% 
+#'    gather(key = castle , value = soldiers, castle1:castle10) %>% 
+#'    mutate(castle = as.integer(str_replace(castle, "castle","")))
+"riddler_castles"
 
 

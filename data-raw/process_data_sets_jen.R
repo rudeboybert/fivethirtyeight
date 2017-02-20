@@ -331,5 +331,20 @@ devtools::use_data(weather_check, overwrite = TRUE)
 #--MULTIPLE FILES
 
 
+# obama-commutations ---------------------------------------------------------------
+#-- not possible
+
+
+# riddler-castles ---------------------------------------------------------------
+riddler_castles <- read_csv("data-raw/riddler-castles/castle-solutions.csv", na=c("","NA","-"))
+riddler_castles <- riddler_castles %>% 
+  rename("reason" = `Why did you choose your troop deployment?`)
+colnames(riddler_castles) <- colnames(riddler_castles) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "")
+devtools::use_data(riddler_castles, overwrite = TRUE)
+
+
+
 
 
