@@ -34,10 +34,9 @@
 #' 
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyr)
-#' library(dplyr)
+#' library(tidyverse)
 #' police_locals_tidy <- police_locals %>% 
-#'    tidyr::gather(key = "race", value = "perc_in", all:asian)
+#'    gather(key = "race", value = "perc_in", all:asian)
 "police_locals"
 
 #' Looking For Clues: Who Is Going To Run For President In 2016?
