@@ -362,7 +362,8 @@
 #'
 #' The raw data behind the story
 #' "Can You Rule Riddler Nation?"
-#' \url{https://fivethirtyeight.com/features/can-you-rule-riddler-nation/}.
+#' \url{https://fivethirtyeight.com/features/can-you-rule-riddler-nation/}.  
+#' Analysis of the submitted solutions can be found at: \url{https://fivethirtyeight.com/features/can-you-save-the-drowning-swimmer/}
 #'
 #' @format A data frame with 1387 rows representing submissions and 11 variables:
 #' \describe{
