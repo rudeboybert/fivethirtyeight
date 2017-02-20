@@ -2,6 +2,7 @@
 
 * Development version
 * Added global help file for package: `?fivethirtyeight` with complete instructions
+* Started adding `@examples` code in help files to convert to tidy data format so that data plays nice with tidyverse tools.
 * Other minor changes:
     + [Changed to SVG travis logo](https://github.com/rudeboybert/fivethirtyeight/pull/1)
     + [Removed explicit loading of data in vignette](https://github.com/rudeboybert/fivethirtyeight/pull/2)
