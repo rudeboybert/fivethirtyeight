@@ -382,6 +382,7 @@
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/riddler-castles}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
+#' library(stringr)
 #' riddler_castles_tidy<-riddler_castles %>% 
 #'    gather(key = castle , value = soldiers, castle1:castle10) %>% 
 #'    mutate(castle = as.integer(str_replace(castle, "castle","")))
