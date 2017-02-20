@@ -295,7 +295,7 @@ devtools::use_data(police_deaths, overwrite = TRUE)
 
 # police_killings ------------------------------------------------------------------
 police_killings <- read_csv("data-raw/police-killings/police_killings.csv",
-                            na = "Unknown")
+                            na = c("Unknown", "-", "NA"))
 colnames(police_killings) <- colnames(police_killings) %>%
   tolower() %>%
   str_replace_all(" ", "_")
