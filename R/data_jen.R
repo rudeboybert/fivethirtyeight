@@ -387,7 +387,7 @@
 #' library(stringr)
 #' riddler_castles_tidy<-riddler_castles %>% 
 #'    gather(key = castle , value = soldiers, castle1:castle10) %>% 
-#'    mutate(castle = str_replace(castle, "castle","")) 
+#'    mutate(castle = as.numeric(str_replace(castle, "castle",""))) 
 "riddler_castles"
 
 

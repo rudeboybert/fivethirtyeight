@@ -16,7 +16,7 @@
   \item{castle8}{Number of troops out of 100 send to castle 8}
   \item{castle9}{Number of troops out of 100 send to castle 9}
   \item{castle10}{Number of troops out of 100 send to castle 10}
-  \item{reason}{response to the question "Why did you choose your troop deployment?"}
+  \item{reason}{Why did you choose your troop deployment?}
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/riddler-castles}
@@ -27,14 +27,16 @@ riddler_castles
 \description{
 The raw data behind the story
 "Can You Rule Riddler Nation?"
-\url{https://fivethirtyeight.com/features/can-you-rule-riddler-nation/}.
+\url{https://fivethirtyeight.com/features/can-you-rule-riddler-nation/}.  
+Analysis of the submitted solutions can be found at: \url{https://fivethirtyeight.com/features/can-you-save-the-drowning-swimmer/}
 }
 \examples{
-# To convert data frame to tidy data (long) format, run:
+# To convert data frame to tidy data (long) format, run
 library(tidyverse)
+library(stringr)
 riddler_castles_tidy<-riddler_castles \%>\% 
    gather(key = castle , value = soldiers, castle1:castle10) \%>\% 
-   mutate(castle = as.integer(str_replace(castle, "castle","")))
+   mutate(castle = as.numeric(str_replace(castle, "castle",""))) 
 }
 \keyword{datasets}
 
