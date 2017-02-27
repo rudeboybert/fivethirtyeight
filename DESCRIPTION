@@ -31,5 +31,6 @@ Suggests:
     scales,
     stringr,
     tidytext,
+    hunspell,
     ggthemes
 VignetteBuilder: knitr
