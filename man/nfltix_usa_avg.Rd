@@ -10,7 +10,7 @@
   \item{avg_tix_price}{Average ticket price} 
 }}
 \source{
-StubHub stubhub.com
+StubHub \url{http://stubhub.com}
 }
 \usage{
 nfltix_usa_avg
@@ -21,4 +21,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/}.
 }
 \keyword{datasets}
-

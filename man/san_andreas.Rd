@@ -30,4 +30,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/datalab/the-rock-isnt-alone-lots-of-people-are-worried-about-the-big-one/}.
 }
 \keyword{datasets}
-

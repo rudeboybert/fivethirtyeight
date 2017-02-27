@@ -31,8 +31,15 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/}.
 A table of the central actors in "Love Actually" and which scenes they appear in.
 }
+\examples{
+# To convert data frame to tidy data (long) format, run:
+library(tidyverse)
+library(stringr)
+love_actually_appearance_tidy <- love_actually_appearance \%>\%
+  gather(actor, appears, -c(scenes)) \%>\%
+  arrange(scenes)
+}
 \seealso{
 \code{\link{love_actually_adj}}.
 }
 \keyword{datasets}
-

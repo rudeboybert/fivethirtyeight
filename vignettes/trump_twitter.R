@@ -100,12 +100,12 @@ plotSentByTime <- function(trump_tweet_times, timeGroupVar) {
     ggtitle(paste("Trump Tweet Count & Sentiment by", timeVarLabel))
 }
 
-## ----plot_hour, fig.width=7----------------------------------------------
+## ----plot_hour, fig.width=7, warning=FALSE-------------------------------
 plotSentByTime(trump_tweet_times, hour)
 
-## ----plot_weekday, fig.width=7-------------------------------------------
+## ----plot_weekday, fig.width=7, warning=FALSE----------------------------
 plotSentByTime(trump_tweet_times, weekday)
 
-## ----plot_month, fig.width=7---------------------------------------------
+## ----plot_month, fig.width=7, warning=FALSE------------------------------
 plotSentByTime(trump_tweet_times, month_over_time)
 

@@ -31,8 +31,8 @@ The raw data behind the story
 # To convert data frame to tidy data (long) format, run:
 library(tidyverse)
 library(stringr)
-airline_safety_tidy <- airline_safety \%>\% 
-  gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) \%>\% 
+airline_safety_tidy <- airline_safety \%>\%
+  gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) \%>\%
   mutate(
     period = str_sub(type, start=-5),
     period = str_replace_all(period, "_", "-"),
@@ -40,4 +40,3 @@ airline_safety_tidy <- airline_safety \%>\%
   )
 }
 \keyword{datasets}
-

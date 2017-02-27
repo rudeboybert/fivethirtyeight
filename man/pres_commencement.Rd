@@ -27,4 +27,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/sitting-presidents-give-way-more-commencement-speeches-than-they-used-to/}.
 }
 \keyword{datasets}
-

@@ -17,12 +17,12 @@
 #'   \item{fatalities_00_14}{Total number of fatalities, 2000–2014}
 #' }
 #' @source Aviation Safety Network \url{http://aviation-safety.net}.
-#' @examples 
+#' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
 #' library(stringr)
-#' airline_safety_tidy <- airline_safety %>% 
-#'   gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) %>% 
+#' airline_safety_tidy <- airline_safety %>%
+#'   gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) %>%
 #'   mutate(
 #'     period = str_sub(type, start=-5),
 #'     period = str_replace_all(period, "_", "-"),
@@ -140,6 +140,16 @@
 #'   \item{total_litres_of_pure_alcohol}{Total number of fatal accidents, 1985–1999}
 #' }
 #' @source World Health Organisation, Global Information System on Alcohol and Health (GISAH), 2010.
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' drinks_tidy <- drinks %>%
+#'   gather(type, servings, -c(country, total_litres_of_pure_alcohol)) %>%
+#'   mutate(
+#'     type = str_sub(type, start=1, end=-10)
+#'   ) %>%
+#'   arrange(country, type)
 "drinks"
 
 
@@ -253,6 +263,14 @@
 #'   \item{wood_framed}{Present (1) or not (0)}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/bob-ross}
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' bob_ross_tidy <- bob_ross %>%
+#'   gather(object, present, -c(episode, season, episode_num, title)) %>%
+#'   mutate(present = as.logical(present)) %>%
+#'   arrange(episode, object)
 "bob_ross"
 
 
@@ -582,6 +600,20 @@
 #' }
 #' @source National Survey on Drug Use and Health from the Substance Abuse and
 #' Mental Health Data Archive \url{http://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' use <- drug_use %>%
+#'   select(age, n, ends_with("_use")) %>%
+#'   gather(drug, use, -c(age, n)) %>%
+#'   mutate(drug = str_sub(drug, start=1, end=-5))
+#' freq <- drug_use %>%
+#'   select(age, n, ends_with("_freq")) %>%
+#'   gather(drug, freq, -c(age, n)) %>%
+#'   mutate(drug = str_sub(drug, start=1, end=-6))
+#' drug_use_tidy <- left_join(x=use, y=freq, by = c("age", "n", "drug")) %>%
+#'   arrange(age)
 "drug_use"
 
 
@@ -753,6 +785,14 @@
 #'   \item{gdp_weighted_share}{Country's GDP-weighted audience share (percentage)}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/fifa}
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' fifa_audience_tidy <- fifa_audience %>%
+#'   gather(type, share, -c(country, confederation)) %>%
+#'   mutate(type = str_sub(type, start=1, end=-7)) %>%
+#'   arrange(country)
 "fifa_audience"
 
 
@@ -897,6 +937,13 @@
 #'   \item{rowan_atkinson}{}
 #' }
 #' @seealso \code{\link{love_actually_adj}}.
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' love_actually_appearance_tidy <- love_actually_appearance %>%
+#'   gather(actor, appears, -c(scenes)) %>%
+#'   arrange(scenes)
 "love_actually_appearance"
 
 

@@ -23,5 +23,13 @@ The raw data behind the story
 "How To Break FIFA"
 \url{http://fivethirtyeight.com/features/how-to-break-fifa/}.
 }
+\examples{
+# To convert data frame to tidy data (long) format, run:
+library(tidyverse)
+library(stringr)
+fifa_audience_tidy <- fifa_audience \%>\%
+  gather(type, share, -c(country, confederation)) \%>\%
+  mutate(type = str_sub(type, start=1, end=-7)) \%>\%
+  arrange(country)
+}
 \keyword{datasets}
-

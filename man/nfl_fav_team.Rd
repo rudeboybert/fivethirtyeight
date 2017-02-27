@@ -36,4 +36,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/the-rams-are-dead-to-me-so-i-answered-3352-questions-to-find-a-new-team/}.
 }
 \keyword{datasets}
-

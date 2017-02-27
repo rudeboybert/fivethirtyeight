@@ -27,4 +27,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/}.
 }
 \keyword{datasets}
-

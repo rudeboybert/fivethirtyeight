@@ -89,5 +89,13 @@ The raw data behind the story
 "A Statistical Analysis of the Work of Bob Ross"
 \url{http://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/}.
 }
+\examples{
+# To convert data frame to tidy data (long) format, run:
+library(tidyverse)
+library(stringr)
+bob_ross_tidy <- bob_ross \%>\%
+  gather(object, present, -c(episode, season, episode_num, title)) \%>\%
+  mutate(present = as.logical(present)) \%>\%
+  arrange(episode, object)
+}
 \keyword{datasets}
-

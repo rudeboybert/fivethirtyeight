@@ -26,4 +26,3 @@ The raw data behind the story
 \url{https://fivethirtyeight.com/features/the-dallas-shooting-was-among-the-deadliest-for-police-in-u-s-history/}.
 }
 \keyword{datasets}
-
