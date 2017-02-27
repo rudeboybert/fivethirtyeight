@@ -150,7 +150,7 @@ plotSentByTime <- function(trump_tweet_times, timeGroupVar) {
 ```
 
 
-```{r plot_hour, fig.width=7}
+```{r plot_hour, fig.width=7, warning=FALSE}
 plotSentByTime(trump_tweet_times, hour)
 ```
 
@@ -158,14 +158,14 @@ plotSentByTime(trump_tweet_times, hour)
 * Trump's tweets are most positive during the 10am hour. 
 
 
-```{r plot_weekday, fig.width=7}
+```{r plot_weekday, fig.width=7, warning=FALSE}
 plotSentByTime(trump_tweet_times, weekday)
 ```
 
 * Trump tweeted the most on Tuesday and Wednesday 
 * Trump was most positive in the second part of the work week (Wed, Thurs, Fri)
 
-```{r plot_month, fig.width=7}
+```{r plot_month, fig.width=7, warning=FALSE}
 plotSentByTime(trump_tweet_times, month_over_time)
 ```
 
