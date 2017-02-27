@@ -30,5 +30,6 @@ Suggests:
     magrittr,
     scales,
     stringr,
+    tidytext,
     ggthemes
 VignetteBuilder: knitr
