@@ -329,7 +329,7 @@
 #'   \item{division}{NFL division} 
 #'   \item{avg_tix_price}{Average ticket price} 
 #' }
-#' @source StubHub stubhub.com
+#' @source StubHub \url{http://stubhub.com}
 "nfltix_div_avgprice"
 
 
@@ -345,7 +345,7 @@
 #'   \item{team}{Name of NFL team} 
 #'   \item{avg_tix_price}{Average ticket price} 
 #' }
-#' @source StubHub stubhub.com
+#' @source StubHub \url{http://stubhub.com}
 "nfltix_usa_avg"
 
 
@@ -470,6 +470,25 @@
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/police-killings}
 "police_killings"
+
+
+
+#' The Last 10 Weeks Of 2016 Campaign Stops In One Handy Gif
+#'
+#' The raw data behind the story
+#' "The Last 10 Weeks Of 2016 Campaign Stops In One Handy Gif"
+#' \url{https://fivethirtyeight.com/features/the-last-10-weeks-of-2016-campaign-stops-in-one-handy-gif/}.
+#'
+#' @format A data frame with 177 rows representing 2016 Republican and Democratic candidate campaign trail stops and 5 variables:
+#' \describe{
+#'   \item{candidate}{Clinton or Trump} 
+#'   \item{date}{The date of the event} 
+#'   \item{location}{The location of the event} 
+#'   \item{lat}{Latitude of the event location} 
+#'   \item{lng}{Longitude of the event location} 
+#' }
+#' @source \url{https://hillaryspeeches.com/}, \url{http://www.conservativedailynews.com/} 
+"pres_2016_trail"
 
 
 

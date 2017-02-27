@@ -300,3 +300,15 @@ colnames(police_killings) <- colnames(police_killings) %>%
   tolower() %>%
   str_replace_all(" ", "_")
 devtools::use_data(police_killings, overwrite = TRUE)
+
+# presidential-campaign-trail ------------------------------------------------------
+clin_trail <- read_csv("data-raw/presidential-campaign-trail/clinton.csv") %>% 
+  mutate(candidate = "Clinton")
+trum_trail <- read_csv("data-raw/presidential-campaign-trail/trump.csv") %>% 
+  mutate(candidate = "Trump")
+pres_2016_trail <- bind_rows(clin_trail, trum_trail) %>% 
+  select(candidate, everything())
+colnames(pres_2016_trail) <- colnames(pres_2016_trail) %>%
+  tolower() %>%
+  str_replace_all(" ", "_")
+devtools::use_data(pres_2016_trail, overwrite = TRUE)
