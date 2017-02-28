@@ -46,7 +46,7 @@ vec_hunspell_stem <- Vectorize(my_hunspell_stem, "token")
 
 
 # Clean text by tokenizing & removing urls/stopwords 
-We first remove URLs and stopwords as specified in the `tidytext` library.  Stopwords are common words in English.
+We first remove URLs and stopwords as specified in the `tidytext` library.  Stopwords are common words in English.  We also do spellchecking using hunspell.
 ```{r tokens}
 trump_tokens <- trump_twitter %>% 
   mutate(text = str_replace_all(text, 

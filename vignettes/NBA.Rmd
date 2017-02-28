@@ -1,6 +1,6 @@
 ---
 title: "2015 NBA player predictions analysis using the `tidyverse`"
-author: "G. Elliott Morris, Chester Ismay, and Jennifer Chunn"
+author: "G. Elliott Morris and Chester Ismay"
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
