@@ -18,8 +18,9 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/rudeboybert/fivethirtyeight
 BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
-RoxygenNote: 6.0.1
-Imports: tidyverse
+RoxygenNote: 5.0.1
+Imports:
+    tidyverse
 Suggests:
     knitr,
     rmarkdown,
@@ -33,5 +34,9 @@ Suggests:
     tidytext,
     hunspell,
     ggthemes,
-    lubridate
+    lubridate,
+    grid,
+    fmsb,
+    wordcloud,
+    gridExtra
 VignetteBuilder: knitr
