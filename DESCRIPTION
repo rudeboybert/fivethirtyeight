@@ -7,7 +7,7 @@ Description: An R library that provides access to the code and data sets
 Version: 0.1.0.9000
 Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = "cre"),
-    person("Chester", "Ismay", email = "cismay@reed.edu", role = "aut"),
+    person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Jennifer", "Chunn", email = "jenchunn@gmail.com", role = "aut"),
     person("Andrew", "Flowers",  role = "ctb"),
     person("Jonathan", "Bouchet",  role = "ctb"),
