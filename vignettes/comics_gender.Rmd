@@ -4,15 +4,15 @@ author: "Jonathan Bouchet"
 date: "`r Sys.Date()`"
 output: 
 rmarkdown::html_vignette:
-    df_print: kable
+df_print: kable
 vignette: |
   %\VignetteIndexEntry{Comic gender analysis}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
-This vignette is based on [538 study : Comic Books Are Still Made By Men, For Men And About Men](https://fivethirtyeight.com/features/women-in-comic-books/) study about Marvel and DC characters since ~1939 until 2014 (August 24th) and aims at investigating the features of Comic Books characters according their gender / Publisher.
-
+  
+  This vignette is based on [538 study : Comic Books Are Still Made By Men, For Men And About Men](https://fivethirtyeight.com/features/women-in-comic-books/) study about Marvel and DC characters since ~1939 until 2014 (August 24th) and aims at investigating the features of Comic Books characters according their gender / Publisher.
+  
 ```{r, message = FALSE, warning = FALSE}
 #load packages and csv file
 library(ggplot2)
@@ -31,40 +31,40 @@ library(gridExtra)
 * raw number of characters per publisher.
 
 ```{r, warning = FALSE, message = FALSE, fig.width = 10}
-#calculate percentage of each gender for each publisher
+#calculate raw number and percentage of each gender for each publisher
+raw_number_per_publisher <- comic_characters %>% 
+  group_by(publisher) %>% 
+  summarise(number = n()) %>% 
+  arrange(-number)
+
 percent_gen_pub <- comic_characters %>% 
   group_by(sex, publisher) %>% 
   summarise(number = n()) %>% 
-  arrange(-number)
-percent_gen_pub <- percent_gen_pub %>% 
+  arrange(-number) %>%
   group_by(publisher) %>% 
   mutate(countT = sum(number)) %>% 
   group_by(sex) %>% 
-  mutate(percentage = 100*number/countT) %>% 
-  mutate(label = paste0(round(percentage, 2)))
+  mutate(
+    percentage = (100*number/countT),
+    label = paste0(round(percentage, 2)))
 
 #plot percentage of each gender for each publisher
 percentage_per_publisher <- ggplot(data = percent_gen_pub,aes(x = sex,y = percentage, fill = publisher)) + 
-  geom_bar(width = 0.9, stat = "identity", position = 'dodge') + 
+  geom_bar(width = 0.9, stat = "identity", position = 'dodge') +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),legend.position = 'none') + 
   geom_text(aes(label = label), position=position_dodge(width = 0.9), vjust = -0.25,size = 2.5) + 
   scale_fill_manual(values = c("#3B9AB2","#EBCC2A")) + 
   xlab('') + 
   ylab('Percentage')
 
-#plot raw number of each gender for each publisher
-raw_number_per_publisher <- comic_characters %>% 
-  group_by(publisher) %>% 
-  summarise(number = n()) %>% 
-  arrange(-number) %>% 
-  ggplot(aes(x = publisher, y = number, fill = publisher)) + 
+raw_number_per_publisher <- ggplot(data = raw_number_per_publisher, aes(x = publisher, y = number, fill = publisher)) + 
   geom_bar(width = 0.1, stat = "identity") + 
-  coord_flip() + 
+  coord_flip() +
   scale_fill_manual(values = c("#3B9AB2","#EBCC2A")) + 
   xlab('') + 
   ylab('') +
   theme(legend.position = 'None')
-  
+
 grid.arrange(percentage_per_publisher, raw_number_per_publisher, ncol=2)
 ```
 
@@ -74,32 +74,41 @@ grid.arrange(percentage_per_publisher, raw_number_per_publisher, ncol=2)
 #### Number of Characters vs. Time
 ```{r, message = FALSE, warning = FALSE, fig.width = 10}
 #select data with no NA's for sex and date and groupby
-marvel_vs_time <- as.data.frame(comic_characters %>% 
-                                filter(publisher == 'Marvel' & !is.na(month) & !is.na(sex)) %>%
-                                group_by(year, month, sex) %>% summarise(number = n()))
 
-marvel_vs_time$ordered_month <- factor(marvel_vs_time$month, levels = month.name)
-marvel_vs_time$sex <- factor(marvel_vs_time$sex, levels = c("Female Characters", "Male Characters", "Genderfluid Characters","Agender Characters"))
-g1<-ggplot(data = marvel_vs_time, aes(year, ordered_month)) + geom_tile(aes(fill = number),colour = "white") + 
+#define list of gender per publisher
+gender_list_marvel <- c("Female Characters", "Male Characters", "Genderfluid Characters","Agender Characters")
+gender_list_dc <- c("Female Characters", "Male Characters", "Genderless Characters","Transgender Characters")
+
+marvel_vs_time <- comic_characters %>% 
+  filter(publisher == 'Marvel' & !is.na(month) & !is.na(sex)) %>% 
+  group_by(year, month, sex) %>% 
+  summarise(number = n()) %>% 
+  mutate(
+    sex_ordered = factor(sex, levels = gender_list_marvel), 
+    month_ordered = factor(month, levels = month.name))
+
+dc_vs_time <- comic_characters %>% 
+  filter(publisher == 'DC' & month!= "Holiday" & !is.na(month) & !is.na(sex)) %>% 
+  mutate(month = ifelse(month=="01","January",month)) %>% 
+  group_by(year, month, sex) %>% summarise(number = n()) %>% 
+  mutate(
+    sex_ordered = factor(sex, levels = gender_list_dc), 
+    month_ordered = factor(month, levels = month.name)) 
+
+plot_marvel_time <- ggplot(data = marvel_vs_time, aes(year, month_ordered)) + 
+  geom_tile(aes(fill = number),colour = "white") + 
   scale_fill_gradient(low = "#EBCC2A", high = "black") + 
-  facet_wrap(~ sex, ncol = 4) + 
+  facet_wrap(~ sex_ordered, ncol = 4) +
   theme(axis.title.x = element_blank(), axis.ticks.x = element_blank(), axis.title.y = element_blank(), axis.ticks.y =  element_blank(), legend.position = 'right', legend.title = element_blank(), legend.key.size = unit(.2, "cm")) + 
   xlim(1935,2015)
 
-dc_vs_time <- as.data.frame(comic_characters %>% filter(publisher == 'DC' & !is.na(month) & !is.na(sex)))
-dc_vs_time$month <- ifelse(dc_vs_time$month == "01","January",dc_vs_time$month)
-dc_vs_time <- dc_vs_time %>% filter(month != "Holiday") %>% group_by(year,month,sex) %>% summarise(number = n())
-dc_vs_time$month <- as.factor(dc_vs_time$month)
-dc_vs_time$ordered_month <- factor(dc_vs_time$month, levels = month.name)
-dc_vs_time$sex <- factor(dc_vs_time$sex, levels = c("Female Characters", "Male Characters", "Genderless Characters","Transgender Characters"))
-
-g2 <- ggplot(data = dc_vs_time, aes(year, ordered_month)) + geom_tile(aes(fill = number),colour = "white") + 
+plot_dc_time <- ggplot(data = dc_vs_time, aes(year, month_ordered)) + geom_tile(aes(fill = number),colour = "white") + 
   scale_fill_gradient(low = "#3B9AB2", high = "black") + 
-  facet_wrap(~ sex, ncol = 4) + 
+  facet_wrap(~ sex_ordered, ncol = 4) + 
   theme(axis.title.x = element_blank() ,axis.ticks.x = element_blank(), axis.title.y = element_blank(), axis.ticks.y = element_blank(), legend.position = 'right', legend.title = element_blank(), legend.key.size = unit(.2, "cm")) + 
   xlim(1935,2015)
 
-grid.arrange(rbind(ggplotGrob(g1), ggplotGrob(g2), size = "last"))
+grid.arrange(rbind(ggplotGrob(plot_marvel_time), ggplotGrob(plot_dc_time), size = "last"))
 ```
 
 * Most of the characters are either `Female` or `Male` for both publishers.
@@ -122,33 +131,34 @@ aggregateFeature <- function(current_publisher, feature){
   #empty list to keep dataframe by (gender, feature)
   currentFeature <- list()
   if(current_publisher == 'Marvel'){
-    gender_list <- c("Male Characters","Female Characters", "Genderfluid Characters","Agender Characters")
+    gender_list <- gender_list_marvel
   } else {
-  gender_list <- c("Male Characters","Female Characters", "Genderfluid Characters","Agender Characters")
+    gender_list <- gender_list_dc
   }
-
-for(i in 1:length(gender_list)){
-	currentFeature[[i]] <- as.data.frame(comic_characters %>% 
-	                                filter(publisher == current_publisher ) %>%  
-	                                select(hair, sex) %>% 
-	                                na.omit() %>% 
-	                                group_by(hair) %>% 
-	                                filter(sex == gender_list[i]) %>% 
-	                                summarise(number = n()) %>% 
-	                                arrange(-number) %>% 
-	                                mutate(countT = sum(number)) %>% 
-	                                mutate(percentage = round(100*number/countT,1)) %>% 
-	                                select(hair, percentage, number))
-	if(current_publisher == 'Marvel'){
-	  colnames(currentFeature[[i]])[2]<-'percentage_marvel'
-	  } else{
-	    colnames(currentFeature[[i]])[2]<-'percentage_dc'
-	  }
-	
-	 if(feature == 'Hair'){
-	  #strip 'hair' word for better display of the radarchart
-	  currentFeature[[i]]$hair <- sapply(currentFeature[[i]]$hair, function(x) gsub(' Hair','', x))}
-	}
+  
+  for(i in 1:length(gender_list)){
+    currentFeature[[i]] <- comic_characters %>% 
+      filter(publisher == current_publisher ) %>%  
+      select(hair, sex) %>% 
+      na.omit() %>% 
+      group_by(hair) %>% 
+      filter(sex == gender_list[i]) %>% 
+      summarise(number = n()) %>% 
+      arrange(-number) %>% 
+      mutate(countT = sum(number)) %>% 
+      mutate(percentage = round(100*number/countT,1)) %>%
+      select(hair, percentage, number)
+    
+    if(current_publisher == 'Marvel'){
+      colnames(currentFeature[[i]])[2]<-'percentage_marvel'
+    } else{
+      colnames(currentFeature[[i]])[2]<-'percentage_dc'
+    }
+    
+    if(feature == 'hair'){
+      #strip 'hair' word for better display of the radarchart
+      currentFeature[[i]]$hair <- sapply(currentFeature[[i]]$hair, function(x) gsub(' Hair','', x))}
+  }
   
   names(currentFeature) <- gender_list
   return(currentFeature)
@@ -157,7 +167,7 @@ for(i in 1:length(gender_list)){
 
 ```{r, message = FALSE, warning = FALSE}
 #outer join the 2 dataframes for (feature=Hair, gender=Male)
-merged <- merge(aggregateFeature('DC','hair')[[1]], aggregateFeature('Marvel','hair')[[1]], by='hair', all=TRUE)
+merged <- full_join(aggregateFeature('DC','hair')[[2]], aggregateFeature('Marvel','hair')[[2]], by='hair')
 #set min/max percentages for the radarchart limits
 min <- rep(0, length(merged$hair))
 max <- rep(50, length(merged$hair))
@@ -200,22 +210,18 @@ By looking at the number of appearances for each characters, we can make a visua
 marvel_appearances <- comic_characters %>% 
   filter(publisher == 'Marvel') %>% 
   select(name, appearances) %>% na.omit() %>% 
-  mutate(newname = gsub(" *\\(.*?\\) *", "", name))
+  mutate(name = gsub(" *\\(.*?\\) *", "", name))
 dc_appearances <- comic_characters %>% 
   filter(publisher == 'DC') %>% 
   select(name, appearances) %>% na.omit() %>% 
-  mutate(newname = gsub(" *\\(.*?\\) *", "", name))
+  mutate(name = gsub(" *\\(.*?\\) *", "", name))
 
 color_marvel <- colorRampPalette(c("#EBCC2A", "black"))
 color_dc <- colorRampPalette(c("#3B9AB2", "black"))
 
 op <- par(mar = c(1, 2, 2, 1), mfrow = c(1, 2))
-wordcloud(dc_appearances$newname, dc_appearances$appearances, min.freq = 100, colors = color_dc(10), scale = c(1.75, 0.2))
-wordcloud(marvel_appearances$newname, marvel_appearances$appearances, min.freq = 250, colors = color_marvel(10), scale = c(1.5, 0.2))
+wordcloud(dc_appearances$name, dc_appearances$appearances, min.freq = 100, colors = color_dc(10), scale = c(1.75, 0.2))
+wordcloud(marvel_appearances$name, marvel_appearances$appearances, min.freq = 250, colors = color_marvel(10), scale = c(1.5, 0.2))
 ```
 
 * `Batman`(DC) and `Spider-Man`(Marvel) ends up being the characters with the most appearances. 
-
-
-
-
