@@ -1,6 +1,6 @@
-# fivethirtyeight 0.1.0.9000
+# fivethirtyeight 0.1.1
 
-* Development version
+* Added first crowd-sourced vignettes
 * Added global help file for package: `?fivethirtyeight` with complete instructions
 * Started adding `@examples` code in help files to convert to tidy data format so that data plays nice with tidyverse tools.
 * Other minor changes:
