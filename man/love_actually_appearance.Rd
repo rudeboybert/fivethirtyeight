@@ -43,3 +43,4 @@ love_actually_appearance_tidy <- love_actually_appearance \%>\%
 \code{\link{love_actually_adj}}.
 }
 \keyword{datasets}
+

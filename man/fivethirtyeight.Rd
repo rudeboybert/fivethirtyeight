@@ -32,3 +32,4 @@ vignette("bechdel", package = "fivethirtyeight")
 # To browse all vignettes:
 browseVignettes(package = "fivethirtyeight")
 }
+

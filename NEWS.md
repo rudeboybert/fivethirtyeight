@@ -1,4 +1,4 @@
-# fivethirtyeight 0.1.1
+# fivethirtyeight 0.2.0
 
 * Added first crowd-sourced vignettes
 * Added global help file for package: `?fivethirtyeight` with complete instructions

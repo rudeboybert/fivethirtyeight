@@ -40,3 +40,4 @@ airline_safety_tidy <- airline_safety \%>\%
   )
 }
 \keyword{datasets}
+

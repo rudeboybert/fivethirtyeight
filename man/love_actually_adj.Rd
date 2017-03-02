@@ -35,3 +35,4 @@ The adjacency matrix of which actors appear in the same scene together.
 \code{\link{love_actually_appearance}}.
 }
 \keyword{datasets}
+

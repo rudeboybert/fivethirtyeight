@@ -39,3 +39,4 @@ riddler_castles_tidy<-riddler_castles \%>\%
    mutate(castle = as.numeric(str_replace(castle, "castle",""))) 
 }
 \keyword{datasets}
+
