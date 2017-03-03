@@ -33,4 +33,3 @@ The raw data behind the story
 \code{\link{college_grad_students}}, \code{\link{college_recent_grads}}
 }
 \keyword{datasets}
-

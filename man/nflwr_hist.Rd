@@ -25,4 +25,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
 }
 \keyword{datasets}
-

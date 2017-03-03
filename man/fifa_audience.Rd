@@ -33,4 +33,3 @@ fifa_audience_tidy <- fifa_audience \%>\%
   arrange(country)
 }
 \keyword{datasets}
-

@@ -32,4 +32,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/datalab/elitist-superfluous-or-popular-we-polled-americans-on-the-oxford-comma/}.
 }
 \keyword{datasets}
-

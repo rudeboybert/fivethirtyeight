@@ -24,4 +24,3 @@ The raw data behind the story
 \url{https://fivethirtyeight.com/features/the-last-10-weeks-of-2016-campaign-stops-in-one-handy-gif/}.
 }
 \keyword{datasets}
-

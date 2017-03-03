@@ -99,4 +99,3 @@ bob_ross_tidy <- bob_ross \%>\%
   arrange(episode, object)
 }
 \keyword{datasets}
-

@@ -27,4 +27,3 @@ The raw data behind the story
 \code{\link{cand_events_20150130}}, \code{\link{cand_events_20150114}}, and \code{\link{cand_state_20150114}}
 }
 \keyword{datasets}
-

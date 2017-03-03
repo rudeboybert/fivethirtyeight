@@ -33,4 +33,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/}.
 }
 \keyword{datasets}
-
