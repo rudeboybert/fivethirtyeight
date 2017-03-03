@@ -117,7 +117,7 @@
 #' }
 #'
 #' @details
-#' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running:
+#' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://CRAN.R-project.org/package=fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running:
 #' \code{vignette("bechdel", package = "fivethirtyeight")}
 #'
 #' @source \url{www.bechdeltest.com} and \url{www.the-numbers.com}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
