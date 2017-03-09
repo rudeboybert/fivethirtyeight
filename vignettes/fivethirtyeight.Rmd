@@ -47,7 +47,6 @@ With consultation from [Andrew Flowers](http://fivethirtyeight.com/contributors/
 
 
 
-
 ## Guidelines
 
 In order to make the data easily accessible to R novices, we pre-process the
@@ -71,6 +70,8 @@ guidelines:
 **Note**: The code used to pre-process the data can be found on the [GitHub repository](https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw) for the package in the `process_data_sets.R` files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.
 
 
+
+<div id="datasets">
 
 ## Data Sets
 
