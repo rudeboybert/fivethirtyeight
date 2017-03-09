@@ -6,6 +6,7 @@ library(knitr)
 ## ---- message=FALSE, warning=FALSE, echo=FALSE---------------------------
 datasets <- read_csv("https://goo.gl/OT8iHa") %>% 
   filter(!is.na(DATAFRAME_NAME)) %>% 
+  mutate(DATAFRAME_NAME = paste("`", DATAFRAME_NAME, "`", sep="")) %>% 
   transmute(
     `Data Frame Name` = DATAFRAME_NAME,
     `Article Title` = ARTICLE_TITLE,
