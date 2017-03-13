@@ -13,7 +13,7 @@ This is a resubmission. In this version I have:
 
 ## Test environments
 
-* local OS X install, R 3.3.2
+* local OS X install, R 3.3.3
 * ubuntu 12.04 (on travis-ci), R 3.3.1
 * win-builder (release)
 
