@@ -1,24 +1,21 @@
-
-
-
-#' Most Police Don’t Live In The Cities They Serve
+#' Most Police Don't Live In The Cities They Serve
 #'
 #' The raw data behind the story
-#' "Most Police Don’t Live In The Cities They Serve"
+#' "Most Police Don't Live In The Cities They Serve"
 #' \url{http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/}.
-#' 
+#'
 #' @details
 #' The dataset includes the cities with the 75 largest police forces, with the exception of Honolulu for which data is not available. All calculations are based on data from the U.S. Census.
-#' 
+#'
 #' The Census Bureau numbers are potentially going to differ from other counts for three reasons:
 #' \enumerate{
-#'    \item The census category for police officers also includes sheriffs, transit police and others who might not be under the same jurisdiction as a city’s police department proper. The census category won’t include private security officers.
+#'    \item The census category for police officers also includes sheriffs, transit police and others who might not be under the same jurisdiction as a city's police department proper. The census category won't include private security officers.
 #'    \item The census data is estimated from 2006 to 2010; police forces may have changed in size since then.
 #'    \item There is always a margin of error in census numbers; they are estimates, not complete counts.
 #' }
-#' 
+#'
 #' Note: Missing values means that there are fewer than 100 police officers of that race serving that city.
-#' 
+#'
 #' @format A data frame with 75 rows representing cities and 8 variables:
 #' \describe{
 #'   \item{city}{U.S. city}
@@ -31,11 +28,11 @@
 #'   \item{asian}{Percentage of Asian police officers who live in the city}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/police-locals}
-#' 
+#'
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
-#' police_locals_tidy <- police_locals %>% 
+#' police_locals_tidy <- police_locals %>%
 #'    gather(key = "race", value = "perc_in", all:asian)
 "police_locals"
 
@@ -164,7 +161,7 @@
 #' The Rock Isn't Alone: Lots Of People Are Worried About 'The Big One'
 #'
 #' The raw data behind the story
-#' "The Rock Isn’t Alone: Lots Of People Are Worried About 'The Big One'"
+#' "The Rock Isn't Alone: Lots Of People Are Worried About 'The Big One'"
 #' \url{http://fivethirtyeight.com/datalab/the-rock-isnt-alone-lots-of-people-are-worried-about-the-big-one/}.
 #'
 #' @format A data frame with 1013 rows representing respondents and 11 variables:
@@ -197,13 +194,13 @@
 #'   \item{lottery_a}{not sure}
 #'   \item{smoke}{Is respondent a smoker?}
 #'   \item{alcohol}{Is respondent a drinker?}
-#'   \item{gamble}{Is respondent a gambler?} 
+#'   \item{gamble}{Is respondent a gambler?}
 #'   \item{skydiving}{Is respondent a skydiver?}
 #'   \item{speed}{not sure}
 #'   \item{cheated}{not sure}
 #'   \item{steak}{not sure}
 #'   \item{steak_prep}{Preferred steak preparation}
-#'   \item{female}{Is respondent female?} 
+#'   \item{female}{Is respondent female?}
 #'   \item{age}{Age}
 #'   \item{hhold_income}{Household income}
 #'   \item{educ}{Education level}
@@ -290,7 +287,7 @@
 #' The raw data behind the story
 #' "How Trump Hacked The Media"
 #' \url{http://fivethirtyeight.com/features/how-donald-trump-hacked-the-media/}.
-#' 
+#'
 #' @format A data frame with 286 rows representing lead stories and 3 variables:
 #' \describe{
 #'   \item{date}{Date of lead story about Donald Trump.}
@@ -301,13 +298,13 @@
 "trump_news"
 
 
-#' The World’s Favorite Donald Trump Tweets
+#' The World's Favorite Donald Trump Tweets
 #'
 #' The raw data behind the story
-#' "The World’s Favorite Donald Trump Tweets"
+#' "The World's Favorite Donald Trump Tweets"
 #' \url{https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/}.
 #' Tweets posted on twitter by Donald Trump (@@realDonaldTrump)
-#' 
+#'
 #' @format A data frame with 448 rows representing tweets and 3 variables:
 #' \describe{
 #'   \item{id}{}
@@ -335,8 +332,8 @@
 #' @source Social Security Administration \url{https://www.ssa.gov/oact/babynames/limits.html}.  See \url{https://github.com/fivethirtyeight/data/tree/master/unisex-names}.
 "unisex_names"
 
-	
-	
+
+
 #' Where People Go To Check The Weather
 #'
 #' The raw data behind the story
@@ -362,7 +359,7 @@
 #'
 #' The raw data behind the story
 #' "Can You Rule Riddler Nation?"
-#' \url{https://fivethirtyeight.com/features/can-you-rule-riddler-nation/}.  
+#' \url{https://fivethirtyeight.com/features/can-you-rule-riddler-nation/}.
 #' Analysis of the submitted solutions can be found at: \url{https://fivethirtyeight.com/features/can-you-save-the-drowning-swimmer/}
 #'
 #' @format A data frame with 1387 rows representing submissions and 11 variables:
@@ -380,14 +377,14 @@
 #'   \item{reason}{Why did you choose your troop deployment?}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/riddler-castles}
-#' 
+#'
 #' @examples
 #' # To convert data frame to tidy data (long) format, run
 #' library(tidyverse)
 #' library(stringr)
-#' riddler_castles_tidy<-riddler_castles %>% 
-#'    gather(key = castle , value = soldiers, castle1:castle10) %>% 
-#'    mutate(castle = as.numeric(str_replace(castle, "castle",""))) 
+#' riddler_castles_tidy<-riddler_castles %>%
+#'    gather(key = castle , value = soldiers, castle1:castle10) %>%
+#'    mutate(castle = as.numeric(str_replace(castle, "castle","")))
 "riddler_castles"
 
 

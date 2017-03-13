@@ -3,7 +3,7 @@
 \docType{data}
 \name{police_locals}
 \alias{police_locals}
-\title{Most Police Don’t Live In The Cities They Serve}
+\title{Most Police Don't Live In The Cities They Serve}
 \format{A data frame with 75 rows representing cities and 8 variables:
 \describe{
   \item{city}{U.S. city}
@@ -23,7 +23,7 @@ police_locals
 }
 \description{
 The raw data behind the story
-"Most Police Don’t Live In The Cities They Serve"
+"Most Police Don't Live In The Cities They Serve"
 \url{http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/}.
 }
 \details{
@@ -31,7 +31,7 @@ The dataset includes the cities with the 75 largest police forces, with the exce
 
 The Census Bureau numbers are potentially going to differ from other counts for three reasons:
 \enumerate{
-   \item The census category for police officers also includes sheriffs, transit police and others who might not be under the same jurisdiction as a city’s police department proper. The census category won’t include private security officers.
+   \item The census category for police officers also includes sheriffs, transit police and others who might not be under the same jurisdiction as a city's police department proper. The census category won't include private security officers.
    \item The census data is estimated from 2006 to 2010; police forces may have changed in size since then.
    \item There is always a margin of error in census numbers; they are estimates, not complete counts.
 }
@@ -41,7 +41,7 @@ Note: Missing values means that there are fewer than 100 police officers of that
 \examples{
 # To convert data frame to tidy data (long) format, run:
 library(tidyverse)
-police_locals_tidy <- police_locals \%>\% 
+police_locals_tidy <- police_locals \%>\%
    gather(key = "race", value = "perc_in", all:asian)
 }
 \keyword{datasets}

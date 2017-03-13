@@ -11,7 +11,7 @@ vignette: |
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette is based on tidyverse-ifying the R code [here](https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/analyze-bechdel.R) and reproducing some of the plots and analysis done in the 538 story entitled "The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women" by Walt Hickey available [here](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
+This vignette is based on tidyverse-ifying the R code [here](https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/analyze-bechdel.R) and reproducing some of the plots and analysis done in the 538 story entitled "The Dollar-And-Cents Case Against Hollywood's Exclusion of Women" by Walt Hickey available [here](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
 
 Load required packages to reproduce analysis.  Also load the `bechdel` dataset for analysis.
 

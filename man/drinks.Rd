@@ -10,7 +10,7 @@
   \item{beer_servings}{Servings of beer in average serving sizes per person}
   \item{spirit_servings}{Servings of spirits in average serving sizes per person}
   \item{wine_servings}{Servings of wine in average serving sizes per person}
-  \item{total_litres_of_pure_alcohol}{Total number of fatal accidents, 1985–1999}
+  \item{total_litres_of_pure_alcohol}{Total litres of pure alcohol per person}
 }}
 \source{
 World Health Organisation, Global Information System on Alcohol and Health (GISAH), 2010.

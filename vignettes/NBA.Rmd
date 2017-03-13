@@ -11,7 +11,7 @@ vignette: |
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette is based on data collected for the 538 story entitled "Projecting The Top 50 Players In The 2015 NBA Draft Class"  by  Neil Paine and Zach Bradshaw available [here](http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/).
+This vignette is based on data collected for the 538 story entitled "Projecting The Top 50 Players In The 2015 NBA Draft Class" by Neil Paine and Zach Bradshaw available [here](http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/).
 
 First, we load the required packages to reproduce analysis.  
 

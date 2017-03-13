@@ -48,7 +48,7 @@ vignette("fivethirtyeight", package = "fivethirtyeight")
 
 ### Data Analysis Examples in Vignettes
 
-For some data sets, there is an example analysis in a package vignette. For example, we did this using the [R code](https://github.com/fivethirtyeight/data/blob/master/bechdel/analyze-bechdel.R) for the article [The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women) here:
+For some data sets, there is an example analysis in a package vignette. For example, we did this using the [R code](https://github.com/fivethirtyeight/data/blob/master/bechdel/analyze-bechdel.R) for the article [The Dollar-And-Cents Case Against Hollywood's Exclusion of Women](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women) here:
 
 ``` r
 vignette("bechdel", package = "fivethirtyeight")

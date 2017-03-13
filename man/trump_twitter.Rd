@@ -3,7 +3,7 @@
 \docType{data}
 \name{trump_twitter}
 \alias{trump_twitter}
-\title{The World’s Favorite Donald Trump Tweets}
+\title{The World's Favorite Donald Trump Tweets}
 \format{A data frame with 448 rows representing tweets and 3 variables:
 \describe{
   \item{id}{}
@@ -18,7 +18,7 @@ trump_twitter
 }
 \description{
 The raw data behind the story
-"The World’s Favorite Donald Trump Tweets"
+"The World's Favorite Donald Trump Tweets"
 \url{https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/}.
 Tweets posted on twitter by Donald Trump (@realDonaldTrump)
 }

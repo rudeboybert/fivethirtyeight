@@ -9,12 +9,12 @@
 #'   \item{airline}{airline}
 #'   \item{incl_reg_subsidiaries}{indicates that regional subsidiaries are included}
 #'   \item{avail_seat_km_per_week}{available seat kilometers flown every week}
-#'   \item{incidents_85_99}{Total number of incidents, 1985–1999}
-#'   \item{fatal_accidents_85_99}{Total number of fatal accidents, 1985–1999}
-#'   \item{fatalities_85_99}{Total number of fatalities, 1985–1999}
-#'   \item{incidents_00_14}{Total number of incidents, 2000–2014}
-#'   \item{fatal_accidents_00_14}{Total number of fatal accidents, 2000–2014}
-#'   \item{fatalities_00_14}{Total number of fatalities, 2000–2014}
+#'   \item{incidents_85_99}{Total number of incidents, 1985-1999}
+#'   \item{fatal_accidents_85_99}{Total number of fatal accidents, 1985-1999}
+#'   \item{fatalities_85_99}{Total number of fatalities, 1985-1999}
+#'   \item{incidents_00_14}{Total number of incidents, 2000-2014}
+#'   \item{fatal_accidents_00_14}{Total number of fatal accidents, 2000-2014}
+#'   \item{fatalities_00_14}{Total number of fatalities, 2000-2014}
 #' }
 #' @source Aviation Safety Network \url{http://aviation-safety.net}.
 #' @examples
@@ -137,7 +137,7 @@
 #'   \item{beer_servings}{Servings of beer in average serving sizes per person}
 #'   \item{spirit_servings}{Servings of spirits in average serving sizes per person}
 #'   \item{wine_servings}{Servings of wine in average serving sizes per person}
-#'   \item{total_litres_of_pure_alcohol}{Total number of fatal accidents, 1985–1999}
+#'   \item{total_litres_of_pure_alcohol}{Total litres of pure alcohol per person}
 #' }
 #' @source World Health Organisation, Global Information System on Alcohol and Health (GISAH), 2010.
 #' @examples

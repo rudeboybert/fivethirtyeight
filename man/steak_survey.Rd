@@ -10,13 +10,13 @@
   \item{lottery_a}{not sure}
   \item{smoke}{Is respondent a smoker?}
   \item{alcohol}{Is respondent a drinker?}
-  \item{gamble}{Is respondent a gambler?} 
+  \item{gamble}{Is respondent a gambler?}
   \item{skydiving}{Is respondent a skydiver?}
   \item{speed}{not sure}
   \item{cheated}{not sure}
   \item{steak}{not sure}
   \item{steak_prep}{Preferred steak preparation}
-  \item{female}{Is respondent female?} 
+  \item{female}{Is respondent female?}
   \item{age}{Age}
   \item{hhold_income}{Household income}
   \item{educ}{Education level}

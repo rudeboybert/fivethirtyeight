@@ -22,8 +22,6 @@ LazyData: true
 URL: https://github.com/rudeboybert/fivethirtyeight
 BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
 RoxygenNote: 6.0.1
-Imports:
-    tidyverse
 Suggests:
     knitr,
     rmarkdown,
@@ -42,5 +40,6 @@ Suggests:
     fmsb,
     wordcloud,
     gridExtra,
-    fivethirtyeight
+    fivethirtyeight,
+    tidyverse
 VignetteBuilder: knitr

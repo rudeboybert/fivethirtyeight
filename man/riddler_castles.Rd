@@ -27,15 +27,15 @@ riddler_castles
 \description{
 The raw data behind the story
 "Can You Rule Riddler Nation?"
-\url{https://fivethirtyeight.com/features/can-you-rule-riddler-nation/}.  
+\url{https://fivethirtyeight.com/features/can-you-rule-riddler-nation/}.
 Analysis of the submitted solutions can be found at: \url{https://fivethirtyeight.com/features/can-you-save-the-drowning-swimmer/}
 }
 \examples{
 # To convert data frame to tidy data (long) format, run
 library(tidyverse)
 library(stringr)
-riddler_castles_tidy<-riddler_castles \%>\% 
-   gather(key = castle , value = soldiers, castle1:castle10) \%>\% 
-   mutate(castle = as.numeric(str_replace(castle, "castle",""))) 
+riddler_castles_tidy<-riddler_castles \%>\%
+   gather(key = castle , value = soldiers, castle1:castle10) \%>\%
+   mutate(castle = as.numeric(str_replace(castle, "castle","")))
 }
 \keyword{datasets}
