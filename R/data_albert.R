@@ -412,7 +412,8 @@
 #'   \item{non_college_jobs}{Number with job not requiring a college degree}
 #'   \item{low_wage_jobs}{Number in low-wage service jobs}
 #' }
-#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}.
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}. Note that
+#' \code{women-stem.csv} was a subset of the original \code{recent-grads.csv}, so no data frame was created.
 #' @seealso \code{\link{college_grad_students}}, \code{\link{college_all_ages}}
 "college_recent_grads"
 
