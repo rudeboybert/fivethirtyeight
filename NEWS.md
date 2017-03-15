@@ -1,7 +1,7 @@
 # fivethirtyeight 0.2.0.9000
 
 * Added new and missing data sets:
-* Added first crowd-sourced vignettes:
+* Added more crowd-sourced vignettes:
 
 
 
