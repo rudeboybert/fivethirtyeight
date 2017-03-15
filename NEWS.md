@@ -10,7 +10,7 @@
     + [Changed to SVG travis logo](https://github.com/rudeboybert/fivethirtyeight/pull/1)
     + [Removed explicit loading of data in vignette](https://github.com/rudeboybert/fivethirtyeight/pull/2)
     + `fivethirtyeight` main vignette reads data set list from Google Sheets master document [https://goo.gl/OT8iHa](https://goo.gl/OT8iHa)
-* Added data sets up through February 28, 2017
+* Added new and missing data sets up through February 28, 2017: `college_grad_students`, `college_recent_grads`, `cousin_marriage`, `hate_crimes`, `pres_2016_trail`, `riddler_castles`
 
 # fivethirtyeight 0.1.0
 
