@@ -23,4 +23,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/features/early-senate-polls-have-plenty-to-tell-us-about-november/}.
 }
 \keyword{datasets}
-

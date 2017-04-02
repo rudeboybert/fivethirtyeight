@@ -4,12 +4,15 @@ Description: An R library that provides access to the code and data sets
     published by FiveThirtyEight <https://github.com/fivethirtyeight/data>. Note
     that while we received guidance from editors at 538, this package is not
     officially published by 538.
-Version: 0.1.0.9000
+Version: 0.2.0.9000
 Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = "cre"),
-    person("Chester", "Ismay", email = "cismay@reed.edu", role = "aut"),
-    person("Jennifer", "Chunn", email = "jenchunn@gmail.com", role = "aut")
-    )
+    person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
+    person("Jennifer", "Chunn", email = "jenchunn@gmail.com", role = "aut"),
+    person("Andrew", "Flowers",  role = "ctb"),
+    person("Jonathan", "Bouchet",  role = "ctb"),
+    person("G. Elliott", "Morris",  role = "ctb"),
+    person("Adam", "Spannbauer",  role = "ctb"))
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
     R (>= 3.2.4)
@@ -18,8 +21,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/rudeboybert/fivethirtyeight
 BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
-RoxygenNote: 5.0.1
-Imports: tidyverse
+RoxygenNote: 6.0.1
 Suggests:
     knitr,
     rmarkdown,
@@ -30,5 +32,14 @@ Suggests:
     magrittr,
     scales,
     stringr,
-    ggthemes
+    tidytext,
+    hunspell,
+    ggthemes,
+    lubridate,
+    grid,
+    fmsb,
+    wordcloud,
+    gridExtra,
+    fivethirtyeight,
+    tidyverse
 VignetteBuilder: knitr

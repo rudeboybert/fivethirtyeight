@@ -47,7 +47,6 @@ With consultation from [Andrew Flowers](http://fivethirtyeight.com/contributors/
 
 
 
-
 ## Guidelines
 
 In order to make the data easily accessible to R novices, we pre-process the
@@ -72,11 +71,13 @@ guidelines:
 
 
 
+
 ## Data Sets
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 datasets <- read_csv("https://goo.gl/OT8iHa") %>% 
   filter(!is.na(DATAFRAME_NAME)) %>% 
+  mutate(DATAFRAME_NAME = paste("`", DATAFRAME_NAME, "`", sep="")) %>% 
   transmute(
     `Data Frame Name` = DATAFRAME_NAME,
     `Article Title` = ARTICLE_TITLE,

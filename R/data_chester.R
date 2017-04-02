@@ -17,10 +17,36 @@
 
 
 
-#' Every mention of the 2016 primary candidates in hip-hop songs
+#' Higher Rates Of Hate Crimes Are Tied To Income Inequality
 #'
 #' The raw data behind the story
-#' "Every mention of the 2016 primary candidates in hip-hop songs"
+#' "Higher Rates Of Hate Crimes Are Tied To Income Inequality"
+#' \url{https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/}.
+#'
+#' @format A data frame with 51 rows representing US states and DC and 12 variables:
+#' \describe{
+#'   \item{state}{State name} 
+#'   \item{median_house_inc}{Median household income, 2016} 
+#'   \item{share_unemp_seas}{Share of the population that is unemployed (seasonally adjusted), Sept. 2016} 
+#'   \item{share_pop_metro}{Share of the population that lives in metropolitan areas, 2015} 
+#'   \item{share_pop_hs}{Share of adults 25 and older with a high-school degree, 2009} 
+#'   \item{share_non_citizen}{Share of the population that are not U.S. citizens, 2015} 
+#'   \item{share_white_poverty}{Share of white residents who are living in poverty, 2015} 
+#'   \item{gini_index}{Gini Index, 2015} 
+#'   \item{share_non_white}{Share of the population that is not white, 2015} 
+#'   \item{share_vote_trump}{Share of 2016 U.S. presidential voters who voted for Donald Trump} 
+#'   \item{hate_crimes_per_100k_splc}{Hate crimes per 100,000 population, Southern Poverty Law Center, Nov. 9-18, 2016} 
+#'   \item{avg_hatecrimes_per_100k_fbi}{Average annual hate crimes per 100,000 population, FBI, 2010-2015} 
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/hate-crimes}
+"hate_crimes"
+
+
+
+#' Hip-Hop Is Turning On Donald Trump
+#'
+#' The raw data behind the story
+#' "Hip-Hop Is Turning On Donald Trump"
 #' \url{http://projects.fivethirtyeight.com/clinton-trump-hip-hop-lyrics/}.
 #'
 #' @format A data frame with 377 rows representing hip-hop songs referencing POTUS candidates in 2016 and 8 variables:
@@ -329,7 +355,7 @@
 #'   \item{division}{NFL division} 
 #'   \item{avg_tix_price}{Average ticket price} 
 #' }
-#' @source StubHub stubhub.com
+#' @source StubHub
 "nfltix_div_avgprice"
 
 
@@ -345,7 +371,7 @@
 #'   \item{team}{Name of NFL team} 
 #'   \item{avg_tix_price}{Average ticket price} 
 #' }
-#' @source StubHub stubhub.com
+#' @source StubHub
 "nfltix_usa_avg"
 
 
@@ -470,6 +496,25 @@
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/police-killings}
 "police_killings"
+
+
+
+#' The Last 10 Weeks Of 2016 Campaign Stops In One Handy Gif
+#'
+#' The raw data behind the story
+#' "The Last 10 Weeks Of 2016 Campaign Stops In One Handy Gif"
+#' \url{https://fivethirtyeight.com/features/the-last-10-weeks-of-2016-campaign-stops-in-one-handy-gif/}.
+#'
+#' @format A data frame with 177 rows representing 2016 Republican and Democratic candidate campaign trail stops and 5 variables:
+#' \describe{
+#'   \item{candidate}{Clinton or Trump} 
+#'   \item{date}{The date of the event} 
+#'   \item{location}{The location of the event} 
+#'   \item{lat}{Latitude of the event location} 
+#'   \item{lng}{Longitude of the event location} 
+#' }
+#' @source \url{https://hillaryspeeches.com/}, \url{http://www.conservativedailynews.com/} 
+"pres_2016_trail"
 
 
 

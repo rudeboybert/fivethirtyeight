@@ -22,4 +22,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/datalab/some-democrats-who-could-step-up-if-hillary-isnt-ready-for-hillary/}.
 }
 \keyword{datasets}
-

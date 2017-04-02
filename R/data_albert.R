@@ -9,20 +9,20 @@
 #'   \item{airline}{airline}
 #'   \item{incl_reg_subsidiaries}{indicates that regional subsidiaries are included}
 #'   \item{avail_seat_km_per_week}{available seat kilometers flown every week}
-#'   \item{incidents_85_99}{Total number of incidents, 1985–1999}
-#'   \item{fatal_accidents_85_99}{Total number of fatal accidents, 1985–1999}
-#'   \item{fatalities_85_99}{Total number of fatalities, 1985–1999}
-#'   \item{incidents_00_14}{Total number of incidents, 2000–2014}
-#'   \item{fatal_accidents_00_14}{Total number of fatal accidents, 2000–2014}
-#'   \item{fatalities_00_14}{Total number of fatalities, 2000–2014}
+#'   \item{incidents_85_99}{Total number of incidents, 1985-1999}
+#'   \item{fatal_accidents_85_99}{Total number of fatal accidents, 1985-1999}
+#'   \item{fatalities_85_99}{Total number of fatalities, 1985-1999}
+#'   \item{incidents_00_14}{Total number of incidents, 2000-2014}
+#'   \item{fatal_accidents_00_14}{Total number of fatal accidents, 2000-2014}
+#'   \item{fatalities_00_14}{Total number of fatalities, 2000-2014}
 #' }
 #' @source Aviation Safety Network \url{http://aviation-safety.net}.
-#' @examples 
+#' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
 #' library(stringr)
-#' airline_safety_tidy <- airline_safety %>% 
-#'   gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) %>% 
+#' airline_safety_tidy <- airline_safety %>%
+#'   gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) %>%
 #'   mutate(
 #'     period = str_sub(type, start=-5),
 #'     period = str_replace_all(period, "_", "-"),
@@ -117,7 +117,7 @@
 #' }
 #'
 #' @details
-#' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running:
+#' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://CRAN.R-project.org/package=fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running:
 #' \code{vignette("bechdel", package = "fivethirtyeight")}
 #'
 #' @source \url{www.bechdeltest.com} and \url{www.the-numbers.com}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
@@ -137,9 +137,19 @@
 #'   \item{beer_servings}{Servings of beer in average serving sizes per person}
 #'   \item{spirit_servings}{Servings of spirits in average serving sizes per person}
 #'   \item{wine_servings}{Servings of wine in average serving sizes per person}
-#'   \item{total_litres_of_pure_alcohol}{Total number of fatal accidents, 1985–1999}
+#'   \item{total_litres_of_pure_alcohol}{Total litres of pure alcohol per person}
 #' }
 #' @source World Health Organisation, Global Information System on Alcohol and Health (GISAH), 2010.
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' drinks_tidy <- drinks %>%
+#'   gather(type, servings, -c(country, total_litres_of_pure_alcohol)) %>%
+#'   mutate(
+#'     type = str_sub(type, start=1, end=-10)
+#'   ) %>%
+#'   arrange(country, type)
 "drinks"
 
 
@@ -253,6 +263,14 @@
 #'   \item{wood_framed}{Present (1) or not (0)}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/bob-ross}
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' bob_ross_tidy <- bob_ross %>%
+#'   gather(object, present, -c(episode, season, episode_num, title)) %>%
+#'   mutate(present = as.logical(present)) %>%
+#'   arrange(episode, object)
 "bob_ross"
 
 
@@ -394,7 +412,8 @@
 #'   \item{non_college_jobs}{Number with job not requiring a college degree}
 #'   \item{low_wage_jobs}{Number in low-wage service jobs}
 #' }
-#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}.
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}. Note that
+#' \code{women-stem.csv} was a subset of the original \code{recent-grads.csv}, so no data frame was created.
 #' @seealso \code{\link{college_grad_students}}, \code{\link{college_all_ages}}
 "college_recent_grads"
 
@@ -582,6 +601,20 @@
 #' }
 #' @source National Survey on Drug Use and Health from the Substance Abuse and
 #' Mental Health Data Archive \url{http://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' use <- drug_use %>%
+#'   select(age, n, ends_with("_use")) %>%
+#'   gather(drug, use, -c(age, n)) %>%
+#'   mutate(drug = str_sub(drug, start=1, end=-5))
+#' freq <- drug_use %>%
+#'   select(age, n, ends_with("_freq")) %>%
+#'   gather(drug, freq, -c(age, n)) %>%
+#'   mutate(drug = str_sub(drug, start=1, end=-6))
+#' drug_use_tidy <- left_join(x=use, y=freq, by = c("age", "n", "drug")) %>%
+#'   arrange(age)
 "drug_use"
 
 
@@ -753,6 +786,14 @@
 #'   \item{gdp_weighted_share}{Country's GDP-weighted audience share (percentage)}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/fifa}
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' fifa_audience_tidy <- fifa_audience %>%
+#'   gather(type, share, -c(country, confederation)) %>%
+#'   mutate(type = str_sub(type, start=1, end=-7)) %>%
+#'   arrange(country)
 "fifa_audience"
 
 
@@ -897,6 +938,13 @@
 #'   \item{rowan_atkinson}{}
 #' }
 #' @seealso \code{\link{love_actually_adj}}.
+#' @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' love_actually_appearance_tidy <- love_actually_appearance %>%
+#'   gather(actor, appears, -c(scenes)) %>%
+#'   arrange(scenes)
 "love_actually_appearance"
 
 

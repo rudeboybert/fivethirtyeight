@@ -10,7 +10,7 @@
   \item{beer_servings}{Servings of beer in average serving sizes per person}
   \item{spirit_servings}{Servings of spirits in average serving sizes per person}
   \item{wine_servings}{Servings of wine in average serving sizes per person}
-  \item{total_litres_of_pure_alcohol}{Total number of fatal accidents, 1985–1999}
+  \item{total_litres_of_pure_alcohol}{Total litres of pure alcohol per person}
 }}
 \source{
 World Health Organisation, Global Information System on Alcohol and Health (GISAH), 2010.
@@ -23,5 +23,15 @@ The raw data behind the story
 "Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?"
 \url{http://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/}.
 }
+\examples{
+# To convert data frame to tidy data (long) format, run:
+library(tidyverse)
+library(stringr)
+drinks_tidy <- drinks \%>\%
+  gather(type, servings, -c(country, total_litres_of_pure_alcohol)) \%>\%
+  mutate(
+    type = str_sub(type, start=1, end=-10)
+  ) \%>\%
+  arrange(country, type)
+}
 \keyword{datasets}
-

@@ -11,7 +11,7 @@ vignette: |
   %\VignetteEncoding{UTF-8}
 ---
   
-  This vignette is based on [538 study : Comic Books Are Still Made By Men, For Men And About Men](https://fivethirtyeight.com/features/women-in-comic-books/) study about Marvel and DC characters since ~1939 until 2014 (August 24th) and aims at investigating the features of Comic Books characters according their gender / Publisher.
+This vignette is based on [538 study : Comic Books Are Still Made By Men, For Men And About Men](https://fivethirtyeight.com/features/women-in-comic-books/) study about Marvel and DC characters since ~1939 until 2014 (August 24th) and aims at investigating the features of Comic Books characters according their gender / Publisher.
   
 ```{r, message = FALSE, warning = FALSE}
 #load packages and csv file
@@ -112,9 +112,9 @@ grid.arrange(rbind(ggplotGrob(plot_marvel_time), ggplotGrob(plot_dc_time), size 
 ```
 
 * Most of the characters are either `Female` or `Male` for both publishers.
-* There is a gap in character’s creation (for both publishers) ~1955-1960.
-* The increase in `Female` characters appear early for Marvel (~1970) while it was in the late 70’s for DC comics.
-* `LGBT` characters appear in the late 70’s (DC) and in the late 60’s (Marvel).
+* There is a gap in character's creation (for both publishers) ~1955-1960.
+* The increase in `Female` characters appear early for Marvel (~1970) while it was in the late 70's for DC comics.
+* `LGBT` characters appear in the late 70's (DC) and in the late 60's (Marvel).
 
 ####Characteristics per Gender, publisher
 

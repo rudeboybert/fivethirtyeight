@@ -9,7 +9,7 @@
 An R library that provides access to the code and data sets
 published by FiveThirtyEight \url{https://github.com/fivethirtyeight/data}. Note
 that while we received guidance from editors at 538, this package is not
-officially published by 538. Contribute to this package at 
+officially published by 538. Contribute to this package at
 \url{https://github.com/rudeboybert/fivethirtyeight}.
 }
 \examples{
@@ -32,4 +32,3 @@ vignette("bechdel", package = "fivethirtyeight")
 # To browse all vignettes:
 browseVignettes(package = "fivethirtyeight")
 }
-

@@ -28,4 +28,3 @@ The raw data behind the story
 \code{\link{US_births_1994_2003}}.
 }
 \keyword{datasets}
-

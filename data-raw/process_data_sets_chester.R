@@ -21,7 +21,6 @@ prep <- function(x){
 }
 lapply(chester_folders, prep) %>% unlist() %>% cat()
 
-
 # forecast_methodology -------------------------------------------------------------
 hist_senate_preds <-
   read_csv("data-raw/forecast-methodology/historical-senate-predictions.csv") %>%
@@ -32,7 +31,17 @@ colnames(hist_senate_preds) <- colnames(hist_senate_preds) %>%
   str_replace_all(" ", "_")
 devtools::use_data(hist_senate_preds, overwrite = TRUE)
 
-
+# hate-crimes ----------------------------------------------------------------------
+hate_crimes <- read_csv("data-raw/hate-crimes/hate_crimes.csv") %>% 
+  rename("share_pop_HS" = share_population_with_high_school_degree,
+    "share_pop_metro" = share_population_in_metro_areas,
+    "share_vote_trump" = share_voters_voted_trump,
+    "share_unemp_seas" = share_unemployed_seasonal,
+    "median_house_inc" = median_household_income)
+colnames(hate_crimes) <- colnames(hate_crimes) %>%
+  tolower() %>%
+  str_replace_all(" ", "_")
+devtools::use_data(hate_crimes, overwrite = TRUE)
 
 # hip_hop_candidate_lyrics ---------------------------------------------------------
 hiphop_cand_lyrics <-
@@ -300,3 +309,15 @@ colnames(police_killings) <- colnames(police_killings) %>%
   tolower() %>%
   str_replace_all(" ", "_")
 devtools::use_data(police_killings, overwrite = TRUE)
+
+# presidential-campaign-trail ------------------------------------------------------
+clin_trail <- read_csv("data-raw/presidential-campaign-trail/clinton.csv") %>% 
+  mutate(candidate = "Clinton")
+trum_trail <- read_csv("data-raw/presidential-campaign-trail/trump.csv") %>% 
+  mutate(candidate = "Trump")
+pres_2016_trail <- bind_rows(clin_trail, trum_trail) %>% 
+  select(candidate, everything())
+colnames(pres_2016_trail) <- colnames(pres_2016_trail) %>%
+  tolower() %>%
+  str_replace_all(" ", "_")
+devtools::use_data(pres_2016_trail, overwrite = TRUE)

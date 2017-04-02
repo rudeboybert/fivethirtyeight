@@ -3,7 +3,7 @@
 \docType{data}
 \name{hiphop_cand_lyrics}
 \alias{hiphop_cand_lyrics}
-\title{Every mention of the 2016 primary candidates in hip-hop songs}
+\title{Hip-Hop Is Turning On Donald Trump}
 \format{A data frame with 377 rows representing hip-hop songs referencing POTUS candidates in 2016 and 8 variables:
 \describe{
   \item{candidate}{Candidate referenced} 
@@ -23,8 +23,7 @@ hiphop_cand_lyrics
 }
 \description{
 The raw data behind the story
-"Every mention of the 2016 primary candidates in hip-hop songs"
+"Hip-Hop Is Turning On Donald Trump"
 \url{http://projects.fivethirtyeight.com/clinton-trump-hip-hop-lyrics/}.
 }
 \keyword{datasets}
-

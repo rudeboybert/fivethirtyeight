@@ -29,7 +29,8 @@
   \item{low_wage_jobs}{Number in low-wage service jobs}
 }}
 \source{
-See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}.
+See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}. Note that
+\code{women-stem.csv} was a subset of the original \code{recent-grads.csv}, so no data frame was created.
 }
 \usage{
 college_recent_grads
@@ -43,4 +44,3 @@ The raw data behind the story
 \code{\link{college_grad_students}}, \code{\link{college_all_ages}}
 }
 \keyword{datasets}
-
