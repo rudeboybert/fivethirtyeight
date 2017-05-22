@@ -103,7 +103,7 @@
 #'   \item{imdb}{Text to append \url{http://www.imdb.com/title/} to for IMDB url. E.g. \url{http://www.imdb.com/title/tt1711425}}
 #'   \item{title}{Movie test}
 #'   \item{test}{bechdel test result (detailed, with discrepancies indicated)}
-#'   \item{clean_test}{bechdel test result (detailed)}
+#'   \item{clean_test}{bechdel test result (detailed): \code{ok} = passes test, \code{dubious}, \code{men} = women only talk about men, \code{notalk} = women don't talk to each other, \code{nowomen} = fewer than two women }
 #'   \item{binary}{Bechdel Test PASS vs FAIL binary}
 #'   \item{budget}{Film budget}
 #'   \item{domgross}{Domestic (US) gross}

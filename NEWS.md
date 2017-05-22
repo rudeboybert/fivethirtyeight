@@ -2,7 +2,8 @@
 
 * Added new and missing data sets:
 * Added more crowd-sourced vignettes:
-
+* Other minor changes:
+    + Fixed levels in `bechdel$clean_test` and `bechdel$test`
 
 
 # fivethirtyeight 0.2.0
