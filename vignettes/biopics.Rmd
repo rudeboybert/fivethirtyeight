@@ -25,11 +25,18 @@ After calling the necessary libraries, we look at the structure of the data. The
 
 
 ```{r message=F,warning=FALSE}
-library(tidyverse)
-library(ggthemes)
-library(scales)
-library(stringr)
-library(fivethirtyeight)
+suppressWarnings(library(tidyverse))
+suppressWarnings(library(ggthemes))
+suppressWarnings(library(scales))
+suppressWarnings(library(stringr))
+suppressWarnings(library(fivethirtyeight))
+suppressWarnings(library(highcharter))
+suppressWarnings(library(tidyr))
+suppressWarnings(library(reshape2))
+suppressWarnings(library(igraph))
+suppressWarnings(library(ggraph))
+suppressWarnings(library(gganimate))
+
 str(biopics)
 plotTheme <- function(base_size = 12) {
   theme(
@@ -61,8 +68,8 @@ The data consists of 14 variables(columns) and 764 observations(rows). We will d
 
 
 1. Frequency of Biopics Across the Years
-1. Data Visualization by Gender, Subject and Colored/Non-Colored protaganist
-1. Box Office Earnings
+2. Data Visualization by Gender, Subject and person of color/white protaganist
+3. Box Office Earnings
 
 
 ## Number of Biopics Released by Year
@@ -82,48 +89,39 @@ biopics %>% group_by(year_release) %>% summarise(n=n()) %>%
 The number of biopics have been increasing.
 
 
-## Colored and Non Colored 
+## Actors of Color and White Actors
 
 
-### % Wise Plot 
+### % Wise Plot By Decade
 
 
 ```{r fig.width=7}
 
-poc <- biopics %>% group_by(year_release,person_of_color) %>% summarise(n=n()) %>%
-  mutate(person_of_color=ifelse(person_of_color==0,"Not Person of Color","Person of Color")) %>% mutate(n=n/sum(n))
+poc <- biopics %>% mutate(time_period=cut(year_release,breaks=11,label=c("1910-1920","1920-1930","1930-1940","1940-1950","1950-1960","1960-1970","1970-1980","1980-1990","1990-2000","2000-2010","2010-2014"))) %>% group_by(time_period,person_of_color) %>% summarise(n=n()) %>%
+  mutate(person_of_color=ifelse(person_of_color==0,"White","Person of Color")) %>% mutate(n=n/sum(n))
 
-ggplot(data = poc, aes(x = year_release, y = n*100, fill = person_of_color)) +
-  geom_bar(data = subset(poc, person_of_color=="Not Person of Color"),
-           stat = "identity") +
-  geom_bar(data = subset(poc, person_of_color=="Person of Color"),
-           stat = "identity",
-           position = "identity",
-           mapping = aes(y = -n*100)) +
-  scale_y_continuous(labels = abs) +
-  labs(x="Year",y="%",title="Bar Plot Visualization",
-       subtitle="% of Biopics that Feature Colored/Non Colored Characters",
-       caption="Data from FiveThirtyEight")+coord_flip()+plotTheme()
+ggplot(poc, aes(x=time_period, y=n, fill=person_of_color)) +
+geom_bar(stat="identity")+plotTheme()+theme(axis.text.x = element_text(vjust=1,angle=90))+scale_y_continuous(labels = percent)+labs(x="Decade",y="Percentage Composition",title="How do the % of movies involving actors of color change by decade?",caption="Data From: FiveThirtyEight")
   
 
 
 ```
 
+The percentage of movies that had actors of color was the highest in the period *2010-2014*. Biopics that had actors of color were non existent during the period *1910-1930*. 
 
 
 
 ### Type of Subjects covered
 
 
-__Non Colored__
+*White Actors*
 
 
 ```{r fig.width=7}
-library(highcharter)
-biopics %>% mutate(person_of_color=ifelse(person_of_color==0,"Not Person of Color","Person of Color")) %>% group_by(person_of_color,type_of_subject) %>% 
+biopics %>% mutate(person_of_color=ifelse(person_of_color==0,"White","Person of Color")) %>% group_by(person_of_color,type_of_subject) %>% 
   summarise(n=n()) %>%
   mutate(n=(n/sum(n))*100) %>% filter(person_of_color !="Person of Color") %>% mutate(n=round(n,2)) %>%
-  hchart("treemap", hcaes(x = type_of_subject, value = n, color = n)) %>% hc_title(text="Type of Subjects of Movies involving Non Colored Actor(%)")
+  hchart("treemap", hcaes(x = type_of_subject, value = n, color = n)) %>% hc_title(text="Type of Subjects of Movies involving White Actors(%)")
   
 
 ```
@@ -132,14 +130,14 @@ biopics %>% mutate(person_of_color=ifelse(person_of_color==0,"Not Person of Colo
 
 
 
-__Colored__
+*Actors of Color*
 
 
 ```{r fig.width=7}
-biopics %>% mutate(person_of_color=ifelse(person_of_color==0,"Not Person of Color","Person of Color")) %>% group_by(person_of_color,type_of_subject) %>% 
+biopics %>% mutate(person_of_color=ifelse(person_of_color==0,"White","Person of Color")) %>% group_by(person_of_color,type_of_subject) %>% 
   summarise(n=n()) %>%
   mutate(n=(n/sum(n))*100) %>% filter(person_of_color =="Person of Color") %>% mutate(n=round(n,2)) %>%
-  hchart("treemap", hcaes(x = type_of_subject, value = n, color = n)) %>% hc_title(text="Type of Subjects of Movies involving  Colored Actor(%)")
+  hchart("treemap", hcaes(x = type_of_subject, value = n, color = n)) %>% hc_title(text="Type of Subjects of Movies involving  Actors of Color(%)")
 
 
 
@@ -148,17 +146,34 @@ biopics %>% mutate(person_of_color=ifelse(person_of_color==0,"Not Person of Colo
 
 
 
-### Frequency of Movies Involving Colored and Non Colored Actors
+*A side by side comparison*
+
+```{r fig.width=7,fig.height=10}
+biopics %>% mutate(person_of_color = ifelse(person_of_color==0,"White","Person of Color")) %>%
+  group_by(person_of_color,type_of_subject) %>% summarise(n=n()) %>% mutate(n=n/sum(n)) %>%
+  ggplot(aes(x=type_of_subject,y=n,fill=person_of_color))+geom_bar(stat="identity")+scale_y_continuous(labels=percent)+plotTheme()+facet_wrap(~person_of_color)+coord_flip()+labs(title="How do subject coverage differ in biopics involving white actors and actors of color?",caption="Data From : FiveThirtyEight",x="Type of Subject",y="%")
 
 
-```{r fig.width=7}
+
+```
 
 
-biopics %>% mutate(person_of_color=ifelse(person_of_color==0,"Not Person of Color","Person of Color")) %>% group_by(year_release,person_of_color) %>% summarise(n=n()) %>%
+* Within biopics that had actors of color,  topics like **Athelete**,**Activist**,**Singer**,**World Leader** and **Actor** had a higher coverage than in biopics that had white actors.
+
+
+
+
+### Frequency of Movies Involving White Actors and Actors of Color
+
+
+```{r fig.width=7,fig.height=8}
+
+
+biopics %>% mutate(person_of_color=ifelse(person_of_color==0,"White Actor","Actor of Color")) %>% group_by(year_release,person_of_color) %>% summarise(n=n()) %>%
 ggplot(aes(x=year_release,y=n,colour=person_of_color))+
-  geom_line()+plotTheme()+geom_vline(xintercept=1964,linetype=2)+labs(x="Year",y="Number",title="Number of Biopics By Colored/Non Colored",
+  geom_line()+plotTheme()+geom_vline(xintercept=1964,linetype=2)+labs(x="Year",y="Number",title="Number of Biopics by White Actors and Actors of Color",
        subtitle="",
-       caption="Data from FiveThirtyEight")+geom_text(aes(1964,0),label="Civil Rights' Act",show.legend = F,hjust=-1,angle=90,vjust=1,inherit.aes = F)+geom_vline(xintercept=1974,linetype=2)+geom_text(aes(1974,0),label="First Black Sitcom",show.legend = F,hjust=-1,vjust=1,,angle=90,inherit.aes = F)
+       caption="Data from FiveThirtyEight")+geom_text(aes(1964,0),label="Civil Rights' Act",show.legend = F,hjust=-1,angle=90,vjust=1,inherit.aes = F,size=3)+geom_vline(xintercept=1974,linetype=2)+geom_text(aes(1974,0),label="First Successful African American  themed Sitcom",show.legend = F,hjust=0,vjust=1,inherit.aes = F,angle=90,size=3,colour="black")
                      
 
 
@@ -186,41 +201,19 @@ biopics %>% group_by(year_release,subject_sex) %>% summarise(n=n()) %>% rename(g
 
 ###  Change in the number of movies from previous years
 
-Before we start plotting the data, we have to replace empty values with a zero. For that purpose we modify the data using the `gather` and `dcast` functions . These functions help us to reshape the data and assign values.
+Before we start plotting the data, we have to replace empty values with a zero. For that purpose we modify the data using the `gather` and `dcast` functions . These functions help us  reshape the data and assign values.
 
 
 
 ```{r fig.width=7,warning=FALSE}
-library(tidyr)
-library(reshape2)
 
-year_wise <-  biopics %>% group_by(year_release,subject_sex) %>% summarise(n=n()) %>%  dcast(subject_sex~year_release,value.var="n") %>% gather(year,value,2:87) %>% mutate(value=ifelse(is.na(value),0,value)) %>%
-  dcast(subject_sex~year,value.var="value") 
-
-
-temp <- data.frame(gender=c("female","male"))
-
-for(i in 3:87)
-{
-  
-  temp<- cbind(temp,(year_wise[,i]-year_wise[,i-1]))
-}
-
-colnames(temp)<- c("subject_sex", "1927", "1929", "1930", "1933", "1934", 
-"1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", 
-"1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", 
-"1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", 
-"1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", 
-"1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", 
-"1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", 
-"1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", 
-"1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", 
-"1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", 
-"2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"
-)
-
-temp %>% gather(year,value,2:86) %>%
-   ggplot(aes(x=as.numeric(year),y=value))+geom_line()+ plotTheme()+
+year_wise_female <- biopics %>% group_by(subject_sex,year_release) %>% summarise(n=n()) %>% filter(subject_sex=="Female") %>%
+  mutate(n_new=lag(n,1)) %>% mutate(change=n-n_new)
+year_wise_male <- biopics %>% group_by(subject_sex,year_release) %>% summarise(n=n()) %>% filter(subject_sex=="Male") %>%
+  mutate(n_new=lag(n,1)) %>% mutate(change=n-n_new)
+year_wise <- bind_rows(year_wise_male,year_wise_female)
+year_wise %>%
+   ggplot(aes(x=as.numeric(year_release),y=change))+geom_line()+ plotTheme()+
   labs(x="Year",y="Number",title="Change in Number of Biopic Movies From Previous Year",
        subtitle="",
        caption="Data from FiveThirtyEight")+
@@ -238,7 +231,7 @@ The change in the number of biopics that had male subjects shot up in 2014.
 ### What kind of subjects do movies about male and female protaganists deal with?
 
 
-```{r fig.width=7}
+```{r fig.width=7,fig.height=7}
 biopics$type_of_subject <- gsub(" ","",biopics$type_of_subject)
 biopics <- biopics %>% 
      mutate(type_of_subject = strsplit(as.character(type_of_subject), "/")) %>% 
@@ -249,7 +242,7 @@ men_percent <- biopics %>% filter(subject_sex=="Male") %>% group_by(type_of_subj
 
 percent_overall <- full_join(women_percent,men_percent,by="type_of_subject") %>% select(-c(n.x,n.y)) %>%
   mutate(percent_women = ifelse(is.na(percent_women),0,percent_women),percent_man=ifelse(is.na(percent_man),0,percent_man))
-ggplot(percent_overall, aes(x = percent_women, y = percent_man, color = abs(percent_women - percent_man))) +
+ggplot(percent_overall, aes(x = percent_women, y = percent_man, color = (percent_women - percent_man))) +
   geom_abline(color = "gray40", lty = 2) +
   geom_jitter(alpha = 0.1, size = 1, width = 0.3, height = 0.3) +
   geom_text(aes(label = type_of_subject), check_overlap = TRUE, vjust = 1.5) +
@@ -261,14 +254,14 @@ ggplot(percent_overall, aes(x = percent_women, y = percent_man, color = abs(perc
 ```
 
 
-It is pretty obvious that a larger percentage of  biopics with female protaganists deal with actresses more than biopics with male protaganists. The subjects falling on the dotted line refer to subjects which had equal frequency in both the groups. These include subjects such as **government**,**academic**,**activist**. A larger percentage of movies with male protaganists were military themed.
+Topics that are close to the line indicate  topics that have similar frequencies in both the sets of data. These topics include *government*,*academic* and *activist*. Topics that are far from this line are topics that are found frequently in one set but not the other.For example,a larger percentage of biopics that involved women,portrayed authors. By looking at the other side, topics like *military* had a higher percentage of coverage in biopics involving men than women.More the red color of the text, the more frequently the topic appears in biopics related to men.
 
 
 ### Race and Gender
 
 
-```{r fig.width=7}
-biopics %>% mutate(cuts=cut(year_release,breaks=5,label=c("1910-1930","1930-1950","1950-1970","1970-1990","1990-2010")))%>% group_by(cuts,subject_sex,subject_race)%>% filter(subject_race!="") %>%
+```{r fig.width=10,fig.height=10}
+biopics %>% mutate(cuts=cut(year_release,breaks=5,label=c("1910-1930","1930-1950","1950-1970","1970-1990","1990-2010")))%>%mutate(subject_race=ifelse(grepl("\\bHispanic\\b",subject_race),"Hispanic",subject_race)) %>% group_by(cuts,subject_sex,subject_race)%>% filter(subject_race!="")%>%
   summarise(n=n()) %>%
   mutate(n=n/sum(n)) %>%
   ggplot(aes(x=cuts, y=n*100, fill=subject_race)) +
@@ -277,51 +270,10 @@ geom_bar(stat="identity", position="dodge",width = 0.7)+plotTheme()+ylab("%")+gg
                                  "#28AADC",
                                  "#40cc49",
                                  "#F2583F",
-                                 "#96503F","#ffc100","#918d58","#e98000","#d2f4d2","#cdc8b1","#7c3838","#1fffaf","#a87582","#5b9c31"))+facet_grid(subject_sex~.)+theme(plot.title=element_text(size=18),axis.text.x = element_text(angle=90, vjust=1))+labs(caption="Data From FiveThirtyEight")
+                                 "#96503F","#ffc100","#918d58","#e98000","#d2f4d2","#cdc8b1","#a87582"))+facet_grid(subject_sex~.)+theme(plot.title=element_text(size=18),axis.text.x = element_text(angle=90, vjust=1))+labs(caption="Data From FiveThirtyEight")
 ```
 
 Most of the biopics depict White Americans followed by African Americans.
-
-
-## Directors and Lead Actors(Decade Wise)
-
-
-
-
-
-```{r message=FALSE,fig.width=7}
-library(igraph)
-library(ggraph)
-library(gganimate)
-
-g <-  biopics %>% mutate(time_period=cut(year_release,breaks=11,label=c("1910-1920","1920-1930","1930-1940","1940-1950","1950-1960","1960-1970","1970-1980","1980-1990","1990-2000","2000-2010","2010-2014"))) %>% group_by(director,lead_actor_actress,time_period) %>% summarise(n=n()) %>% graph_from_data_frame()
-
-directors <- levels(as.factor(biopics$director))
-
-V(g)$class <- rep("",gorder(g))
-
-for(i in 1:gorder(g)){
-  V(g)[i]$class <- ifelse(V(g)[i]$name %in% directors,"Directors",V(g)[i]$class)
-}
-
-for(i in 1:gorder(g)){
-  V(g)[i]$class <- ifelse(V(g)[i]$class=="","Actor",V(g)[i]$class)
-}
-
-set.seed(100)
-p <- ggraph(g, layout = 'kk') +
-    geom_edge_link(aes(colour = (time_period))) +
-    geom_node_point(aes(shape = class))+scale_edge_color_manual(values = c("#94edc7","#180228","#010d5c","#ef1c17","#908b5b","#f3b893","#3c5e34","#91a5ae","#ff33dd","#ff947b","#cd0000") )
-
-p+ggtitle("Director and Actor Network by Decade")+theme(plot.title = element_text(hjust=0.5))+theme_graph()
-
-
-
-
-```
-
-
-For the above plot, we use the `ggraph` library by [Thomas Lin Pedersen](https://github.com/thomasp85/ggraph). Using the `scale_edge_color_manual()` function, we set the the colors for each time period. The `graph_from_data_frame()` function allows us to change the dataframe to an `igraph` object.
 
 ## Box Office Information
 
@@ -330,16 +282,20 @@ The box office information suggests how successful the movie was. In this sectio
 
 ### Distributions of earnings per year
 
-```{r fig.width=7}
+```{r fig.width=12,fig.height=12}
+
+options(scipen=999)
 biopics  %>%  filter(box_office!="-") %>% mutate(box_office=gsub("$","",box_office,fixed=T)) %>%
   mutate(denom=str_sub(box_office,nchar(box_office),nchar(box_office))) %>%
   mutate(box_office=gsub("M","",box_office))%>%
   mutate(box_office=gsub("K","",box_office)) %>%
   mutate(box_office=as.numeric(box_office)) %>%
-  mutate(box_office=ifelse(denom=="M",box_office*1000000,box_office*1000)) %>%
+  mutate(box_office=ifelse(denom=="M",box_office*1000000,box_office)) %>%
+  mutate(box_office=ifelse(denom=="K",box_office*1000,box_office)) %>%
+  mutate(box_office= box_office/1000000) %>%
   ggplot(aes(x=as.factor(year_release), y=box_office)) + geom_boxplot() +
 stat_summary(fun.y="mean", geom="point", shape=23, size=2, fill="white")+plotTheme()+
-  labs(title="Distributions of Earning Per Year",x="Year",y="$",subtitle="Inflation not taken into account(Diamond Point Represents Mean)",caption="Data From FiveThirtyEight")+facet_wrap(~subject_sex,ncol=1)+theme(axis.text.x = element_text(angle=90,vjust=1))
+  labs(title="Distributions of Earning Per Year",x="Year",y="In Millions",subtitle="Inflation not taken into account(Diamond Point Represents Mean)",caption="Data From FiveThirtyEight")+facet_wrap(~subject_sex,ncol=1)+theme(axis.text.x = element_text(angle=90,vjust=1))
 ```
 
 A large number of movies earned below \$100M.As we progress through the 80's, these numbers go higher , especially in the case of biopics based on men. The highest earning  movie based on a female protaganist was released in 1964.This was the "Sound of Music" which earned approximately \$163M.
@@ -349,18 +305,23 @@ A large number of movies earned below \$100M.As we progress through the 80's, th
 
 
 ```{r fig.width=7}
+
+
+options(scipen=999)
 biopics  %>%  filter(box_office!="-") %>% mutate(box_office=gsub("$","",box_office,fixed=T)) %>%
   mutate(denom=str_sub(box_office,nchar(box_office),nchar(box_office))) %>%
   mutate(box_office=gsub("M","",box_office))%>%
   mutate(box_office=gsub("K","",box_office)) %>%
   mutate(box_office=as.numeric(box_office)) %>%
-  mutate(box_office=ifelse(denom=="M",box_office*1000000,box_office*1000)) %>%
+  mutate(box_office=ifelse(denom=="M",box_office*1000000,box_office)) %>%
+  mutate(box_office=ifelse(denom=="K",box_office*1000,box_office)) %>%
+  mutate(box_office=box_office/1000000) %>%
   ggplot(aes(x=subject_sex, y=box_office,fill=subject_sex)) + 
   geom_violin(color = "grey50")+
   xlab("Box Office") + ylab("Count")  +
   stat_summary(fun.y="mean", geom="point", size=2, colour="white") +
   plotTheme() + theme(legend.position="none")+
-  labs(x="Gender",y="($)",title="Distributions of Box Office Earnings",
+  labs(x="Gender",y="In Millions",title="Distributions of Box Office Earnings",
        subtitle="Inflation Not Taken into Account",
        caption="Source: FiveThirtyEight")
 
@@ -372,11 +333,11 @@ biopics  %>%  filter(box_office!="-") %>% mutate(box_office=gsub("$","",box_offi
 The mean earning is a little higher for biopics with male subjects. The mean is higher probably due to the outliers present.
  
  
-### Type of Subject
+### How do the distributions of box office earnings change by race of subject?
 
 
 
-```{r fig.width=7}
+```{r fig.width=7,fig.height=7}
 
 
 biopics  %>%  filter(box_office!="-") %>% mutate(box_office=gsub("$","",box_office,fixed=T)) %>%
@@ -384,13 +345,15 @@ biopics  %>%  filter(box_office!="-") %>% mutate(box_office=gsub("$","",box_offi
   mutate(box_office=gsub("M","",box_office))%>%
   mutate(box_office=gsub("K","",box_office)) %>%
   mutate(box_office=as.numeric(box_office)) %>%
-  mutate(box_office=ifelse(denom=="M",box_office*1000000,box_office*1000)) %>%
+  mutate(box_office=ifelse(denom=="M",box_office*100000,box_office)) %>%
+  mutate(box_office=ifelse(denom=="K",box_office*1000,box_office)) %>%
+  mutate(box_office=box_office/1000000) %>%
   ggplot(aes(x=as.factor(person_of_color), y=box_office,fill=as.factor(person_of_color))) + 
   geom_violin(color = "grey50")+
   xlab("Person of Color") + ylab("Count")  +
   stat_summary(fun.y="mean", geom="point", size=2, colour="white") +
   plotTheme() + theme(legend.position="none")+
-  labs(x="Person of Color",y="($)",title="Distributions of Box Office Earnings",
+  labs(x="Person of Color",y="In Millions",title="Distributions of Box Office Earnings",
        subtitle="Inflation Not Taken into Account",
        caption="Source: FiveThirtyEight")
 
@@ -399,17 +362,17 @@ biopics  %>%  filter(box_office!="-") %>% mutate(box_office=gsub("$","",box_offi
 ```
  
  
-More number of movies with colored protaganists earned higher in the box office. This is probably why the average box office earnings are higher.
+More number of movies with protaganists of color earned higher in the box office. This is probably why the average box office earnings are higher.
 
 
 
 ## Results and Conclusion
 
 1. We see that there are more movies depicting non colored protaganists than colored protaganists
-1. Biopics based on male characters tend to be more military and sports themed.
-1. The biopics pertaining to non colored main characters shot up after 1974.
-1. The highest grossing biopics based on a woman is   The Sound of Music.
-1. Biopics involving colored main characters earned higher on average in the box office.
+2. Biopics based on male characters tend to be more military and sports themed.
+3. The biopics pertaining to non colored main characters shot up after 1974.
+3. The highest grossing biopics based on a woman is   The Sound of Music.
+4. Biopics involving colored main characters earned higher on average in the box office.
 
 This shows that there needs to be more involvement by directors and actors in producing movies that depict important personalities that belong to other races.
 
