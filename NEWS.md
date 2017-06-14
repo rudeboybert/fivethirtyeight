@@ -1,3 +1,9 @@
+# fivethirtyeight 0.3.0
+
+* Added new and missing data sets: `riddler_castles2`, `antiquities_act`, `goose`, `tenth_circuit`
+* Added more crowd-sourced vignettes: `bobRoss`
+
+
 # fivethirtyeight 0.2.0.9000
 
 * Added new and missing data sets:
