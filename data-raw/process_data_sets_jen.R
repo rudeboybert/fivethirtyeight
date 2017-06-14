@@ -355,6 +355,7 @@ devtools::use_data(riddler_castles2, overwrite = TRUE)
 
 # antiquities-act ---------------------------------------------------------------
 antiquities_act <- read_csv("data-raw/antiquities-act/actions_under_antiquities_act.csv", na=c("","NA"))
+names(antiquities_act)[1] <- "current_name"
 antiquities_act <- antiquities_act %>%
   #fix date for Acadia NP
   mutate(year = ifelse(str_length(date)==4, date, year),
