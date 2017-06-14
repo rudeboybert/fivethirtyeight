@@ -41,5 +41,6 @@ Suggests:
     wordcloud,
     gridExtra,
     fivethirtyeight,
+    corrplot,
     tidyverse
 VignetteBuilder: knitr
