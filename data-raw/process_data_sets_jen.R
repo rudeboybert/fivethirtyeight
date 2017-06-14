@@ -344,7 +344,44 @@ colnames(riddler_castles) <- colnames(riddler_castles) %>%
   str_replace_all(" ", "")
 devtools::use_data(riddler_castles, overwrite = TRUE)
 
+# riddler-castles2 ---------------------------------------------------------------
+riddler_castles2 <- read_csv("data-raw/riddler-castles/castle-solutions-2.csv", na=c("","NA","-"))
+riddler_castles2 <- riddler_castles2 %>% 
+  rename("reason" = `Why did you choose your troop deployment?`)
+colnames(riddler_castles2) <- colnames(riddler_castles2) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "")
+devtools::use_data(riddler_castles2, overwrite = TRUE)
 
+# antiquities-act ---------------------------------------------------------------
+antiquities_act <- read_csv("data-raw/antiquities-act/actions_under_antiquities_act.csv", na=c("","NA"))
+antiquities_act <- antiquities_act %>%
+  #fix date for Acadia NP
+  mutate(year = ifelse(str_length(date)==4, date, year),
+         date = ifelse(str_length(date)==4, paste("1","1",str_sub(date,3,4),sep="/"), date),
+         date = mdy(date),
+         #ensure century is correct
+         date = mdy(paste(month(date), day(date), year, sep="/")),
+         #remove text from acres_affected variable
+         acres_affected = as.numeric(str_replace_all(acres_affected, "[^0-9\\.]","")))
+devtools::use_data(antiquities_act, overwrite = TRUE)
 
+# goose ---------------------------------------------------------------
+goose <- read_csv("data-raw/goose/goose_rawdata.csv", na=c("","NA"))
+devtools::use_data(goose, overwrite = TRUE)
+
+# tenth-circuit ---------------------------------------------------------------
+tenth_circuit <- read_csv("data-raw/tenth-circuit/tenth-circuit.csv", na=c("","NA"))
+colnames(tenth_circuit) <- colnames(tenth_circuit) %>% 
+  tolower() %>% 
+  str_replace_all(" citation", "_cit") %>% 
+  str_replace_all(" ", "")
+tenth_circuit <- tenth_circuit %>% 
+  mutate(date = mdy(date)) %>% 
+  rename(vote1_liberal = vote1,
+         vote2_liberal = vote2,
+         vote3_liberal = vote3)
+
+devtools::use_data(tenth_circuit, overwrite = TRUE)
 
 

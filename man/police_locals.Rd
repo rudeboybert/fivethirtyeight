@@ -45,3 +45,4 @@ police_locals_tidy <- police_locals \%>\%
    gather(key = "race", value = "perc_in", all:asian)
 }
 \keyword{datasets}
+

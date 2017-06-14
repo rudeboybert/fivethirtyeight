@@ -38,3 +38,4 @@ A vignette of an analysis of this dataset using the \code{tidyverse} can be foun
 \code{vignette("bechdel", package = "fivethirtyeight")}
 }
 \keyword{datasets}
+

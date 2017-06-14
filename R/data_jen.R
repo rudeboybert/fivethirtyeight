@@ -385,6 +385,111 @@
 #' riddler_castles_tidy<-riddler_castles %>%
 #'    gather(key = castle , value = soldiers, castle1:castle10) %>%
 #'    mutate(castle = as.numeric(str_replace(castle, "castle","")))
+#' @seealso \code{\link{riddler_castles2}}
 "riddler_castles"
 
 
+#' The Battle For Riddler Nation, Round 2
+#'
+#' The raw data behind the story
+#' "The Battle For Riddler Nation, Round 2"
+#' \url{http://fivethirtyeight.com/features/the-battle-for-riddler-nation-round-2/}.
+#' Analysis of the submitted solutions can be found at: \url{https://fivethirtyeight.com/features/how-much-should-you-bid-for-that-painting/}
+#'
+#' @format A data frame with 932 rows representing submissions and 11 variables:
+#' \describe{
+#'   \item{castle1}{Number of troops out of 100 send to castle 1}
+#'   \item{castle2}{Number of troops out of 100 send to castle 2}
+#'   \item{castle3}{Number of troops out of 100 send to castle 3}
+#'   \item{castle4}{Number of troops out of 100 send to castle 4}
+#'   \item{castle5}{Number of troops out of 100 send to castle 5}
+#'   \item{castle6}{Number of troops out of 100 send to castle 6}
+#'   \item{castle7}{Number of troops out of 100 send to castle 7}
+#'   \item{castle8}{Number of troops out of 100 send to castle 8}
+#'   \item{castle9}{Number of troops out of 100 send to castle 9}
+#'   \item{castle10}{Number of troops out of 100 send to castle 10}
+#'   \item{reason}{Why did you choose your troop deployment?}
+#' }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/riddler-castles}
+#'
+#' @examples
+#' # To convert data frame to tidy data (long) format, run
+#' library(tidyverse)
+#' library(stringr)
+#' riddler_castles_tidy<-riddler_castles2 %>%
+#'    gather(key = castle , value = soldiers, castle1:castle10) %>%
+#'    mutate(castle = as.numeric(str_replace(castle, "castle","")))
+#' @seealso \code{\link{riddler_castles}}
+"riddler_castles2"
+
+
+#' Trump Might Be The First President To Scrap A National Monument
+#'
+#' The raw data behind the story
+#' "Trump Might Be The First President To Scrap A National Monument"
+#' \url{https://fivethirtyeight.com/features/trump-might-be-the-first-president-to-scrap-a-national-monument/}.
+#'
+#' @format A data frame with 344 rows representing acts and 9 variables:
+#' \describe{
+#'   \item{current_name}{Current name of piece of land designated under the Antiquities Act}
+#'   \item{states}{State(s) or territory where land is located}
+#'   \item{original_name}{If included, original name of piece of land designated under the Antiquities Act}
+#'   \item{current_agency}{Current land management agency. NPS = National Parks Service, BLM = Bureau of Land Management, USFS = US Forest Service, FWS = US Fish and Wildlife Service, NOAA = National Oceanic and National Oceanic and Atmospheric Administration}
+#'   \item{action}{Type of action taken on land}
+#'   \item{date}{Date of action}
+#'   \item{year}{Year of action}
+#'   \item{pres_or_congress}{President or congress that issued action}
+#'   \item{acres_affected}{Acres affected by action. Note that total current acreage is not included. National monuments that cover ocean are listed in square miles.} 
+#' }
+#' @source National Parks Conservation Association \url{https://www.npca.org/} and National Parks Service Archeology Program \url{https://www.nps.gov/history/archeology/sites/antiquities/MonumentsList.htm}
+"antiquities_act"
+
+#' The Save Ruined Relief Pitching. The Goose Egg Can Fix It.
+#'
+#' The raw data behind the story
+#' "The Save Ruined Relief Pitching. The Goose Egg Can Fix It."
+#' \url{https://fivethirtyeight.com/features/goose-egg-new-save-stat-relief-pitchers/}.
+#'
+#' @format A data frame with 30,533 rows representing pitchers and 12 variables:
+#' \describe{
+#'   \item{name}{Pitcher name}
+#'   \item{year}{Start year of season}
+#'   \item{team}{Retrosheet team code}
+#'   \item{league}{NL or AL}
+#'   \item{goose_eggs}{Goose eggs}
+#'   \item{broken_eggs}{Broken eggs}
+#'   \item{mehs}{Mehs}
+#'   \item{league_average_gpct}{League-average goose percentage}
+#'   \item{ppf}{Pitcher park factor}
+#'   \item{replacement_gpct}{Replacement-level goose pecentage}
+#'   \item{gwar}{Goose Wins Above Replacement}
+#'   \item{key_retro}{Retrosheet unique player identifier}
+#' }
+#' @source Retrosheet \url{http://www.retrosheet.org/}
+"goose"
+
+#' For A Trump Nominee, Neil Gorsuch’s Record Is Surprisingly Moderate On Immigration
+#'
+#' The raw data behind the story
+#' "For A Trump Nominee, Neil Gorsuch’s Record Is Surprisingly Moderate On Immigration"
+#' \url{https://fivethirtyeight.com/features/for-a-trump-nominee-neil-gorsuchs-record-is-surprisingly-moderate-on-immigration/}.
+#'
+#' @format A data frame with 954 rows representing cases and 13 variables:
+#' \describe{
+#'   \item{title}{Name of the case}
+#'   \item{date}{Date of decision}
+#'   \item{federalreporter_cit}{Case citation, as listed in the Federal Reporter Series}
+#'   \item{westlaw_cit}{Case citation, Westlaw format}
+#'   \item{issue}{Issue number, in cases divided into multiple issues}
+#'   \item{weight}{Weight per issue (total weight per case equals one)}
+#'   \item{judge1}{Name of first judge}
+#'   \item{judge2}{Name of second judge}
+#'   \item{judge3}{Name of third judge}
+#'   \item{vote1_liberal}{Vote of first judge. 1 = liberal, 0 = conservative.}
+#'   \item{vote2_liberal}{Vote of second judge. 1 = liberal, 0 = conservative.}
+#'   \item{vote3_liberal}{Vote of third judge. 1 = liberal, 0 = conservative.}
+#'   \item{category}{Category of case, immigration or discrimination}
+#'   }
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/tenth-circuit}
+#' @note In immigration cases, partial relief to immigration petitioner is coded as liberal because the petitioner typically seeks just one core remedy (e.g., withholding of removal, adjustment of status, or asylum); in discrimination cases, partial relief is coded as multiple issues because the plaintiff often seeks separate remedies under multiple claims (e.g., disparate treatment, retaliation, etc.) and different sources of law.
+"tenth_circuit"

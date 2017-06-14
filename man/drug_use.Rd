@@ -64,3 +64,4 @@ drug_use_tidy <- left_join(x=use, y=freq, by = c("age", "n", "drug")) \%>\%
   arrange(age)
 }
 \keyword{datasets}
+

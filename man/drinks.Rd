@@ -35,3 +35,4 @@ drinks_tidy <- drinks \%>\%
   arrange(country, type)
 }
 \keyword{datasets}
+
