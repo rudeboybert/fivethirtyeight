@@ -42,5 +42,8 @@ Suggests:
     gridExtra,
     fivethirtyeight,
     corrplot,
+    ggraph,
+    igraph,
+    plyr,
     tidyverse
 VignetteBuilder: knitr
