@@ -4,7 +4,7 @@ Description: An R library that provides access to the code and data sets
     published by FiveThirtyEight <https://github.com/fivethirtyeight/data>. Note
     that while we received guidance from editors at 538, this package is not
     officially published by 538.
-Version: 0.2.0.0000
+Version: 0.2.0.9000
 Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = "cre"),
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
@@ -12,7 +12,8 @@ Authors@R: c(
     person("Andrew", "Flowers",  role = "ctb"),
     person("Jonathan", "Bouchet",  role = "ctb"),
     person("G. Elliott", "Morris",  role = "ctb"),
-    person("Adam", "Spannbauer",  role = "ctb"))
+    person("Adam", "Spannbauer",  role = "ctb")),
+    person("Pradeep", "Adhokshaja",  role = "ctb"))
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
     R (>= 3.2.4)

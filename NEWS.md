@@ -1,8 +1,7 @@
 # fivethirtyeight 0.2.0.9000
 
 * Added new and missing data sets: `riddler_castles2`, `antiquities_act`, `goose`, `tenth_circuit`
-* Added more crowd-sourced vignettes: `bobRoss.Rmd`
-* Converted all data.frame objects to tibble
+* Added more crowd-sourced vignettes: `bob_ross.Rmd`
 * Other minor changes:
     + Fixed levels in `bechdel$clean_test` and `bechdel$test` to match hierarchical nature of test
 
