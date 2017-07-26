@@ -28,4 +28,3 @@ The raw data behind the story
 \url{https://fivethirtyeight.com/features/trump-might-be-the-first-president-to-scrap-a-national-monument/}.
 }
 \keyword{datasets}
-

@@ -17,12 +17,13 @@ Load required packages to reproduce analysis.
 
 ```{r, message=FALSE, warning=FALSE}
 library(fivethirtyeight)
-library(tidytext)
+# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
 library(tidyverse)
+library(tidytext)
 library(stringr)
 library(lubridate)
-library(hunspell)
 library(knitr)
+library(hunspell)
 # Turn off scientific notation
 options(scipen = 99)
 ```
@@ -55,7 +56,7 @@ trump_tokens <- trump_twitter %>%
   mutate(text = str_replace_all(text,
                                 pattern = "[[:digit:]]",
                                 replacement = "")) %>% 
-  tidytext::unnest_tokens(tokens, text) %>% #tokenize
+  unnest_tokens(tokens, text) %>% #tokenize
   mutate(tokens = vec_hunspell_stem(tokens)) %>% 
   filter(!(tokens %in% stop_words$word)) #rm stopwords
 ```
@@ -134,7 +135,7 @@ trump_tweet_times <- trump_full_text_sent %>%
 
 plotSentByTime <- function(trump_tweet_times, timeGroupVar) {
   timeVar <- substitute(timeGroupVar)
-  timeVarLabel <- stringr::str_to_title(timeVar)
+  timeVarLabel <- str_to_title(timeVar)
   
   trump_tweet_time_sent <- trump_tweet_times %>% 
     rename_(timeGroup = timeVar) %>% 

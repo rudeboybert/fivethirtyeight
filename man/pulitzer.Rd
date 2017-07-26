@@ -26,4 +26,3 @@ The raw data behind the story
 \url{http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/}.
 }
 \keyword{datasets}
-

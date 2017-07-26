@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -12,7 +12,7 @@
 
 <meta name="author" content="Albert Y. Kim, Chester Ismay, and Jennifer Chunn" />
 
-<meta name="date" content="2017-03-13" />
+<meta name="date" content="2017-07-26" />
 
 <title>Bechdel analysis using the tidyverse</title>
 
@@ -70,19 +70,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Bechdel analysis using the <code>tidyverse</code></h1>
 <h4 class="author"><em>Albert Y. Kim, Chester Ismay, and Jennifer Chunn</em></h4>
-<h4 class="date"><em>2017-03-13</em></h4>
+<h4 class="date"><em>2017-07-26</em></h4>
 
 
 
 <p>This vignette is based on tidyverse-ifying the R code <a href="https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/analyze-bechdel.R">here</a> and reproducing some of the plots and analysis done in the 538 story entitled “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women” by Walt Hickey available <a href="http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/">here</a>.</p>
 <p>Load required packages to reproduce analysis. Also load the <code>bechdel</code> dataset for analysis.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(ggplot2)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
+<span class="co"># tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:</span>
+<span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(knitr)
 <span class="kw">library</span>(magrittr)
 <span class="kw">library</span>(broom)
 <span class="kw">library</span>(stringr)
-<span class="kw">library</span>(fivethirtyeight)
 <span class="kw">library</span>(ggthemes)
 <span class="kw">library</span>(scales)
 <span class="co"># Turn off scientific notation</span>
@@ -138,8 +138,18 @@ ROI_by_binary</code></pre></div>
 <span class="st">  </span><span class="kw">summarize</span>(
     <span class="st">`</span><span class="dt">Median Overall Return on Investment</span><span class="st">`</span> =<span class="st"> </span><span class="kw">median</span>(roi_total, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
 <div class="kable-table">
-<h2 id="median-overall-return-on-investment">Median Overall Return on Investment</h2>
-<pre><code>                        2.569013</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Median Overall Return on Investment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2.569013</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">budget_by_binary &lt;-<span class="st"> </span>bechdel90_13 %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">group_by</span>(binary) %&gt;%<span class="st"> </span>
@@ -168,8 +178,18 @@ budget_by_binary</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdel90_13 %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">summarize</span>(<span class="st">`</span><span class="dt">Median Overall Budget</span><span class="st">`</span> =<span class="st"> </span><span class="kw">median</span>(budget_2013, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
 <div class="kable-table">
-<h2 id="median-overall-budget">Median Overall Budget</h2>
-<pre><code>          37878971</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Median Overall Budget</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">37878971</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div id="view-distributions" class="section level2">
@@ -404,6 +424,8 @@ pass_bech_rom &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<
                   <span class="dt">median_roi =</span> passes_bechtel_rom$median_roi)
 med_groups_dom_full &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(pass_bech_rom, median_groups_dom) %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">group =</span> <span class="st">&quot;U.S. and Canada&quot;</span>)</code></pre></div>
+<pre><code>## Warning in bind_rows_(x, .id): binding character and factor vector,
+## coercing into character vector</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">passes_bechtel_int &lt;-<span class="st"> </span>bechdel90_13 %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">filter</span>(generous ==<span class="st"> </span><span class="ot">TRUE</span>) %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">summarize</span>(<span class="dt">median_roi =</span> <span class="kw">median</span>(roi_int, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
@@ -414,8 +436,10 @@ median_groups_int &lt;-<span class="st"> </span>bechdel90_13 %&gt;%<span class="
 pass_bech_int &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">clean_test =</span> <span class="st">&quot;pass&quot;</span>, 
                   <span class="dt">median_roi =</span> passes_bechtel_int$median_roi)
 med_groups_int_full &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(pass_bech_int, median_groups_int) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">group =</span> <span class="st">&quot;International&quot;</span>)
-med_groups &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(med_groups_dom_full, med_groups_int_full) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">group =</span> <span class="st">&quot;International&quot;</span>)</code></pre></div>
+<pre><code>## Warning in bind_rows_(x, .id): binding character and factor vector,
+## coercing into character vector</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">med_groups &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(med_groups_dom_full, med_groups_int_full) %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">clean_test =</span> <span class="kw">str_replace_all</span>(clean_test, 
                                       <span class="st">&quot;pass&quot;</span>,
                                       <span class="st">&quot;Passes Bechdel Test&quot;</span>),
@@ -472,7 +496,7 @@ med_groups %&lt;&gt;%<span class="st"> </span><span class="kw">mutate</span>(<sp
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

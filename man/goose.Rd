@@ -31,4 +31,3 @@ The raw data behind the story
 \url{https://fivethirtyeight.com/features/goose-egg-new-save-stat-relief-pitchers/}.
 }
 \keyword{datasets}
-

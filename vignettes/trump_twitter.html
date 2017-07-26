@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -12,7 +12,7 @@
 
 <meta name="author" content="Adam Spannbauer and Jennifer Chunn" />
 
-<meta name="date" content="2017-03-13" />
+<meta name="date" content="2017-07-26" />
 
 <title>Trump Twitter analysis using the tidyverse</title>
 
@@ -70,19 +70,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Trump Twitter analysis using the <code>tidyverse</code></h1>
 <h4 class="author"><em>Adam Spannbauer and Jennifer Chunn</em></h4>
-<h4 class="date"><em>2017-03-13</em></h4>
+<h4 class="date"><em>2017-07-26</em></h4>
 
 
 
 <p>This vignette is based on data collected for the 538 story entitled “The World’s Favorite Donald Trump Tweets” by Leah Libresco available <a href="https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/">here</a>.</p>
 <p>Load required packages to reproduce analysis.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-<span class="kw">library</span>(tidytext)
+<span class="co"># tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:</span>
 <span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(tidytext)
 <span class="kw">library</span>(stringr)
 <span class="kw">library</span>(lubridate)
-<span class="kw">library</span>(hunspell)
 <span class="kw">library</span>(knitr)
+<span class="kw">library</span>(hunspell)
 <span class="co"># Turn off scientific notation</span>
 <span class="kw">options</span>(<span class="dt">scipen =</span> <span class="dv">99</span>)</code></pre></div>
 <div id="check-date-range-of-tweets" class="section level2">
@@ -111,7 +112,7 @@ vec_hunspell_stem &lt;-<span class="st"> </span><span class="kw">Vectorize</span
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">text =</span> <span class="kw">str_replace_all</span>(text,
                                 <span class="dt">pattern =</span> <span class="st">&quot;[[:digit:]]&quot;</span>,
                                 <span class="dt">replacement =</span> <span class="st">&quot;&quot;</span>)) %&gt;%<span class="st"> </span>
-<span class="st">  </span>tidytext::<span class="kw">unnest_tokens</span>(tokens, text) %&gt;%<span class="st"> </span><span class="co">#tokenize</span>
+<span class="st">  </span><span class="kw">unnest_tokens</span>(tokens, text) %&gt;%<span class="st"> </span><span class="co">#tokenize</span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">tokens =</span> <span class="kw">vec_hunspell_stem</span>(tokens)) %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">filter</span>(!(tokens %in%<span class="st"> </span>stop_words$word)) <span class="co">#rm stopwords</span></code></pre></div>
 </div>
@@ -268,7 +269,7 @@ Ted Cruz is a nervous wreck. He is making reckless charges not caring for the tr
 
 plotSentByTime &lt;-<span class="st"> </span>function(trump_tweet_times, timeGroupVar) {
   timeVar &lt;-<span class="st"> </span><span class="kw">substitute</span>(timeGroupVar)
-  timeVarLabel &lt;-<span class="st"> </span>stringr::<span class="kw">str_to_title</span>(timeVar)
+  timeVarLabel &lt;-<span class="st"> </span><span class="kw">str_to_title</span>(timeVar)
   
   trump_tweet_time_sent &lt;-<span class="st"> </span>trump_tweet_times %&gt;%<span class="st"> </span>
 <span class="st">    </span><span class="kw">rename_</span>(<span class="dt">timeGroup =</span> timeVar) %&gt;%<span class="st"> </span>
@@ -307,7 +308,7 @@ plotSentByTime &lt;-<span class="st"> </span>function(trump_tweet_times, timeGro
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

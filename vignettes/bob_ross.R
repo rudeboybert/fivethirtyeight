@@ -1,13 +1,12 @@
 ## ---- message = FALSE, warning = FALSE-----------------------------------
-library(ggplot2)
-library(dplyr)
 library(fivethirtyeight)
+# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
+library(tidyverse)
 library(ggthemes)
 library(knitr)
 library(corrplot)
 library(ggraph)
 library(igraph)
-library(plyr)
 
 ## ----load data-----------------------------------------------------------
 df <- bob_ross
@@ -22,10 +21,10 @@ df[df$episode=='S08E02','title']<-'LAKESIDE CABIN 2'
 #calculate the colSums for numeric columns and transpose the result
 temp <- as.data.frame(df %>% 
                         select(-episode, -season, -episode_num ,-title) %>% 
-                        summarise_each(funs(sum)) %>% t())
+                        summarise_all(funs(sum)) %>% t())
 
 #rename,switch columns and calculate percentage over all paintings and frequency though all episodes
-per_features <- temp %>% tibble::rownames_to_column() %>% 
+per_features <- temp %>% rownames_to_column() %>% 
   select(feature=rowname, tot = V1) %>% 
   mutate(
     feature_percentage = (tot / sum(tot))*100, 
@@ -37,7 +36,9 @@ per_features <- temp %>% tibble::rownames_to_column() %>%
 feature_freq_cut <- 10 #10% most present features
 ggplot(data=filter(per_features,feature_freq>feature_freq_cut), aes(x=reorder(feature,feature_freq),y=feature_freq)) + 
   geom_bar(stat='identity') + geom_text(aes(label=feature_freq_label), position=position_dodge(width=0.9), vjust=.5,hjust=0,size=2.5,color='red') + 
-  coord_flip() + theme_fivethirtyeight() + ggtitle('Features\'s appearance(%) through all episodes')
+  coord_flip() + 
+  theme_fivethirtyeight() + 
+  ggtitle('Features\'s appearance(%) through all episodes')
 
 ## ----feature correlation-------------------------------------------------
 #find features present
@@ -49,9 +50,12 @@ corrplot(cor(num_data[,num_cols]), method='square',order="AOE")
 ## ----episode prep.-------------------------------------------------------
 per_episode <- df %>% 
   select(-episode,-season,-episode_num ,-title) %>% 
-  select_if(is.numeric) %>% 
-  summarise(sum = rowSums(.)) %>% 
-  cbind(episode = df$title) %>% arrange(-sum)
+  select_if(is.numeric) %>%
+  mutate(episode=1:n()) %>% 
+  gather(item, count, -episode) %>% 
+  group_by(episode) %>% 
+  summarise(sum = sum(count)) %>% 
+  arrange(-sum)
 
 #select a cut
 cut_features<-11
@@ -63,7 +67,7 @@ ggplot(data=filter(per_episode,sum>cut_features), aes(x=reorder(episode,sum),y=s
 ## ----episoe plot---------------------------------------------------------
 per_episode_summary <- per_episode %>% 
   group_by(sum) %>% 
-  dplyr::summarise(tot_features=n()) %>%
+  summarise(tot_features=n()) %>%
   mutate(
     percent = (tot_features/ sum(tot_features))*100, 
     label = paste0(round(percent,1),"%"))
@@ -103,14 +107,17 @@ season1_res <- data.frame("feature_1"= character(),"feature_2"=character())
 #loop over paintings in season 1
 for(i in 1:nrow(season_1)){
     #select features of ith painting and make a dataframe
-    temp <- as.data.frame(season_1 %>% select(-episode, -season, -episode_num ,-title) %>% dplyr::slice(i) %>% t())
-    pos_data <- temp %>% tibble::rownames_to_column() %>% select(feature=rowname, number = V1) %>% filter(number>0)
+    temp <- as.data.frame(season_1 %>% select(-episode, -season, -episode_num ,-title) %>% slice(i) %>% t())
+    pos_data <- temp %>% rownames_to_column() %>% select(feature=rowname, number = V1) %>% filter(number>0)
     res<-make_connection(pos_data)
     season1_res<-rbind(season1_res,res)
 }
 
 ## ----network plot--------------------------------------------------------
-graph_s1<-plyr::count(season1_res, vars = c("feature_1","feature_2"))
+graph_s1 <- season1_res %>% 
+  group_by(feature_1, feature_2) %>% 
+  summarise(freq=n())
+
 colnames(graph_s1)[3]<-'weight'
 
 g1<-graph.data.frame(graph_s1)

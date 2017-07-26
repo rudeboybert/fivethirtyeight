@@ -1,11 +1,11 @@
 ## ---- message=FALSE, warning=FALSE---------------------------------------
-library(dplyr)
-library(ggplot2)
+library(fivethirtyeight)
+# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
+library(tidyverse)
 library(knitr)
 library(magrittr)
 library(broom)
 library(stringr)
-library(fivethirtyeight)
 library(ggthemes)
 library(scales)
 # Turn off scientific notation

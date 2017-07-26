@@ -16,13 +16,13 @@ This vignette is based on tidyverse-ifying the R code [here](https://raw.githubu
 Load required packages to reproduce analysis.  Also load the `bechdel` dataset for analysis.
 
 ```{r, message=FALSE, warning=FALSE}
-library(dplyr)
-library(ggplot2)
+library(fivethirtyeight)
+# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
+library(tidyverse)
 library(knitr)
 library(magrittr)
 library(broom)
 library(stringr)
-library(fivethirtyeight)
 library(ggthemes)
 library(scales)
 # Turn off scientific notation

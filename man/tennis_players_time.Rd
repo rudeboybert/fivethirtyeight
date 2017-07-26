@@ -24,4 +24,3 @@ The raw data behind the story
 \code{\link{tennis_events_time}} and \code{\link{tennis_serve_time}}
 }
 \keyword{datasets}
-

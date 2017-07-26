@@ -42,4 +42,3 @@ riddler_castles_tidy<-riddler_castles \%>\%
 \code{\link{riddler_castles2}}
 }
 \keyword{datasets}
-
