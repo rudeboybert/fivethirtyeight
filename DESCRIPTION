@@ -41,5 +41,6 @@ Suggests:
     gridExtra,
     corrplot,
     ggraph,
-    igraph
+    igraph,
+    highcharter
 VignetteBuilder: knitr

@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 For this project, we will be using the `tidyverse` library for data analysis. This is an R package that consists of tools such as `ggplot2`(data visualization),`tidyr`(data modification), `dplyr` (data management). The data set is obtained by calling the `fivethirtyeight` package using the command `library(fivethirtyeight)`.
 
 
-After calling the necessary libraries, we look at the structure of the data. The command `str()` allows us to get a brief summary of the data we are dealing with. This saves from displaying the entire dataset. A custom theme is set which will be used for all the graphs in this project.
+After calling the necessary libraries, we look at the structure of the data. The command `glimpse()` allows us to get a brief summary of the data we are dealing with. This saves from displaying the entire dataset. A custom theme is set which will be used for all the graphs in this project.
 
 ```{r include=FALSE}
 plot_theme <- function(base_size = 12) {
