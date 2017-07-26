@@ -12,7 +12,7 @@ Authors@R: c(
     person("Andrew", "Flowers",  role = "ctb"),
     person("Jonathan", "Bouchet",  role = "ctb"),
     person("G. Elliott", "Morris",  role = "ctb"),
-    person("Adam", "Spannbauer",  role = "ctb")),
+    person("Adam", "Spannbauer",  role = "ctb"),
     person("Pradeep", "Adhokshaja",  role = "ctb"))
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
