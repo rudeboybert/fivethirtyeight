@@ -13,7 +13,10 @@ Authors@R: c(
     person("Jonathan", "Bouchet",  role = "ctb"),
     person("G. Elliott", "Morris",  role = "ctb"),
     person("Adam", "Spannbauer",  role = "ctb"),
-    person("Pradeep", "Adhokshaja",  role = "ctb"))
+    person("Pradeep", "Adhokshaja",  role = "ctb"),
+    person("Olivia", "Barrows", role = "ctb"),
+    person("Jojo", "Miller", role = "ctb"),
+    person("Jayla", "Nakayama", role = "ctb"))
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
     R (>= 3.2.4)
