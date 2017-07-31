@@ -18,8 +18,8 @@ knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.width=7.2)
 This vignette is based on the data collected for the FiveThirtyEight study [A Complete Catalog Of Every Time Someone Cursed Or Bled Out In A Quentin Tarantino Movie](https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/), with a focus on the use of swear words in his films. 
 
 ```{r libraries, message = FALSE, warning = FALSE}
-#Load necessary packages
 library(fivethirtyeight)
+# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
 library(tidyverse)
 library(stringr)
 library(knitr)
