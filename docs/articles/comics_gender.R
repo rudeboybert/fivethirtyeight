@@ -1,11 +1,11 @@
 ## ---- message = FALSE, warning = FALSE-----------------------------------
 #load packages and csv file
-library(ggplot2)
-library(dplyr)
+library(fivethirtyeight)
+# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
+library(tidyverse)
+library(knitr)
 library(grid)
 library(fmsb)
-library(fivethirtyeight)
-library(knitr)
 library(wordcloud)
 library(gridExtra)
 

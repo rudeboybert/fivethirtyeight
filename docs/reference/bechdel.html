@@ -23,7 +23,8 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -51,10 +52,46 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="..//index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/fivethirtyeight.html">Get Started</a>
+</li>
+<li>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
+    </li>
+    <li>
+      <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
+    </li>
+    <li>
+      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting-</a>
+    </li>
+    <li>
+      <a href="../articles/comics_gender.html">Gender in Comic Books</a>
+    </li>
+    <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
+    <li>
+      <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
+    </li>
+    <li>
+      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -85,7 +122,7 @@
     
     <p>The raw data behind the story
 "The Dollar-And-Cents Case Against Hollywood's Exclusion of Women"
-<a href = 'http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/'>http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/</a>.</p>
+<a href='http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/'>http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/</a>.</p>
     
 
     <pre class="usage"><span class='no'>bechdel</span></pre>
@@ -94,7 +131,7 @@
 
     <p>A data frame with 1794 rows representing movies and 15 variables:</p><dl class='dl-horizontal'>
   <dt>year</dt><dd><p>Year of release</p></dd>
-  <dt>imdb</dt><dd><p>Text to append <a href = 'http://www.imdb.com/title/'>http://www.imdb.com/title/</a> to for IMDB url. E.g. <a href = 'http://www.imdb.com/title/tt1711425'>http://www.imdb.com/title/tt1711425</a></p></dd>
+  <dt>imdb</dt><dd><p>Text to append <a href='http://www.imdb.com/title/'>http://www.imdb.com/title/</a> to for IMDB url. E.g. <a href='http://www.imdb.com/title/tt1711425'>http://www.imdb.com/title/tt1711425</a></p></dd>
   <dt>title</dt><dd><p>Movie test</p></dd>
   <dt>test</dt><dd><p>bechdel test result (detailed, with discrepancies indicated)</p></dd>
   <dt>clean_test</dt><dd><p>bechdel test result (detailed): <code>ok</code> = passes test, <code>dubious</code>, <code>men</code> = women only talk about men, <code>notalk</code> = women don't talk to each other, <code>nowomen</code> = fewer than two women</p></dd>
@@ -112,12 +149,12 @@
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href = 'www.bechdeltest.com'>www.bechdeltest.com</a> and <a href = 'www.the-numbers.com'>www.the-numbers.com</a>. The original data can be found at <a href = 'https://github.com/fivethirtyeight/data/tree/master/bechdel'>https://github.com/fivethirtyeight/data/tree/master/bechdel</a>.</p>
+    <p><a href='www.bechdeltest.com'>www.bechdeltest.com</a> and <a href='www.the-numbers.com'>www.the-numbers.com</a>. The original data can be found at <a href='https://github.com/fivethirtyeight/data/tree/master/bechdel'>https://github.com/fivethirtyeight/data/tree/master/bechdel</a>.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>A vignette of an analysis of this dataset using the <code>tidyverse</code> can be found on <a href = 'https://CRAN.R-project.org/package=fivethirtyeight/vignettes/bechdel.html'>CRAN</a> or by running:
-<code>NA</code></p>
+    <p>A vignette of an analysis of this dataset using the <code>tidyverse</code> can be found on <a href='https://CRAN.R-project.org/package=fivethirtyeight/vignettes/bechdel.html'>CRAN</a> or by running:
+<code><a href='https://cran.rstudio.com/web/packages/fivethirtyeight/vignettes/bechdel.html'>vignette("bechdel", package = "fivethirtyeight")</a></code></p>
     
 
   </div>

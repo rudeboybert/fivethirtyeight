@@ -29,10 +29,46 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="..//index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/fivethirtyeight.html">Get Started</a>
+</li>
+<li>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
+    </li>
+    <li>
+      <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
+    </li>
+    <li>
+      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting-</a>
+    </li>
+    <li>
+      <a href="../articles/comics_gender.html">Gender in Comic Books</a>
+    </li>
+    <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
+    <li>
+      <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
+    </li>
+    <li>
+      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -61,7 +97,7 @@
 </h1>
                         <h4 class="author">G. Elliott Morris and Chester Ismay</h4>
             
-            <h4 class="date">2017-05-29</h4>
+            <h4 class="date">2017-07-31</h4>
           </div>
 
     
@@ -70,6 +106,7 @@
 <p>This vignette is based on data collected for the 538 story entitled “Projecting The Top 50 Players In The 2015 NBA Draft Class” by Neil Paine and Zach Bradshaw available <a href="http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/">here</a>.</p>
 <p>First, we load the required packages to reproduce analysis.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
+<span class="co"># tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:</span>
 <span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(ggthemes)
 <span class="kw">library</span>(knitr)
@@ -79,8 +116,8 @@
 <h1 class="hasAnchor">
 <a href="#group-the-projected-statistical-plus-minus-by-year" class="anchor"></a>Group the projected statistical plus-minus by year</h1>
 <p>The <code>nba_draft_2015</code> data frame features National Basketball Association players and prospects. Each player has a <code>draft_year</code> that corresponds to the year the player was drafted into the NBA, if at all. We are interested in analyzing the average <code>projected_spm</code> for each draft year. Here, <code>projected_spm</code> corresponds to FiveThirtyEight’s model of projected statistical plus-minus over year 2-5 of the player’s NBA career. Plus-minus is defined by <a href="http://www.basketball-reference.com/about/bpm.html">BasketballReference.com</a> as “box score-based metric for evaluating basketball players’ quality and contribution to the team.” It is measured on a per 100 possessions basis to factor out playing time and adjusted so that the score is relative to the average NBA player. Further from BasketballReference, “0.0 is league average, +5 means the player is 5 points better than an average player over 100 possessions (which is about All-NBA level), -2 is replacement level, and -5 is really bad.”</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nba_yearly &lt;-<span class="st"> </span>nba_draft_2015 %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(draft_year) %&gt;%<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nba_yearly &lt;-<span class="st"> </span>nba_draft_<span class="dv">2015</span> <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(draft_year) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_proj_spm =</span> <span class="kw">mean</span>(projected_spm))
 nba_yearly</code></pre></div>
 <pre><code>## # A tibble: 15 x 2
@@ -106,12 +143,12 @@ nba_yearly</code></pre></div>
 <h1 class="hasAnchor">
 <a href="#graph-it" class="anchor"></a>Graph it!</h1>
 <p>Now that we have calculated the mean projected plus-minus for each draft year, let’s plot it to better understand which draft class was projected to have the most impact on team success.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(nba_yearly, <span class="kw">aes</span>(<span class="dt">x =</span> draft_year, <span class="dt">y =</span> mean_proj_spm, <span class="dt">fill =</span> mean_proj_spm)) +
-<span class="st">  </span><span class="kw">geom_col</span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">theme_fivethirtyeight</span>() +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(nba_yearly, <span class="kw">aes</span>(<span class="dt">x =</span> draft_year, <span class="dt">y =</span> mean_proj_spm, <span class="dt">fill =</span> mean_proj_spm)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Which NBA draft class was best?"</span>,
        <span class="dt">subtitle =</span> <span class="st">"As measured by the mean player/prospect's projected plus-minus"</span>,
-       <span class="dt">caption =</span> <span class="st">"Data from FiveThirtyEight"</span>) +
+       <span class="dt">caption =</span> <span class="st">"Data from FiveThirtyEight"</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">"none"</span>,
         <span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">"bold"</span>, <span class="dt">size =</span> <span class="dv">20</span>),
         <span class="dt">plot.subtitle =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">12</span>),
@@ -123,15 +160,13 @@ nba_yearly</code></pre></div>
 <h1 class="hasAnchor">
 <a href="#so-what-about-2003-and-2004" class="anchor"></a>So what about 2003 and 2004?</h1>
 <p>So who were the players in that 2003 NBA draft class? What about in 2004 that has the second largest (in magnitude) average projected plus-minus. Let’s explore the top three <code>projected_spm</code> for 2003 and 2004:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nba_draft_2015 %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">filter</span>(draft_year %in%<span class="st"> </span><span class="kw">c</span>(<span class="dv">2003</span>, <span class="dv">2004</span>)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(draft_year) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">top_n</span>(projected_spm, <span class="dt">n =</span> <span class="dv">3</span>) %&gt;%<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nba_draft_<span class="dv">2015</span> <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(draft_year <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2003</span>, <span class="dv">2004</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(draft_year) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">top_n</span>(projected_spm, <span class="dt">n =</span> <span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">select</span>(player, position, draft_year, projected_spm)</code></pre></div>
-<pre><code>## Source: local data frame [6 x 4]
-## Groups: draft_year [2]
-## 
-## # A tibble: 6 x 4
+<pre><code>## # A tibble: 6 x 4
+## # Groups:   draft_year [2]
 ##            player position draft_year projected_spm
 ##             &lt;chr&gt;    &lt;chr&gt;      &lt;int&gt;         &lt;dbl&gt;
 ## 1  Andre Iguodala       SG       2004     0.7235079
@@ -148,7 +183,8 @@ nba_yearly</code></pre></div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
         <div id="tocnav">
-      <h2>Contents</h2>
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#group-the-projected-statistical-plus-minus-by-year">Group the projected statistical plus-minus by year</a></li>
       <li><a href="#graph-it">Graph it!</a></li>

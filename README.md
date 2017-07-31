@@ -89,7 +89,6 @@ In many instances, the data sets on the original 538 GitHub repository had the R
 2.  Use [R Markdown](http://rmarkdown.rstudio.com/):
     -   In particular the Package Vignette (HTML) template option when creating an R Markdown document.
     -   Have the name of the R Markdown file match the name of the data set. Ex: `vignettes/bechdel.Rmd`
-
 3.  Follow the GitHub fork/pull request [model](https://guides.github.com/introduction/flow/). Otherwise, contact us directly.
 
 ### Contributing to the Package

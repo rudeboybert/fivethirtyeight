@@ -29,10 +29,46 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="..//index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/fivethirtyeight.html">Get Started</a>
+</li>
+<li>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
+    </li>
+    <li>
+      <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
+    </li>
+    <li>
+      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting-</a>
+    </li>
+    <li>
+      <a href="../articles/comics_gender.html">Gender in Comic Books</a>
+    </li>
+    <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
+    <li>
+      <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
+    </li>
+    <li>
+      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -61,7 +97,7 @@
 </h1>
                         <h4 class="author">Adam Spannbauer and Jennifer Chunn</h4>
             
-            <h4 class="date">2017-05-29</h4>
+            <h4 class="date">2017-07-31</h4>
           </div>
 
     
@@ -70,29 +106,30 @@
 <p>This vignette is based on data collected for the 538 story entitled “The World’s Favorite Donald Trump Tweets” by Leah Libresco available <a href="https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/">here</a>.</p>
 <p>Load required packages to reproduce analysis.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-<span class="kw">library</span>(tidytext)
+<span class="co"># tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:</span>
 <span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(tidytext)
 <span class="kw">library</span>(stringr)
 <span class="kw">library</span>(lubridate)
-<span class="kw">library</span>(hunspell)
 <span class="kw">library</span>(knitr)
+<span class="kw">library</span>(hunspell)
 <span class="co"># Turn off scientific notation</span>
 <span class="kw">options</span>(<span class="dt">scipen =</span> <span class="dv">99</span>)</code></pre></div>
 <div id="check-date-range-of-tweets" class="section level2">
 <h2 class="hasAnchor">
 <a href="#check-date-range-of-tweets" class="anchor"></a>Check date range of tweets</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## check out structure and date range ------------------------------------------------
-(minDate &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw">date</span>(trump_twitter$created_at)))</code></pre></div>
+(minDate &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/date">date</a></span>(trump_twitter<span class="op">$</span>created_at)))</code></pre></div>
 <pre><code>## [1] "2015-08-01"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(maxDate &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">date</span>(trump_twitter$created_at)))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(maxDate &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/date">date</a></span>(trump_twitter<span class="op">$</span>created_at)))</code></pre></div>
 <pre><code>## [1] "2016-08-16"</code></pre>
 </div>
 <div id="create-vectorised-stemming-function-using-hunspell" class="section level1">
 <h1 class="hasAnchor">
 <a href="#create-vectorised-stemming-function-using-hunspell" class="anchor"></a>Create vectorised stemming function using hunspell</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_hunspell_stem &lt;-<span class="st"> </span>function(token) {
-  stem_token &lt;-<span class="st"> </span><span class="kw">hunspell_stem</span>(token)[[<span class="dv">1</span>]]
-  if (<span class="kw">length</span>(stem_token) ==<span class="st"> </span><span class="dv">0</span>) <span class="kw">return</span>(token) else <span class="kw">return</span>(stem_token[<span class="dv">1</span>])
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_hunspell_stem &lt;-<span class="st"> </span><span class="cf">function</span>(token) {
+  stem_token &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/hunspell/topics/hunspell">hunspell_stem</a></span>(token)[[<span class="dv">1</span>]]
+  <span class="cf">if</span> (<span class="kw">length</span>(stem_token) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) <span class="kw">return</span>(token) <span class="cf">else</span> <span class="kw">return</span>(stem_token[<span class="dv">1</span>])
 }
 vec_hunspell_stem &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(my_hunspell_stem, <span class="st">"token"</span>)</code></pre></div>
 </div>
@@ -100,37 +137,37 @@ vec_hunspell_stem &lt;-<span class="st"> </span><span class="kw">Vectorize</span
 <h1 class="hasAnchor">
 <a href="#clean-text-by-tokenizing-removing-urlsstopwords" class="anchor"></a>Clean text by tokenizing &amp; removing urls/stopwords</h1>
 <p>We first remove URLs and stopwords as specified in the <code>tidytext</code> library. Stopwords are common words in English. We also do spellchecking using hunspell.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tokens &lt;-<span class="st"> </span>trump_twitter %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">text =</span> <span class="kw">str_replace_all</span>(text, 
-                                <span class="dt">pattern=</span><span class="kw">regex</span>(<span class="st">"(www|https?[^</span><span class="ch">\\</span><span class="st">s]+)"</span>), 
-                                <span class="dt">replacement =</span> <span class="st">""</span>)) %&gt;%<span class="st"> </span><span class="co">#rm urls</span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">text =</span> <span class="kw">str_replace_all</span>(text,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tokens &lt;-<span class="st"> </span>trump_twitter <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">text =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(text, 
+                                <span class="dt">pattern=</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/modifiers">regex</a></span>(<span class="st">"(www|https?[^</span><span class="ch">\\</span><span class="st">s]+)"</span>), 
+                                <span class="dt">replacement =</span> <span class="st">""</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#rm urls</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">text =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(text,
                                 <span class="dt">pattern =</span> <span class="st">"[[:digit:]]"</span>,
-                                <span class="dt">replacement =</span> <span class="st">""</span>)) %&gt;%<span class="st"> </span>
-<span class="st">  </span>tidytext::<span class="kw">unnest_tokens</span>(tokens, text) %&gt;%<span class="st"> </span><span class="co">#tokenize</span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">tokens =</span> <span class="kw">vec_hunspell_stem</span>(tokens)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">filter</span>(!(tokens %in%<span class="st"> </span>stop_words$word)) <span class="co">#rm stopwords</span></code></pre></div>
+                                <span class="dt">replacement =</span> <span class="st">""</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tidytext/topics/unnest_tokens">unnest_tokens</a></span>(tokens, text) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#tokenize</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">tokens =</span> <span class="kw">vec_hunspell_stem</span>(tokens)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>(tokens <span class="op">%in%</span><span class="st"> </span>stop_words<span class="op">$</span>word)) <span class="co">#rm stopwords</span></code></pre></div>
 </div>
 <div id="sentiment-analysis" class="section level1">
 <h1 class="hasAnchor">
 <a href="#sentiment-analysis" class="anchor"></a>Sentiment analysis</h1>
 <p>To measure the sentiment of tweets, we used the AFINN lexicon for each (non-stop) word in a tweet. The score runs between -5 and 5. We then sum the scores for each word across all words in one tweet to get a total tweet sentiment score.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_sentiment &lt;-<span class="st"> </span>trump_tokens %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">inner_join</span>(<span class="kw">get_sentiments</span>(<span class="st">"afinn"</span>), <span class="dt">by=</span><span class="kw">c</span>(<span class="st">"tokens"</span>=<span class="st">"word"</span>)) 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_sentiment &lt;-<span class="st"> </span>trump_tokens <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">inner_join</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/tidytext/topics/get_sentiments">get_sentiments</a></span>(<span class="st">"afinn"</span>), <span class="dt">by=</span><span class="kw">c</span>(<span class="st">"tokens"</span>=<span class="st">"word"</span>)) 
 
-trump_full_text_sent &lt;-<span class="st"> </span>trump_sentiment %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(id) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">score =</span> <span class="kw">sum</span>(score, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">ungroup</span>() %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">right_join</span>(trump_twitter, <span class="dt">by=</span><span class="st">"id"</span>) %&gt;%<span class="st"> </span>
+trump_full_text_sent &lt;-<span class="st"> </span>trump_sentiment <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(id) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">score =</span> <span class="kw">sum</span>(score, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">right_join</span>(trump_twitter, <span class="dt">by=</span><span class="st">"id"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">score_factor =</span> <span class="kw">ifelse</span>(<span class="kw">is.na</span>(score), <span class="st">"Missing score"</span>, 
-                               <span class="kw">ifelse</span>(score &lt;<span class="st"> </span><span class="dv">0</span>, <span class="st">"-.Negative"</span>, 
-                                      <span class="kw">ifelse</span>(score ==<span class="st"> </span><span class="dv">0</span>, <span class="st">"0"</span>, <span class="st">"+.Pos"</span>))))</code></pre></div>
+                               <span class="kw">ifelse</span>(score <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>, <span class="st">"-.Negative"</span>, 
+                                      <span class="kw">ifelse</span>(score <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">"0"</span>, <span class="st">"+.Pos"</span>))))</code></pre></div>
 <div id="distribution-of-sentiment-scores" class="section level2">
 <h2 class="hasAnchor">
 <a href="#distribution-of-sentiment-scores" class="anchor"></a>Distribution of sentiment scores</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_full_text_sent %&gt;%
-<span class="st">  </span><span class="kw">count</span>(score_factor) %&gt;%<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">prop =</span> <span class="kw">prop.table</span>(n))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_full_text_sent <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(score_factor) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">prop =</span> <span class="kw">prop.table</span>(n))</code></pre></div>
 <pre><code>## # A tibble: 4 x 3
 ##    score_factor     n      prop
 ##           &lt;chr&gt; &lt;int&gt;     &lt;dbl&gt;
@@ -139,18 +176,18 @@ trump_full_text_sent &lt;-<span class="st"> </span>trump_sentiment %&gt;%<span c
 ## 3             0     7 0.0156250
 ## 4 Missing score   208 0.4642857</code></pre>
 <p>46.4% of tweets did not have sentiment scores. 15.4% were net negative and 36.6% were net positive.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>trump_full_text_sent, <span class="kw">aes</span>(score)) +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">10</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>trump_full_text_sent, <span class="kw">aes</span>(score)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">10</span>)</code></pre></div>
 <p><img src="trump_twitter_files/figure-html/sentiment_hist-1.png" width="672"></p>
 </div>
 </div>
 <div id="plot-sentiment-over-time" class="section level1">
 <h1 class="hasAnchor">
 <a href="#plot-sentiment-over-time" class="anchor"></a>plot sentiment over time</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sentOverTimeGraph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data=</span><span class="kw">filter</span>(trump_full_text_sent,!<span class="kw">is.na</span>(score)), <span class="kw">aes</span>(<span class="dt">x=</span>created_at, <span class="dt">y=</span>score)) +
-<span class="st">  </span><span class="kw">geom_line</span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>() +
-<span class="st">  </span><span class="kw">xlab</span>(<span class="st">"Date"</span>) +
-<span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Sentiment (afinn)"</span>) +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sentOverTimeGraph &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data=</span><span class="kw">filter</span>(trump_full_text_sent,<span class="op">!</span><span class="kw">is.na</span>(score)), <span class="kw">aes</span>(<span class="dt">x=</span>created_at, <span class="dt">y=</span>score)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">"Date"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">"Sentiment (afinn)"</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="kw">paste0</span>(<span class="st">"Trump Tweet Sentiment ("</span>,minDate,<span class="st">" to "</span>,maxDate,<span class="st">")"</span>))
 sentOverTimeGraph</code></pre></div>
 <p><img src="trump_twitter_files/figure-html/plot_time-1.png" width="672"></p>
@@ -158,12 +195,12 @@ sentOverTimeGraph</code></pre></div>
 <div id="examine-top-5-most-positive-tweets" class="section level1">
 <h1 class="hasAnchor">
 <a href="#examine-top-5-most-positive-tweets" class="anchor"></a>Examine top 5 most positive tweets</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">most_pos_trump &lt;-<span class="st"> </span>trump_full_text_sent %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(score)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">head</span>(<span class="dt">n=</span><span class="dv">5</span>) %&gt;%<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">most_pos_trump &lt;-<span class="st"> </span>trump_full_text_sent <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(score)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">head</span>(<span class="dt">n=</span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span>.[[<span class="st">"text"</span>]]
 
-<span class="kw">kable</span>(most_pos_trump, <span class="dt">format=</span><span class="st">"html"</span>)</code></pre></div>
+<span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(most_pos_trump, <span class="dt">format=</span><span class="st">"html"</span>)</code></pre></div>
 <table class="table"><tbody>
 <tr>
 <td style="text-align:left;">
@@ -195,11 +232,11 @@ Thank you <span class="citation">@JoeTrippi</span> for the nice, and true, words
 <div id="examine-top-5-most-negative-tweets" class="section level1">
 <h1 class="hasAnchor">
 <a href="#examine-top-5-most-negative-tweets" class="anchor"></a>Examine top 5 most negative tweets</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">most_neg_trump &lt;-<span class="st"> </span>trump_full_text_sent %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">arrange</span>(score) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">head</span>(<span class="dt">n=</span><span class="dv">5</span>) %&gt;%<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">most_neg_trump &lt;-<span class="st"> </span>trump_full_text_sent <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">arrange</span>(score) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">head</span>(<span class="dt">n=</span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span>.[[<span class="st">"text"</span>]]
-<span class="kw">kable</span>(most_neg_trump, <span class="dt">format =</span> <span class="st">"html"</span>)</code></pre></div>
+<span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(most_neg_trump, <span class="dt">format =</span> <span class="st">"html"</span>)</code></pre></div>
 <table class="table"><tbody>
 <tr>
 <td style="text-align:left;">
@@ -232,25 +269,25 @@ Ted Cruz is a nervous wreck. He is making reckless charges not caring for the tr
 <h1 class="hasAnchor">
 <a href="#when-is-trumps-favorite-time-to-tweet" class="anchor"></a>When is trumps favorite time to tweet?</h1>
 <p>Total number of tweets and average sentiment (when available) by hour of the day, day of the week, and month</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweet_times &lt;-<span class="st"> </span>trump_full_text_sent %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">weekday =</span> <span class="kw">wday</span>(created_at, <span class="dt">label=</span><span class="ot">TRUE</span>),
-         <span class="dt">month   =</span> <span class="kw">month</span>(created_at, <span class="dt">label=</span><span class="ot">TRUE</span>),
-         <span class="dt">hour    =</span> <span class="kw">hour</span>(created_at),
-         <span class="dt">month_over_time =</span> <span class="kw">round_date</span>(created_at,<span class="st">"month"</span>))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweet_times &lt;-<span class="st"> </span>trump_full_text_sent <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">weekday =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/day">wday</a></span>(created_at, <span class="dt">label=</span><span class="ot">TRUE</span>),
+         <span class="dt">month   =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/month">month</a></span>(created_at, <span class="dt">label=</span><span class="ot">TRUE</span>),
+         <span class="dt">hour    =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/hour">hour</a></span>(created_at),
+         <span class="dt">month_over_time =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/round_date">round_date</a></span>(created_at,<span class="st">"month"</span>))
 
-plotSentByTime &lt;-<span class="st"> </span>function(trump_tweet_times, timeGroupVar) {
+plotSentByTime &lt;-<span class="st"> </span><span class="cf">function</span>(trump_tweet_times, timeGroupVar) {
   timeVar &lt;-<span class="st"> </span><span class="kw">substitute</span>(timeGroupVar)
-  timeVarLabel &lt;-<span class="st"> </span>stringr::<span class="kw">str_to_title</span>(timeVar)
+  timeVarLabel &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/case">str_to_title</a></span>(timeVar)
   
-  trump_tweet_time_sent &lt;-<span class="st"> </span>trump_tweet_times %&gt;%<span class="st"> </span>
-<span class="st">    </span><span class="kw">rename_</span>(<span class="dt">timeGroup =</span> timeVar) %&gt;%<span class="st"> </span>
-<span class="st">    </span><span class="kw">group_by</span>(timeGroup) %&gt;%<span class="st"> </span>
-<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">score =</span> <span class="kw">mean</span>(score, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),<span class="dt">Count =</span> <span class="kw">n</span>()) %&gt;%<span class="st"> </span>
+  trump_tweet_time_sent &lt;-<span class="st"> </span>trump_tweet_times <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">rename_</span>(<span class="dt">timeGroup =</span> timeVar) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">group_by</span>(timeGroup) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">score =</span> <span class="kw">mean</span>(score, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),<span class="dt">Count =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">ungroup</span>()
 
-  <span class="kw">ggplot</span>(trump_tweet_time_sent, <span class="kw">aes</span>(<span class="dt">x=</span>timeGroup, <span class="dt">y=</span>Count, <span class="dt">fill =</span> score)) +
-<span class="st">    </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">"identity"</span>) +
-<span class="st">    </span><span class="kw">xlab</span>(timeVarLabel) +
+  <span class="kw">ggplot</span>(trump_tweet_time_sent, <span class="kw">aes</span>(<span class="dt">x=</span>timeGroup, <span class="dt">y=</span>Count, <span class="dt">fill =</span> score)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">"identity"</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">xlab</span>(timeVarLabel) <span class="op">+</span>
 <span class="st">    </span><span class="kw">ggtitle</span>(<span class="kw">paste</span>(<span class="st">"Trump Tweet Count &amp; Sentiment by"</span>, timeVarLabel))
 }</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotSentByTime</span>(trump_tweet_times, hour)</code></pre></div>
@@ -276,7 +313,8 @@ plotSentByTime &lt;-<span class="st"> </span>function(trump_tweet_times, timeGro
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
         <div id="tocnav">
-      <h2>Contents</h2>
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#check-date-range-of-tweets">Check date range of tweets</a></li>
       <li><a href="#create-vectorised-stemming-function-using-hunspell">Create vectorised stemming function using hunspell</a></li>

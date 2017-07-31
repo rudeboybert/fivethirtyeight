@@ -23,7 +23,8 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -51,10 +52,46 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="..//index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/fivethirtyeight.html">Get Started</a>
+</li>
+<li>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
+    </li>
+    <li>
+      <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
+    </li>
+    <li>
+      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting-</a>
+    </li>
+    <li>
+      <a href="../articles/comics_gender.html">Gender in Comic Books</a>
+    </li>
+    <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
+    <li>
+      <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
+    </li>
+    <li>
+      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -85,7 +122,7 @@
     
     <p>The raw data behind the story
 "Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?"
-<a href = 'http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/'>http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/</a>.</p>
+<a href='http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/'>http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/</a>.</p>
     
 
     <pre class="usage"><span class='no'>airline_safety</span></pre>
@@ -106,7 +143,7 @@
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Aviation Safety Network <a href = 'http://aviation-safety.net'>http://aviation-safety.net</a>.</p>
+    <p>Aviation Safety Network <a href='http://aviation-safety.net'>http://aviation-safety.net</a>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -121,9 +158,9 @@
 <span class='no'>airline_safety_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>airline_safety</span> <span class='kw'>%&gt;%</span>
   <span class='fu'>gather</span>(<span class='no'>type</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>airline</span>, <span class='no'>incl_reg_subsidiaries</span>, <span class='no'>avail_seat_km_per_week</span>)) <span class='kw'>%&gt;%</span>
   <span class='fu'>mutate</span>(
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'>str_sub</span>(<span class='no'>type</span>, <span class='kw'>start</span><span class='kw'>=</span>-<span class='fl'>5</span>),
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'>str_replace_all</span>(<span class='no'>period</span>, <span class='st'>"_"</span>, <span class='st'>"-"</span>),
-    <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'>str_sub</span>(<span class='no'>type</span>, <span class='kw'>end</span><span class='kw'>=</span>-<span class='fl'>7</span>)
+    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>start</span><span class='kw'>=</span>-<span class='fl'>5</span>),
+    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace_all</a></span>(<span class='no'>period</span>, <span class='st'>"_"</span>, <span class='st'>"-"</span>),
+    <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>end</span><span class='kw'>=</span>-<span class='fl'>7</span>)
   )</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
