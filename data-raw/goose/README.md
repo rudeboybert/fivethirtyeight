@@ -14,7 +14,7 @@ Header | Definition
 `mehs` | Mehs
 `league_average_gpct` | League-average goose percentage
 `ppf` | Pitcher park factor
-`replacement_gpct` | Replacement-level goose pecentage
+`replacement_gpct` | Replacement-level goose percentage
 `gwar` | Goose Wins Above Replacement
 `key_retro` | Retrosheet unique player identifier
 
