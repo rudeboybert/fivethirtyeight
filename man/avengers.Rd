@@ -12,7 +12,7 @@
   \item{current}{Is the member currently active on an avengers affiliated team?}
   \item{gender}{The recorded gender of the character}
   \item{probationary_intro}{Sometimes the character was given probationary status as an Avenger, this is the date that happened}
-  \item{full_reserve_avengers_intro}{The month and year the character was introduced as a full or reserve member of the Avnegers}
+  \item{full_reserve_avengers_intro}{The month and year the character was introduced as a full or reserve member of the Avengers}
   \item{year}{The year the character was introduced as a full or reserve member of the Avengers}
   \item{years_since_joining}{2015 minus the year}
   \item{honorary}{The status of the avenger, if they were given "Honorary" Avenger status, if they are simply in the "Academy," or "Full" otherwise}

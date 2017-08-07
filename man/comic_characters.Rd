@@ -17,7 +17,7 @@
   \item{sex}{Sex of the character (e.g. Male, Female, etc.)}
   \item{gsm}{If the character is a gender or sexual minority (e.g. Homosexual characters, bisexual characters)}
   \item{alive}{If the character is alive or deceased}
-  \item{appearances}{The number of appareances of the character in comic books (as of Sep. 2, 2014. Number will become increasingly out of date as time goes on.)}
+  \item{appearances}{The number of appearances of the character in comic books (as of Sep. 2, 2014. Number will become increasingly out of date as time goes on.)}
   \item{first_appearance}{The month and year of the character's first appearance in a comic book, if available}
   \item{month}{The month of the character's first appearance in a comic book, if available}
   \item{year}{The year of the character's first appearance in a comic book, if available}

@@ -29,7 +29,7 @@
   \item{middle_arm_rest}{In a row of two seats, who should get to use the middle arm rest?}
   \item{shade}{Who should have control over the window shade?}
   \item{unsold_seat}{Is it rude to move to an unsold seat on a plane?}
-  \item{talk_stranger}{Generally speaking, is it rude to say more than a few words tothe stranger sitting next to you on a plane?}
+  \item{talk_stranger}{Generally speaking, is it rude to say more than a few words to the stranger sitting next to you on a plane?}
   \item{get_up}{On a 6 hour flight from NYC to LA, how many times is it acceptable to get up if you're not in an aisle seat?}
   \item{electronics}{Have you ever used personal electronics during take off or landing in violation of a flight attendant's direction?}
   \item{smoked}{Have you ever smoked a cigarette in an airplane bathroom when it was against the rules?}
