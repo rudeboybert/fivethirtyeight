@@ -1,7 +1,15 @@
+# fivethirtyeight 0.3.0.9000
+
+* 
+
+
 # fivethirtyeight 0.3.0
 
 * Added new and missing data sets: `riddler_castles2`, `antiquities_act`, `goose`, `tenth_circuit`
 * Added more crowd-sourced vignettes: `bob_ross.Rmd`, `tarantino_swears.Rmd`
+* Only main and `bechdel` vignettes included in package b/c of CRAN package size restrictions. Vignettes still available
+    + In development version
+    + On package website under "Articles" <https://rudeboybert.github.io/fivethirtyeight/>
 * Other minor changes:
     + Fixed levels in `bechdel$clean_test` and `bechdel$test` to match hierarchical nature of test
 
