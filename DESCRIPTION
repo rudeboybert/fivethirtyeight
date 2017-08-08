@@ -1,6 +1,6 @@
 Package: fivethirtyeight
 Title: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight'
-Description: Datasets and code published by the data journalistm website 'FiveThirtyEight';  
+Description: Datasets and code published by the data journalism website 'FiveThirtyEight';  
     <https://github.com/fivethirtyeight/data>. Note that while we received 
     guidance from editors at 'FiveThirtyEight', this package is not officially published by 'FiveThirtyEight'.
 Version: 0.3.0
