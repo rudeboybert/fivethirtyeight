@@ -6,4 +6,5 @@
 .httr-oauth
 data/.DS_Store
 inst/doc
-data-raw/.DS_Store
+*/.DS_Store
+.DS_Store
