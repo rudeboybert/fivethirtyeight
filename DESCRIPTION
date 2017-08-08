@@ -1,8 +1,8 @@
 Package: fivethirtyeight
 Title: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight'
-Description: Datasets and code published by FiveThirtyEight 
+Description: Datasets and code published by the data journalistm website 'FiveThirtyEight';  
     <https://github.com/fivethirtyeight/data>. Note that while we received 
-    guidance from editors at 538, this package is not officially published by 538.
+    guidance from editors at 'FiveThirtyEight', this package is not officially published by 'FiveThirtyEight'.
 Version: 0.3.0
 Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = "cre"),

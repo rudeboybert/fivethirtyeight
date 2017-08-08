@@ -2,9 +2,9 @@
 
 This is a resubmission. In this version I have:
 
-* Fixed the DESCRIPTION file
+* Fixed the DESCRIPTION file:
 * Lowered the size of the package tarball
-
+* Replaced all instances of FiveThirtyEight and 538 with `FiveThirtyEight`
 
 ## Test environments
 
