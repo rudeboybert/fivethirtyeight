@@ -1,6 +1,6 @@
 ---
 title: "How Many Fucks Does Tarantino Give?"
-author: Olivia Barrows, Jojo Miller, and Jayla Nakayama
+author: "Olivia Barrows, Jojo Miller, and Jayla Nakayama"
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:

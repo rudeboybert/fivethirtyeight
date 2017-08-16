@@ -1,6 +1,19 @@
 # fivethirtyeight 0.3.0.9000
 
-* 
+To Do:
+
+* Add citation() to upcoming "Tame Data" principles
+* Convert data so that 
+    + ordered factors (when there is an order). Ex: day of week
+    + factors (when there is no order, but a small number of levels)
+    + characters (unknown or very large number of levels)
+* Vignettes
+    + Add Tame data paper
+    + Add "vignette of vignettes" with links to user-contributed vignettes on [package homepage](https://rudeboybert.github.io/fivethirtyeight/)
+    + Update README.Rmd and fivethirtyeight.Rmd vignette so that output to [package homepage](https://rudeboybert.github.io/fivethirtyeight/) is seamless (Home and Getting Started pages respectively).
+* For relevant data sets, add links to user-contributed vignettes in help page
+
+
 
 
 # fivethirtyeight 0.3.0
