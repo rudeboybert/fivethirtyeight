@@ -1,10 +1,12 @@
 # fivethirtyeight 0.3.0.9000
 
+* Convert categorical data so that 
+    + categories with inherent order are represented as ordered factors. Ex: bechdel$clean_test
+
 To Do:
 
 * Add citation() to upcoming "Tame Data" principles
 * Convert data so that 
-    + ordered factors (when there is an order). Ex: day of week
     + factors (when there is no order, but a small number of levels)
     + characters (unknown or very large number of levels)
 * Vignettes
