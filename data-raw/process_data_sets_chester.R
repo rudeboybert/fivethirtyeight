@@ -48,7 +48,8 @@ hiphop_cand_lyrics <-
   read_csv("data-raw/hip-hop-candidate-lyrics/genius_hip_hop_lyrics.csv",
     na = "N/A") %>%
   # Not specified in README.md
-  select(-id)
+  select(-id) %>%
+  mutate(sentiment = factor(sentiment, levels = c("negative", "neutral", "positive"), ordered=TRUE))
 colnames(hiphop_cand_lyrics) <- colnames(hiphop_cand_lyrics) %>%
   tolower() %>%
   str_replace_all(" ", "_")
@@ -182,7 +183,8 @@ devtools::use_data(nba_draft_2015, overwrite = TRUE)
 nba_elo <- read_csv("data-raw/nba-elo/nbaallelo.csv") %>%
   rename(is_copy = `_iscopy`) %>%
   mutate(is_playoffs = ifelse(is_playoffs == 1, TRUE, FALSE),
-         is_copy = ifelse(is_copy == 1, TRUE, FALSE))
+         is_copy = ifelse(is_copy == 1, TRUE, FALSE),
+         date_game = mdy(date_game))
 colnames(nba_elo) <- colnames(nba_elo) %>%
   tolower() %>%
   str_replace_all(" ", "_")
@@ -312,9 +314,9 @@ devtools::use_data(police_killings, overwrite = TRUE)
 
 # presidential-campaign-trail ------------------------------------------------------
 clin_trail <- read_csv("data-raw/presidential-campaign-trail/clinton.csv") %>% 
-  mutate(candidate = "Clinton")
+  mutate(candidate = "Clinton", date = mdy(date))
 trum_trail <- read_csv("data-raw/presidential-campaign-trail/trump.csv") %>% 
-  mutate(candidate = "Trump")
+  mutate(candidate = "Trump", date = mdy(date))
 pres_2016_trail <- bind_rows(clin_trail, trum_trail) %>% 
   select(candidate, everything())
 colnames(pres_2016_trail) <- colnames(pres_2016_trail) %>%

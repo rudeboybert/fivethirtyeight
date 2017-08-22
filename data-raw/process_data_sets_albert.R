@@ -111,7 +111,7 @@ bechdel <- bechdel %>%
     domgross_2013 = as.numeric(domgross_2013),
     intgross_2013 = as.numeric(intgross_2013),
     # Set levels to factors
-    clean_test = factor(clean_test, levels = c("nowomen", "notalk", "men", "dubious", "ok"))
+    clean_test = factor(clean_test, levels = c("nowomen", "notalk", "men", "dubious", "ok"), ordered=TRUE)
   )
 devtools::use_data(bechdel, overwrite = TRUE)
 
@@ -333,7 +333,9 @@ comic_characters_dc <- comic_characters_dc %>%
     month = ifelse(is.na(month), "01", month),
     day = "01",
     # Note some years missing
-    date = ymd(paste(year, month, day, sep="-"))
+    date = ymd(paste(year, month, day, sep="-")),
+    align = factor(align, levels=c("Bad Characters", "Reformed Criminals", "Netural Characters", "Good Characters"),
+                   ordered=TRUE)
   ) %>%
   select(-c(year2, day))
 
@@ -352,7 +354,9 @@ comic_characters_marvel <- comic_characters_marvel %>%
     date = ymd(paste(year, month, day, sep="-")),
     # Make first_appearance variable format match that of DC comics
     month = month.name[month(date)],
-    first_appearance = paste(year, month, sep=", ")
+    first_appearance = paste(year, month, sep=", "),
+    align = factor(align, levels=c("Bad Characters", "Reformed Criminals", "Netural Characters", "Good Characters"),
+                   ordered=TRUE)
   ) %>%
   select(-c(year2, day))
 
@@ -383,27 +387,27 @@ comma_survey <- comma_survey %>%
     ) %>%
   mutate(
     # Set levels to factors
-    age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60")),
+    age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60"), ordered=TRUE),
     household_income = factor(household_income, levels = c(
       "$0 - $24,999", "$25,000 - $49,999", "$50,000 - $99,999",
-      "$100,000 - $149,999", "$150,000+")),
+      "$100,000 - $149,999", "$150,000+"), ordered=TRUE),
     education = factor(education, levels=c(
       "Less than high school degree", "High school degree",
       "Some college or Associate degree","Bachelor degree", "Graduate degree"
-    )),
+    ), ordered=TRUE),
     heard_oxford_comma = ifelse(heard_oxford_comma=="Yes", TRUE, FALSE),
     data_singular_plural = ifelse(data_singular_plural=="Yes", TRUE, FALSE),
     care_oxford_comma = factor(care_oxford_comma, levels=c(
       "Not at all", "Not much", "Some", "A lot"
-    )),
+    ), ordered=TRUE),
     care_data = factor(care_data, levels=c(
       "Not at all", "Not much", "Some", "A lot"
-    )),
+    ), ordered=TRUE),
     care_proper_grammar = factor(care_proper_grammar, levels=c(
       "Very unimportant", "Somewhat unimportant",
       "Neither important nor unimportant (neutral)", "Somewhat important",
       "Very important"
-    ))
+    ), ordered=TRUE)
   ) %>%
   select(respondent_id, gender, age, household_income,
          education, location, everything())
@@ -478,7 +482,9 @@ colnames(drug_use) <- colnames(drug_use) %>%
   str_replace_all("-", "_") %>%
   str_replace_all("frequency", "freq")
 drug_use <- drug_use %>%
-  mutate(age = factor(age))
+  mutate(age = factor(age, levels=c("12", "13", "14", "15", "16", "17", "18", "19", "20", "21",
+                                    "22-23", "24-25", "26-29", "30-34","35-49", "50-64", "65+"),
+                      ordered=TRUE))
 devtools::use_data(drug_use, overwrite = TRUE)
 
 
@@ -583,14 +589,14 @@ colnames(flying) <- colnames(flying) %>%
 flying <- flying %>%
   mutate(
     # Demographic Info
-    age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60")),
+    age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60"), ordered=TRUE),
     household_income = factor(household_income, levels = c(
       "$0 - $24,999", "$25,000 - $49,999", "$50,000 - $99,999",
-      "$100,000 - $149,999", "$150,000+")),
+      "$100,000 - $149,999", "$150,000+"), ordered=TRUE),
     education = factor(education, levels=c(
       "Less than high school degree", "High school degree",
       "Some college or Associate degree","Bachelor degree", "Graduate degree"
-    )),
+    ), ordered=TRUE),
     # Convert Yes/No to booleans
     electronics = ifelse(electronics == "Yes", TRUE, FALSE),
     smoked = ifelse(smoked == "Yes", TRUE, FALSE),
@@ -605,45 +611,45 @@ flying <- flying %>%
       "Under 5 ft.", "5'0\"", "5'1\"", "5'2\"", "5'3\"", "5'4\"", "5'5\"",
       "5'6\"", "5'7\"", "5'8\"", "5'9\"", "5'10\"", "5'11\"",
       "6'0\"", "6'1\"", "6'2\"", "6'3\"", "6'4\"", "6'5\"", "6'6\" and above"
-    )),
+    ), ordered=TRUE),
     frequency = factor(frequency, levels=c(
       "Never", "Once a year or less", "Once a month or less", "A few times per month",
       "A few times per week", "Every day"
-    )),
+    ), ordered=TRUE),
     recline_frequency = factor(recline_frequency, levels=c(
       "Never", "Once in a while", "About half the time", "Usually", "Always"
-    )),
+    ), ordered=TRUE),
     unsold_seat = factor(unsold_seat, levels=c(
       "No, not rude at all", "Yes, somewhat rude", "Yes, very rude"
-    )),
+    ), ordered=TRUE),
     talk_stranger = factor(talk_stranger, levels=c(
       "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
-    )),
+    ), ordered=TRUE),
     get_up = factor(get_up, levels=c(
       "It is not okay to get up during flight", "Once", "Twice", "Three times", "Four times",
       "More than five times times"
-    )),
+    ), ordered=TRUE),
     recline_rude = factor(recline_rude, levels=c(
       "No, not rude at all", "Yes, somewhat rude", "Yes, very rude"
-    )),
+    ), ordered=TRUE),
     switch_seats_friends = factor(switch_seats_friends, levels=c(
       "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
-    )),
+    ), ordered=TRUE),
     switch_seats_family = factor(switch_seats_family, levels=c(
       "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
-    )),
+    ), ordered=TRUE),
     wake_up_bathroom = factor(wake_up_bathroom, levels=c(
       "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
-    )),
+    ), ordered=TRUE),
     wake_up_walk = factor(wake_up_walk, levels=c(
       "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
-    )),
+    ), ordered=TRUE),
     baby = factor(baby, levels=c(
       "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
-    )),
+    ), ordered=TRUE),
     unruly_child = factor(unruly_child, levels=c(
       "No, not at all rude", "Yes, somewhat rude", "Yes, very rude"
-    ))
+    ), ordered=TRUE)
   ) %>%
   select(respondent_id, gender, age, height, children_under_18, household_income, education, location,
          frequency, recline_frequency, recline_obligation, recline_rude, recline_eliminate,
@@ -691,10 +697,10 @@ food_world_cup <- food_world_cup %>%
     interest = str_replace_all(interest, "\xca", ""),
     knowledge = factor(knowledge, levels = c(
       "Novice", "Intermediate", "Advanced", "Expert"
-      )),
+      ), ordered=TRUE),
     interest = factor(interest, levels = c(
       "Not at all", "Not much", "Some", "A lot"
-      )),
+      ), ordered=TRUE),
     age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60")),
     household_income = factor(household_income, levels = c(
       "$0 - $24,999", "$25,000 - $49,999", "$50,000 - $99,999",
@@ -702,7 +708,7 @@ food_world_cup <- food_world_cup %>%
     education = factor(education, levels=c(
       "Less than high school degree", "High school degree",
       "Some college or Associate degree","Bachelor degree", "Graduate degree"
-    ))
+    ), ordered=TRUE)
   ) %>%
   select(respondent_id, knowledge, interest, gender, age, household_income,
          education, location, algeria, argentina, australia, belgium,

@@ -126,28 +126,28 @@ colnames(san_andreas) <- c("worry_general",
 san_andreas <- san_andreas %>%
   mutate(worry_general = factor(worry_general, 
                                 levels = c("Not at all worried", "Not so worried", "Somewhat worried",
-                                           "Very worried","Extremely worried" )),
+                                           "Very worried","Extremely worried" ), ordered=TRUE),
          worry_bigone = factor(worry_bigone, 
                                levels = c("Not at all worried", "Not so worried", "Somewhat worried",
-                                          "Very worried","Extremely worried" )),
+                                          "Very worried","Extremely worried" ), ordered=TRUE),
          will_occur = ifelse(will_occur == "Yes", TRUE, FALSE),
          experience = factor(experience,
-                             levels = c("No", "Yes, one or more minor ones", "Yes, one or more major ones")),
+                             levels = c("No", "Yes, one or more minor ones", "Yes, one or more major ones"), ordered=TRUE),
          prepared = ifelse(prepared == "Yes", TRUE, FALSE),
          fam_san_andreas = factor(fam_san_andreas, 
                                   levels = c("Not at all familiar", "Not so familiar", "Somewhat familiar",  
-                                             "Very familiar","Extremely familiar")),
+                                             "Very familiar","Extremely familiar"), ordered=TRUE),
          fam_yellowstone = factor(fam_yellowstone, 
                                  levels = c("Not at all familiar", "Not so familiar", "Somewhat familiar",  
-                                            "Very familiar","Extremely familiar")),
+                                            "Very familiar","Extremely familiar"), ordered=TRUE),
          age = factor(age, levels = c("18 - 29", "30 - 44", "45 - 59", "60"),
-                      labels = c("18 - 29", "30 - 44", "45 - 59", "60+")),
+                      labels = c("18 - 29", "30 - 44", "45 - 59", "60+"), ordered=TRUE),
          female = ifelse(female == "Female", TRUE, FALSE),
          hhold_income = factor(hhold_income, 
                                levels = c("$0 to $9,999", "$10,000 to $24,999", "$25,000 to $49,999", 
                                           "$50,000 to $74,999", "$75,000 to $99,999", "$100,000 to $124,999", 
                                           "$125,000 to $149,999", "$150,000 to $174,999", "$175,000 to $199,999",
-                                          "$200,000 and up", "Prefer not to answer")))
+                                          "$200,000 and up", "Prefer not to answer"), ordered=TRUE))
 devtools::use_data(san_andreas, overwrite = TRUE)
 
 
@@ -196,16 +196,16 @@ steak_survey <- steak_survey %>%
          cheated = ifelse(cheated == "Yes", TRUE, FALSE),
          steak = ifelse(steak == "Yes", TRUE, FALSE),
          steak_prep = factor(steak_prep, 
-                             levels = c("Rare", "Medium rare", "Medium", "Medium Well", "Well")),
+                             levels = c("Rare", "Medium rare", "Medium", "Medium Well", "Well"), ordered=TRUE),
          female = ifelse(female == "Female", TRUE, FALSE),
          age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60"),
-                      labels = c("18-29", "30-44", "45-60", ">60")),
+                      labels = c("18-29", "30-44", "45-60", ">60"), ordered=TRUE),
          hhold_income = factor(hhold_income, 
                                levels = c("$0 - $24,999", "$25,000 - $49,999", "$50,000 - $99,999",
-                                          "$100,000 - $149,999", "$150,000+")),
+                                          "$100,000 - $149,999", "$150,000+"), ordered=TRUE),
          educ = factor(educ, levels = c("Less than high school degree", "High school degree",
                                         "Some college or Associate degree","Bachelor degree", 
-                                        "Graduate degree")))
+                                        "Graduate degree")), ordered=TRUE)
 devtools::use_data(steak_survey, overwrite = TRUE)
 
 
@@ -309,7 +309,7 @@ weather_check <- weather_check %>%
   mutate(ck_weather = ifelse(ck_weather == "Yes", TRUE, FALSE),
          ck_weather_watch = factor(ck_weather_watch, 
                                         levels = c("Very unlikely", "Somewhat unlikely",
-                                                   "Somewhat likely", "Very likely")),
+                                                   "Somewhat likely", "Very likely"), ordered=TRUE),
          age = factor(age,
                       levels = c("18 - 29", "30 - 44", "45 - 59", "60+")),
          female = ifelse(female == "Female", TRUE, FALSE),
@@ -317,7 +317,7 @@ weather_check <- weather_check %>%
                                levels = c("$0 to $9,999", "$10,000 to $24,999", "$25,000 to $49,999", 
                                           "$50,000 to $74,999", "$75,000 to $99,999", "$100,000 to $124,999", 
                                           "$125,000 to $149,999", "$150,000 to $174,999", "$175,000 to $199,999",
-                                          "$200,000 and up", "Prefer not to answer")))
+                                          "$200,000 and up", "Prefer not to answer"), ordered=TRUE))
 
 devtools::use_data(weather_check, overwrite = TRUE)
 
