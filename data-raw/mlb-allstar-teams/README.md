@@ -30,7 +30,7 @@ Header | Definition
 `gameNum` | Order of All-Star Game for the season (in years w/ multiple ASGs; set to 0 when only 1 per year)
 `gameID` | Game ID at Baseball-Reference.com
 `lgID` | League of All-Star team
-`startingPos` | Position (according to baseball convention; 1=pitcher, 2=catcher, etc.) if starter
+`startingPos` | Postion (according to baseball convention; 1=pitcher, 2=catcher, etc.) if starter
 `OFF600` | Estimate of offensive talent, in runs above league average per 600 plate appearances
 `DEF600` | Estimate of fielding talent, in runs above league average per 600 plate appearances
 `PITCH200` | Estimate of pitching talent, in runs above league average per 200 innings pitched
