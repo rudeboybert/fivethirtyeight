@@ -32,7 +32,7 @@ colnames(hist_senate_preds) <- colnames(hist_senate_preds) %>%
 devtools::use_data(hist_senate_preds, overwrite = TRUE)
 
 # hate-crimes ----------------------------------------------------------------------
-hate_crimes <- read_csv("data-raw/hate-crimes/hate_crimes.csv") %>% 
+hate_crimes <- read_csv("data-raw/hate-crimes/hate_crimes.csv") %>%
   rename("share_pop_HS" = share_population_with_high_school_degree,
     "share_pop_metro" = share_population_in_metro_areas,
     "share_vote_trump" = share_voters_voted_trump,
@@ -72,7 +72,7 @@ devtools::use_data(hist_ncaa_bball_casts, overwrite = TRUE)
 
 
 # infrastructure_jobs --------------------------------------------------------------
-state_payrolls <- read_csv("data-raw/infrastructure-jobs/statepayrolls.csv") %>%
+state_payrolls <- read_csv("data-raw/infrastructure-jobs/payroll-states.csv") %>%
   # Drop row number variable
   select(-X1) #%>%
   #gather(key = "state", value = "value", -date)
@@ -85,11 +85,9 @@ colnames(state_payrolls) <- colnames(state_payrolls) %>%
 
 
 # librarians -----------------------------------------------------------------------
-librarians <- read_csv("data-raw/librarians/new-librarians-by-msa.csv") %>%
+librarians <- read_csv("data-raw/librarians/librarians-by-msa.csv") %>%
   # Remove missing data rows
   slice(-c(1,2)) %>%
-  # Drop row number variable
-  select(-X1) %>%
   rename(loc_quotient = loc.quotient) %>%
   mutate(jobs_1000 = as.numeric(jobs_1000),
          loc_quotient = as.numeric(loc_quotient))
@@ -313,11 +311,11 @@ colnames(police_killings) <- colnames(police_killings) %>%
 devtools::use_data(police_killings, overwrite = TRUE)
 
 # presidential-campaign-trail ------------------------------------------------------
-clin_trail <- read_csv("data-raw/presidential-campaign-trail/clinton.csv") %>% 
+clin_trail <- read_csv("data-raw/presidential-campaign-trail/clinton.csv") %>%
   mutate(candidate = "Clinton", date = mdy(date))
-trum_trail <- read_csv("data-raw/presidential-campaign-trail/trump.csv") %>% 
+trum_trail <- read_csv("data-raw/presidential-campaign-trail/trump.csv") %>%
   mutate(candidate = "Trump", date = mdy(date))
-pres_2016_trail <- bind_rows(clin_trail, trum_trail) %>% 
+pres_2016_trail <- bind_rows(clin_trail, trum_trail) %>%
   select(candidate, everything())
 colnames(pres_2016_trail) <- colnames(pres_2016_trail) %>%
   tolower() %>%

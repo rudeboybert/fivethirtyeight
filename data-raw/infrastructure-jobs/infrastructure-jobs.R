@@ -12,18 +12,17 @@
 
 # Get data
 temp<-tempfile()
-download.file("https://download.bls.gov/pub/time.series/sm/sm.data.62.Construction.Current",temp,
-  method = "curl")
+download.file("http://download.bls.gov/pub/time.series/sm/sm.data.62.Construction.Current",temp)
 statepay.raw<-read.table(temp,header=TRUE,sep="\t",stringsAsFactors=FALSE,strip.white=TRUE)
 unlink(temp)
 
 # Add series info
-series<-read.table("https://download.bls.gov/pub/time.series/sm/sm.series",sep="\t",header=TRUE,strip.white=TRUE)
+series<-read.table("http://download.bls.gov/pub/time.series/sm/sm.series",sep="\t",header=TRUE,strip.white=TRUE)
 state<-read.csv("payroll-states.csv",header=TRUE,strip.white=TRUE)
 series<-merge(series,state,by="state_code")
 
 # Add industry info
-industry<-read.table("https://download.bls.gov/pub/time.series/sm/sm.industry", sep="\t", header=TRUE, strip.white=TRUE)
+industry<-read.table("http://download.bls.gov/pub/time.series/sm/sm.industry", sep="\t", header=TRUE, strip.white=TRUE)
 industry$industry_name<-NULL
 industry$industry_name<-row.names(industry)
 row.names(industry)<-NULL
