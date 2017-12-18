@@ -4,7 +4,7 @@
 \name{antiquities_act}
 \alias{antiquities_act}
 \title{Trump Might Be The First President To Scrap A National Monument}
-\format{A data frame with 344 rows representing acts and 9 variables:
+\format{A data frame with 344 rows representing acts and 9 variables (Note that 7 of the original rows failed to parse and are omitted here):
 \describe{
   \item{current_name}{Current name of piece of land designated under the Antiquities Act}
   \item{states}{State(s) or territory where land is located}
@@ -14,7 +14,7 @@
   \item{date}{Date of action}
   \item{year}{Year of action}
   \item{pres_or_congress}{President or congress that issued action}
-  \item{acres_affected}{Acres affected by action. Note that total current acreage is not included. National monuments that cover ocean are listed in square miles.} 
+  \item{acres_affected}{Acres affected by action. Note that total current acreage is not included. National monuments that cover ocean are listed in square miles.}
 }}
 \source{
 National Parks Conservation Association \url{https://www.npca.org/} and National Parks Service Archeology Program \url{https://www.nps.gov/history/archeology/sites/antiquities/MonumentsList.htm}
