@@ -21,7 +21,7 @@ Or the development version from GitHub:
 ``` r
 # If you haven't installed devtools yet, do so:
 # install.packages("devtools")
-devtools::install_github("rudeboybert/fivethirtyeight")
+devtools::install_github("rudeboybert/fivethirtyeight", build_vignettes = TRUE)
 ```
 
 Usage
