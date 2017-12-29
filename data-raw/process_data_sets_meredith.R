@@ -116,6 +116,7 @@ devtools::use_data(tweets, overwrite = TRUE)
 # index -----------------------------------------------------------------------------
 index <- read_csv("data-raw/index.csv")
 # No changes made
+devtools::use_data(index, overwrite = TRUE)
 
 
 # mlb-elo ---------------------------------------------------------------------------
@@ -130,9 +131,12 @@ devtools::use_data(mlb_elo, overwrite = TRUE)
 # soccer-spi ------------------------------------------------------------------------
 #spi_matches
 spi_matches <- read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv")
-
+# Convert character variable to factor
+spi_matches$league_id <- as.factor(spi_matches$league_id)
+devtools::use_data(spi_matches, overwrite = TRUE)
 
 #spi_global_rankings
 spi_global_rankings <- 
   read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_global_rankings.csv")
-
+# No changes made
+devtools::use_data(spi_global_rankings, overwrite = TRUE)
