@@ -4,17 +4,17 @@
 #' "Why The GOP Is So Hell-Bent On Passing An Unpopular Health Care Bill"
 #' \url{https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill}.
 #'
-#' @format A data frame with 15 rows representing _____ and 7 variables:
+#' @format A data frame with 15 rows representing polls and 7 variables:
 #' \describe{
-#'   \item{start}{}
-#'   \item{end}{}
-#'   \item{pollster}{}
-#'   \item{favor}{}
-#'   \item{oppose}{}
-#'   \item{url}{}
-#'   \item{text}{}
+#'   \item{start}{Start date of the poll.}
+#'   \item{end}{End date of the poll.}
+#'   \item{pollster}{The entity that conducts and collects information from the poll.}
+#'   \item{favor}{The number of affirmative responses to the question at the pollster.}
+#'   \item{oppose}{The number of negative reponses to the question at the pollster.}
+#'   \item{url}{The website associated with the polling question.}
+#'   \item{text}{The polling question asked at the pollster.}
 #' }
-#' @source 
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md}
 "ahca_polls"
 
 
@@ -31,31 +31,31 @@
 #' "Rachel Lindsay’s ‘Bachelorette’ Season, In Three Charts"
 #' \url{https://fivethirtyeight.com/features/rachel-lindsays-bachelorette-season-in-three-charts/}.
 #'
-#' @format A data frame with 887 rows representing contestants and 23 variables:
+#' @format A data frame with 887 rows representing the Bachelorette and Bachelor contestants and 23 variables:
 #' \describe{
-#'   \item{show}{Bachelor or Bachelorette}
+#'   \item{show}{Bachelor or Bachelorette.}
 #'   \item{season}{Which season?}
-#'   \item{contestant}{An identifier for the contestant in a given season}
-#'   \item{elimination_1}{Who was eliminated in week 1}
-#'   \item{elimination_2}{Who was eliminated in week 2}
-#'   \item{elimination_3}{Who was eliminated in week 3}
-#'   \item{elimination_4}{Who was eliminated in week 4}
-#'   \item{elimination_5}{Who was eliminated in week 5}
-#'   \item{elimination_6}{Who was eliminated in week 6}
-#'   \item{elimination_7}{Who was eliminated in week 7}
-#'   \item{elimination_8}{Who was eliminated in week 8}
-#'   \item{elimination_9}{Who was eliminated in week 9}
-#'   \item{elimination_10}{Who was eliminated in week 10}
-#'   \item{dates_1}{Who was on which date in week 1}
-#'   \item{dates_2}{Who was on which date in week 2}
-#'   \item{dates_3}{Who was on which date in week 3}
-#'   \item{dates_4}{Who was on which date in week 4}
-#'   \item{dates_5}{Who was on which date in week 5}
-#'   \item{dates_6}{Who was on which date in week 6}
-#'   \item{dates_7}{Who was on which date in week 7}
-#'   \item{dates_8}{Who was on which date in week 8}
-#'   \item{dates_9}{Who was on which date in week 9}
-#'   \item{dates_10}{Who was on which date in week 10}
+#'   \item{contestant}{An identifier for the contestant in a given season.}
+#'   \item{elimination_1}{Who was eliminated in week 1.}
+#'   \item{elimination_2}{Who was eliminated in week 2.}
+#'   \item{elimination_3}{Who was eliminated in week 3.}
+#'   \item{elimination_4}{Who was eliminated in week 4.}
+#'   \item{elimination_5}{Who was eliminated in week 5.}
+#'   \item{elimination_6}{Who was eliminated in week 6.}
+#'   \item{elimination_7}{Who was eliminated in week 7.}
+#'   \item{elimination_8}{Who was eliminated in week 8.}
+#'   \item{elimination_9}{Who was eliminated in week 9.}
+#'   \item{elimination_10}{Who was eliminated in week 10.}
+#'   \item{dates_1}{Who was on which date in week 1.}
+#'   \item{dates_2}{Who was on which date in week 2.}
+#'   \item{dates_3}{Who was on which date in week 3.}
+#'   \item{dates_4}{Who was on which date in week 4.}
+#'   \item{dates_5}{Who was on which date in week 5.}
+#'   \item{dates_6}{Who was on which date in week 6.}
+#'   \item{dates_7}{Who was on which date in week 7.}
+#'   \item{dates_8}{Who was on which date in week 8.}
+#'   \item{dates_9}{Who was on which date in week 9.}
+#'   \item{dates_10}{Who was on which date in week 10.}
 #' }
 #' @details Eliminates connote either an elimination (starts with "E") or a rose (starts with "R"). 
 #' Eliminations supercede roses. "E" connotes a standard elimination, typically at a rose ceremony. "EQ" means the contestant quits. "EF" means the contestant was fired by production. "ED" connotes a date elimination. "EU" connotes an unscheduled elimination, one that takes place at a time outside of a date or rose ceremony. 
@@ -73,9 +73,9 @@
 #' "The Ultimate Halloween Candy Power Ranking"
 #' \url{http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/}.
 #'
-#' @format A data frame with 85 rows representing candy and 13 variables:
+#' @format A data frame with 85 rows representing Halloween candy and 13 variables:
 #' \describe{
-#'   \item{competitor_name}{}
+#'   \item{competitor_name}{The name of the Halloween candy.}
 #'   \item{chocolate}{Does it contain chocolate?}
 #'   \item{fruity}{Is it fruit flavored?}
 #'   \item{caramel}{Is there caramel in the candy?}
@@ -89,7 +89,7 @@
 #'   \item{price_percent}{The unit price percentile compared to the rest of the set.}
 #'   \item{win_percent}{The overall win percentage according to 269,000 matchups.}
 #' }
-#' @source 
+#' @source See \url {https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking}
 "candy_rankings"
 
 
@@ -100,36 +100,15 @@
 #' "American Chess Is Great Again"
 #' \url{https://fivethirtyeight.com/features/american-chess-is-great-again/}.
 #'
-#' @format A data frame with 932 rows representing _____ and 5 variables:
+#' @format A data frame with 932 rows representing international player transfers and 5 variables:
 #' \describe{
-#'   \item{timestamp}{}
-#'   \item{respondents}{}
-#'   \item{link}{}
-#'   \item{average}{}
-#'   \item{mean}{}
-#'   \item{median}{}
-#'   \item{1_votes}{}
-#'   \item{2_votes}{}
-#'   \item{3_votes}{}
-#'   \item{4_votes}{}
-#'   \item{5_votes}{}
-#'   \item{6_votes}{}
-#'   \item{7_votes}{}
-#'   \item{8_votes}{}
-#'   \item{9_votes}{}
-#'   \item{10_votes}{}
-#'   \item{1_pct}{}
-#'   \item{2_pct}{}
-#'   \item{3_pct}{}
-#'   \item{4_pct}{}
-#'   \item{5_pct}{}
-#'   \item{6_pct}{}
-#'   \item{7_pct}{}
-#'   \item{8_pct}{}
-#'   \item{9_pct}{}
-#'   \item{10_pct}{}
+#'   \item{url}{The corresponding website on the World Chess Federation page which details the transfers of a given year.}
+#'   \item{id}{An numeric identifier for the chess player who transfered.}
+#'   \item{federation}{The current national federation of the chess player}
+#'   \item{former_fed}{The national federation from which the chress player has transfered.}
+#'   \item{transfer}{The date at which the transfer took place.}
 #' }
-#' @source \url{https://ratings.fide.com/fedchange.phtml}
+#' @source World Chess Federation \url{https://ratings.fide.com/fedchange.phtml}
 "chess_transfers"
 
 
@@ -137,15 +116,34 @@
 #' Congress Generic Ballot Polls 
 #'
 #' The raw data behind the story
-#' ""
-#' \url{http://fivethirtyeight.com/}.
+#' "Are Democrats Winning The Race For Congress?"
+#' \url{https://projects.fivethirtyeight.com/congress-generic-ballot-polls/}.
 #'
-#' @format A data frame with 934 rows representing ______ and 21 variables:
+#' @format A data frame with 934 rows representing polls and 21 variables:
 #' \describe{
-#'   \item{}{}
-#'  
+#'   \item{subgroup}{}
+#'   \item{model_date}{}
+#'   \item{start_date}{Start date of the poll.}
+#'   \item{end_date}{End date of the poll.}
+#'   \item{pollster}{The organization that conducted the poll (rather than the organization that paid for or sponsored it)}
+#'   \item{grade}{}
+#'   \item{sample_size}{}
+#'   \item{population}{}
+#'   \item{weight}{}
+#'   \item{influence}{}
+#'   \item{dem}{}
+#'   \item{rep}{}
+#'   \item{adjusted_dem}{}
+#'   \item{adjusted_rep}{}
+#'   \item{multiversions}{}
+#'   \item{tracking}{}
+#'   \item{url}{}
+#'   \item{poll_id}{}
+#'   \item{question_id}{}
+#'   \item{created_date}{}
+#'   \item{timestamp}{}
 #' }
-#' @source 
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}
 "generic_polllist"
 
 
@@ -153,15 +151,22 @@
 #' Congress Generic Ballot Polls 
 #'
 #' The raw data behind the story
-#' ""
-#' \url{http://fivethirtyeight.com/}.
+#' "Are Democrats Winning The Race For Congress?"
+#' \url{https://projects.fivethirtyeight.com/congress-generic-ballot-polls/}.
 #'
-#' @format A data frame with 751 rows representing _______ and 9 variables:
+#' @format A data frame with 751 rows representing polls and 9 variables:
 #' \describe{
-#'   \item{}{}
+#'   \item{model_date}{}
+#'   \item{dem_estimate}{}
+#'   \item{dem_hi}{}
+#'   \item{dem_lo}{}
+#'   \item{rep_estimate}{}
+#'   \item{rep_hi}{}
+#'   \item{rep_lo}{}
+#'   \item{timestamp}{}
 #'  
 #' }
-#' @source 
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}
 "generic_topline"
 
 
@@ -174,34 +179,36 @@
 #'
 #' @format A data frame with 80053 rows representing movie ratings and 27 variables:
 #' \describe{
-#'   \item{timestamp}{}
-#'   \item{respondents}{}
-#'   \item{link}{}
-#'   \item{average}{}
-#'   \item{mean}{}
-#'   \item{median}{}
-#'   \item{1_votes}{}
-#'   \item{2_votes}{}
-#'   \item{3_votes}{}
-#'   \item{4_votes}{}
-#'   \item{5_votes}{}
-#'   \item{6_votes}{}
-#'   \item{7_votes}{}
-#'   \item{8_votes}{}
-#'   \item{9_votes}{}
-#'   \item{10_votes}{}
-#'   \item{1_pct}{}
-#'   \item{2_pct}{}
-#'   \item{3_pct}{}
-#'   \item{4_pct}{}
-#'   \item{5_pct}{}
-#'   \item{6_pct}{}
-#'   \item{7_pct}{}
-#'   \item{8_pct}{}
-#'   \item{9_pct}{}
-#'   \item{10_pct}{}
+#'   \item{timestamp}{The date at which the rating was recorded.}
+#'   \item{respondents}{The number of respondents in a category associated with a given timestamp.}
+#'   \item{category}{The subgroups of respondents differentiated by demographics like gender, age, and nationality.}
+#'   \item{link}{The website associated with a given category's responses.}
+#'   \item{average}{The average rating reported by a given category.}
+#'   \item{mean}{The mean rating reported by a given category.}
+#'   \item{median}{The median rating reported by a given category.}
+#'   \item{1_votes}{The count of votes denoting a rating of one that respondents gave.}
+#'   \item{2_votes}{The count of votes denoting a rating of two that respondents gave.}
+#'   \item{3_votes}{The count of votes denoting a rating of three that respondents gave.}
+#'   \item{4_votes}{The count of votes denoting a rating of four that respondents gave.}
+#'   \item{5_votes}{The count of votes denoting a rating of five that respondents gave.}
+#'   \item{6_votes}{The count of votes denoting a rating of six that respondents gave.}
+#'   \item{7_votes}{The count of votes denoting a rating of seven that respondents gave.}
+#'   \item{8_votes}{The count of votes denoting a rating of eight that respondents gave.}
+#'   \item{9_votes}{The count of votes denoting a rating of nine that respondents gave.}
+#'   \item{10_votes}{The count of votes denoting a rating of ten that respondents gave.}
+#'   \item{1_pct}{The percentage of votes denoting a rating of one that respondents gave.}
+#'   \item{2_pct}{The percentage of votes denoting a rating of two that respondents gave.}
+#'   \item{3_pct}{The percentage of votes denoting a rating of three that respondents gave.}
+#'   \item{4_pct}{The percentage of votes denoting a rating of four that respondents gave.}
+#'   \item{5_pct}{The percentage of votes denoting a rating of five that respondents gave.}
+#'   \item{6_pct}{The percentage of votes denoting a rating of six that respondents gave.}
+#'   \item{7_pct}{The percentage of votes denoting a rating of seven that respondents gave.}
+#'   \item{8_pct}{The percentage of votes denoting a rating of eight that respondents gave.}
+#'   \item{9_pct}{The percentage of votes denoting a rating of nine that respondents gave.}
+#'   \item{10_pct}{The percentage of votes denoting a rating of ten that respondents gave.}
 #' }
-#' @source
+#' @source IMBD \url{http://www.imdb.com/title/tt6322922/ratings} and 
+#' see \url{https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel}
 "ratings"
 
 
@@ -222,7 +229,7 @@
 #'   \item{screen_name}{}
 #'   \item{text}{}
 #' }
-#' @source 
+#' @source Twitter and see \url{https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor}
 "tweets"
 
 
@@ -239,7 +246,7 @@
 #'   \item{article_url}{}
 #'   \item{live}{}
 #' }
-#' @source 
+#' @source ___________
 "index"
 
 
@@ -253,7 +260,7 @@
 #' "MLB Predictions"
 #' \url{https://projects.fivethirtyeight.com/2017-mlb-predictions/}.
 #'
-#' @format A data frame with 215080 rows representing _____ and 26 variables:
+#' @format A data frame with 215080 rows representing Elo ratings and 26 variables:
 #' \describe{
 #'   \item{date}{}
 #'   \item{season}{}
@@ -278,7 +285,7 @@
 #'   \item{score1}{}
 #'   \item{score2}{}
 #' }
-#' @source 
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/mlb-elo/README.md}
 "mlb_elo"
 
 
@@ -308,7 +315,7 @@
 #'   \item{score1}{}
 #'   \item{score2}{}
 #' }
-#' @source 
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
 "spi_matches"
 
 
@@ -332,7 +339,7 @@
 #'   \item{def}{}
 #'   \item{spi}{}
 #' }
-#' @source 
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
 "spi_global_rankings"
 
 
