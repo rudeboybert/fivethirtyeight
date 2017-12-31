@@ -15,6 +15,12 @@
 #'   \item{text}{The polling question asked at the pollster.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md}
+#'  @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' ahca_polls_tidy <- ahca_polls %>%
+#'   gather(opinion, count, -c(start, end, pollster, text, url))
 "ahca_polls"
 
 
@@ -90,6 +96,14 @@
 #'   \item{win_percent}{The overall win percentage according to 269,000 matchups.}
 #' }
 #' @source See \url {https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking}
+#'  @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' candy_rankings_tidy <- candy_rankings %>%
+#'   gather(characteristics, present, -c(competitor_name, sugar_percent, price_percent, win_percent)) %>%
+#'   mutate(present = as.logical(present)) %>%
+#'   arrange(competitor_name)
 "candy_rankings"
 
 
@@ -209,7 +223,31 @@
 #' }
 #' @source IMBD \url{http://www.imdb.com/title/tt6322922/ratings} and 
 #' see \url{https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel}
+#' #'  @examples
+#' # To convert data frame to tidy data (long) format, run:
+#' library(tidyverse)
+#' library(stringr)
+#' ratings_tidy <- ratings %>%
+#'   gather(votes, count, -c(timestamp, respondents, category, link, average, mean, median)) %>%
+#'   arrange(timestamp)
 "ratings"
+
+
+
+#' Index
+#'
+#' The raw data behind the story
+#' ""
+#' \url{}.
+#'
+#' @format A data frame with 114 rows representing datasets and 3 variables:
+#' \describe{
+#'   \item{dataset_url}{The GitHub link of a particular fivethirtyeight dataset.}
+#'   \item{article_url}{The corresponding article of the fivethirtyeight dataset.}
+#'   \item{live}{Whether or not the dataset live (i.e. whether or not the dataset is still collecting current information).}
+#' }
+#' @source 
+"index"
 
 
 
@@ -231,23 +269,6 @@
 #' }
 #' @source Twitter and see \url{https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor}
 "tweets"
-
-
-
-#' Index
-#'
-#' The raw data behind the story
-#' ""
-#' \url{}.
-#'
-#' @format A data frame with 114 rows representing datasets and 3 variables:
-#' \describe{
-#'   \item{dataset_url}{The GitHub link of a particular fivethirtyeight dataset.}
-#'   \item{article_url}{The corresponding article of the fivethirtyeight dataset.}
-#'   \item{live}{Whether or not the dataset live (i.e. whether or not the dataset is still collecting current information).}
-#' }
-#' @source 
-"index"
 
 
 

@@ -140,3 +140,4 @@ spi_global_rankings <-
   read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_global_rankings.csv")
 # No changes made
 devtools::use_data(spi_global_rankings, overwrite = TRUE)
+
