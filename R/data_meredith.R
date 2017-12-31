@@ -221,13 +221,13 @@
 #'
 #' @format A data frame with 12118 rows representing tweets and 7 variables:
 #' \describe{
-#'   \item{created_at}{}
-#'   \item{emojis}{}
-#'   \item{id}{}
-#'   \item{link}{}
-#'   \item{retweeted}{}
-#'   \item{screen_name}{}
-#'   \item{text}{}
+#'   \item{created_at}{Time and date at which the tweet associated with the Mayweather vs. McGregor fight was sent.}
+#'   \item{emojis}{Whether or not emojis were used in the tweet about the fight.}
+#'   \item{id}{A numerical identifier for each individual tweet about the fight.}
+#'   \item{link}{The link to the tweet about the fight on Twitter.}
+#'   \item{retweeted}{Whether or not the tweet about the fight was retweeted.}
+#'   \item{screen_name}{The screen name under which the tweet about the fight was posted.}
+#'   \item{text}{The text contained in the tweet about the fight.}
 #' }
 #' @source Twitter and see \url{https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor}
 "tweets"
@@ -240,13 +240,13 @@
 #' ""
 #' \url{}.
 #'
-#' @format A data frame with 114 rows representing _____ and 3 variables:
+#' @format A data frame with 114 rows representing datasets and 3 variables:
 #' \describe{
-#'   \item{dataset_url}{}
-#'   \item{article_url}{}
-#'   \item{live}{}
+#'   \item{dataset_url}{The GitHub link of a particular fivethirtyeight dataset.}
+#'   \item{article_url}{The corresponding article of the fivethirtyeight dataset.}
+#'   \item{live}{Whether or not the dataset live (i.e. whether or not the dataset is still collecting current information).}
 #' }
-#' @source ___________
+#' @source 
 "index"
 
 
@@ -262,19 +262,21 @@
 #'
 #' @format A data frame with 215080 rows representing Elo ratings and 26 variables:
 #' \describe{
-#'   \item{date}{}
-#'   \item{season}{}
+#'   \item{date}{The date of the game.}
+#'   \item{season}{The season within which the game was played.}
 #'   \item{neutral}{}
 #'   \item{playoff}{}
-#'   \item{team1}{}
-#'   \item{team2}{}
-#'   \item{elo1_pre}{}
-#'   \item{elo2_pre}{}
-#'   \item{elo1_post}{}
-#'   \item{elo2_post}{}
+#'   \item{team1}{One team that participated in the game.}
+#'   \item{team2}{The other team that participated in the match.}
+#'   \item{elo1_pre}{The Elo rating for team1 prior to the game.}
+#'   \item{elo2_pre}{The Elo rating for team2 prior to the game.}
+#'   \item{elo_prob1}{}
+#'   \item{elo_prob2}{}
+#'   \item{elo1_post}{The Elo rating for team1 after the game.}
+#'   \item{elo2_post}{The Elo rating for team2 after the game.}
 #'   \item{rating1_pre}{}
 #'   \item{rating2_pre}{}
-#'   \item{pitcher1}{}
+#'   \item{pitcher1}{An identifier of the pitcher}
 #'   \item{pitcher2}{}
 #'   \item{pitcher1_rating}{}
 #'   \item{pitcher2_rating}{}
@@ -282,8 +284,8 @@
 #'   \item{pitcher2_adj}{}
 #'   \item{rating1_post}{}
 #'   \item{rating2_post}{}
-#'   \item{score1}{}
-#'   \item{score2}{}
+#'   \item{score1}{The number of runs scored by team1.}
+#'   \item{score2}{The number of runs scored by team2.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/mlb-elo/README.md}
 "mlb_elo"
@@ -301,19 +303,19 @@
 #'
 #' @format A data frame with 10182 rows representing soccer matches and 13 variables:
 #' \describe{
-#'   \item{date}{}
-#'   \item{league_id}{}
-#'   \item{team1}{}
-#'   \item{team2}{}
-#'   \item{spi1}{}
-#'   \item{spi2}{}
-#'   \item{prob1}{}
-#'   \item{prob2}{}
-#'   \item{probtie}{}
-#'   \item{proj_score1}{}
-#'   \item{proj_score2}{}
-#'   \item{score1}{}
-#'   \item{score2}{}
+#'   \item{date}{The date that the match took place.}
+#'   \item{league_id}{A numerical identifier of the league within which the match was played.}
+#'   \item{team1}{One team that participated in the match.}
+#'   \item{team2}{The other team that participated in the match.}
+#'   \item{spi1}{The SPI score of team1.}
+#'   \item{spi2}{The SPI score of team2.}
+#'   \item{prob1}{The probability that team1 would have won the match.}
+#'   \item{prob2}{The probability that team2 would have won the match.}
+#'   \item{probtie}{The probability that the match would have resulted in a tie.}
+#'   \item{proj_score1}{The predicted number of goals that team1 would have scored.}
+#'   \item{proj_score2}{The predicted number of goals that team2 would have scored.}
+#'   \item{score1}{The number of goals that team1 scored.}
+#'   \item{score2}{The number of goals that team2 scored.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
 "spi_matches"
@@ -331,13 +333,13 @@
 #'
 #' @format A data frame with 453 rows representing soccer rankings and 7 variables:
 #' \describe{
-#'   \item{name}{}
-#'   \item{league}{}
-#'   \item{rank}{}
-#'   \item{prev_rank}{}
-#'   \item{off}{}
-#'   \item{def}{}
-#'   \item{spi}{}
+#'   \item{name}{The name of the soccer club.}
+#'   \item{league}{The name of the league to which the club belongs.}
+#'   \item{rank}{A club's current global ranking.}
+#'   \item{prev_rank}{A club's previous global ranking}
+#'   \item{off}{Offensive rating for a given team (the higher the value the stronger the team's offense).}
+#'   \item{def}{Defensive rating for a given team (the lower the value the stronger the team's defense).}
+#'   \item{spi}{A club's SPI score.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
 "spi_global_rankings"
