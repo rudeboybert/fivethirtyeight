@@ -81,19 +81,19 @@
 #'
 #' @format A data frame with 85 rows representing Halloween candy and 13 variables:
 #' \describe{
-#'   \item{competitor_name}{The name of the Halloween candy.}
+#'   \item{competitorname}{The name of the Halloween candy.}
 #'   \item{chocolate}{Does it contain chocolate?}
 #'   \item{fruity}{Is it fruit flavored?}
 #'   \item{caramel}{Is there caramel in the candy?}
-#'   \item{peanuty_almondy}{Does it contain peanuts, peanut butter or almonds?}
+#'   \item{peanutyalmondy}{Does it contain peanuts, peanut butter or almonds?}
 #'   \item{nougat}{Does it contain nougat?}
-#'   \item{crisped_ricewafer}{Does it contain crisped rice, wafers, or a cookie component?}
+#'   \item{crispedricewafer}{Does it contain crisped rice, wafers, or a cookie component?}
 #'   \item{hard}{Is it a hard candy?}
 #'   \item{bar}{Is it a candy bar?}
 #'   \item{pluribus}{Is it one of many candies in a bag or box?}
-#'   \item{surgar_percent}{The percentile of sugar it falls under within the data set.}
-#'   \item{price_percent}{The unit price percentile compared to the rest of the set.}
-#'   \item{win_percent}{The overall win percentage according to 269,000 matchups.}
+#'   \item{surgarpercent}{The percentile of sugar it falls under within the data set.}
+#'   \item{pricepercent}{The unit price percentile compared to the rest of the set.}
+#'   \item{winpercent}{The overall win percentage according to 269,000 matchups.}
 #' }
 #' @source See \url {https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking}
 #'  @examples
@@ -136,12 +136,12 @@
 #' @format A data frame with 934 rows representing polls and 21 variables:
 #' \describe{
 #'   \item{subgroup}{}
-#'   \item{model_date}{}
-#'   \item{start_date}{Start date of the poll.}
-#'   \item{end_date}{End date of the poll.}
+#'   \item{modeldate}{}
+#'   \item{startdate}{Start date of the poll.}
+#'   \item{enddate}{End date of the poll.}
 #'   \item{pollster}{The organization that conducted the poll (rather than the organization that paid for or sponsored it)}
 #'   \item{grade}{}
-#'   \item{sample_size}{}
+#'   \item{samplesize}{}
 #'   \item{population}{}
 #'   \item{weight}{}
 #'   \item{influence}{}
@@ -231,23 +231,6 @@
 #'   gather(votes, count, -c(timestamp, respondents, category, link, average, mean, median)) %>%
 #'   arrange(timestamp)
 "ratings"
-
-
-
-#' Index
-#'
-#' The raw data behind the story
-#' ""
-#' \url{}.
-#'
-#' @format A data frame with 114 rows representing datasets and 3 variables:
-#' \describe{
-#'   \item{dataset_url}{The GitHub link of a particular fivethirtyeight dataset.}
-#'   \item{article_url}{The corresponding article of the fivethirtyeight dataset.}
-#'   \item{live}{Whether or not the dataset live (i.e. whether or not the dataset is still collecting current information).}
-#' }
-#' @source 
-"index"
 
 
 
