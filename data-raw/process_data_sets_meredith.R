@@ -75,7 +75,11 @@ devtools::use_data(chess_transfers, overwrite = TRUE)
 # congress-generic-ballot --------------------------------------------------------
 # generic_polllist
 generic_polllist <- 
-  read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv") %>%
+  read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv")
+write.csv(generic_polllist, "generic_polllist.csv")
+
+generic_polllist <- 
+  read_csv("data-raw/congress-generic-ballot/generic_polllist.csv") %>%
   clean_names() %>%
   mutate(
     modeldate = as.Date(modeldate, "%m/%d/%Y"),
@@ -95,13 +99,16 @@ devtools::use_data(generic_polllist, overwrite = TRUE)
 # generic_topline
 generic_topline <- 
   read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_topline.csv")
-# snake_case for variable names
-generic_topline <- rename(generic_topline, c("modeldate"="model_date"))
-# Change model/start/end/created date to proper format
-generic_topline$model_date <- as.Date(generic_topline$model_date, "%m/%d/%Y")
-generic_topline$timestamp <- parse_date_time(generic_topline$timestamp, "HMS dmY")
-# Convert character variable to factor
-generic_topline$subgroup <- as.factor(generic_topline$subgroup)
+write.csv(generic_topline, "generic_topline.csv")
+
+generic_topline <- 
+  read_csv("data-raw/congress-generic-ballot/generic_topline.csv") %>%
+  clean_names() %>%
+  mutate(
+    model_date = as.Date(model_date, "%m/%d/%Y"),
+    timestamp = parse_date_time(timestamp, "HMS dmY"),
+    subgroup = as.factor(subgroup)
+  )
 devtools::use_data(generic_topline, overwrite = TRUE)
 
 
@@ -124,7 +131,10 @@ devtools::use_data(tweets, overwrite = TRUE)
 
 
 # mlb-elo ---------------------------------------------------------------------------
-mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") %>%
+mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv")
+write.csv(mlb_elo, "mlb_elo.csv")
+
+mlb_elo <- read_csv("data-raw/mlb-elo/mlb_elo.csv") %>%
   mutate(
     playoff = as.factor(playoff),
     neutral = as.logical(neutral)
@@ -134,7 +144,10 @@ devtools::use_data(mlb_elo, overwrite = TRUE)
 
 # soccer-spi ------------------------------------------------------------------------
 #spi_matches
-spi_matches <- read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv") %>%
+spi_matches <- read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv")
+write.csv(spi_matches, "spi_matches.csv")
+
+spi_matches <- read_csv("data-raw/soccer-spi/spi_matches.csv") %>%
   mutate(
     league_id = as.factor(league_id)
   )
@@ -143,6 +156,7 @@ devtools::use_data(spi_matches, overwrite = TRUE)
 #spi_global_rankings
 spi_global_rankings <- 
   read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_global_rankings.csv")
+write.csv(spi_global_rankings, "spi_global_rankings.csv")
 # No changes made
 devtools::use_data(spi_global_rankings, overwrite = TRUE)
 
