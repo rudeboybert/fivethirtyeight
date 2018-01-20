@@ -6,6 +6,6 @@ cache: packages
 apt_packages:
   - libudunits2-dev
 
-r_packages:
-  - devtools
-  - ggraph
+#r_packages:
+#  - devtools
+#  - ggraph
