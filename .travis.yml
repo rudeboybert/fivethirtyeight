@@ -1,11 +1,39 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: R
+r:
+  - oldrel
+  - release
+  - devel
 sudo: true
 cache: packages
 apt_packages:
   - libudunits2-dev
+latex: false
 
-#r_packages:
-#  - devtools
-#  - ggraph
+env:
+ global:
+   - CRAN: http://cran.rstudio.com
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+r_packages:
+  - devtools
+  
+r_github_packages:
+  - hadley/pkgdown
+  - rudeboybert/fivethirtyeight
+
+before_deploy:
+  - Rscript -e 'pkgdown::build_site()'
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  local-dir: docs
+  github_token: $GITHUB_PAT
+
