@@ -23,25 +23,23 @@ notifications:
 # For pkgdown to build, all pkgs in vignettes need to be installed
 r_packages:
   - devtools
-  -  tidyverse
-  -  magrittr
-  -  knitr
-  -  rmarkdown
-  -  broom
-  -  scales
-  -  tidytext
-  -  ggthemes
-  -  hunspell
-  -  grid
-  -  fmsb
-  -  wordcloud
-  -  gridExtra
-  -  corrplot
-  -  ggraph
-  -  igraph
-  -  highcharter
+  - tidyverse
+  - magrittr
+  - knitr
+  - rmarkdown
+  - scales
+  - tidytext
+  - ggthemes
+  - hunspell
+  - fmsb
+  - gridExtra
+  - corrplot
+  - ggraph
+  - igraph
+  - highcharter
   
 r_github_packages:
+  - ifellows/wordcloud
   - hadley/pkgdown
   - rudeboybert/fivethirtyeight
 
