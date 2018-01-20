@@ -22,6 +22,7 @@ notifications:
 
 # For pkgdown to build, all pkgs in vignettes need to be installed
 r_packages:
+  - slam
   - devtools
   - tidyverse
   - magrittr
@@ -37,9 +38,9 @@ r_packages:
   - ggraph
   - igraph
   - highcharter
+  - wordcloud
   
 r_github_packages:
-  - ifellows/wordcloud
   - hadley/pkgdown
   - rudeboybert/fivethirtyeight
 
