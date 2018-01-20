@@ -9,6 +9,8 @@ sudo: true
 cache: packages
 apt_packages:
   - libudunits2-dev
+  # Since slam requires R 3.4.0 or higher
+  - r-cran-slam
 latex: false
 
 env:
@@ -22,7 +24,6 @@ notifications:
 
 # For pkgdown to build, all pkgs in vignettes need to be installed
 r_packages:
-  - slam
   - devtools
   - tidyverse
   - magrittr
