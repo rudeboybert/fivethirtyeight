@@ -1,3 +1,5 @@
+library(tidyverse)
+
 # nba-carmelo---------------------------------------------------------------------
 nba_carmelo <- read_csv("data-raw/nba-carmelo/nba_elo.csv") %>%
   clean_names() %>%
@@ -8,6 +10,7 @@ nba_carmelo <- read_csv("data-raw/nba-carmelo/nba_elo.csv") %>%
     playoff = ifelse(is.na(playoff), FALSE, TRUE),
     neutral = ifelse(neutral == 1, TRUE, FALSE))
 devtools::use_data(nba_carmelo, overwrite = TRUE)
+
 # nfl-elo---------------------------------------------------------------------
 nfl_elo <- read_csv("data-raw/nfl-elo/nfl_elo.csv") %>%
   clean_names() %>%
@@ -18,6 +21,7 @@ nfl_elo <- read_csv("data-raw/nfl-elo/nfl_elo.csv") %>%
     playoff = ifelse(is.na(playoff), FALSE, TRUE),
     neutral = ifelse(neutral == 1, TRUE, FALSE))
 devtools::use_data(nfl_elo, overwrite = TRUE)
+
 # nfl-fandom---------------------------------------------------------------------
 nfl_fandom_google <- read_csv("data-raw/nfl-fandom/NFL_fandom_data-google_trends.csv", skip=1) %>%
   clean_names() %>%
@@ -68,6 +72,7 @@ colnames(nfl_fandom_surveymonkey) <- colnames(nfl_fandom_surveymonkey) %>%
   str_replace_all(pattern="_1",replacement="_ind") %>%
   str_replace_all(pattern="_2",replacement="_gop")
 devtools::use_data(nfl_fandom_surveymonkey, overwrite = TRUE)
+
 # puerto-rico-media---------------------------------------------------------------------
 #Data on Google trend searches for hurricanes Harvey, Irma, Jose, and Maria
 google_trends <- read_csv("data-raw/puerto-rico-media/google_trends.csv", skip=2) %>%
@@ -79,6 +84,7 @@ google_trends <- read_csv("data-raw/puerto-rico-media/google_trends.csv", skip=2
     hurricane_maria_us = hurricane_maria_united_states,
     hurricane_jose_us = hurricane_jose_united_states)
 devtools::use_data(google_trends, overwrite = TRUE)
+
 #Data on the number of sentences per day that mention Hurricanes 
 #Harvey, Irma, Jose, and Maria in online news
 mediacloud_hurricanes <- read_csv("data-raw/puerto-rico-media/mediacloud_hurricanes.csv") %>%
@@ -87,6 +93,7 @@ mediacloud_hurricanes <- read_csv("data-raw/puerto-rico-media/mediacloud_hurrica
     date = as.Date(date, format= "%m / %d / %y")
   )
 devtools::use_data(mediacloud_hurricanes, overwrite = TRUE)
+
 #Data on the number of sentences per day 
 #that mention Puerto Rico, Texas, and Florida in online news
 mediacloud_states <- read_csv("data-raw/puerto-rico-media/mediacloud_states.csv") %>%
@@ -97,8 +104,9 @@ mediacloud_states <- read_csv("data-raw/puerto-rico-media/mediacloud_states.csv"
 devtools::use_data(mediacloud_states, overwrite = TRUE)
 #A list of sources included in Media Cloud's "U.S. Top Online News" collection
 mediacloud_online_news <- read_csv("data-raw/puerto-rico-media/mediacloud_top_online_news.csv")
-devtools::use_data(mediacloud_top_online_news, overwrite = TRUE)
-#the number of headlines that mention Puerto Rico, Texas, and Florida, as well as headlines 
+devtools::use_data(mediacloud_online_news, overwrite = TRUE)
+
+#Data on the number of headlines that mention Puerto Rico, Texas, and Florida, as well as headlines 
 #that mention each location and 'President' or 'Trump'.
 mediacloud_trump <- read_csv("data-raw/puerto-rico-media/mediacloud_trump.csv") %>%
   clean_names() %>%
@@ -111,6 +119,7 @@ mediacloud_trump <- read_csv("data-raw/puerto-rico-media/mediacloud_trump.csv") 
     texas_and_trump = title_texas_and_title_trump_or_title_president
   )
 devtools::use_data(mediacloud_trump, overwrite = TRUE)
+
 #Data on the percent of sentences per day 
 #in TV News that mention Hurricanes Harvey, Irma, Jose, and Maria.
 tv_hurricanes <- read_csv("data-raw/puerto-rico-media/tv_hurricanes.csv") %>%
@@ -119,6 +128,7 @@ tv_hurricanes <- read_csv("data-raw/puerto-rico-media/tv_hurricanes.csv") %>%
     date = as.Date(date,format= "%m / %d / %y")
   )
 devtools::use_data(tv_hurricanes, overwrite = TRUE)
+
 #Data on the percent of sentences per day in TV News 
 #that mention Hurricanes Harvey, Irma, Jose, and Maria by network.
 tv_hurricanes_by_network <- read_csv("data-raw/puerto-rico-media/tv_hurricanes_by_network.csv") %>%
@@ -128,6 +138,7 @@ tv_hurricanes_by_network <- read_csv("data-raw/puerto-rico-media/tv_hurricanes_b
     query = as.factor(query)
   )
 devtools::use_data(tv_hurricanes_by_network, overwrite = TRUE)
+
 #Data on the percent of sentences per day in TV News that mention Puerto Rico, Texas, and Florida.
 tv_states <- read_csv("data-raw/puerto-rico-media/tv_states.csv") %>%
   clean_names() %>%
@@ -135,10 +146,12 @@ tv_states <- read_csv("data-raw/puerto-rico-media/tv_states.csv") %>%
     date = as.Date(date, format= "%m / %d / %y")
   )
 devtools::use_data(tv_states, overwrite = TRUE)
+
 # riddler-pick-lowest---------------------------------------------------------------------
 riddler_pick_lowest <- read_csv("data-raw/riddler-pick-lowest/low_numbers.csv") %>%
   clean_names()
 devtools::use_data(riddler_pick_lowest, overwrite = TRUE)
+
 # sandy-311-calls---------------------------------------------------------------------
 sandy_311 <- read_csv("data-raw/sandy-311-calls/sandy-311-calls-by-day.csv") %>%
   clean_names() %>%
@@ -151,6 +164,7 @@ sandy_311 <- read_csv("data-raw/sandy-311-calls/sandy-311-calls-by-day.csv") %>%
     date = as.Date(date, format= "%m / %d / %y")
   )
 devtools::use_data(sandy_311, overwrite = TRUE)
+
 # trump-approval-ratings---------------------------------------------------------------------
 trump_approval_poll <- read_csv("data-raw/trump-approval-ratings/approval_polllist.csv") %>%
   mutate(
@@ -175,8 +189,9 @@ trump_approval_poll <- read_csv("data-raw/trump-approval-ratings/approval_pollli
     sample_size = samplesize,
     created_date = createddate
   )
-trump_approval_poll <- trump_approval_poll[,-c(1,3)]
+trump_approval_poll <- select(trump_approval_poll,-c(president,model_date,influence))
 devtools::use_data(trump_approval_poll, overwrite = TRUE)
+
 
 trump_approval_trend <- read_csv("data-raw/trump-approval-ratings/approval_topline.csv") %>%
   clean_names() %>%
@@ -192,9 +207,9 @@ trump_approval_trend <- read_csv("data-raw/trump-approval-ratings/approval_topli
     disapprove_high = disapprove_hi,
     disapprove_low = disapprove_lo
   )
-
-trump_approval_poll <- trump_approval_poll[,-c(1,3)]
+trump_approval_trend <- select(trump_approval_trend, -c(president))
 devtools::use_data(trump_approval_trend, overwrite = TRUE)
+
 # trump-world-trust---------------------------------------------------------------------
 trumpworld_issue_1 <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-issue-1.csv") %>%
   clean_names() %>%
@@ -236,32 +251,35 @@ trumpworld_pres <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-pres.csv") %>
   mutate(
     question = "Favorable view of US"
   )
-devtools::use_data(trumpworld_pres, overwrite = TRUE)
 trumpworld_us <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-us.csv") %>%
   clean_names() %>%
   mutate(
     question = "Trust President"
   )
 trumpworld_polls <- bind_rows(trumpworld_pres, trumpworld_us)
-devtools::use_data(trumpworld_us, overwrite = TRUE)
+devtools::use_data(trumpworld_polls, overwrite = TRUE)
+
 # twitter-ratio---------------------------------------------------------------------
 barack_obama <- read_csv("data-raw/twitter-ratio/BarackObama.csv") %>%
   mutate(
-  created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M")
+  created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
+  text =  gsub("[^\x01-\x7F]", "", text),
+  president = "Barack Obama"
   )
-devtools::use_data(barack_obama, overwrite = TRUE)
-
 real_donald_trump <- read_csv("data-raw/twitter-ratio/realDonaldTrump.csv") %>%
 mutate(
-  created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M")
+  created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
+  text =  gsub("[^\x01-\x7F]", "", text),
+  president = "Donald Trump"
 )
-devtools::use_data(real_donald_trump, overwrite = TRUE)
+twitter_presidents <- bind_rows(barack_obama, real_donald_trump)
+devtools::use_data(twitter_presidents, overwrite=TRUE)
 
-senators <- read_csv("data-raw/twitter-ratio/senators.csv")
-senators <- senators %>%
+senators <- read_csv("data-raw/twitter-ratio/senators.csv") %>%
   mutate(
     party = as.factor(party),
     state = as.factor(state),
-    created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M")
+    created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
+    text =  gsub("[^\x01-\x7F]", "", text)
   )
 devtools::use_data(senators, overwrite = TRUE)
