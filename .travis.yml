@@ -1,11 +1,57 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: R
+r:
+  - oldrel
+  - release
+  - devel
 sudo: true
 cache: packages
 apt_packages:
   - libudunits2-dev
+  # Since slam requires R 3.4.0 or higher
+  - r-cran-slam
+latex: false
 
-#r_packages:
-#  - devtools
-#  - ggraph
+env:
+ global:
+   - CRAN: http://cran.rstudio.com
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+# For pkgdown to build, all pkgs in vignettes need to be installed
+r_packages:
+  - devtools
+  - tidyverse
+  - magrittr
+  - knitr
+  - rmarkdown
+  - scales
+  - tidytext
+  - ggthemes
+  - hunspell
+  - fmsb
+  - gridExtra
+  - corrplot
+  - ggraph
+  - igraph
+  - highcharter
+  - wordcloud
+  
+r_github_packages:
+  - hadley/pkgdown
+  - rudeboybert/fivethirtyeight
+
+before_deploy:
+  - Rscript -e 'pkgdown::build_site()'
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  local-dir: docs
+  github_token: $GITHUB_PAT
+
