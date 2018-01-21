@@ -75,7 +75,8 @@ generic_polllist <-
     population = as.factor(population),
     poll_id = as.character(poll_id),
     question_id = as.character(question_id)
-  )
+  ) %>%
+  mutate_at(vars(multiversions), funs(ifelse(. == "<NA>", NA, .)))
 devtools::use_data(generic_polllist, overwrite = TRUE)
 
 # generic_topline
@@ -96,7 +97,30 @@ devtools::use_data(generic_topline, overwrite = TRUE)
 
 #inconvenient-sequel ----------------------------------------------------------------
 ratings <- read_csv("data-raw/inconvenient-sequel/ratings.csv") %>%
-  mutate(category = as.factor(category))
+  mutate(category = as.factor(category),
+         votes_1 = `1_votes`,
+         votes_2 = `2_votes`,
+         votes_3 = `3_votes`,
+         votes_4 = `4_votes`,
+         votes_5 = `5_votes`,
+         votes_6 = `6_votes`,
+         votes_7 = `7_votes`,
+         votes_8 = `8_votes`,
+         votes_9 = `9_votes`,
+         votes_10 = `10_votes`,
+         pct_1 = `1_pct`,
+         pct_2 = `2_pct`,
+         pct_3 = `3_pct`,
+         pct_4 = `4_pct`,
+         pct_5 = `5_pct`,
+         pct_6 = `6_pct`,
+         pct_7 = `7_pct`,
+         pct_8 = `8_pct`,
+         pct_9 = `9_pct`,
+         pct_10 = `10_pct`) %>%
+  select (-c(`1_votes`, `2_votes`, `3_votes`, `4_votes`, `5_votes`, `6_votes`, `7_votes`,
+             `8_votes`, `9_votes`, `10_votes`, `1_pct`, `2_pct`, `3_pct`, `4_pct`, `5_pct`, 
+             `6_pct`, `7_pct`, `8_pct`, `9_pct`, `10_pct`))
 devtools::use_data(ratings, overwrite = TRUE)
 
 
@@ -118,7 +142,12 @@ mlb_elo <- read_csv("data-raw/mlb-elo/mlb_elo.csv") %>%
   mutate(
     playoff = as.factor(playoff),
     neutral = as.logical(neutral)
-  )
+  ) %>%
+  mutate_at(vars(playoff), funs(ifelse(. == "<NA>", NA, .))) %>%
+  mutate_at(vars(pitcher1_rating), funs(ifelse(. == "<NA>", NA, .))) %>%
+  mutate_at(vars(pitcher2_rating), funs(ifelse(. == "<NA>", NA, .))) %>%
+  mutate_at(vars(pitcher1_adj), funs(ifelse(. == "<NA>", NA, .))) %>%
+  mutate_at(vars(pitcher2_adj), funs(ifelse(. == "<NA>", NA, .)))
 devtools::use_data(mlb_elo, overwrite = TRUE)
 
 
