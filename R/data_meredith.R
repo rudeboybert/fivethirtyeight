@@ -135,27 +135,27 @@
 #'
 #' @format A data frame with 934 rows representing polls and 21 variables:
 #' \describe{
-#'   \item{subgroup}{}
-#'   \item{modeldate}{}
+#'   \item{subgroup}{No description provided.}
+#'   \item{modeldate}{No description provided.}
 #'   \item{startdate}{Start date of the poll.}
 #'   \item{enddate}{End date of the poll.}
 #'   \item{pollster}{The organization that conducted the poll (rather than the organization that paid for or sponsored it)}
-#'   \item{grade}{}
-#'   \item{samplesize}{}
-#'   \item{population}{}
-#'   \item{weight}{}
-#'   \item{influence}{}
-#'   \item{dem}{}
-#'   \item{rep}{}
-#'   \item{adjusted_dem}{}
-#'   \item{adjusted_rep}{}
-#'   \item{multiversions}{}
-#'   \item{tracking}{}
-#'   \item{url}{}
-#'   \item{poll_id}{}
-#'   \item{question_id}{}
-#'   \item{created_date}{}
-#'   \item{timestamp}{}
+#'   \item{grade}{No description provided.}
+#'   \item{samplesize}{No description provided.}
+#'   \item{population}{No description provided.}
+#'   \item{weight}{No description provided.}
+#'   \item{influence}{No description provided.}
+#'   \item{dem}{No description provided.}
+#'   \item{rep}{No description provided.}
+#'   \item{adjusted_dem}{No description provided.}
+#'   \item{adjusted_rep}{No description provided.}
+#'   \item{multiversions}{No description provided.}
+#'   \item{tracking}{No description provided.}
+#'   \item{url}{No description provided.}
+#'   \item{poll_id}{No description provided.}
+#'   \item{question_id}{No description provided.}
+#'   \item{created_date}{No description provided.}
+#'   \item{timestamp}{No description provided.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}
 "generic_polllist"
@@ -170,14 +170,14 @@
 #'
 #' @format A data frame with 751 rows representing polls and 9 variables:
 #' \describe{
-#'   \item{model_date}{}
-#'   \item{dem_estimate}{}
-#'   \item{dem_hi}{}
-#'   \item{dem_lo}{}
-#'   \item{rep_estimate}{}
-#'   \item{rep_hi}{}
-#'   \item{rep_lo}{}
-#'   \item{timestamp}{}
+#'   \item{model_date}{No description provided.}
+#'   \item{dem_estimate}{No description provided.}
+#'   \item{dem_hi}{No description provided.}
+#'   \item{dem_lo}{No description provided.}
+#'   \item{rep_estimate}{No description provided.}
+#'   \item{rep_hi}{No description provided.}
+#'   \item{rep_lo}{No description provided.}
+#'   \item{timestamp}{No description provided.}
 #'  
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}
@@ -268,26 +268,26 @@
 #' \describe{
 #'   \item{date}{The date of the game.}
 #'   \item{season}{The season within which the game was played.}
-#'   \item{neutral}{}
-#'   \item{playoff}{}
+#'   \item{neutral}{No description provided.}
+#'   \item{playoff}{No description provided.}
 #'   \item{team1}{One team that participated in the game.}
 #'   \item{team2}{The other team that participated in the match.}
 #'   \item{elo1_pre}{The Elo rating for team1 prior to the game.}
 #'   \item{elo2_pre}{The Elo rating for team2 prior to the game.}
-#'   \item{elo_prob1}{}
-#'   \item{elo_prob2}{}
+#'   \item{elo_prob1}{No description provided.}
+#'   \item{elo_prob2}{No description provided.}
 #'   \item{elo1_post}{The Elo rating for team1 after the game.}
 #'   \item{elo2_post}{The Elo rating for team2 after the game.}
-#'   \item{rating1_pre}{}
-#'   \item{rating2_pre}{}
+#'   \item{rating1_pre}{No description provided.}
+#'   \item{rating2_pre}{No description provided.}
 #'   \item{pitcher1}{An identifier of the pitcher}
-#'   \item{pitcher2}{}
-#'   \item{pitcher1_rating}{}
-#'   \item{pitcher2_rating}{}
-#'   \item{pitcher1_adj}{}
-#'   \item{pitcher2_adj}{}
-#'   \item{rating1_post}{}
-#'   \item{rating2_post}{}
+#'   \item{pitcher2}{No description provided.}
+#'   \item{pitcher1_rating}{No description provided.}
+#'   \item{pitcher2_rating}{No description provided.}
+#'   \item{pitcher1_adj}{No description provided.}
+#'   \item{pitcher2_adj}{No description provided.}
+#'   \item{rating1_post}{No description provided.}
+#'   \item{rating2_post}{No description provided.}
 #'   \item{score1}{The number of runs scored by team1.}
 #'   \item{score2}{The number of runs scored by team2.}
 #' }
