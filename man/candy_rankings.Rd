@@ -27,9 +27,9 @@ See \url {https://github.com/fivethirtyeight/data/tree/master/candy-power-rankin
 library(tidyverse)
 library(stringr)
 candy_rankings_tidy <- candy_rankings %>%
-  gather(characteristics, present, -c(competitor_name, sugar_percent, price_percent, win_percent)) %>%
+  gather(characteristics, present, -c(competitorname, sugarpercent, pricepercent, winpercent)) %>%
   mutate(present = as.logical(present)) %>%
-  arrange(competitor_name)
+  arrange(competitorname)
 }
 \usage{
 candy_rankings
