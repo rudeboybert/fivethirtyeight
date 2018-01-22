@@ -101,9 +101,9 @@
 #' library(tidyverse)
 #' library(stringr)
 #' candy_rankings_tidy <- candy_rankings %>%
-#'   gather(characteristics, present, -c(competitor_name, sugar_percent, price_percent, win_percent)) %>%
+#'   gather(characteristics, present, -c(competitorname, sugarpercent, pricepercent, winpercent)) %>%
 #'   mutate(present = as.logical(present)) %>%
-#'   arrange(competitor_name)
+#'   arrange(competitorname)
 "candy_rankings"
 
 
@@ -200,26 +200,26 @@
 #'   \item{average}{The average rating reported by a given category.}
 #'   \item{mean}{The mean rating reported by a given category.}
 #'   \item{median}{The median rating reported by a given category.}
-#'   \item{1_votes}{The count of votes denoting a rating of one that respondents gave.}
-#'   \item{2_votes}{The count of votes denoting a rating of two that respondents gave.}
-#'   \item{3_votes}{The count of votes denoting a rating of three that respondents gave.}
-#'   \item{4_votes}{The count of votes denoting a rating of four that respondents gave.}
-#'   \item{5_votes}{The count of votes denoting a rating of five that respondents gave.}
-#'   \item{6_votes}{The count of votes denoting a rating of six that respondents gave.}
-#'   \item{7_votes}{The count of votes denoting a rating of seven that respondents gave.}
-#'   \item{8_votes}{The count of votes denoting a rating of eight that respondents gave.}
-#'   \item{9_votes}{The count of votes denoting a rating of nine that respondents gave.}
-#'   \item{10_votes}{The count of votes denoting a rating of ten that respondents gave.}
-#'   \item{1_pct}{The percentage of votes denoting a rating of one that respondents gave.}
-#'   \item{2_pct}{The percentage of votes denoting a rating of two that respondents gave.}
-#'   \item{3_pct}{The percentage of votes denoting a rating of three that respondents gave.}
-#'   \item{4_pct}{The percentage of votes denoting a rating of four that respondents gave.}
-#'   \item{5_pct}{The percentage of votes denoting a rating of five that respondents gave.}
-#'   \item{6_pct}{The percentage of votes denoting a rating of six that respondents gave.}
-#'   \item{7_pct}{The percentage of votes denoting a rating of seven that respondents gave.}
-#'   \item{8_pct}{The percentage of votes denoting a rating of eight that respondents gave.}
-#'   \item{9_pct}{The percentage of votes denoting a rating of nine that respondents gave.}
-#'   \item{10_pct}{The percentage of votes denoting a rating of ten that respondents gave.}
+#'   \item{votes_!}{The count of votes denoting a rating of one that respondents gave.}
+#'   \item{votes_2}{The count of votes denoting a rating of two that respondents gave.}
+#'   \item{votes_3}{The count of votes denoting a rating of three that respondents gave.}
+#'   \item{votes_4}{The count of votes denoting a rating of four that respondents gave.}
+#'   \item{votes_5}{The count of votes denoting a rating of five that respondents gave.}
+#'   \item{votes_6}{The count of votes denoting a rating of six that respondents gave.}
+#'   \item{votes_7}{The count of votes denoting a rating of seven that respondents gave.}
+#'   \item{votes_8}{The count of votes denoting a rating of eight that respondents gave.}
+#'   \item{votes_9}{The count of votes denoting a rating of nine that respondents gave.}
+#'   \item{votes_10}{The count of votes denoting a rating of ten that respondents gave.}
+#'   \item{pct_1}{The percentage of votes denoting a rating of one that respondents gave.}
+#'   \item{pct_2}{The percentage of votes denoting a rating of two that respondents gave.}
+#'   \item{pct_3}{The percentage of votes denoting a rating of three that respondents gave.}
+#'   \item{pct_4}{The percentage of votes denoting a rating of four that respondents gave.}
+#'   \item{pct_5}{The percentage of votes denoting a rating of five that respondents gave.}
+#'   \item{pct_6}{The percentage of votes denoting a rating of six that respondents gave.}
+#'   \item{pct_7}{The percentage of votes denoting a rating of seven that respondents gave.}
+#'   \item{pct_8}{The percentage of votes denoting a rating of eight that respondents gave.}
+#'   \item{pct_9}{The percentage of votes denoting a rating of nine that respondents gave.}
+#'   \item{pct_10}{The percentage of votes denoting a rating of ten that respondents gave.}
 #' }
 #' @source IMBD \url{http://www.imdb.com/title/tt6322922/ratings} and 
 #' see \url{https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel}

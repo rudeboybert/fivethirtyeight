@@ -40,8 +40,7 @@ candy_rankings <- read_csv("data-raw/candy-power-ranking/candy-data.csv") %>%
     bar = as.logical(bar),
     pluribus = as.logical(pluribus)
   ) %>%
-  mutate_at(competitorname, funs(gsub("Õ", "'", .))) ###########################
-
+  mutate_at(vars(competitorname), funs(gsub("Õ", "'", .))) ###########################
 devtools::use_data(candy_rankings, overwrite = TRUE)
 
 
