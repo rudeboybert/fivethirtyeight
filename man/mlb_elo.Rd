@@ -26,6 +26,8 @@
   \item{pitcher2_rating}{No description provided.}
   \item{pitcher1_adj}{No description provided.}
   \item{pitcher2_adj}{No description provided.}
+  \item{rating_prob1}{No description provided.}
+  \item{rating_prob2}{No description provided.}
   \item{rating1_post}{No description provided.}
   \item{rating2_post}{No description provided.}
   \item{score1}{The number of runs scored by team1.}

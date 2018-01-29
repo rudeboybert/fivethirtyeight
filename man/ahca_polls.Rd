@@ -16,12 +16,6 @@
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md}
- @examples
-# To convert data frame to tidy data (long) format, run:
-library(tidyverse)
-library(stringr)
-ahca_polls_tidy <- ahca_polls %>%
-  gather(opinion, count, -c(start, end, pollster, text, url))
 }
 \usage{
 ahca_polls
@@ -30,5 +24,12 @@ ahca_polls
 The raw data behind the story
 "Why The GOP Is So Hell-Bent On Passing An Unpopular Health Care Bill"
 \url{https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill}.
+}
+\examples{
+# To convert data frame to tidy data (long) format, run:
+library(tidyverse)
+library(stringr)
+ahca_polls_tidy <- ahca_polls \%>\%
+  gather(opinion, count, -c(start, end, pollster, text, url))
 }
 \keyword{datasets}

@@ -25,7 +25,7 @@
   \item{url}{No description provided.}
   \item{poll_id}{No description provided.}
   \item{question_id}{No description provided.}
-  \item{created_date}{No description provided.}
+  \item{createddate}{No description provided.}
   \item{timestamp}{No description provided.}
 }}
 \source{
@@ -38,5 +38,8 @@ generic_polllist
 The raw data behind the story
 "Are Democrats Winning The Race For Congress?"
 \url{https://projects.fivethirtyeight.com/congress-generic-ballot-polls/}.
+}
+\seealso{
+\code{\link{generic_topline}}
 }
 \keyword{datasets}

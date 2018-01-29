@@ -29,4 +29,7 @@ The raw data behind the stories
 "Global Club Soccer Rankings"
 \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
 }
+\seealso{
+\code{\link{spi_matches}}
+}
 \keyword{datasets}

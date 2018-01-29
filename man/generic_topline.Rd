@@ -6,7 +6,8 @@
 \title{Congress Generic Ballot Polls}
 \format{A data frame with 751 rows representing polls and 9 variables:
 \describe{
-  \item{model_date}{No description provided.}
+  \item{subgroup}{No description provided.}
+  \item{modeldate}{No description provided.}
   \item{dem_estimate}{No description provided.}
   \item{dem_hi}{No description provided.}
   \item{dem_lo}{No description provided.}
@@ -14,7 +15,7 @@
   \item{rep_hi}{No description provided.}
   \item{rep_lo}{No description provided.}
   \item{timestamp}{No description provided.}
- 
+
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}
@@ -26,5 +27,8 @@ generic_topline
 The raw data behind the story
 "Are Democrats Winning The Race For Congress?"
 \url{https://projects.fivethirtyeight.com/congress-generic-ballot-polls/}.
+}
+\seealso{
+\code{\link{generic_polllist}}
 }
 \keyword{datasets}

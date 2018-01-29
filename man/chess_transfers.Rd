@@ -9,8 +9,8 @@
   \item{url}{The corresponding website on the World Chess Federation page which details the transfers of a given year.}
   \item{id}{An numeric identifier for the chess player who transfered.}
   \item{federation}{The current national federation of the chess player}
-  \item{former_fed}{The national federation from which the chress player has transfered.}
-  \item{transfer}{The date at which the transfer took place.}
+  \item{form_fed}{The national federation from which the chress player has transfered.}
+  \item{transfer_date}{The date at which the transfer took place.}
 }}
 \source{
 World Chess Federation \url{https://ratings.fide.com/fedchange.phtml}

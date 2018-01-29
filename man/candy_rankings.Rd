@@ -16,20 +16,12 @@
   \item{hard}{Is it a hard candy?}
   \item{bar}{Is it a candy bar?}
   \item{pluribus}{Is it one of many candies in a bag or box?}
-  \item{surgarpercent}{The percentile of sugar it falls under within the data set.}
+  \item{sugarpercent}{The percentile of sugar it falls under within the data set.}
   \item{pricepercent}{The unit price percentile compared to the rest of the set.}
   \item{winpercent}{The overall win percentage according to 269,000 matchups.}
 }}
 \source{
-See \url {https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking}
- @examples
-# To convert data frame to tidy data (long) format, run:
-library(tidyverse)
-library(stringr)
-candy_rankings_tidy <- candy_rankings %>%
-  gather(characteristics, present, -c(competitorname, sugarpercent, pricepercent, winpercent)) %>%
-  mutate(present = as.logical(present)) %>%
-  arrange(competitorname)
+See \url{https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking}
 }
 \usage{
 candy_rankings
@@ -38,5 +30,14 @@ candy_rankings
 The raw data behind the story
 "The Ultimate Halloween Candy Power Ranking"
 \url{http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/}.
+}
+\examples{
+# To convert data frame to tidy data (long) format, run:
+library(tidyverse)
+library(stringr)
+candy_rankings_tidy <- candy_rankings \%>\%
+  gather(characteristics, present, -c(competitorname, sugarpercent, pricepercent, winpercent)) \%>\%
+  mutate(present = as.logical(present)) \%>\%
+  arrange(competitorname)
 }
 \keyword{datasets}

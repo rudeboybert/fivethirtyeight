@@ -1,9 +1,11 @@
 # fivethirtyeight 0.3.0.9000
 
-* Convert categorical data so that 
-    + categories with inherent order are represented as ordered factors. Ex: bechdel$clean_test
+* Added new and missing data sets:
+    + By Meredith Manley: `ahca_polls`, `bachelorette`, `candy_rankings`, `chess_transfers`, `generic_polllist`, `generic_topline`, `mlb_elo`, `ratings`, `spi_global_rankings`, `spi_matches`, `tweets`
+    + By Maggie Shea:
+* Converted all orginal categorical variables to `ordered()`. Ex: `bechdel$clean_test`
 
-To Do:
+TODO:
 
 * Add citation() to upcoming "Tame Data" principles
 * Convert data so that 

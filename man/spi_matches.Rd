@@ -19,6 +19,12 @@
   \item{proj_score2}{The predicted number of goals that team2 would have scored.}
   \item{score1}{The number of goals that team1 scored.}
   \item{score2}{The number of goals that team2 scored.}
+  \item{xg1}{}
+  \item{xg2}{}
+  \item{nsxg1}{}
+  \item{nsxg2}{}
+  \item{adj_score1}{}
+  \item{adj_score2}{}
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
@@ -34,5 +40,8 @@ The raw data behind the stories
 \details{
 "Global Club Soccer Rankings"
 \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
+}
+\seealso{
+\code{\link{spi_global_rankings}}
 }
 \keyword{datasets}

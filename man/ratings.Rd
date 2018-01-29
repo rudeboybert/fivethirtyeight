@@ -13,7 +13,7 @@
   \item{average}{The average rating reported by a given category.}
   \item{mean}{The mean rating reported by a given category.}
   \item{median}{The median rating reported by a given category.}
-  \item{votes_!}{The count of votes denoting a rating of one that respondents gave.}
+  \item{votes_1}{The count of votes denoting a rating of one that respondents gave.}
   \item{votes_2}{The count of votes denoting a rating of two that respondents gave.}
   \item{votes_3}{The count of votes denoting a rating of three that respondents gave.}
   \item{votes_4}{The count of votes denoting a rating of four that respondents gave.}
@@ -35,15 +35,8 @@
   \item{pct_10}{The percentage of votes denoting a rating of ten that respondents gave.}
 }}
 \source{
-IMBD \url{http://www.imdb.com/title/tt6322922/ratings} and 
+IMBD \url{http://www.imdb.com/title/tt6322922/ratings} and
 see \url{https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel}
-#'  @examples
-# To convert data frame to tidy data (long) format, run:
-library(tidyverse)
-library(stringr)
-ratings_tidy <- ratings %>%
-  gather(votes, count, -c(timestamp, respondents, category, link, average, mean, median)) %>%
-  arrange(timestamp)
 }
 \usage{
 ratings
@@ -52,5 +45,13 @@ ratings
 The raw data behind the story
 "Al Gore’s New Movie Exposes The Big Flaw In Online Movie Ratings"
 \url{https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/}.
+}
+\examples{
+# To convert data frame to tidy data (long) format, run:
+library(tidyverse)
+library(stringr)
+ratings_tidy <- ratings \%>\%
+  gather(votes, count, -c(timestamp, respondents, category, link, average, mean, median)) \%>\%
+  arrange(timestamp)
 }
 \keyword{datasets}

@@ -15,7 +15,7 @@
 #'   \item{text}{The polling question asked at the pollster.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md}
-#'  @examples
+#' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
 #' library(stringr)
@@ -30,10 +30,10 @@
 #' The raw data behind the stories:
 #' "How To Spot A Front-Runner On The ‘Bachelor’ Or ‘Bachelorette’"
 #' \url{https://fivethirtyeight.com/features/the-bachelorette/}
-#' 
+#'
 #' "Rachel’s Season Is Fitting Neatly Into ‘Bachelorette’ History"
 #' \url{https://fivethirtyeight.com/features/rachels-season-is-fitting-neatly-into-bachelorette-history/}
-#' 
+#'
 #' "Rachel Lindsay’s ‘Bachelorette’ Season, In Three Charts"
 #' \url{https://fivethirtyeight.com/features/rachel-lindsays-bachelorette-season-in-three-charts/}.
 #'
@@ -63,12 +63,18 @@
 #'   \item{dates_9}{Who was on which date in week 9.}
 #'   \item{dates_10}{Who was on which date in week 10.}
 #' }
-#' @details Eliminates connote either an elimination (starts with "E") or a rose (starts with "R"). 
-#' Eliminations supercede roses. "E" connotes a standard elimination, typically at a rose ceremony. "EQ" means the contestant quits. "EF" means the contestant was fired by production. "ED" connotes a date elimination. "EU" connotes an unscheduled elimination, one that takes place at a time outside of a date or rose ceremony. 
-#' "R" means the contestant received a rose. "R1" means the contestant got a first impression rose. 
-#' "D1" means a one-on-one date, "D2" means a 2-on-1, "D3" means a 3-on-1 group date, and so on.
-#' Weeks of the show are deliminated by rose ceremonies, and may not line up exactly with episodes.
-#' @source \url{http://bachelor-nation.wikia.com/wiki/Bachelor_Nation_Wikia} and then missing seasons were filled in by ABC and FiveThirtyEight staffers \url{}.
+#' @details Eliminates connote either an elimination (starts with "E") or a rose
+#'   (starts with "R"). Eliminations supercede roses. "E" connotes a standard
+#'   elimination, typically at a rose ceremony. "EQ" means the contestant quits.
+#'   "EF" means the contestant was fired by production. "ED" connotes a date
+#'   elimination. "EU" connotes an unscheduled elimination, one that takes place
+#'   at a time outside of a date or rose ceremony. "R" means the contestant
+#'   received a rose. "R1" means the contestant got a first impression rose.
+#'   "D1" means a one-on-one date, "D2" means a 2-on-1, "D3" means a 3-on-1
+#'   group date, and so on. Weeks of the show are deliminated by rose
+#'   ceremonies, and may not line up exactly with episodes.
+#' @source \url{http://bachelor-nation.wikia.com/wiki/Bachelor_Nation_Wikia} and
+#'   then missing seasons were filled in by ABC and FiveThirtyEight staffers.
 "bachelorette"
 
 
@@ -91,12 +97,12 @@
 #'   \item{hard}{Is it a hard candy?}
 #'   \item{bar}{Is it a candy bar?}
 #'   \item{pluribus}{Is it one of many candies in a bag or box?}
-#'   \item{surgarpercent}{The percentile of sugar it falls under within the data set.}
+#'   \item{sugarpercent}{The percentile of sugar it falls under within the data set.}
 #'   \item{pricepercent}{The unit price percentile compared to the rest of the set.}
 #'   \item{winpercent}{The overall win percentage according to 269,000 matchups.}
 #' }
-#' @source See \url {https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking}
-#'  @examples
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking}
+#' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
 #' library(stringr)
@@ -119,15 +125,15 @@
 #'   \item{url}{The corresponding website on the World Chess Federation page which details the transfers of a given year.}
 #'   \item{id}{An numeric identifier for the chess player who transfered.}
 #'   \item{federation}{The current national federation of the chess player}
-#'   \item{former_fed}{The national federation from which the chress player has transfered.}
-#'   \item{transfer}{The date at which the transfer took place.}
+#'   \item{form_fed}{The national federation from which the chress player has transfered.}
+#'   \item{transfer_date}{The date at which the transfer took place.}
 #' }
 #' @source World Chess Federation \url{https://ratings.fide.com/fedchange.phtml}
 "chess_transfers"
 
 
 
-#' Congress Generic Ballot Polls 
+#' Congress Generic Ballot Polls
 #'
 #' The raw data behind the story
 #' "Are Democrats Winning The Race For Congress?"
@@ -154,15 +160,16 @@
 #'   \item{url}{No description provided.}
 #'   \item{poll_id}{No description provided.}
 #'   \item{question_id}{No description provided.}
-#'   \item{created_date}{No description provided.}
+#'   \item{createddate}{No description provided.}
 #'   \item{timestamp}{No description provided.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}
+#' @seealso \code{\link{generic_topline}}
 "generic_polllist"
 
 
 
-#' Congress Generic Ballot Polls 
+#' Congress Generic Ballot Polls
 #'
 #' The raw data behind the story
 #' "Are Democrats Winning The Race For Congress?"
@@ -170,7 +177,8 @@
 #'
 #' @format A data frame with 751 rows representing polls and 9 variables:
 #' \describe{
-#'   \item{model_date}{No description provided.}
+#'   \item{subgroup}{No description provided.}
+#'   \item{modeldate}{No description provided.}
 #'   \item{dem_estimate}{No description provided.}
 #'   \item{dem_hi}{No description provided.}
 #'   \item{dem_lo}{No description provided.}
@@ -178,9 +186,10 @@
 #'   \item{rep_hi}{No description provided.}
 #'   \item{rep_lo}{No description provided.}
 #'   \item{timestamp}{No description provided.}
-#'  
+#'
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}
+#' @seealso \code{\link{generic_polllist}}
 "generic_topline"
 
 
@@ -200,7 +209,7 @@
 #'   \item{average}{The average rating reported by a given category.}
 #'   \item{mean}{The mean rating reported by a given category.}
 #'   \item{median}{The median rating reported by a given category.}
-#'   \item{votes_!}{The count of votes denoting a rating of one that respondents gave.}
+#'   \item{votes_1}{The count of votes denoting a rating of one that respondents gave.}
 #'   \item{votes_2}{The count of votes denoting a rating of two that respondents gave.}
 #'   \item{votes_3}{The count of votes denoting a rating of three that respondents gave.}
 #'   \item{votes_4}{The count of votes denoting a rating of four that respondents gave.}
@@ -221,9 +230,9 @@
 #'   \item{pct_9}{The percentage of votes denoting a rating of nine that respondents gave.}
 #'   \item{pct_10}{The percentage of votes denoting a rating of ten that respondents gave.}
 #' }
-#' @source IMBD \url{http://www.imdb.com/title/tt6322922/ratings} and 
+#' @source IMBD \url{http://www.imdb.com/title/tt6322922/ratings} and
 #' see \url{https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel}
-#' #'  @examples
+#' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
 #' library(stringr)
@@ -260,7 +269,7 @@
 #' The raw data behind the stories:
 #' "The Complete History Of MLB"
 #' \url{https://projects.fivethirtyeight.com/complete-history-of-mlb/}
-#' 
+#'
 #' "MLB Predictions"
 #' \url{https://projects.fivethirtyeight.com/2017-mlb-predictions/}.
 #'
@@ -286,6 +295,8 @@
 #'   \item{pitcher2_rating}{No description provided.}
 #'   \item{pitcher1_adj}{No description provided.}
 #'   \item{pitcher2_adj}{No description provided.}
+#'   \item{rating_prob1}{No description provided.}
+#'   \item{rating_prob2}{No description provided.}
 #'   \item{rating1_post}{No description provided.}
 #'   \item{rating2_post}{No description provided.}
 #'   \item{score1}{The number of runs scored by team1.}
@@ -301,7 +312,7 @@
 #' The raw data behind the stories
 #' "Club Soccer Predictions"
 #' \url{https://projects.fivethirtyeight.com/soccer-predictions/}
-#' 
+#'
 #'  "Global Club Soccer Rankings"
 #' \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
 #'
@@ -320,8 +331,15 @@
 #'   \item{proj_score2}{The predicted number of goals that team2 would have scored.}
 #'   \item{score1}{The number of goals that team1 scored.}
 #'   \item{score2}{The number of goals that team2 scored.}
+#'   \item{xg1}{}
+#'   \item{xg2}{}
+#'   \item{nsxg1}{}
+#'   \item{nsxg2}{}
+#'   \item{adj_score1}{}
+#'   \item{adj_score2}{}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
+#' @seealso \code{\link{spi_global_rankings}}
 "spi_matches"
 
 
@@ -331,7 +349,7 @@
 #' The raw data behind the stories
 #' "Club Soccer Predictions"
 #' \url{https://projects.fivethirtyeight.com/soccer-predictions/}
-#' 
+#'
 #' "Global Club Soccer Rankings"
 #' \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
 #'
@@ -346,6 +364,7 @@
 #'   \item{spi}{A club's SPI score.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
+#' @seealso \code{\link{spi_matches}}
 "spi_global_rankings"
 
 
