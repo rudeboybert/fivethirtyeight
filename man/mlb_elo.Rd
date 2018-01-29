@@ -8,26 +8,26 @@
 \describe{
   \item{date}{The date of the game.}
   \item{season}{The season within which the game was played.}
-  \item{neutral}{}
-  \item{playoff}{}
+  \item{neutral}{No description provided.}
+  \item{playoff}{No description provided.}
   \item{team1}{One team that participated in the game.}
   \item{team2}{The other team that participated in the match.}
   \item{elo1_pre}{The Elo rating for team1 prior to the game.}
   \item{elo2_pre}{The Elo rating for team2 prior to the game.}
-  \item{elo_prob1}{}
-  \item{elo_prob2}{}
+  \item{elo_prob1}{No description provided.}
+  \item{elo_prob2}{No description provided.}
   \item{elo1_post}{The Elo rating for team1 after the game.}
   \item{elo2_post}{The Elo rating for team2 after the game.}
-  \item{rating1_pre}{}
-  \item{rating2_pre}{}
+  \item{rating1_pre}{No description provided.}
+  \item{rating2_pre}{No description provided.}
   \item{pitcher1}{An identifier of the pitcher}
-  \item{pitcher2}{}
-  \item{pitcher1_rating}{}
-  \item{pitcher2_rating}{}
-  \item{pitcher1_adj}{}
-  \item{pitcher2_adj}{}
-  \item{rating1_post}{}
-  \item{rating2_post}{}
+  \item{pitcher2}{No description provided.}
+  \item{pitcher1_rating}{No description provided.}
+  \item{pitcher2_rating}{No description provided.}
+  \item{pitcher1_adj}{No description provided.}
+  \item{pitcher2_adj}{No description provided.}
+  \item{rating1_post}{No description provided.}
+  \item{rating2_post}{No description provided.}
   \item{score1}{The number of runs scored by team1.}
   \item{score2}{The number of runs scored by team2.}
 }}

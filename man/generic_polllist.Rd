@@ -6,27 +6,27 @@
 \title{Congress Generic Ballot Polls}
 \format{A data frame with 934 rows representing polls and 21 variables:
 \describe{
-  \item{subgroup}{}
-  \item{modeldate}{}
+  \item{subgroup}{No description provided.}
+  \item{modeldate}{No description provided.}
   \item{startdate}{Start date of the poll.}
   \item{enddate}{End date of the poll.}
   \item{pollster}{The organization that conducted the poll (rather than the organization that paid for or sponsored it)}
-  \item{grade}{}
-  \item{samplesize}{}
-  \item{population}{}
-  \item{weight}{}
-  \item{influence}{}
-  \item{dem}{}
-  \item{rep}{}
-  \item{adjusted_dem}{}
-  \item{adjusted_rep}{}
-  \item{multiversions}{}
-  \item{tracking}{}
-  \item{url}{}
-  \item{poll_id}{}
-  \item{question_id}{}
-  \item{created_date}{}
-  \item{timestamp}{}
+  \item{grade}{No description provided.}
+  \item{samplesize}{No description provided.}
+  \item{population}{No description provided.}
+  \item{weight}{No description provided.}
+  \item{influence}{No description provided.}
+  \item{dem}{No description provided.}
+  \item{rep}{No description provided.}
+  \item{adjusted_dem}{No description provided.}
+  \item{adjusted_rep}{No description provided.}
+  \item{multiversions}{No description provided.}
+  \item{tracking}{No description provided.}
+  \item{url}{No description provided.}
+  \item{poll_id}{No description provided.}
+  \item{question_id}{No description provided.}
+  \item{created_date}{No description provided.}
+  \item{timestamp}{No description provided.}
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}

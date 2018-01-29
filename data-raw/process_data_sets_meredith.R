@@ -12,7 +12,7 @@ ahca_polls <- read_csv("data-raw/ahca-polls/ahca_polls.csv") %>%
     pollster = as.factor(pollster)
   )
 devtools::use_data(ahca_polls, overwrite = TRUE)
-
+data/ahca_polls.rda
 
 # bachelorette ---------------------------------------------------------------------
 bachelorette <- read_csv("data-raw/bachelorette/bachelorette.csv") %>%
@@ -24,6 +24,7 @@ bachelorette <- read_csv("data-raw/bachelorette/bachelorette.csv") %>%
   mutate(season = as.integer(season)) %>%
   filter(season != "SEASON")
 devtools::use_data(bachelorette, overwrite = TRUE)
+data/bachelorette.rda
 
 
 # candy-power-rankings -------------------------------------------------------------
@@ -42,6 +43,7 @@ candy_rankings <- read_csv("data-raw/candy-power-ranking/candy-data.csv") %>%
   ) %>%
   mutate_at(vars(competitorname), funs(gsub("Õ", "'", .))) ###########################
 devtools::use_data(candy_rankings, overwrite = TRUE)
+data/candy_rankings.rda
 
 
 # chess-transfers ----------------------------------------------------------------
@@ -52,6 +54,7 @@ chess_transfers <- read_csv("data-raw/chess-transfers/transfers.csv") %>%
     id = as.character(id)
   )
 devtools::use_data(chess_transfers, overwrite = TRUE)
+data/chess_transfers.rda
 
 # congress-generic-ballot --------------------------------------------------------
 # generic_polllist
@@ -77,6 +80,7 @@ generic_polllist <-
   ) %>%
   mutate_at(vars(multiversions), funs(ifelse(. == "<NA>", NA, .)))
 devtools::use_data(generic_polllist, overwrite = TRUE)
+data/generic_polllist.rda
 
 # generic_topline
 generic_topline <- 
@@ -92,6 +96,7 @@ generic_topline <-
     subgroup = as.factor(subgroup)
   )
 devtools::use_data(generic_topline, overwrite = TRUE)
+data/generic_topline.rda
 
 
 #inconvenient-sequel ----------------------------------------------------------------
@@ -121,7 +126,7 @@ ratings <- read_csv("data-raw/inconvenient-sequel/ratings.csv") %>%
              `8_votes`, `9_votes`, `10_votes`, `1_pct`, `2_pct`, `3_pct`, `4_pct`, `5_pct`, 
              `6_pct`, `7_pct`, `8_pct`, `9_pct`, `10_pct`))
 devtools::use_data(ratings, overwrite = TRUE)
-
+data/ratings.rda
 
 # mayweather-mcgregor ---------------------------------------------------------------
 tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv") %>%
@@ -131,6 +136,7 @@ tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv") %>%
     id = as.character(id)
   )
 devtools::use_data(tweets, overwrite = TRUE)
+data/tweets.rda
 
 
 # mlb-elo ---------------------------------------------------------------------------
@@ -148,6 +154,7 @@ mlb_elo <- read_csv("data-raw/mlb-elo/mlb_elo.csv") %>%
   mutate_at(vars(pitcher1_adj), funs(ifelse(. == "<NA>", NA, .))) %>%
   mutate_at(vars(pitcher2_adj), funs(ifelse(. == "<NA>", NA, .)))
 devtools::use_data(mlb_elo, overwrite = TRUE)
+data/mlb_elo.rda
 
 
 # soccer-spi ------------------------------------------------------------------------
@@ -160,6 +167,7 @@ spi_matches <- read_csv("data-raw/soccer-spi/spi_matches.csv") %>%
     league_id = as.factor(league_id)
   )
 devtools::use_data(spi_matches, overwrite = TRUE)
+data/spi_matches.rda
 
 #spi_global_rankings
 spi_global_rankings <- 
@@ -167,4 +175,5 @@ spi_global_rankings <-
 write_csv(spi_global_rankings, path = "data-raw/soccer-spi/spi_global_rankings.csv")
 # No changes made
 devtools::use_data(spi_global_rankings, overwrite = TRUE)
+data/spi_global_rankings.rda
 

@@ -6,14 +6,14 @@
 \title{Congress Generic Ballot Polls}
 \format{A data frame with 751 rows representing polls and 9 variables:
 \describe{
-  \item{model_date}{}
-  \item{dem_estimate}{}
-  \item{dem_hi}{}
-  \item{dem_lo}{}
-  \item{rep_estimate}{}
-  \item{rep_hi}{}
-  \item{rep_lo}{}
-  \item{timestamp}{}
+  \item{model_date}{No description provided.}
+  \item{dem_estimate}{No description provided.}
+  \item{dem_hi}{No description provided.}
+  \item{dem_lo}{No description provided.}
+  \item{rep_estimate}{No description provided.}
+  \item{rep_hi}{No description provided.}
+  \item{rep_lo}{No description provided.}
+  \item{timestamp}{No description provided.}
  
 }}
 \source{
