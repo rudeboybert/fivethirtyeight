@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past? — airline_safety • fivethirtyeight</title>
+<title>Congress Generic Ballot Polls — generic_topline • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -116,47 +116,40 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?</h1>
+    <h1>Congress Generic Ballot Polls</h1>
     </div>
 
     
     <p>The raw data behind the story
-"Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?"
-<a href='http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/'>http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/</a>.</p>
+"Are Democrats Winning The Race For Congress?"
+<a href='https://projects.fivethirtyeight.com/congress-generic-ballot-polls/'>https://projects.fivethirtyeight.com/congress-generic-ballot-polls/</a>.</p>
     
 
-    <pre class="usage"><span class='no'>airline_safety</span></pre>
+    <pre class="usage"><span class='no'>generic_topline</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 56 rows representing airlines and 9 variables:</p><dl class='dl-horizontal'>
-  <dt>airline</dt><dd><p>airline</p></dd>
-  <dt>incl_reg_subsidiaries</dt><dd><p>indicates that regional subsidiaries are included</p></dd>
-  <dt>avail_seat_km_per_week</dt><dd><p>available seat kilometers flown every week</p></dd>
-  <dt>incidents_85_99</dt><dd><p>Total number of incidents, 1985-1999</p></dd>
-  <dt>fatal_accidents_85_99</dt><dd><p>Total number of fatal accidents, 1985-1999</p></dd>
-  <dt>fatalities_85_99</dt><dd><p>Total number of fatalities, 1985-1999</p></dd>
-  <dt>incidents_00_14</dt><dd><p>Total number of incidents, 2000-2014</p></dd>
-  <dt>fatal_accidents_00_14</dt><dd><p>Total number of fatal accidents, 2000-2014</p></dd>
-  <dt>fatalities_00_14</dt><dd><p>Total number of fatalities, 2000-2014</p></dd>
-</dl>
+    <p>A data frame with 751 rows representing polls and 9 variables:</p><dl class='dl-horizontal'>
+  <dt>subgroup</dt><dd><p>No description provided.</p></dd>
+  <dt>modeldate</dt><dd><p>No description provided.</p></dd>
+  <dt>dem_estimate</dt><dd><p>No description provided.</p></dd>
+  <dt>dem_hi</dt><dd><p>No description provided.</p></dd>
+  <dt>dem_lo</dt><dd><p>No description provided.</p></dd>
+  <dt>rep_estimate</dt><dd><p>No description provided.</p></dd>
+  <dt>rep_hi</dt><dd><p>No description provided.</p></dd>
+  <dt>rep_lo</dt><dd><p>No description provided.</p></dd>
+  <dt>timestamp</dt><dd><p>No description provided.</p></dd>
+    </dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Aviation Safety Network <a href='http://aviation-safety.net'>http://aviation-safety.net</a>.</p>
+    <p>See <a href='https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md'>https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md</a></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='generic_polllist.html'>generic_polllist</a></code></p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
-<span class='fu'>library</span>(<span class='no'>stringr</span>)
-<span class='no'>airline_safety_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>airline_safety</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>type</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>airline</span>, <span class='no'>incl_reg_subsidiaries</span>, <span class='no'>avail_seat_km_per_week</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>mutate</span>(
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>start</span><span class='kw'>=</span>-<span class='fl'>5</span>),
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace_all</a></span>(<span class='no'>period</span>, <span class='st'>"_"</span>, <span class='st'>"-"</span>),
-    <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>end</span><span class='kw'>=</span>-<span class='fl'>7</span>)
-  )</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -165,9 +158,9 @@
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+
+      <li><a href="#see-also">See also</a></li>
+          </ul>
 
   </div>
 </div>

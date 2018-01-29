@@ -97,7 +97,7 @@
 </h1>
                         <h4 class="author">Adam Spannbauer and Jennifer Chunn</h4>
             
-            <h4 class="date">2018-01-21</h4>
+            <h4 class="date">2018-01-29</h4>
           </div>
 
     
@@ -119,9 +119,9 @@
 <h2 class="hasAnchor">
 <a href="#check-date-range-of-tweets" class="anchor"></a>Check date range of tweets</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## check out structure and date range ------------------------------------------------
-(minDate &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/date">date</a></span>(trump_twitter$created_at)))</code></pre></div>
+(minDate &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw"><a href="http://lubridate.tidyverse.org/reference/date.html">date</a></span>(trump_twitter$created_at)))</code></pre></div>
 <pre><code>## [1] "2015-08-01"</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(maxDate &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/date">date</a></span>(trump_twitter$created_at)))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(maxDate &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw"><a href="http://lubridate.tidyverse.org/reference/date.html">date</a></span>(trump_twitter$created_at)))</code></pre></div>
 <pre><code>## [1] "2016-08-16"</code></pre>
 </div>
 <div id="create-vectorised-stemming-function-using-hunspell" class="section level1">
@@ -284,10 +284,10 @@ Ted Cruz is a nervous wreck. He is making reckless charges not caring for the tr
 <a href="#when-is-trumps-favorite-time-to-tweet" class="anchor"></a>When is trumps favorite time to tweet?</h1>
 <p>Total number of tweets and average sentiment (when available) by hour of the day, day of the week, and month</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_tweet_times &lt;-<span class="st"> </span>trump_full_text_sent %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">weekday =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/day">wday</a></span>(created_at, <span class="dt">label=</span><span class="ot">TRUE</span>),
-         <span class="dt">month   =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/month">month</a></span>(created_at, <span class="dt">label=</span><span class="ot">TRUE</span>),
-         <span class="dt">hour    =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/hour">hour</a></span>(created_at),
-         <span class="dt">month_over_time =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/lubridate/topics/round_date">round_date</a></span>(created_at,<span class="st">"month"</span>))
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">weekday =</span> <span class="kw"><a href="http://lubridate.tidyverse.org/reference/day.html">wday</a></span>(created_at, <span class="dt">label=</span><span class="ot">TRUE</span>),
+         <span class="dt">month   =</span> <span class="kw"><a href="http://lubridate.tidyverse.org/reference/month.html">month</a></span>(created_at, <span class="dt">label=</span><span class="ot">TRUE</span>),
+         <span class="dt">hour    =</span> <span class="kw"><a href="http://lubridate.tidyverse.org/reference/hour.html">hour</a></span>(created_at),
+         <span class="dt">month_over_time =</span> <span class="kw"><a href="http://lubridate.tidyverse.org/reference/round_date.html">round_date</a></span>(created_at,<span class="st">"month"</span>))
 
 plotSentByTime &lt;-<span class="st"> </span>function(trump_tweet_times, timeGroupVar) {
   timeVar &lt;-<span class="st"> </span><span class="kw">substitute</span>(timeGroupVar)

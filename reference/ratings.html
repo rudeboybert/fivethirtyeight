@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past? — airline_safety • fivethirtyeight</title>
+<title>An Inconvenient Sequel — ratings • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -116,47 +116,62 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?</h1>
+    <h1>An Inconvenient Sequel</h1>
     </div>
 
     
     <p>The raw data behind the story
-"Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?"
-<a href='http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/'>http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/</a>.</p>
+"Al Gore’s New Movie Exposes The Big Flaw In Online Movie Ratings"
+<a href='https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/'>https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/</a>.</p>
     
 
-    <pre class="usage"><span class='no'>airline_safety</span></pre>
+    <pre class="usage"><span class='no'>ratings</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 56 rows representing airlines and 9 variables:</p><dl class='dl-horizontal'>
-  <dt>airline</dt><dd><p>airline</p></dd>
-  <dt>incl_reg_subsidiaries</dt><dd><p>indicates that regional subsidiaries are included</p></dd>
-  <dt>avail_seat_km_per_week</dt><dd><p>available seat kilometers flown every week</p></dd>
-  <dt>incidents_85_99</dt><dd><p>Total number of incidents, 1985-1999</p></dd>
-  <dt>fatal_accidents_85_99</dt><dd><p>Total number of fatal accidents, 1985-1999</p></dd>
-  <dt>fatalities_85_99</dt><dd><p>Total number of fatalities, 1985-1999</p></dd>
-  <dt>incidents_00_14</dt><dd><p>Total number of incidents, 2000-2014</p></dd>
-  <dt>fatal_accidents_00_14</dt><dd><p>Total number of fatal accidents, 2000-2014</p></dd>
-  <dt>fatalities_00_14</dt><dd><p>Total number of fatalities, 2000-2014</p></dd>
+    <p>A data frame with 80053 rows representing movie ratings and 27 variables:</p><dl class='dl-horizontal'>
+  <dt>timestamp</dt><dd><p>The date at which the rating was recorded.</p></dd>
+  <dt>respondents</dt><dd><p>The number of respondents in a category associated with a given timestamp.</p></dd>
+  <dt>category</dt><dd><p>The subgroups of respondents differentiated by demographics like gender, age, and nationality.</p></dd>
+  <dt>link</dt><dd><p>The website associated with a given category's responses.</p></dd>
+  <dt>average</dt><dd><p>The average rating reported by a given category.</p></dd>
+  <dt>mean</dt><dd><p>The mean rating reported by a given category.</p></dd>
+  <dt>median</dt><dd><p>The median rating reported by a given category.</p></dd>
+  <dt>votes_1</dt><dd><p>The count of votes denoting a rating of one that respondents gave.</p></dd>
+  <dt>votes_2</dt><dd><p>The count of votes denoting a rating of two that respondents gave.</p></dd>
+  <dt>votes_3</dt><dd><p>The count of votes denoting a rating of three that respondents gave.</p></dd>
+  <dt>votes_4</dt><dd><p>The count of votes denoting a rating of four that respondents gave.</p></dd>
+  <dt>votes_5</dt><dd><p>The count of votes denoting a rating of five that respondents gave.</p></dd>
+  <dt>votes_6</dt><dd><p>The count of votes denoting a rating of six that respondents gave.</p></dd>
+  <dt>votes_7</dt><dd><p>The count of votes denoting a rating of seven that respondents gave.</p></dd>
+  <dt>votes_8</dt><dd><p>The count of votes denoting a rating of eight that respondents gave.</p></dd>
+  <dt>votes_9</dt><dd><p>The count of votes denoting a rating of nine that respondents gave.</p></dd>
+  <dt>votes_10</dt><dd><p>The count of votes denoting a rating of ten that respondents gave.</p></dd>
+  <dt>pct_1</dt><dd><p>The percentage of votes denoting a rating of one that respondents gave.</p></dd>
+  <dt>pct_2</dt><dd><p>The percentage of votes denoting a rating of two that respondents gave.</p></dd>
+  <dt>pct_3</dt><dd><p>The percentage of votes denoting a rating of three that respondents gave.</p></dd>
+  <dt>pct_4</dt><dd><p>The percentage of votes denoting a rating of four that respondents gave.</p></dd>
+  <dt>pct_5</dt><dd><p>The percentage of votes denoting a rating of five that respondents gave.</p></dd>
+  <dt>pct_6</dt><dd><p>The percentage of votes denoting a rating of six that respondents gave.</p></dd>
+  <dt>pct_7</dt><dd><p>The percentage of votes denoting a rating of seven that respondents gave.</p></dd>
+  <dt>pct_8</dt><dd><p>The percentage of votes denoting a rating of eight that respondents gave.</p></dd>
+  <dt>pct_9</dt><dd><p>The percentage of votes denoting a rating of nine that respondents gave.</p></dd>
+  <dt>pct_10</dt><dd><p>The percentage of votes denoting a rating of ten that respondents gave.</p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Aviation Safety Network <a href='http://aviation-safety.net'>http://aviation-safety.net</a>.</p>
+    <p>IMBD <a href='http://www.imdb.com/title/tt6322922/ratings'>http://www.imdb.com/title/tt6322922/ratings</a> and
+see <a href='https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel'>https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
 <span class='fu'>library</span>(<span class='no'>tidyverse</span>)
 <span class='fu'>library</span>(<span class='no'>stringr</span>)
-<span class='no'>airline_safety_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>airline_safety</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>type</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>airline</span>, <span class='no'>incl_reg_subsidiaries</span>, <span class='no'>avail_seat_km_per_week</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>mutate</span>(
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>start</span><span class='kw'>=</span>-<span class='fl'>5</span>),
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace_all</a></span>(<span class='no'>period</span>, <span class='st'>"_"</span>, <span class='st'>"-"</span>),
-    <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>end</span><span class='kw'>=</span>-<span class='fl'>7</span>)
-  )</div></pre>
+<span class='no'>ratings_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>ratings</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>gather</span>(<span class='no'>votes</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>timestamp</span>, <span class='no'>respondents</span>, <span class='no'>category</span>, <span class='no'>link</span>, <span class='no'>average</span>, <span class='no'>mean</span>, <span class='no'>median</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'>arrange</span>(<span class='no'>timestamp</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

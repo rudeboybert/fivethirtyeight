@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past? — airline_safety • fivethirtyeight</title>
+<title>Candy Power Ranking — candy_rankings • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -116,47 +116,48 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?</h1>
+    <h1>Candy Power Ranking</h1>
     </div>
 
     
     <p>The raw data behind the story
-"Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?"
-<a href='http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/'>http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/</a>.</p>
+"The Ultimate Halloween Candy Power Ranking"
+<a href='http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/'>http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/</a>.</p>
     
 
-    <pre class="usage"><span class='no'>airline_safety</span></pre>
+    <pre class="usage"><span class='no'>candy_rankings</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 56 rows representing airlines and 9 variables:</p><dl class='dl-horizontal'>
-  <dt>airline</dt><dd><p>airline</p></dd>
-  <dt>incl_reg_subsidiaries</dt><dd><p>indicates that regional subsidiaries are included</p></dd>
-  <dt>avail_seat_km_per_week</dt><dd><p>available seat kilometers flown every week</p></dd>
-  <dt>incidents_85_99</dt><dd><p>Total number of incidents, 1985-1999</p></dd>
-  <dt>fatal_accidents_85_99</dt><dd><p>Total number of fatal accidents, 1985-1999</p></dd>
-  <dt>fatalities_85_99</dt><dd><p>Total number of fatalities, 1985-1999</p></dd>
-  <dt>incidents_00_14</dt><dd><p>Total number of incidents, 2000-2014</p></dd>
-  <dt>fatal_accidents_00_14</dt><dd><p>Total number of fatal accidents, 2000-2014</p></dd>
-  <dt>fatalities_00_14</dt><dd><p>Total number of fatalities, 2000-2014</p></dd>
+    <p>A data frame with 85 rows representing Halloween candy and 13 variables:</p><dl class='dl-horizontal'>
+  <dt>competitorname</dt><dd><p>The name of the Halloween candy.</p></dd>
+  <dt>chocolate</dt><dd><p>Does it contain chocolate?</p></dd>
+  <dt>fruity</dt><dd><p>Is it fruit flavored?</p></dd>
+  <dt>caramel</dt><dd><p>Is there caramel in the candy?</p></dd>
+  <dt>peanutyalmondy</dt><dd><p>Does it contain peanuts, peanut butter or almonds?</p></dd>
+  <dt>nougat</dt><dd><p>Does it contain nougat?</p></dd>
+  <dt>crispedricewafer</dt><dd><p>Does it contain crisped rice, wafers, or a cookie component?</p></dd>
+  <dt>hard</dt><dd><p>Is it a hard candy?</p></dd>
+  <dt>bar</dt><dd><p>Is it a candy bar?</p></dd>
+  <dt>pluribus</dt><dd><p>Is it one of many candies in a bag or box?</p></dd>
+  <dt>sugarpercent</dt><dd><p>The percentile of sugar it falls under within the data set.</p></dd>
+  <dt>pricepercent</dt><dd><p>The unit price percentile compared to the rest of the set.</p></dd>
+  <dt>winpercent</dt><dd><p>The overall win percentage according to 269,000 matchups.</p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Aviation Safety Network <a href='http://aviation-safety.net'>http://aviation-safety.net</a>.</p>
+    <p>See <a href='https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking'>https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
 <span class='fu'>library</span>(<span class='no'>tidyverse</span>)
 <span class='fu'>library</span>(<span class='no'>stringr</span>)
-<span class='no'>airline_safety_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>airline_safety</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>type</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>airline</span>, <span class='no'>incl_reg_subsidiaries</span>, <span class='no'>avail_seat_km_per_week</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>mutate</span>(
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>start</span><span class='kw'>=</span>-<span class='fl'>5</span>),
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace_all</a></span>(<span class='no'>period</span>, <span class='st'>"_"</span>, <span class='st'>"-"</span>),
-    <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>end</span><span class='kw'>=</span>-<span class='fl'>7</span>)
-  )</div></pre>
+<span class='no'>candy_rankings_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>candy_rankings</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>gather</span>(<span class='no'>characteristics</span>, <span class='no'>present</span>, -<span class='fu'>c</span>(<span class='no'>competitorname</span>, <span class='no'>sugarpercent</span>, <span class='no'>pricepercent</span>, <span class='no'>winpercent</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'>mutate</span>(<span class='kw'>present</span> <span class='kw'>=</span> <span class='fu'>as.logical</span>(<span class='no'>present</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'>arrange</span>(<span class='no'>competitorname</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
