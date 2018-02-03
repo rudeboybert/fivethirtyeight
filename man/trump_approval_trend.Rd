@@ -3,42 +3,32 @@
 \docType{data}
 \name{trump_approval_trend}
 \alias{trump_approval_trend}
-\title{Approval Trend Dataset:
- @format A data frame with 1044 rows representing poll trends and 11 variables:
- \describe{
-   \item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
-   \item{modeldate}{The date the model was created}
-   \item{approve_estimate}{Estimated approval ratings}
-   \item{approve_high}{Higher bound of the estimated approval percentage}
-   \item{approve_low}{Lower bound of the estimated approval percentage}
-   \item{disapprove_estimate}{Estimated disapproval percentage}
-   \item{disapprove_high}{Higher bound of the estimated disapproval percentage}
-   \item{disapprove_low}{Lower bound of the estimated disapproval percentage}
-   \item{timestamp}{Date and time the model was compiled}
- }
- @details The Variable "president" was removed because all values were "Donald Trump"
- @source \url{https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv}
- @seealso \code{\link{trump_approval_poll}}}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1044 rows and 9 columns.}
+\title{Approval Trend Dataset:}
+\format{A data frame with 1044 rows representing poll trends and 11 variables:
+\describe{
+\item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
+\item{modeldate}{The date the model was created}
+\item{approve_estimate}{Estimated approval ratings}
+\item{approve_high}{Higher bound of the estimated approval percentage}
+\item{approve_low}{Lower bound of the estimated approval percentage}
+\item{disapprove_estimate}{Estimated disapproval percentage}
+\item{disapprove_high}{Higher bound of the estimated disapproval percentage}
+\item{disapprove_low}{Lower bound of the estimated disapproval percentage}
+\item{timestamp}{Date and time the model was compiled}
+}}
+\source{
+\url{https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv}
+}
 \usage{
 trump_approval_trend
 }
 \description{
 Approval Trend Dataset:
- @format A data frame with 1044 rows representing poll trends and 11 variables:
- \describe{
-   \item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
-   \item{modeldate}{The date the model was created}
-   \item{approve_estimate}{Estimated approval ratings}
-   \item{approve_high}{Higher bound of the estimated approval percentage}
-   \item{approve_low}{Lower bound of the estimated approval percentage}
-   \item{disapprove_estimate}{Estimated disapproval percentage}
-   \item{disapprove_high}{Higher bound of the estimated disapproval percentage}
-   \item{disapprove_low}{Lower bound of the estimated disapproval percentage}
-   \item{timestamp}{Date and time the model was compiled}
- }
- @details The Variable "president" was removed because all values were "Donald Trump"
- @source \url{https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv}
- @seealso \code{\link{trump_approval_poll}}
+}
+\details{
+The Variable "president" was removed because all values were "Donald Trump"
+}
+\seealso{
+\code{\link{trump_approval_poll}}
 }
 \keyword{datasets}

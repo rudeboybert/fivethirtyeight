@@ -3,52 +3,35 @@
 \docType{data}
 \name{google_trends}
 \alias{google_trends}
-\title{The Media Really Started Paying Attention to Puerto Rico When Trump Did
- 
- The raw data behind the story
- "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
- \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}
- 
- Google Trends Data:
- @format A data frame with 37 rows representing dates and 5 variables:
- \describe{
-   \item{date}{Date}
-   \item{hurricane_harvey_us}{US Google search interest on the specified date for Hurricane Harvey}
-   \item{hurricane_irma_us}{US Google search interest on the specified date for Hurricane Irma}
-   \item{hurricane_maria_us}{US Google search interest on the specified date for Hurricane Maria}
-   \item{hurricane_jose_us}{US Google search interest on the specified date for Hurricane Jose}
- }
- @details Google search interest is measured in search term popularity relative to peak popularity in the given 
- region and time period (with 100 as peak popularity)
- @source Google Trends \url{https://trends.google.com/trends/}
- @seealso \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}}, \code{\link{mediacloud_online_news}}, 
- \code{\link{mediacloud_trump}}, \code{\link{tv_hurricanes}}, \code{\link{tv_hurricanes_by_network}}, 
- \code{\link{tv_states}}}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 37 rows and 5 columns.}
+\title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
+\format{A data frame with 37 rows representing dates and 5 variables:
+\describe{
+\item{date}{Date}
+\item{hurricane_harvey_us}{US Google search interest on the specified date for Hurricane Harvey}
+\item{hurricane_irma_us}{US Google search interest on the specified date for Hurricane Irma}
+\item{hurricane_maria_us}{US Google search interest on the specified date for Hurricane Maria}
+\item{hurricane_jose_us}{US Google search interest on the specified date for Hurricane Jose}
+}}
+\source{
+Google Trends \url{https://trends.google.com/trends/}
+}
 \usage{
 google_trends
 }
 \description{
-The Media Really Started Paying Attention to Puerto Rico When Trump Did
- 
- The raw data behind the story
- "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
- \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}
- 
- Google Trends Data:
- @format A data frame with 37 rows representing dates and 5 variables:
- \describe{
-   \item{date}{Date}
-   \item{hurricane_harvey_us}{US Google search interest on the specified date for Hurricane Harvey}
-   \item{hurricane_irma_us}{US Google search interest on the specified date for Hurricane Irma}
-   \item{hurricane_maria_us}{US Google search interest on the specified date for Hurricane Maria}
-   \item{hurricane_jose_us}{US Google search interest on the specified date for Hurricane Jose}
- }
- @details Google search interest is measured in search term popularity relative to peak popularity in the given 
- region and time period (with 100 as peak popularity)
- @source Google Trends \url{https://trends.google.com/trends/}
- @seealso \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}}, \code{\link{mediacloud_online_news}}, 
- \code{\link{mediacloud_trump}}, \code{\link{tv_hurricanes}}, \code{\link{tv_hurricanes_by_network}}, 
- \code{\link{tv_states}}
+The raw data behind the story
+"The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+\url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}
+}
+\details{
+Google Trends Data:
+
+Google search interest is measured in search term popularity relative to peak popularity in the given
+region and time period (with 100 as peak popularity)
+}
+\seealso{
+\code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}}, \code{\link{mediacloud_online_news}},
+\code{\link{mediacloud_trump}}, \code{\link{tv_hurricanes}}, \code{\link{tv_hurricanes_by_network}},
+\code{\link{tv_states}}
 }
 \keyword{datasets}

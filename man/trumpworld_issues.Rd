@@ -3,56 +3,36 @@
 \docType{data}
 \name{trumpworld_issues}
 \alias{trumpworld_issues}
-\title{What the World Thinks of Trump
- 
- The raw data behind the story
- "What the World Thinks of Trump"
- \url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}
- 
- Trump World Issues Dataset:
- @format A data frame with 185 rows representing countries and 6 variables:
- \describe{
-   \item{country}{The country whose population is being polled}
-   \item{net_approval}{The difference in the number of respondents from the given country who approve and who disapprove of the issue (Trump proposal) in question (approve-disapprove)}
-   \item{approve}{The number of respondents from the given country who approve of the issue (Trump proposal)}
-   \item{disapprove}{The number of respondents who disapprove of the issue}
-   \item{dk_refused}{undefined}
-   \item{issue}{The specific trump policy proposal being posed. Specifically:
-              1: Withdraw support for international climate change agreements
-              2: Build a wall on the border between the U. S. and Mexico
-              3: Withdraw U.S. support from the Iran nuclear weapons agreement
-              4: Withdraw U.S. support for major trade agreements
-              5: Introduce tighter restrictions on those entering the U.S. from some majority-Muslim countries}
- }
- @source Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
- @seealso \code{\link{trumpworld_polls}}}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 185 rows and 6 columns.}
+\title{What the World Thinks of Trump}
+\format{A data frame with 185 rows representing countries and 6 variables:
+\describe{
+\item{country}{The country whose population is being polled}
+\item{net_approval}{The difference in the number of respondents from the given country who approve and who disapprove of the issue (Trump proposal) in question (approve-disapprove)}
+\item{approve}{The number of respondents from the given country who approve of the issue (Trump proposal)}
+\item{disapprove}{The number of respondents who disapprove of the issue}
+\item{dk_refused}{undefined}
+\item{issue}{The specific trump policy proposal being posed. Specifically:
+           1: Withdraw support for international climate change agreements
+           2: Build a wall on the border between the U. S. and Mexico
+           3: Withdraw U.S. support from the Iran nuclear weapons agreement
+           4: Withdraw U.S. support for major trade agreements
+           5: Introduce tighter restrictions on those entering the U.S. from some majority-Muslim countries}
+}}
+\source{
+Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
+}
 \usage{
 trumpworld_issues
 }
 \description{
-What the World Thinks of Trump
- 
- The raw data behind the story
- "What the World Thinks of Trump"
- \url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}
- 
- Trump World Issues Dataset:
- @format A data frame with 185 rows representing countries and 6 variables:
- \describe{
-   \item{country}{The country whose population is being polled}
-   \item{net_approval}{The difference in the number of respondents from the given country who approve and who disapprove of the issue (Trump proposal) in question (approve-disapprove)}
-   \item{approve}{The number of respondents from the given country who approve of the issue (Trump proposal)}
-   \item{disapprove}{The number of respondents who disapprove of the issue}
-   \item{dk_refused}{undefined}
-   \item{issue}{The specific trump policy proposal being posed. Specifically:
-              1: Withdraw support for international climate change agreements
-              2: Build a wall on the border between the U. S. and Mexico
-              3: Withdraw U.S. support from the Iran nuclear weapons agreement
-              4: Withdraw U.S. support for major trade agreements
-              5: Introduce tighter restrictions on those entering the U.S. from some majority-Muslim countries}
- }
- @source Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
- @seealso \code{\link{trumpworld_polls}}
+The raw data behind the story
+"What the World Thinks of Trump"
+\url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}
+}
+\details{
+Trump World Issues Dataset:
+}
+\seealso{
+\code{\link{trumpworld_polls}}
 }
 \keyword{datasets}

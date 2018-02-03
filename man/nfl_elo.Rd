@@ -4,63 +4,35 @@
 \name{nfl_elo}
 \alias{nfl_elo}
 \title{The Complete History Of The NFL
-  2017 NFL Predictions
-  
-  The raw data behind the story 
-  "The Complete History of the NFL"
-  \url{https://projects.fivethirtyeight.com/complete-history-of-the-nfl/}
-  And our "2017 NFL Predictions"
-  \url{https://projects.fivethirtyeight.com/2017-nfl-predictions/}
-  
-  @format a data frame with 16,007 rows representing games and 14 variables:
-  \describe{
-    \item{date}{Date}
-    \item{season}{Season year, 1920-2018}
-    \item{neutral}{TRUE if the game was played on neutral territory, FALSE if not}
-    \item{playoff}{TRUE if the game was a playoff game, FALSE if not}
-    \item{team1}{The name of one participating team}
-    \item{team2}{The name of the other participating team}
-    \item{elo1_pre}{Team 1's Elo rating before the game}
-    \item{elo2_pre}{Team 2's Elo rating before the game}
-    \item{elo_prob1}{Team 1's probability of winning based on Elo rating}
-    \item{elo_prob2}{Team 2's probability of winning based on Elo rating}
-    \item{elo1_post}{Team 1's Elo rating after the game}
-    \item{elo2_post}{Team 2's Elo rating after the game}
-    \item{score1}{Points scored by Team 1}
-    \item{score2}{Points scored by Team 2}
-  }
-  @source See \url{https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv}}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 16007 rows and 14 columns.}
+2017 NFL Predictions}
+\format{a data frame with 16,007 rows representing games and 14 variables:
+\describe{
+ \item{date}{Date}
+ \item{season}{Season year, 1920-2018}
+ \item{neutral}{TRUE if the game was played on neutral territory, FALSE if not}
+ \item{playoff}{TRUE if the game was a playoff game, FALSE if not}
+ \item{team1}{The name of one participating team}
+ \item{team2}{The name of the other participating team}
+ \item{elo1_pre}{Team 1's Elo rating before the game}
+ \item{elo2_pre}{Team 2's Elo rating before the game}
+ \item{elo_prob1}{Team 1's probability of winning based on Elo rating}
+ \item{elo_prob2}{Team 2's probability of winning based on Elo rating}
+ \item{elo1_post}{Team 1's Elo rating after the game}
+ \item{elo2_post}{Team 2's Elo rating after the game}
+ \item{score1}{Points scored by Team 1}
+ \item{score2}{Points scored by Team 2}
+}}
+\source{
+See \url{https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv}
+}
 \usage{
 nfl_elo
 }
 \description{
-The Complete History Of The NFL
-  2017 NFL Predictions
-  
-  The raw data behind the story 
-  "The Complete History of the NFL"
-  \url{https://projects.fivethirtyeight.com/complete-history-of-the-nfl/}
-  And our "2017 NFL Predictions"
-  \url{https://projects.fivethirtyeight.com/2017-nfl-predictions/}
-  
-  @format a data frame with 16,007 rows representing games and 14 variables:
-  \describe{
-    \item{date}{Date}
-    \item{season}{Season year, 1920-2018}
-    \item{neutral}{TRUE if the game was played on neutral territory, FALSE if not}
-    \item{playoff}{TRUE if the game was a playoff game, FALSE if not}
-    \item{team1}{The name of one participating team}
-    \item{team2}{The name of the other participating team}
-    \item{elo1_pre}{Team 1's Elo rating before the game}
-    \item{elo2_pre}{Team 2's Elo rating before the game}
-    \item{elo_prob1}{Team 1's probability of winning based on Elo rating}
-    \item{elo_prob2}{Team 2's probability of winning based on Elo rating}
-    \item{elo1_post}{Team 1's Elo rating after the game}
-    \item{elo2_post}{Team 2's Elo rating after the game}
-    \item{score1}{Points scored by Team 1}
-    \item{score2}{Points scored by Team 2}
-  }
-  @source See \url{https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv}
+The raw data behind the story
+"The Complete History of the NFL"
+\url{https://projects.fivethirtyeight.com/complete-history-of-the-nfl/}
+And our "2017 NFL Predictions"
+\url{https://projects.fivethirtyeight.com/2017-nfl-predictions/}
 }
 \keyword{datasets}

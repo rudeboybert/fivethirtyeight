@@ -3,44 +3,33 @@
 \docType{data}
 \name{senators}
 \alias{senators}
-\title{Senator Dataset:
- @format A data frame with 288615 rows representing tweets and 10 variables:
- \describe{
-   \item{created_at}{The date and time the tweet was posted}
-   \item{text}{The text of the tweet}
-   \item{url}{The link to the tweet}
-   \item{replies}{The number of replies to the tweet}
-   \item{retweets}{The number of retweets}
-   \item{favorites}{The number of favorites}
-   \item{user}{The user posting the tweet}
-   \item{bioguide_id}{The poster's member ID from the "Biographical Directory of the United States Congress"}
-   \item{party}{The poster's political party affiliation}
-   \item{state}{The state the poster represents in Congress}
- } 
- @details Data collected on Oct 19 and 20
- @source Twitter
- @seealso \code{\link{twitter_presidents}}}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 288615 rows and 10 columns.}
+\title{Senator Dataset:}
+\format{A data frame with 288615 rows representing tweets and 10 variables:
+\describe{
+\item{created_at}{The date and time the tweet was posted}
+\item{text}{The text of the tweet}
+\item{url}{The link to the tweet}
+\item{replies}{The number of replies to the tweet}
+\item{retweets}{The number of retweets}
+\item{favorites}{The number of favorites}
+\item{user}{The user posting the tweet}
+\item{bioguide_id}{The poster's member ID from the "Biographical Directory of the United States Congress"}
+\item{party}{The poster's political party affiliation}
+\item{state}{The state the poster represents in Congress}
+}}
+\source{
+Twitter
+}
 \usage{
 senators
 }
 \description{
 Senator Dataset:
- @format A data frame with 288615 rows representing tweets and 10 variables:
- \describe{
-   \item{created_at}{The date and time the tweet was posted}
-   \item{text}{The text of the tweet}
-   \item{url}{The link to the tweet}
-   \item{replies}{The number of replies to the tweet}
-   \item{retweets}{The number of retweets}
-   \item{favorites}{The number of favorites}
-   \item{user}{The user posting the tweet}
-   \item{bioguide_id}{The poster's member ID from the "Biographical Directory of the United States Congress"}
-   \item{party}{The poster's political party affiliation}
-   \item{state}{The state the poster represents in Congress}
- } 
- @details Data collected on Oct 19 and 20
- @source Twitter
- @seealso \code{\link{twitter_presidents}}
+}
+\details{
+Data collected on Oct 19 and 20
+}
+\seealso{
+\code{\link{twitter_presidents}}
 }
 \keyword{datasets}

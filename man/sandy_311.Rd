@@ -3,90 +3,51 @@
 \docType{data}
 \name{sandy_311}
 \alias{sandy_311}
-\title{The (Very) Long Tail Of Hurricane Recovery
-  
-  The raw data behind the story
-  "The (Very) Long Tail Of Hurricane Recovery"
-  \url{https://projects.fivethirtyeight.com/sandy-311/}
-  
- @format A data frame with 1783 rows representing dates and 25 variables:
- \describe{
-   \item{date}{Date}
-   \item{acs}{The number of emergency hotline (311) calls made to the Administration for Children's Services related to Hurricane Sandy on the given date}
-   \item{bpsi}{The number of emergency hotline (311) calls made to Building Protection Systems, Inc related to Hurricane Sandy}
-   \item{cau}{The number of emergency hotline (311) calls made to the Community Affairs Unit related to Hurricane Sandy}
-   \item{chall}{The number of emergency hotline (311) calls made to the City Hall related to Hurricane Sandy}
-   \item{dep}{The number of emergency hotline (311) calls made to the Department of Environmental Protection related to Hurricane Sandy}
-   \item{dob}{The number of emergency hotline (311) calls made to the Department of Buildings related to Hurricane Sandy}
-   \item{doe}{The number of emergency hotline (311) calls made to the Department of Education related to Hurricane Sandy}
-   \item{dof}{The number of emergency hotline (311) calls made to the Department of Finance related to Hurricane Sandy}
-   \item{dohmh}{The number of emergency hotline (311) calls made to the Department of Health and Mental Hygiene related to Hurricane Sandy}
-   \item{dpr}{The number of emergency hotline (311) calls made to the Department of Parks and Recreation related to Hurricane Sandy}
-   \item{fema}{The number of emergency hotline (311) calls made to the Federal Emergency Management Agency related to Hurricane Sandy}
-   \item{hpd}{The number of emergency hotline (311) calls made to the Department of Housing Preservation and Development related to Hurricane Sandy}
-   \item{hra}{The number of emergency hotline (311) calls made to the Human Resources Administration related to Hurricane Sandy}
-   \item{mfanyc}{The number of emergency hotline (311) calls made to the Mayor's Fund to Advance NYC related to Hurricane Sandy}
-   \item{mose}{The number of emergency hotline (311) calls made to the Mayor's Office of Special Enforcement related to Hurricane Sandy}
-   \item{nycem}{The number of emergency hotline (311) calls made to Emergency Management related to Hurricane Sandy}
-   \item{nych}{The number of emergency hotline (311) calls made to the New York City Housing Authority related to Hurricane Sandy}
-   \item{nyc_service}{The number of emergency hotline (311) calls made to NYC Service related to Hurricane Sandy}
-   \item{nypd}{The number of emergency hotline (311) calls made to the New York Police Department related to Hurricane Sandy}
-   \item{nysdol}{The number of emergency hotline (311) calls made to the NYC Department of Labor related to Hurricane Sandy}
-   \item{sbs}{The number of emergency hotline (311) calls made to Small Business Services related to Hurricane Sandy}
-   \item{nys_emergency_mg}{The number of emergency hotline (311) calls made to NYS Emergency Management related to Hurricane Sandy}
-   \item{total}{The total number of emergency hotline (311) calls made related to Hurricane Sandy}
- }
- @source Data from NYC Open Data \url{https://data.cityofnewyork.us/City-Government/311-Call-Center-Inquiry/tdd6-3ysr},
- Agency acronyms from the Data Dictionary
- @examples 
- # To convert data frame to tidy data (long) format, run:
- library(tidyverse)
- sandy_311<-gather(sandy_311, "agency", "num_calls", 2:24)
- sandy_311$agency <- as.factor(sandy_311$agency)}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1783 rows and 25 columns.}
+\title{The (Very) Long Tail Of Hurricane Recovery}
+\format{A data frame with 1783 rows representing dates and 25 variables:
+\describe{
+\item{date}{Date}
+\item{nyc_311}{.}
+\item{acs}{The number of emergency hotline (311) calls made to the Administration for Children's Services related to Hurricane Sandy on the given date}
+\item{bpsi}{The number of emergency hotline (311) calls made to Building Protection Systems, Inc related to Hurricane Sandy}
+\item{cau}{The number of emergency hotline (311) calls made to the Community Affairs Unit related to Hurricane Sandy}
+\item{chall}{The number of emergency hotline (311) calls made to the City Hall related to Hurricane Sandy}
+\item{dep}{The number of emergency hotline (311) calls made to the Department of Environmental Protection related to Hurricane Sandy}
+\item{dob}{The number of emergency hotline (311) calls made to the Department of Buildings related to Hurricane Sandy}
+\item{doe}{The number of emergency hotline (311) calls made to the Department of Education related to Hurricane Sandy}
+\item{dof}{The number of emergency hotline (311) calls made to the Department of Finance related to Hurricane Sandy}
+\item{dohmh}{The number of emergency hotline (311) calls made to the Department of Health and Mental Hygiene related to Hurricane Sandy}
+\item{dpr}{The number of emergency hotline (311) calls made to the Department of Parks and Recreation related to Hurricane Sandy}
+\item{fema}{The number of emergency hotline (311) calls made to the Federal Emergency Management Agency related to Hurricane Sandy}
+\item{hpd}{The number of emergency hotline (311) calls made to the Department of Housing Preservation and Development related to Hurricane Sandy}
+\item{hra}{The number of emergency hotline (311) calls made to the Human Resources Administration related to Hurricane Sandy}
+\item{mfanyc}{The number of emergency hotline (311) calls made to the Mayor's Fund to Advance NYC related to Hurricane Sandy}
+\item{mose}{The number of emergency hotline (311) calls made to the Mayor's Office of Special Enforcement related to Hurricane Sandy}
+\item{nycem}{The number of emergency hotline (311) calls made to Emergency Management related to Hurricane Sandy}
+\item{nycha}{The number of emergency hotline (311) calls made to the New York City Housing Authority related to Hurricane Sandy}
+\item{nyc_service}{The number of emergency hotline (311) calls made to NYC Service related to Hurricane Sandy}
+\item{nypd}{The number of emergency hotline (311) calls made to the New York Police Department related to Hurricane Sandy}
+\item{nysdol}{The number of emergency hotline (311) calls made to the NYC Department of Labor related to Hurricane Sandy}
+\item{sbs}{The number of emergency hotline (311) calls made to Small Business Services related to Hurricane Sandy}
+\item{nys_emergency_mg}{The number of emergency hotline (311) calls made to NYS Emergency Management related to Hurricane Sandy}
+\item{total}{The total number of emergency hotline (311) calls made related to Hurricane Sandy}
+}}
+\source{
+Data from NYC Open Data \url{https://data.cityofnewyork.us/City-Government/311-Call-Center-Inquiry/tdd6-3ysr},
+Agency acronyms from the Data Dictionary
+}
 \usage{
 sandy_311
 }
 \description{
-The (Very) Long Tail Of Hurricane Recovery
-  
-  The raw data behind the story
-  "The (Very) Long Tail Of Hurricane Recovery"
-  \url{https://projects.fivethirtyeight.com/sandy-311/}
-  
- @format A data frame with 1783 rows representing dates and 25 variables:
- \describe{
-   \item{date}{Date}
-   \item{acs}{The number of emergency hotline (311) calls made to the Administration for Children's Services related to Hurricane Sandy on the given date}
-   \item{bpsi}{The number of emergency hotline (311) calls made to Building Protection Systems, Inc related to Hurricane Sandy}
-   \item{cau}{The number of emergency hotline (311) calls made to the Community Affairs Unit related to Hurricane Sandy}
-   \item{chall}{The number of emergency hotline (311) calls made to the City Hall related to Hurricane Sandy}
-   \item{dep}{The number of emergency hotline (311) calls made to the Department of Environmental Protection related to Hurricane Sandy}
-   \item{dob}{The number of emergency hotline (311) calls made to the Department of Buildings related to Hurricane Sandy}
-   \item{doe}{The number of emergency hotline (311) calls made to the Department of Education related to Hurricane Sandy}
-   \item{dof}{The number of emergency hotline (311) calls made to the Department of Finance related to Hurricane Sandy}
-   \item{dohmh}{The number of emergency hotline (311) calls made to the Department of Health and Mental Hygiene related to Hurricane Sandy}
-   \item{dpr}{The number of emergency hotline (311) calls made to the Department of Parks and Recreation related to Hurricane Sandy}
-   \item{fema}{The number of emergency hotline (311) calls made to the Federal Emergency Management Agency related to Hurricane Sandy}
-   \item{hpd}{The number of emergency hotline (311) calls made to the Department of Housing Preservation and Development related to Hurricane Sandy}
-   \item{hra}{The number of emergency hotline (311) calls made to the Human Resources Administration related to Hurricane Sandy}
-   \item{mfanyc}{The number of emergency hotline (311) calls made to the Mayor's Fund to Advance NYC related to Hurricane Sandy}
-   \item{mose}{The number of emergency hotline (311) calls made to the Mayor's Office of Special Enforcement related to Hurricane Sandy}
-   \item{nycem}{The number of emergency hotline (311) calls made to Emergency Management related to Hurricane Sandy}
-   \item{nych}{The number of emergency hotline (311) calls made to the New York City Housing Authority related to Hurricane Sandy}
-   \item{nyc_service}{The number of emergency hotline (311) calls made to NYC Service related to Hurricane Sandy}
-   \item{nypd}{The number of emergency hotline (311) calls made to the New York Police Department related to Hurricane Sandy}
-   \item{nysdol}{The number of emergency hotline (311) calls made to the NYC Department of Labor related to Hurricane Sandy}
-   \item{sbs}{The number of emergency hotline (311) calls made to Small Business Services related to Hurricane Sandy}
-   \item{nys_emergency_mg}{The number of emergency hotline (311) calls made to NYS Emergency Management related to Hurricane Sandy}
-   \item{total}{The total number of emergency hotline (311) calls made related to Hurricane Sandy}
- }
- @source Data from NYC Open Data \url{https://data.cityofnewyork.us/City-Government/311-Call-Center-Inquiry/tdd6-3ysr},
- Agency acronyms from the Data Dictionary
- @examples 
- # To convert data frame to tidy data (long) format, run:
- library(tidyverse)
- sandy_311<-gather(sandy_311, "agency", "num_calls", 2:24)
- sandy_311$agency <- as.factor(sandy_311$agency)
+The raw data behind the story
+"The (Very) Long Tail Of Hurricane Recovery"
+\url{https://projects.fivethirtyeight.com/sandy-311/}
+}
+\examples{
+# To convert data frame to tidy data (long) format, run:
+library(tidyverse)
+sandy_311<-gather(sandy_311, "agency", "num_calls", 2:24)
+sandy_311$agency <- as.factor(sandy_311$agency)
 }
 \keyword{datasets}

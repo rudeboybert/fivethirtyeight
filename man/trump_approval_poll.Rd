@@ -3,78 +3,48 @@
 \docType{data}
 \name{trump_approval_poll}
 \alias{trump_approval_poll}
-\title{How Popular is Donald Trump
- 
- The raw data behind the story:
- "How Popular is Donald Trump"
- \url{https://projects.fivethirtyeight.com/trump-approval-ratings/}
- 
- Approval Poll Dataset:
- @format A data frame with 3051 rows representing individual polls and 20 variables:
- \describe{
-   \item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
-   \item{start_date}{The date the polling began}
-   \item{end_date}{The date the polling concluded}
-   \item{pollster}{The polling group which produced the poll}
-   \item{grade}{The grade for President Trump that the respondents' approval ratings correspond to}
-   \item{samplesize}{The sample size of the poll}
-   \item{population}{The type of people being polled (a for adults, lv for likely voters, rv for registered voters)}
-   \item{weight}{The weight fivethirtyeight gives the poll when determining approval ratings based on historical accuracy of the pollster}
-   \item{approve}{The percentage of respondents who approve of the president}
-   \item{disapprove}{The percentage of respondents who disapprove of the president}
-   \item{adjusted_approve}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
-   \item{adjusted_disapprove}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
-   \item{multiversions}{True if there are multiple versions of the poll, False if there are not}
-   \item{tracking}{TRUE if the poll was tracked, FALSE if not}
-   \item{url}{Poll result URL}
-   \item{poll_id}{Poll ID number}
-   \item{question_id}{ID number for the question being polled}
-   \item{createddate}{Date the poll was created}
-   \item{timestamp}{Date and time the poll was compiled}
- }
- @details Variables "model_date", "influence", and "president" were deleted because each observation contained the
- same value for these variables: January 5, 2018; 0; and Donald Trump respectively. 
- @source \url{https://projects.fivethirtyeight.com/trump-approval-data/approval_polllist.csv} and
- \url{https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv}
- @seealso \code{\link{trump_approval_trend}}}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3051 rows and 19 columns.}
+\title{How Popular is Donald Trump}
+\format{A data frame with 3051 rows representing individual polls and 20 variables:
+\describe{
+\item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
+\item{start_date}{The date the polling began}
+\item{end_date}{The date the polling concluded}
+\item{pollster}{The polling group which produced the poll}
+\item{grade}{The grade for President Trump that the respondents' approval ratings correspond to}
+\item{sample_size}{The sample size of the poll}
+\item{population}{The type of people being polled (a for adults, lv for likely voters, rv for registered voters)}
+\item{weight}{The weight fivethirtyeight gives the poll when determining approval ratings based on historical accuracy of the pollster}
+\item{approve}{The percentage of respondents who approve of the president}
+\item{disapprove}{The percentage of respondents who disapprove of the president}
+\item{adjusted_approve}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
+\item{adjusted_disapprove}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
+\item{multiversions}{True if there are multiple versions of the poll, False if there are not}
+\item{tracking}{TRUE if the poll was tracked, FALSE if not}
+\item{url}{Poll result URL}
+\item{poll_id}{Poll ID number}
+\item{question_id}{ID number for the question being polled}
+\item{created_date}{Date the poll was created}
+\item{timestamp}{Date and time the poll was compiled}
+}}
+\source{
+\url{https://projects.fivethirtyeight.com/trump-approval-data/approval_polllist.csv} and
+\url{https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv}
+}
 \usage{
 trump_approval_poll
 }
 \description{
-How Popular is Donald Trump
- 
- The raw data behind the story:
- "How Popular is Donald Trump"
- \url{https://projects.fivethirtyeight.com/trump-approval-ratings/}
- 
- Approval Poll Dataset:
- @format A data frame with 3051 rows representing individual polls and 20 variables:
- \describe{
-   \item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
-   \item{start_date}{The date the polling began}
-   \item{end_date}{The date the polling concluded}
-   \item{pollster}{The polling group which produced the poll}
-   \item{grade}{The grade for President Trump that the respondents' approval ratings correspond to}
-   \item{samplesize}{The sample size of the poll}
-   \item{population}{The type of people being polled (a for adults, lv for likely voters, rv for registered voters)}
-   \item{weight}{The weight fivethirtyeight gives the poll when determining approval ratings based on historical accuracy of the pollster}
-   \item{approve}{The percentage of respondents who approve of the president}
-   \item{disapprove}{The percentage of respondents who disapprove of the president}
-   \item{adjusted_approve}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
-   \item{adjusted_disapprove}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
-   \item{multiversions}{True if there are multiple versions of the poll, False if there are not}
-   \item{tracking}{TRUE if the poll was tracked, FALSE if not}
-   \item{url}{Poll result URL}
-   \item{poll_id}{Poll ID number}
-   \item{question_id}{ID number for the question being polled}
-   \item{createddate}{Date the poll was created}
-   \item{timestamp}{Date and time the poll was compiled}
- }
- @details Variables "model_date", "influence", and "president" were deleted because each observation contained the
- same value for these variables: January 5, 2018; 0; and Donald Trump respectively. 
- @source \url{https://projects.fivethirtyeight.com/trump-approval-data/approval_polllist.csv} and
- \url{https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv}
- @seealso \code{\link{trump_approval_trend}}
+The raw data behind the story:
+"How Popular is Donald Trump"
+\url{https://projects.fivethirtyeight.com/trump-approval-ratings/}
+}
+\details{
+Approval Poll Dataset:
+
+Variables "model_date", "influence", and "president" were deleted because each observation contained the
+same value for these variables: January 5, 2018; 0; and Donald Trump respectively.
+}
+\seealso{
+\code{\link{trump_approval_trend}}
 }
 \keyword{datasets}

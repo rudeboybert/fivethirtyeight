@@ -31,13 +31,13 @@ nfl_fandom_google <- read_csv("data-raw/nfl-fandom/NFL_fandom_data-google_trends
   ) %>%
   mutate(
     dma = as.factor(dma),
-    nfl = as.numeric(str_replace_all(nfl, "%", "")), 
-    nba = as.numeric(str_replace_all(nba, "%", "")), 
-    mlb = as.numeric(str_replace_all(mlb, "%", "")), 
-    nhl = as.numeric(str_replace_all(nhl, "%", "")), 
-    nascar = as.numeric(str_replace_all(nascar, "%", "")), 
-    cbb = as.numeric(str_replace_all(cbb, "%", "")), 
-    cfb = as.numeric(str_replace_all(cfb, "%", "")), 
+    nfl = as.numeric(str_replace_all(nfl, "%", "")),
+    nba = as.numeric(str_replace_all(nba, "%", "")),
+    mlb = as.numeric(str_replace_all(mlb, "%", "")),
+    nhl = as.numeric(str_replace_all(nhl, "%", "")),
+    nascar = as.numeric(str_replace_all(nascar, "%", "")),
+    cbb = as.numeric(str_replace_all(cbb, "%", "")),
+    cfb = as.numeric(str_replace_all(cfb, "%", "")),
     trump_2016_vote = as.numeric(str_replace_all(trump_2016_vote, "%", ""))
       )
 devtools::use_data(nfl_fandom_google, overwrite = TRUE)
@@ -68,7 +68,7 @@ nfl_fandom_surveymonkey <-read_csv(
     ind_percent = str_replace_all(ind_percent, "%", ""),
     white_percent = str_replace_all(white_percent, "%", ""),
     nonwhite_percent = str_replace_all(nonwhite_percent, "%", "")
-  ) 
+  )
 colnames(nfl_fandom_surveymonkey) <- colnames(nfl_fandom_surveymonkey) %>%
   str_replace_all(pattern="_1",replacement="_ind") %>%
   str_replace_all(pattern="_2",replacement="_gop")
@@ -86,7 +86,7 @@ google_trends <- read_csv("data-raw/puerto-rico-media/google_trends.csv", skip=2
     hurricane_jose_us = hurricane_jose_united_states)
 devtools::use_data(google_trends, overwrite = TRUE)
 
-#Data on the number of sentences per day that mention Hurricanes 
+#Data on the number of sentences per day that mention Hurricanes
 #Harvey, Irma, Jose, and Maria in online news
 mediacloud_hurricanes <- read_csv("data-raw/puerto-rico-media/mediacloud_hurricanes.csv") %>%
   clean_names() %>%
@@ -95,7 +95,7 @@ mediacloud_hurricanes <- read_csv("data-raw/puerto-rico-media/mediacloud_hurrica
   )
 devtools::use_data(mediacloud_hurricanes, overwrite = TRUE)
 
-#Data on the number of sentences per day 
+#Data on the number of sentences per day
 #that mention Puerto Rico, Texas, and Florida in online news
 mediacloud_states <- read_csv("data-raw/puerto-rico-media/mediacloud_states.csv") %>%
   clean_names() %>%
@@ -107,21 +107,21 @@ devtools::use_data(mediacloud_states, overwrite = TRUE)
 mediacloud_online_news <- read_csv("data-raw/puerto-rico-media/mediacloud_top_online_news.csv")
 devtools::use_data(mediacloud_online_news, overwrite = TRUE)
 
-#Data on the number of headlines that mention Puerto Rico, Texas, and Florida, as well as headlines 
+#Data on the number of headlines that mention Puerto Rico, Texas, and Florida, as well as headlines
 #that mention each location and 'President' or 'Trump'.
 mediacloud_trump <- read_csv("data-raw/puerto-rico-media/mediacloud_trump.csv") %>%
   clean_names() %>%
   rename(
     puerto_rico = title_puerto_rico,
     puerto_rico_and_trump = title_puerto_rico_and_title_trump_or_title_president,
-    florida = title_florida, 
+    florida = title_florida,
     florida_and_trump = title_florida_and_title_trump_or_title_president,
     texas = title_texas,
     texas_and_trump = title_texas_and_title_trump_or_title_president
   )
 devtools::use_data(mediacloud_trump, overwrite = TRUE)
 
-#Data on the percent of sentences per day 
+#Data on the percent of sentences per day
 #in TV News that mention Hurricanes Harvey, Irma, Jose, and Maria.
 tv_hurricanes <- read_csv("data-raw/puerto-rico-media/tv_hurricanes.csv") %>%
   clean_names() %>%
@@ -130,7 +130,7 @@ tv_hurricanes <- read_csv("data-raw/puerto-rico-media/tv_hurricanes.csv") %>%
   )
 devtools::use_data(tv_hurricanes, overwrite = TRUE)
 
-#Data on the percent of sentences per day in TV News 
+#Data on the percent of sentences per day in TV News
 #that mention Hurricanes Harvey, Irma, Jose, and Maria by network.
 tv_hurricanes_by_network <- read_csv("data-raw/puerto-rico-media/tv_hurricanes_by_network.csv") %>%
   clean_names() %>%
@@ -242,7 +242,7 @@ trumpworld_issue_5 <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-issue-5.cs
     country = as.factor(country),
     issue = 5
   )
-trumpworld_issues<- bind_rows(
+trumpworld_issues <- bind_rows(
   trumpworld_issue_1, trumpworld_issue_2, trumpworld_issue_3, trumpworld_issue_4, trumpworld_issue_5
   )
 devtools::use_data(trumpworld_issues, overwrite = TRUE)
