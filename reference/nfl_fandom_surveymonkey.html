@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>American Health Care Act Polls — ahca_polls • fivethirtyeight</title>
+<title>Surveymonkey Data: — nfl_fandom_surveymonkey • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -116,44 +116,59 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>American Health Care Act Polls</h1>
+    <h1>Surveymonkey Data:</h1>
     </div>
 
     
-    <p>The raw data behind the story
-"Why The GOP Is So Hell-Bent On Passing An Unpopular Health Care Bill"
-<a href='https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill'>https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill</a>.</p>
+    <p>Surveymonkey Data:</p>
     
 
-    <pre class="usage"><span class='no'>ahca_polls</span></pre>
+    <pre class="usage"><span class='no'>nfl_fandom_surveymonkey</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 15 rows representing polls and 7 variables:</p><dl class='dl-horizontal'>
-  <dt>start</dt><dd><p>Start date of the poll.</p></dd>
-  <dt>end</dt><dd><p>End date of the poll.</p></dd>
-  <dt>pollster</dt><dd><p>The entity that conducts and collects information from the poll.</p></dd>
-  <dt>favor</dt><dd><p>The number of affirmative responses to the question at the pollster.</p></dd>
-  <dt>oppose</dt><dd><p>The number of negative reponses to the question at the pollster.</p></dd>
-  <dt>url</dt><dd><p>The website associated with the polling question.</p></dd>
-  <dt>text</dt><dd><p>The polling question asked at the pollster.</p></dd>
+    <p>a data frame with 33 rows representing teams and 25 variables:</p><dl class='dl-horizontal'>
+<dt>team</dt><dd><p>NFL team</p></dd>
+<dt>total_respondents</dt><dd><p>Total number of poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>asian_dem</dt><dd><p>Number of asian, democrat poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>black_dem</dt><dd><p>Number of black, democrat poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>hispanic_dem</dt><dd><p>Number of hispanic, democrat poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>other_dem</dt><dd><p>Number of democrat poll respondents who identified their race as "other" (not asian, black, hispanic, or white) and ranked the given team in their top 3 favorites</p></dd>
+<dt>white_dem</dt><dd><p>Number of white, democrat poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>total_dem</dt><dd><p>Total number of democrat poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>asian_ind</dt><dd><p>Number of asian, independent poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>black_ind</dt><dd><p>Number of black, independent poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>hispanic_ind</dt><dd><p>Number of hispanic, independent poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>other_ind</dt><dd><p>Number of independent poll respondents who identified their race as "other" (not asian, black, hispanic, or white) and ranked the given team in their top 3 favorites</p></dd>
+<dt>white_ind</dt><dd><p>Number of white, independent poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>total_ind</dt><dd><p>Total number of independent poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>asian_gop</dt><dd><p>Number of asian, republican poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>black_gop</dt><dd><p>Number of black, republican poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>hispanic_gop</dt><dd><p>Number of hispanic, republican poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>other_gop</dt><dd><p>Number of republican poll respondents who identified their race as "other" (not asian, black, hispanic, or white) and ranked the given team in their top 3 favorites</p></dd>
+<dt>white_gop</dt><dd><p>Number of white, republican poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>total_gop</dt><dd><p>Total number of republican poll respondents who ranked the given team in their top 3 favorites</p></dd>
+<dt>gop_percent</dt><dd><p>Percent of fans (who ranked the team in their top 3 favorite NFL teams) who are republicans</p></dd>
+<dt>dem_percent</dt><dd><p>Percent of fans who are democrats</p></dd>
+<dt>ind_percent</dt><dd><p>Percent of fans who are independent</p></dd>
+<dt>white_percent</dt><dd><p>Percent of fans who are white</p></dd>
+<dt>nonwhite_percent</dt><dd><p>Percent of fans who are not white</p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>See <a href='https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md'>https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md</a></p>
+    <p>See <a href='https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv'>https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv</a></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='nfl_fandom_google.html'>nfl_fandom_google</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)</div><div class='output co'>#&gt; <span class='message'>── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──</span></div><div class='output co'>#&gt; <span class='message'>✔ ggplot2 2.2.1     ✔ purrr   0.2.4</span>
-#&gt; <span class='message'>✔ tibble  1.4.2     ✔ dplyr   0.7.4</span>
-#&gt; <span class='message'>✔ tidyr   0.7.2     ✔ stringr 1.2.0</span>
-#&gt; <span class='message'>✔ readr   1.1.1     ✔ forcats 0.2.0</span></div><div class='output co'>#&gt; <span class='message'>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
-#&gt; <span class='message'>✖ dplyr::filter() masks stats::filter()</span>
-#&gt; <span class='message'>✖ dplyr::lag()    masks stats::lag()</span></div><div class='input'><span class='fu'>library</span>(<span class='no'>stringr</span>)
-<span class='no'>ahca_polls_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>ahca_polls</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>opinion</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>start</span>, <span class='no'>end</span>, <span class='no'>pollster</span>, <span class='no'>text</span>, <span class='no'>url</span>))</div></pre>
+<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='no'>nfl_fandom_surveymonkey_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>nfl_fandom_surveymonkey</span> <span class='kw'>%&gt;%</span>
+<span class='fu'>gather</span>(<span class='kw'>key</span><span class='kw'>=</span> <span class='no'>race_party</span>, <span class='kw'>value</span><span class='kw'>=</span><span class='no'>percent</span>, <span class='fl'>3</span>:<span class='fl'>20</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -162,6 +177,8 @@
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

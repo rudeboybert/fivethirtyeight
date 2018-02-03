@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>American Health Care Act Polls — ahca_polls • fivethirtyeight</title>
+<title>The (Very) Long Tail Of Hurricane Recovery — sandy_311 • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -116,44 +116,58 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>American Health Care Act Polls</h1>
+    <h1>The (Very) Long Tail Of Hurricane Recovery</h1>
     </div>
 
     
     <p>The raw data behind the story
-"Why The GOP Is So Hell-Bent On Passing An Unpopular Health Care Bill"
-<a href='https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill'>https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill</a>.</p>
+"The (Very) Long Tail Of Hurricane Recovery"
+<a href='https://projects.fivethirtyeight.com/sandy-311/'>https://projects.fivethirtyeight.com/sandy-311/</a></p>
     
 
-    <pre class="usage"><span class='no'>ahca_polls</span></pre>
+    <pre class="usage"><span class='no'>sandy_311</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 15 rows representing polls and 7 variables:</p><dl class='dl-horizontal'>
-  <dt>start</dt><dd><p>Start date of the poll.</p></dd>
-  <dt>end</dt><dd><p>End date of the poll.</p></dd>
-  <dt>pollster</dt><dd><p>The entity that conducts and collects information from the poll.</p></dd>
-  <dt>favor</dt><dd><p>The number of affirmative responses to the question at the pollster.</p></dd>
-  <dt>oppose</dt><dd><p>The number of negative reponses to the question at the pollster.</p></dd>
-  <dt>url</dt><dd><p>The website associated with the polling question.</p></dd>
-  <dt>text</dt><dd><p>The polling question asked at the pollster.</p></dd>
+    <p>A data frame with 1783 rows representing dates and 25 variables:</p><dl class='dl-horizontal'>
+<dt>date</dt><dd><p>Date</p></dd>
+<dt>nyc_311</dt><dd><p>.</p></dd>
+<dt>acs</dt><dd><p>The number of emergency hotline (311) calls made to the Administration for Children's Services related to Hurricane Sandy on the given date</p></dd>
+<dt>bpsi</dt><dd><p>The number of emergency hotline (311) calls made to Building Protection Systems, Inc related to Hurricane Sandy</p></dd>
+<dt>cau</dt><dd><p>The number of emergency hotline (311) calls made to the Community Affairs Unit related to Hurricane Sandy</p></dd>
+<dt>chall</dt><dd><p>The number of emergency hotline (311) calls made to the City Hall related to Hurricane Sandy</p></dd>
+<dt>dep</dt><dd><p>The number of emergency hotline (311) calls made to the Department of Environmental Protection related to Hurricane Sandy</p></dd>
+<dt>dob</dt><dd><p>The number of emergency hotline (311) calls made to the Department of Buildings related to Hurricane Sandy</p></dd>
+<dt>doe</dt><dd><p>The number of emergency hotline (311) calls made to the Department of Education related to Hurricane Sandy</p></dd>
+<dt>dof</dt><dd><p>The number of emergency hotline (311) calls made to the Department of Finance related to Hurricane Sandy</p></dd>
+<dt>dohmh</dt><dd><p>The number of emergency hotline (311) calls made to the Department of Health and Mental Hygiene related to Hurricane Sandy</p></dd>
+<dt>dpr</dt><dd><p>The number of emergency hotline (311) calls made to the Department of Parks and Recreation related to Hurricane Sandy</p></dd>
+<dt>fema</dt><dd><p>The number of emergency hotline (311) calls made to the Federal Emergency Management Agency related to Hurricane Sandy</p></dd>
+<dt>hpd</dt><dd><p>The number of emergency hotline (311) calls made to the Department of Housing Preservation and Development related to Hurricane Sandy</p></dd>
+<dt>hra</dt><dd><p>The number of emergency hotline (311) calls made to the Human Resources Administration related to Hurricane Sandy</p></dd>
+<dt>mfanyc</dt><dd><p>The number of emergency hotline (311) calls made to the Mayor's Fund to Advance NYC related to Hurricane Sandy</p></dd>
+<dt>mose</dt><dd><p>The number of emergency hotline (311) calls made to the Mayor's Office of Special Enforcement related to Hurricane Sandy</p></dd>
+<dt>nycem</dt><dd><p>The number of emergency hotline (311) calls made to Emergency Management related to Hurricane Sandy</p></dd>
+<dt>nycha</dt><dd><p>The number of emergency hotline (311) calls made to the New York City Housing Authority related to Hurricane Sandy</p></dd>
+<dt>nyc_service</dt><dd><p>The number of emergency hotline (311) calls made to NYC Service related to Hurricane Sandy</p></dd>
+<dt>nypd</dt><dd><p>The number of emergency hotline (311) calls made to the New York Police Department related to Hurricane Sandy</p></dd>
+<dt>nysdol</dt><dd><p>The number of emergency hotline (311) calls made to the NYC Department of Labor related to Hurricane Sandy</p></dd>
+<dt>sbs</dt><dd><p>The number of emergency hotline (311) calls made to Small Business Services related to Hurricane Sandy</p></dd>
+<dt>nys_emergency_mg</dt><dd><p>The number of emergency hotline (311) calls made to NYS Emergency Management related to Hurricane Sandy</p></dd>
+<dt>total</dt><dd><p>The total number of emergency hotline (311) calls made related to Hurricane Sandy</p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>See <a href='https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md'>https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md</a></p>
+    <p>Data from NYC Open Data <a href='https://data.cityofnewyork.us/City-Government/311-Call-Center-Inquiry/tdd6-3ysr'>https://data.cityofnewyork.us/City-Government/311-Call-Center-Inquiry/tdd6-3ysr</a>,
+Agency acronyms from the Data Dictionary</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)</div><div class='output co'>#&gt; <span class='message'>── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──</span></div><div class='output co'>#&gt; <span class='message'>✔ ggplot2 2.2.1     ✔ purrr   0.2.4</span>
-#&gt; <span class='message'>✔ tibble  1.4.2     ✔ dplyr   0.7.4</span>
-#&gt; <span class='message'>✔ tidyr   0.7.2     ✔ stringr 1.2.0</span>
-#&gt; <span class='message'>✔ readr   1.1.1     ✔ forcats 0.2.0</span></div><div class='output co'>#&gt; <span class='message'>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
-#&gt; <span class='message'>✖ dplyr::filter() masks stats::filter()</span>
-#&gt; <span class='message'>✖ dplyr::lag()    masks stats::lag()</span></div><div class='input'><span class='fu'>library</span>(<span class='no'>stringr</span>)
-<span class='no'>ahca_polls_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>ahca_polls</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>opinion</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>start</span>, <span class='no'>end</span>, <span class='no'>pollster</span>, <span class='no'>text</span>, <span class='no'>url</span>))</div></pre>
+<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='no'>sandy_311</span><span class='kw'>&lt;-</span><span class='fu'>gather</span>(<span class='no'>sandy_311</span>, <span class='st'>"agency"</span>, <span class='st'>"num_calls"</span>, <span class='fl'>2</span>:<span class='fl'>24</span>)
+<span class='no'>sandy_311</span>$<span class='no'>agency</span> <span class='kw'>&lt;-</span> <span class='fu'>as.factor</span>(<span class='no'>sandy_311</span>$<span class='no'>agency</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

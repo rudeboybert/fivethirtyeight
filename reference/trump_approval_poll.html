@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>American Health Care Act Polls — ahca_polls • fivethirtyeight</title>
+<title>How Popular is Donald Trump — trump_approval_poll • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -116,44 +116,57 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>American Health Care Act Polls</h1>
+    <h1>How Popular is Donald Trump</h1>
     </div>
 
     
-    <p>The raw data behind the story
-"Why The GOP Is So Hell-Bent On Passing An Unpopular Health Care Bill"
-<a href='https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill'>https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill</a>.</p>
+    <p>The raw data behind the story:
+"How Popular is Donald Trump"
+<a href='https://projects.fivethirtyeight.com/trump-approval-ratings/'>https://projects.fivethirtyeight.com/trump-approval-ratings/</a></p>
     
 
-    <pre class="usage"><span class='no'>ahca_polls</span></pre>
+    <pre class="usage"><span class='no'>trump_approval_poll</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 15 rows representing polls and 7 variables:</p><dl class='dl-horizontal'>
-  <dt>start</dt><dd><p>Start date of the poll.</p></dd>
-  <dt>end</dt><dd><p>End date of the poll.</p></dd>
-  <dt>pollster</dt><dd><p>The entity that conducts and collects information from the poll.</p></dd>
-  <dt>favor</dt><dd><p>The number of affirmative responses to the question at the pollster.</p></dd>
-  <dt>oppose</dt><dd><p>The number of negative reponses to the question at the pollster.</p></dd>
-  <dt>url</dt><dd><p>The website associated with the polling question.</p></dd>
-  <dt>text</dt><dd><p>The polling question asked at the pollster.</p></dd>
+    <p>A data frame with 3051 rows representing individual polls and 20 variables:</p><dl class='dl-horizontal'>
+<dt>subgroup</dt><dd><p>The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)</p></dd>
+<dt>start_date</dt><dd><p>The date the polling began</p></dd>
+<dt>end_date</dt><dd><p>The date the polling concluded</p></dd>
+<dt>pollster</dt><dd><p>The polling group which produced the poll</p></dd>
+<dt>grade</dt><dd><p>The grade for President Trump that the respondents' approval ratings correspond to</p></dd>
+<dt>sample_size</dt><dd><p>The sample size of the poll</p></dd>
+<dt>population</dt><dd><p>The type of people being polled (a for adults, lv for likely voters, rv for registered voters)</p></dd>
+<dt>weight</dt><dd><p>The weight fivethirtyeight gives the poll when determining approval ratings based on historical accuracy of the pollster</p></dd>
+<dt>approve</dt><dd><p>The percentage of respondents who approve of the president</p></dd>
+<dt>disapprove</dt><dd><p>The percentage of respondents who disapprove of the president</p></dd>
+<dt>adjusted_approve</dt><dd><p>The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm</p></dd>
+<dt>adjusted_disapprove</dt><dd><p>The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm</p></dd>
+<dt>multiversions</dt><dd><p>True if there are multiple versions of the poll, False if there are not</p></dd>
+<dt>tracking</dt><dd><p>TRUE if the poll was tracked, FALSE if not</p></dd>
+<dt>url</dt><dd><p>Poll result URL</p></dd>
+<dt>poll_id</dt><dd><p>Poll ID number</p></dd>
+<dt>question_id</dt><dd><p>ID number for the question being polled</p></dd>
+<dt>created_date</dt><dd><p>Date the poll was created</p></dd>
+<dt>timestamp</dt><dd><p>Date and time the poll was compiled</p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>See <a href='https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md'>https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md</a></p>
+    <p><a href='https://projects.fivethirtyeight.com/trump-approval-data/approval_polllist.csv'>https://projects.fivethirtyeight.com/trump-approval-data/approval_polllist.csv</a> and
+<a href='https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv'>https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv</a></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Approval Poll Dataset:</p>
+<p>Variables "model_date", "influence", and "president" were deleted because each observation contained the
+same value for these variables: January 5, 2018; 0; and Donald Trump respectively.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='trump_approval_trend.html'>trump_approval_trend</a></code></p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)</div><div class='output co'>#&gt; <span class='message'>── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──</span></div><div class='output co'>#&gt; <span class='message'>✔ ggplot2 2.2.1     ✔ purrr   0.2.4</span>
-#&gt; <span class='message'>✔ tibble  1.4.2     ✔ dplyr   0.7.4</span>
-#&gt; <span class='message'>✔ tidyr   0.7.2     ✔ stringr 1.2.0</span>
-#&gt; <span class='message'>✔ readr   1.1.1     ✔ forcats 0.2.0</span></div><div class='output co'>#&gt; <span class='message'>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span>
-#&gt; <span class='message'>✖ dplyr::filter() masks stats::filter()</span>
-#&gt; <span class='message'>✖ dplyr::lag()    masks stats::lag()</span></div><div class='input'><span class='fu'>library</span>(<span class='no'>stringr</span>)
-<span class='no'>ahca_polls_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>ahca_polls</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>opinion</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>start</span>, <span class='no'>end</span>, <span class='no'>pollster</span>, <span class='no'>text</span>, <span class='no'>url</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -162,9 +175,11 @@
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
+          </ul>
 
   </div>
 </div>
