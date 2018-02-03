@@ -283,3 +283,8 @@ senators <- read_csv("data-raw/twitter-ratio/senators.csv") %>%
     text =  gsub("[^\x01-\x7F]", "", text)
   )
 devtools::use_data(senators, overwrite = TRUE)
+
+
+# undefeated-boxers---------------------------------------------------------------------
+undefeated <- read_csv("data-raw/undefeated-boxers/undefeated.csv")
+devtools::use_data(undefeated, overwrite = TRUE)
