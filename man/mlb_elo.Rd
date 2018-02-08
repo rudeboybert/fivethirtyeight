@@ -4,7 +4,10 @@
 \name{mlb_elo}
 \alias{mlb_elo}
 \title{MLB Elo}
-\format{A data frame with 215080 rows representing Elo ratings and 26 variables:
+\format{Because of R package size restrictions, only a preview of the 
+first 10 rows of this dataset is included; to obtain the entire dataset 
+(1871 to 2017 games) see Examples below. A data frame with 10 rows 
+representing Elo ratings and 26 variables:
 \describe{
   \item{date}{The date of the game.}
   \item{season}{The season within which the game was played.}
@@ -41,11 +44,17 @@ mlb_elo
 }
 \description{
 The raw data behind the stories:
-"The Complete History Of MLB"
-\url{https://projects.fivethirtyeight.com/complete-history-of-mlb/}
+"The Complete History Of MLB" \url{https://projects.fivethirtyeight.com/complete-history-of-mlb/} 
+and "MLB Predictions" \url{https://projects.fivethirtyeight.com/2017-mlb-predictions/}.
 }
-\details{
-"MLB Predictions"
-\url{https://projects.fivethirtyeight.com/2017-mlb-predictions/}.
+\examples{
+# To obtain the entire dataset, run the following code:
+library(tidyverse)
+mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") \%>\%
+  mutate(
+    playoff = as.factor(playoff),
+    playoff = ifelse(playoff == "<NA>", NA, playoff),
+    neutral = as.logical(neutral)
+  )
 }
 \keyword{datasets}

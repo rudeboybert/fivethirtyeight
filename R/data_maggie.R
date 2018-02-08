@@ -7,7 +7,9 @@
 #' And our "2017-18 NBA Predictions"
 #' \url{https://projects.fivethirtyeight.com/2018-nba-predictions/}
 #'
-#' @format A data frame with 67,012 rows representing games and 20 variables:
+#' @format Because of R package size restrictions, only a preview of the 
+#' first 10 rows of this dataset is included; to obtain the entire dataset 
+#' (1871 to 2017 games) see Examples below. A data frame with 10 rows representing games and 20 variables:
 #' \describe{
 #'  \item{date}{Date}
 #'  \item{season}{Season year, 1947-2018}
@@ -31,12 +33,24 @@
 #'  \item{score2}{Points scored by Team 2}
 #' }
 #' @source See \url{https://projects.fivethirtyeight.com/nba-model/nba_elo.csv}
+#' @examples 
+#' # To obtain the entire dataset, run the following code:
+#' library(tidyverse)
+#' library(janitor)
+#' nba_carmelo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.csv") %>%
+#'   clean_names() %>%
+#'   mutate(
+#'     team1 = as.factor(team1),
+#'     team2 = as.factor(team2),
+#'     playoff = ifelse(playoff == "t", TRUE, FALSE),
+#'     playoff = ifelse(is.na(playoff), FALSE, TRUE),
+#'     neutral = ifelse(neutral == 1, TRUE, FALSE)
+#'   )
 "nba_carmelo"
 
 
 
-#' The Complete History Of The NFL
-#' 2017 NFL Predictions
+#' The Complete History Of The NFL 2017 NFL Predictions
 #'
 #' The raw data behind the story
 #' "The Complete History of the NFL"
@@ -503,8 +517,10 @@
 
 
 
-#' Senator Dataset:
-#' @format A data frame with 288615 rows representing tweets and 10 variables:
+#' Senator Dataset
+#' @format Because of R package size restrictions, only a preview of the 
+#' first 10 rows of this dataset is included; to obtain the entire dataset see 
+#' Examples below. A data frame with 10 rows representing tweets and 10 variables:
 #' \describe{
 #' \item{created_at}{The date and time the tweet was posted}
 #' \item{text}{The text of the tweet}
@@ -520,6 +536,16 @@
 #' @details Data collected on Oct 19 and 20
 #' @source Twitter
 #' @seealso \code{\link{twitter_presidents}}
+#' @examples 
+#' # To obtain the entire dataset, run the following code:
+#' library(tidyverse)
+#' senators <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/twitter-ratio/senators.csv") %>%
+#'   mutate(
+#'     party = as.factor(party),
+#'     state = as.factor(state),
+#'     created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
+#'     text =  gsub("[^\x01-\x7F]", "", text)
+#'   )
 "senators"
 
 

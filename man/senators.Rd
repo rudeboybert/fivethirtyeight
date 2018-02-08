@@ -3,8 +3,10 @@
 \docType{data}
 \name{senators}
 \alias{senators}
-\title{Senator Dataset:}
-\format{A data frame with 288615 rows representing tweets and 10 variables:
+\title{Senator Dataset}
+\format{Because of R package size restrictions, only a preview of the 
+first 10 rows of this dataset is included; to obtain the entire dataset see 
+Examples below. A data frame with 10 rows representing tweets and 10 variables:
 \describe{
 \item{created_at}{The date and time the tweet was posted}
 \item{text}{The text of the tweet}
@@ -24,10 +26,21 @@ Twitter
 senators
 }
 \description{
-Senator Dataset:
+Senator Dataset
 }
 \details{
 Data collected on Oct 19 and 20
+}
+\examples{
+# To obtain the entire dataset, run the following code:
+library(tidyverse)
+senators <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/twitter-ratio/senators.csv") \%>\%
+  mutate(
+    party = as.factor(party),
+    state = as.factor(state),
+    created_at = as.POSIXct(created_at, tz = "GMT", format = "\%m/\%d/\%Y \%H:\%M"),
+    text =  gsub("[^\\x01-\\x7F]", "", text)
+  )
 }
 \seealso{
 \code{\link{twitter_presidents}}

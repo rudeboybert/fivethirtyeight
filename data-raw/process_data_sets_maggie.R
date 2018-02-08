@@ -2,18 +2,20 @@ library(tidyverse)
 library(janitor)
 
 # nba-carmelo---------------------------------------------------------------------
-nba_carmelo <- read_csv("data-raw/nba-carmelo/nba_elo.csv") %>%
+nba_carmelo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.csv") %>%
   clean_names() %>%
   mutate(
     team1 = as.factor(team1),
     team2 = as.factor(team2),
     playoff = ifelse(playoff == "t", TRUE, FALSE),
     playoff = ifelse(is.na(playoff), FALSE, TRUE),
-    neutral = ifelse(neutral == 1, TRUE, FALSE))
+    neutral = ifelse(neutral == 1, TRUE, FALSE)
+  ) %>% 
+  slice(1:10)
 devtools::use_data(nba_carmelo, overwrite = TRUE)
 
 # nfl-elo---------------------------------------------------------------------
-nfl_elo <- read_csv("data-raw/nfl-elo/nfl_elo.csv") %>%
+nfl_elo <- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") %>%
   clean_names() %>%
   mutate(
     team1 = as.factor(team1),
@@ -39,13 +41,13 @@ nfl_fandom_google <- read_csv("data-raw/nfl-fandom/NFL_fandom_data-google_trends
     cbb = as.numeric(str_replace_all(cbb, "%", "")),
     cfb = as.numeric(str_replace_all(cfb, "%", "")),
     trump_2016_vote = as.numeric(str_replace_all(trump_2016_vote, "%", ""))
-      )
+  )
 devtools::use_data(nfl_fandom_google, overwrite = TRUE)
 
 nfl_fandom_surveymonkey <-read_csv(
   "data-raw/nfl-fandom/NFL_fandom_data-surveymonkey.csv",
   skip=1
-  ) %>%
+) %>%
   clean_names() %>%
   rename(
     total_respondents = 'tot_respondents',
@@ -70,12 +72,12 @@ nfl_fandom_surveymonkey <-read_csv(
     nonwhite_percent = str_replace_all(nonwhite_percent, "%", "")
   )
 colnames(nfl_fandom_surveymonkey) <- colnames(nfl_fandom_surveymonkey) %>%
-  str_replace_all(pattern="_1",replacement="_ind") %>%
-  str_replace_all(pattern="_2",replacement="_gop")
+  str_replace_all(pattern="_1", replacement="_ind") %>%
+  str_replace_all(pattern="_2", replacement="_gop")
 devtools::use_data(nfl_fandom_surveymonkey, overwrite = TRUE)
 
 # puerto-rico-media---------------------------------------------------------------------
-#Data on Google trend searches for hurricanes Harvey, Irma, Jose, and Maria
+# Data on Google trend searches for hurricanes Harvey, Irma, Jose, and Maria
 google_trends <- read_csv("data-raw/puerto-rico-media/google_trends.csv", skip=2) %>%
   clean_names() %>%
   rename(
@@ -244,7 +246,7 @@ trumpworld_issue_5 <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-issue-5.cs
   )
 trumpworld_issues <- bind_rows(
   trumpworld_issue_1, trumpworld_issue_2, trumpworld_issue_3, trumpworld_issue_4, trumpworld_issue_5
-  )
+)
 devtools::use_data(trumpworld_issues, overwrite = TRUE)
 
 trumpworld_pres <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-pres.csv") %>%
@@ -263,16 +265,16 @@ devtools::use_data(trumpworld_polls, overwrite = TRUE)
 # twitter-ratio---------------------------------------------------------------------
 barack_obama <- read_csv("data-raw/twitter-ratio/BarackObama.csv") %>%
   mutate(
-  created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
-  text =  gsub("[^\x01-\x7F]", "", text),
-  president = "Barack Obama"
+    created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
+    text =  gsub("[^\x01-\x7F]", "", text),
+    president = "Barack Obama"
   )
 real_donald_trump <- read_csv("data-raw/twitter-ratio/realDonaldTrump.csv") %>%
-mutate(
-  created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
-  text =  gsub("[^\x01-\x7F]", "", text),
-  president = "Donald Trump"
-)
+  mutate(
+    created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
+    text =  gsub("[^\x01-\x7F]", "", text),
+    president = "Donald Trump"
+  )
 twitter_presidents <- bind_rows(barack_obama, real_donald_trump)
 devtools::use_data(twitter_presidents, overwrite=TRUE)
 
@@ -282,7 +284,8 @@ senators <- read_csv("data-raw/twitter-ratio/senators.csv") %>%
     state = as.factor(state),
     created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
     text =  gsub("[^\x01-\x7F]", "", text)
-  )
+  ) %>% 
+  slice(1:10)
 devtools::use_data(senators, overwrite = TRUE)
 
 

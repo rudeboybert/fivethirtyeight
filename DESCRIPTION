@@ -9,6 +9,8 @@ Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = c("aut", "cre")),
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
     person("Jennifer", "Chunn", email = "jenchunn@gmail.com", role = "aut"),
+    person("Meredith", "Manley", email = "meredithmanley24@aol.com", role = "aut"),
+    person("Maggie", "Shea", email = "maggieshea97@gmail.com", role = "aut"),
     person("Andrew", "Flowers",  role = "ctb"),
     person("Jonathan", "Bouchet",  role = "ctb"),
     person("G. Elliott", "Morris",  role = "ctb"),
@@ -46,5 +48,6 @@ Suggests:
     corrplot,
     ggraph,
     igraph,
-    highcharter
+    highcharter,
+    janitor
 VignetteBuilder: knitr

@@ -33,12 +33,8 @@ See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.m
 spi_matches
 }
 \description{
-The raw data behind the stories
-"Club Soccer Predictions"
-\url{https://projects.fivethirtyeight.com/soccer-predictions/}
-}
-\details{
-"Global Club Soccer Rankings"
+The raw data behind the stories "Club Soccer Predictions"
+\url{https://projects.fivethirtyeight.com/soccer-predictions/} and "Global Club Soccer Rankings"
 \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
 }
 \seealso{

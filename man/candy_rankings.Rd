@@ -27,8 +27,7 @@ See \url{https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking
 candy_rankings
 }
 \description{
-The raw data behind the story
-"The Ultimate Halloween Candy Power Ranking"
+The raw data behind the story "The Ultimate Halloween Candy Power Ranking"
 \url{http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/}.
 }
 \examples{

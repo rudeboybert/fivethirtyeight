@@ -3,8 +3,7 @@
 \docType{data}
 \name{nfl_elo}
 \alias{nfl_elo}
-\title{The Complete History Of The NFL
-2017 NFL Predictions}
+\title{The Complete History Of The NFL 2017 NFL Predictions}
 \format{a data frame with 16,007 rows representing games and 14 variables:
 \describe{
  \item{date}{Date}

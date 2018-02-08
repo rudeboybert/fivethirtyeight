@@ -29,12 +29,8 @@
 #'
 #' The raw data behind the stories:
 #' "How To Spot A Front-Runner On The ‘Bachelor’ Or ‘Bachelorette’"
-#' \url{https://fivethirtyeight.com/features/the-bachelorette/}
-#'
-#' "Rachel’s Season Is Fitting Neatly Into ‘Bachelorette’ History"
-#' \url{https://fivethirtyeight.com/features/rachels-season-is-fitting-neatly-into-bachelorette-history/}
-#'
-#' "Rachel Lindsay’s ‘Bachelorette’ Season, In Three Charts"
+#' \url{https://fivethirtyeight.com/features/the-bachelorette/}, "Rachel’s Season Is Fitting Neatly Into ‘Bachelorette’ History"
+#' \url{https://fivethirtyeight.com/features/rachels-season-is-fitting-neatly-into-bachelorette-history/}, and "Rachel Lindsay’s ‘Bachelorette’ Season, In Three Charts"
 #' \url{https://fivethirtyeight.com/features/rachel-lindsays-bachelorette-season-in-three-charts/}.
 #'
 #' @format A data frame with 887 rows representing the Bachelorette and Bachelor contestants and 23 variables:
@@ -64,25 +60,24 @@
 #'   \item{dates_10}{Who was on which date in week 10.}
 #' }
 #' @details Eliminates connote either an elimination (starts with "E") or a rose
-#'   (starts with "R"). Eliminations supercede roses. "E" connotes a standard
-#'   elimination, typically at a rose ceremony. "EQ" means the contestant quits.
-#'   "EF" means the contestant was fired by production. "ED" connotes a date
-#'   elimination. "EU" connotes an unscheduled elimination, one that takes place
-#'   at a time outside of a date or rose ceremony. "R" means the contestant
-#'   received a rose. "R1" means the contestant got a first impression rose.
-#'   "D1" means a one-on-one date, "D2" means a 2-on-1, "D3" means a 3-on-1
-#'   group date, and so on. Weeks of the show are deliminated by rose
-#'   ceremonies, and may not line up exactly with episodes.
-#' @source \url{http://bachelor-nation.wikia.com/wiki/Bachelor_Nation_Wikia} and
-#'   then missing seasons were filled in by ABC and FiveThirtyEight staffers.
+#' (starts with "R"). Eliminations supercede roses. "E" connotes a standard
+#' elimination, typically at a rose ceremony. "EQ" means the contestant quits.
+#' "EF" means the contestant was fired by production. "ED" connotes a date
+#' elimination. "EU" connotes an unscheduled elimination, one that takes place
+#' at a time outside of a date or rose ceremony. "R" means the contestant
+#' received a rose. "R1" means the contestant got a first impression rose.
+#' "D1" means a one-on-one date, "D2" means a 2-on-1, "D3" means a 3-on-1
+#' group date, and so on. Weeks of the show are deliminated by rose
+#' ceremonies, and may not line up exactly with episodes.
+#' @source \url{http://bachelor-nation.wikia.com/wiki/Bachelor_Nation_Wikia} 
+#' and then missing seasons were filled in by ABC and FiveThirtyEight staffers.
 "bachelorette"
 
 
 
 #' Candy Power Ranking
 #'
-#' The raw data behind the story
-#' "The Ultimate Halloween Candy Power Ranking"
+#' The raw data behind the story "The Ultimate Halloween Candy Power Ranking"
 #' \url{http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/}.
 #'
 #' @format A data frame with 85 rows representing Halloween candy and 13 variables:
@@ -116,8 +111,7 @@
 
 #' Chess Transfers
 #'
-#' The raw data behind the story
-#' "American Chess Is Great Again"
+#' The raw data behind the story "American Chess Is Great Again"
 #' \url{https://fivethirtyeight.com/features/american-chess-is-great-again/}.
 #'
 #' @format A data frame with 932 rows representing international player transfers and 5 variables:
@@ -267,13 +261,13 @@
 #' MLB Elo
 #'
 #' The raw data behind the stories:
-#' "The Complete History Of MLB"
-#' \url{https://projects.fivethirtyeight.com/complete-history-of-mlb/}
+#' "The Complete History Of MLB" \url{https://projects.fivethirtyeight.com/complete-history-of-mlb/} 
+#' and "MLB Predictions" \url{https://projects.fivethirtyeight.com/2017-mlb-predictions/}.
 #'
-#' "MLB Predictions"
-#' \url{https://projects.fivethirtyeight.com/2017-mlb-predictions/}.
-#'
-#' @format A data frame with 215080 rows representing Elo ratings and 26 variables:
+#' @format Because of R package size restrictions, only a preview of the 
+#' first 10 rows of this dataset is included; to obtain the entire dataset 
+#' (1871 to 2017 games) see Examples below. A data frame with 10 rows 
+#' representing Elo ratings and 26 variables:
 #' \describe{
 #'   \item{date}{The date of the game.}
 #'   \item{season}{The season within which the game was played.}
@@ -303,17 +297,21 @@
 #'   \item{score2}{The number of runs scored by team2.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/mlb-elo/README.md}
+#' @examples
+#' # To obtain the entire dataset, run the following code:
+#' library(tidyverse)
+#' mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") %>%
+#'   mutate(
+#'     playoff = as.factor(playoff),
+#'     playoff = ifelse(playoff == "<NA>", NA, playoff),
+#'     neutral = as.logical(neutral)
+#'   )
 "mlb_elo"
-
-
 
 #' Match-by-match SPI ratings and forecasts back to 2016
 #'
-#' The raw data behind the stories
-#' "Club Soccer Predictions"
-#' \url{https://projects.fivethirtyeight.com/soccer-predictions/}
-#'
-#'  "Global Club Soccer Rankings"
+#' The raw data behind the stories "Club Soccer Predictions"
+#' \url{https://projects.fivethirtyeight.com/soccer-predictions/} and "Global Club Soccer Rankings"
 #' \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
 #'
 #' @format A data frame with 10182 rows representing soccer matches and 13 variables:
@@ -346,10 +344,8 @@
 
 #' Current SPI ratings and rankings for men's club teams
 #'
-#' The raw data behind the stories
-#' "Club Soccer Predictions"
-#' \url{https://projects.fivethirtyeight.com/soccer-predictions/}
-#'
+#' The raw data behind the stories "Club Soccer Predictions"
+#' \url{https://projects.fivethirtyeight.com/soccer-predictions/} and 
 #' "Global Club Soccer Rankings"
 #' \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
 #'

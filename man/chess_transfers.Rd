@@ -19,8 +19,7 @@ World Chess Federation \url{https://ratings.fide.com/fedchange.phtml}
 chess_transfers
 }
 \description{
-The raw data behind the story
-"American Chess Is Great Again"
+The raw data behind the story "American Chess Is Great Again"
 \url{https://fivethirtyeight.com/features/american-chess-is-great-again/}.
 }
 \keyword{datasets}
