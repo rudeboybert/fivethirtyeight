@@ -52,7 +52,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -121,6 +121,35 @@
     </div>
 
     <div class="contents">
+    <div id="fivethirtyeight-0-3-0-9000" class="section level1">
+<h1 class="hasAnchor">
+<a href="#fivethirtyeight-0-3-0-9000" class="anchor"></a>fivethirtyeight 0.3.0.9000</h1>
+<ul>
+<li>Added new and missing data sets:
+<ul>
+<li>By Meredith Manley: <code>ahca_polls</code>, <code>bachelorette</code>, <code>candy_rankings</code>, <code>chess_transfers</code>, <code>generic_polllist</code>, <code>generic_topline</code>, <code>mlb_elo</code>, <code>ratings</code>, <code>spi_global_rankings</code>, <code>spi_matches</code>, <code>tweets</code>
+</li>
+<li>By Maggie Shea: <code>nba_carmelo</code>, <code>nfl_elo</code>, <code>nfl_fandom_google</code>, <code>nfl_fandom_surveymonkey</code>, <code>google_trends</code>, <code>mediacloud_hurricanes</code>, <code>mediacloud_states</code>, <code>mediacloud_online_news</code>, <code>mediacloud_trump</code>, <code>tv_hurricanes</code>, <code>tv_hurricanes_by_network</code>, <code>tv_states</code>, <code>sandy_311</code>, <code>trump_approval_poll</code>, <code>trump_approval_trend</code>, <code>trumpworld_issues</code>, <code>trumpworld_polls</code>, <code>twitter_presidents</code>, <code>senators</code>, <code>undefeated</code>
+</li>
+</ul>
+</li>
+<li>Converted all orginal categorical variables to <code>ordered()</code>. Ex: <code>bechdel$clean_test</code>
+</li>
+</ul>
+<p>TODO:</p>
+<ul>
+<li>Add citation() to upcoming “Tame Data” principles</li>
+<li>Vignettes
+<ul>
+<li>Add Tame data paper</li>
+<li>Add “vignette of vignettes” with links to user-contributed vignettes on <a href="https://rudeboybert.github.io/fivethirtyeight/">package homepage</a>
+</li>
+<li>Update README.Rmd and fivethirtyeight.Rmd vignette so that output to <a href="https://rudeboybert.github.io/fivethirtyeight/">package homepage</a> is seamless (Home and Getting Started pages respectively).</li>
+</ul>
+</li>
+<li>For relevant data sets, add links to user-contributed vignettes in help page</li>
+</ul>
+</div>
     <div id="fivethirtyeight-0-3-0" class="section level1">
 <h1 class="hasAnchor">
 <a href="#fivethirtyeight-0-3-0" class="anchor"></a>fivethirtyeight 0.3.0</h1>
@@ -128,6 +157,13 @@
 <li>Added new and missing data sets: <code>riddler_castles2</code>, <code>antiquities_act</code>, <code>goose</code>, <code>tenth_circuit</code>
 </li>
 <li>Added more crowd-sourced vignettes: <code>bob_ross.Rmd</code>, <code>tarantino_swears.Rmd</code>
+</li>
+<li>Only main and <code>bechdel</code> vignettes included in package b/c of CRAN package size restrictions. Other crowd-sourced analysis vignettes still available
+<ul>
+<li>In development version</li>
+<li>On package website under “Articles” <a href="https://rudeboybert.github.io/fivethirtyeight/" class="uri">https://rudeboybert.github.io/fivethirtyeight/</a>
+</li>
+</ul>
 </li>
 <li>Other minor changes:
 <ul>
@@ -172,6 +208,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#fivethirtyeight-0-3-0-9000">0.3.0.9000</a></li>
         <li><a href="#fivethirtyeight-0-3-0">0.3.0</a></li>
         <li><a href="#fivethirtyeight-0-2-0">0.2.0</a></li>
         <li><a href="#fivethirtyeight-0-1-0">0.1.0</a></li>
@@ -187,7 +224,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

@@ -148,13 +148,8 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)</div><div class='output co'>#&gt; <span class='message'>Loading tidyverse: ggplot2</span>
-#&gt; <span class='message'>Loading tidyverse: tibble</span>
-#&gt; <span class='message'>Loading tidyverse: tidyr</span>
-#&gt; <span class='message'>Loading tidyverse: readr</span>
-#&gt; <span class='message'>Loading tidyverse: purrr</span>
-#&gt; <span class='message'>Loading tidyverse: dplyr</span></div><div class='output co'>#&gt; <span class='message'>Conflicts with tidy packages ---------------------------------------------------</span></div><div class='output co'>#&gt; <span class='message'>filter(): dplyr, stats</span>
-#&gt; <span class='message'>lag():    dplyr, stats</span></div><div class='input'><span class='fu'>library</span>(<span class='no'>stringr</span>)
+<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>stringr</span>)
 <span class='no'>airline_safety_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>airline_safety</span> <span class='kw'>%&gt;%</span>
   <span class='fu'>gather</span>(<span class='no'>type</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>airline</span>, <span class='no'>incl_reg_subsidiaries</span>, <span class='no'>avail_seat_km_per_week</span>)) <span class='kw'>%&gt;%</span>
   <span class='fu'>mutate</span>(
@@ -183,7 +178,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
