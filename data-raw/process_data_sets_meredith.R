@@ -3,6 +3,7 @@ library(stringr)
 library(lubridate)
 library(janitor)
 
+
 # ahca_polls ----------------------------------------------------------------------
 ahca_polls <- read_csv("data-raw/ahca-polls/ahca_polls.csv") %>%
   clean_names() %>%
@@ -12,6 +13,7 @@ ahca_polls <- read_csv("data-raw/ahca-polls/ahca_polls.csv") %>%
     pollster = as.factor(pollster)
   )
 devtools::use_data(ahca_polls, overwrite = TRUE)
+
 
 
 # bachelorette ---------------------------------------------------------------------
@@ -24,6 +26,7 @@ bachelorette <- read_csv("data-raw/bachelorette/bachelorette.csv") %>%
   mutate(season = as.integer(season)) %>%
   filter(season != "SEASON")
 devtools::use_data(bachelorette, overwrite = TRUE)
+
 
 
 # candy-power-rankings -------------------------------------------------------------
@@ -44,6 +47,7 @@ candy_rankings <- read_csv("data-raw/candy-power-ranking/candy-data.csv") %>%
 devtools::use_data(candy_rankings, overwrite = TRUE)
 
 
+
 # chess-transfers ----------------------------------------------------------------
 chess_transfers <- read_csv("data-raw/chess-transfers/transfers.csv") %>%
   clean_names() %>%
@@ -52,6 +56,7 @@ chess_transfers <- read_csv("data-raw/chess-transfers/transfers.csv") %>%
     id = as.character(id)
   )
 devtools::use_data(chess_transfers, overwrite = TRUE)
+
 
 
 # congress-generic-ballot --------------------------------------------------------
@@ -87,7 +92,8 @@ generic_topline <-
 devtools::use_data(generic_topline, overwrite = TRUE)
 
 
-#inconvenient-sequel ----------------------------------------------------------------
+
+# inconvenient-sequel ----------------------------------------------------------
 ratings <- read_csv("data-raw/inconvenient-sequel/ratings.csv") %>%
   mutate(category = as.factor(category),
          votes_1 = `1_votes`,
@@ -116,6 +122,8 @@ ratings <- read_csv("data-raw/inconvenient-sequel/ratings.csv") %>%
             `8_pct`, `9_pct`, `10_pct`))
 devtools::use_data(ratings, overwrite = TRUE)
 
+
+
 # mayweather-mcgregor ---------------------------------------------------------------
 tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv") %>%
   mutate(
@@ -124,6 +132,7 @@ tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv") %>%
     id = as.character(id)
   )
 devtools::use_data(tweets, overwrite = TRUE)
+
 
 
 # mlb-elo ---------------------------------------------------------------------------
@@ -137,6 +146,7 @@ mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") 
 devtools::use_data(mlb_elo, overwrite = TRUE)
 
 
+
 # soccer-spi ------------------------------------------------------------------------
 # spi_matches
 spi_matches <- read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv")
@@ -146,4 +156,3 @@ devtools::use_data(spi_matches, overwrite = TRUE)
 spi_global_rankings <-
   read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_global_rankings.csv")
 devtools::use_data(spi_global_rankings, overwrite = TRUE)
-
