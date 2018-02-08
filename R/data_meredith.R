@@ -298,14 +298,16 @@
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/mlb-elo/README.md}
 #' @examples
-#' # To obtain the entire dataset, run the following code:
-#' library(tidyverse)
-#' mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") %>%
-#'   mutate(
-#'     playoff = as.factor(playoff),
-#'     playoff = ifelse(playoff == "<NA>", NA, playoff),
-#'     neutral = as.logical(neutral)
-#'   )
+#' # To obtain the entire dataset, run the code inside the following if statement:
+#' if(FALSE){
+#'   library(tidyverse)
+#'   mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") %>%
+#'     mutate(
+#'       playoff = as.factor(playoff),
+#'       playoff = ifelse(playoff == "<NA>", NA, playoff),
+#'       neutral = as.logical(neutral)
+#'     )
+#' }
 "mlb_elo"
 
 #' Match-by-match SPI ratings and forecasts back to 2016
