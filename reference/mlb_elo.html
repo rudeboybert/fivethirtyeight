@@ -167,31 +167,16 @@ representing Elo ratings and 26 variables:</p><dl class='dl-horizontal'>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the following code:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
-<span class='no'>mlb_elo</span> <span class='kw'>&lt;-</span> <span class='fu'>read_csv</span>(<span class='st'>"https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>mutate</span>(
-    <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>playoff</span>),
-    <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='no'>playoff</span> <span class='kw'>==</span> <span class='st'>"&lt;NA&gt;"</span>, <span class='fl'>NA</span>, <span class='no'>playoff</span>),
-    <span class='kw'>neutral</span> <span class='kw'>=</span> <span class='fu'>as.logical</span>(<span class='no'>neutral</span>)
-  )</div><div class='output co'>#&gt; <span class='message'>Parsed with column specification:</span>
-#&gt; <span class='message'>cols(</span>
-#&gt; <span class='message'>  .default = col_double(),</span>
-#&gt; <span class='message'>  date = col_date(format = ""),</span>
-#&gt; <span class='message'>  season = col_integer(),</span>
-#&gt; <span class='message'>  neutral = col_integer(),</span>
-#&gt; <span class='message'>  playoff = col_character(),</span>
-#&gt; <span class='message'>  team1 = col_character(),</span>
-#&gt; <span class='message'>  team2 = col_character(),</span>
-#&gt; <span class='message'>  pitcher1 = col_character(),</span>
-#&gt; <span class='message'>  pitcher2 = col_character(),</span>
-#&gt; <span class='message'>  pitcher1_rating = col_character(),</span>
-#&gt; <span class='message'>  pitcher2_rating = col_character(),</span>
-#&gt; <span class='message'>  pitcher1_adj = col_character(),</span>
-#&gt; <span class='message'>  pitcher2_adj = col_character(),</span>
-#&gt; <span class='message'>  score1 = col_integer(),</span>
-#&gt; <span class='message'>  score2 = col_integer()</span>
-#&gt; <span class='message'>)</span></div><div class='output co'>#&gt; <span class='message'>See spec(...) for full column specifications.</span></div></pre>
+    <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the code inside the following if statement:</span>
+<span class='kw'>if</span>(<span class='fl'>FALSE</span>){
+  <span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+  <span class='no'>mlb_elo</span> <span class='kw'>&lt;-</span> <span class='fu'>read_csv</span>(<span class='st'>"https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv"</span>) <span class='kw'>%&gt;%</span>
+    <span class='fu'>mutate</span>(
+      <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>playoff</span>),
+      <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='no'>playoff</span> <span class='kw'>==</span> <span class='st'>"&lt;NA&gt;"</span>, <span class='fl'>NA</span>, <span class='no'>playoff</span>),
+      <span class='kw'>neutral</span> <span class='kw'>=</span> <span class='fu'>as.logical</span>(<span class='no'>neutral</span>)
+    )
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
