@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • fivethirtyeight</title>
+<title>Mayweather Vs McGregor Tweets — mayweather_mcgregor_tweets • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container template-vignette-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -113,27 +113,51 @@
       
       </header>
 
-      <div class="page-header">
-  <h1>Articles <small>version&nbsp;0.3.0.9000</small></h1>
-</div>
-
-<div class="row">
-  <div class="col-md-9">
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="bechdel.html">Bechdel analysis using the `tidyverse`</a></li>
-        <li><a href="biopics.html">Looking at Biopics of Hollywood</a></li>
-        <li><a href="bob_ross.html">Bob Ross - Joy of Painting-</a></li>
-        <li><a href="comics_gender.html">Gender in Comic Books</a></li>
-        <li><a href="fivethirtyeight.html">`fivethirtyeight` Package</a></li>
-        <li><a href="NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a></li>
-        <li><a href="tarantino_swears.html">How Many Fucks Does Tarantino Give?</a></li>
-        <li><a href="trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a></li>
-      </ul>
+      <div class="row">
+  <div class="col-md-9 contents">
+    <div class="page-header">
+    <h1>Mayweather Vs McGregor Tweets</h1>
     </div>
+
+    
+    <p>The raw data behind the story
+"The Mayweather-McGregor Fight As Told Through Emojis"
+<a href='https://fivethirtyeight.com/?post_type=fte_features&amp;p=161615'>https://fivethirtyeight.com/?post_type=fte_features&amp;p=161615</a>.</p>
+    
+
+    <pre class="usage"><span class='no'>mayweather_mcgregor_tweets</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A data frame with 12118 rows representing tweets and 7 variables:</p><dl class='dl-horizontal'>
+  <dt>created_at</dt><dd><p>Time and date at which the tweet associated with the Mayweather vs. McGregor fight was sent.</p></dd>
+  <dt>emojis</dt><dd><p>Whether or not emojis were used in the tweet about the fight.</p></dd>
+  <dt>id</dt><dd><p>A numerical identifier for each individual tweet about the fight.</p></dd>
+  <dt>link</dt><dd><p>The link to the tweet about the fight on Twitter.</p></dd>
+  <dt>retweeted</dt><dd><p>Whether or not the tweet about the fight was retweeted.</p></dd>
+  <dt>screen_name</dt><dd><p>The screen name under which the tweet about the fight was posted.</p></dd>
+  <dt>text</dt><dd><p>The text contained in the tweet about the fight.</p></dd>
+</dl>
+    
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>This data contains 12,118 tweets that contain one or more emojis and
+match one or more of the following hashtags: #MayMac, #MayweatherMcGregor,
+#MayweatherVMcGregor, #MayweatherVsMcGregor, #McGregor and #Mayweather.
+Data was collected on August 27, 2017 between 12:05 a.m. and 1:15 a.m. EDT
+using the Twitter streaming API. <a href='https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor'>https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor</a></p>
+    
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      
+      <li><a href="#format">Format</a></li>
+
+      <li><a href="#source">Source</a></li>
+          </ul>
+
   </div>
 </div>
 

@@ -127,16 +127,16 @@
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>Because of R package size restrictions, only a preview of the 
-first 10 rows of this dataset is included; to obtain the entire dataset see 
+    <p>Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset see
 Examples below. A data frame with 10 rows representing tweets and 10 variables:</p><dl class='dl-horizontal'>
 <dt>created_at</dt><dd><p>The date and time the tweet was posted</p></dd>
+<dt>user</dt><dd><p>The user posting the tweet</p></dd>
 <dt>text</dt><dd><p>The text of the tweet</p></dd>
 <dt>url</dt><dd><p>The link to the tweet</p></dd>
 <dt>replies</dt><dd><p>The number of replies to the tweet</p></dd>
 <dt>retweets</dt><dd><p>The number of retweets</p></dd>
 <dt>favorites</dt><dd><p>The number of favorites</p></dd>
-<dt>user</dt><dd><p>The user posting the tweet</p></dd>
 <dt>bioguide_id</dt><dd><p>The poster's member ID from the "Biographical Directory of the United States Congress"</p></dd>
 <dt>party</dt><dd><p>The poster's political party affiliation</p></dd>
 <dt>state</dt><dd><p>The state the poster represents in Congress</p></dd>
@@ -166,7 +166,8 @@ Examples below. A data frame with 10 rows representing tweets and 10 variables:<
       <span class='kw'>state</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>state</span>),
       <span class='kw'>created_at</span> <span class='kw'>=</span> <span class='fu'>as.POSIXct</span>(<span class='no'>created_at</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='st'>"GMT"</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"%m/%d/%Y %H:%M"</span>),
       <span class='kw'>text</span> <span class='kw'>=</span>  <span class='fu'>gsub</span>(<span class='st'>"[^\x01-\x7F]"</span>, <span class='st'>""</span>, <span class='no'>text</span>)
-    )
+    ) <span class='kw'>%&gt;%</span>
+    <span class='fu'>select</span>(<span class='no'>created_at</span>, <span class='no'>user</span>, <span class='fu'>everything</span>())
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -189,7 +190,7 @@ Examples below. A data frame with 10 rows representing tweets and 10 variables:<
 
       <footer>
       <div class="copyright">
-  <p>Developed by Albert Y. Kim, Chester Ismay, Jennifer Chunn, Meredith Manley, Maggie Shea.</p>
+  <p>Developed by Albert Y. Kim, Chester Ismay, Jennifer Chunn.</p>
 </div>
 
 <div class="pkgdown">
