@@ -129,25 +129,14 @@
 <ul>
 <li>By Meredith Manley: <code>ahca_polls</code>, <code>bachelorette</code>, <code>candy_rankings</code>, <code>chess_transfers</code>, <code>generic_polllist</code>, <code>generic_topline</code>, <code>mlb_elo</code>, <code>ratings</code>, <code>spi_global_rankings</code>, <code>spi_matches</code>, <code>tweets</code>
 </li>
-<li>By Maggie Shea: <code>nba_carmelo</code>, <code>nfl_elo</code>, <code>nfl_fandom_google</code>, <code>nfl_fandom_surveymonkey</code>, <code>google_trends</code>, <code>mediacloud_hurricanes</code>, <code>mediacloud_states</code>, <code>mediacloud_online_news</code>, <code>mediacloud_trump</code>, <code>tv_hurricanes</code>, <code>tv_hurricanes_by_network</code>, <code>tv_states</code>, <code>sandy_311</code>, <code>trump_approval_poll</code>, <code>trump_approval_trend</code>, <code>trumpworld_issues</code>, <code>trumpworld_polls</code>, <code>twitter_presidents</code>, <code>senators</code>, <code>undefeated</code>
+<li>By Maggie Shea: <code>nba_carmelo</code>, <code>nfl_elo</code>, <code>nfl_fandom_google</code>, <code>nfl_fandom_surveymonkey</code>, <code>google_trends</code>, <code>mediacloud_hurricanes</code>, <code>mediacloud_states</code>, <code>mediacloud_online_news</code>, <code>mediacloud_trump</code>, <code>tv_hurricanes</code>, <code>tv_hurricanes_by_network</code>, <code>tv_states</code>, <code>sandy_311</code>, <code>senators</code>, <code>trump_approval_poll</code>, <code>trump_approval_trend</code>, <code>trumpworld_issues</code>, <code>trumpworld_polls</code>, <code>twitter_presidents</code>, <code>undefeated</code>
 </li>
 </ul>
 </li>
-<li>Converted all orginal categorical variables to <code>ordered()</code>. Ex: <code>bechdel$clean_test</code>
+<li>Package website now at <a href="http://fivethirtyeight-r.netlify.com/" class="uri">http://fivethirtyeight-r.netlify.com/</a>
 </li>
-</ul>
-<p>TODO:</p>
-<ul>
-<li>Add citation() to upcoming “Tame Data” principles</li>
-<li>Vignettes
-<ul>
-<li>Add Tame data paper</li>
-<li>Add “vignette of vignettes” with links to user-contributed vignettes on <a href="https://rudeboybert.github.io/fivethirtyeight/">package homepage</a>
+<li>Converted all ordinal categorical variables to <code>factor(..., ordered = TRUE)</code>. Ex: <code>bechdel$clean_test</code>
 </li>
-<li>Update README.Rmd and fivethirtyeight.Rmd vignette so that output to <a href="https://rudeboybert.github.io/fivethirtyeight/">package homepage</a> is seamless (Home and Getting Started pages respectively).</li>
-</ul>
-</li>
-<li>For relevant data sets, add links to user-contributed vignettes in help page</li>
 </ul>
 </div>
     <div id="fivethirtyeight-0-3-0" class="section level1">
@@ -161,7 +150,7 @@
 <li>Only main and <code>bechdel</code> vignettes included in package b/c of CRAN package size restrictions. Other crowd-sourced analysis vignettes still available
 <ul>
 <li>In development version</li>
-<li>On package website under “Articles” <a href="https://rudeboybert.github.io/fivethirtyeight/" class="uri">https://rudeboybert.github.io/fivethirtyeight/</a>
+<li>On package website under “Articles” <a href="http://fivethirtyeight-r.netlify.com/" class="uri">http://fivethirtyeight-r.netlify.com/</a>
 </li>
 </ul>
 </li>
@@ -197,7 +186,7 @@
 <h1 class="hasAnchor">
 <a href="#fivethirtyeight-0-1-0" class="anchor"></a>fivethirtyeight 0.1.0</h1>
 <ul>
-<li>Included all data sets as of late December 2016. love-actually being the latest</li>
+<li>Included all data sets as of late December 2016. <code>love-actually</code> being the latest</li>
 <li>Included one code example as a Vignette: bechdel</li>
 </ul>
 </div>
