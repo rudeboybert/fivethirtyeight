@@ -27,7 +27,7 @@ riddler_castles2
 \description{
 The raw data behind the story
 "The Battle For Riddler Nation, Round 2"
-\url{http://fivethirtyeight.com/features/the-battle-for-riddler-nation-round-2/}.
+\url{https://fivethirtyeight.com/features/the-battle-for-riddler-nation-round-2/}.
 Analysis of the submitted solutions can be found at: \url{https://fivethirtyeight.com/features/how-much-should-you-bid-for-that-painting/}
 }
 \examples{

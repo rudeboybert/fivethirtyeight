@@ -21,6 +21,6 @@ unisex_names
 \description{
 The raw data behind the story
 "The Most Common Unisex Names In America: Is Yours One Of Them?"
-\url{http://fivethirtyeight.com/features/there-are-922-unisex-names-in-america-is-yours-one-of-them/}.
+\url{https://fivethirtyeight.com/features/there-are-922-unisex-names-in-america-is-yours-one-of-them/}.
 }
 \keyword{datasets}

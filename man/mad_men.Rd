@@ -31,6 +31,6 @@ mad_men
 \description{
 The raw data behind the story
 ""Mad Men" Is Ending. What's Next For The Cast?"
-\url{http://fivethirtyeight.com/datalab/mad-men-is-ending-whats-next-for-the-cast/}.
+\url{https://fivethirtyeight.com/features/mad-men-is-ending-whats-next-for-the-cast/}.
 }
 \keyword{datasets}

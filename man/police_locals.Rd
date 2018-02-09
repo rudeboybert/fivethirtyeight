@@ -24,7 +24,7 @@ police_locals
 \description{
 The raw data behind the story
 "Most Police Don't Live In The Cities They Serve"
-\url{http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/}.
+\url{https://fivethirtyeight.com/features/most-police-dont-live-in-the-cities-they-serve/}.
 }
 \details{
 The dataset includes the cities with the 75 largest police forces, with the exception of Honolulu for which data is not available. All calculations are based on data from the U.S. Census.

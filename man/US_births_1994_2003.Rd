@@ -22,7 +22,7 @@ US_births_1994_2003
 \description{
 The raw data behind the story
 "Some People Are Too Superstitious To Have A Baby On Friday The 13th"
-\url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
+\url{https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
 }
 \seealso{
 \code{\link{US_births_2000_2014}}

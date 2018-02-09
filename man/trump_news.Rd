@@ -19,6 +19,6 @@ trump_news
 \description{
 The raw data behind the story
 "How Trump Hacked The Media"
-\url{http://fivethirtyeight.com/features/how-donald-trump-hacked-the-media/}.
+\url{https://fivethirtyeight.com/features/how-donald-trump-hacked-the-media/}.
 }
 \keyword{datasets}

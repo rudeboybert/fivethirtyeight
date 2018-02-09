@@ -21,7 +21,7 @@ cand_state_20150114
 \description{
 The raw data behind the story
 "Looking For Clues: Who Is Going To Run For President In 2016?"
-\url{http://fivethirtyeight.com/datalab/2016-president-who-is-going-to-run/}.
+\url{https://fivethirtyeight.com/features/2016-president-who-is-going-to-run/}.
 }
 \seealso{
 \code{\link{cand_events_20150114}}, \code{\link{cand_events_20150130}}, and \code{\link{cand_state_20150130}}

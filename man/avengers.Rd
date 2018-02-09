@@ -37,6 +37,6 @@ avengers
 \description{
 The raw data behind the story
 "Joining The Avengers Is As Deadly As Jumping Off A Four-Story Building"
-\url{http://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/}.
+\url{https://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/}.
 }
 \keyword{datasets}

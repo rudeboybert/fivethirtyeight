@@ -23,7 +23,7 @@
   \item{region}{Region of US}
 }}
 \source{
-See \url{http://fivethirtyeight.com/datalab/how-americans-like-their-steak/}
+See \url{https://fivethirtyeight.com/features/how-americans-like-their-steak/}
 }
 \usage{
 steak_survey
@@ -31,6 +31,6 @@ steak_survey
 \description{
 The raw data behind the story
 "How Americans Like Their Steak"
-\url{http://fivethirtyeight.com/datalab/how-americans-like-their-steak/}.
+\url{https://fivethirtyeight.com/features/how-americans-like-their-steak/}.
 }
 \keyword{datasets}

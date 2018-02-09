@@ -30,6 +30,6 @@ congress_age
 \description{
 The raw data behind the story
 "Both Republicans And Democrats Have an Age Problem"
-\url{http://fivethirtyeight.com/features/both-republicans-and-democrats-have-an-age-problem/}.
+\url{https://fivethirtyeight.com/features/both-republicans-and-democrats-have-an-age-problem/}.
 }
 \keyword{datasets}

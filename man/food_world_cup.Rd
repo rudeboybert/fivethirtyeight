@@ -61,7 +61,7 @@ food_world_cup
 \description{
 The raw data behind the story
 "The FiveThirtyEight International Food Association's 2014 World Cup"
-\url{http://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/}.
+\url{https://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/}.
 For all the countries below, the response to the following question is presented:
 "Please rate how much you like the traditional cuisine of X"
 \itemize{

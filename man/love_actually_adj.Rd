@@ -28,7 +28,7 @@ love_actually_adj
 \description{
 The raw data behind the story
 "The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time"
-\url{http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
+\url{https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/}.
 The adjacency matrix of which actors appear in the same scene together.
 }
 \seealso{

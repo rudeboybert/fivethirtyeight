@@ -32,6 +32,6 @@ mlb_as_team_talent
 \description{
 The raw data behind the story
 "The Best MLB All-Star Teams Ever"
-\url{http://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/}.
+\url{https://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/}.
 }
 \keyword{datasets}

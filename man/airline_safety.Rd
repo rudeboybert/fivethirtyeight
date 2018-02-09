@@ -25,7 +25,7 @@ airline_safety
 \description{
 The raw data behind the story
 "Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?"
-\url{http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/}.
+\url{https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/}.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:

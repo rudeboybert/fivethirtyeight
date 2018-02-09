@@ -2,7 +2,7 @@
 #'
 #' The raw data behind the story
 #' "How The FiveThirtyEight Senate Forecast Model Works"
-#' \url{http://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/}.
+#' \url{https://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/}.
 #'
 #' @format A data frame with 207 rows representing US state elections and 5 variables:
 #' \describe{
@@ -112,7 +112,7 @@
 #'
 #' The raw data behind the story
 #' ""Mad Men" Is Ending. What's Next For The Cast?"
-#' \url{http://fivethirtyeight.com/datalab/mad-men-is-ending-whats-next-for-the-cast/}.
+#' \url{https://fivethirtyeight.com/features/mad-men-is-ending-whats-next-for-the-cast/}.
 #'
 #' @format A data frame with 248 rows representing performers on TV shows and 15 variables:
 #' \describe{
@@ -141,7 +141,7 @@
 #'
 #' The raw data behind the story
 #' "Dear Mona, How Many Flight Attendants Are Men?"
-#' \url{http://fivethirtyeight.com/datalab/dear-mona-how-many-flight-attendants-are-men/}.
+#' \url{https://fivethirtyeight.com/features/dear-mona-how-many-flight-attendants-are-men/}.
 #'
 #' @format A data frame with 320 rows representing job categories and 2 variables:
 #' \describe{
@@ -157,7 +157,7 @@
 #'
 #' The raw data behind the story
 #' "The Best MLB All-Star Teams Ever"
-#' \url{http://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/}.
+#' \url{https://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/}.
 #'
 #' @format A data frame with 172 rows representing Major League Baseball seasons and 16 variables:
 #' \describe{
@@ -187,7 +187,7 @@
 #'
 #' The raw data behind the story
 #' "The Best MLB All-Star Teams Ever"
-#' \url{http://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/}.
+#' \url{https://fivethirtyeight.com/features/the-best-mlb-all-star-teams-ever/}.
 #'
 #' @format A data frame with 3930 rows representing Major League Baseball players in given seasons and 15 variables:
 #' \describe{
@@ -216,7 +216,7 @@
 #'
 #' The raw data behind the story
 #' "A Handful Of Cities Are Driving 2016's Rise In Murder"
-#' \url{http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/}.
+#' \url{https://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/}.
 #'
 #' @format A data frame with 79 rows representing large US cities and 7 variables:
 #' \describe{
@@ -237,7 +237,7 @@
 #'
 #' The raw data behind the story
 #' "A Handful Of Cities Are Driving 2016's Rise In Murder"
-#' \url{http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/}.
+#' \url{https://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/}.
 #'
 #' @format A data frame with 83 rows representing large US cities and 5 variables:
 #' \describe{
@@ -256,7 +256,7 @@
 #'
 #' The raw data behind the story
 #' "Projecting The Top 50 Players In The 2015 NBA Draft Class"
-#' \url{http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}.
+#' \url{https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}.
 #'
 #' @format A data frame with 1090 rows representing National Basketball Association players/prospects and 9 variables:
 #' \describe{
@@ -270,7 +270,7 @@
 #'   \item{role_player}{Probability of becoming a role player (25 per draft, SPM >= -1.4)}
 #'   \item{bust}{Probability of becoming a bust (everyone else, SPM < -1.4)}
 #' }
-#' @source See \url{http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}
+#' @source See \url{https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}
 "nba_draft_2015"
 
 
@@ -279,7 +279,7 @@
 #'
 #' The raw data behind the story
 #' "Accurately Counting NBA Tattoos Isn't Easy, Even If You're Up Close"
-#' \url{http://fivethirtyeight.com/datalab/accurately-counting-nba-tattoos-isnt-easy-even-if-youre-up-close/}.
+#' \url{https://fivethirtyeight.com/features/accurately-counting-nba-tattoos-isnt-easy-even-if-youre-up-close/}.
 #'
 #' @format A data frame with 636 rows representing National Basketball Association players and 2 variables:
 #' \describe{
@@ -295,7 +295,7 @@
 #'
 #' The raw data behind the story
 #' "The Rams Are Dead To Me, So I Answered 3,352 Questions To Find A New NFL Team"
-#' \url{http://fivethirtyeight.com/features/the-rams-are-dead-to-me-so-i-answered-3352-questions-to-find-a-new-team/}.
+#' \url{https://fivethirtyeight.com/features/the-rams-are-dead-to-me-so-i-answered-3352-questions-to-find-a-new-team/}.
 #'
 #' @format A data frame with 32 rows representing National Football League teams and 17 variables:
 #' \describe{
@@ -326,7 +326,7 @@
 #'
 #' The raw data behind the story
 #' "The NFL's Uneven History Of Punishing Domestic Violence"
-#' \url{http://fivethirtyeight.com/features/nfl-domestic-violence-policy-suspensions/}.
+#' \url{https://fivethirtyeight.com/features/nfl-domestic-violence-policy-suspensions/}.
 #'
 #' @format A data frame with 269 rows representing National Football League players and 7 variables:
 #' \describe{
@@ -347,7 +347,7 @@
 #'
 #' The raw data behind the story
 #' "Who Goes To Meaningless NFL Games And Why?"
-#' \url{http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/}.
+#' \url{https://fivethirtyeight.com/features/who-goes-to-meaningless-nfl-games-and-why/}.
 #'
 #' @format A data frame with 108 rows representing National Football League games and 3 variables:
 #' \describe{
@@ -364,7 +364,7 @@
 #'
 #' The raw data behind the story
 #' "Who Goes To Meaningless NFL Games And Why?"
-#' \url{http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/}.
+#' \url{https://fivethirtyeight.com/features/who-goes-to-meaningless-nfl-games-and-why/}.
 #'
 #' @format A data frame with 32 rows representing National Football League teams and 2 variables:
 #' \describe{
@@ -380,7 +380,7 @@
 #'
 #' The raw data behind the story
 #' "The Football Hall Of Fame Has A Receiver Problem"
-#' \url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
+#' \url{https://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
 #'
 #' @format A data frame with 6496 rows representing National Football League wide receivers and 6 variables:
 #' \describe{
@@ -391,7 +391,7 @@
 #'   \item{career_wowy}{The amount by which \code{career_ranypa} exceeds what would be expected from his QBs' (age-adjusted) performance without the receiver}
 #'   \item{bcs_rating}{The number of yards per game by which a player would outgain an average receiver on the same team, after adjusting for teammate quality and age (update of \url{http://www.sabernomics.com/sabernomics/index.php/2005/02/ranking-the-all-time-great-wide-receivers/})}
 #' }
-#' @source See \url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}
+#' @source See \url{https://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}
 "nflwr_hist"
 
 
@@ -400,7 +400,7 @@
 #'
 #' The raw data behind the story
 #' "The Football Hall Of Fame Has A Receiver Problem"
-#' \url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
+#' \url{https://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
 #'
 #' @format A data frame with 24 rows representing National Football League wide receiver ages and 3 variables:
 #' \describe{
@@ -417,7 +417,7 @@
 #'
 #' The raw data behind the story
 #' "You Can't Trust What You Read About Nutrition"
-#' \url{http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}.
+#' \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}.
 #'
 #' @format A data frame with 27716 rows representing Regression fits for p-hacking and 3 variables:
 #' \describe{
@@ -425,7 +425,7 @@
 #'   \item{characteristic}{Name of characteristic (predictor/independent variable)}
 #'   \item{p_values}{P-value from regression fit}
 #' }
-#' @source See \url{http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}
+#' @source See \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}
 "nutrition_pvalues"
 
 
@@ -455,7 +455,7 @@
 #'
 #' The raw data behind the story
 #' "Where Police Have Killed Americans In 2015"
-#' \url{http://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015}.
+#' \url{https://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015}.
 #'
 #' @format A data frame with 467 rows representing People who died from interactions with police and 34 variables:
 #' \describe{

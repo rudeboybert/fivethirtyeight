@@ -27,6 +27,6 @@ san_andreas
 \description{
 The raw data behind the story
 "The Rock Isn't Alone: Lots Of People Are Worried About 'The Big One'"
-\url{http://fivethirtyeight.com/datalab/the-rock-isnt-alone-lots-of-people-are-worried-about-the-big-one/}.
+\url{https://fivethirtyeight.com/features/the-rock-isnt-alone-lots-of-people-are-worried-about-the-big-one/}.
 }
 \keyword{datasets}

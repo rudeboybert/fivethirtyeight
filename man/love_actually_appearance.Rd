@@ -28,7 +28,7 @@ love_actually_appearance
 \description{
 The raw data behind the story
 "The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time"
-\url{http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/}.
+\url{https://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/}.
 A table of the central actors in "Love Actually" and which scenes they appear in.
 }
 \examples{

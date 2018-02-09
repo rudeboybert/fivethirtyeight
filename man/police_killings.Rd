@@ -50,6 +50,6 @@ police_killings
 \description{
 The raw data behind the story
 "Where Police Have Killed Americans In 2015"
-\url{http://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015}.
+\url{https://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015}.
 }
 \keyword{datasets}

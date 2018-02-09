@@ -19,6 +19,6 @@ democratic_bench
 \description{
 The raw data behind the story
 "Some Democrats Who Could Step Up If Hillary Isn't Ready For Hillary"
-\url{http://fivethirtyeight.com/datalab/some-democrats-who-could-step-up-if-hillary-isnt-ready-for-hillary/}.
+\url{https://fivethirtyeight.com/features/some-democrats-who-could-step-up-if-hillary-isnt-ready-for-hillary/}.
 }
 \keyword{datasets}

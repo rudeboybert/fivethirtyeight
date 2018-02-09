@@ -30,6 +30,6 @@ biopics
 \description{
 The raw data behind the story
 "'Straight Outta Compton' Is The Rare Biopic Not About White Dudes"
-\url{http://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/}.
+\url{https://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/}.
 }
 \keyword{datasets}

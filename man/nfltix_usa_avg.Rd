@@ -18,6 +18,6 @@ nfltix_usa_avg
 \description{
 The raw data behind the story
 "Who Goes To Meaningless NFL Games And Why?"
-\url{http://fivethirtyeight.com/datalab/who-goes-to-meaningless-nfl-games-and-why/}.
+\url{https://fivethirtyeight.com/features/who-goes-to-meaningless-nfl-games-and-why/}.
 }
 \keyword{datasets}

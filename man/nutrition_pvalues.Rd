@@ -11,7 +11,7 @@
   \item{p_values}{P-value from regression fit}
 }}
 \source{
-See \url{http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}
+See \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}
 }
 \usage{
 nutrition_pvalues
@@ -19,6 +19,6 @@ nutrition_pvalues
 \description{
 The raw data behind the story
 "You Can't Trust What You Read About Nutrition"
-\url{http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}.
+\url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}.
 }
 \keyword{datasets}

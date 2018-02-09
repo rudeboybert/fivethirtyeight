@@ -20,6 +20,6 @@ senate_polls
 \description{
 The raw data behind the story
 "Early Senate Polls Have Plenty to Tell Us About November"
-\url{http://fivethirtyeight.com/features/early-senate-polls-have-plenty-to-tell-us-about-november/}.
+\url{https://fivethirtyeight.com/features/early-senate-polls-have-plenty-to-tell-us-about-november/}.
 }
 \keyword{datasets}

@@ -27,7 +27,7 @@ college_all_ages
 \description{
 The raw data behind the story
 "The Economic Guide To Picking A College Major"
-\url{http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/}.
+\url{https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/}.
 }
 \seealso{
 \code{\link{college_grad_students}}, \code{\link{college_recent_grads}}

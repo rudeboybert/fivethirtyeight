@@ -14,7 +14,7 @@
   \item{bcs_rating}{The number of yards per game by which a player would outgain an average receiver on the same team, after adjusting for teammate quality and age (update of \url{http://www.sabernomics.com/sabernomics/index.php/2005/02/ranking-the-all-time-great-wide-receivers/})}
 }}
 \source{
-See \url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}
+See \url{https://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}
 }
 \usage{
 nflwr_hist
@@ -22,6 +22,6 @@ nflwr_hist
 \description{
 The raw data behind the story
 "The Football Hall Of Fame Has A Receiver Problem"
-\url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
+\url{https://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
 }
 \keyword{datasets}

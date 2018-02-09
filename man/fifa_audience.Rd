@@ -21,7 +21,7 @@ fifa_audience
 \description{
 The raw data behind the story
 "How To Break FIFA"
-\url{http://fivethirtyeight.com/features/how-to-break-fifa/}.
+\url{https://fivethirtyeight.com/features/how-to-break-fifa/}.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:

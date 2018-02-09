@@ -29,6 +29,6 @@ comma_survey
 \description{
 The raw data behind the story
 "Elitist, Superfluous, Or Popular? We Polled Americans on the Oxford Comma"
-\url{http://fivethirtyeight.com/datalab/elitist-superfluous-or-popular-we-polled-americans-on-the-oxford-comma/}.
+\url{https://fivethirtyeight.com/features/elitist-superfluous-or-popular-we-polled-americans-on-the-oxford-comma/}.
 }
 \keyword{datasets}

@@ -18,6 +18,6 @@ nba_tattoos
 \description{
 The raw data behind the story
 "Accurately Counting NBA Tattoos Isn't Easy, Even If You're Up Close"
-\url{http://fivethirtyeight.com/datalab/accurately-counting-nba-tattoos-isnt-easy-even-if-youre-up-close/}.
+\url{https://fivethirtyeight.com/features/accurately-counting-nba-tattoos-isnt-easy-even-if-youre-up-close/}.
 }
 \keyword{datasets}

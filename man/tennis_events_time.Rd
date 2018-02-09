@@ -21,7 +21,7 @@ tennis_events_time
 \description{
 The raw data behind the story
 "Why Some Tennis Matches Take Forever"
-\url{http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/}.
+\url{https://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/}.
 }
 \seealso{
 \code{\link{tennis_players_time}} and \code{\link{tennis_serve_time}}

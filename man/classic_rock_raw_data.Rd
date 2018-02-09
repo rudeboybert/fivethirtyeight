@@ -23,7 +23,7 @@ classic_rock_raw_data
 \description{
 The raw data behind the story
 "Why Classic Rock Isn't What It Used To Be"
-\url{http://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/}.
+\url{https://fivethirtyeight.com/features/why-classic-rock-isnt-what-it-used-to-be/}.
 }
 \seealso{
 \code{\link{classic_rock_song_list}}

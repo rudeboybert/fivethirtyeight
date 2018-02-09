@@ -23,6 +23,6 @@ nfl_suspensions
 \description{
 The raw data behind the story
 "The NFL's Uneven History Of Punishing Domestic Violence"
-\url{http://fivethirtyeight.com/features/nfl-domestic-violence-policy-suspensions/}.
+\url{https://fivethirtyeight.com/features/nfl-domestic-violence-policy-suspensions/}.
 }
 \keyword{datasets}

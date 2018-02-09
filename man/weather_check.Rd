@@ -25,6 +25,6 @@ weather_check
 \description{
 The raw data behind the story
 "Where People Go To Check The Weather"
-\url{http://fivethirtyeight.com/datalab/weather-forecast-news-app-habits/}.
+\url{https://fivethirtyeight.com/features/weather-forecast-news-app-habits/}.
 }
 \keyword{datasets}

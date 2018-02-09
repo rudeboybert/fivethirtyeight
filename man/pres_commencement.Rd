@@ -24,6 +24,6 @@ pres_commencement
 \description{
 The raw data behind the story
 "Sitting Presidents Give Way More Commencement Speeches Than They Used To"
-\url{http://fivethirtyeight.com/features/sitting-presidents-give-way-more-commencement-speeches-than-they-used-to/}.
+\url{https://fivethirtyeight.com/features/sitting-presidents-give-way-more-commencement-speeches-than-they-used-to/}.
 }
 \keyword{datasets}

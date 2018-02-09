@@ -21,6 +21,6 @@ hist_senate_preds
 \description{
 The raw data behind the story
 "How The FiveThirtyEight Senate Forecast Model Works"
-\url{http://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/}.
+\url{https://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/}.
 }
 \keyword{datasets}

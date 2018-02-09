@@ -21,6 +21,6 @@ daily_show_guests
 \description{
 The raw data behind the story
 "Every Guest Jon Stewart Ever Had On 'The Daily Show'"
-\url{http://fivethirtyeight.com/datalab/every-guest-jon-stewart-ever-had-on-the-daily-show/}.
+\url{https://fivethirtyeight.com/features/every-guest-jon-stewart-ever-had-on-the-daily-show/}.
 }
 \keyword{datasets}

@@ -18,6 +18,6 @@ male_flight_attend
 \description{
 The raw data behind the story
 "Dear Mona, How Many Flight Attendants Are Men?"
-\url{http://fivethirtyeight.com/datalab/dear-mona-how-many-flight-attendants-are-men/}.
+\url{https://fivethirtyeight.com/features/dear-mona-how-many-flight-attendants-are-men/}.
 }
 \keyword{datasets}

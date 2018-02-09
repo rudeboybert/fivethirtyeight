@@ -21,7 +21,7 @@ drinks
 \description{
 The raw data behind the story
 "Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?"
-\url{http://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/}.
+\url{https://fivethirtyeight.com/features/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/}.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:

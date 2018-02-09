@@ -19,6 +19,6 @@ nflwr_aging_curve
 \description{
 The raw data behind the story
 "The Football Hall Of Fame Has A Receiver Problem"
-\url{http://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
+\url{https://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}.
 }
 \keyword{datasets}

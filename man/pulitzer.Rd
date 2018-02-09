@@ -15,7 +15,7 @@
   \item{num_finals1990_2014}{Number of Pulitzer Prize winners and finalists from 1990 to 2014}
 }}
 \source{
-See \url{http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/}
+See \url{https://fivethirtyeight.com/features/do-pulitzers-help-newspapers-keep-readers/}
 }
 \usage{
 pulitzer
@@ -23,6 +23,6 @@ pulitzer
 \description{
 The raw data behind the story
 "Do Pulitzers Help Newspapers Keep Readers?"
-\url{http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/}.
+\url{https://fivethirtyeight.com/features/do-pulitzers-help-newspapers-keep-readers/}.
 }
 \keyword{datasets}

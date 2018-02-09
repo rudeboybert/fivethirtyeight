@@ -21,6 +21,6 @@ murder_2015_final
 \description{
 The raw data behind the story
 "A Handful Of Cities Are Driving 2016's Rise In Murder"
-\url{http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/}.
+\url{https://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/}.
 }
 \keyword{datasets}

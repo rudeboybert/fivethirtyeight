@@ -45,7 +45,7 @@ drug_use
 \description{
 The raw data behind the story
 "How Baby Boomers Get High"
-\url{http://fivethirtyeight.com/datalab/how-baby-boomers-get-high/}.
+\url{https://fivethirtyeight.com/features/how-baby-boomers-get-high/}.
 It covers usage of 13 drugs in the past 12 months across 17 age groups.
 }
 \examples{

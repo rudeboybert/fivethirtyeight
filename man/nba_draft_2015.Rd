@@ -17,7 +17,7 @@
   \item{bust}{Probability of becoming a bust (everyone else, SPM < -1.4)}
 }}
 \source{
-See \url{http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}
+See \url{https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}
 }
 \usage{
 nba_draft_2015
@@ -25,6 +25,6 @@ nba_draft_2015
 \description{
 The raw data behind the story
 "Projecting The Top 50 Players In The 2015 NBA Draft Class"
-\url{http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}.
+\url{https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}.
 }
 \keyword{datasets}
