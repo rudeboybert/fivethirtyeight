@@ -6,18 +6,18 @@
 \title{Higher Rates Of Hate Crimes Are Tied To Income Inequality}
 \format{A data frame with 51 rows representing US states and DC and 12 variables:
 \describe{
-  \item{state}{State name} 
-  \item{median_house_inc}{Median household income, 2016} 
-  \item{share_unemp_seas}{Share of the population that is unemployed (seasonally adjusted), Sept. 2016} 
-  \item{share_pop_metro}{Share of the population that lives in metropolitan areas, 2015} 
-  \item{share_pop_hs}{Share of adults 25 and older with a high-school degree, 2009} 
-  \item{share_non_citizen}{Share of the population that are not U.S. citizens, 2015} 
-  \item{share_white_poverty}{Share of white residents who are living in poverty, 2015} 
-  \item{gini_index}{Gini Index, 2015} 
-  \item{share_non_white}{Share of the population that is not white, 2015} 
-  \item{share_vote_trump}{Share of 2016 U.S. presidential voters who voted for Donald Trump} 
-  \item{hate_crimes_per_100k_splc}{Hate crimes per 100,000 population, Southern Poverty Law Center, Nov. 9-18, 2016} 
-  \item{avg_hatecrimes_per_100k_fbi}{Average annual hate crimes per 100,000 population, FBI, 2010-2015} 
+  \item{state}{State name}
+  \item{median_house_inc}{Median household income, 2016}
+  \item{share_unemp_seas}{Share of the population that is unemployed (seasonally adjusted), Sept. 2016}
+  \item{share_pop_metro}{Share of the population that lives in metropolitan areas, 2015}
+  \item{share_pop_hs}{Share of adults 25 and older with a high-school degree, 2009}
+  \item{share_non_citizen}{Share of the population that are not U.S. citizens, 2015}
+  \item{share_white_poverty}{Share of white residents who are living in poverty, 2015}
+  \item{gini_index}{Gini Index, 2015}
+  \item{share_non_white}{Share of the population that is not white, 2015}
+  \item{share_vote_trump}{Share of 2016 U.S. presidential voters who voted for Donald Trump}
+  \item{hate_crimes_per_100k_splc}{Hate crimes per 100,000 population, Southern Poverty Law Center, Nov. 9-18, 2016}
+  \item{avg_hatecrimes_per_100k_fbi}{Average annual hate crimes per 100,000 population, FBI, 2010-2015}
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/hate-crimes}

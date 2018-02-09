@@ -6,21 +6,21 @@
 \title{"Mad Men" Is Ending. What's Next For The Cast?}
 \format{A data frame with 248 rows representing performers on TV shows and 15 variables:
 \describe{
-  \item{performer}{The name of the actor, according to IMDb. This is not a unique identifier - two performers appeared in more than one program} 
-  \item{show}{The television show where this actor appeared in more than half the episodes} 
-  \item{show_start}{The year the television show began} 
-  \item{show_end}{The year the television show ended, "PRESENT" if the show remains on the air as of May 10.} 
-  \item{status}{Why the actor is no longer on the program: "END" if the show has concluded, "LEFT" if the show remains on the air.} 
-  \item{charend}{The year the character left the show. Equal to "Show End" if the performer stayed on until the final season.} 
-  \item{years_since}{2015 minus CharEnd} 
-  \item{num_lead}{The number of leading roles in films the performer has appeared in since and including "CharEnd", according to OpusData} 
-  \item{num_support}{The number of leading roles in films the performer has appeared in since and including "CharEnd", according to OpusData} 
-  \item{num_shows}{The number of seasons of television of which the performer appeared in at least half the episodes since and including "CharEnd", according to OpusData} 
-  \item{score}{#LEAD + #Shows + 0.25*(#SUPPORT)} 
-  \item{score_div_y}{"Score" divided by "Years Since"} 
-  \item{lead_notes}{The list of films counted in #LEAD} 
-  \item{support_notes}{The list of films counted in #SUPPORT} 
-  \item{show_notes}{The seasons of shows counted in #Shows} 
+  \item{performer}{The name of the actor, according to IMDb. This is not a unique identifier - two performers appeared in more than one program}
+  \item{show}{The television show where this actor appeared in more than half the episodes}
+  \item{show_start}{The year the television show began}
+  \item{show_end}{The year the television show ended, "PRESENT" if the show remains on the air as of May 10.}
+  \item{status}{Why the actor is no longer on the program: "END" if the show has concluded, "LEFT" if the show remains on the air.}
+  \item{charend}{The year the character left the show. Equal to "Show End" if the performer stayed on until the final season.}
+  \item{years_since}{2015 minus CharEnd}
+  \item{num_lead}{The number of leading roles in films the performer has appeared in since and including "CharEnd", according to OpusData}
+  \item{num_support}{The number of leading roles in films the performer has appeared in since and including "CharEnd", according to OpusData}
+  \item{num_shows}{The number of seasons of television of which the performer appeared in at least half the episodes since and including "CharEnd", according to OpusData}
+  \item{score}{#LEAD + #Shows + 0.25*(#SUPPORT)}
+  \item{score_div_y}{"Score" divided by "Years Since"}
+  \item{lead_notes}{The list of films counted in #LEAD}
+  \item{support_notes}{The list of films counted in #SUPPORT}
+  \item{show_notes}{The seasons of shows counted in #Shows}
 }}
 \source{
 IMDB \url{http://imdb.com}

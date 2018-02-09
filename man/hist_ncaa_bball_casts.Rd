@@ -6,15 +6,15 @@
 \title{The NCAA Bracket: Checking Our Work}
 \format{A data frame with 253 rows representing NCAA men's basketball tournament games and 6 variables:
 \describe{
-  \item{year}{} 
-  \item{round}{} 
-  \item{favorite}{} 
-  \item{underdog}{} 
-  \item{favorite_prob}{} 
-  \item{favorite_win}{} 
+  \item{year}{}
+  \item{round}{}
+  \item{favorite}{}
+  \item{underdog}{}
+  \item{favorite_prob}{}
+  \item{favorite_win}{}
 }}
 \source{
-See \url{http://fivethirtyeight.com/datalab/the-ncaa-bracket-checking-our-work/}
+See \url{https://fivethirtyeight.com/features/the-ncaa-bracket-checking-our-work/}
 }
 \usage{
 hist_ncaa_bball_casts
@@ -22,6 +22,6 @@ hist_ncaa_bball_casts
 \description{
 The raw data behind the story
 "The NCAA Bracket: Checking Our Work"
-\url{http://fivethirtyeight.com/datalab/the-ncaa-bracket-checking-our-work}.
+\url{https://fivethirtyeight.com/features/the-ncaa-bracket-checking-our-work/}.
 }
 \keyword{datasets}

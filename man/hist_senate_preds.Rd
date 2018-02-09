@@ -6,11 +6,11 @@
 \title{How The FiveThirtyEight Senate Forecast Model Works}
 \format{A data frame with 207 rows representing US state elections and 5 variables:
 \describe{
-  \item{state}{Election} 
-  \item{year}{Year of election} 
-  \item{candidate}{Last name} 
-  \item{forecast_prob}{Probability of winning election per FiveThirtyEight Election Day forecast} 
-  \item{result}{`Win` or `Loss`} 
+  \item{state}{Election}
+  \item{year}{Year of election}
+  \item{candidate}{Last name}
+  \item{forecast_prob}{Probability of winning election per FiveThirtyEight Election Day forecast}
+  \item{result}{`Win` or `Loss`}
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/forecast-methodology}

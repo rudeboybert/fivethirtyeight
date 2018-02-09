@@ -6,13 +6,13 @@
 \title{The NFL's Uneven History Of Punishing Domestic Violence}
 \format{A data frame with 269 rows representing National Football League players and 7 variables:
 \describe{
-  \item{name}{first initial.last name} 
-  \item{team}{team at time of suspension} 
-  \item{games}{number of games suspended (one regular season = 16 games)} 
-  \item{category}{personal conduct, substance abuse, peformance enhancing drugs or in-game violence} 
-  \item{description}{description of suspension} 
-  \item{year}{year of suspension} 
-  \item{source}{news source} 
+  \item{name}{first initial.last name}
+  \item{team}{team at time of suspension}
+  \item{games}{number of games suspended (one regular season = 16 games)}
+  \item{category}{personal conduct, substance abuse, peformance enhancing drugs or in-game violence}
+  \item{description}{description of suspension}
+  \item{year}{year of suspension}
+  \item{source}{news source}
 }}
 \source{
 \url{http://en.wikipedia.org/wiki/List_of_players_and_coaches_suspended_by_the_NFL}, \url{http://www.spotrac.com/fines-tracker/nfl/suspensions/}

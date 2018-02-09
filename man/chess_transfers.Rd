@@ -13,7 +13,7 @@
   \item{transfer_date}{The date at which the transfer took place.}
 }}
 \source{
-World Chess Federation \url{https://ratings.fide.com/fedchange.phtml}
+World Chess Federation \url{https://ratings.fide.com/}
 }
 \usage{
 chess_transfers

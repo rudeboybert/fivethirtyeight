@@ -6,13 +6,13 @@
 \title{The Dallas Shooting Was Among The Deadliest For Police In U.S. History}
 \format{A data frame with 22800 rows representing Police officers/dogs who lost their lives and 7 variables:
 \describe{
-  \item{person}{Name of person/canine who died} 
-  \item{cause_of_death}{Cause of death} 
-  \item{date}{Date of event} 
-  \item{year}{Year of event} 
-  \item{canine}{TRUE if canine, FALSE if human} 
-  \item{dept_name}{Name of police department} 
-  \item{state}{State of police department} 
+  \item{person}{Name of person/canine who died}
+  \item{cause_of_death}{Cause of death}
+  \item{date}{Date of event}
+  \item{year}{Year of event}
+  \item{canine}{TRUE if canine, FALSE if human}
+  \item{dept_name}{Name of police department}
+  \item{state}{State of police department}
 }}
 \source{
 Officer Down Memorial Page \url{https://www.odmp.org/}

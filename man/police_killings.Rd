@@ -6,40 +6,40 @@
 \title{Where Police Have Killed Americans In 2015}
 \format{A data frame with 467 rows representing People who died from interactions with police and 34 variables:
 \describe{
-  \item{name}{Name of deceased} 
-  \item{age}{Age of deceased} 
-  \item{gender}{Gender of deceased} 
-  \item{raceethnicity}{Race/ethnicity of deceased} 
-  \item{month}{Month of killing} 
-  \item{day}{Day of incident} 
-  \item{year}{Year of incident} 
-  \item{streetaddress}{Address/intersection where incident occurred} 
-  \item{city}{City where incident occurred} 
-  \item{state}{State where incident occurred} 
-  \item{latitude}{Latitude, geocoded from address} 
-  \item{longitude}{Longitude, geocoded from address} 
-  \item{state_fp}{State FIPS code} 
-  \item{county_fp}{County FIPS code} 
-  \item{tract_ce}{Tract ID code} 
-  \item{geo_id}{Combined tract ID code} 
-  \item{county_id}{Combined county ID code} 
-  \item{namelsad}{Tract description} 
-  \item{lawenforcementagency}{Agency involved in incident} 
-  \item{cause}{Cause of death} 
-  \item{armed}{How/whether deceased was armed} 
-  \item{pop}{Tract population} 
-  \item{share_white}{Share of pop that is non-Hispanic white} 
-  \item{share_black}{Share of pop that is black (alone, not in combination)} 
-  \item{share_hispanic}{Share of pop that is Hispanic/Latino (any race)} 
-  \item{p_income}{Tract-level median personal income} 
-  \item{h_income}{Tract-level median household income} 
-  \item{county_income}{County-level median household income} 
-  \item{comp_income}{`h_income` / `county_income`} 
-  \item{county_bucket}{Household income, quintile within county} 
-  \item{nat_bucket}{Household income, quintile nationally} 
-  \item{pov}{Tract-level poverty rate (official)} 
-  \item{urate}{Tract-level unemployment rate} 
-  \item{college}{Share of 25+ pop with BA or higher} 
+  \item{name}{Name of deceased}
+  \item{age}{Age of deceased}
+  \item{gender}{Gender of deceased}
+  \item{raceethnicity}{Race/ethnicity of deceased}
+  \item{month}{Month of killing}
+  \item{day}{Day of incident}
+  \item{year}{Year of incident}
+  \item{streetaddress}{Address/intersection where incident occurred}
+  \item{city}{City where incident occurred}
+  \item{state}{State where incident occurred}
+  \item{latitude}{Latitude, geocoded from address}
+  \item{longitude}{Longitude, geocoded from address}
+  \item{state_fp}{State FIPS code}
+  \item{county_fp}{County FIPS code}
+  \item{tract_ce}{Tract ID code}
+  \item{geo_id}{Combined tract ID code}
+  \item{county_id}{Combined county ID code}
+  \item{namelsad}{Tract description}
+  \item{lawenforcementagency}{Agency involved in incident}
+  \item{cause}{Cause of death}
+  \item{armed}{How/whether deceased was armed}
+  \item{pop}{Tract population}
+  \item{share_white}{Share of pop that is non-Hispanic white}
+  \item{share_black}{Share of pop that is black (alone, not in combination)}
+  \item{share_hispanic}{Share of pop that is Hispanic/Latino (any race)}
+  \item{p_income}{Tract-level median personal income}
+  \item{h_income}{Tract-level median household income}
+  \item{county_income}{County-level median household income}
+  \item{comp_income}{`h_income` / `county_income`}
+  \item{county_bucket}{Household income, quintile within county}
+  \item{nat_bucket}{Household income, quintile nationally}
+  \item{pov}{Tract-level poverty rate (official)}
+  \item{urate}{Tract-level unemployment rate}
+  \item{college}{Share of 25+ pop with BA or higher}
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/police-killings}

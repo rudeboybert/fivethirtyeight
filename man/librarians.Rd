@@ -6,15 +6,15 @@
 \title{Where Are America's Librarians?}
 \format{A data frame with 371 rows representing areas in the US and 9 variables:
 \describe{
-  \item{prim_state}{} 
-  \item{area_name}{} 
-  \item{tot_emp}{} 
-  \item{emp_prse}{} 
-  \item{jobs_1000}{} 
-  \item{loc_quotient}{} 
-  \item{mor}{} 
-  \item{high_emp}{} 
-  \item{low_emp}{} 
+  \item{prim_state}{}
+  \item{area_name}{}
+  \item{tot_emp}{}
+  \item{emp_prse}{}
+  \item{jobs_1000}{}
+  \item{loc_quotient}{}
+  \item{mor}{}
+  \item{high_emp}{}
+  \item{low_emp}{}
 }}
 \source{
 Bureau of Labor Statistics \url{http://www.bls.gov/oes/current/oes254021.htm#(1)}
@@ -25,6 +25,6 @@ librarians
 \description{
 The raw data behind the story
 "Where Are America's Librarians?"
-\url{http://fivethirtyeight.com/datalab/where-are-americas-librarians}.
+\url{https://fivethirtyeight.com/features/where-are-americas-librarians/}.
 }
 \keyword{datasets}

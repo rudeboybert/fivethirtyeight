@@ -100,7 +100,7 @@
 #' @format A data frame with 1794 rows representing movies and 15 variables:
 #' \describe{
 #'   \item{year}{Year of release}
-#'   \item{imdb}{Text to append \url{http://www.imdb.com/title/} to for IMDB url. E.g. \url{http://www.imdb.com/title/tt1711425}}
+#'   \item{imdb}{Text to construct IMDB url. Ex: \url{http://www.imdb.com/title/tt1711425}}
 #'   \item{title}{Movie test}
 #'   \item{test}{bechdel test result (detailed, with discrepancies indicated)}
 #'   \item{clean_test}{bechdel test result (detailed): \code{ok} = passes test, \code{dubious}, \code{men} = women only talk about men, \code{notalk} = women don't talk to each other, \code{nowomen} = fewer than two women }
@@ -163,7 +163,7 @@
 #' @format A data frame with 761 rows representing movies and 14 variables:
 #' \describe{
 #'   \item{title}{Title of the film.}
-#'   \item{site}{Text to append \url{http://www.imdb.com/title/} to for IMDB url. E.g. \url{http://www.imdb.com/title/tt1711425}}
+#'   \item{site}{Text to construct IMDB url. Ex: \url{http://www.imdb.com/title/tt1711425}}
 #'   \item{country}{Country of origin.}
 #'   \item{year_release}{Year of release.}
 #'   \item{box_office}{Gross earnings at U.S. box office.}
@@ -803,7 +803,7 @@
 #'
 #' The raw data behind the story
 #' "41 Percent Of Fliers Think You're Rude If You Recline Your Seat"
-#' \url{http://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat}.
+#' \url{https://fivethirtyeight.com/features/airplane-etiquette-recline-seat/}.
 #'
 #' @format A data frame with 1040 rows representing respondents and 27 variables:
 #' \describe{

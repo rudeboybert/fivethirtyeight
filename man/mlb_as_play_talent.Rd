@@ -6,21 +6,21 @@
 \title{The Best MLB All-Star Teams Ever}
 \format{A data frame with 3930 rows representing Major League Baseball players in given seasons and 15 variables:
 \describe{
-  \item{bbref_id}{Player's ID at Baseball-Reference.com} 
-  \item{yearid}{The season in question} 
-  \item{gamenum}{Order of All-Star Game for the season (in years w/ multiple ASGs; set to 0 when only 1 per year)} 
-  \item{gameid}{Game ID at Baseball-Reference.com} 
-  \item{lgid}{League of All-Star team} 
-  \item{startingpos}{Postion (according to baseball convention; 1=pitcher, 2=catcher, etc.) if starter} 
-  \item{off600}{Estimate of offensive talent, in runs above league average per 600 plate appearances} 
-  \item{def600}{Estimate of fielding talent, in runs above league average per 600 plate appearances} 
-  \item{pitch200}{Estimate of pitching talent, in runs above league average per 200 innings pitched} 
-  \item{asg_pa}{Number of plate appearances in the All-Star Game itself} 
-  \item{asg_ip}{Number of innings pitched in the All-Star Game itself} 
-  \item{offper9innasg}{Expected offensive runs added above average (from talent) based on PA in ASG, scaled to a 9-inning game} 
-  \item{defper9innasg}{Expected defensive runs added above average (from talent) based on PA in ASG, scaled to a 9-inning game} 
-  \item{pitper9innasg}{Expected pitching runs added above average (from talent) based on IP in ASG, scaled to a 9-inning game} 
-  \item{totper9innasg}{Expected runs added above average (from talent) based on PA/IP in ASG, scaled to a 9-inning game} 
+  \item{bbref_id}{Player's ID at Baseball-Reference.com}
+  \item{yearid}{The season in question}
+  \item{gamenum}{Order of All-Star Game for the season (in years w/ multiple ASGs; set to 0 when only 1 per year)}
+  \item{gameid}{Game ID at Baseball-Reference.com}
+  \item{lgid}{League of All-Star team}
+  \item{startingpos}{Postion (according to baseball convention; 1=pitcher, 2=catcher, etc.) if starter}
+  \item{off600}{Estimate of offensive talent, in runs above league average per 600 plate appearances}
+  \item{def600}{Estimate of fielding talent, in runs above league average per 600 plate appearances}
+  \item{pitch200}{Estimate of pitching talent, in runs above league average per 200 innings pitched}
+  \item{asg_pa}{Number of plate appearances in the All-Star Game itself}
+  \item{asg_ip}{Number of innings pitched in the All-Star Game itself}
+  \item{offper9innasg}{Expected offensive runs added above average (from talent) based on PA in ASG, scaled to a 9-inning game}
+  \item{defper9innasg}{Expected defensive runs added above average (from talent) based on PA in ASG, scaled to a 9-inning game}
+  \item{pitper9innasg}{Expected pitching runs added above average (from talent) based on IP in ASG, scaled to a 9-inning game}
+  \item{totper9innasg}{Expected runs added above average (from talent) based on PA/IP in ASG, scaled to a 9-inning game}
 }}
 \source{
 \url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs

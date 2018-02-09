@@ -6,14 +6,14 @@
 \title{Hip-Hop Is Turning On Donald Trump}
 \format{A data frame with 377 rows representing hip-hop songs referencing POTUS candidates in 2016 and 8 variables:
 \describe{
-  \item{candidate}{Candidate referenced} 
-  \item{song}{Song name} 
-  \item{artist}{Artist name} 
-  \item{sentiment}{Positive, negative or neutral} 
-  \item{theme}{Theme of lyric} 
-  \item{album_release_date}{Date of album release} 
-  \item{line}{Lyrics} 
-  \item{url}{Genius link} 
+  \item{candidate}{Candidate referenced}
+  \item{song}{Song name}
+  \item{artist}{Artist name}
+  \item{sentiment}{Positive, negative or neutral}
+  \item{theme}{Theme of lyric}
+  \item{album_release_date}{Date of album release}
+  \item{line}{Lyrics}
+  \item{url}{Genius link}
 }}
 \source{
 Genius \url{http://genius.com/}

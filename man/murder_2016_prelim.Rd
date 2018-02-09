@@ -6,13 +6,13 @@
 \title{A Handful Of Cities Are Driving 2016's Rise In Murder}
 \format{A data frame with 79 rows representing large US cities and 7 variables:
 \describe{
-  \item{city}{Name of city} 
-  \item{state}{Name of state} 
-  \item{murders_2015}{Number of murders in 2015} 
-  \item{murders_2016}{Number of murder in 2016 (as of \code{as_of} date)} 
-  \item{change}{2016 - 2015} 
-  \item{source}{Source of data} 
-  \item{as_of}{2016 murders up to this date} 
+  \item{city}{Name of city}
+  \item{state}{Name of state}
+  \item{murders_2015}{Number of murders in 2015}
+  \item{murders_2016}{Number of murder in 2016 (as of \code{as_of} date)}
+  \item{change}{2016 - 2015}
+  \item{source}{Source of data}
+  \item{as_of}{2016 murders up to this date}
 }}
 \source{
 Listed as \code{source} variable in dataset

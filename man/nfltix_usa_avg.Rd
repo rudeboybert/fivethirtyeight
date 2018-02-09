@@ -6,8 +6,8 @@
 \title{Who Goes To Meaningless NFL Games And Why?}
 \format{A data frame with 32 rows representing National Football League teams and 2 variables:
 \describe{
-  \item{team}{Name of NFL team} 
-  \item{avg_tix_price}{Average ticket price} 
+  \item{team}{Name of NFL team}
+  \item{avg_tix_price}{Average ticket price}
 }}
 \source{
 StubHub

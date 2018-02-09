@@ -6,9 +6,9 @@
 \title{You Can't Trust What You Read About Nutrition}
 \format{A data frame with 27716 rows representing Regression fits for p-hacking and 3 variables:
 \describe{
-  \item{food}{Name of food (response/dependent variable)} 
-  \item{characteristic}{Name of characteristic (predictor/independent variable)} 
-  \item{p_values}{P-value from regression fit} 
+  \item{food}{Name of food (response/dependent variable)}
+  \item{characteristic}{Name of characteristic (predictor/independent variable)}
+  \item{p_values}{P-value from regression fit}
 }}
 \source{
 See \url{http://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}

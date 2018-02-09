@@ -6,11 +6,11 @@
 \title{The Last 10 Weeks Of 2016 Campaign Stops In One Handy Gif}
 \format{A data frame with 177 rows representing 2016 Republican and Democratic candidate campaign trail stops and 5 variables:
 \describe{
-  \item{candidate}{Clinton or Trump} 
-  \item{date}{The date of the event} 
-  \item{location}{The location of the event} 
-  \item{lat}{Latitude of the event location} 
-  \item{lng}{Longitude of the event location} 
+  \item{candidate}{Clinton or Trump}
+  \item{date}{The date of the event}
+  \item{location}{The location of the event}
+  \item{lat}{Latitude of the event location}
+  \item{lng}{Longitude of the event location}
 }}
 \source{
 \url{https://hillaryspeeches.com/}, \url{http://www.conservativedailynews.com/}

@@ -43,6 +43,6 @@ flying
 \description{
 The raw data behind the story
 "41 Percent Of Fliers Think You're Rude If You Recline Your Seat"
-\url{http://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat}.
+\url{https://fivethirtyeight.com/features/airplane-etiquette-recline-seat/}.
 }
 \keyword{datasets}
