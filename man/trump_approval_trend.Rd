@@ -3,7 +3,7 @@
 \docType{data}
 \name{trump_approval_trend}
 \alias{trump_approval_trend}
-\title{Approval Trend Dataset:}
+\title{How Popular is Donald Trump}
 \format{A data frame with 1044 rows representing poll trends and 11 variables:
 \describe{
 \item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
@@ -23,7 +23,9 @@
 trump_approval_trend
 }
 \description{
-Approval Trend Dataset:
+The raw data behind the story:
+"How Popular is Donald Trump"
+\url{https://projects.fivethirtyeight.com/trump-approval-ratings/}: Approval Trend Dataset.
 }
 \details{
 The Variable "president" was removed because all values were "Donald Trump"

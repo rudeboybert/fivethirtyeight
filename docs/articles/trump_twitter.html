@@ -97,7 +97,7 @@
 </h1>
                         <h4 class="author">Adam Spannbauer and Jennifer Chunn</h4>
             
-            <h4 class="date">2018-02-08</h4>
+            <h4 class="date">2018-02-09</h4>
           </div>
 
     
@@ -169,12 +169,12 @@ trump_full_text_sent &lt;-<span class="st"> </span>trump_sentiment <span class="
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trump_full_text_sent <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">count</span>(score_factor) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">prop =</span> <span class="kw">prop.table</span>(n))</code></pre></div>
 <pre><code>## # A tibble: 4 x 3
-##   score_factor      n   prop
-##   &lt;chr&gt;         &lt;int&gt;  &lt;dbl&gt;
-## 1 -.Negative       59 0.132 
-## 2 +.Pos           173 0.386 
-## 3 0                 8 0.0179
-## 4 Missing score   208 0.464</code></pre>
+##    score_factor     n       prop
+##           &lt;chr&gt; &lt;int&gt;      &lt;dbl&gt;
+## 1    -.Negative    59 0.13169643
+## 2         +.Pos   173 0.38616071
+## 3             0     8 0.01785714
+## 4 Missing score   208 0.46428571</code></pre>
 <p>46.4% of tweets did not have sentiment scores. 15.4% were net negative and 36.6% were net positive.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>trump_full_text_sent, <span class="kw">aes</span>(score)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">10</span>)</code></pre></div>
 <p><img src="trump_twitter_files/figure-html/sentiment_hist-1.png" width="672"></p>
@@ -354,7 +354,7 @@ plotSentByTime &lt;-<span class="st"> </span><span class="cf">function</span>(tr
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
 </div>
 
       </footer>

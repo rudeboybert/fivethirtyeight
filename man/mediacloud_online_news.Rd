@@ -3,7 +3,7 @@
 \docType{data}
 \name{mediacloud_online_news}
 \alias{mediacloud_online_news}
-\title{Mediacloud Top Online News Data:}
+\title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
 \format{A data frame with 49 rows representing media outlets and 2 variables:
 \describe{
 \item{name}{Name of media outlet source included in Media Cloud's "U.S. Top Online News" collection}
@@ -16,7 +16,10 @@ Mediacloud \url{https://mediacloud.org/}
 mediacloud_online_news
 }
 \description{
-Mediacloud Top Online News Data:
+The raw data behind the story
+"The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+\url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+Mediacloud Top Online News Data.
 }
 \seealso{
 \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}},

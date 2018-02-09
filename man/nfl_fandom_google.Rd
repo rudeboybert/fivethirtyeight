@@ -24,15 +24,14 @@ nfl_fandom_google
 \description{
 The raw data behind the story
 "How Every NFL Team’s Fans Lean Politically"
-\url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}
-}
-\details{
-Google Data
+\url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: Google Trends Data.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
 library(tidyverse)
-nfl_fandom_google_tidy <- gather(nfl_fandom_google, sport, search_traffic, 2:8)
+nfl_fandom_google_tidy <- nfl_fandom_google \%>\%
+  gather(sport, search_traffic, -c("dma", "trump_2016_vote")) \%>\%
+  arrange(dma)
 }
 \seealso{
 \code{\link{nfl_fandom_surveymonkey}}

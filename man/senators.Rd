@@ -4,17 +4,17 @@
 \name{senators}
 \alias{senators}
 \title{Senator Dataset}
-\format{Because of R package size restrictions, only a preview of the 
-first 10 rows of this dataset is included; to obtain the entire dataset see 
+\format{Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset see
 Examples below. A data frame with 10 rows representing tweets and 10 variables:
 \describe{
 \item{created_at}{The date and time the tweet was posted}
+\item{user}{The user posting the tweet}
 \item{text}{The text of the tweet}
 \item{url}{The link to the tweet}
 \item{replies}{The number of replies to the tweet}
 \item{retweets}{The number of retweets}
 \item{favorites}{The number of favorites}
-\item{user}{The user posting the tweet}
 \item{bioguide_id}{The poster's member ID from the "Biographical Directory of the United States Congress"}
 \item{party}{The poster's political party affiliation}
 \item{state}{The state the poster represents in Congress}
@@ -42,7 +42,8 @@ if(FALSE){
       state = as.factor(state),
       created_at = as.POSIXct(created_at, tz = "GMT", format = "\%m/\%d/\%Y \%H:\%M"),
       text =  gsub("[^\\x01-\\x7F]", "", text)
-    )
+    ) \%>\%
+    select(created_at, user, everything())
 }
 }
 \seealso{

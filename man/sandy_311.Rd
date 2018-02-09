@@ -7,7 +7,7 @@
 \format{A data frame with 1783 rows representing dates and 25 variables:
 \describe{
 \item{date}{Date}
-\item{nyc_311}{.}
+\item{nyc_311}{No description provided.}
 \item{acs}{The number of emergency hotline (311) calls made to the Administration for Children's Services related to Hurricane Sandy on the given date}
 \item{bpsi}{The number of emergency hotline (311) calls made to Building Protection Systems, Inc related to Hurricane Sandy}
 \item{cau}{The number of emergency hotline (311) calls made to the Community Affairs Unit related to Hurricane Sandy}
@@ -34,7 +34,7 @@
 }}
 \source{
 Data from NYC Open Data \url{https://data.cityofnewyork.us/City-Government/311-Call-Center-Inquiry/tdd6-3ysr},
-Agency acronyms from the Data Dictionary
+Agency acronyms from the Data Dictionary. See also \url{https://github.com/fivethirtyeight/data/tree/master/sandy-311-calls}
 }
 \usage{
 sandy_311
@@ -47,7 +47,11 @@ The raw data behind the story
 \examples{
 # To convert data frame to tidy data (long) format, run:
 library(tidyverse)
-sandy_311<-gather(sandy_311, "agency", "num_calls", 2:24)
-sandy_311$agency <- as.factor(sandy_311$agency)
+sandy_311_tidy <- sandy_311 \%>\%
+  gather(agency, num_calls, -c("date", "total")) \%>\%
+  arrange(date) \%>\%
+  select(date, agency, num_calls, total) \%>\%
+  rename(total_calls = total) \%>\%
+  mutate(agency = as.factor(agency))
 }
 \keyword{datasets}

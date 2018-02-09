@@ -125,7 +125,7 @@
     <p>The raw data behind the story
 "The Complete History Of The NBA"
 <a href='https://projects.fivethirtyeight.com/complete-history-of-the-nba/'>https://projects.fivethirtyeight.com/complete-history-of-the-nba/</a>
-And our "2017-18 NBA Predictions"
+and our "2017-18 NBA Predictions"
 <a href='https://projects.fivethirtyeight.com/2018-nba-predictions/'>https://projects.fivethirtyeight.com/2018-nba-predictions/</a></p>
     
 
@@ -133,7 +133,9 @@ And our "2017-18 NBA Predictions"
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 67,012 rows representing games and 20 variables:</p><dl class='dl-horizontal'>
+    <p>Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
+(1871 to 2017 games) see Examples below. A data frame with 10 rows representing games and 20 variables:</p><dl class='dl-horizontal'>
  <dt>date</dt><dd><p>Date</p></dd>
  <dt>season</dt><dd><p>Season year, 1947-2018</p></dd>
  <dt>neutral</dt><dd><p>TRUE if the game was played on neutral territory, FALSE if not</p></dd>
@@ -161,6 +163,33 @@ And our "2017-18 NBA Predictions"
     <p>See <a href='https://projects.fivethirtyeight.com/nba-model/nba_elo.csv'>https://projects.fivethirtyeight.com/nba-model/nba_elo.csv</a></p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the following code:</span>
+<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>janitor</span>)
+<span class='no'>nba_carmelo</span> <span class='kw'>&lt;-</span> <span class='fu'>read_csv</span>(<span class='st'>"https://projects.fivethirtyeight.com/nba-model/nba_elo.csv"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://www.rdocumentation.org/packages/janitor/topics/clean_names'>clean_names</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'>mutate</span>(
+    <span class='kw'>team1</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>team1</span>),
+    <span class='kw'>team2</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>team2</span>),
+    <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='no'>playoff</span> <span class='kw'>==</span> <span class='st'>"t"</span>, <span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>),
+    <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='fu'>is.na</span>(<span class='no'>playoff</span>), <span class='fl'>FALSE</span>, <span class='fl'>TRUE</span>),
+    <span class='kw'>neutral</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='no'>neutral</span> <span class='kw'>==</span> <span class='fl'>1</span>, <span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>)
+  )</div><div class='output co'>#&gt; <span class='message'>Parsed with column specification:</span>
+#&gt; <span class='message'>cols(</span>
+#&gt; <span class='message'>  .default = col_character(),</span>
+#&gt; <span class='message'>  date = col_date(format = ""),</span>
+#&gt; <span class='message'>  season = col_integer(),</span>
+#&gt; <span class='message'>  neutral = col_integer(),</span>
+#&gt; <span class='message'>  elo1_pre = col_double(),</span>
+#&gt; <span class='message'>  elo2_pre = col_double(),</span>
+#&gt; <span class='message'>  elo_prob1 = col_double(),</span>
+#&gt; <span class='message'>  elo_prob2 = col_double(),</span>
+#&gt; <span class='message'>  elo1_post = col_double(),</span>
+#&gt; <span class='message'>  elo2_post = col_double(),</span>
+#&gt; <span class='message'>  score1 = col_integer(),</span>
+#&gt; <span class='message'>  score2 = col_integer()</span>
+#&gt; <span class='message'>)</span></div><div class='output co'>#&gt; <span class='message'>See spec(...) for full column specifications.</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -169,7 +198,9 @@ And our "2017-18 NBA Predictions"
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
@@ -180,7 +211,7 @@ And our "2017-18 NBA Predictions"
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
 </div>
 
       </footer>

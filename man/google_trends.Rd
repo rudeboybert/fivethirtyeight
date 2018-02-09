@@ -21,11 +21,9 @@ google_trends
 \description{
 The raw data behind the story
 "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
-\url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}
+\url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}: Google Trends Data.
 }
 \details{
-Google Trends Data:
-
 Google search interest is measured in search term popularity relative to peak popularity in the given
 region and time period (with 100 as peak popularity)
 }

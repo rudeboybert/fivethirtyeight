@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>An Inconvenient Sequel — ratings • fivethirtyeight</title>
+<title>Mayweather Vs McGregor Tweets — mayweather_mcgregor_tweets • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -116,62 +116,38 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>An Inconvenient Sequel</h1>
+    <h1>Mayweather Vs McGregor Tweets</h1>
     </div>
 
     
     <p>The raw data behind the story
-"Al Gore’s New Movie Exposes The Big Flaw In Online Movie Ratings"
-<a href='https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/'>https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/</a>.</p>
+"The Mayweather-McGregor Fight As Told Through Emojis"
+<a href='https://fivethirtyeight.com/?post_type=fte_features&amp;p=161615'>https://fivethirtyeight.com/?post_type=fte_features&amp;p=161615</a>.</p>
     
 
-    <pre class="usage"><span class='no'>ratings</span></pre>
+    <pre class="usage"><span class='no'>mayweather_mcgregor_tweets</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 80053 rows representing movie ratings and 27 variables:</p><dl class='dl-horizontal'>
-  <dt>timestamp</dt><dd><p>The date at which the rating was recorded.</p></dd>
-  <dt>respondents</dt><dd><p>The number of respondents in a category associated with a given timestamp.</p></dd>
-  <dt>category</dt><dd><p>The subgroups of respondents differentiated by demographics like gender, age, and nationality.</p></dd>
-  <dt>link</dt><dd><p>The website associated with a given category's responses.</p></dd>
-  <dt>average</dt><dd><p>The average rating reported by a given category.</p></dd>
-  <dt>mean</dt><dd><p>The mean rating reported by a given category.</p></dd>
-  <dt>median</dt><dd><p>The median rating reported by a given category.</p></dd>
-  <dt>votes_1</dt><dd><p>The count of votes denoting a rating of one that respondents gave.</p></dd>
-  <dt>votes_2</dt><dd><p>The count of votes denoting a rating of two that respondents gave.</p></dd>
-  <dt>votes_3</dt><dd><p>The count of votes denoting a rating of three that respondents gave.</p></dd>
-  <dt>votes_4</dt><dd><p>The count of votes denoting a rating of four that respondents gave.</p></dd>
-  <dt>votes_5</dt><dd><p>The count of votes denoting a rating of five that respondents gave.</p></dd>
-  <dt>votes_6</dt><dd><p>The count of votes denoting a rating of six that respondents gave.</p></dd>
-  <dt>votes_7</dt><dd><p>The count of votes denoting a rating of seven that respondents gave.</p></dd>
-  <dt>votes_8</dt><dd><p>The count of votes denoting a rating of eight that respondents gave.</p></dd>
-  <dt>votes_9</dt><dd><p>The count of votes denoting a rating of nine that respondents gave.</p></dd>
-  <dt>votes_10</dt><dd><p>The count of votes denoting a rating of ten that respondents gave.</p></dd>
-  <dt>pct_1</dt><dd><p>The percentage of votes denoting a rating of one that respondents gave.</p></dd>
-  <dt>pct_2</dt><dd><p>The percentage of votes denoting a rating of two that respondents gave.</p></dd>
-  <dt>pct_3</dt><dd><p>The percentage of votes denoting a rating of three that respondents gave.</p></dd>
-  <dt>pct_4</dt><dd><p>The percentage of votes denoting a rating of four that respondents gave.</p></dd>
-  <dt>pct_5</dt><dd><p>The percentage of votes denoting a rating of five that respondents gave.</p></dd>
-  <dt>pct_6</dt><dd><p>The percentage of votes denoting a rating of six that respondents gave.</p></dd>
-  <dt>pct_7</dt><dd><p>The percentage of votes denoting a rating of seven that respondents gave.</p></dd>
-  <dt>pct_8</dt><dd><p>The percentage of votes denoting a rating of eight that respondents gave.</p></dd>
-  <dt>pct_9</dt><dd><p>The percentage of votes denoting a rating of nine that respondents gave.</p></dd>
-  <dt>pct_10</dt><dd><p>The percentage of votes denoting a rating of ten that respondents gave.</p></dd>
+    <p>A data frame with 12118 rows representing tweets and 7 variables:</p><dl class='dl-horizontal'>
+  <dt>created_at</dt><dd><p>Time and date at which the tweet associated with the Mayweather vs. McGregor fight was sent.</p></dd>
+  <dt>emojis</dt><dd><p>Whether or not emojis were used in the tweet about the fight.</p></dd>
+  <dt>id</dt><dd><p>A numerical identifier for each individual tweet about the fight.</p></dd>
+  <dt>link</dt><dd><p>The link to the tweet about the fight on Twitter.</p></dd>
+  <dt>retweeted</dt><dd><p>Whether or not the tweet about the fight was retweeted.</p></dd>
+  <dt>screen_name</dt><dd><p>The screen name under which the tweet about the fight was posted.</p></dd>
+  <dt>text</dt><dd><p>The text contained in the tweet about the fight.</p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>IMBD <a href='http://www.imdb.com/title/tt6322922/ratings'>http://www.imdb.com/title/tt6322922/ratings</a> and
-see <a href='https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel'>https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel</a></p>
+    <p>This data contains 12,118 tweets that contain one or more emojis and
+match one or more of the following hashtags: #MayMac, #MayweatherMcGregor,
+#MayweatherVMcGregor, #MayweatherVsMcGregor, #McGregor and #Mayweather.
+Data was collected on August 27, 2017 between 12:05 a.m. and 1:15 a.m. EDT
+using the Twitter streaming API. <a href='https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor'>https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor</a></p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
-<span class='fu'>library</span>(<span class='no'>stringr</span>)
-<span class='no'>ratings_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>ratings</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>votes</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>timestamp</span>, <span class='no'>respondents</span>, <span class='no'>category</span>, <span class='no'>link</span>, <span class='no'>average</span>, <span class='no'>mean</span>, <span class='no'>median</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>arrange</span>(<span class='no'>timestamp</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -180,9 +156,7 @@ see <a href='https://github.com/fivethirtyeight/data/tree/master/inconvenient-se
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+          </ul>
 
   </div>
 </div>

@@ -22,7 +22,7 @@ spi_global_rankings
 }
 \description{
 The raw data behind the stories "Club Soccer Predictions"
-\url{https://projects.fivethirtyeight.com/soccer-predictions/} and 
+\url{https://projects.fivethirtyeight.com/soccer-predictions/} and
 "Global Club Soccer Rankings"
 \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
 }

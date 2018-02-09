@@ -3,7 +3,7 @@
 \docType{data}
 \name{mediacloud_states}
 \alias{mediacloud_states}
-\title{Mediacloud States Data:}
+\title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
 \format{A data frame with 51 rows representing dates and 4 variables:
 \describe{
 \item{date}{Date}
@@ -18,7 +18,10 @@ Mediacloud \url{https://mediacloud.org/}
 mediacloud_states
 }
 \description{
-Mediacloud States Data:
+The raw data behind the story
+"The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+\url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+Mediacloud States Data.
 }
 \seealso{
 \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_online_news}},

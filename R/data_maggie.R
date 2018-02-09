@@ -4,11 +4,11 @@
 #' The raw data behind the story
 #' "The Complete History Of The NBA"
 #' \url{https://projects.fivethirtyeight.com/complete-history-of-the-nba/}
-#' And our "2017-18 NBA Predictions"
+#' and our "2017-18 NBA Predictions"
 #' \url{https://projects.fivethirtyeight.com/2018-nba-predictions/}
 #'
-#' @format Because of R package size restrictions, only a preview of the 
-#' first 10 rows of this dataset is included; to obtain the entire dataset 
+#' @format Because of R package size restrictions, only a preview of the
+#' first 10 rows of this dataset is included; to obtain the entire dataset
 #' (1871 to 2017 games) see Examples below. A data frame with 10 rows representing games and 20 variables:
 #' \describe{
 #'  \item{date}{Date}
@@ -33,7 +33,7 @@
 #'  \item{score2}{Points scored by Team 2}
 #' }
 #' @source See \url{https://projects.fivethirtyeight.com/nba-model/nba_elo.csv}
-#' @examples 
+#' @examples
 #' # To obtain the entire dataset, run the following code:
 #' library(tidyverse)
 #' library(janitor)
@@ -63,7 +63,7 @@
 #'  \item{date}{Date}
 #'  \item{season}{Season year, 1920-2018}
 #'  \item{neutral}{TRUE if the game was played on neutral territory, FALSE if not}
-#'  \item{playoff}{TRUE if the game was a playoff game, FALSE if not}
+#'  \item{playoff}{No description provided}
 #'  \item{team1}{The name of one participating team}
 #'  \item{team2}{The name of the other participating team}
 #'  \item{elo1_pre}{Team 1's Elo rating before the game}
@@ -84,9 +84,8 @@
 #'
 #' The raw data behind the story
 #' "How Every NFL Team’s Fans Lean Politically"
-#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}
+#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: Google Trends Data.
 #'
-#' Google Data
 #' @format a data frame with 207 rows representing designated market areas and 9 variables:
 #' \describe{
 #' \item{dma}{Designated Market Area}
@@ -102,13 +101,19 @@
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
-#' nfl_fandom_google_tidy <- gather(nfl_fandom_google, sport, search_traffic, 2:8)
+#' nfl_fandom_google_tidy <- nfl_fandom_google %>%
+#'   gather(sport, search_traffic, -c("dma", "trump_2016_vote")) %>%
+#'   arrange(dma)
 #' @seealso \code{\link{nfl_fandom_surveymonkey}}
 "nfl_fandom_google"
 
 
-
-#' Surveymonkey Data:
+#' How Every NFL Team’s Fans Lean Politically
+#'
+#' The raw data behind the story
+#' "How Every NFL Team’s Fans Lean Politically"
+#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: Surveymonkey Data.
+#'
 #' @format a data frame with 33 rows representing teams and 25 variables:
 #' \describe{
 #' \item{team}{NFL team}
@@ -142,7 +147,10 @@
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
 #' nfl_fandom_surveymonkey_tidy <- nfl_fandom_surveymonkey %>%
-#' gather(key= race_party, value=percent, 3:20)
+#'   gather(key = race_party, value = percent,
+#'          -c("team", "total_respondents", "gop_percent", "dem_percent",
+#'             "ind_percent", "white_percent", "nonwhite_percent")) %>%
+#'   arrange(team)
 #' @seealso \code{\link{nfl_fandom_google}}
 "nfl_fandom_surveymonkey"
 
@@ -152,9 +160,7 @@
 #'
 #' The raw data behind the story
 #' "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
-#' \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}
-#'
-#' Google Trends Data:
+#' \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}: Google Trends Data.
 #' @format A data frame with 37 rows representing dates and 5 variables:
 #' \describe{
 #' \item{date}{Date}
@@ -173,7 +179,13 @@
 
 
 
-#' Mediacloud Hurricanes Data:
+#' The Media Really Started Paying Attention to Puerto Rico When Trump Did
+#'
+#' The raw data behind the story
+#' "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+#' \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+#' Mediacloud Hurricanes Data.
+#'
 #' @format A data frame with 38 rows representing dates and 5 variables:
 #' \describe{
 #' \item{date}{Date}
@@ -190,7 +202,13 @@
 
 
 
-#' Mediacloud States Data:
+#' The Media Really Started Paying Attention to Puerto Rico When Trump Did
+#'
+#' The raw data behind the story
+#' "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+#' \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+#' Mediacloud States Data.
+#'
 #' @format A data frame with 51 rows representing dates and 4 variables:
 #' \describe{
 #' \item{date}{Date}
@@ -206,7 +224,13 @@
 
 
 
-#' Mediacloud Top Online News Data:
+#' The Media Really Started Paying Attention to Puerto Rico When Trump Did
+#'
+#' The raw data behind the story
+#' "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+#' \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+#' Mediacloud Top Online News Data.
+#'
 #' @format A data frame with 49 rows representing media outlets and 2 variables:
 #' \describe{
 #' \item{name}{Name of media outlet source included in Media Cloud's "U.S. Top Online News" collection}
@@ -220,7 +244,13 @@
 
 
 
-#' Mediacloud Trump Data:
+#' The Media Really Started Paying Attention to Puerto Rico When Trump Did
+#'
+#' The raw data behind the story
+#' "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+#' \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+#' Mediacloud Trump Data.
+#'
 #' @format A data frame with 51 rows representing dates and 7 variables:
 #' \describe{
 #' \item{date}{Date}
@@ -239,7 +269,13 @@
 
 
 
-#' TV Hurricanes Data:
+#' The Media Really Started Paying Attention to Puerto Rico When Trump Did
+#'
+#' The raw data behind the story
+#' "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+#' \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+#' TV Hurricanes Data.
+#'
 #' @format A data frame with 37 rows representing dates and 5 variables:
 #' \describe{
 #' \item{date}{Date}
@@ -257,7 +293,13 @@
 
 
 
-#' TV Hurricanes by Network Data:
+#' The Media Really Started Paying Attention to Puerto Rico When Trump Did
+#'
+#' The raw data behind the story
+#' "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+#' \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+#' TV Hurricanes by Network Data.
+#'
 #' @format A data frame with 84 rows representing dates and 6 variables:
 #' \describe{
 #' \item{date}{Date}
@@ -275,7 +317,13 @@
 
 
 
-#' TV States Data:
+#' The Media Really Started Paying Attention to Puerto Rico When Trump Did
+#'
+#' The raw data behind the story
+#' "The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+#' \url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+#' TV States Data.
+#'
 #' @format A data frame with 52 rows representing dates and 4 variables:
 #' \describe{
 #' \item{date}{Date}
@@ -315,7 +363,7 @@
 #' @format A data frame with 1783 rows representing dates and 25 variables:
 #' \describe{
 #' \item{date}{Date}
-#' \item{nyc_311}{.}
+#' \item{nyc_311}{No description provided.}
 #' \item{acs}{The number of emergency hotline (311) calls made to the Administration for Children's Services related to Hurricane Sandy on the given date}
 #' \item{bpsi}{The number of emergency hotline (311) calls made to Building Protection Systems, Inc related to Hurricane Sandy}
 #' \item{cau}{The number of emergency hotline (311) calls made to the Community Affairs Unit related to Hurricane Sandy}
@@ -341,12 +389,16 @@
 #' \item{total}{The total number of emergency hotline (311) calls made related to Hurricane Sandy}
 #' }
 #' @source Data from NYC Open Data \url{https://data.cityofnewyork.us/City-Government/311-Call-Center-Inquiry/tdd6-3ysr},
-#' Agency acronyms from the Data Dictionary
+#' Agency acronyms from the Data Dictionary. See also \url{https://github.com/fivethirtyeight/data/tree/master/sandy-311-calls}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
-#' sandy_311<-gather(sandy_311, "agency", "num_calls", 2:24)
-#' sandy_311$agency <- as.factor(sandy_311$agency)
+#' sandy_311_tidy <- sandy_311 %>%
+#'   gather(agency, num_calls, -c("date", "total")) %>%
+#'   arrange(date) %>%
+#'   select(date, agency, num_calls, total) %>%
+#'   rename(total_calls = total) %>%
+#'   mutate(agency = as.factor(agency))
 "sandy_311"
 
 
@@ -355,9 +407,8 @@
 #'
 #' The raw data behind the story:
 #' "How Popular is Donald Trump"
-#' \url{https://projects.fivethirtyeight.com/trump-approval-ratings/}
+#' \url{https://projects.fivethirtyeight.com/trump-approval-ratings/}: Approval Poll Dataset
 #'
-#' Approval Poll Dataset:
 #' @format A data frame with 3051 rows representing individual polls and 20 variables:
 #' \describe{
 #' \item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
@@ -389,7 +440,12 @@
 
 
 
-#' Approval Trend Dataset:
+#' How Popular is Donald Trump
+#'
+#' The raw data behind the story:
+#' "How Popular is Donald Trump"
+#' \url{https://projects.fivethirtyeight.com/trump-approval-ratings/}: Approval Trend Dataset.
+#'
 #' @format A data frame with 1044 rows representing poll trends and 11 variables:
 #' \describe{
 #' \item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
@@ -413,9 +469,9 @@
 #'
 #' The raw data behind the story
 #' "What the World Thinks of Trump"
-#' \url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}
+#' \url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}:
+#' Trump World Issues Dataset
 #'
-#' Trump World Issues Dataset:
 #' @format A data frame with 185 rows representing countries and 6 variables:
 #' \describe{
 #' \item{country}{The country whose population is being polled}
@@ -436,57 +492,62 @@
 
 
 
-#' Trump World Polls Dataset:
+#' What the World Thinks of Trump
+#'
+#' The raw data behind the story
+#' "What the World Thinks of Trump"
+#' \url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}:
+#' Trump World Polls Dataset.
+#'
 #' @format A data frame with 32 rows representng years and 40 variables:
 #' \describe{
 #' \item{year}{Year the poll was conducted}
 #' \item{avg}{The average percentage people who answered the poll question positively (support the president or have a favorable view of the U.S.)}
 #' \item{canada}{The percentage of people from Canada who answered the poll question positively}
-#' \item{france}{The percentage of people from  who answered the poll question positively}
-#' \item{germany}{The percentage of people from  who answered the poll question positively}
-#' \item{greece}{The percentage of people from  who answered the poll question positively}
-#' \item{hungary}{The percentage of people from  who answered the poll question positively}
-#' \item{italy}{The percentage of people from  who answered the poll question positively}
-#' \item{netherlands}{The percentage of people from  who answered the poll question positively}
-#' \item{poland}{The percentage of people from  who answered the poll question positively}
-#' \item{spain}{The percentage of people from  who answered the poll question positively}
-#' \item{sweden}{The percentage of people from  who answered the poll question positively}
-#' \item{uk}{The percentage of people from  who answered the poll question positively}
-#' \item{russia}{The percentage of people from  who answered the poll question positively}
-#' \item{australia}{The percentage of people from  who answered the poll question positively}
-#' \item{india}{The percentage of people from  who answered the poll question positively}
-#' \item{indonesia}{The percentage of people from  who answered the poll question positively}
-#' \item{japan}{The percentage of people from  who answered the poll question positively}
-#' \item{philippines}{The percentage of people from  who answered the poll question positively}
-#' \item{south_korea}{The percentage of people from  who answered the poll question positively}
-#' \item{vietnam}{The percentage of people from  who answered the poll question positively}
-#' \item{israel}{The percentage of people from  who answered the poll question positively}
-#' \item{jordan}{The percentage of people from  who answered the poll question positively}
-#' \item{lebanon}{The percentage of people from  who answered the poll question positively}
-#' \item{tunisia}{The percentage of people from  who answered the poll question positively}
-#' \item{turkey}{The percentage of people from  who answered the poll question positively}
-#' \item{ghana}{The percentage of people from  who answered the poll question positively}
-#' \item{kenya}{The percentage of people from  who answered the poll question positively}
-#' \item{nigeria}{The percentage of people from  who answered the poll question positively}
-#' \item{senegal}{The percentage of people from  who answered the poll question positively}
-#' \item{south_africa}{The percentage of people from  who answered the poll question positively}
-#' \item{tanzania}{The percentage of people from  who answered the poll question positively}
-#' \item{argentina}{The percentage of people from  who answered the poll question positively}
-#' \item{brazil}{The percentage of people from  who answered the poll question positively}
-#' \item{chile}{The percentage of people from  who answered the poll question positively}
-#' \item{colombia}{The percentage of people from  who answered the poll question positively}
-#' \item{mexico}{The percentage of people from  who answered the poll question positively}
-#' \item{peru}{The percentage of people from  who answered the poll question positively}
-#' \item{venezuela}{The percentage of people from  who answered the poll question positively}
-#' \item{question}{The item being polled. Specificially, whether respondents:
-#'           Have a favorable view of the U.S.
-#'           Trust the U.S. President when it comes to foreign affairs}
+#' \item{france}{The percentage of people from France who answered the poll question positively}
+#' \item{germany}{The percentage of people from Germany who answered the poll question positively}
+#' \item{greece}{The percentage of people from Greece who answered the poll question positively}
+#' \item{hungary}{The percentage of people from Hungary who answered the poll question positively}
+#' \item{italy}{The percentage of people from Italy who answered the poll question positively}
+#' \item{netherlands}{The percentage of people from Netherlands who answered the poll question positively}
+#' \item{poland}{The percentage of people from Poland who answered the poll question positively}
+#' \item{spain}{The percentage of people from Spain who answered the poll question positively}
+#' \item{sweden}{The percentage of people from Sweden who answered the poll question positively}
+#' \item{uk}{The percentage of people from the U.K. who answered the poll question positively}
+#' \item{russia}{The percentage of people from Russia who answered the poll question positively}
+#' \item{australia}{The percentage of people from Australia who answered the poll question positively}
+#' \item{india}{The percentage of people from India who answered the poll question positively}
+#' \item{indonesia}{The percentage of people from Indonesia who answered the poll question positively}
+#' \item{japan}{The percentage of people from Japan who answered the poll question positively}
+#' \item{philippines}{The percentage of people from the Philippines who answered the poll question positively}
+#' \item{south_korea}{The percentage of people from South Korea who answered the poll question positively}
+#' \item{vietnam}{The percentage of people from Vietnam who answered the poll question positively}
+#' \item{israel}{The percentage of people from Isreal who answered the poll question positively}
+#' \item{jordan}{The percentage of people from Jordan who answered the poll question positively}
+#' \item{lebanon}{The percentage of people from Lebanon who answered the poll question positively}
+#' \item{tunisia}{The percentage of people from Tunisia who answered the poll question positively}
+#' \item{turkey}{The percentage of people from Turkey who answered the poll question positively}
+#' \item{ghana}{The percentage of people from Ghana who answered the poll question positively}
+#' \item{kenya}{The percentage of people from Kenya who answered the poll question positively}
+#' \item{nigeria}{The percentage of people from Nigeria who answered the poll question positively}
+#' \item{senegal}{The percentage of people from Senegal who answered the poll question positively}
+#' \item{south_africa}{The percentage of people from South Africa who answered the poll question positively}
+#' \item{tanzania}{The percentage of people from Tanzania who answered the poll question positively}
+#' \item{argentina}{The percentage of people from Argentina who answered the poll question positively}
+#' \item{brazil}{The percentage of people from Brazil who answered the poll question positively}
+#' \item{chile}{The percentage of people from Chile who answered the poll question positively}
+#' \item{colombia}{The percentage of people from Colombia who answered the poll question positively}
+#' \item{mexico}{The percentage of people from Mexico who answered the poll question positively}
+#' \item{peru}{The percentage of people from Peru who answered the poll question positively}
+#' \item{venezuela}{The percentage of people from Venezuela who answered the poll question positively}
+#' \item{question}{The item being polled. Specificially, whether respondents: 1) Have a favorable view of the U.S. or 2) Trust the U.S. President when it comes to foreign affairs}
 #' }
 #' @source Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
-#' trumpworld_polls_tidy <- gather(trumpworld_polls, country, percent_positive, 3:39)
+#' trumpworld_polls_tidy <- trumpworld_polls %>%
+#'   gather(country, percent_positive, -c("year", "avg", "question"))
 #' @seealso \code{\link{trumpworld_issues}}
 "trumpworld_polls"
 
@@ -502,13 +563,12 @@
 #' @format A data frame with 6439 rows describing individual tweets and 8 variables:
 #' \describe{
 #' \item{created_at}{The date and time the tweet was posted}
+#' \item{user}{The user posting the tweet}
 #' \item{text}{The text of the tweet}
 #' \item{url}{The link to the tweet}
 #' \item{replies}{The number of replies to the tweet}
 #' \item{retweets}{The number of retweets}
 #' \item{favorites}{The number of favorites}
-#' \item{user}{The user posting the tweet}
-#' \item{president}{The name of the president who posted the tweet}
 #' }
 #' @details Data on President Obama's tweets collected on Oct 20, President Trump's tweets collected on Oct 23.
 #' @source Twitter \url{https://twitter.com/BarackObama} and \url{https://twitter.com/realDonaldTrump}
@@ -518,17 +578,17 @@
 
 
 #' Senator Dataset
-#' @format Because of R package size restrictions, only a preview of the 
-#' first 10 rows of this dataset is included; to obtain the entire dataset see 
+#' @format Because of R package size restrictions, only a preview of the
+#' first 10 rows of this dataset is included; to obtain the entire dataset see
 #' Examples below. A data frame with 10 rows representing tweets and 10 variables:
 #' \describe{
 #' \item{created_at}{The date and time the tweet was posted}
+#' \item{user}{The user posting the tweet}
 #' \item{text}{The text of the tweet}
 #' \item{url}{The link to the tweet}
 #' \item{replies}{The number of replies to the tweet}
 #' \item{retweets}{The number of retweets}
 #' \item{favorites}{The number of favorites}
-#' \item{user}{The user posting the tweet}
 #' \item{bioguide_id}{The poster's member ID from the "Biographical Directory of the United States Congress"}
 #' \item{party}{The poster's political party affiliation}
 #' \item{state}{The state the poster represents in Congress}
@@ -536,7 +596,7 @@
 #' @details Data collected on Oct 19 and 20
 #' @source Twitter
 #' @seealso \code{\link{twitter_presidents}}
-#' @examples 
+#' @examples
 #' # To obtain the entire dataset, run the code inside the following if statement:
 #' if(FALSE){
 #'   library(tidyverse)
@@ -547,7 +607,8 @@
 #'       state = as.factor(state),
 #'       created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
 #'       text =  gsub("[^\x01-\x7F]", "", text)
-#'     )
+#'     ) %>%
+#'     select(created_at, user, everything())
 #' }
 "senators"
 
@@ -558,6 +619,7 @@
 #' The raw data behind:
 #' "Mayweather Is Defined By The Zero Next To His Name"
 #' \url{https://fivethirtyeight.com/features/mayweather-is-defined-by-the-zero-next-to-his-name/}
+#'
 #' @format A data frame with 2125 rows representing boxing matches and 4 variables:
 #' \describe{
 #' \item{name}{Name of boxer}

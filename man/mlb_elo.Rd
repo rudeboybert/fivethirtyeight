@@ -4,9 +4,9 @@
 \name{mlb_elo}
 \alias{mlb_elo}
 \title{MLB Elo}
-\format{Because of R package size restrictions, only a preview of the 
-first 10 rows of this dataset is included; to obtain the entire dataset 
-(1871 to 2017 games) see Examples below. A data frame with 10 rows 
+\format{Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
+(1871 to 2017 games) see Examples below. A data frame with 10 rows
 representing Elo ratings and 26 variables:
 \describe{
   \item{date}{The date of the game.}
@@ -44,7 +44,7 @@ mlb_elo
 }
 \description{
 The raw data behind the stories:
-"The Complete History Of MLB" \url{https://projects.fivethirtyeight.com/complete-history-of-mlb/} 
+"The Complete History Of MLB" \url{https://projects.fivethirtyeight.com/complete-history-of-mlb/}
 and "MLB Predictions" \url{https://projects.fivethirtyeight.com/2017-mlb-predictions/}.
 }
 \examples{

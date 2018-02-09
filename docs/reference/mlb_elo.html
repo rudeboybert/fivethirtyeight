@@ -121,15 +121,18 @@
 
     
     <p>The raw data behind the stories:
-"The Complete History Of MLB"
-<a href='https://projects.fivethirtyeight.com/complete-history-of-mlb/'>https://projects.fivethirtyeight.com/complete-history-of-mlb/</a></p>
+"The Complete History Of MLB" <a href='https://projects.fivethirtyeight.com/complete-history-of-mlb/'>https://projects.fivethirtyeight.com/complete-history-of-mlb/</a>
+and "MLB Predictions" <a href='https://projects.fivethirtyeight.com/2017-mlb-predictions/'>https://projects.fivethirtyeight.com/2017-mlb-predictions/</a>.</p>
     
 
     <pre class="usage"><span class='no'>mlb_elo</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 215080 rows representing Elo ratings and 26 variables:</p><dl class='dl-horizontal'>
+    <p>Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
+(1871 to 2017 games) see Examples below. A data frame with 10 rows
+representing Elo ratings and 26 variables:</p><dl class='dl-horizontal'>
   <dt>date</dt><dd><p>The date of the game.</p></dd>
   <dt>season</dt><dd><p>The season within which the game was played.</p></dd>
   <dt>neutral</dt><dd><p>No description provided.</p></dd>
@@ -162,12 +165,18 @@
 
     <p>See <a href='https://github.com/fivethirtyeight/data/blob/master/mlb-elo/README.md'>https://github.com/fivethirtyeight/data/blob/master/mlb-elo/README.md</a></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>"MLB Predictions"
-<a href='https://projects.fivethirtyeight.com/2017-mlb-predictions/'>https://projects.fivethirtyeight.com/2017-mlb-predictions/</a>.</p>
-    
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the code inside the following if statement:</span>
+<span class='kw'>if</span>(<span class='fl'>FALSE</span>){
+  <span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+  <span class='no'>mlb_elo</span> <span class='kw'>&lt;-</span> <span class='fu'>read_csv</span>(<span class='st'>"https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv"</span>) <span class='kw'>%&gt;%</span>
+    <span class='fu'>mutate</span>(
+      <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>playoff</span>),
+      <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='no'>playoff</span> <span class='kw'>==</span> <span class='st'>"&lt;NA&gt;"</span>, <span class='fl'>NA</span>, <span class='no'>playoff</span>),
+      <span class='kw'>neutral</span> <span class='kw'>=</span> <span class='fu'>as.logical</span>(<span class='no'>neutral</span>)
+    )
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -176,9 +185,9 @@
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
-
-      <li><a href="#details">Details</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
@@ -189,7 +198,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
 </div>
 
       </footer>

@@ -13,7 +13,7 @@
   \item{pollster}{The organization that conducted the poll (rather than the organization that paid for or sponsored it)}
   \item{grade}{No description provided.}
   \item{samplesize}{No description provided.}
-  \item{population}{No description provided.}
+  \item{population}{A = ALL ADULTS, RV = REGISTERED VOTERS, LV = LIKELY VOTERS, V = VOTERS}
   \item{weight}{No description provided.}
   \item{influence}{No description provided.}
   \item{dem}{No description provided.}

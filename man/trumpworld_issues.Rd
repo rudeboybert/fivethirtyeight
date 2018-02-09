@@ -27,10 +27,8 @@ trumpworld_issues
 \description{
 The raw data behind the story
 "What the World Thinks of Trump"
-\url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}
-}
-\details{
-Trump World Issues Dataset:
+\url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}:
+Trump World Issues Dataset
 }
 \seealso{
 \code{\link{trumpworld_polls}}

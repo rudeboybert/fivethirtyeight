@@ -3,7 +3,7 @@
 \docType{data}
 \name{tv_hurricanes}
 \alias{tv_hurricanes}
-\title{TV Hurricanes Data:}
+\title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
 \format{A data frame with 37 rows representing dates and 5 variables:
 \describe{
 \item{date}{Date}
@@ -20,7 +20,10 @@ Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtse
 tv_hurricanes
 }
 \description{
-TV Hurricanes Data:
+The raw data behind the story
+"The Media Really Started Paying Attention to Puerto Rico When Trump Did"
+\url{https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/}:
+TV Hurricanes Data.
 }
 \seealso{
 \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}},

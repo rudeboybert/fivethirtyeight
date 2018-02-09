@@ -9,7 +9,7 @@
  \item{date}{Date}
  \item{season}{Season year, 1920-2018}
  \item{neutral}{TRUE if the game was played on neutral territory, FALSE if not}
- \item{playoff}{TRUE if the game was a playoff game, FALSE if not}
+ \item{playoff}{No description provided}
  \item{team1}{The name of one participating team}
  \item{team2}{The name of the other participating team}
  \item{elo1_pre}{Team 1's Elo rating before the game}

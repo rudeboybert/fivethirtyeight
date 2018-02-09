@@ -97,7 +97,7 @@
 </h1>
                         <h4 class="author">G. Elliott Morris and Chester Ismay</h4>
             
-            <h4 class="date">2018-02-08</h4>
+            <h4 class="date">2018-02-09</h4>
           </div>
 
     
@@ -123,21 +123,21 @@ nba_yearly</code></pre></div>
 <pre><code>## # A tibble: 15 x 2
 ##    draft_year mean_proj_spm
 ##         &lt;int&gt;         &lt;dbl&gt;
-##  1       2001        -0.743
-##  2       2002        -0.854
-##  3       2003        -1.00 
-##  4       2004        -0.962
-##  5       2005        -0.792
-##  6       2006        -0.886
-##  7       2007        -0.845
-##  8       2008        -0.831
-##  9       2009        -0.878
-## 10       2010        -0.841
-## 11       2011        -0.754
-## 12       2012        -0.729
-## 13       2013        -0.773
-## 14       2014        -0.703
-## 15       2015        -0.616</code></pre>
+##  1       2001    -0.7433745
+##  2       2002    -0.8535697
+##  3       2003    -1.0037065
+##  4       2004    -0.9616403
+##  5       2005    -0.7915238
+##  6       2006    -0.8855274
+##  7       2007    -0.8446639
+##  8       2008    -0.8310443
+##  9       2009    -0.8784884
+## 10       2010    -0.8406320
+## 11       2011    -0.7535743
+## 12       2012    -0.7290506
+## 13       2013    -0.7729383
+## 14       2014    -0.7031637
+## 15       2015    -0.6158276</code></pre>
 </div>
 <div id="graph-it" class="section level1">
 <h1 class="hasAnchor">
@@ -167,14 +167,14 @@ nba_yearly</code></pre></div>
 <span class="st">  </span><span class="kw">select</span>(player, position, draft_year, projected_spm)</code></pre></div>
 <pre><code>## # A tibble: 6 x 4
 ## # Groups:   draft_year [2]
-##   player          position draft_year projected_spm
-##   &lt;chr&gt;           &lt;chr&gt;         &lt;int&gt;         &lt;dbl&gt;
-## 1 Andre Iguodala  SG             2004         0.724
-## 2 Luol Deng       SF             2004         0.402
-## 3 Emeka Okafor    PF             2004         0.383
-## 4 Dwyane Wade     SG             2003         0.739
-## 5 Chris Kaman     C              2003         0.407
-## 6 Carmelo Anthony SF             2003         0.364</code></pre>
+##            player position draft_year projected_spm
+##             &lt;chr&gt;    &lt;chr&gt;      &lt;int&gt;         &lt;dbl&gt;
+## 1  Andre Iguodala       SG       2004     0.7235079
+## 2       Luol Deng       SF       2004     0.4021089
+## 3    Emeka Okafor       PF       2004     0.3828638
+## 4     Dwyane Wade       SG       2003     0.7387024
+## 5     Chris Kaman        C       2003     0.4069592
+## 6 Carmelo Anthony       SF       2003     0.3640098</code></pre>
 <p>If you are familiar with NBA basketball, these names will stick out to you. Dwayne Wade and Carmelo Anthony are perennial all-stars and Andre Iguodala was the 2015 NBA Finals MVP. (Note that LeBron James is not in this data.)</p>
 <p>The surprising thing here is that these great players were not able to counter-balance the players with low <code>projected_spm</code>. Remember that the mean was used here so even if the great players were outliers (in the positive direction) they weren’t able to pull the mean in their direction. Also note that not all of the players listed in this data set ended up playing in the NBA or, if they did, potentially only played a small amount of time.</p>
 </div>
@@ -201,7 +201,7 @@ nba_yearly</code></pre></div>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
 </div>
 
       </footer>

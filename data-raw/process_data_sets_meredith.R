@@ -43,7 +43,8 @@ candy_rankings <- read_csv("data-raw/candy-power-ranking/candy-data.csv") %>%
     bar = as.logical(bar),
     pluribus = as.logical(pluribus)
   ) %>%
-  mutate_at(vars(competitorname), funs(gsub("Õ", "'", .))) 
+  mutate(win)
+  mutate_at(vars(competitorname), funs(gsub("Õ", "'", .)))
 devtools::use_data(candy_rankings, overwrite = TRUE)
 
 
@@ -72,13 +73,14 @@ generic_polllist <-
     timestamp = parse_date_time(timestamp, "HMS dmY"),
     subgroup = as.factor(subgroup),
     pollster = as.factor(pollster),
-    grade = as.factor(grade),
+    grade = factor(grade, levels = rev(c("A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-")), ordered = TRUE),
     population = as.factor(population),
     poll_id = as.character(poll_id),
     question_id = as.character(question_id)
   ) %>%
   mutate_at(vars(multiversions), funs(ifelse(. == "<NA>", NA, .)))
 devtools::use_data(generic_polllist, overwrite = TRUE)
+
 
 # generic_topline
 generic_topline <-
@@ -116,22 +118,22 @@ ratings <- read_csv("data-raw/inconvenient-sequel/ratings.csv") %>%
          pct_8 = `8_pct`,
          pct_9 = `9_pct`,
          pct_10 = `10_pct`) %>%
-  select(-c(`1_votes`, `2_votes`, `3_votes`, `4_votes`, `5_votes`, `6_votes`, 
-            `7_votes`, `8_votes`, `9_votes`, `10_votes`, 
-            `1_pct`, `2_pct`, `3_pct`, `4_pct`, `5_pct`, `6_pct`, `7_pct`, 
+  select(-c(`1_votes`, `2_votes`, `3_votes`, `4_votes`, `5_votes`, `6_votes`,
+            `7_votes`, `8_votes`, `9_votes`, `10_votes`,
+            `1_pct`, `2_pct`, `3_pct`, `4_pct`, `5_pct`, `6_pct`, `7_pct`,
             `8_pct`, `9_pct`, `10_pct`))
 devtools::use_data(ratings, overwrite = TRUE)
 
 
 
 # mayweather-mcgregor ---------------------------------------------------------------
-tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv") %>%
+mayweather_mcgregor_tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv") %>%
   mutate(
     emojis = as.logical(emojis),
     retweeted = as.logical(retweeted),
     id = as.character(id)
   )
-devtools::use_data(tweets, overwrite = TRUE)
+devtools::use_data(mayweather_mcgregor_tweets, overwrite = TRUE)
 
 
 
@@ -141,7 +143,7 @@ mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") 
     playoff = as.factor(playoff),
     playoff = ifelse(playoff == "<NA>", NA, playoff),
     neutral = as.logical(neutral)
-  ) %>% 
+  ) %>%
   slice(1:100)
 devtools::use_data(mlb_elo, overwrite = TRUE)
 

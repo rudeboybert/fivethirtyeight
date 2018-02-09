@@ -69,7 +69,7 @@
 #' "D1" means a one-on-one date, "D2" means a 2-on-1, "D3" means a 3-on-1
 #' group date, and so on. Weeks of the show are deliminated by rose
 #' ceremonies, and may not line up exactly with episodes.
-#' @source \url{http://bachelor-nation.wikia.com/wiki/Bachelor_Nation_Wikia} 
+#' @source \url{http://bachelor-nation.wikia.com/wiki/Bachelor_Nation_Wikia}
 #' and then missing seasons were filled in by ABC and FiveThirtyEight staffers.
 "bachelorette"
 
@@ -142,7 +142,7 @@
 #'   \item{pollster}{The organization that conducted the poll (rather than the organization that paid for or sponsored it)}
 #'   \item{grade}{No description provided.}
 #'   \item{samplesize}{No description provided.}
-#'   \item{population}{No description provided.}
+#'   \item{population}{A = ALL ADULTS, RV = REGISTERED VOTERS, LV = LIKELY VOTERS, V = VOTERS}
 #'   \item{weight}{No description provided.}
 #'   \item{influence}{No description provided.}
 #'   \item{dem}{No description provided.}
@@ -237,7 +237,7 @@
 
 
 
-#' Mayweather Vs McGregor
+#' Mayweather Vs McGregor Tweets
 #'
 #' The raw data behind the story
 #' "The Mayweather-McGregor Fight As Told Through Emojis"
@@ -253,20 +253,24 @@
 #'   \item{screen_name}{The screen name under which the tweet about the fight was posted.}
 #'   \item{text}{The text contained in the tweet about the fight.}
 #' }
-#' @source Twitter and see \url{https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor}
-"tweets"
+#' @source This data contains 12,118 tweets that contain one or more emojis and
+#' match one or more of the following hashtags: #MayMac, #MayweatherMcGregor,
+#' #MayweatherVMcGregor, #MayweatherVsMcGregor, #McGregor and #Mayweather.
+#' Data was collected on August 27, 2017 between 12:05 a.m. and 1:15 a.m. EDT
+#' using the Twitter streaming API. \url{https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor}
+"mayweather_mcgregor_tweets"
 
 
 
 #' MLB Elo
 #'
 #' The raw data behind the stories:
-#' "The Complete History Of MLB" \url{https://projects.fivethirtyeight.com/complete-history-of-mlb/} 
+#' "The Complete History Of MLB" \url{https://projects.fivethirtyeight.com/complete-history-of-mlb/}
 #' and "MLB Predictions" \url{https://projects.fivethirtyeight.com/2017-mlb-predictions/}.
 #'
-#' @format Because of R package size restrictions, only a preview of the 
-#' first 10 rows of this dataset is included; to obtain the entire dataset 
-#' (1871 to 2017 games) see Examples below. A data frame with 10 rows 
+#' @format Because of R package size restrictions, only a preview of the
+#' first 10 rows of this dataset is included; to obtain the entire dataset
+#' (1871 to 2017 games) see Examples below. A data frame with 10 rows
 #' representing Elo ratings and 26 variables:
 #' \describe{
 #'   \item{date}{The date of the game.}
@@ -347,7 +351,7 @@
 #' Current SPI ratings and rankings for men's club teams
 #'
 #' The raw data behind the stories "Club Soccer Predictions"
-#' \url{https://projects.fivethirtyeight.com/soccer-predictions/} and 
+#' \url{https://projects.fivethirtyeight.com/soccer-predictions/} and
 #' "Global Club Soccer Rankings"
 #' \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
 #'

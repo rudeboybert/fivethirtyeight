@@ -7,13 +7,12 @@
 \format{A data frame with 6439 rows describing individual tweets and 8 variables:
 \describe{
 \item{created_at}{The date and time the tweet was posted}
+\item{user}{The user posting the tweet}
 \item{text}{The text of the tweet}
 \item{url}{The link to the tweet}
 \item{replies}{The number of replies to the tweet}
 \item{retweets}{The number of retweets}
 \item{favorites}{The number of favorites}
-\item{user}{The user posting the tweet}
-\item{president}{The name of the president who posted the tweet}
 }}
 \source{
 Twitter \url{https://twitter.com/BarackObama} and \url{https://twitter.com/realDonaldTrump}

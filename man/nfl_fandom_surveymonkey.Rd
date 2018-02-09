@@ -3,7 +3,7 @@
 \docType{data}
 \name{nfl_fandom_surveymonkey}
 \alias{nfl_fandom_surveymonkey}
-\title{Surveymonkey Data:}
+\title{How Every NFL Team’s Fans Lean Politically}
 \format{a data frame with 33 rows representing teams and 25 variables:
 \describe{
 \item{team}{NFL team}
@@ -39,13 +39,18 @@ See \url{https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fand
 nfl_fandom_surveymonkey
 }
 \description{
-Surveymonkey Data:
+The raw data behind the story
+"How Every NFL Team’s Fans Lean Politically"
+\url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: Surveymonkey Data.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
 library(tidyverse)
 nfl_fandom_surveymonkey_tidy <- nfl_fandom_surveymonkey \%>\%
-gather(key= race_party, value=percent, 3:20)
+  gather(key = race_party, value = percent,
+         -c("team", "total_respondents", "gop_percent", "dem_percent",
+            "ind_percent", "white_percent", "nonwhite_percent")) \%>\%
+  arrange(team)
 }
 \seealso{
 \code{\link{nfl_fandom_google}}

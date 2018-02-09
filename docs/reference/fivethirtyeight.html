@@ -133,16 +133,17 @@ officially published by 538. Contribute to this package at
     <pre class="examples"><div class='input'><span class='co'># Example usage:</span>
 <span class='fu'>library</span>(<span class='no'>fivethirtyeight</span>)
 <span class='fu'>head</span>(<span class='no'>bechdel</span>)</div><div class='output co'>#&gt; # A tibble: 6 x 15
-#&gt;    year imdb   title   test    clean_test binary budget domgross intgross code 
-#&gt;   &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;ord&gt;      &lt;chr&gt;   &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
-#&gt; 1  2013 tt171… 21 &amp; O… notalk  notalk     FAIL   1.30e⁷ 25682380   4.22e⁷ 2013…
-#&gt; 2  2012 tt134… Dredd … ok-dis… ok         PASS   4.50e⁷ 13414714   4.09e⁷ 2012…
-#&gt; 3  2013 tt202… 12 Yea… notalk… notalk     FAIL   2.00e⁷ 53107035   1.59e⁸ 2013…
-#&gt; 4  2013 tt127… 2 Guns  notalk  notalk     FAIL   6.10e⁷ 75612460   1.32e⁸ 2013…
-#&gt; 5  2013 tt045… 42      men     men        FAIL   4.00e⁷ 95020213   9.50e⁷ 2013…
-#&gt; 6  2013 tt133… 47 Ron… men     men        FAIL   2.25e⁸ 38362475   1.46e⁸ 2013…
-#&gt; # ... with 5 more variables: budget_2013 &lt;int&gt;, domgross_2013 &lt;dbl&gt;,
-#&gt; #   intgross_2013 &lt;dbl&gt;, period_code &lt;int&gt;, decade_code &lt;int&gt;</div><div class='input'>
+#&gt;    year      imdb            title            test clean_test binary    budget
+#&gt;   &lt;int&gt;     &lt;chr&gt;            &lt;chr&gt;           &lt;chr&gt;      &lt;ord&gt;  &lt;chr&gt;     &lt;int&gt;
+#&gt; 1  2013 tt1711425        21 &amp; Over          notalk     notalk   FAIL  13000000
+#&gt; 2  2012 tt1343727         Dredd 3D     ok-disagree         ok   PASS  45000000
+#&gt; 3  2013 tt2024544 12 Years a Slave notalk-disagree     notalk   FAIL  20000000
+#&gt; 4  2013 tt1272878           2 Guns          notalk     notalk   FAIL  61000000
+#&gt; 5  2013 tt0453562               42             men        men   FAIL  40000000
+#&gt; 6  2013 tt1335975         47 Ronin             men        men   FAIL 225000000
+#&gt; # ... with 8 more variables: domgross &lt;dbl&gt;, intgross &lt;dbl&gt;, code &lt;chr&gt;,
+#&gt; #   budget_2013 &lt;int&gt;, domgross_2013 &lt;dbl&gt;, intgross_2013 &lt;dbl&gt;,
+#&gt; #   period_code &lt;int&gt;, decade_code &lt;int&gt;</div><div class='input'>
 <span class='co'># All information about any data set can be found in the help file:</span>
 ?<span class='no'>bechdel</span></div><div class='output co'>#&gt; <span class='message'>Rendering development documentation for 'bechdel'</span></div><div class='input'>
 <span class='co'># To view a list of all data sets:</span>
@@ -171,7 +172,7 @@ officially published by 538. Contribute to this package at
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
 </div>
 
       </footer>

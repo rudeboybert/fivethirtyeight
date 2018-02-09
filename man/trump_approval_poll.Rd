@@ -36,11 +36,9 @@ trump_approval_poll
 \description{
 The raw data behind the story:
 "How Popular is Donald Trump"
-\url{https://projects.fivethirtyeight.com/trump-approval-ratings/}
+\url{https://projects.fivethirtyeight.com/trump-approval-ratings/}: Approval Poll Dataset
 }
 \details{
-Approval Poll Dataset:
-
 Variables "model_date", "influence", and "president" were deleted because each observation contained the
 same value for these variables: January 5, 2018; 0; and Donald Trump respectively.
 }

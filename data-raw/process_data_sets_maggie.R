@@ -10,7 +10,7 @@ nba_carmelo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.
     playoff = ifelse(playoff == "t", TRUE, FALSE),
     playoff = ifelse(is.na(playoff), FALSE, TRUE),
     neutral = ifelse(neutral == 1, TRUE, FALSE)
-  ) %>% 
+  ) %>%
   slice(1:10)
 devtools::use_data(nba_carmelo, overwrite = TRUE)
 
@@ -22,8 +22,6 @@ nfl_elo <- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") 
   mutate(
     team1 = as.factor(team1),
     team2 = as.factor(team2),
-    playoff = ifelse(playoff == "t", TRUE, FALSE),
-    playoff = ifelse(is.na(playoff), FALSE, TRUE),
     neutral = ifelse(neutral == 1, TRUE, FALSE))
 devtools::use_data(nfl_elo, overwrite = TRUE)
 
@@ -36,7 +34,6 @@ nfl_fandom_google <- read_csv("data-raw/nfl-fandom/NFL_fandom_data-google_trends
     trump_2016_vote = 'trump_2016_votepercent'
   ) %>%
   mutate(
-    dma = as.factor(dma),
     nfl = as.numeric(str_replace_all(nfl, "%", "")),
     nba = as.numeric(str_replace_all(nba, "%", "")),
     mlb = as.numeric(str_replace_all(mlb, "%", "")),
@@ -48,7 +45,7 @@ nfl_fandom_google <- read_csv("data-raw/nfl-fandom/NFL_fandom_data-google_trends
   )
 devtools::use_data(nfl_fandom_google, overwrite = TRUE)
 
-nfl_fandom_surveymonkey <-read_csv(
+nfl_fandom_surveymonkey <- read_csv(
   "data-raw/nfl-fandom/NFL_fandom_data-surveymonkey.csv",
   skip=1
 ) %>%
@@ -135,7 +132,7 @@ devtools::use_data(mediacloud_trump, overwrite = TRUE)
 tv_hurricanes <- read_csv("data-raw/puerto-rico-media/tv_hurricanes.csv") %>%
   clean_names() %>%
   mutate(
-    date = as.Date(date,format= "%m / %d / %y")
+    date = as.Date(date, format= "%m / %d / %y")
   )
 devtools::use_data(tv_hurricanes, overwrite = TRUE)
 
@@ -189,7 +186,7 @@ trump_approval_poll <- read_csv("https://projects.fivethirtyeight.com/trump-appr
     startdate = as.Date(startdate, format = "%m / %d / %Y"),
     enddate = as.Date(enddate, format = "%m / %d / %Y"),
     pollster = as.factor(pollster),
-    grade = as.factor(grade),
+    grade = factor(grade, levels = rev(c("A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-")), ordered = TRUE),
     population = as.factor(population),
     url = as.factor(url),
     createddate = as.Date(createddate, format = "%m / %d / %Y"),
@@ -201,8 +198,8 @@ trump_approval_poll <- read_csv("https://projects.fivethirtyeight.com/trump-appr
     end_date = enddate,
     sample_size = samplesize,
     created_date = createddate
-  ) %>% 
-  select(-c(president,model_date,influence))
+  ) %>%
+  select(-c(president, model_date, influence))
 devtools::use_data(trump_approval_poll, overwrite = TRUE)
 
 trump_approval_trend <- read_csv("https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv") %>%
@@ -218,7 +215,7 @@ trump_approval_trend <- read_csv("https://projects.fivethirtyeight.com/trump-app
     approve_low = approve_lo,
     disapprove_high = disapprove_hi,
     disapprove_low = disapprove_lo
-  ) %>% 
+  ) %>%
   select(-c(president))
 devtools::use_data(trump_approval_trend, overwrite = TRUE)
 
@@ -256,7 +253,7 @@ trumpworld_issue_5 <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-issue-5.cs
     issue = 5
   )
 trumpworld_issues <- bind_rows(
-  trumpworld_issue_1, trumpworld_issue_2, trumpworld_issue_3, 
+  trumpworld_issue_1, trumpworld_issue_2, trumpworld_issue_3,
   trumpworld_issue_4, trumpworld_issue_5
 )
 devtools::use_data(trumpworld_issues, overwrite = TRUE)
@@ -276,16 +273,15 @@ devtools::use_data(trumpworld_polls, overwrite = TRUE)
 barack_obama <- read_csv("data-raw/twitter-ratio/BarackObama.csv") %>%
   mutate(
     created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
-    text =  gsub("[^\x01-\x7F]", "", text),
-    president = "Barack Obama"
+    text =  gsub("[^\x01-\x7F]", "", text)
   )
 real_donald_trump <- read_csv("data-raw/twitter-ratio/realDonaldTrump.csv") %>%
   mutate(
     created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
-    text =  gsub("[^\x01-\x7F]", "", text),
-    president = "Donald Trump"
+    text =  gsub("[^\x01-\x7F]", "", text)
   )
-twitter_presidents <- bind_rows(barack_obama, real_donald_trump)
+twitter_presidents <- bind_rows(barack_obama, real_donald_trump) %>%
+  select(created_at, user, everything())
 devtools::use_data(twitter_presidents, overwrite=TRUE)
 
 senators <- read_csv("data-raw/twitter-ratio/senators.csv") %>%
@@ -294,7 +290,8 @@ senators <- read_csv("data-raw/twitter-ratio/senators.csv") %>%
     state = as.factor(state),
     created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
     text =  gsub("[^\x01-\x7F]", "", text)
-  ) %>% 
+  ) %>%
+  select(created_at, user, everything()) %>%
   slice(1:10)
 devtools::use_data(senators, overwrite = TRUE)
 

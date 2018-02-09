@@ -5,8 +5,8 @@
 \alias{nba_carmelo}
 \title{The Complete History Of The NBA
 2017-18 NBA Predictions}
-\format{Because of R package size restrictions, only a preview of the 
-first 10 rows of this dataset is included; to obtain the entire dataset 
+\format{Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
 (1871 to 2017 games) see Examples below. A data frame with 10 rows representing games and 20 variables:
 \describe{
  \item{date}{Date}
@@ -40,7 +40,7 @@ nba_carmelo
 The raw data behind the story
 "The Complete History Of The NBA"
 \url{https://projects.fivethirtyeight.com/complete-history-of-the-nba/}
-And our "2017-18 NBA Predictions"
+and our "2017-18 NBA Predictions"
 \url{https://projects.fivethirtyeight.com/2018-nba-predictions/}
 }
 \examples{

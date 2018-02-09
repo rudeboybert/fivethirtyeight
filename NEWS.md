@@ -1,8 +1,15 @@
 # fivethirtyeight 0.3.0.9000
 
 * Added new and missing data sets:
-    + By Meredith Manley: `ahca_polls`, `bachelorette`, `candy_rankings`, `chess_transfers`, `generic_polllist`, `generic_topline`, `mlb_elo`, `ratings`, `spi_global_rankings`, `spi_matches`, `tweets`
-    + By Maggie Shea: `nba_carmelo`, `nfl_elo`, `nfl_fandom_google`, `nfl_fandom_surveymonkey`, `google_trends`, `mediacloud_hurricanes`, `mediacloud_states`, `mediacloud_online_news`, `mediacloud_trump`, `tv_hurricanes`, `tv_hurricanes_by_network`, `tv_states`, `sandy_311`, `trump_approval_poll`, `trump_approval_trend`, `trumpworld_issues`, `trumpworld_polls`, `twitter_presidents`, `senators`, `undefeated`
+    + By Meredith Manley: `ahca_polls`, `bachelorette`, `candy_rankings`, 
+    `chess_transfers`, `generic_polllist`, `generic_topline`, `mlb_elo`, 
+    `ratings`, `spi_global_rankings`, `spi_matches`, `tweets`
+    + By Maggie Shea: `nba_carmelo`, `nfl_elo`, `nfl_fandom_google`, 
+    `nfl_fandom_surveymonkey`, `google_trends`, `mediacloud_hurricanes`, 
+    `mediacloud_states`, `mediacloud_online_news`, `mediacloud_trump`, 
+    `tv_hurricanes`, `tv_hurricanes_by_network`, `tv_states`, `sandy_311`, 
+    `trump_approval_poll`, `trump_approval_trend`, `trumpworld_issues`, 
+    `trumpworld_polls`, `twitter_presidents`, `senators`, `undefeated`
 * Converted all orginal categorical variables to `ordered()`. Ex: `bechdel$clean_test`
 
 TODO:

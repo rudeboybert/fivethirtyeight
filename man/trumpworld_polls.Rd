@@ -3,51 +3,49 @@
 \docType{data}
 \name{trumpworld_polls}
 \alias{trumpworld_polls}
-\title{Trump World Polls Dataset:}
+\title{What the World Thinks of Trump}
 \format{A data frame with 32 rows representng years and 40 variables:
 \describe{
 \item{year}{Year the poll was conducted}
 \item{avg}{The average percentage people who answered the poll question positively (support the president or have a favorable view of the U.S.)}
 \item{canada}{The percentage of people from Canada who answered the poll question positively}
-\item{france}{The percentage of people from  who answered the poll question positively}
-\item{germany}{The percentage of people from  who answered the poll question positively}
-\item{greece}{The percentage of people from  who answered the poll question positively}
-\item{hungary}{The percentage of people from  who answered the poll question positively}
-\item{italy}{The percentage of people from  who answered the poll question positively}
-\item{netherlands}{The percentage of people from  who answered the poll question positively}
-\item{poland}{The percentage of people from  who answered the poll question positively}
-\item{spain}{The percentage of people from  who answered the poll question positively}
-\item{sweden}{The percentage of people from  who answered the poll question positively}
-\item{uk}{The percentage of people from  who answered the poll question positively}
-\item{russia}{The percentage of people from  who answered the poll question positively}
-\item{australia}{The percentage of people from  who answered the poll question positively}
-\item{india}{The percentage of people from  who answered the poll question positively}
-\item{indonesia}{The percentage of people from  who answered the poll question positively}
-\item{japan}{The percentage of people from  who answered the poll question positively}
-\item{philippines}{The percentage of people from  who answered the poll question positively}
-\item{south_korea}{The percentage of people from  who answered the poll question positively}
-\item{vietnam}{The percentage of people from  who answered the poll question positively}
-\item{israel}{The percentage of people from  who answered the poll question positively}
-\item{jordan}{The percentage of people from  who answered the poll question positively}
-\item{lebanon}{The percentage of people from  who answered the poll question positively}
-\item{tunisia}{The percentage of people from  who answered the poll question positively}
-\item{turkey}{The percentage of people from  who answered the poll question positively}
-\item{ghana}{The percentage of people from  who answered the poll question positively}
-\item{kenya}{The percentage of people from  who answered the poll question positively}
-\item{nigeria}{The percentage of people from  who answered the poll question positively}
-\item{senegal}{The percentage of people from  who answered the poll question positively}
-\item{south_africa}{The percentage of people from  who answered the poll question positively}
-\item{tanzania}{The percentage of people from  who answered the poll question positively}
-\item{argentina}{The percentage of people from  who answered the poll question positively}
-\item{brazil}{The percentage of people from  who answered the poll question positively}
-\item{chile}{The percentage of people from  who answered the poll question positively}
-\item{colombia}{The percentage of people from  who answered the poll question positively}
-\item{mexico}{The percentage of people from  who answered the poll question positively}
-\item{peru}{The percentage of people from  who answered the poll question positively}
-\item{venezuela}{The percentage of people from  who answered the poll question positively}
-\item{question}{The item being polled. Specificially, whether respondents:
-          Have a favorable view of the U.S.
-          Trust the U.S. President when it comes to foreign affairs}
+\item{france}{The percentage of people from France who answered the poll question positively}
+\item{germany}{The percentage of people from Germany who answered the poll question positively}
+\item{greece}{The percentage of people from Greece who answered the poll question positively}
+\item{hungary}{The percentage of people from Hungary who answered the poll question positively}
+\item{italy}{The percentage of people from Italy who answered the poll question positively}
+\item{netherlands}{The percentage of people from Netherlands who answered the poll question positively}
+\item{poland}{The percentage of people from Poland who answered the poll question positively}
+\item{spain}{The percentage of people from Spain who answered the poll question positively}
+\item{sweden}{The percentage of people from Sweden who answered the poll question positively}
+\item{uk}{The percentage of people from the U.K. who answered the poll question positively}
+\item{russia}{The percentage of people from Russia who answered the poll question positively}
+\item{australia}{The percentage of people from Australia who answered the poll question positively}
+\item{india}{The percentage of people from India who answered the poll question positively}
+\item{indonesia}{The percentage of people from Indonesia who answered the poll question positively}
+\item{japan}{The percentage of people from Japan who answered the poll question positively}
+\item{philippines}{The percentage of people from the Philippines who answered the poll question positively}
+\item{south_korea}{The percentage of people from South Korea who answered the poll question positively}
+\item{vietnam}{The percentage of people from Vietnam who answered the poll question positively}
+\item{israel}{The percentage of people from Isreal who answered the poll question positively}
+\item{jordan}{The percentage of people from Jordan who answered the poll question positively}
+\item{lebanon}{The percentage of people from Lebanon who answered the poll question positively}
+\item{tunisia}{The percentage of people from Tunisia who answered the poll question positively}
+\item{turkey}{The percentage of people from Turkey who answered the poll question positively}
+\item{ghana}{The percentage of people from Ghana who answered the poll question positively}
+\item{kenya}{The percentage of people from Kenya who answered the poll question positively}
+\item{nigeria}{The percentage of people from Nigeria who answered the poll question positively}
+\item{senegal}{The percentage of people from Senegal who answered the poll question positively}
+\item{south_africa}{The percentage of people from South Africa who answered the poll question positively}
+\item{tanzania}{The percentage of people from Tanzania who answered the poll question positively}
+\item{argentina}{The percentage of people from Argentina who answered the poll question positively}
+\item{brazil}{The percentage of people from Brazil who answered the poll question positively}
+\item{chile}{The percentage of people from Chile who answered the poll question positively}
+\item{colombia}{The percentage of people from Colombia who answered the poll question positively}
+\item{mexico}{The percentage of people from Mexico who answered the poll question positively}
+\item{peru}{The percentage of people from Peru who answered the poll question positively}
+\item{venezuela}{The percentage of people from Venezuela who answered the poll question positively}
+\item{question}{The item being polled. Specificially, whether respondents: 1) Have a favorable view of the U.S. or 2) Trust the U.S. President when it comes to foreign affairs}
 }}
 \source{
 Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
@@ -56,12 +54,16 @@ Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-chart
 trumpworld_polls
 }
 \description{
-Trump World Polls Dataset:
+The raw data behind the story
+"What the World Thinks of Trump"
+\url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}:
+Trump World Polls Dataset.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
 library(tidyverse)
-trumpworld_polls_tidy <- gather(trumpworld_polls, country, percent_positive, 3:39)
+trumpworld_polls_tidy <- trumpworld_polls \%>\%
+  gather(country, percent_positive, -c("year", "avg", "question"))
 }
 \seealso{
 \code{\link{trumpworld_issues}}

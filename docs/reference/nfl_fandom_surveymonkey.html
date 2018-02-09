@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Surveymonkey Data: — nfl_fandom_surveymonkey • fivethirtyeight</title>
+<title>How Every NFL Team’s Fans Lean Politically — nfl_fandom_surveymonkey • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -116,11 +116,13 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Surveymonkey Data:</h1>
+    <h1>How Every NFL Team’s Fans Lean Politically</h1>
     </div>
 
     
-    <p>Surveymonkey Data:</p>
+    <p>The raw data behind the story
+"How Every NFL Team’s Fans Lean Politically"
+<a href='https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically'>https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically</a>: Surveymonkey Data.</p>
     
 
     <pre class="usage"><span class='no'>nfl_fandom_surveymonkey</span></pre>
@@ -168,7 +170,10 @@
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
 <span class='fu'>library</span>(<span class='no'>tidyverse</span>)
 <span class='no'>nfl_fandom_surveymonkey_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>nfl_fandom_surveymonkey</span> <span class='kw'>%&gt;%</span>
-<span class='fu'>gather</span>(<span class='kw'>key</span><span class='kw'>=</span> <span class='no'>race_party</span>, <span class='kw'>value</span><span class='kw'>=</span><span class='no'>percent</span>, <span class='fl'>3</span>:<span class='fl'>20</span>)</div></pre>
+  <span class='fu'>gather</span>(<span class='kw'>key</span> <span class='kw'>=</span> <span class='no'>race_party</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='no'>percent</span>,
+         -<span class='fu'>c</span>(<span class='st'>"team"</span>, <span class='st'>"total_respondents"</span>, <span class='st'>"gop_percent"</span>, <span class='st'>"dem_percent"</span>,
+            <span class='st'>"ind_percent"</span>, <span class='st'>"white_percent"</span>, <span class='st'>"nonwhite_percent"</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'>arrange</span>(<span class='no'>team</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -192,7 +197,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
 </div>
 
       </footer>
