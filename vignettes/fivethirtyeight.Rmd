@@ -55,18 +55,27 @@ original data sets as they exist in the [538 GitHub
 repository](https://github.com/fivethirtyeight/data) to adhere to the following 
 guidelines:
 
-* Naming conventions for data frames and variables:
-    + Rule of thumb: no more than 20 characters max
-    + All lower case
-    + Use underscores instead of CamelCase or spaces
-* Variables:
-    + Factors vs characters:
-        + Ordinal categorical variables are `factor` with the intuitive ordering of `levels`. We did this to ensure barplots and boxplots would display in an intuitive order. 
-        + Regular categorical variables are left as `character` vectors.
-    + Convert date variables that are beyond just `year` to [POSIX date](http://www.epochconverter.com/) objects using the  [lubridate](https://CRAN.R-project.org/package=lubridate/vignettes/lubridate.html) package. That way users can easily create time series plots. Example:
-        + If only a `year` variable exits, then we leave it as is.
-        + If there are `year` and `month` variables, we convert them POSIX date objects as `year-month-01`.
-        + If there are `year`, `month`, and `day` variables, we convert them POSIX date objects as `year-month-day`.
+1. **Naming conventions for data frame and variable names**:
+    1. Whenever possible, all names should be no more than 20 characters long. Exceptions to this rule exist when shortening the names to less than 20 characters would lead to a loss of information.
+    1. Use only lower case characters and replace all spaces with underscores. This format is known as `snake_case` and is an alternative to `camelCase`.
+    1. In the case of variable (column) names within a data frame, use underscores instead of spaces.
+1. **Variables identifying observational units**:
+    1. Any variables uniquely identifying each observational unit should be in the left-hand columns. 
+1. **Dates**:
+    1. If only a `year` variable exists, then it should be represented as a numerical variable.
+    1. If there are `year` and `month` variables, then convert them to `Date` objects as `year-month-01`. In other words, associate all observations from the same month to have a `day` of `01` so that a correct `Date` object can be assigned.
+    1. If there are `year`, `month`, and `day` variables, then convert them to `Date` objects as `year-month-day`.
+1. **Ordered Factors, Factors, Characters, and Logicals**:
+    1. Ordinal categorical variables are represented as `ordered` factors.
+    1. Categorical variables with a fixed and known set of levels are represented as regular `factor`s.
+    1. Categorical variables whose possible levels are either unknown or of a very large number are represented as `character`s.
+    1. Any "yes/no" character encoding of binary variables is converted to `TRUE/FALSE` logical variables. 
+1. **Tidy data format**: 
+    1. Whenever possible, save all data frames in ["tidy" data](http://vita.had.co.nz/papers/tidy-data.html) format:
+        a) Each variable forms a column.
+        a) Each observation forms a row.
+        a) Each type of observational unit forms a table.
+    1. If converting the raw data to "tidy" data format alters the dataset too much, then make the code to convert to tidy format easily accessible in the help file. 
 
 **Note**: The code used to pre-process the data can be found on the [GitHub repository](https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw) for the package in the `process_data_sets.R` files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.
 

@@ -60,28 +60,41 @@
 <div id="guidelines" class="section level2">
 <h2>Guidelines</h2>
 <p>In order to make the data easily accessible to R novices, we pre-process the original data sets as they exist in the <a href="https://github.com/fivethirtyeight/data">538 GitHub repository</a> to adhere to the following guidelines:</p>
-<ul>
-<li>Naming conventions for data frames and variables:
-<ul>
-<li>Rule of thumb: no more than 20 characters max</li>
-<li>All lower case</li>
-<li>Use underscores instead of CamelCase or spaces</li>
-</ul></li>
-<li>Variables:
-<ul>
-<li>Factors vs characters:
-<ul>
-<li>Ordinal categorical variables are <code>factor</code> with the intuitive ordering of <code>levels</code>. We did this to ensure barplots and boxplots would display in an intuitive order.</li>
-<li>Regular categorical variables are left as <code>character</code> vectors.</li>
-</ul></li>
-<li>Convert date variables that are beyond just <code>year</code> to <a href="http://www.epochconverter.com/">POSIX date</a> objects using the <a href="https://CRAN.R-project.org/package=lubridate/vignettes/lubridate.html">lubridate</a> package. That way users can easily create time series plots. Example:
-<ul>
-<li>If only a <code>year</code> variable exits, then we leave it as is.</li>
-<li>If there are <code>year</code> and <code>month</code> variables, we convert them POSIX date objects as <code>year-month-01</code>.</li>
-<li>If there are <code>year</code>, <code>month</code>, and <code>day</code> variables, we convert them POSIX date objects as <code>year-month-day</code>.</li>
-</ul></li>
-</ul></li>
-</ul>
+<ol style="list-style-type: decimal">
+<li><strong>Naming conventions for data frame and variable names</strong>:
+<ol style="list-style-type: decimal">
+<li>Whenever possible, all names should be no more than 20 characters long. Exceptions to this rule exist when shortening the names to less than 20 characters would lead to a loss of information.</li>
+<li>Use only lower case characters and replace all spaces with underscores. This format is known as <code>snake_case</code> and is an alternative to <code>camelCase</code>.</li>
+<li>In the case of variable (column) names within a data frame, use underscores instead of spaces.</li>
+</ol></li>
+<li><strong>Variables identifying observational units</strong>:
+<ol style="list-style-type: decimal">
+<li>Any variables uniquely identifying each observational unit should be in the left-hand columns.</li>
+</ol></li>
+<li><strong>Dates</strong>:
+<ol style="list-style-type: decimal">
+<li>If only a <code>year</code> variable exists, then it should be represented as a numerical variable.</li>
+<li>If there are <code>year</code> and <code>month</code> variables, then convert them to <code>Date</code> objects as <code>year-month-01</code>. In other words, associate all observations from the same month to have a <code>day</code> of <code>01</code> so that a correct <code>Date</code> object can be assigned.</li>
+<li>If there are <code>year</code>, <code>month</code>, and <code>day</code> variables, then convert them to <code>Date</code> objects as <code>year-month-day</code>.</li>
+</ol></li>
+<li><strong>Ordered Factors, Factors, Characters, and Logicals</strong>:
+<ol style="list-style-type: decimal">
+<li>Ordinal categorical variables are represented as <code>ordered</code> factors.</li>
+<li>Categorical variables with a fixed and known set of levels are represented as regular <code>factor</code>s.</li>
+<li>Categorical variables whose possible levels are either unknown or of a very large number are represented as <code>character</code>s.</li>
+<li>Any “yes/no” character encoding of binary variables is converted to <code>TRUE/FALSE</code> logical variables.</li>
+</ol></li>
+<li><strong>Tidy data format</strong>:
+<ol style="list-style-type: decimal">
+<li>Whenever possible, save all data frames in <a href="http://vita.had.co.nz/papers/tidy-data.html">“tidy” data</a> format:
+<ol style="list-style-type: lower-alpha">
+<li>Each variable forms a column.</li>
+<li>Each observation forms a row.</li>
+<li>Each type of observational unit forms a table.</li>
+</ol></li>
+<li>If converting the raw data to “tidy” data format alters the dataset too much, then make the code to convert to tidy format easily accessible in the help file.</li>
+</ol></li>
+</ol>
 <p><strong>Note</strong>: The code used to pre-process the data can be found on the <a href="https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw">GitHub repository</a> for the package in the <code>process_data_sets.R</code> files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.</p>
 </div>
 <div id="data-sets" class="section level2">

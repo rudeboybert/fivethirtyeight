@@ -1,0 +1,14 @@
+citHeader("To cite fivethirtyeight in publications, please use:")
+
+citEntry(
+    entry = "Article",
+    author = personList(as.person("Albert Y. Kim"), as.person("Chester Ismay"), as.person("Jennifer Chunn")),
+    title = "The fivethirtyeight R Package: 'Tame Data' Principles for Introductory Statistics and Data Science Courses",
+    journal = "Technology Innovations in Statistics Education (Accepted)",
+    year = 2018,
+    volume = 0,
+    pages = "001--002",
+    url = "http://rpubs.com/rudeboybert/fivethirtyeight_tamedata",
+    textVersion = paste("Kim, A. Y. and Ismay, C. and Chunn, J. (2018)",
+        "The fivethirtyeight R Package: 'Tame Data' Principles for Introductory Statistics and Data Science Courses,",
+        "Technology Innovations in Statistics Education. 0:001--002"))

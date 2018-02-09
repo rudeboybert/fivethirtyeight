@@ -122,7 +122,7 @@
 #'   \item{form_fed}{The national federation from which the chress player has transfered.}
 #'   \item{transfer_date}{The date at which the transfer took place.}
 #' }
-#' @source World Chess Federation \url{https://ratings.fide.com/}
+#' @source World Chess Federation
 "chess_transfers"
 
 
