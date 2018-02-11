@@ -22,7 +22,7 @@ these datasets in v0.5.0 of package using the `drat` package.
 Ex: `bechdel$clean_test`
 * Vignette notes:
     + Added a vignette that has a link to all user-contributed vignettes, which 
-    areonly available on development version of package and on GitHub due to 
+    are only available on development version of package and on GitHub due to 
     CRAN package size restrictions.
     + For all datasets that have a user contributed vignette, add a link to it 
     in the corresponding help/roxygen code file.
