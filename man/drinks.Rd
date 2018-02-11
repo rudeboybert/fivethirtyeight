@@ -13,7 +13,7 @@
   \item{total_litres_of_pure_alcohol}{Total litres of pure alcohol per person}
 }}
 \source{
-World Health Organisation, Global Information System on Alcohol and Health (GISAH), 2010.
+World Health Organization, Global Information System on Alcohol and Health (GISAH), 2010.
 }
 \usage{
 drinks

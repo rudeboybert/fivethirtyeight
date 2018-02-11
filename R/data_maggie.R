@@ -58,7 +58,10 @@
 #' And our "2017 NFL Predictions"
 #' \url{https://projects.fivethirtyeight.com/2017-nfl-predictions/}
 #'
-#' @format a data frame with 16,007 rows representing games and 14 variables:
+#' @format Because of R package size restrictions, only a preview of the
+#' first 10 rows of this dataset is included; to obtain the entire dataset
+#' (1920 to 2018 games) see Examples below. A data frame with 10 rows
+#' representing games and 14 variables:
 #' \describe{
 #'  \item{date}{Date}
 #'  \item{season}{Season year, 1920-2018}
@@ -76,6 +79,15 @@
 #'  \item{score2}{Points scored by Team 2}
 #' }
 #' @source See \url{https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv}
+#' # To obtain the entire dataset, run the following code:
+#' library(tidyverse)
+#' library(janitor)
+#' nfl_elo <- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") %>%
+#'   clean_names() %>%
+#'   mutate(
+#'     team1 = as.factor(team1),
+#'     team2 = as.factor(team2),
+#'     neutral = ifelse(neutral == 1, TRUE, FALSE))
 "nfl_elo"
 
 
@@ -118,29 +130,29 @@
 #' \describe{
 #' \item{team}{NFL team}
 #' \item{total_respondents}{Total number of poll respondents who ranked the given team in their top 3 favorites}
-#' \item{asian_dem}{Number of asian, democrat poll respondents who ranked the given team in their top 3 favorites}
-#' \item{black_dem}{Number of black, democrat poll respondents who ranked the given team in their top 3 favorites}
-#' \item{hispanic_dem}{Number of hispanic, democrat poll respondents who ranked the given team in their top 3 favorites}
-#' \item{other_dem}{Number of democrat poll respondents who identified their race as "other" (not asian, black, hispanic, or white) and ranked the given team in their top 3 favorites}
-#' \item{white_dem}{Number of white, democrat poll respondents who ranked the given team in their top 3 favorites}
+#' \item{asian_dem}{Number of Asian, democrat poll respondents who ranked the given team in their top 3 favorites}
+#' \item{black_dem}{Number of Black, democrat poll respondents who ranked the given team in their top 3 favorites}
+#' \item{hispanic_dem}{Number of Hispanic, democrat poll respondents who ranked the given team in their top 3 favorites}
+#' \item{other_dem}{Number of democrat poll respondents who identified their race as "other" (not Asian, Black, Hispanic, or White) and ranked the given team in their top 3 favorites}
+#' \item{white_dem}{Number of White, democrat poll respondents who ranked the given team in their top 3 favorites}
 #' \item{total_dem}{Total number of democrat poll respondents who ranked the given team in their top 3 favorites}
-#' \item{asian_ind}{Number of asian, independent poll respondents who ranked the given team in their top 3 favorites}
-#' \item{black_ind}{Number of black, independent poll respondents who ranked the given team in their top 3 favorites}
-#' \item{hispanic_ind}{Number of hispanic, independent poll respondents who ranked the given team in their top 3 favorites}
-#' \item{other_ind}{Number of independent poll respondents who identified their race as "other" (not asian, black, hispanic, or white) and ranked the given team in their top 3 favorites}
-#' \item{white_ind}{Number of white, independent poll respondents who ranked the given team in their top 3 favorites}
+#' \item{asian_ind}{Number of Asian, independent poll respondents who ranked the given team in their top 3 favorites}
+#' \item{black_ind}{Number of Black, independent poll respondents who ranked the given team in their top 3 favorites}
+#' \item{hispanic_ind}{Number of Hispanic, independent poll respondents who ranked the given team in their top 3 favorites}
+#' \item{other_ind}{Number of independent poll respondents who identified their race as "other" (not Asian, Black, Hispanic, or White) and ranked the given team in their top 3 favorites}
+#' \item{white_ind}{Number of White, independent poll respondents who ranked the given team in their top 3 favorites}
 #' \item{total_ind}{Total number of independent poll respondents who ranked the given team in their top 3 favorites}
-#' \item{asian_gop}{Number of asian, republican poll respondents who ranked the given team in their top 3 favorites}
-#' \item{black_gop}{Number of black, republican poll respondents who ranked the given team in their top 3 favorites}
-#' \item{hispanic_gop}{Number of hispanic, republican poll respondents who ranked the given team in their top 3 favorites}
-#' \item{other_gop}{Number of republican poll respondents who identified their race as "other" (not asian, black, hispanic, or white) and ranked the given team in their top 3 favorites}
-#' \item{white_gop}{Number of white, republican poll respondents who ranked the given team in their top 3 favorites}
+#' \item{asian_gop}{Number of Asian, republican poll respondents who ranked the given team in their top 3 favorites}
+#' \item{black_gop}{Number of Black, republican poll respondents who ranked the given team in their top 3 favorites}
+#' \item{hispanic_gop}{Number of Hispanic, republican poll respondents who ranked the given team in their top 3 favorites}
+#' \item{other_gop}{Number of republican poll respondents who identified their race as "other" (not Asian, Black, Hispanic, or White) and ranked the given team in their top 3 favorites}
+#' \item{white_gop}{Number of White, republican poll respondents who ranked the given team in their top 3 favorites}
 #' \item{total_gop}{Total number of republican poll respondents who ranked the given team in their top 3 favorites}
 #' \item{gop_percent}{Percent of fans (who ranked the team in their top 3 favorite NFL teams) who are republicans}
 #' \item{dem_percent}{Percent of fans who are democrats}
 #' \item{ind_percent}{Percent of fans who are independent}
-#' \item{white_percent}{Percent of fans who are white}
-#' \item{nonwhite_percent}{Percent of fans who are not white}
+#' \item{white_percent}{Percent of fans who are White}
+#' \item{nonwhite_percent}{Percent of fans who are not White}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}
 #' @examples
@@ -421,8 +433,8 @@
 #' \item{weight}{The weight fivethirtyeight gives the poll when determining approval ratings based on historical accuracy of the pollster}
 #' \item{approve}{The percentage of respondents who approve of the president}
 #' \item{disapprove}{The percentage of respondents who disapprove of the president}
-#' \item{adjusted_approve}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
-#' \item{adjusted_disapprove}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
+#' \item{adjusted_approve}{The percentage of respondents who approve of the president adjusted for systematic tendencies of the polling firm}
+#' \item{adjusted_disapprove}{The percentage of respondents who approve of the president adjusted for systematic tendencies of the polling firm}
 #' \item{multiversions}{True if there are multiple versions of the poll, False if there are not}
 #' \item{tracking}{TRUE if the poll was tracked, FALSE if not}
 #' \item{url}{Poll result URL}
@@ -499,7 +511,7 @@
 #' \url{https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/}:
 #' Trump World Polls Dataset.
 #'
-#' @format A data frame with 32 rows representng years and 40 variables:
+#' @format A data frame with 32 rows representing years and 40 variables:
 #' \describe{
 #' \item{year}{Year the poll was conducted}
 #' \item{avg}{The average percentage people who answered the poll question positively (support the president or have a favorable view of the U.S.)}
@@ -522,7 +534,7 @@
 #' \item{philippines}{The percentage of people from the Philippines who answered the poll question positively}
 #' \item{south_korea}{The percentage of people from South Korea who answered the poll question positively}
 #' \item{vietnam}{The percentage of people from Vietnam who answered the poll question positively}
-#' \item{israel}{The percentage of people from Isreal who answered the poll question positively}
+#' \item{israel}{The percentage of people from Israel who answered the poll question positively}
 #' \item{jordan}{The percentage of people from Jordan who answered the poll question positively}
 #' \item{lebanon}{The percentage of people from Lebanon who answered the poll question positively}
 #' \item{tunisia}{The percentage of people from Tunisia who answered the poll question positively}
@@ -540,7 +552,7 @@
 #' \item{mexico}{The percentage of people from Mexico who answered the poll question positively}
 #' \item{peru}{The percentage of people from Peru who answered the poll question positively}
 #' \item{venezuela}{The percentage of people from Venezuela who answered the poll question positively}
-#' \item{question}{The item being polled. Specificially, whether respondents: 1) Have a favorable view of the U.S. or 2) Trust the U.S. President when it comes to foreign affairs}
+#' \item{question}{The item being polled. Specifically, whether respondents: 1) Have a favorable view of the U.S. or 2) Trust the U.S. President when it comes to foreign affairs}
 #' }
 #' @source Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
 #' @examples

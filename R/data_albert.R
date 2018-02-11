@@ -139,7 +139,7 @@
 #'   \item{wine_servings}{Servings of wine in average serving sizes per person}
 #'   \item{total_litres_of_pure_alcohol}{Total litres of pure alcohol per person}
 #' }
-#' @source World Health Organisation, Global Information System on Alcohol and Health (GISAH), 2010.
+#' @source World Health Organization, Global Information System on Alcohol and Health (GISAH), 2010.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(tidyverse)
@@ -159,6 +159,8 @@
 #' The raw data behind the story
 #' "'Straight Outta Compton' Is The Rare Biopic Not About White Dudes"
 #' \url{https://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/}.
+#' An analysis using this data was contributed by Pradeep Adhokshaja as a package vignette at
+#' \url{http://fivethirtyeight-r.netlify.com/articles/biopics.html}.
 #'
 #' @format A data frame with 761 rows representing movies and 14 variables:
 #' \describe{
@@ -187,6 +189,8 @@
 #' The raw data behind the story
 #' "A Statistical Analysis of the Work of Bob Ross"
 #' \url{https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/}.
+#' An analysis using this data was contributed by Jonathan Bouchet as a package vignette at
+#' \url{http://fivethirtyeight-r.netlify.com/articles/bob_ross.html}.
 #'
 #' @format A data frame with 403 rows representing episodes and 71 variables:
 #' \describe{
@@ -335,7 +339,7 @@
 #'   \item{employed_fulltime_yearround}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
 #'   \item{unemployed}{Number unemployed (ESR == 3)}
 #'   \item{unemployment_rate}{Unemployed / (Unemployed + Employed)}
-#'   \item{p25th}{25th percentile of earnigns}
+#'   \item{p25th}{25th percentile of earnings}
 #'   \item{median}{Median earnings of full-time, year-round workers}
 #'   \item{p75th}{75th percentile of earnings}
 #' }
@@ -362,7 +366,7 @@
 #'   \item{grad_employed_fulltime_yearround}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
 #'   \item{grad_unemployed}{Number unemployed (ESR == 3)}
 #'   \item{grad_unemployment_rate}{Unemployed / (Unemployed + Employed)}
-#'   \item{grad_p25th}{25th percentile of earnigns}
+#'   \item{grad_p25th}{25th percentile of earnings}
 #'   \item{grad_median}{Median earnings of full-time, year-round workers}
 #'   \item{grad_p75th}{75th percentile of earnings}
 #'   \item{nongrad_total}{Total number of people with major}
@@ -370,7 +374,7 @@
 #'   \item{nongrad_employed_fulltime_yearround}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
 #'   \item{nongrad_unemployed}{Number unemployed (ESR == 3)}
 #'   \item{nongrad_unemployment_rate}{Unemployed / (Unemployed + Employed)}
-#'   \item{nongrad_p25th}{25th percentile of earnigns}
+#'   \item{nongrad_p25th}{25th percentile of earnings}
 #'   \item{nongrad_median}{Median earnings of full-time, year-round workers}
 #'   \item{nongrad_p75th}{75th percentile of earnings}
 #'   \item{grad_share}{grad_total / (grad_total + nongrad_total)}
@@ -405,7 +409,7 @@
 #'   \item{employed_fulltime_yearround}{Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)}
 #'   \item{unemployed}{Number unemployed (ESR == 3)}
 #'   \item{unemployment_rate}{Unemployed / (Unemployed + Employed)}
-#'   \item{p25th}{25th percentile of earnigns}
+#'   \item{p25th}{25th percentile of earnings}
 #'   \item{median}{Median earnings of full-time, year-round workers}
 #'   \item{p75th}{75th percentile of earnings}
 #'   \item{college_jobs}{Number with job requiring a college degree}
@@ -424,6 +428,8 @@
 #' The raw data behind the story
 #' "Comic Books Are Still Made By Men, For Men And About Men"
 #' \url{https://fivethirtyeight.com/features/women-in-comic-books/}.
+#' An analysis using this data was contributed by Jonathan Bouchet as a package vignette at
+#' \url{http://fivethirtyeight-r.netlify.com/articles/comics_gender.html}.
 #'
 #' @format A data frame with 23272 rows representing characters and 16 variables:
 #' \describe{
@@ -476,7 +482,7 @@
 #'   \item{care_data}{How much, if at all, do you care about the debate over the use of the word "data" as a singular or plural noun?}
 #'   \item{care_proper_grammar}{In your opinion, how important or unimportant is proper use of grammar?}
 #' }
-#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/comma-survey-data}.
+#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/comma-survey}.
 "comma_survey"
 
 
@@ -537,9 +543,9 @@
 #'   \item{google_knowledge_occupation}{Their occupation or office, according to Google's Knowledge Graph or, if they're not in there, how Stewart introduced them on the program.}
 #'   \item{show}{Air date of episode. Not unique, as some shows had more than one guest}
 #'   \item{group}{A larger group designation for the occupation. For instance, us senators, us presidents, and former presidents are all under "politicians"}
-#'   \item{raw_guest_list}{The person or list of people who appeared on the show, according to Wikipedia. The GoogleKnowlege_Occupation only refers to one of them in a given row.}
+#'   \item{raw_guest_list}{The person or list of people who appeared on the show, according to Wikipedia. The GoogleKnowledge_Occupation only refers to one of them in a given row.}
 #' }
-#' @source Google Knowlege Graph, The Daily Show clip library, Wikipedia.
+#' @source Google Knowledge Graph, The Daily Show clip library, Wikipedia.
 "daily_show_guests"
 
 

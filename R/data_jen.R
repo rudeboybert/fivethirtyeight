@@ -215,6 +215,9 @@
 #' The raw data behind the story
 #' "A Complete Catalog Of Every Time Someone Cursed Or Bled Out In A Quentin Tarantino Movie"
 #' \url{https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/}.
+#' An analysis using this data was contributed by Olivia Barrows, Jojo Miller, and Jayla Nakayama
+#' as a package vignette at
+#' \url{http://fivethirtyeight-r.netlify.com/articles/tarantino_swears.html}.
 #'
 #' @format A data frame with 1894 rows representing curse/death instances and 4 variables:
 #' \describe{
@@ -303,7 +306,9 @@
 #' The raw data behind the story
 #' "The World's Favorite Donald Trump Tweets"
 #' \url{https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/}.
-#' Tweets posted on twitter by Donald Trump (@@realDonaldTrump)
+#' Tweets posted on twitter by Donald Trump (@@realDonaldTrump).
+#' An analysis using this data was contributed by Adam Spannbauer as a package vignette at
+#' \url{http://fivethirtyeight-r.netlify.com/articles/trump_twitter.html}.
 #'
 #' @format A data frame with 448 rows representing tweets and 3 variables:
 #' \describe{
@@ -461,7 +466,7 @@
 #'   \item{mehs}{Mehs}
 #'   \item{league_average_gpct}{League-average goose percentage}
 #'   \item{ppf}{Pitcher park factor}
-#'   \item{replacement_gpct}{Replacement-level goose pecentage}
+#'   \item{replacement_gpct}{Replacement-level goose percentage}
 #'   \item{gwar}{Goose Wins Above Replacement}
 #'   \item{key_retro}{Retrosheet unique player identifier}
 #' }

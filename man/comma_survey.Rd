@@ -21,7 +21,7 @@
   \item{care_proper_grammar}{In your opinion, how important or unimportant is proper use of grammar?}
 }}
 \source{
-See \url{https://github.com/fivethirtyeight/data/tree/master/comma-survey-data}.
+See \url{https://github.com/fivethirtyeight/data/tree/master/comma-survey}.
 }
 \usage{
 comma_survey

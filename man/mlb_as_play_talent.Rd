@@ -11,7 +11,7 @@
   \item{gamenum}{Order of All-Star Game for the season (in years w/ multiple ASGs; set to 0 when only 1 per year)}
   \item{gameid}{Game ID at Baseball-Reference.com}
   \item{lgid}{League of All-Star team}
-  \item{startingpos}{Postion (according to baseball convention; 1=pitcher, 2=catcher, etc.) if starter}
+  \item{startingpos}{Position (according to baseball convention; 1=pitcher, 2=catcher, etc.) if starter}
   \item{off600}{Estimate of offensive talent, in runs above league average per 600 plate appearances}
   \item{def600}{Estimate of fielding talent, in runs above league average per 600 plate appearances}
   \item{pitch200}{Estimate of pitching talent, in runs above league average per 200 innings pitched}

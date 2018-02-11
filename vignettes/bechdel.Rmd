@@ -1,6 +1,6 @@
 ---
 title: "Bechdel analysis using the `tidyverse`"
-author: "Albert Y. Kim, Chester Ismay, and Jennifer Chunn"
+author: "Chester Ismay"
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:

@@ -1,6 +1,7 @@
-# fivethirtyeight 0.3.0.9000
+# fivethirtyeight 0.4.0
 
-* Added new and missing data sets:
+* Package website now at <http://fivethirtyeight-r.netlify.com/>
+* Added new data sets:
     + By Meredith Manley: `ahca_polls`, `bachelorette`, `candy_rankings`, 
     `chess_transfers`, `generic_polllist`, `generic_topline`, `mlb_elo`, 
     `ratings`, `spi_global_rankings`, `spi_matches`, `tweets`
@@ -10,9 +11,20 @@
     `tv_hurricanes`, `tv_hurricanes_by_network`, `tv_states`, `sandy_311`,
     `senators`, `trump_approval_poll`, `trump_approval_trend`, 
     `trumpworld_issues`, `trumpworld_polls`, `twitter_presidents`, `undefeated`
-* Package website now at <http://fivethirtyeight-r.netlify.com/>
+* Note for now `mayweather_mcgregor_tweets`, `mlb_elo`, `nba_carmelo`,
+`nfl_elo`, `senators`, only include the first 10 rows of the data because of R
+package file size restrictions (< 5MB tarballs); code to download/process the
+entire dataset are included in help files. We hope to include full versions of
+these datasets in v0.5.0 of package using the `drat` package.
 * Converted all ordinal categorical variables to `factor(..., ordered = TRUE)`.
 Ex: `bechdel$clean_test`
+* Vignette notes:
+    + Added a vignette that has a link to all user-contributed vignettes, which 
+    areonly available on development version of package and on GitHub due to 
+    CRAN package size restrictions.
+    + For all datasets that have a user contributed vignette, add a link to it 
+    in the corresponding help/roxygen code file.
+* Added `CITATION`
 
 
 # fivethirtyeight 0.3.0

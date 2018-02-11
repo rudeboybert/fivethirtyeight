@@ -15,7 +15,7 @@
   \item{mehs}{Mehs}
   \item{league_average_gpct}{League-average goose percentage}
   \item{ppf}{Pitcher park factor}
-  \item{replacement_gpct}{Replacement-level goose pecentage}
+  \item{replacement_gpct}{Replacement-level goose percentage}
   \item{gwar}{Goose Wins Above Replacement}
   \item{key_retro}{Retrosheet unique player identifier}
 }}

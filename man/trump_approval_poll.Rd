@@ -16,8 +16,8 @@
 \item{weight}{The weight fivethirtyeight gives the poll when determining approval ratings based on historical accuracy of the pollster}
 \item{approve}{The percentage of respondents who approve of the president}
 \item{disapprove}{The percentage of respondents who disapprove of the president}
-\item{adjusted_approve}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
-\item{adjusted_disapprove}{The percentage of respondets who approve of the president adjusted for systematic tendencies of the polling firm}
+\item{adjusted_approve}{The percentage of respondents who approve of the president adjusted for systematic tendencies of the polling firm}
+\item{adjusted_disapprove}{The percentage of respondents who approve of the president adjusted for systematic tendencies of the polling firm}
 \item{multiversions}{True if there are multiple versions of the poll, False if there are not}
 \item{tracking}{TRUE if the poll was tracked, FALSE if not}
 \item{url}{Poll result URL}

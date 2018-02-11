@@ -10,10 +10,10 @@
   \item{google_knowledge_occupation}{Their occupation or office, according to Google's Knowledge Graph or, if they're not in there, how Stewart introduced them on the program.}
   \item{show}{Air date of episode. Not unique, as some shows had more than one guest}
   \item{group}{A larger group designation for the occupation. For instance, us senators, us presidents, and former presidents are all under "politicians"}
-  \item{raw_guest_list}{The person or list of people who appeared on the show, according to Wikipedia. The GoogleKnowlege_Occupation only refers to one of them in a given row.}
+  \item{raw_guest_list}{The person or list of people who appeared on the show, according to Wikipedia. The GoogleKnowledge_Occupation only refers to one of them in a given row.}
 }}
 \source{
-Google Knowlege Graph, The Daily Show clip library, Wikipedia.
+Google Knowledge Graph, The Daily Show clip library, Wikipedia.
 }
 \usage{
 daily_show_guests

@@ -4,7 +4,7 @@
 \name{trumpworld_polls}
 \alias{trumpworld_polls}
 \title{What the World Thinks of Trump}
-\format{A data frame with 32 rows representng years and 40 variables:
+\format{A data frame with 32 rows representing years and 40 variables:
 \describe{
 \item{year}{Year the poll was conducted}
 \item{avg}{The average percentage people who answered the poll question positively (support the president or have a favorable view of the U.S.)}
@@ -27,7 +27,7 @@
 \item{philippines}{The percentage of people from the Philippines who answered the poll question positively}
 \item{south_korea}{The percentage of people from South Korea who answered the poll question positively}
 \item{vietnam}{The percentage of people from Vietnam who answered the poll question positively}
-\item{israel}{The percentage of people from Isreal who answered the poll question positively}
+\item{israel}{The percentage of people from Israel who answered the poll question positively}
 \item{jordan}{The percentage of people from Jordan who answered the poll question positively}
 \item{lebanon}{The percentage of people from Lebanon who answered the poll question positively}
 \item{tunisia}{The percentage of people from Tunisia who answered the poll question positively}
@@ -45,7 +45,7 @@
 \item{mexico}{The percentage of people from Mexico who answered the poll question positively}
 \item{peru}{The percentage of people from Peru who answered the poll question positively}
 \item{venezuela}{The percentage of people from Venezuela who answered the poll question positively}
-\item{question}{The item being polled. Specificially, whether respondents: 1) Have a favorable view of the U.S. or 2) Trust the U.S. President when it comes to foreign affairs}
+\item{question}{The item being polled. Specifically, whether respondents: 1) Have a favorable view of the U.S. or 2) Trust the U.S. President when it comes to foreign affairs}
 }}
 \source{
 Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}

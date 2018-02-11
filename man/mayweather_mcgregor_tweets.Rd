@@ -4,7 +4,9 @@
 \name{mayweather_mcgregor_tweets}
 \alias{mayweather_mcgregor_tweets}
 \title{Mayweather Vs McGregor Tweets}
-\format{A data frame with 12118 rows representing tweets and 7 variables:
+\format{Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
+(12118 rows) see Examples below. A data frame with 10 rows representing tweets and 7 variables:
 \describe{
   \item{created_at}{Time and date at which the tweet associated with the Mayweather vs. McGregor fight was sent.}
   \item{emojis}{Whether or not emojis were used in the tweet about the fight.}
@@ -28,5 +30,19 @@ mayweather_mcgregor_tweets
 The raw data behind the story
 "The Mayweather-McGregor Fight As Told Through Emojis"
 \url{https://fivethirtyeight.com/?post_type=fte_features&p=161615}.
+}
+\examples{
+# To obtain the entire dataset, run the code inside the following if statement:
+if(FALSE){
+  library(tidyverse)
+  url <-
+   "https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv"
+  mayweather_mcgregor_tweets <- read_csv(url) \%>\%
+    mutate(
+      emojis = as.logical(emojis),
+      retweeted = as.logical(retweeted),
+      id = as.character(id)
+    )
+}
 }
 \keyword{datasets}

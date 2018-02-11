@@ -1,0 +1,30 @@
+---
+title: "User-Contributed Vignettes"
+author: "Chester Ismay"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    df_print: kable
+vignette: |
+  %\VignetteIndexEntry{User-Contributed Vignettes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Due to CRAN space limitations on packages, user-contributed vignettes that walk through different analyses using the data sets in the `fivethirtyeight` package are linked below in this "vignette of vignettes." You can find both the R Markdown file needed to generate the file and also a link to the HTML vignette on the package website at <https://fivethirtyeight-r.netlify.com>. The vignette title links to the HTML version and the (Rmd) immediately following links to the R Markdown source. We encourage others to share their analyses using the `fivethirtyeight` data sets.
+
+The developmental version of the package stored on GitHub contains all of the vignettes so if you'd like to build the package locally, first install the [`remotes` package](https://CRAN.R-project.org/package=remotes) and then install the package via
+
+```{r install, eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("rudeboybert/fivethirtyeight", build_vignettes = TRUE)
+```
+
+## Analyses
+
+- [Looking at the Biopics of Hollywood](http://fivethirtyeight-r.netlify.com/articles/biopics.html) by Pradeep Adhokshaja [(Rmd)](https://raw.githubusercontent.com/rudeboybert/fivethirtyeight/master/vignettes/biopics.Rmd)
+- [Bob Ross - Joy of Painting](http://fivethirtyeight-r.netlify.com/articles/bob_ross.html) by Jonathan Bouchet [(Rmd)](https://raw.githubusercontent.com/rudeboybert/fivethirtyeight/master/vignettes/bob_ross.Rmd)
+- [Gender in Comic Books](http://fivethirtyeight-r.netlify.com/articles/comics_gender.html) by Jonathan Bouchet [(Rmd)](https://raw.githubusercontent.com/rudeboybert/fivethirtyeight/master/vignettes/comics_gender.Rmd)
+- [2015 NBA player predictions analysis using the `tidyverse`](http://fivethirtyeight-r.netlify.com/articles/nba.html) by G. Elliott Morris (with support from Chester Ismay) [(Rmd)](https://raw.githubusercontent.com/rudeboybert/fivethirtyeight/master/vignettes/NBA.Rmd)
+- [How Many Fucks Does Tarantino Give?](http://fivethirtyeight-r.netlify.com/articles/tarantino_swears.html) by Olivia Barrows, Jojo Miller, and Jayla Nakayama [(Rmd)](https://raw.githubusercontent.com/rudeboybert/fivethirtyeight/master/vignettes/tarantino_swears.Rmd)
+- [Trump Twitter analysis using the `tidyverse`](http://fivethirtyeight-r.netlify.com/articles/trump_twitter.html) by Adam Spannbauer (with support from Jennifer Chunn) [(Rmd)](https://raw.githubusercontent.com/rudeboybert/fivethirtyeight/master/vignettes/trump_twitter.Rmd)

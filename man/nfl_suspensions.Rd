@@ -9,7 +9,7 @@
   \item{name}{first initial.last name}
   \item{team}{team at time of suspension}
   \item{games}{number of games suspended (one regular season = 16 games)}
-  \item{category}{personal conduct, substance abuse, peformance enhancing drugs or in-game violence}
+  \item{category}{personal conduct, substance abuse, performance enhancing drugs or in-game violence}
   \item{description}{description of suspension}
   \item{year}{year of suspension}
   \item{source}{news source}

@@ -43,7 +43,7 @@ ratings
 }
 \description{
 The raw data behind the story
-"Al Gore’s New Movie Exposes The Big Flaw In Online Movie Ratings"
+"Al Gore's New Movie Exposes The Big Flaw In Online Movie Ratings"
 \url{https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/}.
 }
 \examples{

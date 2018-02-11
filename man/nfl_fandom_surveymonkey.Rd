@@ -8,29 +8,29 @@
 \describe{
 \item{team}{NFL team}
 \item{total_respondents}{Total number of poll respondents who ranked the given team in their top 3 favorites}
-\item{asian_dem}{Number of asian, democrat poll respondents who ranked the given team in their top 3 favorites}
-\item{black_dem}{Number of black, democrat poll respondents who ranked the given team in their top 3 favorites}
-\item{hispanic_dem}{Number of hispanic, democrat poll respondents who ranked the given team in their top 3 favorites}
-\item{other_dem}{Number of democrat poll respondents who identified their race as "other" (not asian, black, hispanic, or white) and ranked the given team in their top 3 favorites}
-\item{white_dem}{Number of white, democrat poll respondents who ranked the given team in their top 3 favorites}
+\item{asian_dem}{Number of Asian, democrat poll respondents who ranked the given team in their top 3 favorites}
+\item{black_dem}{Number of Black, democrat poll respondents who ranked the given team in their top 3 favorites}
+\item{hispanic_dem}{Number of Hispanic, democrat poll respondents who ranked the given team in their top 3 favorites}
+\item{other_dem}{Number of democrat poll respondents who identified their race as "other" (not Asian, Black, Hispanic, or White) and ranked the given team in their top 3 favorites}
+\item{white_dem}{Number of White, democrat poll respondents who ranked the given team in their top 3 favorites}
 \item{total_dem}{Total number of democrat poll respondents who ranked the given team in their top 3 favorites}
-\item{asian_ind}{Number of asian, independent poll respondents who ranked the given team in their top 3 favorites}
-\item{black_ind}{Number of black, independent poll respondents who ranked the given team in their top 3 favorites}
-\item{hispanic_ind}{Number of hispanic, independent poll respondents who ranked the given team in their top 3 favorites}
-\item{other_ind}{Number of independent poll respondents who identified their race as "other" (not asian, black, hispanic, or white) and ranked the given team in their top 3 favorites}
-\item{white_ind}{Number of white, independent poll respondents who ranked the given team in their top 3 favorites}
+\item{asian_ind}{Number of Asian, independent poll respondents who ranked the given team in their top 3 favorites}
+\item{black_ind}{Number of Black, independent poll respondents who ranked the given team in their top 3 favorites}
+\item{hispanic_ind}{Number of Hispanic, independent poll respondents who ranked the given team in their top 3 favorites}
+\item{other_ind}{Number of independent poll respondents who identified their race as "other" (not Asian, Black, Hispanic, or White) and ranked the given team in their top 3 favorites}
+\item{white_ind}{Number of White, independent poll respondents who ranked the given team in their top 3 favorites}
 \item{total_ind}{Total number of independent poll respondents who ranked the given team in their top 3 favorites}
-\item{asian_gop}{Number of asian, republican poll respondents who ranked the given team in their top 3 favorites}
-\item{black_gop}{Number of black, republican poll respondents who ranked the given team in their top 3 favorites}
-\item{hispanic_gop}{Number of hispanic, republican poll respondents who ranked the given team in their top 3 favorites}
-\item{other_gop}{Number of republican poll respondents who identified their race as "other" (not asian, black, hispanic, or white) and ranked the given team in their top 3 favorites}
-\item{white_gop}{Number of white, republican poll respondents who ranked the given team in their top 3 favorites}
+\item{asian_gop}{Number of Asian, republican poll respondents who ranked the given team in their top 3 favorites}
+\item{black_gop}{Number of Black, republican poll respondents who ranked the given team in their top 3 favorites}
+\item{hispanic_gop}{Number of Hispanic, republican poll respondents who ranked the given team in their top 3 favorites}
+\item{other_gop}{Number of republican poll respondents who identified their race as "other" (not Asian, Black, Hispanic, or White) and ranked the given team in their top 3 favorites}
+\item{white_gop}{Number of White, republican poll respondents who ranked the given team in their top 3 favorites}
 \item{total_gop}{Total number of republican poll respondents who ranked the given team in their top 3 favorites}
 \item{gop_percent}{Percent of fans (who ranked the team in their top 3 favorite NFL teams) who are republicans}
 \item{dem_percent}{Percent of fans who are democrats}
 \item{ind_percent}{Percent of fans who are independent}
-\item{white_percent}{Percent of fans who are white}
-\item{nonwhite_percent}{Percent of fans who are not white}
+\item{white_percent}{Percent of fans who are White}
+\item{nonwhite_percent}{Percent of fans who are not White}
 }}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}

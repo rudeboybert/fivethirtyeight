@@ -10,7 +10,7 @@
   \item{end}{End date of the poll.}
   \item{pollster}{The entity that conducts and collects information from the poll.}
   \item{favor}{The number of affirmative responses to the question at the pollster.}
-  \item{oppose}{The number of negative reponses to the question at the pollster.}
+  \item{oppose}{The number of negative responses to the question at the pollster.}
   \item{url}{The website associated with the polling question.}
   \item{text}{The polling question asked at the pollster.}
 }}
