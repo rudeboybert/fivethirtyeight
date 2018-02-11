@@ -91,6 +91,9 @@
     <li>
       <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
+    <li>
+      <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -131,7 +134,10 @@ And our "2017 NFL Predictions"
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>a data frame with 16,007 rows representing games and 14 variables:</p><dl class='dl-horizontal'>
+    <p>Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
+(1920 to 2018 games) see Examples below. A data frame with 10 rows
+representing games and 14 variables:</p><dl class='dl-horizontal'>
  <dt>date</dt><dd><p>Date</p></dd>
  <dt>season</dt><dd><p>Season year, 1920-2018</p></dd>
  <dt>neutral</dt><dd><p>TRUE if the game was played on neutral territory, FALSE if not</p></dd>
@@ -150,7 +156,16 @@ And our "2017 NFL Predictions"
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>See <a href='https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv'>https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv</a></p>
+    <p>See <a href='https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv'>https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv</a>
+# To obtain the entire dataset, run the following code:
+library(tidyverse)
+library(janitor)
+nfl_elo &lt;- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") <!-- %&gt;% -->
+  clean_names() <!-- %&gt;% -->
+  mutate(
+    team1 = as.factor(team1),
+    team2 = as.factor(team2),
+    neutral = ifelse(neutral == 1, TRUE, FALSE))</p>
     
 
   </div>

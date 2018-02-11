@@ -91,6 +91,9 @@
     <li>
       <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
+    <li>
+      <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -121,11 +124,13 @@
     </div>
 
     <div class="contents">
-    <div id="fivethirtyeight-0-3-0-9000" class="section level1">
+    <div id="fivethirtyeight-0-4-0" class="section level1">
 <h1 class="hasAnchor">
-<a href="#fivethirtyeight-0-3-0-9000" class="anchor"></a>fivethirtyeight 0.3.0.9000</h1>
+<a href="#fivethirtyeight-0-4-0" class="anchor"></a>fivethirtyeight 0.4.0</h1>
 <ul>
-<li>Added new and missing data sets:
+<li>Package website now at <a href="http://fivethirtyeight-r.netlify.com/" class="uri">http://fivethirtyeight-r.netlify.com/</a>
+</li>
+<li>Added new data sets:
 <ul>
 <li>By Meredith Manley: <code>ahca_polls</code>, <code>bachelorette</code>, <code>candy_rankings</code>, <code>chess_transfers</code>, <code>generic_polllist</code>, <code>generic_topline</code>, <code>mlb_elo</code>, <code>ratings</code>, <code>spi_global_rankings</code>, <code>spi_matches</code>, <code>tweets</code>
 </li>
@@ -133,9 +138,16 @@
 </li>
 </ul>
 </li>
-<li>Package website now at <a href="http://fivethirtyeight-r.netlify.com/" class="uri">http://fivethirtyeight-r.netlify.com/</a>
-</li>
+<li>Note for now <code>mayweather_mcgregor_tweets</code>, <code>mlb_elo</code>, <code>nba_carmelo</code>, <code>nfl_elo</code>, <code>senators</code>, only include the first 10 rows of the data because of R package file size restrictions (&lt; 5MB tarballs); code to download/process the entire dataset are included in help files. We hope to include full versions of these datasets in v0.5.0 of package using the <code>drat</code> package.</li>
 <li>Converted all ordinal categorical variables to <code>factor(..., ordered = TRUE)</code>. Ex: <code>bechdel$clean_test</code>
+</li>
+<li>Vignette notes:
+<ul>
+<li>Added a vignette that has a link to all user-contributed vignettes, which areonly available on development version of package and on GitHub due to CRAN package size restrictions.</li>
+<li>For all datasets that have a user contributed vignette, add a link to it in the corresponding help/roxygen code file.</li>
+</ul>
+</li>
+<li>Added <code>CITATION</code>
 </li>
 </ul>
 </div>
@@ -197,7 +209,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#fivethirtyeight-0-3-0-9000">0.3.0.9000</a></li>
+        <li><a href="#fivethirtyeight-0-4-0">0.4.0</a></li>
         <li><a href="#fivethirtyeight-0-3-0">0.3.0</a></li>
         <li><a href="#fivethirtyeight-0-2-0">0.2.0</a></li>
         <li><a href="#fivethirtyeight-0-1-0">0.1.0</a></li>
