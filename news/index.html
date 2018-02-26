@@ -18,6 +18,8 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -25,6 +27,7 @@
 <script src="../pkgdown.js"></script>
   
   
+<meta property="og:title" content="All news" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -136,9 +139,8 @@
 </li>
 <li>Added new data sets:
 <ul>
-<li>By Meredith Manley: <code>ahca_polls</code>, <code>bachelorette</code>, <code>candy_rankings</code>, <code>chess_transfers</code>, <code>generic_polllist</code>, <code>generic_topline</code>, <code>mlb_elo</code>, <code>ratings</code>, <code>spi_global_rankings</code>, <code>spi_matches</code>, <code>tweets</code>
-</li>
-<li>By Maggie Shea: <code>nba_carmelo</code>, <code>nfl_elo</code>, <code>nfl_fandom_google</code>, <code>nfl_fandom_surveymonkey</code>, <code>google_trends</code>, <code>mediacloud_hurricanes</code>, <code>mediacloud_states</code>, <code>mediacloud_online_news</code>, <code>mediacloud_trump</code>, <code>tv_hurricanes</code>, <code>tv_hurricanes_by_network</code>, <code>tv_states</code>, <code>sandy_311</code>, <code>senators</code>, <code>trump_approval_poll</code>, <code>trump_approval_trend</code>, <code>trumpworld_issues</code>, <code>trumpworld_polls</code>, <code>twitter_presidents</code>, <code>undefeated</code>
+<li>By Meredith Manley: <code>ahca_polls</code>, <code>bachelorette</code>, <code>candy_rankings</code>, <code>chess_transfers</code>, <code>generic_polllist</code>, <code>generic_topline</code>, <code>mayweather_mcgregor_tweets</code>, <code>mlb_elo</code>, <code>ratings</code>, <code>spi_global_rankings</code>, <code>spi_matches</code>.</li>
+<li>By Maggie Shea: <code>google_trends</code>, <code>nba_carmelo</code>, <code>nfl_elo</code>, <code>nfl_fandom_google</code>, <code>nfl_fandom_surveymonkey</code>, <code>mediacloud_hurricanes</code>, <code>mediacloud_states</code>, <code>mediacloud_online_news</code>, <code>mediacloud_trump</code>, <code>riddler_pick_lowest</code>, <code>sandy_311</code>, <code>senators</code>, <code>tv_hurricanes</code>, <code>tv_hurricanes_by_network</code>, <code>tv_states</code>, <code>trump_approval_poll</code>, <code>trump_approval_trend</code>, <code>trumpworld_issues</code>,<code>trumpworld_polls</code>, <code>twitter_presidents</code>, <code>undefeated</code>
 </li>
 </ul>
 </li>
@@ -186,7 +188,7 @@
 <li>Added first crowd-sourced vignettes: <code>comics_gender</code>, <code>NBA</code>, <code>trump_twitter</code>
 </li>
 <li>Added global help file for package: <code><a href="../reference/fivethirtyeight.html">?fivethirtyeight</a></code> with complete instructions</li>
-<li>Started adding <code>@examples</code> code in help files to convert to tidy data format so that data plays nice with tidyverse tools.</li>
+<li>Started adding <code><a href='http://github.com/examples'>@examples</a></code> code in help files to convert to tidy data format so that data plays nice with tidyverse tools.</li>
 <li>Other minor changes:
 <ul>
 <li><a href="https://github.com/rudeboybert/fivethirtyeight/pull/1">Changed to SVG travis logo</a></li>
