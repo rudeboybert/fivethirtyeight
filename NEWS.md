@@ -1,5 +1,7 @@
 # fivethirtyeight 0.4.0.9000
 
+* Added vignette corresponding to Technology Innovations in Statistics Education [paper](https://escholarship.org/uc/item/0rx1231m#main)
+
 # fivethirtyeight 0.4.0
 
 * Package website now at <http://fivethirtyeight-r.netlify.com/>
