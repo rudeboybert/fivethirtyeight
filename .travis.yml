@@ -10,7 +10,7 @@ cache: packages
 apt_packages:
   - libudunits2-dev
   # Since slam requires R 3.4.0 or higher
-  - r-cran-slam
+  #- r-cran-slam
 latex: false
 
 env:
