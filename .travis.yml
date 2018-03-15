@@ -39,6 +39,7 @@ r_packages:
   - ggraph
   - igraph
   - highcharter
+  - slam
   - wordcloud
   
 r_github_packages:
