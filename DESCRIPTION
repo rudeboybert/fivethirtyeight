@@ -48,6 +48,7 @@ Suggests:
     grid,
     fmsb,
     wordcloud,
+    slam (>= 0.1-42),
     gridExtra,
     corrplot,
     ggraph,
