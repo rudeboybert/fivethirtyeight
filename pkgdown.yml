@@ -1,6 +1,6 @@
 pandoc: 1.15.2
 pkgdown: 0.1.0.9000
-pkgdown_sha: 7d8b4882c4eb650f0f869a618f5c445c657313f0
+pkgdown_sha: b074c575119c35459f544f15e3dae3a6d617d9bb
 articles:
   NBA: NBA.html
   bechdel: bechdel.html
@@ -8,6 +8,7 @@ articles:
   bob_ross: bob_ross.html
   comics_gender: comics_gender.html
   fivethirtyeight: fivethirtyeight.html
+  tame: tame.html
   tarantino_swears: tarantino_swears.html
   trump_twitter: trump_twitter.html
   user_contributed_vignettes: user_contributed_vignettes.html
