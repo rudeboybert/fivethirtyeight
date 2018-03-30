@@ -25,14 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="MLB Elo — mlb_elo" />
 
 <meta property="og:description" content="The raw data behind the stories:
 "The Complete History Of MLB" https://projects.fivethirtyeight.com/complete-history-of-mlb/
 and "MLB Predictions" https://projects.fivethirtyeight.com/2017-mlb-predictions/." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -40,6 +40,8 @@ and "MLB Predictions" https://projects.fivethirtyeight.com/2017-mlb-predictions/
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -55,8 +57,12 @@ and "MLB Predictions" https://projects.fivethirtyeight.com/2017-mlb-predictions/
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">fivethirtyeight</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">fivethirtyeight</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -66,7 +72,7 @@ and "MLB Predictions" https://projects.fivethirtyeight.com/2017-mlb-predictions/
   </a>
 </li>
 <li>
-  <a href="../articles/fivethirtyeight.html">Get Started</a>
+  <a href="../articles/fivethirtyeight.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -78,6 +84,9 @@ and "MLB Predictions" https://projects.fivethirtyeight.com/2017-mlb-predictions/
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
     <li>
       <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
     </li>
@@ -91,12 +100,6 @@ and "MLB Predictions" https://projects.fivethirtyeight.com/2017-mlb-predictions/
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
     </li>
     <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
-    </li>
-    <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
     </li>
     <li>
@@ -108,7 +111,7 @@ and "MLB Predictions" https://projects.fivethirtyeight.com/2017-mlb-predictions/
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -120,6 +123,7 @@ and "MLB Predictions" https://projects.fivethirtyeight.com/2017-mlb-predictions/
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -127,10 +131,11 @@ and "MLB Predictions" https://projects.fivethirtyeight.com/2017-mlb-predictions/
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>MLB Elo</h1>
+    <small>Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_meredith.R'><code>R/data_meredith.R</code></a></small>
     </div>
 
     
@@ -183,9 +188,11 @@ representing Elo ratings and 26 variables:</p><dl class='dl-horizontal'>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the code inside the following if statement:</span>
 <span class='kw'>if</span>(<span class='fl'>FALSE</span>){
-  <span class='fu'>library</span>(<span class='no'>tidyverse</span>)
-  <span class='no'>mlb_elo</span> <span class='kw'>&lt;-</span> <span class='fu'>read_csv</span>(<span class='st'>"https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv"</span>) <span class='kw'>%&gt;%</span>
-    <span class='fu'>mutate</span>(
+  <span class='fu'>library</span>(<span class='no'>dplyr</span>)
+  <span class='fu'>library</span>(<span class='no'>tidyr</span>)
+  <span class='fu'>library</span>(<span class='no'>readr</span>)
+  <span class='no'>mlb_elo</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/readr/topics/read_delim'>read_csv</a></span>(<span class='st'>"https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv"</span>) <span class='kw'>%&gt;%</span>
+    <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(
       <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>playoff</span>),
       <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='no'>playoff</span> <span class='kw'>==</span> <span class='st'>"&lt;NA&gt;"</span>, <span class='fl'>NA</span>, <span class='no'>playoff</span>),
       <span class='kw'>neutral</span> <span class='kw'>=</span> <span class='fu'>as.logical</span>(<span class='no'>neutral</span>)
@@ -217,6 +224,8 @@ representing Elo ratings and 26 variables:</p><dl class='dl-horizontal'>
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

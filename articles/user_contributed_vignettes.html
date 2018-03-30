@@ -18,7 +18,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -27,8 +27,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">fivethirtyeight</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">fivethirtyeight</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -38,7 +42,7 @@
   </a>
 </li>
 <li>
-  <a href="../articles/fivethirtyeight.html">Get Started</a>
+  <a href="../articles/fivethirtyeight.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -51,6 +55,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
+    <li>
       <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
     </li>
     <li>
@@ -61,12 +68,6 @@
     </li>
     <li>
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
-    </li>
-    <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
     </li>
     <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
@@ -80,7 +81,7 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -100,17 +101,19 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>User-Contributed Vignettes</h1>
                         <h4 class="author">Chester Ismay</h4>
             
-            <h4 class="date">2018-03-13</h4>
-          </div>
+            <h4 class="date">2018-03-30</h4>
+      
+      <small>Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/user_contributed_vignettes.Rmd"><code>vignettes/user_contributed_vignettes.Rmd</code></a></small>
+
+    </div>
 
     
     
-<div class="contents">
 <p>Due to CRAN space limitations on packages, user-contributed vignettes that walk through different analyses using the data sets in the <code>fivethirtyeight</code> package are linked below in this “vignette of vignettes.” You can find both the R Markdown file needed to generate the file and also a link to the HTML vignette on the package website at <a href="https://fivethirtyeight-r.netlify.com" class="uri">https://fivethirtyeight-r.netlify.com</a>. The vignette title links to the HTML version and the (Rmd) immediately following links to the R Markdown source. We encourage others to share their analyses using the <code>fivethirtyeight</code> data sets.</p>
 <p>The developmental version of the package stored on GitHub contains all of the vignettes so if you’d like to build the package locally, first install the <a href="https://CRAN.R-project.org/package=remotes"><code>remotes</code> package</a> and then install the package via</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("remotes")</span>
@@ -139,7 +142,6 @@ remotes::<span class="kw">install_github</span>(<span class="st">"rudeboybert/fi
 </li>
 </ul>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -165,6 +167,8 @@ remotes::<span class="kw">install_github</span>(<span class="st">"rudeboybert/fi
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

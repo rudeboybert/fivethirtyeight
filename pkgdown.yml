@@ -1,43 +1,14 @@
 pandoc: 1.15.2
 pkgdown: 0.1.0.9000
-pkgdown_sha: 17f683717d0a1547f13a08a259b34c58927452d6
+pkgdown_sha: 7d8b4882c4eb650f0f869a618f5c445c657313f0
 articles:
-  US-births-1.png: Figures/US-births-1.png
-  babies-1.png: Figures/babies-1.png
-  bechdel-1.png: Figures/bechdel-1.png
-  drinks-1.png: Figures/drinks-1.png
-  hate-crime-1.png: Figures/hate-crime-1.png
-  NBA.R: NBA.R
   NBA: NBA.html
-  NBA.html: NBA.html
-  bechdel.R: bechdel.R
   bechdel: bechdel.html
-  bechdel.html: bechdel.html
-  bibliography.bib: bibliography.bib
-  biopics.R: biopics.R
   biopics: biopics.html
-  biopics.html: biopics.html
-  bob_ross.R: bob_ross.R
   bob_ross: bob_ross.html
-  bob_ross.html: bob_ross.html
-  comics_gender.R: comics_gender.R
   comics_gender: comics_gender.html
-  comics_gender.html: comics_gender.html
-  fivethirtyeight.R: fivethirtyeight.R
   fivethirtyeight: fivethirtyeight.html
-  fivethirtyeight.html: fivethirtyeight.html
-  data_science_pipeline.png: images/data_science_pipeline.png
-  hickey-bechdel-11.png: images/hickey-bechdel-11.png
-  tame.R: tame.R
-  tame: tame.html
-  tame.html: tame.html
-  tarantino_swears.R: tarantino_swears.R
   tarantino_swears: tarantino_swears.html
-  tarantino_swears.html: tarantino_swears.html
-  trump_twitter.R: trump_twitter.R
   trump_twitter: trump_twitter.html
-  trump_twitter.html: trump_twitter.html
-  user_contributed_vignettes.R: user_contributed_vignettes.R
   user_contributed_vignettes: user_contributed_vignettes.html
-  user_contributed_vignettes.html: user_contributed_vignettes.html
 

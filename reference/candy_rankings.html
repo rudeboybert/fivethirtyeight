@@ -25,13 +25,13 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="Candy Power Ranking — candy_rankings" />
 
 <meta property="og:description" content="The raw data behind the story "The Ultimate Halloween Candy Power Ranking"
 http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -39,6 +39,8 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -54,8 +56,12 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">fivethirtyeight</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">fivethirtyeight</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -65,7 +71,7 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
   </a>
 </li>
 <li>
-  <a href="../articles/fivethirtyeight.html">Get Started</a>
+  <a href="../articles/fivethirtyeight.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -77,6 +83,9 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
     <li>
       <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
     </li>
@@ -90,12 +99,6 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
     </li>
     <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
-    </li>
-    <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
     </li>
     <li>
@@ -107,7 +110,7 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -119,6 +122,7 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -126,10 +130,11 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Candy Power Ranking</h1>
+    <small>Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_meredith.R'><code>R/data_meredith.R</code></a></small>
     </div>
 
     
@@ -164,12 +169,13 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+<span class='fu'>library</span>(<span class='no'>tidyr</span>)
 <span class='fu'>library</span>(<span class='no'>stringr</span>)
 <span class='no'>candy_rankings_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>candy_rankings</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>characteristics</span>, <span class='no'>present</span>, -<span class='fu'>c</span>(<span class='no'>competitorname</span>, <span class='no'>sugarpercent</span>, <span class='no'>pricepercent</span>, <span class='no'>winpercent</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>mutate</span>(<span class='kw'>present</span> <span class='kw'>=</span> <span class='fu'>as.logical</span>(<span class='no'>present</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>arrange</span>(<span class='no'>competitorname</span>)</div></pre>
+  <span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/gather'>gather</a></span>(<span class='no'>characteristics</span>, <span class='no'>present</span>, -<span class='fu'>c</span>(<span class='no'>competitorname</span>, <span class='no'>sugarpercent</span>, <span class='no'>pricepercent</span>, <span class='no'>winpercent</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>present</span> <span class='kw'>=</span> <span class='fu'>as.logical</span>(<span class='no'>present</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span>(<span class='no'>competitorname</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -196,6 +202,8 @@ http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/.
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

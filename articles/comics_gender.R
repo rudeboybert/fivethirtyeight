@@ -1,8 +1,9 @@
 ## ---- message = FALSE, warning = FALSE-----------------------------------
 #load packages and csv file
 library(fivethirtyeight)
-# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
-library(tidyverse)
+# library(tidyverse)
+library(ggplot2)
+library(dplyr)
 library(knitr)
 library(grid)
 library(fmsb)

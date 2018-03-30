@@ -25,8 +25,6 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="Current SPI ratings and rankings for men's club teams — spi_global_rankings" />
 
 <meta property="og:description" content="The raw data behind the stories "Club Soccer Predictions"
@@ -34,6 +32,8 @@ https://projects.fivethirtyeight.com/soccer-predictions/ and
 "Global Club Soccer Rankings"
 https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -41,6 +41,8 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -56,8 +58,12 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">fivethirtyeight</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">fivethirtyeight</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -67,7 +73,7 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
   </a>
 </li>
 <li>
-  <a href="../articles/fivethirtyeight.html">Get Started</a>
+  <a href="../articles/fivethirtyeight.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -79,6 +85,9 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
     <li>
       <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
     </li>
@@ -92,12 +101,6 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
     </li>
     <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
-    </li>
-    <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
     </li>
     <li>
@@ -109,7 +112,7 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -121,6 +124,7 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -128,10 +132,11 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Current SPI ratings and rankings for men's club teams</h1>
+    <small>Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_meredith.R'><code>R/data_meredith.R</code></a></small>
     </div>
 
     
@@ -161,7 +166,7 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='spi_matches.html'>spi_matches</a></code></p>
+    <div class='dont-index'><p><code><a href='spi_matches.html'>spi_matches</a></code></p></div>
     
 
   </div>
@@ -190,6 +195,8 @@ https://projects.fivethirtyeight.com/global-club-soccer-rankings/." />
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

@@ -25,14 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="An Inconvenient Sequel — ratings" />
 
 <meta property="og:description" content="The raw data behind the story
 "Al Gore's New Movie Exposes The Big Flaw In Online Movie Ratings"
 https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -40,6 +40,8 @@ https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -55,8 +57,12 @@ https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">fivethirtyeight</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">fivethirtyeight</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -66,7 +72,7 @@ https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-
   </a>
 </li>
 <li>
-  <a href="../articles/fivethirtyeight.html">Get Started</a>
+  <a href="../articles/fivethirtyeight.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -78,6 +84,9 @@ https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
     <li>
       <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
     </li>
@@ -91,12 +100,6 @@ https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
     </li>
     <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
-    </li>
-    <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
     </li>
     <li>
@@ -108,7 +111,7 @@ https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -120,6 +123,7 @@ https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -127,10 +131,11 @@ https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>An Inconvenient Sequel</h1>
+    <small>Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_meredith.R'><code>R/data_meredith.R</code></a></small>
     </div>
 
     
@@ -181,11 +186,12 @@ see <a href='https://github.com/fivethirtyeight/data/tree/master/inconvenient-se
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+<span class='fu'>library</span>(<span class='no'>tidyr</span>)
 <span class='fu'>library</span>(<span class='no'>stringr</span>)
 <span class='no'>ratings_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>ratings</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>votes</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>timestamp</span>, <span class='no'>respondents</span>, <span class='no'>category</span>, <span class='no'>link</span>, <span class='no'>average</span>, <span class='no'>mean</span>, <span class='no'>median</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>arrange</span>(<span class='no'>timestamp</span>)</div></pre>
+  <span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/gather'>gather</a></span>(<span class='no'>votes</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>timestamp</span>, <span class='no'>respondents</span>, <span class='no'>category</span>, <span class='no'>link</span>, <span class='no'>average</span>, <span class='no'>mean</span>, <span class='no'>median</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span>(<span class='no'>timestamp</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -212,6 +218,8 @@ see <a href='https://github.com/fivethirtyeight/data/tree/master/inconvenient-se
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

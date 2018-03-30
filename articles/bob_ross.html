@@ -18,7 +18,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -27,8 +27,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">fivethirtyeight</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">fivethirtyeight</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
@@ -38,7 +42,7 @@
   </a>
 </li>
 <li>
-  <a href="../articles/fivethirtyeight.html">Get Started</a>
+  <a href="../articles/fivethirtyeight.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -51,6 +55,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
+    <li>
       <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
     </li>
     <li>
@@ -61,12 +68,6 @@
     </li>
     <li>
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
-    </li>
-    <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
     </li>
     <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
@@ -80,7 +81,7 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -100,22 +101,27 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Bob Ross - Joy of Painting-</h1>
                         <h4 class="author">Jonathan Bouchet</h4>
             
-            <h4 class="date">2018-03-13</h4>
-          </div>
+            <h4 class="date">2018-03-30</h4>
+      
+      <small>Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/bob_ross.Rmd"><code>vignettes/bob_ross.Rmd</code></a></small>
+
+    </div>
 
     
     
-<div class="contents">
 <p>This vignette is based on <a href="https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/">538 study : A statistical analysis of the work of Bob Ross</a>. Bob Ross was an american painter and host of the <em>The Joy of Painting</em>, an instructional television program that aired from 1983 to 1994 on PBS in the United States.</p>
 <p>Load required packages to reproduce analysis as well as the dataset.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-<span class="co"># tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:</span>
-<span class="kw">library</span>(tidyverse)
+<span class="co"># library(tidyverse)</span>
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tibble)
+<span class="kw">library</span>(tidyr)
 <span class="kw">library</span>(ggthemes)
 <span class="kw">library</span>(knitr)
 <span class="kw">library</span>(corrplot)
@@ -128,7 +134,7 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span>bob_ross
 <span class="co">#define incomplete paintings</span>
 incomplete &lt;-<span class="kw">c</span>(<span class="st">"PURPLE MOUNTAIN RANGE"</span>,<span class="st">"COUNTRY CHARM"</span>,<span class="st">"PEACEFUL REFLECTIONS"</span>)
-df &lt;-<span class="st"> </span>df %&gt;%<span class="st"> </span><span class="kw">filter</span>(guest==<span class="dv">0</span> &amp;<span class="st"> </span>!(title %in%<span class="st"> </span>incomplete))
+df &lt;-<span class="st"> </span>df %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(guest==<span class="dv">0</span> &amp;<span class="st"> </span>!(title %in%<span class="st"> </span>incomplete))
 <span class="co">#check the 2 episodes with same name</span>
 <span class="co">#df %&gt;% filter(title=="LAKESIDE CABIN")</span>
 df[df$episode==<span class="st">'S08E02'</span>,<span class="st">'title'</span>]&lt;-<span class="st">'LAKESIDE CABIN 2'</span></code></pre></div>
@@ -148,24 +154,24 @@ df[df$episode==<span class="st">'S08E02'</span>,<span class="st">'title'</span>]
 <a href="#frequency" class="anchor"></a>Frequency</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#calculate the colSums for numeric columns and transpose the result</span>
 temp &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(df %&gt;%<span class="st"> </span>
-<span class="st">                        </span><span class="kw">select</span>(-episode, -season, -episode_num ,-title) %&gt;%<span class="st"> </span>
-<span class="st">                        </span><span class="kw">summarise_all</span>(<span class="kw">funs</span>(sum)) %&gt;%<span class="st"> </span><span class="kw">t</span>())
+<span class="st">                        </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(-episode, -season, -episode_num ,-title) %&gt;%<span class="st"> </span>
+<span class="st">                        </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span>(<span class="kw"><a href="http://dplyr.tidyverse.org/reference/funs.html">funs</a></span>(sum)) %&gt;%<span class="st"> </span><span class="kw">t</span>())
 
 <span class="co">#rename,switch columns and calculate percentage over all paintings and frequency though all episodes</span>
-per_features &lt;-<span class="st"> </span>temp %&gt;%<span class="st"> </span><span class="kw">rownames_to_column</span>() %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">select</span>(<span class="dt">feature=</span>rowname, <span class="dt">tot =</span> V1) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(
+per_features &lt;-<span class="st"> </span>temp %&gt;%<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/rownames">rownames_to_column</a></span>() %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="dt">feature=</span>rowname, <span class="dt">tot =</span> V1) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(
     <span class="dt">feature_percentage =</span> (tot /<span class="st"> </span><span class="kw">sum</span>(tot))*<span class="dv">100</span>, 
     <span class="dt">feature_percentage_Label =</span> <span class="kw">paste0</span>(<span class="kw">round</span>(feature_percentage,<span class="dv">1</span>),<span class="st">"%"</span>), 
     <span class="dt">feature_freq =</span> tot/<span class="st"> </span><span class="kw">nrow</span>(df)*<span class="dv">100</span>, 
     <span class="dt">feature_freq_label =</span> <span class="kw">paste0</span>(<span class="kw">round</span>(feature_freq,<span class="dv">1</span>),<span class="st">"%"</span>))</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">feature_freq_cut &lt;-<span class="st"> </span><span class="dv">10</span> <span class="co">#10% most present features</span>
-<span class="kw">ggplot</span>(<span class="dt">data=</span><span class="kw">filter</span>(per_features,feature_freq&gt;feature_freq_cut), <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">reorder</span>(feature,feature_freq),<span class="dt">y=</span>feature_freq)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">'identity'</span>) +<span class="st"> </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label=</span>feature_freq_label), <span class="dt">position=</span><span class="kw">position_dodge</span>(<span class="dt">width=</span><span class="fl">0.9</span>), <span class="dt">vjust=</span>.<span class="dv">5</span>,<span class="dt">hjust=</span><span class="dv">0</span>,<span class="dt">size=</span><span class="fl">2.5</span>,<span class="dt">color=</span><span class="st">'red'</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">coord_flip</span>() +<span class="st"> </span>
+<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data=</span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(per_features,feature_freq&gt;feature_freq_cut), <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x=</span><span class="kw">reorder</span>(feature,feature_freq),<span class="dt">y=</span>feature_freq)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">stat=</span><span class="st">'identity'</span>) +<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_text">geom_text</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">label=</span>feature_freq_label), <span class="dt">position=</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/position_dodge">position_dodge</a></span>(<span class="dt">width=</span><span class="fl">0.9</span>), <span class="dt">vjust=</span>.<span class="dv">5</span>,<span class="dt">hjust=</span><span class="dv">0</span>,<span class="dt">size=</span><span class="fl">2.5</span>,<span class="dt">color=</span><span class="st">'red'</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/coord_flip">coord_flip</a></span>() +<span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">'Features</span><span class="ch">\'</span><span class="st">s appearance(%) through all episodes'</span>)</code></pre></div>
-<p><img src="bob_ross_files/figure-html/feature%20frequency%20plot-1.png" width="672"></p>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ggtitle</a></span>(<span class="st">'Features</span><span class="ch">\'</span><span class="st">s appearance(%) through all episodes'</span>)</code></pre></div>
+<p><img src="bob_ross_files/figure-html/feature%20frequency%20plot-1.png" width="700"></p>
 <ul>
 <li>
 <code>tree</code> and <code>trees</code> features appear in more than 90% of all the paintings.</li>
@@ -176,11 +182,11 @@ per_features &lt;-<span class="st"> </span>temp %&gt;%<span class="st"> </span><
 <a href="#correlation" class="anchor"></a>Correlation</h2>
 <p>Since a row with no entries causes a standard deviation = 0, features are selected based on their number.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#find features present</span>
-top&lt;-<span class="kw">c</span>(per_features %&gt;%<span class="st"> </span><span class="kw">filter</span>(tot&gt;<span class="dv">1</span>) %&gt;%<span class="st"> </span><span class="kw">arrange</span>(-tot) %&gt;%<span class="st"> </span><span class="kw">select</span>(feature))
-num_data&lt;-df %&gt;%<span class="st"> </span><span class="kw">select_</span>(<span class="dt">.dots =</span> top$feature)
+top&lt;-<span class="kw">c</span>(per_features %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(tot&gt;<span class="dv">1</span>) %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(-tot) %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(feature))
+num_data&lt;-df %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/se-deprecated.html">select_</a></span>(<span class="dt">.dots =</span> top$feature)
 num_cols &lt;-<span class="st"> </span><span class="kw">sapply</span>(num_data, is.numeric)
 <span class="kw"><a href="http://www.rdocumentation.org/packages/corrplot/topics/corrplot">corrplot</a></span>(<span class="kw">cor</span>(num_data[,num_cols]), <span class="dt">method=</span><span class="st">'square'</span>,<span class="dt">order=</span><span class="st">"AOE"</span>)</code></pre></div>
-<p><img src="bob_ross_files/figure-html/feature%20correlation-1.png" width="672"></p>
+<p><img src="bob_ross_files/figure-html/feature%20correlation-1.png" width="700"></p>
 <ul>
 <li>we see positive correlation for the expected cases, like <code>tree</code> / <code>trees</code>, or <code>night</code> / <code>moon</code>
 </li>
@@ -196,37 +202,37 @@ num_cols &lt;-<span class="st"> </span><span class="kw">sapply</span>(num_data, 
 <h3 class="hasAnchor">
 <a href="#episodes-having-the-greatest-number-of-features" class="anchor"></a>Episodes having the greatest number of features</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">per_episode &lt;-<span class="st"> </span>df %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">select</span>(-episode,-season,-episode_num ,-title) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">select_if</span>(is.numeric) %&gt;%
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">episode=</span><span class="dv">1</span>:<span class="kw">n</span>()) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">gather</span>(item, count, -episode) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(episode) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">sum =</span> <span class="kw">sum</span>(count)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">arrange</span>(-sum)
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(-episode,-season,-episode_num ,-title) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select_all.html">select_if</a></span>(is.numeric) %&gt;%
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">episode=</span><span class="dv">1</span>:<span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather</a></span>(item, count, -episode) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(episode) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">sum =</span> <span class="kw">sum</span>(count)) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(-sum)
 
 <span class="co">#select a cut</span>
 cut_features&lt;-<span class="dv">11</span>
-<span class="kw">ggplot</span>(<span class="dt">data=</span><span class="kw">filter</span>(per_episode,sum&gt;cut_features), <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">reorder</span>(episode,sum),<span class="dt">y=</span>sum)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">'identity'</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">coord_flip</span>() +<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">ggtitle</span>(<span class="kw">paste0</span>(<span class="st">'Paintings having more than '</span>, cut_features,<span class="st">' features'</span>))</code></pre></div>
-<p><img src="bob_ross_files/figure-html/episode%20prep.-1.png" width="672"></p>
+<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data=</span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(per_episode,sum&gt;cut_features), <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x=</span><span class="kw">reorder</span>(episode,sum),<span class="dt">y=</span>sum)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">stat=</span><span class="st">'identity'</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/coord_flip">coord_flip</a></span>() +<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() +<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ggtitle</a></span>(<span class="kw">paste0</span>(<span class="st">'Paintings having more than '</span>, cut_features,<span class="st">' features'</span>))</code></pre></div>
+<p><img src="bob_ross_files/figure-html/episode%20prep.-1.png" width="700"></p>
 </div>
 <div id="episodes-distribution-vs-their-number-of-features" class="section level3">
 <h3 class="hasAnchor">
 <a href="#episodes-distribution-vs-their-number-of-features" class="anchor"></a>Episodes distribution vs. their number of features</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">per_episode_summary &lt;-<span class="st"> </span>per_episode %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(sum) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">tot_features=</span><span class="kw">n</span>()) %&gt;%
-<span class="st">  </span><span class="kw">mutate</span>(
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(sum) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">tot_features=</span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) %&gt;%
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(
     <span class="dt">percent =</span> (tot_features/<span class="st"> </span><span class="kw">sum</span>(tot_features))*<span class="dv">100</span>, 
     <span class="dt">label =</span> <span class="kw">paste0</span>(<span class="kw">round</span>(percent,<span class="dv">1</span>),<span class="st">"%"</span>))
 
-<span class="kw">ggplot</span>(<span class="dt">data=</span>per_episode_summary, <span class="kw">aes</span>(<span class="dt">x=</span>sum,<span class="dt">y=</span>tot_features)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">'identity'</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label=</span>label), <span class="dt">position=</span><span class="kw">position_dodge</span>(<span class="dt">width=</span><span class="fl">0.9</span>), <span class="dt">vjust=</span>-<span class="dv">1</span>,<span class="dt">hjust=</span>.<span class="dv">5</span>,<span class="dt">size=</span><span class="fl">2.5</span>,<span class="dt">color=</span><span class="st">'red'</span>)+
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() +<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">'Distribution of paitings vs. </span><span class="ch">\n</span><span class="st"> number of features'</span>)</code></pre></div>
-<p><img src="bob_ross_files/figure-html/episoe%20plot-1.png" width="672"></p>
+<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data=</span>per_episode_summary, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x=</span>sum,<span class="dt">y=</span>tot_features)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">stat=</span><span class="st">'identity'</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_text">geom_text</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">label=</span>label), <span class="dt">position=</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/position_dodge">position_dodge</a></span>(<span class="dt">width=</span><span class="fl">0.9</span>), <span class="dt">vjust=</span>-<span class="dv">1</span>,<span class="dt">hjust=</span>.<span class="dv">5</span>,<span class="dt">size=</span><span class="fl">2.5</span>,<span class="dt">color=</span><span class="st">'red'</span>)+
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() +<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ggtitle</a></span>(<span class="st">'Distribution of paitings vs. </span><span class="ch">\n</span><span class="st"> number of features'</span>)</code></pre></div>
+<p><img src="bob_ross_files/figure-html/episoe%20plot-1.png" width="700"></p>
 <ul>
 <li>the mean number of features among all paintings is:</li>
 </ul>
@@ -261,7 +267,7 @@ make_connection&lt;-function(x){
 <h3 class="hasAnchor">
 <a href="#result-with-all-paintings-for-the-first-season" class="anchor"></a>Result with all paintings for the first season</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#create empty DF to store the results</span>
-season_1 &lt;-<span class="st"> </span>df %&gt;%<span class="st"> </span><span class="kw">filter</span>(season==<span class="dv">1</span>)
+season_1 &lt;-<span class="st"> </span>df %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(season==<span class="dv">1</span>)
 
 <span class="co">#empty dataframe to save all the connections</span>
 season1_res &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">"feature_1"</span>=<span class="st"> </span><span class="kw">character</span>(),<span class="st">"feature_2"</span>=<span class="kw">character</span>())
@@ -269,29 +275,28 @@ season1_res &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<sp
 <span class="co">#loop over paintings in season 1</span>
 for(i in <span class="dv">1</span>:<span class="kw">nrow</span>(season_1)){
     <span class="co">#select features of ith painting and make a dataframe</span>
-    temp &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(season_1 %&gt;%<span class="st"> </span><span class="kw">select</span>(-episode, -season, -episode_num ,-title) %&gt;%<span class="st"> </span><span class="kw">slice</span>(i) %&gt;%<span class="st"> </span><span class="kw">t</span>())
-    pos_data &lt;-<span class="st"> </span>temp %&gt;%<span class="st"> </span><span class="kw">rownames_to_column</span>() %&gt;%<span class="st"> </span><span class="kw">select</span>(<span class="dt">feature=</span>rowname, <span class="dt">number =</span> V1) %&gt;%<span class="st"> </span><span class="kw">filter</span>(number&gt;<span class="dv">0</span>)
+    temp &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(season_1 %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(-episode, -season, -episode_num ,-title) %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/slice.html">slice</a></span>(i) %&gt;%<span class="st"> </span><span class="kw">t</span>())
+    pos_data &lt;-<span class="st"> </span>temp %&gt;%<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tibble/topics/rownames">rownames_to_column</a></span>() %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="dt">feature=</span>rowname, <span class="dt">number =</span> V1) %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(number&gt;<span class="dv">0</span>)
     res&lt;-<span class="kw">make_connection</span>(pos_data)
     season1_res&lt;-<span class="kw">rbind</span>(season1_res,res)
 }</code></pre></div>
 <p>The interesting thing is that we can apply some weights to the graph. The weights are based on the frequency of the connection between 2 features.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">graph_s1 &lt;-<span class="st"> </span>season1_res %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(feature_1, feature_2) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">freq=</span><span class="kw">n</span>())
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(feature_1, feature_2) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">freq=</span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>())
 
 <span class="kw">colnames</span>(graph_s1)[<span class="dv">3</span>]&lt;-<span class="st">'weight'</span>
 
 g1&lt;-<span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/graph_from_data_frame">graph.data.frame</a></span>(graph_s1)
 <span class="kw"><a href="http://www.rdocumentation.org/packages/ggraph/topics/ggraph">ggraph</a></span>(g1,<span class="dt">layout=</span><span class="st">'circle'</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggraph/topics/geom_edge_fan">geom_edge_fan</a></span>(<span class="kw">aes</span>(<span class="dt">width=</span><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/E">E</a></span>(g1)$weight),<span class="dt">alpha=</span>.<span class="dv">25</span>,<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggraph/topics/geom_edge_fan">geom_edge_fan</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">width=</span><span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/topics/E">E</a></span>(g1)$weight),<span class="dt">alpha=</span>.<span class="dv">25</span>,<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) +<span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggraph/topics/geom_node_point">geom_node_point</a></span>(<span class="dt">size=</span><span class="dv">6</span>,<span class="dt">color=</span><span class="st">"red"</span>,<span class="dt">alpha=</span><span class="dv">1</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggraph/topics/geom_node_text">geom_node_text</a></span>(<span class="kw">aes</span>(<span class="dt">label =</span> name)) +<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() +<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">'Features network of all paintings of season 1'</span>)</code></pre></div>
-<p><img src="bob_ross_files/figure-html/network%20plot-1.png" width="672"></p>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggraph/topics/geom_node_text">geom_node_text</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">label =</span> name)) +<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() +<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ggtitle</a></span>(<span class="st">'Features network of all paintings of season 1'</span>)</code></pre></div>
+<p><img src="bob_ross_files/figure-html/network%20plot-1.png" width="700"></p>
 <ul>
 <li>larger width indicate the frequency of this correlation</li>
 <li>the most frequent conenction are <code>tree | trees</code>, <code>tree | lake</code>, <code>lake | mountain</code>, which makes sense as seen with the correlation plot.</li>
 </ul>
-</div>
 </div>
 </div>
   </div>
@@ -324,6 +329,8 @@ g1&lt;-<span class="kw"><a href="http://www.rdocumentation.org/packages/igraph/t
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

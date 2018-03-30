@@ -1,7 +1,9 @@
 ## ---- message=FALSE, warning=FALSE, echo=FALSE---------------------------
 library(fivethirtyeight)
-# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
-library(tidyverse)
+# library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(readr)
 library(knitr)
 
 ## ---- message=FALSE, warning=FALSE, echo=FALSE---------------------------

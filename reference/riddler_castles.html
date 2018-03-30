@@ -25,8 +25,6 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
 <meta property="og:title" content="Can You Rule Riddler Nation? — riddler_castles" />
 
 <meta property="og:description" content="The raw data behind the story
@@ -34,6 +32,8 @@
 https://fivethirtyeight.com/features/can-you-rule-riddler-nation/.
 Analysis of the submitted solutions can be found at: https://fivethirtyeight.com/features/can-you-save-the-drowning-swimmer/" />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -41,6 +41,8 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -56,8 +58,12 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">fivethirtyeight</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">fivethirtyeight</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -67,7 +73,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
   </a>
 </li>
 <li>
-  <a href="../articles/fivethirtyeight.html">Get Started</a>
+  <a href="../articles/fivethirtyeight.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -79,6 +85,9 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+    </li>
     <li>
       <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
     </li>
@@ -92,12 +101,6 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
     </li>
     <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
-    </li>
-    <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
     </li>
     <li>
@@ -109,7 +112,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -121,6 +124,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -128,10 +132,11 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Can You Rule Riddler Nation?</h1>
+    <small>Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_jen.R'><code>R/data_jen.R</code></a></small>
     </div>
 
     
@@ -165,16 +170,17 @@ Analysis of the submitted solutions can be found at: <a href='https://fivethirty
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='riddler_castles2.html'>riddler_castles2</a></code></p>
+    <div class='dont-index'><p><code><a href='riddler_castles2.html'>riddler_castles2</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+<span class='fu'>library</span>(<span class='no'>tidyr</span>)
 <span class='fu'>library</span>(<span class='no'>stringr</span>)
 <span class='no'>riddler_castles_tidy</span><span class='kw'>&lt;-</span><span class='no'>riddler_castles</span> <span class='kw'>%&gt;%</span>
-   <span class='fu'>gather</span>(<span class='kw'>key</span> <span class='kw'>=</span> <span class='no'>castle</span> , <span class='kw'>value</span> <span class='kw'>=</span> <span class='no'>soldiers</span>, <span class='no'>castle1</span>:<span class='no'>castle10</span>) <span class='kw'>%&gt;%</span>
-   <span class='fu'>mutate</span>(<span class='kw'>castle</span> <span class='kw'>=</span> <span class='fu'>as.numeric</span>(<span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace</a></span>(<span class='no'>castle</span>, <span class='st'>"castle"</span>,<span class='st'>""</span>)))</div></pre>
+   <span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/gather'>gather</a></span>(<span class='kw'>key</span> <span class='kw'>=</span> <span class='no'>castle</span> , <span class='kw'>value</span> <span class='kw'>=</span> <span class='no'>soldiers</span>, <span class='no'>castle1</span>:<span class='no'>castle10</span>) <span class='kw'>%&gt;%</span>
+   <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>castle</span> <span class='kw'>=</span> <span class='fu'>as.numeric</span>(<span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace</a></span>(<span class='no'>castle</span>, <span class='st'>"castle"</span>,<span class='st'>""</span>)))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -203,6 +209,8 @@ Analysis of the submitted solutions can be found at: <a href='https://fivethirty
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>
