@@ -46,7 +46,8 @@ The raw data behind the story
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 sandy_311_tidy <- sandy_311 \%>\%
   gather(agency, num_calls, -c("date", "total")) \%>\%
   arrange(date) \%>\%

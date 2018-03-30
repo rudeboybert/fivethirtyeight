@@ -50,7 +50,9 @@ and "MLB Predictions" \url{https://projects.fivethirtyeight.com/2017-mlb-predict
 \examples{
 # To obtain the entire dataset, run the code inside the following if statement:
 if(FALSE){
-  library(tidyverse)
+  library(dplyr)
+  library(tidyr)
+  library(readr)
   mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") \%>\%
     mutate(
       playoff = as.factor(playoff),

@@ -30,7 +30,11 @@ BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
 RoxygenNote: 6.0.1
 Suggests:
     fivethirtyeight,
-    tidyverse,
+    ggplot2,
+    dplyr,
+    tidyr,
+    readr,
+    tibble,
     lubridate,
     stringr,
     magrittr,

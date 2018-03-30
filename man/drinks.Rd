@@ -25,7 +25,8 @@ The raw data behind the story
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 library(stringr)
 drinks_tidy <- drinks \%>\%
   gather(type, servings, -c(country, total_litres_of_pure_alcohol)) \%>\%

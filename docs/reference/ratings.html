@@ -170,11 +170,12 @@ see <a href='https://github.com/fivethirtyeight/data/tree/master/inconvenient-se
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+<span class='fu'>library</span>(<span class='no'>tidyr</span>)
 <span class='fu'>library</span>(<span class='no'>stringr</span>)
 <span class='no'>ratings_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>ratings</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>votes</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>timestamp</span>, <span class='no'>respondents</span>, <span class='no'>category</span>, <span class='no'>link</span>, <span class='no'>average</span>, <span class='no'>mean</span>, <span class='no'>median</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>arrange</span>(<span class='no'>timestamp</span>)</div></pre>
+  <span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/gather'>gather</a></span>(<span class='no'>votes</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>timestamp</span>, <span class='no'>respondents</span>, <span class='no'>category</span>, <span class='no'>link</span>, <span class='no'>average</span>, <span class='no'>mean</span>, <span class='no'>median</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span>(<span class='no'>timestamp</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

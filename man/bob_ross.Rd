@@ -93,7 +93,8 @@ An analysis using this data was contributed by Jonathan Bouchet as a package vig
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 library(stringr)
 bob_ross_tidy <- bob_ross \%>\%
   gather(object, present, -c(episode, season, episode_num, title)) \%>\%

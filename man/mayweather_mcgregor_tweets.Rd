@@ -34,7 +34,9 @@ The raw data behind the story
 \examples{
 # To obtain the entire dataset, run the code inside the following if statement:
 if(FALSE){
-  library(tidyverse)
+  library(dplyr)
+  library(tidyr)
+  library(readr)
   url <-
    "https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv"
   mayweather_mcgregor_tweets <- read_csv(url) \%>\%

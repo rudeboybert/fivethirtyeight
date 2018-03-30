@@ -168,13 +168,14 @@ Agency acronyms from the Data Dictionary. See also <a href='https://github.com/f
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+<span class='fu'>library</span>(<span class='no'>tidyr</span>)
 <span class='no'>sandy_311_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>sandy_311</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>agency</span>, <span class='no'>num_calls</span>, -<span class='fu'>c</span>(<span class='st'>"date"</span>, <span class='st'>"total"</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>arrange</span>(<span class='no'>date</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>select</span>(<span class='no'>date</span>, <span class='no'>agency</span>, <span class='no'>num_calls</span>, <span class='no'>total</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>rename</span>(<span class='kw'>total_calls</span> <span class='kw'>=</span> <span class='no'>total</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>mutate</span>(<span class='kw'>agency</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>agency</span>))</div></pre>
+  <span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/gather'>gather</a></span>(<span class='no'>agency</span>, <span class='no'>num_calls</span>, -<span class='fu'>c</span>(<span class='st'>"date"</span>, <span class='st'>"total"</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span>(<span class='no'>date</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/select.html'>select</a></span>(<span class='no'>date</span>, <span class='no'>agency</span>, <span class='no'>num_calls</span>, <span class='no'>total</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/select.html'>rename</a></span>(<span class='kw'>total_calls</span> <span class='kw'>=</span> <span class='no'>total</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>agency</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>agency</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

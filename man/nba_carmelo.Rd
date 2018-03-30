@@ -45,7 +45,9 @@ and our "2017-18 NBA Predictions"
 }
 \examples{
 # To obtain the entire dataset, run the following code:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(readr)
 library(janitor)
 nba_carmelo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.csv") \%>\%
   clean_names() \%>\%

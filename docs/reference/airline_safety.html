@@ -151,11 +151,12 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+<span class='fu'>library</span>(<span class='no'>tidyr</span>)
 <span class='fu'>library</span>(<span class='no'>stringr</span>)
 <span class='no'>airline_safety_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>airline_safety</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>type</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>airline</span>, <span class='no'>incl_reg_subsidiaries</span>, <span class='no'>avail_seat_km_per_week</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>mutate</span>(
+  <span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/gather'>gather</a></span>(<span class='no'>type</span>, <span class='no'>count</span>, -<span class='fu'>c</span>(<span class='no'>airline</span>, <span class='no'>incl_reg_subsidiaries</span>, <span class='no'>avail_seat_km_per_week</span>)) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(
     <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>start</span><span class='kw'>=</span>-<span class='fl'>5</span>),
     <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace_all</a></span>(<span class='no'>period</span>, <span class='st'>"_"</span>, <span class='st'>"-"</span>),
     <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/stringr/topics/str_sub'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>end</span><span class='kw'>=</span>-<span class='fl'>7</span>)

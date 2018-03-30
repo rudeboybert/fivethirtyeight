@@ -156,11 +156,13 @@ using the Twitter streaming API. <a href='https://github.com/fivethirtyeight/dat
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the code inside the following if statement:</span>
 <span class='kw'>if</span>(<span class='fl'>FALSE</span>){
-  <span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+  <span class='fu'>library</span>(<span class='no'>dplyr</span>)
+  <span class='fu'>library</span>(<span class='no'>tidyr</span>)
+  <span class='fu'>library</span>(<span class='no'>readr</span>)
   <span class='no'>url</span> <span class='kw'>&lt;-</span>
    <span class='st'>"https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv"</span>
-  <span class='no'>mayweather_mcgregor_tweets</span> <span class='kw'>&lt;-</span> <span class='fu'>read_csv</span>(<span class='no'>url</span>) <span class='kw'>%&gt;%</span>
-    <span class='fu'>mutate</span>(
+  <span class='no'>mayweather_mcgregor_tweets</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/readr/topics/read_delim'>read_csv</a></span>(<span class='no'>url</span>) <span class='kw'>%&gt;%</span>
+    <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(
       <span class='kw'>emojis</span> <span class='kw'>=</span> <span class='fu'>as.logical</span>(<span class='no'>emojis</span>),
       <span class='kw'>retweeted</span> <span class='kw'>=</span> <span class='fu'>as.logical</span>(<span class='no'>retweeted</span>),
       <span class='kw'>id</span> <span class='kw'>=</span> <span class='fu'>as.character</span>(<span class='no'>id</span>)

@@ -34,7 +34,9 @@ Data collected on Oct 19 and 20
 \examples{
 # To obtain the entire dataset, run the code inside the following if statement:
 if(FALSE){
-  library(tidyverse)
+  library(dplyr)
+  library(tidyr)
+  library(readr)
   url <- "https://raw.githubusercontent.com/fivethirtyeight/data/master/twitter-ratio/senators.csv"
   senators <- read_csv(url) \%>\%
     mutate(

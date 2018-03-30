@@ -33,7 +33,8 @@ A table of the central actors in "Love Actually" and which scenes they appear in
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 library(stringr)
 love_actually_appearance_tidy <- love_actually_appearance \%>\%
   gather(actor, appears, -c(scenes)) \%>\%

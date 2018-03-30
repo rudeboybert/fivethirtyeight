@@ -158,7 +158,9 @@ representing games and 14 variables:</p><dl class='dl-horizontal'>
 
     <p>See <a href='https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv'>https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv</a>
 # To obtain the entire dataset, run the following code:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(readr)
 library(janitor)
 nfl_elo &lt;- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") <!-- %&gt;% -->
   clean_names() <!-- %&gt;% -->

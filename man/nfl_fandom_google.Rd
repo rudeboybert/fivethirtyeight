@@ -28,7 +28,8 @@ The raw data behind the story
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 nfl_fandom_google_tidy <- nfl_fandom_google \%>\%
   gather(sport, search_traffic, -c("dma", "trump_2016_vote")) \%>\%
   arrange(dma)

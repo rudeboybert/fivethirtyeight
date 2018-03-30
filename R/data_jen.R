@@ -31,7 +31,8 @@
 #'
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' police_locals_tidy <- police_locals %>%
 #'    gather(key = "race", value = "perc_in", all:asian)
 "police_locals"
@@ -385,7 +386,8 @@
 #'
 #' @examples
 #' # To convert data frame to tidy data (long) format, run
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' riddler_castles_tidy<-riddler_castles %>%
 #'    gather(key = castle , value = soldiers, castle1:castle10) %>%
@@ -419,7 +421,8 @@
 #'
 #' @examples
 #' # To convert data frame to tidy data (long) format, run
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' riddler_castles_tidy<-riddler_castles2 %>%
 #'    gather(key = castle , value = soldiers, castle1:castle10) %>%

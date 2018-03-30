@@ -12,7 +12,7 @@
 
 <meta name="author" content="G. Elliott Morris and Chester Ismay" />
 
-<meta name="date" content="2018-03-03" />
+<meta name="date" content="2018-03-30" />
 
 <title>2015 NBA player predictions analysis using the tidyverse</title>
 
@@ -70,15 +70,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">2015 NBA player predictions analysis using the <code>tidyverse</code></h1>
 <h4 class="author"><em>G. Elliott Morris and Chester Ismay</em></h4>
-<h4 class="date"><em>2018-03-03</em></h4>
+<h4 class="date"><em>2018-03-30</em></h4>
 
 
 
 <p>This vignette is based on data collected for the 538 story entitled “Projecting The Top 50 Players In The 2015 NBA Draft Class” by Neil Paine and Zach Bradshaw available <a href="http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/">here</a>.</p>
 <p>First, we load the required packages to reproduce analysis.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-<span class="co"># tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:</span>
-<span class="kw">library</span>(tidyverse)
+<span class="co"># library(tidyverse)</span>
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(ggthemes)
 <span class="kw">library</span>(knitr)
 <span class="co"># Turn off scientific notation</span>

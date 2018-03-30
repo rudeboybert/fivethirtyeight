@@ -25,7 +25,8 @@ The raw data behind the story
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 library(stringr)
 fifa_audience_tidy <- fifa_audience \%>\%
   gather(type, share, -c(country, confederation)) \%>\%

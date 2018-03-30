@@ -45,7 +45,8 @@ The raw data behind the story
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 nfl_fandom_surveymonkey_tidy <- nfl_fandom_surveymonkey \%>\%
   gather(key = race_party, value = percent,
          -c("team", "total_respondents", "gop_percent", "dem_percent",

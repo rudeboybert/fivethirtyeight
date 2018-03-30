@@ -61,7 +61,8 @@ Trump World Polls Dataset.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 trumpworld_polls_tidy <- trumpworld_polls \%>\%
   gather(country, percent_positive, -c("year", "avg", "question"))
 }

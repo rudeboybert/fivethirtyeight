@@ -17,7 +17,8 @@
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' ahca_polls_tidy <- ahca_polls %>%
 #'   gather(opinion, count, -c(start, end, pollster, text, url))
@@ -99,7 +100,8 @@
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' candy_rankings_tidy <- candy_rankings %>%
 #'   gather(characteristics, present, -c(competitorname, sugarpercent, pricepercent, winpercent)) %>%
@@ -228,7 +230,8 @@
 #' see \url{https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' ratings_tidy <- ratings %>%
 #'   gather(votes, count, -c(timestamp, respondents, category, link, average, mean, median)) %>%
@@ -263,7 +266,9 @@
 #' @examples
 #' # To obtain the entire dataset, run the code inside the following if statement:
 #' if(FALSE){
-#'   library(tidyverse)
+#'   library(dplyr)
+#'   library(tidyr)
+#'   library(readr)
 #'   url <-
 #'    "https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv"
 #'   mayweather_mcgregor_tweets <- read_csv(url) %>%
@@ -319,7 +324,9 @@
 #' @examples
 #' # To obtain the entire dataset, run the code inside the following if statement:
 #' if(FALSE){
-#'   library(tidyverse)
+#'   library(dplyr)
+#'   library(tidyr)
+#'   library(readr)
 #'   mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") %>%
 #'     mutate(
 #'       playoff = as.factor(playoff),

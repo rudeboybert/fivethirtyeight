@@ -19,8 +19,9 @@ This vignette is based on the data collected for the FiveThirtyEight study [A Co
 
 ```{r libraries, message = FALSE, warning = FALSE}
 library(fivethirtyeight)
-# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
-library(tidyverse)
+# library(tidyverse)
+library(ggplot2)
+library(dplyr)
 library(stringr)
 library(knitr)
 library(ggthemes)

@@ -19,7 +19,8 @@
 #' @source Aviation Safety Network \url{http://aviation-safety.net}.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' airline_safety_tidy <- airline_safety %>%
 #'   gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) %>%
@@ -142,7 +143,8 @@
 #' @source World Health Organization, Global Information System on Alcohol and Health (GISAH), 2010.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' drinks_tidy <- drinks %>%
 #'   gather(type, servings, -c(country, total_litres_of_pure_alcohol)) %>%
@@ -269,7 +271,8 @@
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/bob-ross}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' bob_ross_tidy <- bob_ross %>%
 #'   gather(object, present, -c(episode, season, episode_num, title)) %>%
@@ -609,7 +612,8 @@
 #' Mental Health Data Archive \url{http://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' use <- drug_use %>%
 #'   select(age, n, ends_with("_use")) %>%
@@ -794,7 +798,8 @@
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/fifa}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' fifa_audience_tidy <- fifa_audience %>%
 #'   gather(type, share, -c(country, confederation)) %>%
@@ -946,7 +951,8 @@
 #' @seealso \code{\link{love_actually_adj}}.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' library(stringr)
 #' love_actually_appearance_tidy <- love_actually_appearance %>%
 #'   gather(actor, appears, -c(scenes)) %>%

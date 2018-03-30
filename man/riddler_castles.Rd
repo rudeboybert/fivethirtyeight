@@ -32,7 +32,8 @@ Analysis of the submitted solutions can be found at: \url{https://fivethirtyeigh
 }
 \examples{
 # To convert data frame to tidy data (long) format, run
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 library(stringr)
 riddler_castles_tidy<-riddler_castles \%>\%
    gather(key = castle , value = soldiers, castle1:castle10) \%>\%

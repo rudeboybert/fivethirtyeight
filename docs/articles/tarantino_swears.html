@@ -99,7 +99,7 @@
       <h1>How Many Fucks Does Tarantino Give?</h1>
                         <h4 class="author">Olivia Barrows, Jojo Miller, and Jayla Nakayama</h4>
             
-            <h4 class="date">2018-02-12</h4>
+            <h4 class="date">2018-03-30</h4>
           </div>
 
     
@@ -107,8 +107,9 @@
 <div class="contents">
 <p>This vignette is based on the data collected for the FiveThirtyEight study <a href="https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/">A Complete Catalog Of Every Time Someone Cursed Or Bled Out In A Quentin Tarantino Movie</a>, with a focus on the use of swear words in his films.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-<span class="co"># tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:</span>
-<span class="kw">library</span>(tidyverse)
+<span class="co"># library(tidyverse)</span>
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(stringr)
 <span class="kw">library</span>(knitr)
 <span class="kw">library</span>(ggthemes)
@@ -131,12 +132,12 @@
 movie &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Reservoir Dogs"</span>, <span class="st">"Pulp Fiction"</span>, <span class="st">"Jackie Brown"</span>, <span class="st">"Kill Bill: Vol. 1"</span>, <span class="st">"Kill Bill: Vol. 2"</span>, <span class="st">"Inglorious Basterds"</span>, <span class="st">"Django Unchained"</span>)
 
 year &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1992</span>, <span class="dv">1994</span>, <span class="dv">1997</span>, <span class="dv">2003</span>, <span class="dv">2004</span>, <span class="dv">2009</span>, <span class="dv">2012</span>)
-tarantino_year &lt;-<span class="st"> </span><span class="kw">data_frame</span>(movie, year)
+tarantino_year &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/reexports.html">data_frame</a></span>(movie, year)
 
 <span class="co"># Combine with existing `tarantino` dataframe</span>
-tarantino_plus_year &lt;-<span class="st"> </span><span class="kw">inner_join</span>(<span class="dt">x =</span> tarantino, <span class="dt">y =</span> tarantino_year, <span class="dt">by =</span> <span class="st">"movie"</span>)</code></pre></div>
+tarantino_plus_year &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(<span class="dt">x =</span> tarantino, <span class="dt">y =</span> tarantino_year, <span class="dt">by =</span> <span class="st">"movie"</span>)</code></pre></div>
 <p>The final step in preparing the <code>tarantino_plus_year</code> dataframe for this analysis is to filter out unnecessary information, keeping only entries with the value of <code>TRUE</code> under the <code>profane</code> variable.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tarantino_swears &lt;-<span class="st"> </span>tarantino_plus_year <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(profane <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tarantino_swears &lt;-<span class="st"> </span>tarantino_plus_year <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(profane <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>)</code></pre></div>
 </div>
 <div id="total-swear-word-usage-over-tarantinos-career" class="section level3">
 <h3 class="hasAnchor">
@@ -146,25 +147,25 @@ tarantino_plus_year &lt;-<span class="st"> </span><span class="kw">inner_join</s
 by_year &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Reservoir Dogs"</span>, <span class="st">"Pulp Fiction"</span>, <span class="st">"Jackie Brown"</span>, <span class="st">"Kill Bill: Vol. 1"</span>, <span class="st">"Kill Bill: Vol. 2"</span>, 
   <span class="st">"Inglorious Basterds"</span>, <span class="st">"Django Unchained"</span>)
 tarantino_factor &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">movie =</span> <span class="kw">factor</span>(tarantino_swears<span class="op">$</span>movie, <span class="dt">levels =</span> by_year))
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">movie =</span> <span class="kw">factor</span>(tarantino_swears<span class="op">$</span>movie, <span class="dt">levels =</span> by_year))
 
 <span class="co"># Plotting the amount of swear words used in each movie</span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> tarantino_factor, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> movie, <span class="dt">fill =</span> movie)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">color =</span> <span class="st">"white"</span>) <span class="op">+</span>
+<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> tarantino_factor, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> movie, <span class="dt">fill =</span> movie)) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Movie"</span>, <span class="dt">y =</span> <span class="st">"Swear Count"</span>, <span class="dt">title =</span> <span class="st">"Total Swear Word Usage Per Movie"</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">x =</span> <span class="st">"Movie"</span>, <span class="dt">y =</span> <span class="st">"Swear Count"</span>, <span class="dt">title =</span> <span class="st">"Total Swear Word Usage Per Movie"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">axis.text.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
 <p><img src="tarantino_swears_files/figure-html/plot1-1.png" width="691.2"></p>
 <pre><code>## # A tibble: 7 x 2
 ##   movie                year
 ##   &lt;chr&gt;               &lt;dbl&gt;
-## 1 Reservoir Dogs       1992
-## 2 Pulp Fiction         1994
-## 3 Jackie Brown         1997
-## 4 Kill Bill: Vol. 1    2003
-## 5 Kill Bill: Vol. 2    2004
-## 6 Inglorious Basterds  2009
-## 7 Django Unchained     2012</code></pre>
+## 1 Reservoir Dogs      1992.
+## 2 Pulp Fiction        1994.
+## 3 Jackie Brown        1997.
+## 4 Kill Bill: Vol. 1   2003.
+## 5 Kill Bill: Vol. 2   2004.
+## 6 Inglorious Basterds 2009.
+## 7 Django Unchained    2012.</code></pre>
 <p>In order to better represent this data available on the profanities used in Tarantino’s movies, it is beneficial to first divide the swear words used into categories via the <code>word</code> variable. For the purposes of this analysis, eight were defined and stored in the <code>swear_category</code> variable:</p>
 <ul>
 <li>swears including the word ‘ass’</li>
@@ -178,8 +179,8 @@ tarantino_factor &lt;-<span class="st"> </span>tarantino_swears <span class="op"
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Creating the categories</span>
 tarantino_swears &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">swear_category =</span> 
-       <span class="kw">case_when</span>(<span class="kw">grepl</span>(<span class="st">"ass"</span>, word) <span class="op">~</span><span class="st"> "ass"</span>, 
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">swear_category =</span> 
+       <span class="kw"><a href="http://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span>(<span class="kw">grepl</span>(<span class="st">"ass"</span>, word) <span class="op">~</span><span class="st"> "ass"</span>, 
                  <span class="kw">grepl</span>(<span class="st">"shit|merde"</span>, word) <span class="op">~</span><span class="st"> "shit"</span>, 
                  <span class="kw">grepl</span>(<span class="st">"fuck"</span>, word) <span class="op">~</span><span class="st"> "fuck"</span>, 
                  <span class="kw">grepl</span>(<span class="st">"damn|hell"</span>, word) <span class="op">~</span><span class="st"> "damnation"</span>, 
@@ -189,8 +190,8 @@ tarantino_swears &lt;-<span class="st"> </span>tarantino_swears <span class="op"
                  <span class="kw">grepl</span>(<span class="st">"gook|jap|jew|n-word|negro|slope|wetback|squaw"</span>, word) <span class="op">~</span><span class="st"> "race"</span>))</code></pre></div>
 <p>With these categories defined, we can produce a table called <code>Profanity_Sum</code> showing how often swear words of each category were used during Tarantino’s movies.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Profanity_Sum &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(movie) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">Ass =</span> <span class="kw">mean</span>(swear_category <span class="op">==</span><span class="st"> "ass"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(movie) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">Ass =</span> <span class="kw">mean</span>(swear_category <span class="op">==</span><span class="st"> "ass"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,
             <span class="dt">Shit =</span> <span class="kw">mean</span>(swear_category <span class="op">==</span><span class="st"> "shit"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,
             <span class="dt">Fuck =</span> <span class="kw">mean</span>(swear_category <span class="op">==</span><span class="st"> "fuck"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,
             <span class="dt">Dick =</span> <span class="kw">mean</span>(swear_category <span class="op">==</span><span class="st"> "dick"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,
@@ -203,12 +204,12 @@ Profanity_Sum</code></pre></div>
 <pre><code>## # A tibble: 7 x 10
 ##   movie   Ass  Shit  Fuck  Dick Damnation Bastard Gender  Race Unspeakable
 ##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;
-## 1 Djan… 11.1   7.25  12.2 0         19.8    0.382   5.73 43.5        49.2 
-## 2 Ingl… 10.3  10.3   36.2 0         27.6    0       5.17 10.3        15.5 
-## 3 Jack… 14.4  20.1   38.0 0.272     12.5    0       4.08 10.6        14.7 
-## 4 Kill…  5.26 17.5   29.8 3.51      21.1    3.51   19.3   0          19.3 
+## 1 Djan… 11.1   7.25  12.2 0.        19.8    0.382   5.73 43.5        49.2 
+## 2 Ingl… 10.3  10.3   36.2 0.        27.6    0.      5.17 10.3        15.5 
+## 3 Jack… 14.4  20.1   38.0 0.272     12.5    0.      4.08 10.6        14.7 
+## 4 Kill…  5.26 17.5   29.8 3.51      21.1    3.51   19.3   0.         19.3 
 ## 5 Kill… 13.0  14.5   34.8 1.45      11.6    4.35   15.9   4.35       20.3 
-## 6 Pulp…  8.10 16.8   56.9 0.426      8.74   0       3.41  5.54        8.96
+## 6 Pulp…  8.10 16.8   56.9 0.426      8.74   0.      3.41  5.54        8.96
 ## 7 Rese…  5.70 13.1   64.4 4.04       5.70   1.19    4.28  1.66        5.94</code></pre>
 <p>This table allows us to conclude the following:</p>
 <ul>
@@ -220,11 +221,11 @@ Profanity_Sum</code></pre></div>
 </ul>
 <p>You may notice the <code>Unspeakable</code> variable, which is a combination of the <code>gender</code> and <code>race</code> categories from the earlier code. It is possible to break this variable down relative to each movie, showing how often either category had swear words used.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Unspeakable_Sum &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(movie) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">gen_por =</span> <span class="kw">mean</span>(swear_category <span class="op">==</span><span class="st"> "gender"</span>),
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(movie) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">gen_por =</span> <span class="kw">mean</span>(swear_category <span class="op">==</span><span class="st"> "gender"</span>),
             <span class="dt">race_por =</span> <span class="kw">mean</span>(swear_category <span class="op">==</span><span class="st"> "race"</span>)) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Gender_Derogatory =</span> gen_por <span class="op">*</span><span class="st"> </span><span class="dv">100</span>, <span class="dt">Race_Derogatory =</span> race_por <span class="op">*</span><span class="st"> </span><span class="dv">100</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>gen_por, <span class="op">-</span>race_por)
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">Gender_Derogatory =</span> gen_por <span class="op">*</span><span class="st"> </span><span class="dv">100</span>, <span class="dt">Race_Derogatory =</span> race_por <span class="op">*</span><span class="st"> </span><span class="dv">100</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="op">-</span>gen_por, <span class="op">-</span>race_por)
 Unspeakable_Sum</code></pre></div>
 <pre><code>## # A tibble: 7 x 3
 ##   movie               Gender_Derogatory Race_Derogatory
@@ -232,7 +233,7 @@ Unspeakable_Sum</code></pre></div>
 ## 1 Django Unchained                 5.73           43.5 
 ## 2 Inglorious Basterds              5.17           10.3 
 ## 3 Jackie Brown                     4.08           10.6 
-## 4 Kill Bill: Vol. 1               19.3             0   
+## 4 Kill Bill: Vol. 1               19.3             0.  
 ## 5 Kill Bill: Vol. 2               15.9             4.35
 ## 6 Pulp Fiction                     3.41            5.54
 ## 7 Reservoir Dogs                   4.28            1.66</code></pre>
@@ -252,20 +253,20 @@ Unspeakable_Sum</code></pre></div>
 <h3 class="hasAnchor">
 <a href="#how-many-fucks-does-tarantino-actually-give" class="anchor"></a>How Many Fucks Does Tarantino Actually Give?</h3>
 <p>Looking at the dataframe <code>tarantino_swears</code>, the next question we have to ask is ‘How many fucks <em>exactly</em> does Tarantino give in each of his movies?’ First, however, it is necessary to filter for only usages of the word ‘fuck’ and its variations.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tarantino_fuck &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(swear_category <span class="op">==</span><span class="st"> "fuck"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tarantino_fuck &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(swear_category <span class="op">==</span><span class="st"> "fuck"</span>)</code></pre></div>
 <p>At this point, we are able to create a preliminary graph, which details the amount of all fucks given throughout each movie.The following information displays what this amount is, spread out over the time of the movie. We chose to divide the amount of swearing over the course of the movie in this manner because it allows us to examine what parts of each movie include the most swearing.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> tarantino_fuck, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> minutes_in)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">fill =</span> <span class="st">"springgreen2"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>movie) <span class="op">+</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> tarantino_fuck, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> minutes_in)) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">binwidth =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">fill =</span> <span class="st">"springgreen2"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_wrap">facet_wrap</a></span>(<span class="op">~</span>movie) <span class="op">+</span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Minutes In"</span>, <span class="dt">y =</span> <span class="st">"Fucks Given"</span>, <span class="dt">title =</span> <span class="st">"Fucks Tarantino Gives Per Movie"</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">x =</span> <span class="st">"Minutes In"</span>, <span class="dt">y =</span> <span class="st">"Fucks Given"</span>, <span class="dt">title =</span> <span class="st">"Fucks Tarantino Gives Per Movie"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">axis.text.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
 <p><img src="tarantino_swears_files/figure-html/given-1.png" width="691.2"></p>
 <p>This can be further broken down to show what <em>types</em> of fucks Tarantino gives.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> tarantino_fuck, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> minutes_in, <span class="dt">fill =</span> word)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">"white"</span>) <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>movie) <span class="op">+</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> tarantino_fuck, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> minutes_in, <span class="dt">fill =</span> word)) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">binwidth =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">"white"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_wrap">facet_wrap</a></span>(<span class="op">~</span>movie) <span class="op">+</span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Minutes In"</span>, <span class="dt">y =</span> <span class="st">"Fucks Given"</span>, <span class="dt">title =</span> <span class="st">"Fucks Tarantino Gives Per Movie (by Type)"</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">x =</span> <span class="st">"Minutes In"</span>, <span class="dt">y =</span> <span class="st">"Fucks Given"</span>, <span class="dt">title =</span> <span class="st">"Fucks Tarantino Gives Per Movie (by Type)"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">axis.text.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
 <p><img src="tarantino_swears_files/figure-html/type_given-1.png" width="691.2"></p>
 <p>From this information, it is possible to see that in terms of fucks given:</p>
 <ul>

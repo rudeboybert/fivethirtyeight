@@ -3,8 +3,9 @@ knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.width=7.2)
 
 ## ----libraries, message = FALSE, warning = FALSE-------------------------
 library(fivethirtyeight)
-# tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:
-library(tidyverse)
+# library(tidyverse)
+library(ggplot2)
+library(dplyr)
 library(stringr)
 library(knitr)
 library(ggthemes)

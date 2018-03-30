@@ -27,7 +27,9 @@ representing games and 14 variables:
 \source{
 See \url{https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv}
 # To obtain the entire dataset, run the following code:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(readr)
 library(janitor)
 nfl_elo <- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") %>%
   clean_names() %>%

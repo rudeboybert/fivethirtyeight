@@ -35,7 +35,9 @@
 #' @source See \url{https://projects.fivethirtyeight.com/nba-model/nba_elo.csv}
 #' @examples
 #' # To obtain the entire dataset, run the following code:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
+#' library(readr)
 #' library(janitor)
 #' nba_carmelo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.csv") %>%
 #'   clean_names() %>%
@@ -80,7 +82,9 @@
 #' }
 #' @source See \url{https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv}
 #' # To obtain the entire dataset, run the following code:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
+#' library(readr)
 #' library(janitor)
 #' nfl_elo <- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") %>%
 #'   clean_names() %>%
@@ -112,7 +116,8 @@
 #' @source Google Trends \url{https://g.co/trends/5P8aa}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' nfl_fandom_google_tidy <- nfl_fandom_google %>%
 #'   gather(sport, search_traffic, -c("dma", "trump_2016_vote")) %>%
 #'   arrange(dma)
@@ -157,7 +162,8 @@
 #' @source See \url{https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' nfl_fandom_surveymonkey_tidy <- nfl_fandom_surveymonkey %>%
 #'   gather(key = race_party, value = percent,
 #'          -c("team", "total_respondents", "gop_percent", "dem_percent",
@@ -404,7 +410,8 @@
 #' Agency acronyms from the Data Dictionary. See also \url{https://github.com/fivethirtyeight/data/tree/master/sandy-311-calls}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' sandy_311_tidy <- sandy_311 %>%
 #'   gather(agency, num_calls, -c("date", "total")) %>%
 #'   arrange(date) %>%
@@ -557,7 +564,8 @@
 #' @source Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
-#' library(tidyverse)
+#' library(dplyr)
+#' library(tidyr)
 #' trumpworld_polls_tidy <- trumpworld_polls %>%
 #'   gather(country, percent_positive, -c("year", "avg", "question"))
 #' @seealso \code{\link{trumpworld_issues}}
@@ -611,7 +619,9 @@
 #' @examples
 #' # To obtain the entire dataset, run the code inside the following if statement:
 #' if(FALSE){
-#'   library(tidyverse)
+#'   library(dplyr)
+#'   library(tidyr)
+#'   library(readr)
 #'   url <- "https://raw.githubusercontent.com/fivethirtyeight/data/master/twitter-ratio/senators.csv"
 #'   senators <- read_csv(url) %>%
 #'     mutate(

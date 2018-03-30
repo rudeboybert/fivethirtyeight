@@ -100,7 +100,7 @@
 </h1>
                         <h4 class="author">Chester Ismay</h4>
             
-            <h4 class="date">2018-02-12</h4>
+            <h4 class="date">2018-03-30</h4>
           </div>
 
     
@@ -109,8 +109,9 @@
 <p>This vignette is based on tidyverse-ifying the R code <a href="https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/analyze-bechdel.R">here</a> and reproducing some of the plots and analysis done in the 538 story entitled “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women” by Walt Hickey available <a href="http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/">here</a>.</p>
 <p>Load required packages to reproduce analysis. Also load the <code>bechdel</code> dataset for analysis.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-<span class="co"># tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:</span>
-<span class="kw">library</span>(tidyverse)
+<span class="co"># library(tidyverse)</span>
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(knitr)
 <span class="kw">library</span>(magrittr)
 <span class="kw">library</span>(broom)
@@ -123,14 +124,14 @@
 <h2 class="hasAnchor">
 <a href="#filter-to-only-1990---2013" class="anchor"></a>Filter to only 1990 - 2013</h2>
 <p>Focus only on films from 1990 to 2013</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdel90_<span class="dv">13</span> &lt;-<span class="st"> </span>bechdel <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">between</span>(year, <span class="dv">1990</span>, <span class="dv">2013</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdel90_<span class="dv">13</span> &lt;-<span class="st"> </span>bechdel <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="kw"><a href="http://dplyr.tidyverse.org/reference/between.html">between</a></span>(year, <span class="dv">1990</span>, <span class="dv">2013</span>))</code></pre></div>
 </div>
 <div id="calculate-variables" class="section level2">
 <h2 class="hasAnchor">
 <a href="#calculate-variables" class="anchor"></a>Calculate variables</h2>
 <p>Create international gross only and return on investment (ROI) columns and add to <code>bechdel_90_13</code> data frame</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdel90_<span class="dv">13</span> <span class="op">%&lt;&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">int_only =</span> intgross_<span class="dv">2013</span> <span class="op">-</span><span class="st"> </span>domgross_<span class="dv">2013</span>,
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">int_only =</span> intgross_<span class="dv">2013</span> <span class="op">-</span><span class="st"> </span>domgross_<span class="dv">2013</span>,
          <span class="dt">roi_total =</span> intgross_<span class="dv">2013</span> <span class="op">/</span><span class="st"> </span>budget_<span class="dv">2013</span>,
          <span class="dt">roi_dom =</span> domgross_<span class="dv">2013</span> <span class="op">/</span><span class="st"> </span>budget_<span class="dv">2013</span>,
          <span class="dt">roi_int =</span> int_only <span class="op">/</span><span class="st"> </span>budget_<span class="dv">2013</span>)</code></pre></div>
@@ -139,7 +140,7 @@
 <h2 class="hasAnchor">
 <a href="#create-generous-variable" class="anchor"></a>Create <code>generous</code> variable</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdel90_<span class="dv">13</span> <span class="op">%&lt;&gt;%</span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">generous =</span> <span class="kw">ifelse</span>(<span class="dt">test =</span> clean_test <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"ok"</span>, <span class="st">"dubious"</span>),
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">generous =</span> <span class="kw">ifelse</span>(<span class="dt">test =</span> clean_test <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"ok"</span>, <span class="st">"dubious"</span>),
                            <span class="dt">yes =</span> <span class="ot">TRUE</span>,
                            <span class="dt">no =</span> <span class="ot">FALSE</span>))</code></pre></div>
 </div>
@@ -147,8 +148,8 @@
 <h2 class="hasAnchor">
 <a href="#determine-median-roi-and-budget-based-on-categories" class="anchor"></a>Determine median ROI and budget based on categories</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ROI_by_binary &lt;-<span class="st"> </span>bechdel90_<span class="dv">13</span> <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(binary) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">median_ROI =</span> <span class="kw">median</span>(roi_total, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(binary) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">median_ROI =</span> <span class="kw">median</span>(roi_total, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
 ROI_by_binary</code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   binary median_ROI
@@ -156,23 +157,23 @@ ROI_by_binary</code></pre></div>
 ## 1 FAIL         2.45
 ## 2 PASS         2.70</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdel90_<span class="dv">13</span> <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarize</span>(
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(
     <span class="st">`</span><span class="dt">Median Overall Return on Investment</span><span class="st">`</span> =<span class="st"> </span><span class="kw">median</span>(roi_total, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   `Median Overall Return on Investment`
 ##                                   &lt;dbl&gt;
 ## 1                                  2.57</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">budget_by_binary &lt;-<span class="st"> </span>bechdel90_<span class="dv">13</span> <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(binary) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">median_budget =</span> <span class="kw">median</span>(budget_<span class="dv">2013</span>, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(binary) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">median_budget =</span> <span class="kw">median</span>(budget_<span class="dv">2013</span>, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
 budget_by_binary</code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   binary median_budget
 ##   &lt;chr&gt;          &lt;dbl&gt;
-## 1 FAIL        48385984
-## 2 PASS        31070724</code></pre>
+## 1 FAIL       48385984.
+## 2 PASS       31070724.</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bechdel90_<span class="dv">13</span> <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarize</span>(<span class="st">`</span><span class="dt">Median Overall Budget</span><span class="st">`</span> =<span class="st"> </span><span class="kw">median</span>(budget_<span class="dv">2013</span>, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="st">`</span><span class="dt">Median Overall Budget</span><span class="st">`</span> =<span class="st"> </span><span class="kw">median</span>(budget_<span class="dv">2013</span>, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   `Median Overall Budget`
 ##                     &lt;int&gt;
@@ -182,35 +183,35 @@ budget_by_binary</code></pre></div>
 <h2 class="hasAnchor">
 <a href="#view-distributions" class="anchor"></a>View Distributions</h2>
 <p>Look at the distributions of budget, international gross, ROI, and their logarithms</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> budget)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Histogram of budget"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> budget)) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Histogram of budget"</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/budget-plot-1.png" width="480"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">log</span>(budget))) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Histogram of Logarithm of Budget"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> <span class="kw">log</span>(budget))) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Histogram of Logarithm of Budget"</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/log-budget-plot-1.png" width="480"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> intgross_<span class="dv">2013</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Histogram of International Gross"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> intgross_<span class="dv">2013</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Histogram of International Gross"</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/intgross-plot-1.png" width="480"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">log</span>(intgross_<span class="dv">2013</span>))) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Histogram of Logarithm of International Gross"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> <span class="kw">log</span>(intgross_<span class="dv">2013</span>))) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Histogram of Logarithm of International Gross"</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/log-intgross-plot-1.png" width="480"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> roi_total)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Histogram of ROI"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> roi_total)) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Histogram of ROI"</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/roi-plot-1.png" width="480"></p>
 <p>The previous distributions were skewed, but ROI is so skewed that purposefully limiting the x-axis may reveal a bit more information about the distribution: (Suggested by <a href="https://github.com/mustafaascha">Mustafa Ascha</a>.)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> roi_total)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Histogram of ROI"</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">xlim</span>(<span class="dv">0</span>, <span class="dv">25</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> roi_total)) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Histogram of ROI"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/lims">xlim</a></span>(<span class="dv">0</span>, <span class="dv">25</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/roi-plot2-1.png" width="480"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">log</span>(roi_total))) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Histogram of Logarithm of ROI"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> <span class="kw">log</span>(roi_total))) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">bins =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Histogram of Logarithm of ROI"</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/log-roi-plot-1.png" width="480"></p>
 </div>
 <div id="linear-regression-models" class="section level2">
@@ -219,10 +220,10 @@ budget_by_binary</code></pre></div>
 <div id="movies-with-higher-budgets-make-more-international-gross-revenues-using-logarithms-on-both-variables" class="section level3">
 <h3 class="hasAnchor">
 <a href="#movies-with-higher-budgets-make-more-international-gross-revenues-using-logarithms-on-both-variables" class="anchor"></a>Movies with higher budgets make more international gross revenues using logarithms on both variables</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, 
-       <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">log</span>(budget_<span class="dv">2013</span>), <span class="dt">y =</span> <span class="kw">log</span>(intgross_<span class="dv">2013</span>))) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">"lm"</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, 
+       <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> <span class="kw">log</span>(budget_<span class="dv">2013</span>), <span class="dt">y =</span> <span class="kw">log</span>(intgross_<span class="dv">2013</span>))) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_point">geom_point</a></span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_smooth">geom_smooth</a></span>(<span class="dt">method =</span> <span class="st">"lm"</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/scatplot1-1.png" width="480"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gross_vs_budget &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">log</span>(intgross_<span class="dv">2013</span>) <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(budget_<span class="dv">2013</span>), 
                       <span class="dt">data =</span> bechdel90_<span class="dv">13</span>)
@@ -235,11 +236,11 @@ budget_by_binary</code></pre></div>
 <h3 class="hasAnchor">
 <a href="#bechdel-dummy-is-not-a-significant-predictor-of-logintgross_2013-assuming-logbudget_2013-is-in-the-model" class="anchor"></a>Bechdel dummy is not a significant predictor of <code>log(intgross_2013)</code> assuming <code>log(budget_2013)</code> is in the model</h3>
 <p>Note that the regression lines nearly completely overlap.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, 
-       <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">log</span>(budget_<span class="dv">2013</span>), <span class="dt">y =</span> <span class="kw">log</span>(intgross_<span class="dv">2013</span>), 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, 
+       <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> <span class="kw">log</span>(budget_<span class="dv">2013</span>), <span class="dt">y =</span> <span class="kw">log</span>(intgross_<span class="dv">2013</span>), 
                      <span class="dt">color =</span> binary)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">"lm"</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_point">geom_point</a></span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_smooth">geom_smooth</a></span>(<span class="dt">method =</span> <span class="st">"lm"</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/scatplot2-1.png" width="480"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gross_vs_budget_binary &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">log</span>(intgross_<span class="dv">2013</span>) <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(budget_<span class="dv">2013</span>) <span class="op">+</span><span class="st"> </span><span class="kw">factor</span>(binary), 
                       <span class="dt">data =</span> bechdel90_<span class="dv">13</span>)
@@ -253,10 +254,10 @@ budget_by_binary</code></pre></div>
 <div id="movies-with-higher-budgets-have-lower-roi" class="section level3">
 <h3 class="hasAnchor">
 <a href="#movies-with-higher-budgets-have-lower-roi" class="anchor"></a>Movies with higher budgets have lower ROI</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, 
-       <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">log</span>(budget_<span class="dv">2013</span>), <span class="dt">y =</span> <span class="kw">log</span>(roi_total))) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">"lm"</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, 
+       <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> <span class="kw">log</span>(budget_<span class="dv">2013</span>), <span class="dt">y =</span> <span class="kw">log</span>(roi_total))) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_point">geom_point</a></span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_smooth">geom_smooth</a></span>(<span class="dt">method =</span> <span class="st">"lm"</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/scatplot3-1.png" width="672"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">roi_vs_budget &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">log</span>(roi_total) <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(budget_<span class="dv">2013</span>), 
                       <span class="dt">data =</span> bechdel90_<span class="dv">13</span>)
@@ -270,11 +271,11 @@ budget_by_binary</code></pre></div>
 <h3 class="hasAnchor">
 <a href="#bechdel-dummy-is-not-a-significant-predictor-of-logroi_total-assuming-logbudget_2013-is-in-the-model" class="anchor"></a>Bechdel dummy is not a significant predictor of <code>log(roi_total)</code> assuming <code>log(budget_2013)</code> is in the model</h3>
 <p>Note that the regression lines nearly completely overlap.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, 
-       <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">log</span>(budget_<span class="dv">2013</span>), <span class="dt">y =</span> <span class="kw">log</span>(roi_total), 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> bechdel90_<span class="dv">13</span>, 
+       <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> <span class="kw">log</span>(budget_<span class="dv">2013</span>), <span class="dt">y =</span> <span class="kw">log</span>(roi_total), 
                      <span class="dt">color =</span> binary)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">"lm"</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_point">geom_point</a></span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_smooth">geom_smooth</a></span>(<span class="dt">method =</span> <span class="st">"lm"</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/scatplot4-1.png" width="672"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">roi_vs_budget_binary &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">log</span>(roi_total) <span class="op">~</span><span class="st"> </span><span class="kw">log</span>(budget_<span class="dv">2013</span>) <span class="op">+</span><span class="st"> </span><span class="kw">factor</span>(binary), 
                       <span class="dt">data =</span> bechdel90_<span class="dv">13</span>)
@@ -291,33 +292,33 @@ budget_by_binary</code></pre></div>
 <a href="#dollars-earned-for-every-dollar-spent-graphic" class="anchor"></a>Dollars Earned for Every Dollar Spent graphic</h2>
 <p>Calculating the values and creating a tidy data frame</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">passes_bechtel_rom &lt;-<span class="st"> </span>bechdel90_<span class="dv">13</span> <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">filter</span>(generous <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">median_roi =</span> <span class="kw">median</span>(roi_dom, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(generous <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">median_roi =</span> <span class="kw">median</span>(roi_dom, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
 median_groups_dom &lt;-<span class="st"> </span>bechdel90_<span class="dv">13</span> <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">filter</span>(clean_test <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"men"</span>, <span class="st">"notalk"</span>, <span class="st">"nowomen"</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(clean_test) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">median_roi =</span> <span class="kw">median</span>(roi_dom, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
-pass_bech_rom &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">clean_test =</span> <span class="st">"pass"</span>, 
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(clean_test <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"men"</span>, <span class="st">"notalk"</span>, <span class="st">"nowomen"</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(clean_test) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">median_roi =</span> <span class="kw">median</span>(roi_dom, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
+pass_bech_rom &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/reexports.html">data_frame</a></span>(<span class="dt">clean_test =</span> <span class="st">"pass"</span>, 
                   <span class="dt">median_roi =</span> passes_bechtel_rom<span class="op">$</span>median_roi)
-med_groups_dom_full &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(pass_bech_rom, median_groups_dom) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">group =</span> <span class="st">"U.S. and Canada"</span>)</code></pre></div>
+med_groups_dom_full &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/bind.html">bind_rows</a></span>(pass_bech_rom, median_groups_dom) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">group =</span> <span class="st">"U.S. and Canada"</span>)</code></pre></div>
 <pre><code>## Warning in bind_rows_(x, .id): binding character and factor vector,
 ## coercing into character vector</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">passes_bechtel_int &lt;-<span class="st"> </span>bechdel90_<span class="dv">13</span> <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">filter</span>(generous <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">median_roi =</span> <span class="kw">median</span>(roi_int, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(generous <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">median_roi =</span> <span class="kw">median</span>(roi_int, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
 median_groups_int &lt;-<span class="st"> </span>bechdel90_<span class="dv">13</span> <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">filter</span>(clean_test <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"men"</span>, <span class="st">"notalk"</span>, <span class="st">"nowomen"</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(clean_test) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">median_roi =</span> <span class="kw">median</span>(roi_int, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
-pass_bech_int &lt;-<span class="st"> </span><span class="kw">data_frame</span>(<span class="dt">clean_test =</span> <span class="st">"pass"</span>, 
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(clean_test <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"men"</span>, <span class="st">"notalk"</span>, <span class="st">"nowomen"</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(clean_test) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">median_roi =</span> <span class="kw">median</span>(roi_int, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
+pass_bech_int &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/reexports.html">data_frame</a></span>(<span class="dt">clean_test =</span> <span class="st">"pass"</span>, 
                   <span class="dt">median_roi =</span> passes_bechtel_int<span class="op">$</span>median_roi)
-med_groups_int_full &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(pass_bech_int, median_groups_int) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">group =</span> <span class="st">"International"</span>)</code></pre></div>
+med_groups_int_full &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/bind.html">bind_rows</a></span>(pass_bech_int, median_groups_int) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">group =</span> <span class="st">"International"</span>)</code></pre></div>
 <pre><code>## Warning in bind_rows_(x, .id): binding character and factor vector,
 ## coercing into character vector</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">med_groups &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(med_groups_dom_full, med_groups_int_full) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">clean_test =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(clean_test, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">med_groups &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/bind.html">bind_rows</a></span>(med_groups_dom_full, med_groups_int_full) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">clean_test =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(clean_test, 
                                       <span class="st">"pass"</span>,
                                       <span class="st">"Passes Bechdel Test"</span>),
          <span class="dt">clean_test =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(clean_test, <span class="st">"men"</span>,
@@ -326,43 +327,43 @@ med_groups_int_full &lt;-<span class="st"> </span><span class="kw">bind_rows</sp
                                       <span class="st">"Women don't talk to each other"</span>),
          <span class="dt">clean_test =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(clean_test, <span class="st">"nowoWomen only talk about men"</span>,
                                       <span class="st">"Fewer than two women"</span>))
-med_groups <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">clean_test =</span> <span class="kw">factor</span>(clean_test, 
+med_groups <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">clean_test =</span> <span class="kw">factor</span>(clean_test, 
                                  <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">"Fewer than two women"</span>, 
                                             <span class="st">"Women don't talk to each other"</span>,
                                             <span class="st">"Women only talk about men"</span>,
                                             <span class="st">"Passes Bechdel Test"</span>))) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">group =</span> <span class="kw">factor</span>(group, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">"U.S. and Canada"</span>, <span class="st">"International"</span>))) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">median_roi_dol =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/scales/topics/dollar_format">dollar</a></span>(median_roi))</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">group =</span> <span class="kw">factor</span>(group, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">"U.S. and Canada"</span>, <span class="st">"International"</span>))) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">median_roi_dol =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/scales/topics/dollar_format">dollar</a></span>(median_roi))</code></pre></div>
 <p>Using only a few functions to plot</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> med_groups, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> clean_test, <span class="dt">y =</span> median_roi, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> med_groups, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> clean_test, <span class="dt">y =</span> median_roi, 
                                         <span class="dt">fill =</span> group)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">"identity"</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>group) <span class="op">+</span>
-<span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Dollars Earned for Every Dollar Spent"</span>, <span class="dt">subtitle =</span> <span class="st">"2013 dollars"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">stat =</span> <span class="st">"identity"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_wrap">facet_wrap</a></span>(<span class="op">~</span><span class="st"> </span>group) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/coord_flip">coord_flip</a></span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Dollars Earned for Every Dollar Spent"</span>, <span class="dt">subtitle =</span> <span class="st">"2013 dollars"</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/scale_fivethirtyeight">scale_fill_fivethirtyeight</a></span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>()</code></pre></div>
 <p><img src="bechdel_files/figure-html/basic-538-1.png" width="768"></p>
 <p>Attempt to fully reproduce <strong>Dollars Earned for Every Dollar Spent</strong> plot using <code>ggplot</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> med_groups, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> clean_test, <span class="dt">y =</span> median_roi, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> med_groups, <span class="dt">mapping =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> clean_test, <span class="dt">y =</span> median_roi, 
                                         <span class="dt">fill =</span> group)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">"identity"</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> median_roi_dol), <span class="dt">hjust =</span> <span class="op">-</span><span class="fl">0.1</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(.<span class="dv">25</span>, <span class="dv">0</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>group) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">"royalblue"</span>, <span class="st">"goldenrod"</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">"Dollars Earned for Every Dollar Spent"</span>, <span class="dt">subtitle =</span> <span class="st">"2013 dollars"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">stat =</span> <span class="st">"identity"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_text">geom_text</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">label =</span> median_roi_dol), <span class="dt">hjust =</span> <span class="op">-</span><span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_continuous">scale_y_continuous</a></span>(<span class="dt">expand =</span> <span class="kw">c</span>(.<span class="dv">25</span>, <span class="dv">0</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/coord_flip">coord_flip</a></span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_wrap">facet_wrap</a></span>(<span class="op">~</span><span class="st"> </span>group) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_manual">scale_fill_manual</a></span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">"royalblue"</span>, <span class="st">"goldenrod"</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">title =</span> <span class="st">"Dollars Earned for Every Dollar Spent"</span>, <span class="dt">subtitle =</span> <span class="st">"2013 dollars"</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="op">-</span><span class="fl">1.6</span>), 
-        <span class="dt">plot.subtitle =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="op">-</span><span class="fl">0.4</span>),
-        <span class="dt">strip.text.x =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">"bold"</span>, <span class="dt">size =</span> <span class="dv">16</span>),
-        <span class="dt">panel.grid.major =</span> <span class="kw">element_blank</span>(), 
-        <span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>(),
-        <span class="dt">axis.title.x =</span> <span class="kw">element_blank</span>(),
-        <span class="dt">axis.text.x =</span> <span class="kw">element_blank</span>(),
-        <span class="dt">axis.ticks.x =</span> <span class="kw">element_blank</span>()) <span class="op">+</span>
-<span class="st">  </span><span class="kw">guides</span>(<span class="dt">fill =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">plot.title =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">hjust =</span> <span class="op">-</span><span class="fl">1.6</span>), 
+        <span class="dt">plot.subtitle =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">hjust =</span> <span class="op">-</span><span class="fl">0.4</span>),
+        <span class="dt">strip.text.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">face =</span> <span class="st">"bold"</span>, <span class="dt">size =</span> <span class="dv">16</span>),
+        <span class="dt">panel.grid.major =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), 
+        <span class="dt">panel.grid.minor =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(),
+        <span class="dt">axis.title.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(),
+        <span class="dt">axis.text.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(),
+        <span class="dt">axis.ticks.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>()) <span class="op">+</span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/guides">guides</a></span>(<span class="dt">fill =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <p><img src="bechdel_files/figure-html/roi-plot-538-1.png" width="768"></p>
 </div>
 </div>

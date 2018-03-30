@@ -187,9 +187,10 @@ Trump World Polls Dataset.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+<span class='fu'>library</span>(<span class='no'>tidyr</span>)
 <span class='no'>trumpworld_polls_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>trumpworld_polls</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>gather</span>(<span class='no'>country</span>, <span class='no'>percent_positive</span>, -<span class='fu'>c</span>(<span class='st'>"year"</span>, <span class='st'>"avg"</span>, <span class='st'>"question"</span>))</div></pre>
+  <span class='fu'><a href='http://www.rdocumentation.org/packages/tidyr/topics/gather'>gather</a></span>(<span class='no'>country</span>, <span class='no'>percent_positive</span>, -<span class='fu'>c</span>(<span class='st'>"year"</span>, <span class='st'>"avg"</span>, <span class='st'>"question"</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -40,7 +40,8 @@ Note: Missing values means that there are fewer than 100 police officers of that
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 police_locals_tidy <- police_locals \%>\%
    gather(key = "race", value = "perc_in", all:asian)
 }

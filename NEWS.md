@@ -1,6 +1,7 @@
 # fivethirtyeight 0.4.0.9000
 
 * Added vignette corresponding to Technology Innovations in Statistics Education [paper](https://escholarship.org/uc/item/0rx1231m#main)
+* Removed tidyverse from `DESCRIPTION` Depends, Imports, or Suggests fields
 
 # fivethirtyeight 0.4.0
 

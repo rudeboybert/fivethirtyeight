@@ -168,11 +168,13 @@ first 10 rows of this dataset is included; to obtain the entire dataset
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the following code:</span>
-<span class='fu'>library</span>(<span class='no'>tidyverse</span>)
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)
+<span class='fu'>library</span>(<span class='no'>tidyr</span>)
+<span class='fu'>library</span>(<span class='no'>readr</span>)
 <span class='fu'>library</span>(<span class='no'>janitor</span>)
-<span class='no'>nba_carmelo</span> <span class='kw'>&lt;-</span> <span class='fu'>read_csv</span>(<span class='st'>"https://projects.fivethirtyeight.com/nba-model/nba_elo.csv"</span>) <span class='kw'>%&gt;%</span>
+<span class='no'>nba_carmelo</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/readr/topics/read_delim'>read_csv</a></span>(<span class='st'>"https://projects.fivethirtyeight.com/nba-model/nba_elo.csv"</span>) <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='http://www.rdocumentation.org/packages/janitor/topics/clean_names'>clean_names</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'>mutate</span>(
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(
     <span class='kw'>team1</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>team1</span>),
     <span class='kw'>team2</span> <span class='kw'>=</span> <span class='fu'>as.factor</span>(<span class='no'>team2</span>),
     <span class='kw'>playoff</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='no'>playoff</span> <span class='kw'>==</span> <span class='st'>"t"</span>, <span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>),

@@ -50,7 +50,8 @@ It covers usage of 13 drugs in the past 12 months across 17 age groups.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 library(stringr)
 use <- drug_use \%>\%
   select(age, n, ends_with("_use")) \%>\%

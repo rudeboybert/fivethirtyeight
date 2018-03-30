@@ -12,7 +12,7 @@
 
 <meta name="author" content="Adam Spannbauer and Jennifer Chunn" />
 
-<meta name="date" content="2018-03-03" />
+<meta name="date" content="2018-03-30" />
 
 <title>Trump Twitter analysis using the tidyverse</title>
 
@@ -70,15 +70,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Trump Twitter analysis using the <code>tidyverse</code></h1>
 <h4 class="author"><em>Adam Spannbauer and Jennifer Chunn</em></h4>
-<h4 class="date"><em>2018-03-03</em></h4>
+<h4 class="date"><em>2018-03-30</em></h4>
 
 
 
 <p>This vignette is based on data collected for the 538 story entitled “The World’s Favorite Donald Trump Tweets” by Leah Libresco available <a href="https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/">here</a>.</p>
 <p>Load required packages to reproduce analysis.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-<span class="co"># tidyverse includes ggplot2, tibble, tidyr, readr, purrr, dplyr:</span>
-<span class="kw">library</span>(tidyverse)
+<span class="co"># library(tidyverse)</span>
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(tidytext)
 <span class="kw">library</span>(stringr)
 <span class="kw">library</span>(lubridate)
