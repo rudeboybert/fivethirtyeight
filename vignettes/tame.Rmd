@@ -418,6 +418,7 @@ drinks %>%
 However, the help file for this dataset, accessible by typing `?drinks` in the console, provides the `gather()` code necessary to convert this data into "tidy" format:
 
 ```{r, fig.width=16/2.5,  fig.height=9/2}
+library(tidyr)
 drinks_tidy_US_FR <- drinks %>%
   filter(country %in% c("USA", "France")) %>% 
   gather(type, servings, -c(country, total_litres_of_pure_alcohol))
