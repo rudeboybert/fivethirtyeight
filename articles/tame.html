@@ -221,7 +221,7 @@ Grolemund and Wickham’s ‘Data/Science Pipeline’
 <span class="co">#&gt;  0.4190  0.4400  0.4540  0.4538  0.4665  0.5320</span>
 <span class="kw">summary</span>(hate_crimes$hate_crimes_per_100k_splc)
 <span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's </span>
-<span class="co">#&gt; 0.06745 0.14270 0.22620 0.30410 0.35690 1.52200       4</span></code></pre></div>
+<span class="co">#&gt; 0.06745 0.14271 0.22620 0.30409 0.35694 1.52230       4</span></code></pre></div>
 <p>then have students produce a scatterplot visualizing the relationship between these two variables (see Figure ):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(hate_crimes$gini_index, hate_crimes$hate_crimes_per_100k_splc, 
      <span class="dt">xlab =</span> <span class="st">"Gini index"</span>, <span class="dt">ylab =</span> <span class="st">"Hate crime rate per 100K"</span>, 
@@ -359,8 +359,8 @@ remotes::<span class="kw">install_github</span>(<span class="st">"rudeboybert/fi
 <a href="#naming-conventions" class="anchor"></a>Naming Conventions</h2>
 <p>Whereas the first three subpoints relating to data frame and variable naming are more cosmetic in nature, the fourth principle relates to an R-specific issue faced by novices. Variable names that include spaces require different treatment than those that do not, specifically the use of tick marks when referring to them. While this is a topic R users eventually have to learn, we argue that it is not an immediate priority.</p>
 <p>As an example of the importance of preprocessing variable names, consider the data corresponding to the FiveThirtyEight article “41 Percent Of Fliers Think You’re Rude If You Recline Your Seat” <span class="citation">(Hickey 2014a)</span> where survey respondents were asked, among other things, if 1) they considered it rude to bring a baby on a flight and 2) whether or not they had children under the age of 18. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight’s GitHub repository page <a href="https://github.com/fivethirtyeight" class="uri">https://github.com/fivethirtyeight</a> and can be accessed via the shortened bit.ly link <a href="http://bit.ly/2vg8gTf" class="uri">http://bit.ly/2vg8gTf</a>. We load and save this in a data frame <code>flying_raw</code> and look at the first 5 variable names:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-flying_raw &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">"http://bit.ly/2vg8gTf"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+flying_raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"http://bit.ly/2vg8gTf"</span>)
 <span class="kw">colnames</span>(flying_raw)[<span class="dv">1</span>:<span class="dv">5</span>]
 <span class="co">#&gt; [1] "RespondentID"                               </span>
 <span class="co">#&gt; [2] "How often do you travel by plane?"          </span>
@@ -395,8 +395,8 @@ Attitudes about bringing babies on a flight.
 <a href="#dates" class="anchor"></a>Dates</h2>
 <p>Although recent advances such as the <code>lubridate</code> package have made wrangling dates much easier, performing such tasks can still be very challenging for students who have not had experience <span class="citation">(Grolemund and Wickham 2011)</span>. In datasets where only a numerical variable indicating the year exists, it can be argued no pre-processing is necessary. However, when a month and/or day variables exist along with a year variable, we argue that pre-processing should be done. Specifically, they should be combined and converted to <code>Date</code> objects. This allows for easy creation of time series plots with well formatted x-axes and for performing of basic date arithmetic.</p>
 <p>As an example of the importance of preprocessing dates, consider the data corresponding to the FiveThirtyEight article “Some People Are Too Superstitious To Have A Baby On Friday The 13th” <span class="citation">(Bialik 2016)</span> of the number of daily births in the United States between 1994 and 2003. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight’s GitHub repository page <a href="https://github.com/fivethirtyeight/" class="uri">https://github.com/fivethirtyeight/</a> and can be accessed via the shortened bit.ly link <a href="http://bit.ly/2vgRFiw" class="uri">http://bit.ly/2vgRFiw</a>. We load this data, filter for only those rows corresponding to 1999 births, and save this in a data frame <code>US_births_1999_raw</code>. The raw data is saved in a format that makes it difficult for novices to create a time series plot. Furthermore, people do not typically think of the day of the week (Sunday, Monday, etc) in terms of a numerical value between 1 and 7.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-US_births_1999_2003_raw &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">"http://bit.ly/2vgRFiw"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+US_births_1999_2003_raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"http://bit.ly/2vgRFiw"</span>)
 US_births_1999_raw &lt;-<span class="st"> </span>US_births_1999_2003_raw[US_births_1999_2003_raw$year ==<span class="st"> </span><span class="dv">1999</span>, ]
 <span class="kw">head</span>(US_births_1999_raw)
 <span class="co">#&gt; # A tibble: 6 x 5</span>
@@ -451,8 +451,8 @@ Original Bechdel barplot in FiveThirtyEight Article
                <span class="st">"'95-'99"</span>, <span class="st">"'00-'04"</span>, <span class="st">"'05-'09"</span>, <span class="st">"'10-'13"</span>)
 
 <span class="co"># Using raw data:</span>
-<span class="kw">library</span>(tidyverse)
-bechdel_raw &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">"http://bit.ly/2uD3ls6"</span>) %&gt;%
+<span class="kw">library</span>(readr)
+bechdel_raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"http://bit.ly/2uD3ls6"</span>) %&gt;%
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">five_year =</span> <span class="kw">cut</span>(year, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1969</span>, <span class="dv">2014</span>, <span class="dv">5</span>), <span class="dt">labels =</span> year_bins))
 
 <span class="kw">ggplot</span>(bechdel_raw, <span class="kw">aes</span>(<span class="dt">x =</span> five_year, <span class="dt">fill =</span> clean_test)) +
@@ -486,21 +486,22 @@ Barcharts of Bechdel Test results across time.
 <li>Each type of observational unit forms a table.</li>
 </ol>
 <p>This format is also known as “long/narrow” format, as opposed to “wide” format. While the information contained in a dataset is identical irrespective of it being in “tidy” format or not, the chief benefit of these format guidelines is that they act as a set of standards for the input and output format of many different functions in many different R packages, in particular those in the <code>tidyverse</code> suite of R packages for data science. These guidelines are espoused in the first principle of the “tidy tools manifesto” to “reuse existing data structures” <span class="citation">(Wickham 2017c)</span>. By following this formatting guideline, all datasets in the <code>fivethirtyeight</code> package fit seamlessly into the <code>tidyverse</code> ecosystem of R packages, in particular the <code>ggplot2</code> package for data visualization and the <code>dplyr</code> package for data wrangling.</p>
-<p>Converting datasets to “tidy” format in R necessitates understanding of the <code>gather()</code> and <code>spread()</code> commands of the <code>tidyr</code> package. We argue that the topic of converting between wide data format and tidy/long format is best left to an intermediate stage of learning, given the relative complexity of the necessary commands. Therefore we pre-processed all data in the package to follow the tidy data format. For datasets where we felt converting the data to tidy format would alter them too much from their original form, we include the <code>gather()</code> code necessary to convert them from wide data format to tidy format in the <code>@examples</code> section of the corresponding help files.</p>
+<p>Converting datasets to “tidy” format in R necessitates understanding of the <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather()</a></code> and <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/spread">spread()</a></code> commands of the <code>tidyr</code> package. We argue that the topic of converting between wide data format and tidy/long format is best left to an intermediate stage of learning, given the relative complexity of the necessary commands. Therefore we pre-processed all data in the package to follow the tidy data format. For datasets where we felt converting the data to tidy format would alter them too much from their original form, we include the <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather()</a></code> code necessary to convert them from wide data format to tidy format in the <code>@examples</code> section of the corresponding help files.</p>
 <p>For example, say we want to create a barplot comparing consumption of beer, spirits, and wine between the United States and France using the <code>drinks</code> dataset corresponding to the article “Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?” <span class="citation">(Chalabi 2014)</span> The data is saved in “wide” format and thus cannot be used in the <code>ggplot()</code> function.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(fivethirtyeight)
 drinks %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">filter</span>(country %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">"USA"</span>, <span class="st">"France"</span>))
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(country %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">"USA"</span>, <span class="st">"France"</span>))
 <span class="co">#&gt; # A tibble: 2 x 5</span>
 <span class="co">#&gt;   country beer_servings spirit_servings wine_servings total_litres_of_pur…</span>
 <span class="co">#&gt;   &lt;chr&gt;           &lt;int&gt;           &lt;int&gt;         &lt;int&gt;                &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 France            127             151           370                11.8 </span>
 <span class="co">#&gt; 2 USA               249             158            84                 8.70</span></code></pre></div>
-<p>However, the help file for this dataset, accessible by typing <code><a href="../reference/drinks.html">?drinks</a></code> in the console, provides the <code>gather()</code> code necessary to convert this data into “tidy” format:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">drinks_tidy_US_FR &lt;-<span class="st"> </span>drinks %&gt;%
-<span class="st">  </span><span class="kw">filter</span>(country %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">"USA"</span>, <span class="st">"France"</span>)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">gather</span>(type, servings, -<span class="kw">c</span>(country, total_litres_of_pure_alcohol))
+<p>However, the help file for this dataset, accessible by typing <code><a href="../reference/drinks.html">?drinks</a></code> in the console, provides the <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather()</a></code> code necessary to convert this data into “tidy” format:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyr)
+drinks_tidy_US_FR &lt;-<span class="st"> </span>drinks %&gt;%
+<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(country %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">"USA"</span>, <span class="st">"France"</span>)) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather</a></span>(type, servings, -<span class="kw">c</span>(country, total_litres_of_pure_alcohol))
 drinks_tidy_US_FR
 <span class="co">#&gt; # A tibble: 6 x 4</span>
 <span class="co">#&gt;   country total_litres_of_pure_alcohol type            servings</span>
