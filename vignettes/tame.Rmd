@@ -261,7 +261,7 @@ Whereas the first three subpoints relating to data frame and variable naming are
 As an example of the importance of preprocessing variable names, consider the data corresponding to the FiveThirtyEight article "41 Percent Of Fliers Think You’re Rude If You Recline Your Seat" [@fliers_538] where survey respondents were asked, among other things, if 1) they considered it rude to bring a baby on a flight and 2) whether or not they had children under the age of 18. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight>  and can be accessed via the shortened bit.ly link <http://bit.ly/2vg8gTf>. We load and save this in a data frame `flying_raw` and look at the first 5 variable names:
 
 ```{r}
-library(tidyverse)
+library(readr)
 flying_raw <- read_csv("http://bit.ly/2vg8gTf")
 colnames(flying_raw)[1:5]
 ```
@@ -303,7 +303,7 @@ Although recent advances such as the `lubridate` package have made wrangling dat
 As an example of the importance of preprocessing dates, consider the data corresponding to the FiveThirtyEight article "Some People Are Too Superstitious To Have A Baby On Friday The 13th" [@baby13_538] of the number of daily births in the United States between 1994 and 2003. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight/> and can be accessed via the shortened bit.ly link <http://bit.ly/2vgRFiw>. We load this data, filter for only those rows corresponding to 1999 births, and save this in a data frame `US_births_1999_raw`. The raw data is saved in a format that makes it difficult for novices to create a time series plot. Furthermore, people do not typically think of the day of the week (Sunday, Monday, etc) in terms of a numerical value between 1 and 7.
 
 ```{r}
-library(tidyverse)
+library(readr)
 US_births_1999_2003_raw <- read_csv("http://bit.ly/2vgRFiw")
 US_births_1999_raw <- US_births_1999_2003_raw[US_births_1999_2003_raw$year == 1999, ]
 head(US_births_1999_raw)
@@ -345,7 +345,7 @@ year_bins <- c("'70-'74", "'75-'79", "'80-'84", "'85-'89", "'90-'94",
                "'95-'99", "'00-'04", "'05-'09", "'10-'13")
 
 # Using raw data:
-library(tidyverse)
+library(readr)
 bechdel_raw <- read_csv("http://bit.ly/2uD3ls6") %>%
   mutate(five_year = cut(year, breaks = seq(1969, 2014, 5), labels = year_bins))
 
@@ -409,7 +409,7 @@ Converting datasets to "tidy" format in R necessitates understanding of the `gat
 For example, say we want to create a barplot comparing consumption of beer, spirits, and wine between the United States and France using the `drinks` dataset corresponding to the article "Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?" [@drink_538] The data is saved in "wide" format and thus cannot be used in the `ggplot()` function.
 
 ```{r, fig.width=16/2.5, fig.height=9/2}
-library(tidyverse)
+library(dplyr)
 library(fivethirtyeight)
 drinks %>% 
   filter(country %in% c("USA", "France"))
