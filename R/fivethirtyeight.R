@@ -1,6 +1,6 @@
 #' fivethirtyeight: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight'
 #'
-#' An R library that provides access to the code and data sets
+#' An R package that provides access to the code and data sets
 #' published by FiveThirtyEight \url{https://github.com/fivethirtyeight/data}. Note
 #' that while we received guidance from editors at 538, this package is not
 #' officially published by 538. Contribute to this package at
