@@ -367,8 +367,8 @@ devtools::use_data(comic_characters, overwrite = TRUE)
 
 
 
-# comma-survey-data ------------------------------------------------------------
-comma_survey <- read_csv("data-raw/comma-survey-data/comma-survey-data.csv")
+# comma-survey ------------------------------------------------------------
+comma_survey <- read_csv("data-raw/comma-survey/comma-survey.csv")
 colnames(comma_survey) <- colnames(comma_survey) %>%
   tolower() %>%
   str_replace_all(" ", "_")
