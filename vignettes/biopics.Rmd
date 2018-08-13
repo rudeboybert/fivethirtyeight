@@ -54,7 +54,7 @@ library(dplyr)
 library(tidyr)
 library(scales)
 library(stringr)
-library(highcharter)
+# library(highcharter)
 
 glimpse(biopics)
 ```
@@ -116,7 +116,7 @@ The percentage of movies that had actors of color was the highest in the period 
 
 *White Actors*
 
-```{r fig.width=7}
+```{r fig.width=7, eval=FALSE}
 biopics %>% 
   mutate(person_of_color=ifelse(person_of_color==0,"White","Person of Color")) %>% 
   group_by(person_of_color,type_of_subject) %>% 
@@ -135,16 +135,16 @@ biopics %>%
 *Actors of Color*
 
 
-```{r fig.width=7}
-biopics %>% 
+```{r fig.width=7, eval=FALSE}
+biopics %>%
   mutate(person_of_color=ifelse(person_of_color==0,"White","Person of Color")) %>%
-  group_by(person_of_color,type_of_subject) %>% 
+  group_by(person_of_color,type_of_subject) %>%
   summarise(n=n()) %>%
-  mutate(n=(n/sum(n))*100) %>% 
-  filter(person_of_color =="Person of Color") %>% 
+  mutate(n=(n/sum(n))*100) %>%
+  filter(person_of_color =="Person of Color") %>%
   mutate(n=round(n,2)) %>%
   hchart("treemap", hcaes(x = type_of_subject, value = n, color = n)) %>%
-  hc_title(text="Type of Subjects of Movies involving  Actors of Color(%)")
+  hc_title(text="Type of Subjects of Movies involving Actors of Color(%)")
 ```
 
 

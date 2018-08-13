@@ -32,7 +32,7 @@ library(dplyr)
 library(tidyr)
 library(scales)
 library(stringr)
-library(highcharter)
+# library(highcharter)
 
 glimpse(biopics)
 
@@ -61,27 +61,27 @@ ggplot(poc, aes(x=time_period, y=n, fill=person_of_color)) +
   scale_y_continuous(labels = percent) +
   labs(x="Decade",y="Percentage Composition",title="How do the % of movies involving actors of color change by decade?",caption="Data From: FiveThirtyEight")
 
-## ----fig.width=7---------------------------------------------------------
-biopics %>% 
-  mutate(person_of_color=ifelse(person_of_color==0,"White","Person of Color")) %>% 
-  group_by(person_of_color,type_of_subject) %>% 
-  summarise(n=n()) %>%
-  mutate(n=(n/sum(n))*100) %>% 
-  filter(person_of_color !="Person of Color") %>% 
-  mutate(n=round(n,2)) %>%
-  hchart("treemap", hcaes(x = type_of_subject, value = n, color = n)) %>%
-  hc_title(text="Type of Subjects of Movies involving White Actors(%)")
+## ----fig.width=7, eval=FALSE---------------------------------------------
+#  biopics %>%
+#    mutate(person_of_color=ifelse(person_of_color==0,"White","Person of Color")) %>%
+#    group_by(person_of_color,type_of_subject) %>%
+#    summarise(n=n()) %>%
+#    mutate(n=(n/sum(n))*100) %>%
+#    filter(person_of_color !="Person of Color") %>%
+#    mutate(n=round(n,2)) %>%
+#    hchart("treemap", hcaes(x = type_of_subject, value = n, color = n)) %>%
+#    hc_title(text="Type of Subjects of Movies involving White Actors(%)")
 
-## ----fig.width=7---------------------------------------------------------
-biopics %>% 
-  mutate(person_of_color=ifelse(person_of_color==0,"White","Person of Color")) %>%
-  group_by(person_of_color,type_of_subject) %>% 
-  summarise(n=n()) %>%
-  mutate(n=(n/sum(n))*100) %>% 
-  filter(person_of_color =="Person of Color") %>% 
-  mutate(n=round(n,2)) %>%
-  hchart("treemap", hcaes(x = type_of_subject, value = n, color = n)) %>%
-  hc_title(text="Type of Subjects of Movies involving  Actors of Color(%)")
+## ----fig.width=7, eval=FALSE---------------------------------------------
+#  biopics %>%
+#    mutate(person_of_color=ifelse(person_of_color==0,"White","Person of Color")) %>%
+#    group_by(person_of_color,type_of_subject) %>%
+#    summarise(n=n()) %>%
+#    mutate(n=(n/sum(n))*100) %>%
+#    filter(person_of_color =="Person of Color") %>%
+#    mutate(n=round(n,2)) %>%
+#    hchart("treemap", hcaes(x = type_of_subject, value = n, color = n)) %>%
+#    hc_title(text="Type of Subjects of Movies involving Actors of Color(%)")
 
 ## ----fig.width=7,fig.height=10-------------------------------------------
 biopics %>% 

@@ -346,6 +346,7 @@
 #' \describe{
 #'   \item{date}{The date that the match took place.}
 #'   \item{league_id}{A numerical identifier of the league within which the match was played.}
+#'   \item{league}{League name.}
 #'   \item{team1}{One team that participated in the match.}
 #'   \item{team2}{The other team that participated in the match.}
 #'   \item{spi1}{The SPI score of team1.}
@@ -355,6 +356,8 @@
 #'   \item{probtie}{The probability that the match would have resulted in a tie.}
 #'   \item{proj_score1}{The predicted number of goals that team1 would have scored.}
 #'   \item{proj_score2}{The predicted number of goals that team2 would have scored.}
+#'   \item{importance1}{}
+#'   \item{importance2}{}
 #'   \item{score1}{The number of goals that team1 scored.}
 #'   \item{score2}{The number of goals that team2 scored.}
 #'   \item{xg1}{}
