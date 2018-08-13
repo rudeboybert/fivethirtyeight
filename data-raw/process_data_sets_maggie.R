@@ -81,7 +81,7 @@ devtools::use_data(nfl_fandom_surveymonkey, overwrite = TRUE)
 
 # puerto-rico-media---------------------------------------------------------------------
 # Data on Google trend searches for hurricanes Harvey, Irma, Jose, and Maria
-google_trends <- read_csv("data-raw/puerto-rico-media/google_trends.csv", skip=2) %>%
+google_trends <- read_csv("data-raw/puerto-rico-media/google_trends.csv") %>%
   clean_names() %>%
   rename(
     date = day,
