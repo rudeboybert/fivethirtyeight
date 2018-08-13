@@ -1,8 +1,8 @@
-### Avengers
+# Avengers
 
-This directory contains the data behind the story [Joining The Avengers Is As Deadly As Jumping Off A Four-Story Building](http://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron).
+This folder contains the data behind the story [Joining The Avengers Is As Deadly As Jumping Off A Four-Story Building](http://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron).
 
-It includes the dataset `avengers.csv`, which details the deaths of Marvel comic book characters between the time they joined the Avengers and April 30, 2015, the week before Secret Wars #1.
+`avengers.csv` details the deaths of Marvel comic book characters between the time they joined the Avengers and April 30, 2015, the week before Secret Wars #1.
 
 Header | Definition
 ---|---------
@@ -12,7 +12,7 @@ Header | Definition
 `Current?` | Is the member currently active on an avengers affiliated team?
 `Gender` | The recorded gender of the character
 `Probationary` | Sometimes the character was given probationary status as an Avenger, this is the date that happened
-`Full/Reserve` | The month and year the character was introduced as a full or reserve member of the Avnegers
+`Full/Reserve` | The month and year the character was introduced as a full or reserve member of the Avengers
 `Year` | The year the character was introduced as a full or reserve member of the Avengers
 `Years since joining` | 2015 minus the year
 `Honorary` | The status of the avenger, if they were given "Honorary" Avenger status, if they are simply in the "Academy," or "Full" otherwise

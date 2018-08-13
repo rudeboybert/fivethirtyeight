@@ -1,4 +1,4 @@
-### Religion Survey
+# Religion Survey
 
 This directory contains the data behind the story [When Does Praying In Public Make Others Uncomfortable?](http://fivethirtyeight.com/features/when-does-praying-in-public-make-others-uncomfortable)
 
