@@ -8,8 +8,8 @@
 <title>Gender in Comic Books • fivethirtyeight</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><meta property="og:title" content="Gender in Comic Books">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Gender in Comic Books">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -109,113 +109,111 @@
       <h1>Gender in Comic Books</h1>
                         <h4 class="author">Jonathan Bouchet</h4>
             
-            <h4 class="date">2018-04-01</h4>
+            <h4 class="date">2018-08-13</h4>
       
-      <small>Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/comics_gender.Rmd"><code>vignettes/comics_gender.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/comics_gender.Rmd"><code>vignettes/comics_gender.Rmd</code></a></small>
+      <div class="hidden name"><code>comics_gender.Rmd</code></div>
 
     </div>
 
     
     
 <p>This vignette is based on <a href="https://fivethirtyeight.com/features/women-in-comic-books/">538 study : Comic Books Are Still Made By Men, For Men And About Men</a> study about Marvel and DC characters since ~1939 until 2014 (August 24th) and aims at investigating the features of Comic Books characters according their gender / Publisher.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#load packages and csv file</span>
-<span class="kw">library</span>(fivethirtyeight)
-<span class="co"># library(tidyverse)</span>
-<span class="kw">library</span>(ggplot2)
-<span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(knitr)
-<span class="kw">library</span>(grid)
-<span class="kw">library</span>(fmsb)
-<span class="kw">library</span>(wordcloud)
-<span class="kw">library</span>(gridExtra)</code></pre></div>
-<div id="overview-plots" class="section level4">
-<h4 class="hasAnchor">
-<a href="#overview-plots" class="anchor"></a>Overview plots</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">#load packages and csv file</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(fivethirtyeight)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co"># library(tidyverse)</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">library</span>(knitr)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">library</span>(grid)</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="kw">library</span>(fmsb)</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="kw">library</span>(wordcloud)</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="kw">library</span>(gridExtra)</a></code></pre></div>
+<p>####Overview plots</p>
 <ul>
 <li>percentage of Gender per publisher.</li>
 <li>raw number of characters per publisher.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#calculate raw number and percentage of each gender for each publisher</span>
-raw_number_per_publisher &lt;-<span class="st"> </span>comic_characters %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(publisher) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(-number)
-
-percent_gen_pub &lt;-<span class="st"> </span>comic_characters %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(sex, publisher) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(-number) %&gt;%
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(publisher) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">countT =</span> <span class="kw">sum</span>(number)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(sex) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(
-    <span class="dt">percentage =</span> (<span class="dv">100</span>*number/countT),
-    <span class="dt">label =</span> <span class="kw">paste0</span>(<span class="kw">round</span>(percentage, <span class="dv">2</span>)))
-
-<span class="co">#plot percentage of each gender for each publisher</span>
-percentage_per_publisher &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> percent_gen_pub,<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> sex,<span class="dt">y =</span> percentage, <span class="dt">fill =</span> publisher)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">width =</span> <span class="fl">0.9</span>, <span class="dt">stat =</span> <span class="st">"identity"</span>, <span class="dt">position =</span> <span class="st">'dodge'</span>) +
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">axis.text.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>),<span class="dt">legend.position =</span> <span class="st">'none'</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_text">geom_text</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">label =</span> label), <span class="dt">position=</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/position_dodge">position_dodge</a></span>(<span class="dt">width =</span> <span class="fl">0.9</span>), <span class="dt">vjust =</span> -<span class="fl">0.25</span>,<span class="dt">size =</span> <span class="fl">2.5</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_manual">scale_fill_manual</a></span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">"#3B9AB2"</span>,<span class="st">"#EBCC2A"</span>)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">xlab</a></span>(<span class="st">''</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ylab</a></span>(<span class="st">'Percentage'</span>)
-
-raw_number_per_publisher &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> raw_number_per_publisher, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> publisher, <span class="dt">y =</span> number, <span class="dt">fill =</span> publisher)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">stat =</span> <span class="st">"identity"</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/coord_flip">coord_flip</a></span>() +
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_manual">scale_fill_manual</a></span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">"#3B9AB2"</span>,<span class="st">"#EBCC2A"</span>)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">xlab</a></span>(<span class="st">''</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ylab</a></span>(<span class="st">''</span>) +
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">legend.position =</span> <span class="st">'None'</span>)
-
-<span class="kw"><a href="http://www.rdocumentation.org/packages/gridExtra/topics/arrangeGrob">grid.arrange</a></span>(percentage_per_publisher, raw_number_per_publisher, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">#calculate raw number and percentage of each gender for each publisher</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">raw_number_per_publisher &lt;-<span class="st"> </span>comic_characters <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(publisher) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(<span class="op">-</span>number)</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">percent_gen_pub &lt;-<span class="st"> </span>comic_characters <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(sex, publisher) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(<span class="op">-</span>number) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(publisher) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">countT =</span> <span class="kw">sum</span>(number)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(sex) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">    <span class="dt">percentage =</span> (<span class="dv">100</span><span class="op">*</span>number<span class="op">/</span>countT),</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16">    <span class="dt">label =</span> <span class="kw">paste0</span>(<span class="kw">round</span>(percentage, <span class="dv">2</span>)))</a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#plot percentage of each gender for each publisher</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19">percentage_per_publisher &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> percent_gen_pub,<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> sex,<span class="dt">y =</span> percentage, <span class="dt">fill =</span> publisher)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">width =</span> <span class="fl">0.9</span>, <span class="dt">stat =</span> <span class="st">"identity"</span>, <span class="dt">position =</span> <span class="st">'dodge'</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-21" data-line-number="21"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">axis.text.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>),<span class="dt">legend.position =</span> <span class="st">'none'</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-22" data-line-number="22"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_text">geom_text</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">label =</span> label), <span class="dt">position=</span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/position_dodge">position_dodge</a></span>(<span class="dt">width =</span> <span class="fl">0.9</span>), <span class="dt">vjust =</span> <span class="fl">-0.25</span>,<span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_manual">scale_fill_manual</a></span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">"#3B9AB2"</span>,<span class="st">"#EBCC2A"</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-24" data-line-number="24"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">xlab</a></span>(<span class="st">''</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-25" data-line-number="25"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ylab</a></span>(<span class="st">'Percentage'</span>)</a>
+<a class="sourceLine" id="cb2-26" data-line-number="26"></a>
+<a class="sourceLine" id="cb2-27" data-line-number="27">raw_number_per_publisher &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> raw_number_per_publisher, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> publisher, <span class="dt">y =</span> number, <span class="dt">fill =</span> publisher)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">stat =</span> <span class="st">"identity"</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/coord_flip">coord_flip</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_manual">scale_fill_manual</a></span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">"#3B9AB2"</span>,<span class="st">"#EBCC2A"</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-31" data-line-number="31"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">xlab</a></span>(<span class="st">''</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ylab</a></span>(<span class="st">''</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-33" data-line-number="33"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">legend.position =</span> <span class="st">'None'</span>)</a>
+<a class="sourceLine" id="cb2-34" data-line-number="34"></a>
+<a class="sourceLine" id="cb2-35" data-line-number="35"><span class="kw"><a href="http://www.rdocumentation.org/packages/gridExtra/topics/arrangeGrob">grid.arrange</a></span>(percentage_per_publisher, raw_number_per_publisher, <span class="dt">ncol=</span><span class="dv">2</span>)</a></code></pre></div>
 <p><img src="comics_gender_files/figure-html/unnamed-chunk-2-1.png" width="960"></p>
 <ul>
 <li>Marvel has more than the double of number of characters compared to DC.</li>
 <li>
 <code>Male</code> are more present in both publishers compared to <code>Female</code> on a ~2.5:1 ratio, while <code>LGBT</code> characters represent less than 1 percent.</li>
 </ul>
-</div>
 <div id="number-of-characters-vs-time" class="section level4">
 <h4 class="hasAnchor">
 <a href="#number-of-characters-vs-time" class="anchor"></a>Number of Characters vs. Time</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#select data with no NA's for sex and date and groupby</span>
-
-<span class="co">#define list of gender per publisher</span>
-gender_list_marvel &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Female Characters"</span>, <span class="st">"Male Characters"</span>, <span class="st">"Genderfluid Characters"</span>,<span class="st">"Agender Characters"</span>)
-gender_list_dc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Female Characters"</span>, <span class="st">"Male Characters"</span>, <span class="st">"Genderless Characters"</span>,<span class="st">"Transgender Characters"</span>)
-
-marvel_vs_time &lt;-<span class="st"> </span>comic_characters %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher ==<span class="st"> 'Marvel'</span> &amp;<span class="st"> </span>!<span class="kw">is.na</span>(month) &amp;<span class="st"> </span>!<span class="kw">is.na</span>(sex)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(year, month, sex) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(
-    <span class="dt">sex_ordered =</span> <span class="kw">factor</span>(sex, <span class="dt">levels =</span> gender_list_marvel), 
-    <span class="dt">month_ordered =</span> <span class="kw">factor</span>(month, <span class="dt">levels =</span> month.name))
-
-dc_vs_time &lt;-<span class="st"> </span>comic_characters %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher ==<span class="st"> 'DC'</span> &amp;<span class="st"> </span>month!=<span class="st"> "Holiday"</span> &amp;<span class="st"> </span>!<span class="kw">is.na</span>(month) &amp;<span class="st"> </span>!<span class="kw">is.na</span>(sex)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">month =</span> <span class="kw">ifelse</span>(month==<span class="st">"01"</span>,<span class="st">"January"</span>,month)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(year, month, sex) %&gt;%<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(
-    <span class="dt">sex_ordered =</span> <span class="kw">factor</span>(sex, <span class="dt">levels =</span> gender_list_dc), 
-    <span class="dt">month_ordered =</span> <span class="kw">factor</span>(month, <span class="dt">levels =</span> month.name)) 
-
-plot_marvel_time &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> marvel_vs_time, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(year, month_ordered)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_tile">geom_tile</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">fill =</span> number),<span class="dt">colour =</span> <span class="st">"white"</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_gradient">scale_fill_gradient</a></span>(<span class="dt">low =</span> <span class="st">"#EBCC2A"</span>, <span class="dt">high =</span> <span class="st">"black"</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_wrap">facet_wrap</a></span>(~<span class="st"> </span>sex_ordered, <span class="dt">ncol =</span> <span class="dv">4</span>) +
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">axis.title.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.ticks.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.title.y =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.ticks.y =</span>  <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">legend.position =</span> <span class="st">'right'</span>, <span class="dt">legend.title =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">legend.key.size =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/reexports">unit</a></span>(.<span class="dv">2</span>, <span class="st">"cm"</span>)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/lims">xlim</a></span>(<span class="dv">1935</span>,<span class="dv">2015</span>)
-
-plot_dc_time &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> dc_vs_time, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(year, month_ordered)) +<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_tile">geom_tile</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">fill =</span> number),<span class="dt">colour =</span> <span class="st">"white"</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_gradient">scale_fill_gradient</a></span>(<span class="dt">low =</span> <span class="st">"#3B9AB2"</span>, <span class="dt">high =</span> <span class="st">"black"</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_wrap">facet_wrap</a></span>(~<span class="st"> </span>sex_ordered, <span class="dt">ncol =</span> <span class="dv">4</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">axis.title.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>() ,<span class="dt">axis.ticks.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.title.y =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.ticks.y =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">legend.position =</span> <span class="st">'right'</span>, <span class="dt">legend.title =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">legend.key.size =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/reexports">unit</a></span>(.<span class="dv">2</span>, <span class="st">"cm"</span>)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/lims">xlim</a></span>(<span class="dv">1935</span>,<span class="dv">2015</span>)
-
-<span class="kw"><a href="http://www.rdocumentation.org/packages/gridExtra/topics/arrangeGrob">grid.arrange</a></span>(<span class="kw">rbind</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplotGrob">ggplotGrob</a></span>(plot_marvel_time), <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplotGrob">ggplotGrob</a></span>(plot_dc_time), <span class="dt">size =</span> <span class="st">"last"</span>))</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co">#select data with no NA's for sex and date and groupby</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#define list of gender per publisher</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">gender_list_marvel &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Female Characters"</span>, <span class="st">"Male Characters"</span>, <span class="st">"Genderfluid Characters"</span>,<span class="st">"Agender Characters"</span>)</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">gender_list_dc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Female Characters"</span>, <span class="st">"Male Characters"</span>, <span class="st">"Genderless Characters"</span>,<span class="st">"Transgender Characters"</span>)</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">marvel_vs_time &lt;-<span class="st"> </span>comic_characters <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher <span class="op">==</span><span class="st"> 'Marvel'</span> <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(month) <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(sex)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(year, month, sex) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">    <span class="dt">sex_ordered =</span> <span class="kw">factor</span>(sex, <span class="dt">levels =</span> gender_list_marvel), </a>
+<a class="sourceLine" id="cb3-13" data-line-number="13">    <span class="dt">month_ordered =</span> <span class="kw">factor</span>(month, <span class="dt">levels =</span> month.name))</a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15">dc_vs_time &lt;-<span class="st"> </span>comic_characters <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher <span class="op">==</span><span class="st"> 'DC'</span> <span class="op">&amp;</span><span class="st"> </span>month<span class="op">!=</span><span class="st"> "Holiday"</span> <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(month) <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(sex)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">month =</span> <span class="kw">ifelse</span>(month<span class="op">==</span><span class="st">"01"</span>,<span class="st">"January"</span>,month)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(year, month, sex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(</a>
+<a class="sourceLine" id="cb3-20" data-line-number="20">    <span class="dt">sex_ordered =</span> <span class="kw">factor</span>(sex, <span class="dt">levels =</span> gender_list_dc), </a>
+<a class="sourceLine" id="cb3-21" data-line-number="21">    <span class="dt">month_ordered =</span> <span class="kw">factor</span>(month, <span class="dt">levels =</span> month.name)) </a>
+<a class="sourceLine" id="cb3-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb3-23" data-line-number="23">plot_marvel_time &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> marvel_vs_time, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(year, month_ordered)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_tile">geom_tile</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">fill =</span> number),<span class="dt">colour =</span> <span class="st">"white"</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_gradient">scale_fill_gradient</a></span>(<span class="dt">low =</span> <span class="st">"#EBCC2A"</span>, <span class="dt">high =</span> <span class="st">"black"</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-26" data-line-number="26"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_wrap">facet_wrap</a></span>(<span class="op">~</span><span class="st"> </span>sex_ordered, <span class="dt">ncol =</span> <span class="dv">4</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-27" data-line-number="27"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">axis.title.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.ticks.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.title.y =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.ticks.y =</span>  <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">legend.position =</span> <span class="st">'right'</span>, <span class="dt">legend.title =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">legend.key.size =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/reexports">unit</a></span>(.<span class="dv">2</span>, <span class="st">"cm"</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-28" data-line-number="28"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/lims">xlim</a></span>(<span class="dv">1935</span>,<span class="dv">2015</span>)</a>
+<a class="sourceLine" id="cb3-29" data-line-number="29"></a>
+<a class="sourceLine" id="cb3-30" data-line-number="30">plot_dc_time &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> dc_vs_time, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(year, month_ordered)) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_tile">geom_tile</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">fill =</span> number),<span class="dt">colour =</span> <span class="st">"white"</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-31" data-line-number="31"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_gradient">scale_fill_gradient</a></span>(<span class="dt">low =</span> <span class="st">"#3B9AB2"</span>, <span class="dt">high =</span> <span class="st">"black"</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-32" data-line-number="32"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_wrap">facet_wrap</a></span>(<span class="op">~</span><span class="st"> </span>sex_ordered, <span class="dt">ncol =</span> <span class="dv">4</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-33" data-line-number="33"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">axis.title.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>() ,<span class="dt">axis.ticks.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.title.y =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">axis.ticks.y =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">legend.position =</span> <span class="st">'right'</span>, <span class="dt">legend.title =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_blank</a></span>(), <span class="dt">legend.key.size =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/reexports">unit</a></span>(.<span class="dv">2</span>, <span class="st">"cm"</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-34" data-line-number="34"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/lims">xlim</a></span>(<span class="dv">1935</span>,<span class="dv">2015</span>)</a>
+<a class="sourceLine" id="cb3-35" data-line-number="35"></a>
+<a class="sourceLine" id="cb3-36" data-line-number="36"><span class="kw"><a href="http://www.rdocumentation.org/packages/gridExtra/topics/arrangeGrob">grid.arrange</a></span>(<span class="kw">rbind</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplotGrob">ggplotGrob</a></span>(plot_marvel_time), <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplotGrob">ggplotGrob</a></span>(plot_dc_time), <span class="dt">size =</span> <span class="st">"last"</span>))</a></code></pre></div>
 <p><img src="comics_gender_files/figure-html/unnamed-chunk-3-1.png" width="960"></p>
 <ul>
 <li>Most of the characters are either <code>Female</code> or <code>Male</code> for both publishers.</li>
@@ -224,110 +222,100 @@ plot_dc_time &lt;-<span class="st"> </span><span class="kw"><a href="http://www.
 <li>
 <code>LGBT</code> characters appear in the late 70’s (DC) and in the late 60’s (Marvel).</li>
 </ul>
-</div>
-<div id="characteristics-per-gender-publisher" class="section level4">
-<h4 class="hasAnchor">
-<a href="#characteristics-per-gender-publisher" class="anchor"></a>Characteristics per Gender, publisher</h4>
+<p>####Characteristics per Gender, publisher</p>
 <p>To represent the average characteristics, radarchart will be used.</p>
 <ul>
 <li>Characteristics looked at are : <code>id</code>,<code>align</code>,<code>eye</code>,<code>hair</code> and <code>alive</code>.</li>
 <li>the idea is to group the rows by these features and compute their mean</li>
 <li>later by taking the higher percentage, we can deduce a <code>profile</code> representative of each publisher.</li>
 </ul>
-<div id="example-vs-hair-feature" class="section level5">
-<h5 class="hasAnchor">
-<a href="#example-vs-hair-feature" class="anchor"></a>example: vs <code>Hair</code> feature</h5>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#function to aggregate data by (gender, feature, publisher)</span>
-aggregateFeature &lt;-<span class="st"> </span>function(current_publisher, feature){
-  <span class="co">#empty list to keep dataframe by (gender, feature)</span>
-  currentFeature &lt;-<span class="st"> </span><span class="kw">list</span>()
-  if(current_publisher ==<span class="st"> 'Marvel'</span>){
-    gender_list &lt;-<span class="st"> </span>gender_list_marvel
-  } else {
-    gender_list &lt;-<span class="st"> </span>gender_list_dc
-  }
-  
-  for(i in <span class="dv">1</span>:<span class="kw">length</span>(gender_list)){
-    currentFeature[[i]] &lt;-<span class="st"> </span>comic_characters %&gt;%<span class="st"> </span>
-<span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher ==<span class="st"> </span>current_publisher ) %&gt;%<span class="st">  </span>
-<span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(hair, sex) %&gt;%<span class="st"> </span>
-<span class="st">      </span><span class="kw">na.omit</span>() %&gt;%<span class="st"> </span>
-<span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(hair) %&gt;%<span class="st"> </span>
-<span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(sex ==<span class="st"> </span>gender_list[i]) %&gt;%<span class="st"> </span>
-<span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) %&gt;%<span class="st"> </span>
-<span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(-number) %&gt;%<span class="st"> </span>
-<span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">countT =</span> <span class="kw">sum</span>(number)) %&gt;%<span class="st"> </span>
-<span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">percentage =</span> <span class="kw">round</span>(<span class="dv">100</span>*number/countT,<span class="dv">1</span>)) %&gt;%
-<span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(hair, percentage, number)
-    
-    if(current_publisher ==<span class="st"> 'Marvel'</span>){
-      <span class="kw">colnames</span>(currentFeature[[i]])[<span class="dv">2</span>]&lt;-<span class="st">'percentage_marvel'</span>
-    } else{
-      <span class="kw">colnames</span>(currentFeature[[i]])[<span class="dv">2</span>]&lt;-<span class="st">'percentage_dc'</span>
-    }
-    
-    if(feature ==<span class="st"> 'hair'</span>){
-      <span class="co">#strip 'hair' word for better display of the radarchart</span>
-      currentFeature[[i]]$hair &lt;-<span class="st"> </span><span class="kw">sapply</span>(currentFeature[[i]]$hair, function(x) <span class="kw">gsub</span>(<span class="st">' Hair'</span>,<span class="st">''</span>, x))}
-  }
-  
-  <span class="kw">names</span>(currentFeature) &lt;-<span class="st"> </span>gender_list
-  <span class="kw">return</span>(currentFeature)
-}</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#outer join the 2 dataframes for (feature=Hair, gender=Male)</span>
-merged &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">full_join</a></span>(<span class="kw">aggregateFeature</span>(<span class="st">'DC'</span>,<span class="st">'hair'</span>)[[<span class="dv">2</span>]], <span class="kw">aggregateFeature</span>(<span class="st">'Marvel'</span>,<span class="st">'hair'</span>)[[<span class="dv">2</span>]], <span class="dt">by=</span><span class="st">'hair'</span>)
-<span class="co">#set min/max percentages for the radarchart limits</span>
-min &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="kw">length</span>(merged$hair))
-max &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">50</span>, <span class="kw">length</span>(merged$hair))
-
-maleHair &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">rbind</span>(max,min,merged$percentage_dc,merged$percentage_marvel))
-<span class="kw">colnames</span>(maleHair) &lt;-<span class="st"> </span>merged$hair
-<span class="kw">row.names</span>(maleHair) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">'max'</span>,<span class="st">'min'</span>,<span class="st">'percentage_dc'</span>,<span class="st">'percentage_marvel'</span>)
-maleHair[<span class="kw">is.na</span>(maleHair)] &lt;-<span class="st"> </span><span class="dv">0</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#cosmetics</span>
-<span class="kw"><a href="http://www.rdocumentation.org/packages/fmsb/topics/radarchart">radarchart</a></span>(maleHair,                     <span class="co">#dataframe</span>
-           <span class="dt">axistype=</span><span class="dv">2</span>,                   <span class="co">#axis type</span>
-           <span class="dt">pcol=</span><span class="kw">c</span>(<span class="st">"#3B9AB2"</span>, <span class="st">"#EBCC2A"</span>), <span class="co">#color -Wes Anderson Sissou-</span>
-           <span class="dt">plwd=</span><span class="dv">1</span>,                       <span class="co">#axis line width</span>
-           <span class="dt">pty=</span><span class="dv">19</span>,                       <span class="co">#marker type</span>
-           <span class="dt">plty=</span><span class="dv">3</span>,                       <span class="co">#line type</span>
-           <span class="dt">cglcol=</span><span class="st">"grey"</span>,                <span class="co">#axis line color</span>
-           <span class="dt">cglty=</span><span class="dv">2</span>,                      <span class="co">#axis line type</span>
-           <span class="dt">axislabcol=</span><span class="st">"grey"</span>,            <span class="co">#Color of axis label</span>
-           <span class="dt">cglwd=</span>.<span class="dv">6</span>,                     <span class="co">#line type</span>
-           <span class="dt">vlcex=</span>.<span class="dv">6</span>,                     <span class="co">#font size label</span>
-           <span class="dt">palcex=</span><span class="dv">1</span>.)                    <span class="co">#font size value</span>
-<span class="kw">legend</span>(<span class="dt">x=</span><span class="dv">1</span>, <span class="dt">y=</span><span class="fl">1.3</span>,                                               <span class="co">#position</span>
-       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">'DC male characters'</span>,<span class="st">'Marvel male characters'</span>),<span class="co">#labels</span>
-       <span class="dt">bty=</span><span class="st">"n"</span>,                                                  <span class="co">#no window</span>
-       <span class="dt">pch=</span><span class="dv">16</span>,                                                   <span class="co">#marker type </span>
-       <span class="dt">text.col =</span> <span class="st">"black"</span>,                                       <span class="co">#label colors </span>
-       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">"#3B9AB2"</span>,<span class="st">"#EBCC2A"</span>),                               <span class="co">#marker color</span>
-       <span class="dt">cex=</span>.<span class="dv">8</span>,                                                   <span class="co">#marker size </span>
-       <span class="dt">pt.cex=</span><span class="dv">1</span>)                                                 <span class="co">#font size</span></code></pre></div>
+<p>#####example: vs <code>Hair</code> feature</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">#function to aggregate data by (gender, feature, publisher)</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">aggregateFeature &lt;-<span class="st"> </span><span class="cf">function</span>(current_publisher, feature){</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="co">#empty list to keep dataframe by (gender, feature)</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  currentFeature &lt;-<span class="st"> </span><span class="kw">list</span>()</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="cf">if</span>(current_publisher <span class="op">==</span><span class="st"> 'Marvel'</span>){</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">    gender_list &lt;-<span class="st"> </span>gender_list_marvel</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">    gender_list &lt;-<span class="st"> </span>gender_list_dc</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">  }</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">  </a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(gender_list)){</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">    currentFeature[[i]] &lt;-<span class="st"> </span>comic_characters <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher <span class="op">==</span><span class="st"> </span>current_publisher ) <span class="op">%&gt;%</span><span class="st">  </span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(hair, sex) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="st">      </span><span class="kw">na.omit</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(hair) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(sex <span class="op">==</span><span class="st"> </span>gender_list[i]) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">number =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-19" data-line-number="19"><span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(<span class="op">-</span>number) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">countT =</span> <span class="kw">sum</span>(number)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-21" data-line-number="21"><span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">percentage =</span> <span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span>number<span class="op">/</span>countT,<span class="dv">1</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="st">      </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(hair, percentage, number)</a>
+<a class="sourceLine" id="cb4-23" data-line-number="23">    </a>
+<a class="sourceLine" id="cb4-24" data-line-number="24">    <span class="cf">if</span>(current_publisher <span class="op">==</span><span class="st"> 'Marvel'</span>){</a>
+<a class="sourceLine" id="cb4-25" data-line-number="25">      <span class="kw">colnames</span>(currentFeature[[i]])[<span class="dv">2</span>]&lt;-<span class="st">'percentage_marvel'</span></a>
+<a class="sourceLine" id="cb4-26" data-line-number="26">    } <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb4-27" data-line-number="27">      <span class="kw">colnames</span>(currentFeature[[i]])[<span class="dv">2</span>]&lt;-<span class="st">'percentage_dc'</span></a>
+<a class="sourceLine" id="cb4-28" data-line-number="28">    }</a>
+<a class="sourceLine" id="cb4-29" data-line-number="29">    </a>
+<a class="sourceLine" id="cb4-30" data-line-number="30">    <span class="cf">if</span>(feature <span class="op">==</span><span class="st"> 'hair'</span>){</a>
+<a class="sourceLine" id="cb4-31" data-line-number="31">      <span class="co">#strip 'hair' word for better display of the radarchart</span></a>
+<a class="sourceLine" id="cb4-32" data-line-number="32">      currentFeature[[i]]<span class="op">$</span>hair &lt;-<span class="st"> </span><span class="kw">sapply</span>(currentFeature[[i]]<span class="op">$</span>hair, <span class="cf">function</span>(x) <span class="kw">gsub</span>(<span class="st">' Hair'</span>,<span class="st">''</span>, x))}</a>
+<a class="sourceLine" id="cb4-33" data-line-number="33">  }</a>
+<a class="sourceLine" id="cb4-34" data-line-number="34">  </a>
+<a class="sourceLine" id="cb4-35" data-line-number="35">  <span class="kw">names</span>(currentFeature) &lt;-<span class="st"> </span>gender_list</a>
+<a class="sourceLine" id="cb4-36" data-line-number="36">  <span class="kw">return</span>(currentFeature)</a>
+<a class="sourceLine" id="cb4-37" data-line-number="37">}</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co">#outer join the 2 dataframes for (feature=Hair, gender=Male)</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">merged &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">full_join</a></span>(<span class="kw">aggregateFeature</span>(<span class="st">'DC'</span>,<span class="st">'hair'</span>)[[<span class="dv">2</span>]], <span class="kw">aggregateFeature</span>(<span class="st">'Marvel'</span>,<span class="st">'hair'</span>)[[<span class="dv">2</span>]], <span class="dt">by=</span><span class="st">'hair'</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#set min/max percentages for the radarchart limits</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">min &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="kw">length</span>(merged<span class="op">$</span>hair))</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">max &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">50</span>, <span class="kw">length</span>(merged<span class="op">$</span>hair))</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">maleHair &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">rbind</span>(max,min,merged<span class="op">$</span>percentage_dc,merged<span class="op">$</span>percentage_marvel))</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="kw">colnames</span>(maleHair) &lt;-<span class="st"> </span>merged<span class="op">$</span>hair</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="kw">row.names</span>(maleHair) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">'max'</span>,<span class="st">'min'</span>,<span class="st">'percentage_dc'</span>,<span class="st">'percentage_marvel'</span>)</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">maleHair[<span class="kw">is.na</span>(maleHair)] &lt;-<span class="st"> </span><span class="dv">0</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co">#cosmetics</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw"><a href="http://www.rdocumentation.org/packages/fmsb/topics/radarchart">radarchart</a></span>(maleHair,                     <span class="co">#dataframe</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">           <span class="dt">axistype=</span><span class="dv">2</span>,                   <span class="co">#axis type</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">           <span class="dt">pcol=</span><span class="kw">c</span>(<span class="st">"#3B9AB2"</span>, <span class="st">"#EBCC2A"</span>), <span class="co">#color -Wes Anderson Sissou-</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">           <span class="dt">plwd=</span><span class="dv">1</span>,                       <span class="co">#axis line width</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">           <span class="dt">pty=</span><span class="dv">19</span>,                       <span class="co">#marker type</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">           <span class="dt">plty=</span><span class="dv">3</span>,                       <span class="co">#line type</span></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">           <span class="dt">cglcol=</span><span class="st">"grey"</span>,                <span class="co">#axis line color</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">           <span class="dt">cglty=</span><span class="dv">2</span>,                      <span class="co">#axis line type</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">           <span class="dt">axislabcol=</span><span class="st">"grey"</span>,            <span class="co">#Color of axis label</span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">           <span class="dt">cglwd=</span>.<span class="dv">6</span>,                     <span class="co">#line type</span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12">           <span class="dt">vlcex=</span>.<span class="dv">6</span>,                     <span class="co">#font size label</span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13">           <span class="dt">palcex=</span><span class="fl">1.</span>)                    <span class="co">#font size value</span></a>
+<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="kw">legend</span>(<span class="dt">x=</span><span class="dv">1</span>, <span class="dt">y=</span><span class="fl">1.3</span>,                                               <span class="co">#position</span></a>
+<a class="sourceLine" id="cb6-15" data-line-number="15">       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">'DC male characters'</span>,<span class="st">'Marvel male characters'</span>),<span class="co">#labels</span></a>
+<a class="sourceLine" id="cb6-16" data-line-number="16">       <span class="dt">bty=</span><span class="st">"n"</span>,                                                  <span class="co">#no window</span></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17">       <span class="dt">pch=</span><span class="dv">16</span>,                                                   <span class="co">#marker type </span></a>
+<a class="sourceLine" id="cb6-18" data-line-number="18">       <span class="dt">text.col =</span> <span class="st">"black"</span>,                                       <span class="co">#label colors </span></a>
+<a class="sourceLine" id="cb6-19" data-line-number="19">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">"#3B9AB2"</span>,<span class="st">"#EBCC2A"</span>),                               <span class="co">#marker color</span></a>
+<a class="sourceLine" id="cb6-20" data-line-number="20">       <span class="dt">cex=</span>.<span class="dv">8</span>,                                                   <span class="co">#marker size </span></a>
+<a class="sourceLine" id="cb6-21" data-line-number="21">       <span class="dt">pt.cex=</span><span class="dv">1</span>)                                                 <span class="co">#font size</span></a></code></pre></div>
 <p><img src="comics_gender_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
-</div>
-</div>
-<div id="popularity" class="section level4">
-<h4 class="hasAnchor">
-<a href="#popularity" class="anchor"></a>Popularity</h4>
-<p>By looking at the number of appearances for each characters, we can make a visualization (<code>wordcloud</code>) representing the most populars characters.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#remove NA from appearance column, keep only the name inside parentheses</span>
-marvel_appearances &lt;-<span class="st"> </span>comic_characters %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher ==<span class="st"> 'Marvel'</span>) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(name, appearances) %&gt;%<span class="st"> </span><span class="kw">na.omit</span>() %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">name =</span> <span class="kw">gsub</span>(<span class="st">" *</span><span class="ch">\\</span><span class="st">(.*?</span><span class="ch">\\</span><span class="st">) *"</span>, <span class="st">""</span>, name))
-dc_appearances &lt;-<span class="st"> </span>comic_characters %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher ==<span class="st"> 'DC'</span>) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(name, appearances) %&gt;%<span class="st"> </span><span class="kw">na.omit</span>() %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">name =</span> <span class="kw">gsub</span>(<span class="st">" *</span><span class="ch">\\</span><span class="st">(.*?</span><span class="ch">\\</span><span class="st">) *"</span>, <span class="st">""</span>, name))
-
-color_marvel &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">"#EBCC2A"</span>, <span class="st">"black"</span>))
-color_dc &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">"#3B9AB2"</span>, <span class="st">"black"</span>))
-
-op &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>), <span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
-<span class="kw"><a href="http://www.rdocumentation.org/packages/wordcloud/topics/wordcloud">wordcloud</a></span>(dc_appearances$name, dc_appearances$appearances, <span class="dt">min.freq =</span> <span class="dv">100</span>, <span class="dt">colors =</span> <span class="kw">color_dc</span>(<span class="dv">10</span>), <span class="dt">scale =</span> <span class="kw">c</span>(<span class="fl">1.75</span>, <span class="fl">0.2</span>))
-<span class="kw"><a href="http://www.rdocumentation.org/packages/wordcloud/topics/wordcloud">wordcloud</a></span>(marvel_appearances$name, marvel_appearances$appearances, <span class="dt">min.freq =</span> <span class="dv">250</span>, <span class="dt">colors =</span> <span class="kw">color_marvel</span>(<span class="dv">10</span>), <span class="dt">scale =</span> <span class="kw">c</span>(<span class="fl">1.5</span>, <span class="fl">0.2</span>))</code></pre></div>
+<p>####Popularity By looking at the number of appearances for each characters, we can make a visualization (<code>wordcloud</code>) representing the most populars characters.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">#remove NA from appearance column, keep only the name inside parentheses</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">marvel_appearances &lt;-<span class="st"> </span>comic_characters <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher <span class="op">==</span><span class="st"> 'Marvel'</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(name, appearances) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">na.omit</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">name =</span> <span class="kw">gsub</span>(<span class="st">" *</span><span class="ch">\\</span><span class="st">(.*?</span><span class="ch">\\</span><span class="st">) *"</span>, <span class="st">""</span>, name))</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">dc_appearances &lt;-<span class="st"> </span>comic_characters <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(publisher <span class="op">==</span><span class="st"> 'DC'</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(name, appearances) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">na.omit</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">name =</span> <span class="kw">gsub</span>(<span class="st">" *</span><span class="ch">\\</span><span class="st">(.*?</span><span class="ch">\\</span><span class="st">) *"</span>, <span class="st">""</span>, name))</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb7-11" data-line-number="11">color_marvel &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">"#EBCC2A"</span>, <span class="st">"black"</span>))</a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">color_dc &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">"#3B9AB2"</span>, <span class="st">"black"</span>))</a>
+<a class="sourceLine" id="cb7-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb7-14" data-line-number="14">op &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>), <span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="kw"><a href="http://www.rdocumentation.org/packages/wordcloud/topics/wordcloud">wordcloud</a></span>(dc_appearances<span class="op">$</span>name, dc_appearances<span class="op">$</span>appearances, <span class="dt">min.freq =</span> <span class="dv">100</span>, <span class="dt">colors =</span> <span class="kw">color_dc</span>(<span class="dv">10</span>), <span class="dt">scale =</span> <span class="kw">c</span>(<span class="fl">1.75</span>, <span class="fl">0.2</span>))</a>
+<a class="sourceLine" id="cb7-16" data-line-number="16"><span class="kw"><a href="http://www.rdocumentation.org/packages/wordcloud/topics/wordcloud">wordcloud</a></span>(marvel_appearances<span class="op">$</span>name, marvel_appearances<span class="op">$</span>appearances, <span class="dt">min.freq =</span> <span class="dv">250</span>, <span class="dt">colors =</span> <span class="kw">color_marvel</span>(<span class="dv">10</span>), <span class="dt">scale =</span> <span class="kw">c</span>(<span class="fl">1.5</span>, <span class="fl">0.2</span>))</a></code></pre></div>
 <p><img src="comics_gender_files/figure-html/unnamed-chunk-7-1.png" width="960"></p>
 <ul>
 <li>

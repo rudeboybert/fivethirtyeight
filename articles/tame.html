@@ -8,8 +8,8 @@
 <title>The <code>fivethirtyeight</code> R Package: “Tame Data” Principles for Introductory Statistics and Data Science Courses • fivethirtyeight</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><meta property="og:title" content="The &lt;code&gt;fivethirtyeight&lt;/code&gt; R Package: “Tame Data” Principles for Introductory Statistics and Data Science Courses">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script><meta property="og:title" content="The &lt;code&gt;fivethirtyeight&lt;/code&gt; R Package: “Tame Data” Principles for Introductory Statistics and Data Science Courses">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -111,7 +111,8 @@
             
             <h4 class="date">March 2, 2018</h4>
       
-      <small>Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/tame.Rmd"><code>vignettes/tame.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/tame.Rmd"><code>vignettes/tame.Rmd</code></a></small>
+      <div class="hidden name"><code>tame.Rmd</code></div>
 
     </div>
 
@@ -182,13 +183,13 @@ Grolemund and Wickham’s ‘Data/Science Pipeline’
 <h2 class="hasAnchor">
 <a href="#basic-usage" class="anchor"></a>Basic Usage</h2>
 <p>We demonstrate the most basic use of the package: viewing the contents of a dataset and opening its help file. As an example, we view the <code>bechdel</code> dataset and its corresponding help file, which contains a link to the original FiveThirtyEight article “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women” <span class="citation">(Hickey 2014b)</span>, a codebook describing all 15 variables, and other information.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-<span class="kw">head</span>(bechdel)
-?bechdel
-<span class="co"># If using RStudio:</span>
-<span class="kw">View</span>(bechdel)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fivethirtyeight)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">head</span>(bechdel)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">?bechdel</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co"># If using RStudio:</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">View</span>(bechdel)</a></code></pre></div>
 <p>The current version of the <code>fivethirtyeight</code> package (v0.4.0.9000) contains 107 datasets, a detailed list of which can be viewed by running:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">vignette</span>(<span class="st">"fivethirtyeight"</span>, <span class="dt">package=</span><span class="st">"fivethirtyeight"</span>)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">vignette</span>(<span class="st">"fivethirtyeight"</span>, <span class="dt">package=</span><span class="st">"fivethirtyeight"</span>)</a></code></pre></div>
 </div>
 <div id="example-usage" class="section level2">
 <h2 class="hasAnchor">
@@ -210,29 +211,29 @@ Grolemund and Wickham’s ‘Data/Science Pipeline’
 </ol>
 <p>We provide example solution code for this assignment using <code>hate_crimes_per_100k_splc</code> as the outcome variable and <code>gini_index</code> as the explanatory variable. The Gini index is a measure of income inequality where a value of 0 indicates perfect income equality and a value of 1 indicates perfect income inequality</p>
 <p>First, have the students read the <code>hate_crimes</code> help file and look at the dataset’s raw values (note here the output is suppressed):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-?hate_crimes
-<span class="kw">head</span>(hate_crimes)
-<span class="co"># If using RStudio:</span>
-<span class="kw">View</span>(hate_crimes)</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(fivethirtyeight)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">?hate_crimes</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">head</span>(hate_crimes)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co"># If using RStudio:</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="kw">View</span>(hate_crimes)</a></code></pre></div>
 <p>then have students return summary statistics about both the outcome and explanatory variables:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(hate_crimes$gini_index)
-<span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
-<span class="co">#&gt;  0.4190  0.4400  0.4540  0.4538  0.4665  0.5320</span>
-<span class="kw">summary</span>(hate_crimes$hate_crimes_per_100k_splc)
-<span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's </span>
-<span class="co">#&gt; 0.06745 0.14271 0.22620 0.30409 0.35694 1.52230       4</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">summary</span>(hate_crimes<span class="op">$</span>gini_index)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt;  0.4190  0.4400  0.4540  0.4538  0.4665  0.5320</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">summary</span>(hate_crimes<span class="op">$</span>hate_crimes_per_100k_splc)</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's </span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; 0.06745 0.14271 0.22620 0.30409 0.35694 1.52230       4</span></a></code></pre></div>
 <p>then have students produce a scatterplot visualizing the relationship between these two variables (see Figure ):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(hate_crimes$gini_index, hate_crimes$hate_crimes_per_100k_splc, 
-     <span class="dt">xlab =</span> <span class="st">"Gini index"</span>, <span class="dt">ylab =</span> <span class="st">"Hate crime rate per 100K"</span>, 
-     <span class="dt">title =</span> <span class="st">"Hate Crimes per 100K Nov 9-18 2016 (SPLC)"</span>)</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">plot</span>(hate_crimes<span class="op">$</span>gini_index, hate_crimes<span class="op">$</span>hate_crimes_per_100k_splc, </a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">     <span class="dt">xlab =</span> <span class="st">"Gini index"</span>, <span class="dt">ylab =</span> <span class="st">"Hate crime rate per 100K"</span>, </a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">     <span class="dt">title =</span> <span class="st">"Hate Crimes per 100K Nov 9-18 2016 (SPLC)"</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center">
 <img src="Figures/hate-crime-1.png" alt="Relationship between hate crime incidence and income inequality." width="614.4"><p class="caption">
 Relationship between hate crime incidence and income inequality.
 </p>
 </div>
 <p>then have students perform the corresponding simple linear regression:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(hate_crimes_per_100k_splc ~<span class="st"> </span>gini_index, <span class="dt">data =</span> hate_crimes)</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">lm</span>(hate_crimes_per_100k_splc <span class="op">~</span><span class="st"> </span>gini_index, <span class="dt">data =</span> hate_crimes)</a></code></pre></div>
 <p>which leads to a summary of results similar to the following:</p>
 <table class="table">
 <thead><tr class="header">
@@ -285,13 +286,13 @@ Relationship between hate crime incidence and income inequality.
 <li>They talk to each other about something other than a male protagonist.</li>
 </ol>
 <p>As described in the <code>bechdel</code> help file, the variable <code>title</code> identifies the movie while the variable <code>clean_test</code> displays the Bechdel Test rating, a categorical variable with five levels: <code>ok</code> (passes test), <code>dubious</code>, <code>men</code> (female protagonists only talk about male protagonists), <code>no talk</code> (female protagonists don’t talk to each other), and <code>nowomen</code> (fewer than two female protagonists). The vignette associated with this <code>bechdel</code> dataset is accessible by running:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">vignette</span>(<span class="st">"bechdel"</span>, <span class="dt">package=</span><span class="st">"fivethirtyeight"</span>)</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">vignette</span>(<span class="st">"bechdel"</span>, <span class="dt">package=</span><span class="st">"fivethirtyeight"</span>)</a></code></pre></div>
 <p>A list of all user contributed vignettes, which are hosted on the package homepage at <a href="https://fivethirtyeight-r.netlify.com/articles/" class="uri">https://fivethirtyeight-r.netlify.com/articles/</a>, can viewed by running:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">vignette</span>(<span class="st">"user_contributed_vignettes"</span>, <span class="dt">package=</span><span class="st">"fivethirtyeight"</span>)</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">vignette</span>(<span class="st">"user_contributed_vignettes"</span>, <span class="dt">package=</span><span class="st">"fivethirtyeight"</span>)</a></code></pre></div>
 <p>Note however due to R package size restrictions, the version of the <code>fivethirtyeight</code> package on CRAN which is installed via the command <code>install.packages("fivethirtyeight")</code> only includes the vignette corresponding to the <code>bechdel</code> dataset. In order install all vignettes and their <code>.Rmd</code> R Markdown source code locally, the development version of the <code>fivethirtyeight</code> package must be installed by running:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># If you haven't installed remotes package yet, do so via:</span>
-<span class="co"># install.packages("remotes")</span>
-remotes::<span class="kw">install_github</span>(<span class="st">"rudeboybert/fivethirtyeight"</span>, <span class="dt">build_vignettes =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># If you haven't installed remotes package yet, do so via:</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co"># install.packages("remotes")</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"rudeboybert/fivethirtyeight"</span>, <span class="dt">build_vignettes =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 </div>
 <div id="package-source-code" class="section level2">
 <h2 class="hasAnchor">
@@ -342,7 +343,7 @@ remotes::<span class="kw">install_github</span>(<span class="st">"rudeboybert/fi
 <li>
 <strong>Tidy data format</strong>:
 <ol style="list-style-type: decimal">
-<li>Whenever possible, save all data frames in “tidy” data format as defined by @wickham_2014:
+<li>Whenever possible, save all data frames in “tidy” data format as defined by <span class="citation">Wickham (2014)</span>:
 <ol style="list-style-type: lower-alpha">
 <li>Each variable forms a column.</li>
 <li>Each observation forms a row.</li>
@@ -359,31 +360,31 @@ remotes::<span class="kw">install_github</span>(<span class="st">"rudeboybert/fi
 <a href="#naming-conventions" class="anchor"></a>Naming Conventions</h2>
 <p>Whereas the first three subpoints relating to data frame and variable naming are more cosmetic in nature, the fourth principle relates to an R-specific issue faced by novices. Variable names that include spaces require different treatment than those that do not, specifically the use of tick marks when referring to them. While this is a topic R users eventually have to learn, we argue that it is not an immediate priority.</p>
 <p>As an example of the importance of preprocessing variable names, consider the data corresponding to the FiveThirtyEight article “41 Percent Of Fliers Think You’re Rude If You Recline Your Seat” <span class="citation">(Hickey 2014a)</span> where survey respondents were asked, among other things, if 1) they considered it rude to bring a baby on a flight and 2) whether or not they had children under the age of 18. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight’s GitHub repository page <a href="https://github.com/fivethirtyeight" class="uri">https://github.com/fivethirtyeight</a> and can be accessed via the shortened bit.ly link <a href="http://bit.ly/2vg8gTf" class="uri">http://bit.ly/2vg8gTf</a>. We load and save this in a data frame <code>flying_raw</code> and look at the first 5 variable names:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
-flying_raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"http://bit.ly/2vg8gTf"</span>)
-<span class="kw">colnames</span>(flying_raw)[<span class="dv">1</span>:<span class="dv">5</span>]
-<span class="co">#&gt; [1] "RespondentID"                               </span>
-<span class="co">#&gt; [2] "How often do you travel by plane?"          </span>
-<span class="co">#&gt; [3] "Do you ever recline your seat when you fly?"</span>
-<span class="co">#&gt; [4] "How tall are you?"                          </span>
-<span class="co">#&gt; [5] "Do you have any children under 18?"</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">flying_raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"http://bit.ly/2vg8gTf"</span>)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">colnames</span>(flying_raw)[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt; [1] "RespondentID"                               </span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt; [2] "How often do you travel by plane?"          </span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co">#&gt; [3] "Do you ever recline your seat when you fly?"</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt; [4] "How tall are you?"                          </span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt; [5] "Do you have any children under 18?"</span></a></code></pre></div>
 <p>We contrast this to the corresponding <code>flying</code> data frame in the <code>fivethirtyeight</code> package:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-<span class="kw">colnames</span>(flying)[<span class="dv">1</span>:<span class="dv">5</span>]
-<span class="co">#&gt; [1] "respondent_id"     "gender"            "age"              </span>
-<span class="co">#&gt; [4] "height"            "children_under_18"</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">library</span>(fivethirtyeight)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">colnames</span>(flying)[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt; [1] "respondent_id"     "gender"            "age"              </span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; [4] "height"            "children_under_18"</span></a></code></pre></div>
 <p>We see that in the latter case the variable names are much shorter and cleaner. This simplification leads to much less cumbersome code to wrangle and visualize this data. For example, consider the following two <code>ggplot()</code> commands to generate the barplot in Figure  to visualize the relationship between the two categorical variables of interest: using the raw data necessitates tick marks to access the variables, whereas using the latter data doesn’t.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Using raw data:</span>
-<span class="kw">ggplot</span>(flying_raw, 
-       <span class="kw">aes</span>(<span class="dt">x =</span> <span class="st">`</span><span class="dt">Do you have any children under 18?</span><span class="st">`</span>, 
-           <span class="dt">fill =</span> <span class="st">`</span><span class="dt">In general, is itrude to bring a baby on a plane?</span><span class="st">`</span>)) +
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">"fill"</span>) +
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Children under 18?"</span>, <span class="dt">y =</span> <span class="st">"Proportion"</span>, <span class="dt">fill =</span> <span class="st">"Is it rude?"</span>)
-
-<span class="co"># Using fivethirtyeight package data:</span>
-<span class="kw">ggplot</span>(flying, <span class="kw">aes</span>(<span class="dt">x =</span> children_under_18, <span class="dt">fill =</span> baby)) +
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">"fill"</span>) +
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Children under 18?"</span>, <span class="dt">y =</span> <span class="st">"Proportion"</span>, <span class="dt">fill =</span> <span class="st">"Is it rude?"</span>)</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># Using raw data:</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">ggplot</span>(flying_raw, </a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">       <span class="kw">aes</span>(<span class="dt">x =</span> <span class="st">`</span><span class="dt">Do you have any children under 18?</span><span class="st">`</span>, </a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">           <span class="dt">fill =</span> <span class="st">`</span><span class="dt">In general, is itrude to bring a baby on a plane?</span><span class="st">`</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">"fill"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Children under 18?"</span>, <span class="dt">y =</span> <span class="st">"Proportion"</span>, <span class="dt">fill =</span> <span class="st">"Is it rude?"</span>)</a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co"># Using fivethirtyeight package data:</span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="kw">ggplot</span>(flying, <span class="kw">aes</span>(<span class="dt">x =</span> children_under_<span class="dv">18</span>, <span class="dt">fill =</span> baby)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">"fill"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Children under 18?"</span>, <span class="dt">y =</span> <span class="st">"Proportion"</span>, <span class="dt">fill =</span> <span class="st">"Is it rude?"</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center">
 <img src="Figures/babies-1.png" alt="Attitudes about bringing babies on a flight." width="614.4"><p class="caption">
 Attitudes about bringing babies on a flight.
@@ -395,45 +396,45 @@ Attitudes about bringing babies on a flight.
 <a href="#dates" class="anchor"></a>Dates</h2>
 <p>Although recent advances such as the <code>lubridate</code> package have made wrangling dates much easier, performing such tasks can still be very challenging for students who have not had experience <span class="citation">(Grolemund and Wickham 2011)</span>. In datasets where only a numerical variable indicating the year exists, it can be argued no pre-processing is necessary. However, when a month and/or day variables exist along with a year variable, we argue that pre-processing should be done. Specifically, they should be combined and converted to <code>Date</code> objects. This allows for easy creation of time series plots with well formatted x-axes and for performing of basic date arithmetic.</p>
 <p>As an example of the importance of preprocessing dates, consider the data corresponding to the FiveThirtyEight article “Some People Are Too Superstitious To Have A Baby On Friday The 13th” <span class="citation">(Bialik 2016)</span> of the number of daily births in the United States between 1994 and 2003. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight’s GitHub repository page <a href="https://github.com/fivethirtyeight/" class="uri">https://github.com/fivethirtyeight/</a> and can be accessed via the shortened bit.ly link <a href="http://bit.ly/2vgRFiw" class="uri">http://bit.ly/2vgRFiw</a>. We load this data, filter for only those rows corresponding to 1999 births, and save this in a data frame <code>US_births_1999_raw</code>. The raw data is saved in a format that makes it difficult for novices to create a time series plot. Furthermore, people do not typically think of the day of the week (Sunday, Monday, etc) in terms of a numerical value between 1 and 7.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
-US_births_1999_2003_raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"http://bit.ly/2vgRFiw"</span>)
-US_births_1999_raw &lt;-<span class="st"> </span>US_births_1999_2003_raw[US_births_1999_2003_raw$year ==<span class="st"> </span><span class="dv">1999</span>, ]
-<span class="kw">head</span>(US_births_1999_raw)
-<span class="co">#&gt; # A tibble: 6 x 5</span>
-<span class="co">#&gt;    year month date_of_month day_of_week births</span>
-<span class="co">#&gt;   &lt;int&gt; &lt;int&gt;         &lt;int&gt;       &lt;int&gt;  &lt;int&gt;</span>
-<span class="co">#&gt; 1  1999     1             1           5   8163</span>
-<span class="co">#&gt; 2  1999     1             2           6   7637</span>
-<span class="co">#&gt; 3  1999     1             3           7   7416</span>
-<span class="co">#&gt; 4  1999     1             4           1  10396</span>
-<span class="co">#&gt; 5  1999     1             5           2  12004</span>
-<span class="co">#&gt; 6  1999     1             6           3  11718</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">US_births_<span class="dv">1999</span>_<span class="dv">2003</span>_raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"http://bit.ly/2vgRFiw"</span>)</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">US_births_<span class="dv">1999</span>_raw &lt;-<span class="st"> </span>US_births_<span class="dv">1999</span>_<span class="dv">2003</span>_raw[US_births_<span class="dv">1999</span>_<span class="dv">2003</span>_raw<span class="op">$</span>year <span class="op">==</span><span class="st"> </span><span class="dv">1999</span>, ]</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="kw">head</span>(US_births_<span class="dv">1999</span>_raw)</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co">#&gt; # A tibble: 6 x 5</span></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">#&gt;    year month date_of_month day_of_week births</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt;   &lt;int&gt; &lt;int&gt;         &lt;int&gt;       &lt;int&gt;  &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="co">#&gt; 1  1999     1             1           5   8163</span></a>
+<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="co">#&gt; 2  1999     1             2           6   7637</span></a>
+<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="co">#&gt; 3  1999     1             3           7   7416</span></a>
+<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="co">#&gt; 4  1999     1             4           1  10396</span></a>
+<a class="sourceLine" id="cb13-12" data-line-number="12"><span class="co">#&gt; 5  1999     1             5           2  12004</span></a>
+<a class="sourceLine" id="cb13-13" data-line-number="13"><span class="co">#&gt; 6  1999     1             6           3  11718</span></a></code></pre></div>
 <p>In contrast, when using the pre-processed <code>US_births_1994_2003</code> data frame from the <code>fivethirtyeight</code> package we observe that there is a variable <code>date</code>, which can be treated as a numerical variable. This allows for the <code>date</code> variable to be plotted with informative tick marks on the x-axis as in Figure . Furthermore, the day of the week is indicated with more informative text rather that values between 1 and 7.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fivethirtyeight)
-US_births_1999 &lt;-<span class="st"> </span>US_births_1994_2003[US_births_1994_2003$year ==<span class="st"> </span><span class="dv">1999</span>, ]
-<span class="kw">head</span>(US_births_1999)
-<span class="co">#&gt; # A tibble: 6 x 6</span>
-<span class="co">#&gt;    year month date_of_month date       day_of_week births</span>
-<span class="co">#&gt;   &lt;int&gt; &lt;int&gt;         &lt;int&gt; &lt;date&gt;     &lt;ord&gt;        &lt;int&gt;</span>
-<span class="co">#&gt; 1  1999     1             1 1999-01-01 Fri           8163</span>
-<span class="co">#&gt; 2  1999     1             2 1999-01-02 Sat           7637</span>
-<span class="co">#&gt; 3  1999     1             3 1999-01-03 Sun           7416</span>
-<span class="co">#&gt; 4  1999     1             4 1999-01-04 Mon          10396</span>
-<span class="co">#&gt; 5  1999     1             5 1999-01-05 Tues         12004</span>
-<span class="co">#&gt; 6  1999     1             6 1999-01-06 Wed          11718</span>
-<span class="kw">plot</span>(US_births_1999$date, US_births_1999$births, <span class="dt">type =</span> <span class="st">"l"</span>,
-     <span class="dt">xlab =</span> <span class="st">"Date"</span>, <span class="dt">ylab =</span> <span class="st">"# of births"</span>)</code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">library</span>(fivethirtyeight)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">US_births_<span class="dv">1999</span> &lt;-<span class="st"> </span>US_births_<span class="dv">1994</span>_<span class="dv">2003</span>[US_births_<span class="dv">1994</span>_<span class="dv">2003</span><span class="op">$</span>year <span class="op">==</span><span class="st"> </span><span class="dv">1999</span>, ]</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="kw">head</span>(US_births_<span class="dv">1999</span>)</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="co">#&gt; # A tibble: 6 x 6</span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="co">#&gt;    year month date_of_month date       day_of_week births</span></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="co">#&gt;   &lt;int&gt; &lt;int&gt;         &lt;int&gt; &lt;date&gt;     &lt;ord&gt;        &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="co">#&gt; 1  1999     1             1 1999-01-01 Fri           8163</span></a>
+<a class="sourceLine" id="cb14-8" data-line-number="8"><span class="co">#&gt; 2  1999     1             2 1999-01-02 Sat           7637</span></a>
+<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co">#&gt; 3  1999     1             3 1999-01-03 Sun           7416</span></a>
+<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="co">#&gt; 4  1999     1             4 1999-01-04 Mon          10396</span></a>
+<a class="sourceLine" id="cb14-11" data-line-number="11"><span class="co">#&gt; 5  1999     1             5 1999-01-05 Tues         12004</span></a>
+<a class="sourceLine" id="cb14-12" data-line-number="12"><span class="co">#&gt; 6  1999     1             6 1999-01-06 Wed          11718</span></a>
+<a class="sourceLine" id="cb14-13" data-line-number="13"><span class="kw">plot</span>(US_births_<span class="dv">1999</span><span class="op">$</span>date, US_births_<span class="dv">1999</span><span class="op">$</span>births, <span class="dt">type =</span> <span class="st">"l"</span>,</a>
+<a class="sourceLine" id="cb14-14" data-line-number="14">     <span class="dt">xlab =</span> <span class="st">"Date"</span>, <span class="dt">ylab =</span> <span class="st">"# of births"</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center">
 <img src="Figures/US-births-1.png" alt="Number of US births in 1999." width="614.4"><p class="caption">
 Number of US births in 1999.
 </p>
 </div>
 <p>One exercise we can assign to students is for them to investigate the anomalous spike in the number of births that occured roughly a month before October 1st, 1999:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(US_births_1999[<span class="kw">which.max</span>(US_births_1999$births), ])
-<span class="co">#&gt; # A tibble: 1 x 6</span>
-<span class="co">#&gt;    year month date_of_month date       day_of_week births</span>
-<span class="co">#&gt;   &lt;int&gt; &lt;int&gt;         &lt;int&gt; &lt;date&gt;     &lt;ord&gt;        &lt;int&gt;</span>
-<span class="co">#&gt; 1  1999     9             9 1999-09-09 Thurs        14540</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">head</span>(US_births_<span class="dv">1999</span>[<span class="kw">which.max</span>(US_births_<span class="dv">1999</span><span class="op">$</span>births), ])</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="co">#&gt; # A tibble: 1 x 6</span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co">#&gt;    year month date_of_month date       day_of_week births</span></a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="co">#&gt;   &lt;int&gt; &lt;int&gt;         &lt;int&gt; &lt;date&gt;     &lt;ord&gt;        &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co">#&gt; 1  1999     9             9 1999-09-09 Thurs        14540</span></a></code></pre></div>
 <p>Much as the FiveThirtyEight article suggested that there are relatively fewer births on Fridays that fall on the 13th because many parents avoid inducing labor on that date for likely superstitious reasons, a plausible explanation for the spike of births on 9/9/99 is that parents were choosing to deliberately induce labor on that date given its aesthetic appeal.</p>
 </div>
 <div id="factors-vs-characters" class="section level2">
@@ -447,28 +448,28 @@ Original Bechdel barplot in FiveThirtyEight Article
 </p>
 </div>
 <p>We now reconstruct this graphic using the data provided by FiveThirtyEight using both the raw data saved in CSV format on FiveThirtyEight’s GitHub repository page <a href="https://github.com/fivethirtyeight" class="uri">https://github.com/fivethirtyeight</a> (accessible via the shortened bit.ly link <a href="http://bit.ly/2uD3ls6" class="uri">http://bit.ly/2uD3ls6</a>) and using the pre-processed version in the <code>fivethirtyeight</code> R package. In both cases, we discretize the <code>year</code> variable into 5-year bins using the vector <code>year_bins</code> and plot a stacked barplot of proportions.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">year_bins &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"'70-'74"</span>, <span class="st">"'75-'79"</span>, <span class="st">"'80-'84"</span>, <span class="st">"'85-'89"</span>, <span class="st">"'90-'94"</span>, 
-               <span class="st">"'95-'99"</span>, <span class="st">"'00-'04"</span>, <span class="st">"'05-'09"</span>, <span class="st">"'10-'13"</span>)
-
-<span class="co"># Using raw data:</span>
-<span class="kw">library</span>(readr)
-bechdel_raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"http://bit.ly/2uD3ls6"</span>) %&gt;%
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">five_year =</span> <span class="kw">cut</span>(year, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1969</span>, <span class="dv">2014</span>, <span class="dv">5</span>), <span class="dt">labels =</span> year_bins))
-
-<span class="kw">ggplot</span>(bechdel_raw, <span class="kw">aes</span>(<span class="dt">x =</span> five_year, <span class="dt">fill =</span> clean_test)) +
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">"fill"</span>, <span class="dt">color =</span> <span class="st">"black"</span>) +
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Year"</span>, <span class="dt">y =</span> <span class="st">"Proportion"</span>, <span class="dt">fill =</span> <span class="st">"Bechdel Test"</span>) +
-<span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">"YlGnBu"</span>)
-
-<span class="co"># Using fivethirtyeight package data:</span>
-<span class="kw">library</span>(fivethirtyeight)
-bechdel &lt;-<span class="st"> </span>bechdel %&gt;%
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">five_year =</span> <span class="kw">cut</span>(year, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1969</span>, <span class="dv">2014</span>, <span class="dv">5</span>), <span class="dt">labels =</span> year_bins))
-
-<span class="kw">ggplot</span>(bechdel, <span class="kw">aes</span>(<span class="dt">x =</span> five_year, <span class="dt">fill =</span> clean_test)) +
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">"fill"</span>, <span class="dt">color =</span> <span class="st">"black"</span>) +
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Year"</span>, <span class="dt">y =</span> <span class="st">"Proportion"</span>, <span class="dt">fill =</span> <span class="st">"Bechdel Test"</span>) +
-<span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">"YlGnBu"</span>)</code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">year_bins &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"'70-'74"</span>, <span class="st">"'75-'79"</span>, <span class="st">"'80-'84"</span>, <span class="st">"'85-'89"</span>, <span class="st">"'90-'94"</span>, </a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">               <span class="st">"'95-'99"</span>, <span class="st">"'00-'04"</span>, <span class="st">"'05-'09"</span>, <span class="st">"'10-'13"</span>)</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co"># Using raw data:</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb16-6" data-line-number="6">bechdel_raw &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"http://bit.ly/2uD3ls6"</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">five_year =</span> <span class="kw">cut</span>(year, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1969</span>, <span class="dv">2014</span>, <span class="dv">5</span>), <span class="dt">labels =</span> year_bins))</a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb16-9" data-line-number="9"><span class="kw">ggplot</span>(bechdel_raw, <span class="kw">aes</span>(<span class="dt">x =</span> five_year, <span class="dt">fill =</span> clean_test)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">"fill"</span>, <span class="dt">color =</span> <span class="st">"black"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Year"</span>, <span class="dt">y =</span> <span class="st">"Proportion"</span>, <span class="dt">fill =</span> <span class="st">"Bechdel Test"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-12" data-line-number="12"><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">"YlGnBu"</span>)</a>
+<a class="sourceLine" id="cb16-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb16-14" data-line-number="14"><span class="co"># Using fivethirtyeight package data:</span></a>
+<a class="sourceLine" id="cb16-15" data-line-number="15"><span class="kw">library</span>(fivethirtyeight)</a>
+<a class="sourceLine" id="cb16-16" data-line-number="16">bechdel &lt;-<span class="st"> </span>bechdel <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb16-17" data-line-number="17"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">five_year =</span> <span class="kw">cut</span>(year, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1969</span>, <span class="dv">2014</span>, <span class="dv">5</span>), <span class="dt">labels =</span> year_bins))</a>
+<a class="sourceLine" id="cb16-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb16-19" data-line-number="19"><span class="kw">ggplot</span>(bechdel, <span class="kw">aes</span>(<span class="dt">x =</span> five_year, <span class="dt">fill =</span> clean_test)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-20" data-line-number="20"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">"fill"</span>, <span class="dt">color =</span> <span class="st">"black"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-21" data-line-number="21"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Year"</span>, <span class="dt">y =</span> <span class="st">"Proportion"</span>, <span class="dt">fill =</span> <span class="st">"Bechdel Test"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-22" data-line-number="22"><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">"YlGnBu"</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center">
 <img src="Figures/bechdel-1.png" alt="Barcharts of Bechdel Test results across time." width="614.4"><p class="caption">
 Barcharts of Bechdel Test results across time.
@@ -488,34 +489,34 @@ Barcharts of Bechdel Test results across time.
 <p>This format is also known as “long/narrow” format, as opposed to “wide” format. While the information contained in a dataset is identical irrespective of it being in “tidy” format or not, the chief benefit of these format guidelines is that they act as a set of standards for the input and output format of many different functions in many different R packages, in particular those in the <code>tidyverse</code> suite of R packages for data science. These guidelines are espoused in the first principle of the “tidy tools manifesto” to “reuse existing data structures” <span class="citation">(Wickham 2017c)</span>. By following this formatting guideline, all datasets in the <code>fivethirtyeight</code> package fit seamlessly into the <code>tidyverse</code> ecosystem of R packages, in particular the <code>ggplot2</code> package for data visualization and the <code>dplyr</code> package for data wrangling.</p>
 <p>Converting datasets to “tidy” format in R necessitates understanding of the <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather()</a></code> and <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/spread">spread()</a></code> commands of the <code>tidyr</code> package. We argue that the topic of converting between wide data format and tidy/long format is best left to an intermediate stage of learning, given the relative complexity of the necessary commands. Therefore we pre-processed all data in the package to follow the tidy data format. For datasets where we felt converting the data to tidy format would alter them too much from their original form, we include the <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather()</a></code> code necessary to convert them from wide data format to tidy format in the <code>@examples</code> section of the corresponding help files.</p>
 <p>For example, say we want to create a barplot comparing consumption of beer, spirits, and wine between the United States and France using the <code>drinks</code> dataset corresponding to the article “Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?” <span class="citation">(Chalabi 2014)</span> The data is saved in “wide” format and thus cannot be used in the <code>ggplot()</code> function.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(fivethirtyeight)
-drinks %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(country %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">"USA"</span>, <span class="st">"France"</span>))
-<span class="co">#&gt; # A tibble: 2 x 5</span>
-<span class="co">#&gt;   country beer_servings spirit_servings wine_servings total_litres_of_pur…</span>
-<span class="co">#&gt;   &lt;chr&gt;           &lt;int&gt;           &lt;int&gt;         &lt;int&gt;                &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 France            127             151           370                11.8 </span>
-<span class="co">#&gt; 2 USA               249             158            84                 8.70</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">library</span>(fivethirtyeight)</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3">drinks <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"USA"</span>, <span class="st">"France"</span>))</a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="co">#&gt; # A tibble: 2 x 5</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="co">#&gt;   country beer_servings spirit_servings wine_servings total_litres_of_pur…</span></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="co">#&gt;   &lt;chr&gt;           &lt;int&gt;           &lt;int&gt;         &lt;int&gt;                &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb17-8" data-line-number="8"><span class="co">#&gt; 1 France            127             151           370                 11.8</span></a>
+<a class="sourceLine" id="cb17-9" data-line-number="9"><span class="co">#&gt; 2 USA               249             158            84                  8.7</span></a></code></pre></div>
 <p>However, the help file for this dataset, accessible by typing <code><a href="../reference/drinks.html">?drinks</a></code> in the console, provides the <code><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather()</a></code> code necessary to convert this data into “tidy” format:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyr)
-drinks_tidy_US_FR &lt;-<span class="st"> </span>drinks %&gt;%
-<span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(country %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">"USA"</span>, <span class="st">"France"</span>)) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather</a></span>(type, servings, -<span class="kw">c</span>(country, total_litres_of_pure_alcohol))
-drinks_tidy_US_FR
-<span class="co">#&gt; # A tibble: 6 x 4</span>
-<span class="co">#&gt;   country total_litres_of_pure_alcohol type            servings</span>
-<span class="co">#&gt;   &lt;chr&gt;                          &lt;dbl&gt; &lt;chr&gt;              &lt;int&gt;</span>
-<span class="co">#&gt; 1 France                         11.8  beer_servings        127</span>
-<span class="co">#&gt; 2 USA                             8.70 beer_servings        249</span>
-<span class="co">#&gt; 3 France                         11.8  spirit_servings      151</span>
-<span class="co">#&gt; 4 USA                             8.70 spirit_servings      158</span>
-<span class="co">#&gt; 5 France                         11.8  wine_servings        370</span>
-<span class="co">#&gt; 6 USA                             8.70 wine_servings         84</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">drinks_tidy_US_FR &lt;-<span class="st"> </span>drinks <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">"USA"</span>, <span class="st">"France"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tidyr/topics/gather">gather</a></span>(type, servings, <span class="op">-</span><span class="kw">c</span>(country, total_litres_of_pure_alcohol))</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5">drinks_tidy_US_FR</a>
+<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="co">#&gt; # A tibble: 6 x 4</span></a>
+<a class="sourceLine" id="cb18-7" data-line-number="7"><span class="co">#&gt;   country total_litres_of_pure_alcohol type            servings</span></a>
+<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="co">#&gt;   &lt;chr&gt;                          &lt;dbl&gt; &lt;chr&gt;              &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb18-9" data-line-number="9"><span class="co">#&gt; 1 France                          11.8 beer_servings        127</span></a>
+<a class="sourceLine" id="cb18-10" data-line-number="10"><span class="co">#&gt; 2 USA                              8.7 beer_servings        249</span></a>
+<a class="sourceLine" id="cb18-11" data-line-number="11"><span class="co">#&gt; 3 France                          11.8 spirit_servings      151</span></a>
+<a class="sourceLine" id="cb18-12" data-line-number="12"><span class="co">#&gt; 4 USA                              8.7 spirit_servings      158</span></a>
+<a class="sourceLine" id="cb18-13" data-line-number="13"><span class="co">#&gt; 5 France                          11.8 wine_servings        370</span></a>
+<a class="sourceLine" id="cb18-14" data-line-number="14"><span class="co">#&gt; 6 USA                              8.7 wine_servings         84</span></a></code></pre></div>
 <p>This formatting of the data now allows itself to be used as input to the <code>ggplot()</code> function to create an appropriate barplot in Figure . Note in this case since the number of servings is pretabulated in the variable <code>servings</code>, which in turn is mapped to the y-axis, we use <code>geom_col()</code> instead of <code>geom_bar()</code> (<code>geom_col()</code> is equivalent to <code>geom_bar(stat = "identity")</code>).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(drinks_tidy_US_FR, <span class="kw">aes</span>(<span class="dt">x=</span>type, <span class="dt">y=</span>servings, <span class="dt">fill=</span>country)) +
-<span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">position =</span> <span class="st">"dodge"</span>) +
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Alcohol type"</span>, <span class="dt">y =</span> <span class="st">"Average number of servings"</span>)</code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">ggplot</span>(drinks_tidy_US_FR, <span class="kw">aes</span>(<span class="dt">x=</span>type, <span class="dt">y=</span>servings, <span class="dt">fill=</span>country)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">position =</span> <span class="st">"dodge"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Alcohol type"</span>, <span class="dt">y =</span> <span class="st">"Average number of servings"</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center">
 <img src="Figures/drinks-1.png" alt="USA vs France alcohol consumption." width="614.4"><p class="caption">
 USA vs France alcohol consumption.
@@ -543,7 +544,7 @@ USA vs France alcohol consumption.
 <h2 class="hasAnchor">
 <a href="#acknowledgements" class="anchor"></a>Acknowledgements</h2>
 <p>The authors would like to thank Alicia Johnson, Maia Majumder, Nicholas Horton, Nina Sonneborn, Andrew Flowers, and Hadley Wickham for their input and feedback.</p>
-\newpage
+
 </div>
 </div>
 <div id="references" class="section level1 unnumbered">
@@ -557,13 +558,13 @@ USA vs France alcohol consumption.
 <p>American Statistical Association Undergraduate Guidelines Workgroup. 2014. “2014 Curriculum Guidelines for Undergraduate Programs in Statistical Science.” Alexandria, VA: American Statistical Association. <a href="http://www.amstat.org/asa/files/pdfs/EDU-guidelines2014-11-15.pdf,%20last%20accessed%20August%207,%202017" class="uri">http://www.amstat.org/asa/files/pdfs/EDU-guidelines2014-11-15.pdf, last accessed August 7, 2017</a>.</p>
 </div>
 <div id="ref-baby13_538">
-<p>Bialik, Carl. 2016. “Some People Are Too Superstitious to Have a Baby on Friday the 13th.” <a href="https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a>.</p>
+<p>Bialik, Carl. 2016. “Some People Are Too Superstitious to Have a Baby on Friday the 13th.” 2016. <a href="https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a>.</p>
 </div>
 <div id="ref-gapminder">
 <p>Bryan, Jennifer. 2015. <em>Gapminder: Data from Gapminder</em> (version R package version 0.2.0). <a href="https://CRAN.R-project.org/package=gapminder" class="uri">https://CRAN.R-project.org/package=gapminder</a>.</p>
 </div>
 <div id="ref-drink_538">
-<p>Chalabi, Mona. 2014. “Dear Mona Followup: Where Do People Drink the Most Beer, Wine and Spirits?” <a href="https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a>.</p>
+<p>Chalabi, Mona. 2014. “Dear Mona Followup: Where Do People Drink the Most Beer, Wine and Spirits?” 2014. <a href="https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a>.</p>
 </div>
 <div id="ref-cobb_2015">
 <p>Cobb, George. 2015. “Mere Renovation is Too Little Too Late: We Need to Rethink our Undergraduate Curriculum from the Ground Up.” <em>The American Statistician</em> 69 (4): 266–82.</p>
@@ -584,22 +585,22 @@ USA vs France alcohol consumption.
 <p>———. 2017. <em>R for Data Science</em>. O’Reilly Media. <a href="http://r4ds.had.co.nz/" class="uri">http://r4ds.had.co.nz/</a>.</p>
 </div>
 <div id="ref-fliers_538">
-<p>Hickey, Walt. 2014a. “41 Percent of Fliers Think You’re Rude If You Recline Your Seat.” <a href="https://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/" class="uri">https://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/</a>.</p>
+<p>Hickey, Walt. 2014a. “41 Percent of Fliers Think You’re Rude If You Recline Your Seat.” 2014. <a href="https://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/" class="uri">https://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/</a>.</p>
 </div>
 <div id="ref-bechdel_538">
-<p>———. 2014b. “The Dollar-and-Cents Case Against Hollywood’s Exclusion of Women.” <a href="https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/" class="uri">https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/</a>.</p>
+<p>———. 2014b. “The Dollar-and-Cents Case Against Hollywood’s Exclusion of Women.” 2014. <a href="https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/" class="uri">https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/</a>.</p>
 </div>
 <div id="ref-horton_baumer_wickham_2015">
 <p>Horton, Nicholas J., Ben Baumer, and Hadley Wickham. 2015. “Setting the stage for data science: integration of data management skills in introductory and second courses in statistics.” <em>CHANCE</em> 28 (2): 40–50.</p>
 </div>
 <div id="ref-moderndive">
-<p>Ismay, Chester, and Albert Y Kim. 2017a. “An Introduction to Statistical and Data Sciences via R.” <a href="http://www.moderndive.com/" class="uri">http://www.moderndive.com/</a>.</p>
+<p>Ismay, Chester, and Albert Y Kim. 2017a. “An Introduction to Statistical and Data Sciences via R.” 2017. <a href="http://www.moderndive.com/" class="uri">http://www.moderndive.com/</a>.</p>
 </div>
 <div id="ref-ismay_datacamp">
-<p>———. 2017b. “Effective Data Storytelling Using the `tidyverse`.” <a href="https://www.datacamp.com/courses/effective-data-storytelling-using-the-tidyverse" class="uri">https://www.datacamp.com/courses/effective-data-storytelling-using-the-tidyverse</a>.</p>
+<p>———. 2017b. “Effective Data Storytelling Using the ‘Tidyverse‘.” 2017. <a href="https://www.datacamp.com/courses/effective-data-storytelling-using-the-tidyverse" class="uri">https://www.datacamp.com/courses/effective-data-storytelling-using-the-tidyverse</a>.</p>
 </div>
 <div id="ref-bear_tweet">
-<p>Jedamski, Derek. 2015. “Twitter.” <a href="https://twitter.com/d_jedamski/status/631150332941332480" class="uri">https://twitter.com/d_jedamski/status/631150332941332480</a>.</p>
+<p>Jedamski, Derek. 2015. “Twitter.” 2015. <a href="https://twitter.com/d_jedamski/status/631150332941332480" class="uri">https://twitter.com/d_jedamski/status/631150332941332480</a>.</p>
 </div>
 <div id="ref-kim_escobedo_land_2015">
 <p>Kim, Albert Y., and Adriana Escobedo-Land. 2015. “OkCupid Profile Data for Introductory Statistics and Data Science Courses.” <em>Journal of Statistics Education</em> 23 (2): 97–107.</p>
@@ -608,7 +609,7 @@ USA vs France alcohol consumption.
 <p>Lohr, Steve. 2014. “For Big-Data Scientists, ’Janitor Work’ Is Key Hurdle to Insights.” <em>New York Times</em>. <a href="https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html,%20last%20accessed%20August%207,%202017" class="uri">https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html, last accessed August 7, 2017</a>.</p>
 </div>
 <div id="ref-hatecrime_538">
-<p>Majumder, Maimuna. 2017. “Higher Rates of Hate Crimes Are Tied to Income Inequality.” <a href="https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/" class="uri">https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/</a>.</p>
+<p>Majumder, Maimuna. 2017. “Higher Rates of Hate Crimes Are Tied to Income Inequality.” 2017. <a href="https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/" class="uri">https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/</a>.</p>
 </div>
 <div id="ref-mckinsey_2011">
 <p>Manyika, James, Michael Chui, Brad Brown, Jacques Bughin, Richard Dobbs, Charles Roxburgh, and Angela Hung Byers. 2011. <a href="http://www.mckinsey.com/business-functions/digital-mckinsey/our-insights/big-data-the-next-frontier-for-innovation,%20last%20accessed%20August%207,%202017" class="uri">http://www.mckinsey.com/business-functions/digital-mckinsey/our-insights/big-data-the-next-frontier-for-innovation, last accessed August 7, 2017</a>.</p>
