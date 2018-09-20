@@ -29,7 +29,6 @@ URL: https://github.com/rudeboybert/fivethirtyeight
 BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
 RoxygenNote: 6.0.1
 Suggests:
-    fivethirtyeight,
     ggplot2,
     dplyr,
     tidyr,
