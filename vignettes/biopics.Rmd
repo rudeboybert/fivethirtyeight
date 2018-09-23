@@ -48,13 +48,24 @@ plot_theme <- function(base_size = 12) {
 
 ```{r message=FALSE, warning=FALSE}
 library(fivethirtyeight)
-# library(tidyverse)
+library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
 library(scales)
 library(stringr)
-# library(highcharter)
+if(require(highcharter)){
+  if(packageVersion('highcharter')!='0.6.0'){
+    remove.packages('highcharter')
+    devtools::install_github("jbkunst/highcharter")
+
+  }
+    }else{
+    
+      devtools::install_github("jbkunst/highcharter")
+
+    
+  }
 
 glimpse(biopics)
 ```
