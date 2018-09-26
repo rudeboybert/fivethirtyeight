@@ -43,7 +43,7 @@ r_packages:
   - wordcloud
   
 r_github_packages:
-  - hadley/pkgdown
+  - r-lib/pkgdown
   - rudeboybert/fivethirtyeight
 
 before_deploy:
