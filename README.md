@@ -5,9 +5,9 @@
 
 [![Build
 Status](https://travis-ci.org/rudeboybert/fivethirtyeight.svg?branch=master)](https://travis-ci.org/rudeboybert/fivethirtyeight)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/fivethirtyeight)](http://cran.r-project.org/package=fivethirtyeight)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fivethirtyeight)](http://cran.r-project.org/package=fivethirtyeight)
 [![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/fivethirtyeight)](http://www.r-pkg.org/pkg/fivethirtyeight)
+downloads](https://cranlogs.r-pkg.org/badges/fivethirtyeight)](http://www.r-pkg.org/pkg/fivethirtyeight)
 
 An R package that provides access to the code and data sets published by
 FiveThirtyEight <https://github.com/fivethirtyeight/data>. Note that
