@@ -26,7 +26,7 @@ An R package that provides access to the code and data sets published by FiveThi
 
 ## Installation
 
-Get the released version from CRAN:
+Get the latest released version from CRAN:
 
 ```{r, eval = FALSE}
 install.packages("fivethirtyeight")
