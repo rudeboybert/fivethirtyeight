@@ -54,6 +54,7 @@ library(dplyr)
 library(tidyr)
 library(scales)
 library(stringr)
+#temporary fix: The error arises due to the different version of highcharter
 if(require(highcharter)){
   if(packageVersion('highcharter')!='0.6.0'){
     remove.packages('highcharter')
