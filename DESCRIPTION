@@ -27,7 +27,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/rudeboybert/fivethirtyeight
 BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Suggests:
     fivethirtyeight,
     ggplot2,

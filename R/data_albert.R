@@ -989,3 +989,25 @@
 #' @seealso \code{\link{love_actually_appearance}}.
 "love_actually_adj"
 
+
+#' Information on each state
+#'
+#' State name, abbreviation, US Census designated division & region.
+#'
+#' @format A data frame with 51 rows representing airlines and 4 variables:
+#' \describe{
+#'   \item{state}{State name}
+#'   \item{state_abbreviation}{State abbreviation}
+#'   \item{division}{US Census designated division. Values for \code{division} are nested within \code{region}}
+#'   \item{region}{US Census designated region}
+#' }
+#' @source US Census Bureau \url{https://en.wikipedia.org/wiki/List_of_regions_of_the_United_States#Interstate_regions}.
+#' @examples
+#' library(dplyr)
+#' # Number of states in each division
+#' state_info %>%
+#'   count(division)
+#' # Number of states in each region
+#' state_info %>%
+#'   count(region)
+"state_info"

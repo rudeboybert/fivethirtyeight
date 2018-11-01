@@ -2,6 +2,10 @@
 
 * Added vignette corresponding to Technology Innovations in Statistics Education [paper](https://escholarship.org/uc/item/0rx1231m#main)
 * Removed tidyverse from `DESCRIPTION` Depends, Imports, or Suggests fields
+* Added `state_info` dataframe of state name, abbreviation, US census division/region
+* Added `state_abbrev` variable to `hate_crimes` dataset so that 
+users can plot state abbreviations via `geom_text(aes(label = state_abbrev))`
+instead of using less informative `geom_point()`
 
 # fivethirtyeight 0.4.0
 

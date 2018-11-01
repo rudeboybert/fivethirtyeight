@@ -1,6 +1,7 @@
 library(tidyverse)
 library(stringr)
 library(lubridate)
+library(usethis)
 
 # Get list of variable names in df with newline
 get_names <- function(x) {cat(names(x), sep = "\n")}
@@ -20,6 +21,10 @@ prep <- function(x){
     "devtools::use_data(", x, ", overwrite = TRUE) \n\n\n\n\n")
 }
 lapply(chester_folders, prep) %>% unlist() %>% cat()
+
+# Get state info
+source("data-raw/state_info.R")
+
 
 # forecast_methodology -------------------------------------------------------------
 hist_senate_preds <-
@@ -41,7 +46,14 @@ hate_crimes <- read_csv("data-raw/hate-crimes/hate_crimes.csv") %>%
 colnames(hate_crimes) <- colnames(hate_crimes) %>%
   tolower() %>%
   str_replace_all(" ", "_")
-devtools::use_data(hate_crimes, overwrite = TRUE)
+
+# Add state abbreviations only
+hate_crimes <- hate_crimes %>%
+  left_join(state_info, by = "state") %>%
+  select(-c(division, region)) %>%
+  select(state, state_abbrev, everything())
+usethis::use_data(hate_crimes, overwrite = TRUE)
+
 
 # hip_hop_candidate_lyrics ---------------------------------------------------------
 hiphop_cand_lyrics <-
