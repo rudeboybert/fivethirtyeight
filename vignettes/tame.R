@@ -68,7 +68,7 @@ lm(hate_crimes_per_100k_splc ~ gini_index, data=hate_crimes) %>%
 #  remotes::install_github("rudeboybert/fivethirtyeight", build_vignettes = TRUE)
 
 ## ------------------------------------------------------------------------
-library(tidyverse)
+library(readr)
 flying_raw <- read_csv("http://bit.ly/2vg8gTf")
 colnames(flying_raw)[1:5]
 
@@ -95,7 +95,7 @@ ggplot(flying, aes(x = children_under_18, fill = baby)) +
   labs(x = "Do you have children under 18?", y = "Proportion", fill = "Is it rude?")
 
 ## ------------------------------------------------------------------------
-library(tidyverse)
+library(readr)
 US_births_1999_2003_raw <- read_csv("http://bit.ly/2vgRFiw")
 US_births_1999_raw <- US_births_1999_2003_raw[US_births_1999_2003_raw$year == 1999, ]
 head(US_births_1999_raw)
@@ -118,7 +118,7 @@ knitr::include_graphics("images/hickey-bechdel-11.png")
 #                 "'95-'99", "'00-'04", "'05-'09", "'10-'13")
 #  
 #  # Using raw data:
-#  library(tidyverse)
+#  library(readr)
 #  bechdel_raw <- read_csv("http://bit.ly/2uD3ls6") %>%
 #    mutate(five_year = cut(year, breaks = seq(1969, 2014, 5), labels = year_bins))
 #  
@@ -163,12 +163,13 @@ plot2 <- ggplot(bechdel, aes(x = five_year, fill = clean_test)) +
 grid.arrange(plot1, plot2, nrow=2)
 
 ## ---- fig.width=16/2.5, fig.height=9/2-----------------------------------
-library(tidyverse)
+library(dplyr)
 library(fivethirtyeight)
 drinks %>% 
   filter(country %in% c("USA", "France"))
 
 ## ---- fig.width=16/2.5,  fig.height=9/2----------------------------------
+library(tidyr)
 drinks_tidy_US_FR <- drinks %>%
   filter(country %in% c("USA", "France")) %>% 
   gather(type, servings, -c(country, total_litres_of_pure_alcohol))
