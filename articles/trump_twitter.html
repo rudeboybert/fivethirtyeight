@@ -6,13 +6,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trump Twitter analysis using the <code>tidyverse</code> • fivethirtyeight</title>
-<!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Trump Twitter analysis using the &lt;code&gt;tidyverse&lt;/code&gt;">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
-<!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
+<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9000</span>
       </span>
     </div>
 
@@ -111,7 +111,7 @@
 </h1>
                         <h4 class="author">Adam Spannbauer and Jennifer Chunn</h4>
             
-            <h4 class="date">2018-09-27</h4>
+            <h4 class="date">2018-12-29</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/trump_twitter.Rmd"><code>vignettes/trump_twitter.Rmd</code></a></small>
       <div class="hidden name"><code>trump_twitter.Rmd</code></div>
@@ -122,47 +122,47 @@
     
 <p>This vignette is based on data collected for the 538 story entitled “The World’s Favorite Donald Trump Tweets” by Leah Libresco available <a href="https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/">here</a>.</p>
 <p>Load required packages to reproduce analysis.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(fivethirtyeight)</a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fivethirtyeight)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># library(tidyverse)</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">library</span>(tidytext)</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">library</span>(stringr)</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">library</span>(lubridate)</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="kw">library</span>(knitr)</a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="kw">library</span>(hunspell)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(dplyr)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tidytext)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(stringr)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(lubridate)</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(knitr)</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(hunspell)</a>
 <a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co"># Turn off scientific notation</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw">options</span>(<span class="dt">scipen =</span> <span class="dv">99</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">options</a></span>(<span class="dt">scipen =</span> <span class="dv">99</span>)</a></code></pre></div>
 <div id="check-date-range-of-tweets" class="section level2">
 <h2 class="hasAnchor">
 <a href="#check-date-range-of-tweets" class="anchor"></a>Check date range of tweets</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">## check out structure and date range ------------------------------------------------</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">(minDate &lt;-<span class="st"> </span><span class="kw">min</span>(<span class="kw"><a href="http://lubridate.tidyverse.org/reference/date.html">date</a></span>(trump_twitter<span class="op">$</span>created_at)))</a></code></pre></div>
+<a class="sourceLine" id="cb2-2" data-line-number="2">(minDate &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Extremes">min</a></span>(<span class="kw"><a href="http://lubridate.tidyverse.org/reference/date.html">date</a></span>(trump_twitter<span class="op">$</span>created_at)))</a></code></pre></div>
 <pre><code>## [1] "2015-08-01"</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">(maxDate &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw"><a href="http://lubridate.tidyverse.org/reference/date.html">date</a></span>(trump_twitter<span class="op">$</span>created_at)))</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">(maxDate &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Extremes">max</a></span>(<span class="kw"><a href="http://lubridate.tidyverse.org/reference/date.html">date</a></span>(trump_twitter<span class="op">$</span>created_at)))</a></code></pre></div>
 <pre><code>## [1] "2016-08-16"</code></pre>
 </div>
 <div id="create-vectorised-stemming-function-using-hunspell" class="section level1">
 <h1 class="hasAnchor">
 <a href="#create-vectorised-stemming-function-using-hunspell" class="anchor"></a>Create vectorised stemming function using hunspell</h1>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">my_hunspell_stem &lt;-<span class="st"> </span><span class="cf">function</span>(token) {</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">  stem_token &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/hunspell/topics/hunspell">hunspell_stem</a></span>(token)[[<span class="dv">1</span>]]</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="cf">if</span> (<span class="kw">length</span>(stem_token) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) <span class="kw">return</span>(token) <span class="cf">else</span> <span class="kw">return</span>(stem_token[<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">  stem_token &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/hunspell/topics/hunspell">hunspell_stem</a></span>(token)[[<span class="dv">1</span>]]</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="cf">if</span> (<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(stem_token) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/function">return</a></span>(token) <span class="cf">else</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/function">return</a></span>(stem_token[<span class="dv">1</span>])</a>
 <a class="sourceLine" id="cb6-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">vec_hunspell_stem &lt;-<span class="st"> </span><span class="kw">Vectorize</span>(my_hunspell_stem, <span class="st">"token"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb6-5" data-line-number="5">vec_hunspell_stem &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Vectorize">Vectorize</a></span>(my_hunspell_stem, <span class="st">"token"</span>)</a></code></pre></div>
 </div>
 <div id="clean-text-by-tokenizing-removing-urlsstopwords" class="section level1">
 <h1 class="hasAnchor">
 <a href="#clean-text-by-tokenizing-removing-urlsstopwords" class="anchor"></a>Clean text by tokenizing &amp; removing urls/stopwords</h1>
 <p>We first remove URLs and stopwords as specified in the <code>tidytext</code> library. Stopwords are common words in English. We also do spellchecking using hunspell.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">trump_tokens &lt;-<span class="st"> </span>trump_twitter <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">text =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(text, </a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">                                <span class="dt">pattern=</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/modifiers">regex</a></span>(<span class="st">"(www|https?[^</span><span class="ch">\\</span><span class="st">s]+)"</span>), </a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">text =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(text, </a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">                                <span class="dt">pattern=</span><span class="kw"><a href="https://www.rdocumentation.org/packages/stringr/topics/modifiers">regex</a></span>(<span class="st">"(www|https?[^</span><span class="ch">\\</span><span class="st">s]+)"</span>), </a>
 <a class="sourceLine" id="cb7-4" data-line-number="4">                                <span class="dt">replacement =</span> <span class="st">""</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#rm urls</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">text =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(text,</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">text =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/stringr/topics/str_replace">str_replace_all</a></span>(text,</a>
 <a class="sourceLine" id="cb7-6" data-line-number="6">                                <span class="dt">pattern =</span> <span class="st">"[[:digit:]]"</span>,</a>
 <a class="sourceLine" id="cb7-7" data-line-number="7">                                <span class="dt">replacement =</span> <span class="st">""</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/tidytext/topics/unnest_tokens">unnest_tokens</a></span>(tokens, text) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#tokenize</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/tidytext/topics/unnest_tokens">unnest_tokens</a></span>(tokens, text) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#tokenize</span></a>
 <a class="sourceLine" id="cb7-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">tokens =</span> <span class="kw">vec_hunspell_stem</span>(tokens)) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb7-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="op">!</span>(tokens <span class="op">%in%</span><span class="st"> </span>stop_words<span class="op">$</span>word)) <span class="co">#rm stopwords</span></a></code></pre></div>
 </div>
@@ -171,21 +171,21 @@
 <a href="#sentiment-analysis" class="anchor"></a>Sentiment analysis</h1>
 <p>To measure the sentiment of tweets, we used the AFINN lexicon for each (non-stop) word in a tweet. The score runs between -5 and 5. We then sum the scores for each word across all words in one tweet to get a total tweet sentiment score.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">trump_sentiment &lt;-<span class="st"> </span>trump_tokens <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/tidytext/topics/get_sentiments">get_sentiments</a></span>(<span class="st">"afinn"</span>), <span class="dt">by=</span><span class="kw">c</span>(<span class="st">"tokens"</span>=<span class="st">"word"</span>)) </a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/tidytext/topics/get_sentiments">get_sentiments</a></span>(<span class="st">"afinn"</span>), <span class="dt">by=</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"tokens"</span>=<span class="st">"word"</span>)) </a>
 <a class="sourceLine" id="cb8-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb8-4" data-line-number="4">trump_full_text_sent &lt;-<span class="st"> </span>trump_sentiment <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb8-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(id) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">score =</span> <span class="kw">sum</span>(score, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">score =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/sum">sum</a></span>(score, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb8-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb8-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">right_join</a></span>(trump_twitter, <span class="dt">by=</span><span class="st">"id"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">score_factor =</span> <span class="kw">ifelse</span>(<span class="kw">is.na</span>(score), <span class="st">"Missing score"</span>, </a>
-<a class="sourceLine" id="cb8-10" data-line-number="10">                               <span class="kw">ifelse</span>(score <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>, <span class="st">"-.Negative"</span>, </a>
-<a class="sourceLine" id="cb8-11" data-line-number="11">                                      <span class="kw">ifelse</span>(score <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">"0"</span>, <span class="st">"+.Pos"</span>))))</a></code></pre></div>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">score_factor =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(score), <span class="st">"Missing score"</span>, </a>
+<a class="sourceLine" id="cb8-10" data-line-number="10">                               <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse</a></span>(score <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>, <span class="st">"-.Negative"</span>, </a>
+<a class="sourceLine" id="cb8-11" data-line-number="11">                                      <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ifelse">ifelse</a></span>(score <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">"0"</span>, <span class="st">"+.Pos"</span>))))</a></code></pre></div>
 <div id="distribution-of-sentiment-scores" class="section level2">
 <h2 class="hasAnchor">
 <a href="#distribution-of-sentiment-scores" class="anchor"></a>Distribution of sentiment scores</h2>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">trump_full_text_sent <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/tally.html">count</a></span>(score_factor) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">prop =</span> <span class="kw">prop.table</span>(n))</a></code></pre></div>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/tally.html">count</a></span>(score_factor) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">prop =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/prop.table">prop.table</a></span>(n))</a></code></pre></div>
 <pre><code>## # A tibble: 4 x 3
 ##   score_factor      n   prop
 ##   &lt;chr&gt;         &lt;int&gt;  &lt;dbl&gt;
@@ -194,19 +194,19 @@
 ## 3 0                 8 0.0179
 ## 4 Missing score   208 0.464</code></pre>
 <p>46.4% of tweets did not have sentiment scores. 15.4% were net negative and 36.6% were net positive.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data=</span>trump_full_text_sent, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(score)) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_histogram">geom_histogram</a></span>(<span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data=</span>trump_full_text_sent, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(score)) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span>(<span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
 <p><img src="trump_twitter_files/figure-html/sentiment_hist-1.png" width="672"></p>
 </div>
 </div>
 <div id="plot-sentiment-over-time" class="section level1">
 <h1 class="hasAnchor">
 <a href="#plot-sentiment-over-time" class="anchor"></a>plot sentiment over time</h1>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">sentOverTimeGraph &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data=</span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(trump_full_text_sent,<span class="op">!</span><span class="kw">is.na</span>(score)), <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x=</span>created_at, <span class="dt">y=</span>score)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_path">geom_line</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_point">geom_point</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">xlab</a></span>(<span class="st">"Date"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ylab</a></span>(<span class="st">"Sentiment (afinn)"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ggtitle</a></span>(<span class="kw">paste0</span>(<span class="st">"Trump Tweet Sentiment ("</span>,minDate,<span class="st">" to "</span>,maxDate,<span class="st">")"</span>))</a>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">sentOverTimeGraph &lt;-<span class="st"> </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data=</span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(trump_full_text_sent,<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(score)), <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x=</span>created_at, <span class="dt">y=</span>score)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="st">"Date"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span>(<span class="st">"Sentiment (afinn)"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/paste">paste0</a></span>(<span class="st">"Trump Tweet Sentiment ("</span>,minDate,<span class="st">" to "</span>,maxDate,<span class="st">")"</span>))</a>
 <a class="sourceLine" id="cb12-7" data-line-number="7">sentOverTimeGraph</a></code></pre></div>
 <p><img src="trump_twitter_files/figure-html/plot_time-1.png" width="672"></p>
 </div>
@@ -215,10 +215,10 @@
 <a href="#examine-top-5-most-positive-tweets" class="anchor"></a>Examine top 5 most positive tweets</h1>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">most_pos_trump &lt;-<span class="st"> </span>trump_full_text_sent <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(<span class="kw"><a href="http://dplyr.tidyverse.org/reference/desc.html">desc</a></span>(score)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw">head</span>(<span class="dt">n=</span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dt">n=</span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span>.[[<span class="st">"text"</span>]]</a>
 <a class="sourceLine" id="cb13-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(most_pos_trump, <span class="dt">format=</span><span class="st">"html"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(most_pos_trump, <span class="dt">format=</span><span class="st">"html"</span>)</a></code></pre></div>
 <table class="table">
 <thead><tr>
 <th style="text-align:left;">
@@ -259,9 +259,9 @@ Thank you <span class="citation">@JoeTrippi</span> for the nice, and true, words
 <a href="#examine-top-5-most-negative-tweets" class="anchor"></a>Examine top 5 most negative tweets</h1>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">most_neg_trump &lt;-<span class="st"> </span>trump_full_text_sent <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(score) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw">head</span>(<span class="dt">n=</span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dt">n=</span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span>.[[<span class="st">"text"</span>]]</a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(most_neg_trump, <span class="dt">format =</span> <span class="st">"html"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(most_neg_trump, <span class="dt">format =</span> <span class="st">"html"</span>)</a></code></pre></div>
 <table class="table">
 <thead><tr>
 <th style="text-align:left;">
@@ -308,19 +308,19 @@ Ted Cruz is a nervous wreck. He is making reckless charges not caring for the tr
 <a class="sourceLine" id="cb15-5" data-line-number="5">         <span class="dt">month_over_time =</span> <span class="kw"><a href="http://lubridate.tidyverse.org/reference/round_date.html">round_date</a></span>(created_at,<span class="st">"month"</span>))</a>
 <a class="sourceLine" id="cb15-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb15-7" data-line-number="7">plotSentByTime &lt;-<span class="st"> </span><span class="cf">function</span>(trump_tweet_times, timeGroupVar) {</a>
-<a class="sourceLine" id="cb15-8" data-line-number="8">  timeVar &lt;-<span class="st"> </span><span class="kw">substitute</span>(timeGroupVar)</a>
-<a class="sourceLine" id="cb15-9" data-line-number="9">  timeVarLabel &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/stringr/topics/case">str_to_title</a></span>(timeVar)</a>
+<a class="sourceLine" id="cb15-8" data-line-number="8">  timeVar &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/substitute">substitute</a></span>(timeGroupVar)</a>
+<a class="sourceLine" id="cb15-9" data-line-number="9">  timeVarLabel &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/stringr/topics/case">str_to_title</a></span>(timeVar)</a>
 <a class="sourceLine" id="cb15-10" data-line-number="10">  </a>
 <a class="sourceLine" id="cb15-11" data-line-number="11">  trump_tweet_time_sent &lt;-<span class="st"> </span>trump_tweet_times <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb15-12" data-line-number="12"><span class="st">    </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/se-deprecated.html">rename_</a></span>(<span class="dt">timeGroup =</span> timeVar) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb15-13" data-line-number="13"><span class="st">    </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(timeGroup) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-14" data-line-number="14"><span class="st">    </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">score =</span> <span class="kw">mean</span>(score, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),<span class="dt">Count =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-14" data-line-number="14"><span class="st">    </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">score =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(score, <span class="dt">na.rm=</span><span class="ot">TRUE</span>),<span class="dt">Count =</span> <span class="kw"><a href="http://dplyr.tidyverse.org/reference/n.html">n</a></span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb15-15" data-line-number="15"><span class="st">    </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span>()</a>
 <a class="sourceLine" id="cb15-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb15-17" data-line-number="17">  <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(trump_tweet_time_sent, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x=</span>timeGroup, <span class="dt">y=</span>Count, <span class="dt">fill =</span> score)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-18" data-line-number="18"><span class="st">    </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_bar">geom_bar</a></span>(<span class="dt">stat=</span><span class="st">"identity"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-19" data-line-number="19"><span class="st">    </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">xlab</a></span>(timeVarLabel) <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-20" data-line-number="20"><span class="st">    </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/labs">ggtitle</a></span>(<span class="kw">paste</span>(<span class="st">"Trump Tweet Count &amp; Sentiment by"</span>, timeVarLabel))</a>
+<a class="sourceLine" id="cb15-17" data-line-number="17">  <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(trump_tweet_time_sent, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x=</span>timeGroup, <span class="dt">y=</span>Count, <span class="dt">fill =</span> score)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-18" data-line-number="18"><span class="st">    </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>(<span class="dt">stat=</span><span class="st">"identity"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-19" data-line-number="19"><span class="st">    </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(timeVarLabel) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-20" data-line-number="20"><span class="st">    </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/paste">paste</a></span>(<span class="st">"Trump Tweet Count &amp; Sentiment by"</span>, timeVarLabel))</a>
 <a class="sourceLine" id="cb15-21" data-line-number="21">}</a></code></pre></div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">plotSentByTime</span>(trump_tweet_times, hour)</a></code></pre></div>
 <p><img src="trump_twitter_files/figure-html/plot_hour-1.png" width="672"></p>
@@ -371,9 +371,8 @@ Ted Cruz is a nervous wreck. He is making reckless charges not caring for the tr
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
 </div>
-
       </footer>
 </div>
 

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Senator Dataset — senators • fivethirtyeight</title>
+<title>Information on each state — state_info • fivethirtyeight</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Senator Dataset — senators" />
+<meta property="og:title" content="Information on each state — state_info" />
 
-<meta property="og:description" content="Senator Dataset" />
+<meta property="og:description" content="State name, abbreviation, US Census designated division &amp;amp; region." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -141,65 +141,57 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Senator Dataset</h1>
-    <small class="dont-index">Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_maggie.R'><code>R/data_maggie.R</code></a></small>
-    <div class="hidden name"><code>senators.Rd</code></div>
+    <h1>Information on each state</h1>
+    <small class="dont-index">Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_albert.R'><code>R/data_albert.R</code></a></small>
+    <div class="hidden name"><code>state_info.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Senator Dataset</p>
+    <p>State name, abbreviation, US Census designated division &amp; region.</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>senators</span></pre>
+    <pre class="usage"><span class='no'>state_info</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>Because of R package size restrictions, only a preview of the
-first 10 rows of this dataset is included; to obtain the entire dataset see
-Examples below. A data frame with 10 rows representing tweets and 10 variables:</p><dl class='dl-horizontal'>
-<dt>created_at</dt><dd><p>The date and time the tweet was posted</p></dd>
-<dt>user</dt><dd><p>The user posting the tweet</p></dd>
-<dt>text</dt><dd><p>The text of the tweet</p></dd>
-<dt>url</dt><dd><p>The link to the tweet</p></dd>
-<dt>replies</dt><dd><p>The number of replies to the tweet</p></dd>
-<dt>retweets</dt><dd><p>The number of retweets</p></dd>
-<dt>favorites</dt><dd><p>The number of favorites</p></dd>
-<dt>bioguide_id</dt><dd><p>The poster's member ID from the "Biographical Directory of the United States Congress"</p></dd>
-<dt>party</dt><dd><p>The poster's political party affiliation</p></dd>
-<dt>state</dt><dd><p>The state the poster represents in Congress</p></dd>
+    <p>A data frame with 51 rows representing airlines and 4 variables:</p><dl class='dl-horizontal'>
+  <dt>state</dt><dd><p>State name</p></dd>
+  <dt>state_abbrev</dt><dd><p>State abbreviation</p></dd>
+  <dt>division</dt><dd><p>US Census designated division. Values for <code>division</code> are nested within <code>region</code></p></dd>
+  <dt>region</dt><dd><p>US Census designated region</p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Twitter</p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Data collected on Oct 19 and 20</p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='twitter_presidents.html'>twitter_presidents</a></code></p></div>
+    <p>US Census Bureau <a href='https://en.wikipedia.org/wiki/List_of_regions_of_the_United_States#Interstate_regions'>https://en.wikipedia.org/wiki/List_of_regions_of_the_United_States#Interstate_regions</a>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the code inside the following if statement:</span>
-<span class='kw'>if</span>(<span class='fl'>FALSE</span>){
-  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>dplyr</span>)
-  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>tidyr</span>)
-  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>readr</span>)
-  <span class='no'>url</span> <span class='kw'>&lt;-</span> <span class='st'>"https://raw.githubusercontent.com/fivethirtyeight/data/master/twitter-ratio/senators.csv"</span>
-  <span class='no'>senators</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span>(<span class='no'>url</span>) <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(
-      <span class='kw'>party</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/factor'>as.factor</a></span>(<span class='no'>party</span>),
-      <span class='kw'>state</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/factor'>as.factor</a></span>(<span class='no'>state</span>),
-      <span class='kw'>created_at</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.POSIXlt'>as.POSIXct</a></span>(<span class='no'>created_at</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='st'>"GMT"</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"%m/%d/%Y %H:%M"</span>),
-      <span class='kw'>text</span> <span class='kw'>=</span>  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/grep'>gsub</a></span>(<span class='st'>"[^\x01-\x7F]"</span>, <span class='st'>""</span>, <span class='no'>text</span>)
-    ) <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='http://dplyr.tidyverse.org/reference/select.html'>select</a></span>(<span class='no'>created_at</span>, <span class='no'>user</span>, <span class='fu'><a href='http://dplyr.tidyverse.org/reference/reexports.html'>everything</a></span>())
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>dplyr</span>)
+<span class='co'># Number of states in each division</span>
+<span class='no'>state_info</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/tally.html'>count</a></span>(<span class='no'>division</span>)</div><div class='output co'>#&gt; # A tibble: 9 x 2
+#&gt;   division               n
+#&gt;   &lt;chr&gt;              &lt;int&gt;
+#&gt; 1 East North Central     5
+#&gt; 2 East South Central     4
+#&gt; 3 Mid-Atlantic           3
+#&gt; 4 Mountain               8
+#&gt; 5 New England            6
+#&gt; 6 Pacific                5
+#&gt; 7 South Atlantic         9
+#&gt; 8 West North Central     7
+#&gt; 9 West South Central     4</div><div class='input'><span class='co'># Number of states in each region</span>
+<span class='no'>state_info</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='http://dplyr.tidyverse.org/reference/tally.html'>count</a></span>(<span class='no'>region</span>)</div><div class='output co'>#&gt; # A tibble: 4 x 2
+#&gt;   region        n
+#&gt;   &lt;chr&gt;     &lt;int&gt;
+#&gt; 1 Midwest      12
+#&gt; 2 Northeast     9
+#&gt; 3 South        17
+#&gt; 4 West         13</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -208,10 +200,6 @@ Examples below. A data frame with 10 rows representing tweets and 10 variables:<
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

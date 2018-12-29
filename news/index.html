@@ -9,17 +9,17 @@
 <title>Changelog • fivethirtyeight</title>
 
 <!-- jquery -->
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
 <!-- sticky kit -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
@@ -35,7 +35,8 @@
 
 
 <!-- mathjax -->
-<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -59,7 +60,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9000</span>
       </span>
     </div>
 
@@ -149,6 +150,9 @@
 <li>Added vignette corresponding to Technology Innovations in Statistics Education <a href="https://escholarship.org/uc/item/0rx1231m#main">paper</a>
 </li>
 <li>Removed tidyverse from <code>DESCRIPTION</code> Depends, Imports, or Suggests fields</li>
+<li>Added <code>state_info</code> dataframe of state name, abbreviation, US census division/region</li>
+<li>Added <code>state_abbrev</code> variable to <code>hate_crimes</code> dataset so that users can plot state abbreviations via <code>geom_text(aes(label = state_abbrev))</code> instead of using less informative <code>geom_point()</code>
+</li>
 </ul>
 </div>
     <div id="fivethirtyeight-0-4-0" class="section level1">
@@ -166,7 +170,7 @@
 </ul>
 </li>
 <li>Note for now <code>mayweather_mcgregor_tweets</code>, <code>mlb_elo</code>, <code>nba_carmelo</code>, <code>nfl_elo</code>, <code>senators</code>, only include the first 10 rows of the data because of R package file size restrictions (&lt; 5MB tarballs); code to download/process the entire dataset are included in help files. We hope to include full versions of these datasets in v0.5.0 of package using the <code>drat</code> package.</li>
-<li>Converted all ordinal categorical variables to <code>factor(..., ordered = TRUE)</code>. Ex: <code>bechdel$clean_test</code>
+<li>Converted all ordinal categorical variables to <code><a href="https://www.rdocumentation.org/packages/base/topics/factor">factor(..., ordered = TRUE)</a></code>. Ex: <code>bechdel$clean_test</code>
 </li>
 <li>Vignette notes:
 <ul>
@@ -211,7 +215,7 @@
 <li>Added first crowd-sourced vignettes: <code>comics_gender</code>, <code>NBA</code>, <code>trump_twitter</code>
 </li>
 <li>Added global help file for package: <code><a href="../reference/fivethirtyeight.html">?fivethirtyeight</a></code> with complete instructions</li>
-<li>Started adding <code><a href='http://github.com/examples'>@examples</a></code> code in help files to convert to tidy data format so that data plays nice with tidyverse tools.</li>
+<li>Started adding <code>@examples</code> code in help files to convert to tidy data format so that data plays nice with tidyverse tools.</li>
 <li>Other minor changes:
 <ul>
 <li><a href="https://github.com/rudeboybert/fivethirtyeight/pull/1">Changed to SVG travis logo</a></li>
@@ -255,9 +259,8 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
 </div>
-
       </footer>
    </div>
 

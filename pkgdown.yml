@@ -1,6 +1,6 @@
 pandoc: '2.2'
-pkgdown: 1.1.0.9000
-pkgdown_sha: adc3d90c53ae1c7336dfeb0b140ef9a47bc6e220
+pkgdown: 1.3.0.9000
+pkgdown_sha: 45892dd5fe3c9904e09509694deede0c34d01af9
 articles:
   NBA: NBA.html
   bechdel: bechdel.html
