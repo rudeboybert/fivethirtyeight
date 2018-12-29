@@ -13,6 +13,9 @@ apt_packages:
   - r-cran-slam
 latex: false
 
+before_script:
+  - R CMD build --no-build-vignettes .
+
 env:
  global:
    - CRAN: http://cran.rstudio.com
