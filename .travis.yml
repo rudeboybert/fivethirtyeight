@@ -42,9 +42,9 @@ r_packages:
   - slam
   - wordcloud
   
-r_github_packages:
-  - r-lib/pkgdown
-  - rudeboybert/fivethirtyeight
+#r_github_packages:
+#  - r-lib/pkgdown
+#  - rudeboybert/fivethirtyeight
 
 #before_deploy:
 #  - Rscript -e 'pkgdown::build_site()'
