@@ -13,11 +13,14 @@ cache: packages
 #  - r-cran-slam
 latex: false
 
+r_build_args: --no-build-vignettes --no-manual --no-resave-data
+r_check_args: --no-build-vignettes --no-manual
+
 env:
  global:
    - CRAN: http://cran.rstudio.com
-   - R_CHECK_ARGS="--no-build-vignettes --no-manual --timings"
-   - _R_CHECK_TIMINGS_="0"
+#   - R_CHECK_ARGS="--no-build-vignettes --no-manual --timings"
+#   - _R_CHECK_TIMINGS_="0"
 
 notifications:
   email:
