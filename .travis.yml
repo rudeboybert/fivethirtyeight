@@ -7,10 +7,10 @@ r:
   - devel
 sudo: true
 cache: packages
-apt_packages:
-  - libudunits2-dev
-  # Since slam requires R 3.4.0 or higher
-  - r-cran-slam
+#apt_packages:
+#  - libudunits2-dev
+#  # Since slam requires R 3.4.0 or higher
+#  - r-cran-slam
 latex: false
 
 env:
@@ -25,24 +25,24 @@ notifications:
     on_failure: change
 
 # For pkgdown to build, all pkgs in vignettes need to be installed
-r_packages:
-  - devtools
-  - tidyverse
-  - magrittr
-  - knitr
-  - rmarkdown
-  - scales
-  - tidytext
-  - ggthemes
-  - hunspell
-  - fmsb
-  - gridExtra
-  - corrplot
-  - ggraph
-  - igraph
-  - highcharter
-  - slam
-  - wordcloud
+#r_packages:
+#  - devtools
+#  - tidyverse
+#  - magrittr
+#  - knitr
+#  - rmarkdown
+#  - scales
+#  - tidytext
+#  - ggthemes
+#  - hunspell
+#  - fmsb
+#  - gridExtra
+#  - corrplot
+#  - ggraph
+#  - igraph
+#  - highcharter
+#  - slam
+#  - wordcloud
   
 #r_github_packages:
 #  - r-lib/pkgdown
