@@ -1,22 +1,20 @@
-#' Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?
+#' Two Years In, Turnover In Trump’s Cabinet Is Still Historically High
 #'
 #' The raw data behind the story
 #' "Two Years In, Turnover In Trump’s Cabinet Is Still Historically High"
 #' \url{https://fivethirtyeight.com/features/two-years-in-turnover-in-trumps-cabinet-is-still-historically-high/}.
 #'
-#' @format A data frame with X rows representing airlines and X variables:
+#' @format A data frame with 312 rows representing airlines and 7 variables:
 #' \describe{
-#'   \item{airline}{airline}
-#'   \item{incl_reg_subsidiaries}{indicates that regional subsidiaries are included}
-#'   \item{avail_seat_km_per_week}{available seat kilometers flown every week}
-#'   \item{incidents_85_99}{Total number of incidents, 1985-1999}
-#'   \item{fatal_accidents_85_99}{Total number of fatal accidents, 1985-1999}
-#'   \item{fatalities_85_99}{Total number of fatalities, 1985-1999}
-#'   \item{incidents_00_14}{Total number of incidents, 2000-2014}
-#'   \item{fatal_accidents_00_14}{Total number of fatal accidents, 2000-2014}
-#'   \item{fatalities_00_14}{Total number of fatalities, 2000-2014}
+#'   \item{president}{Last name of sitting President}
+#'   \item{position}{Cabinet Position}
+#'   \item{appointee}{Appointee's full name}
+#'   \item{start}{Date the appointee was sworn in}
+#'   \item{end}{Date the appointee left office}
+#'   \item{length}{Length of Tenure in days}
+#'   \item{days}{Days into admininstration that the appointee left office}
 #' }
-#' @source Aviation Safety Network \url{http://aviation-safety.net}.
+#' @source \url{https://github.com/fivethirtyeight/data/tree/master/cabinet-turnover}.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(dplyr)
