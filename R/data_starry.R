@@ -15,16 +15,3 @@
 #'   \item{days}{Days into admininstration that the appointee left office}
 #' }
 #' @source \url{https://github.com/fivethirtyeight/data/tree/master/cabinet-turnover}.
-#' @examples
-#' # To convert data frame to tidy data (long) format, run:
-#' library(dplyr)
-#' library(tidyr)
-#' library(stringr)
-#' airline_safety_tidy <- airline_safety %>%
-#'   gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) %>%
-#'   mutate(
-#'     period = str_sub(type, start=-5),
-#'     period = str_replace_all(period, "_", "-"),
-#'     type = str_sub(type, end=-7)
-#'   )
-"cabinet_turnover"
