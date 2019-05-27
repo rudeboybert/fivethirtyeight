@@ -15,3 +15,13 @@
 #'   \item{days}{Days into admininstration that the appointee left office}
 #' }
 #' @source \url{https://github.com/fivethirtyeight/data/tree/master/cabinet-turnover}.
+
+#' How Much Trouble Is Ted Cruz Really In?
+#'
+#' The raw data behind the story
+#' "How Much Trouble Is Ted Cruz Really In?"
+#' \url{https://fivethirtyeight.com/features/how-much-trouble-is-ted-cruz-really-in/}.
+#'
+#' @format A data frame with 594 rows representing airlines and 11 variables:
+
+#' @source \url{https://github.com/fivethirtyeight/data/tree/master/august-senate-polls}.
