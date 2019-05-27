@@ -6,6 +6,9 @@
 * Added `state_abbrev` variable to `hate_crimes` dataset so that 
 users can plot state abbreviations via `geom_text(aes(label = state_abbrev))`
 instead of using less informative `geom_point()`
+* Added new data sets:
+    + By Starry Zhou: `cabinet_turnover`
+
 
 # fivethirtyeight 0.4.0
 
@@ -36,7 +39,6 @@ Ex: `bechdel$clean_test`
     + For all datasets that have a user contributed vignette, add a link to it 
     in the corresponding help/roxygen code file.
 * Added `CITATION`
-
 
 # fivethirtyeight 0.3.0
 
