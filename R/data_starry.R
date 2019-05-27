@@ -4,7 +4,7 @@
 #' "Two Years In, Turnover In Trump’s Cabinet Is Still Historically High"
 #' \url{https://fivethirtyeight.com/features/two-years-in-turnover-in-trumps-cabinet-is-still-historically-high/}.
 #'
-#' @format A data frame with 312 rows representing airlines and 7 variables:
+#' @format A data frame with 312 rows representing cabinet member histories and 7 variables:
 #' \describe{
 #'   \item{president}{Last name of sitting President}
 #'   \item{position}{Cabinet Position}
@@ -14,14 +14,5 @@
 #'   \item{length}{Length of Tenure in days}
 #'   \item{days}{Days into admininstration that the appointee left office}
 #' }
-#' @source \url{https://github.com/fivethirtyeight/data/tree/master/cabinet-turnover}.
-
-#' How Much Trouble Is Ted Cruz Really In?
-#'
-#' The raw data behind the story
-#' "How Much Trouble Is Ted Cruz Really In?"
-#' \url{https://fivethirtyeight.com/features/how-much-trouble-is-ted-cruz-really-in/}.
-#'
-#' @format A data frame with 594 rows representing airlines and 11 variables:
-
-#' @source \url{https://github.com/fivethirtyeight/data/tree/master/august-senate-polls}.
+#' @source Federal Government Website, News Reports
+"cabinet_turnover"
