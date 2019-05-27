@@ -2,8 +2,6 @@ library(tidyverse)
 library(stringr)
 library(lubridate)
 
-
-
 # cabinet-turnover ---------------------------------------------------------------
 cabinet_turnover <- read_csv("data-raw/cabinet-turnover/cabinet-turnover.csv")
 colnames(cabinet_turnover) <- colnames(cabinet_turnover) %>% 
@@ -28,5 +26,14 @@ cabinet_turnover$length <-
 cabinet_turnover$days <- 
   cabinet_turnover$days %>% 
   as.numeric()
+
+devtools::use_data(cabinet_turnover, overwrite = TRUE)
+
+# august-senate-pools ---------------------------------------------------------------
+august_senate_polls <- read_csv("data-raw/august-senate-polls/august_senate_polls.csv")
+colnames(august_senate_polls) <- colnames(august_senate_polls) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+
 
 devtools::use_data(cabinet_turnover, overwrite = TRUE)
