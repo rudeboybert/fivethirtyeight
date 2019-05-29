@@ -17,3 +17,15 @@ cabinet_turnover <- cabinet_turnover %>%
          days = as.numeric(days))
 
 devtools::use_data(cabinet_turnover, overwrite = TRUE)
+
+# august-senate-polls ---------------------------------------------------------------
+august_senate_polls <- read_csv("data-raw/august-senate-polls/august_senate_polls.csv")
+august_senate_polls <- august_senate_polls %>% 
+  mutate(
+    cycle = as.numeric(cycle), 
+    state = as.factor(state), 
+    senate_class = as.factor(senate_class),
+    start_date = as.Date(start_date), 
+    end_date = as.Date(end_date))
+
+devtools::use_data(cabinet_turnover, overwrite = TRUE)
