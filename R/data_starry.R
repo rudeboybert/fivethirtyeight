@@ -4,7 +4,7 @@
 #' "Two Years In, Turnover In Trump’s Cabinet Is Still Historically High"
 #' \url{https://fivethirtyeight.com/features/two-years-in-turnover-in-trumps-cabinet-is-still-historically-high/}.
 #'
-#' @format A data frame with 312 rows representing cabinet member histories and 7 variables:
+#' @format A data frame with 312 rows representing cabinet members and 7 variables:
 #' \describe{
 #'   \item{president}{Last name of sitting President}
 #'   \item{position}{Cabinet Position}
@@ -23,19 +23,19 @@
 #' "How Much Trouble Is Ted Cruz Really In?"
 #' \url{https://fivethirtyeight.com/features/how-much-trouble-is-ted-cruz-really-in/}.
 #'
-#' @format A data frame with 594 rows representing "Senate polls that were conducted in August of an election year", and 11 variables (We weeded out any polls of races that didn’t have at least one Democrat and one Republican facing off.):
+#' @format A data frame with 594 rows representing senate polls, and 11 variables:
 #' \describe{
 #'   \item{cycle}{the election year}
 #'   \item{state}{the state of the poll}
 #'   \item{senate_class}{the class of the senate}
 #'   \item{start_date}{the start date of the poll}
 #'   \item{end_date}{the end odate of the poll}
-#'   \item{DEM_poll}{x}
-#'   \item{REP_poll}{x}
-#'   \item{DEM_result}{x}
-#'   \item{REP_result}{x}
-#'   \item{error}{x}
-#'   \item{absolute_error}{x}
+#'   \item{DEM_poll}{the percent of support for the Democrat during the poll}
+#'   \item{REP_poll}{the percent of support for the Republican during the poll}
+#'   \item{DEM_result}{the result percent of support for the Democrat during the election}
+#'   \item{REP_result}{the result percent of support for the Republican during the election}
+#'   \item{error}{the difference between the percent of support of one party during the poll and the result percent of support for the same party during the election}
+#'   \item{absolute_error}{the absolutel value of the error value}
 #'   }
 #' @source Emerson College’s poll of registered voters \url{https://www.emerson.edu/sites/default/files/Files/Academics/ecp-tx-aug2018-pr.pdf}
 "august_senate_polls"
@@ -46,22 +46,45 @@
 #' "The 2020 Endorsement Primary - Which Democratic candidates are receiving the most support from prominent members of their party?"
 #' \url{https://projects.fivethirtyeight.com/2020-endorsements/democratic-primary/}.
 #'
-#' @format A data frame with 1000 rows representing X and 13 variables: 
+#' @format A data frame with 1000 rows representing endorsements and 13 variables: 
 #' \describe{
-#'   \item{X}{Y}
+#'   \item{date}{date of the endorsement}
+#'   \item{position}{position of the endorser}
+#'   \item{city}{city of the endorser}
+#'   \item{state}{state of the endorser}
+#'   \item{endorser}{name of the endorser}
+#'   \item{endorsee}{name of the endorsee}
+#'   \item{endorser_party}{party of the endorser}
+#'   \item{source}{source link of the endorsement}
+#'   \item{order}{order of the endorsement}
+#'   \item{category}{cateogory of the endorsement}
+#'   \item{body}{body of the endorsement}
+#'   \item{points}{points the endorsement counts for}
 #'   }
-#' @source 
+#' @source 2020 endorcement tracker. 
+#' Methodology: 
+#' \url{https://fivethirtyeight.com/methodology/how-our-presidential-endorsement-tracker-works/}.
 "endorsements_2020"
 
 #' How FiveThirtyEight's 2018 Midterm Forecasts Did
 #' 
 #' The raw data behind the story 
 #' 'How FiveThirtyEight's 2018 Midterm Forecasts Did'
-#' \url {https://fivethirtyeight.com/features/how-fivethirtyeights-2018-midterm-forecasts-did/}
+#' \url{https://fivethirtyeight.com/features/how-fivethirtyeights-2018-midterm-forecasts-did/}
 #' 
-#' @format A dataframe with 1518 rows and 11 variables:
+#' @format A dataframe with 1518 rows representing forecast results (as of December 3, 2018) and 11 variables:
 #' \describe{
-#'   \item{X}{Y}
+#'   \item{cycle}{cycle of the election}
+#'   \item{branch}{branch of the election}
+#'   \item{race}{election forecast for the gubernatorial race}
+#'   \item{forecastdate}{the date of the forecast}
+#'   \item{version}{version of the election forecast}
+#'   \item{democrat_winprobability}{the probability of winning for the Democrat}
+#'   \item{republican_winprobability}{the probability of winning for the Republican}
+#'   \item{category}{the predicted political affiliation of the forecast}
+#'   \item{democrat_won}{whether the Democrat won}
+#'   \item{republican_won}{whether the Republican won}
+#'   \item{uncalled}{if a race was uncalled}
 #'   }
-#' @source 
+#' @source FiveThirtyEight's 2018 House Forecast \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/}
 "forecast_results_2018"
