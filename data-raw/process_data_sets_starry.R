@@ -68,3 +68,17 @@ forecast_results_2018 <- forecast_results_2018 %>%
   )
 devtools::use_data(forecast_results_2018, overwrite = TRUE)
 
+# governors-forecast-2018 ---------------------------------------------------------------
+
+governor_national_forecast <- read_csv("data-raw/governors-forecast-2018/governor_national_forecast.csv")
+governor_state_forecast <- read_csv("data-raw/governors-forecast-2018/governor_state_forecast.csv")
+
+colnames(governor_national_forecast) <- colnames(governor_national_forecast) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+colnames(governor_state_forecast) <- colnames(governor_state_forecast) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+
+devtools::use_data(governor_national_forecast, overwrite = TRUE)
+devtools::use_data(governor_state_forecast, overwrite = TRUE)

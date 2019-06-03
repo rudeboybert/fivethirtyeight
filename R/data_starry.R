@@ -88,3 +88,21 @@
 #'   }
 #' @source FiveThirtyEight's 2018 House Forecast \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/}
 "forecast_results_2018"
+
+#' How FiveThirtyEight's 2018 Midterm Forecasts Did
+#' 
+#' The raw data behind the story 
+#' 'Forecasting the races for governor'
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
+#' 
+#' @format A dataframe with 150 rows and 12 variables
+"governor_national_forecast"
+
+#' How FiveThirtyEight's 2018 Midterm Forecasts Did
+#' 
+#' The raw data behind the story 
+#' 'Forecasting the races for governor'
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
+#' 
+#' @format A dataframe with 7743 rows and 12 variables
+"governor_state_forecast"
