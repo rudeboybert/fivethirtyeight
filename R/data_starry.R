@@ -136,6 +136,7 @@
 #' \item{p10_voteshare}{the top 10 percentile of the voteshare}
 #' \item{p90_voteshare}{the top 00 percentile of the voteshare}
 #' }
+#' @note the original dataset included dis
 #' @source FiveThirtyEight’s House, Senate And Governor Models
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
