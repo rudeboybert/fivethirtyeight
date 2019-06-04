@@ -76,9 +76,21 @@ governor_state_forecast <- read_csv("data-raw/governors-forecast-2018/governor_s
 colnames(governor_national_forecast) <- colnames(governor_national_forecast) %>% 
   tolower() %>% 
   str_replace_all(" ", "_")
+governor_national_forecast <- governor_national_forecast %>% 
+  mutate(state = as.factor(state), 
+         party = as.factor(party), 
+         model = as.factor(model))
+  
 colnames(governor_state_forecast) <- colnames(governor_state_forecast) %>% 
   tolower() %>% 
   str_replace_all(" ", "_")
+governor_state_forecast <- governor_state_forecast %>% 
+  mutate(
+    state = as.factor(state), 
+    candidate = as.factor(candidate), 
+    party = as.factor(party), 
+    incumbent = as.logical(incumbent), 
+    model =  as.factor(model))
 
 devtools::use_data(governor_national_forecast, overwrite = TRUE)
 devtools::use_data(governor_state_forecast, overwrite = TRUE)
