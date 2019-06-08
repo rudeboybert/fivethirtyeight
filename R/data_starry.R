@@ -95,10 +95,9 @@
 #' 'Forecasting the races for governor'
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 #' 
-#' @format A dataframe with 150 rows representing national-level results of the classic, lite, and deluxe gubernatorial forecasts since Oct. 11, 2018. and 12 variables
+#' @format A dataframe with 150 rows representing national-level results of the classic, lite, and deluxe gubernatorial forecasts since Oct. 11, 2018. and 11 variables
 #' \describe{
 #' \item{forecastdate}{date of the forecast}
-#' \item{state}{state of the forecast}
 #' \item{party}{the party of the forecast}
 #' \item{model}{the model of the forecast}
 #' \item{win_probability}{the probability of the corresponding party winning}
@@ -106,10 +105,11 @@
 #' \item{median_seats}{the median number of seats}
 #' \item{p10_seats}{the top 10 percentile of number of seats}
 #' \item{p90_seats}{the top 90 percentile of number of seats}
-#' \item{margin}{the margin of the number of seats}
+#' \item{margin}{unknown}
 #' \item{p10_margin}{the margin of p10_seats}
 #' \item{p90_margin}{the margin of p90_seats}
 #' }
+#' @note A column called "state" was included in the raw dataset, but all variables under this column were "US". So we removed this meaningless column. 
 #' @source FiveThirtyEight’s House, Senate And Governor Models
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
@@ -121,12 +121,10 @@
 #' 'Forecasting the races for governor'
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 #' 
-#' @format A dataframe with 7743 rows representing state-level results of the classic, lite, and deluxe  gubernatorial forecasts since Oct. 11, 2018. and 12 variables
+#' @format A dataframe with 7743 rows representing state-level results of the classic, lite, and deluxe  gubernatorial forecasts since Oct. 11, 2018. and 10 variables
 #' \describe{
 #' \item{forecastdate}{date of the forecast}
 #' \item{state}{state of the forecast}
-#' \item{district}{district of the forecast}
-#' \item{special}{}
 #' \item{candidate}{name of the candidate}
 #' \item{party}{party of the candidate}
 #' \item{incumbent}{whether the candidate is incumbent}
@@ -136,7 +134,7 @@
 #' \item{p10_voteshare}{the top 10 percentile of the voteshare}
 #' \item{p90_voteshare}{the top 00 percentile of the voteshare}
 #' }
-#' @note the original dataset included dis
+#' @note the original dataset included two empty column "district" and "special",which were removed. 
 #' @source FiveThirtyEight’s House, Senate And Governor Models
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}

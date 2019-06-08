@@ -9,8 +9,8 @@ colnames(cabinet_turnover) <- colnames(cabinet_turnover) %>%
   str_replace_all(" ", "_")
 
 cabinet_turnover <- cabinet_turnover %>% 
-  mutate(start = as.Date(start), 
-         end = as.Date(end), 
+  mutate(start = as.Date(start, "%m/%d/%y"), # change format
+         end = as.Date(end, "%m/%d/%y"), # change format 
          president = as.factor(president), 
          position = as.factor(position),
          length = as.numeric(length), 
@@ -34,7 +34,7 @@ august_senate_polls <- august_senate_polls %>%
 devtools::use_data(august_senate_polls, overwrite = TRUE)
 
 # endorsements ---------------------------------------------------------------
-endorsements_2020 <- read_csv("data-raw/endorsements/endorsements-2020.csv")
+endorsements_2020 <- read_csv("https://projects.fivethirtyeight.com/endorsements-2020-data/endorsements-2020.csv")
 colnames(endorsements_2020) <- colnames(endorsements_2020) %>% 
   tolower() %>% 
   str_replace_all(" ", "_")
@@ -57,12 +57,10 @@ colnames(forecast_results_2018) <- colnames(forecast_results_2018) %>%
 forecast_results_2018 <- forecast_results_2018 %>% 
   mutate(
     branch = as.factor(branch), 
-    # race = as.factor(race), # ?
-    forecastdate = as.Date(forecastdate),  #?
+    forecastdate = as.Date(forecastdate, "%m/%d/%y"),  
     version = as.factor(version), 
     category = as.factor(category), 
-    # Convert 0/1 to TRUE/FALSE
-    democrat_won = as.logical(democrat_won),
+    democrat_won = as.logical(democrat_won), # Convert 0/1 to TRUE/FALSE
     republican_won = as.logical(republican_won), 
     uncalled = as.logical(uncalled)
   )
@@ -70,16 +68,16 @@ devtools::use_data(forecast_results_2018, overwrite = TRUE)
 
 # governors-forecast-2018 ---------------------------------------------------------------
 
-governor_national_forecast <- read_csv("data-raw/governors-forecast-2018/governor_national_forecast.csv")
-governor_state_forecast <- read_csv("data-raw/governors-forecast-2018/governor_state_forecast.csv")
+governor_national_forecast <- read_csv("https://projects.fivethirtyeight.com/congress-model-2018/governor_national_forecast.csv")
+governor_state_forecast <- read_csv("https://projects.fivethirtyeight.com/congress-model-2018/governor_state_forecast.csv")
 
 colnames(governor_national_forecast) <- colnames(governor_national_forecast) %>% 
   tolower() %>% 
   str_replace_all(" ", "_")
 governor_national_forecast <- governor_national_forecast %>% 
-  mutate(state = as.factor(state), 
-         party = as.factor(party), 
-         model = as.factor(model))
+  mutate(party = as.factor(party), 
+         model = as.factor(model)) %>% 
+  select(-state)
   
 colnames(governor_state_forecast) <- colnames(governor_state_forecast) %>% 
   tolower() %>% 
@@ -90,7 +88,8 @@ governor_state_forecast <- governor_state_forecast %>%
     candidate = as.factor(candidate), 
     party = as.factor(party), 
     incumbent = as.logical(incumbent), 
-    model =  as.factor(model))
+    model =  as.factor(model)) %>% 
+  select(-district, -special)
 
 devtools::use_data(governor_national_forecast, overwrite = TRUE)
 devtools::use_data(governor_state_forecast, overwrite = TRUE)
