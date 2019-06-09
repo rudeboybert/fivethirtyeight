@@ -122,3 +122,41 @@ house_national_forecast <- house_national_forecast %>%
 
 devtools::use_data(house_district_forecast, overwrite = TRUE)
 devtools::use_data(house_national_forecast, overwrite = TRUE)
+
+# mueller-polls ---------------------------------------------------------------
+mueller_approval_polls <- read_csv("data-raw/mueller-polls/mueller-approval-polls.csv")
+colnames(mueller_approval_polls) <- colnames(mueller_approval_polls) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+
+mueller_approval_polls <- mueller_approval_polls %>% 
+  mutate(
+    start = as.Date(start, "%m/%d/%y"), 
+    end = as.Date(end, "%m/%d/%y"), 
+    pollster = as.factor(pollster), 
+    population = as.factor(population), 
+    text = as.factor(text)
+  )
+devtools::use_data(mueller_approval_polls, overwrite = TRUE)
+
+# ncaa-womens-basketball-tournament ---------------------------------------------------------------
+ncaa_womens_basketball_tournament_history <- read_csv("data-raw/ncaa-womens-basketball-tournament/ncaa-womens-basketball-tournament-history.csv")
+colnames(ncaa_womens_basketball_tournament_history) <- colnames(ncaa_womens_basketball_tournament_history) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_") 
+ncaa_womens_basketball_tournament_history <- ncaa_womens_basketball_tournament_history %>% 
+  mutate(
+    school = as.factor(school), 
+    conference = as.factor(conference), 
+    conf._w = as.numeric(conf._w), 
+    conf._l = as.numeric(conf._l), 
+    `conf._%`= as.numeric(`conf._%`), 
+    conf._place = as.factor(conf._place), 
+    how_qual = as.factor(how_qual), 
+    #`1st_game_at_home?` = as.logical(`1st_game_at_home?`),  # remove ^
+    tourney_w = as.logical(tourney_w), 
+    tourney_l = as.logical(tourney_l), 
+    tourney_finish = as.factor(tourney_finish), 
+    `full_%` = as.numeric(`full_%`)
+  )
+
