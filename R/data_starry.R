@@ -109,7 +109,7 @@
 #' \item{p10_margin}{the margin of p10_seats}
 #' \item{p90_margin}{the margin of p90_seats}
 #' }
-#' @note A column called "state" was included in the raw dataset, but all variables under this column were "US". So we removed this meaningless column. 
+#' @note The original dataset included a meaningless column called "state", and all variables under this column was "US". So this column was removed.
 #' @source FiveThirtyEight’s House, Senate And Governor Models
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
@@ -134,8 +134,60 @@
 #' \item{p10_voteshare}{the top 10 percentile of the voteshare}
 #' \item{p90_voteshare}{the top 00 percentile of the voteshare}
 #' }
-#' @note the original dataset included two empty column "district" and "special",which were removed. 
+#' @note The original dataset included two empty column "district" and "special",which were removed. 
 #' @source FiveThirtyEight’s House, Senate And Governor Models
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
 "governor_state_forecast"
+
+#' 2018 House Forecast
+#' 
+#' The raw data behind the story 
+#' 'Forecasting the race for the House'
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/}
+#' 
+#' @format A dataframe with 302859 rows representing district-level results of the classic, lite, and deluxe   House forecasts since Aug. 1, 2018 and 11 variables
+#' \describe{
+#' \item{forecastdate}{date of the forecast}
+#' \item{state}{state of the forecast}
+#' \item{district}{district of the forecast}
+#' \item{candidate}{name of the candidate}
+#' \item{party}{party of the candidate}
+#' \item{incumbent}{whether the candidate is incumbent}
+#' \item{model}{the model of the forecast}
+#' \item{win_probability}{the probability of the corresponding party winning}
+#' \item{voteshare}{the voteshare of the corresponding party}
+#' \item{p10_voteshare}{the top 10 percentile of the voteshare}
+#' \item{p90_voteshare}{the top 00 percentile of the voteshare}
+#' }
+#' @note the original dataset included an empty column "special", which was removed. 
+#' @source FiveThirtyEight’s House, Senate And Governor Models
+#' Methodology: 
+#' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
+"house_district_forecast"
+
+#' 2018 House Forecast
+#' 
+#' The raw data behind the story 
+#' 'Forecasting the race for the House'
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/}
+#' 
+#' @format A dataframe with 588 rows representing district-level results of the classic, lite, and deluxe House forecasts since Aug. 1, 2018 and 11 variables
+#' \describe{
+#' \item{forecastdate}{date of the forecast}
+#' \item{party}{the party of the forecast}
+#' \item{model}{the model of the forecast}
+#' \item{win_probability}{the probability of the corresponding party winning}
+#' \item{mean_seats}{the mean of the number of seats}
+#' \item{median_seats}{the median number of seats}
+#' \item{p10_seats}{the top 10 percentile of number of seats}
+#' \item{p90_seats}{the top 90 percentile of number of seats}
+#' \item{margin}{unknown}
+#' \item{p10_margin}{the margin of p10_seats}
+#' \item{p90_margin}{the margin of p90_seats}
+#' 
+#' @note The original dataset included a meaningless column called "state", and all variables under this column was "US". So this column was removed.
+#' @source FiveThirtyEight’s House, Senate And Governor Models
+#' Methodology: 
+#' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
+"house_national_forecast"

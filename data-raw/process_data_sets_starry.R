@@ -93,3 +93,32 @@ governor_state_forecast <- governor_state_forecast %>%
 
 devtools::use_data(governor_national_forecast, overwrite = TRUE)
 devtools::use_data(governor_state_forecast, overwrite = TRUE)
+
+# house-forecast-2018 ---------------------------------------------------------------
+
+house_district_forecast <- read_csv("https://projects.fivethirtyeight.com/congress-model-2018/house_district_forecast.csv")
+house_national_forecast <- read_csv("https://projects.fivethirtyeight.com/congress-model-2018/house_national_forecast.csv")
+
+colnames(house_district_forecast) <- colnames(house_district_forecast) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+house_district_forecast <- house_district_forecast %>% 
+  mutate(state = as.factor(state), 
+         district = as.factor(district), 
+         candidate = as.factor(candidate),
+         party = as.factor(party), 
+         incumbent = as.logical(incumbent), 
+         model = as.factor(model)) %>% 
+  select(-special)
+
+colnames(house_national_forecast) <- colnames(house_national_forecast) %>% 
+  tolower() %>% 
+  str_replace_all(" ", "_")
+house_national_forecast <- house_national_forecast %>% 
+  mutate(
+    party = as.factor (party), 
+    model = as.factor (model)) %>% 
+  select(-state)
+
+devtools::use_data(house_district_forecast, overwrite = TRUE)
+devtools::use_data(house_national_forecast, overwrite = TRUE)
