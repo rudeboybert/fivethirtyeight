@@ -191,3 +191,57 @@
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
 "house_national_forecast"
+
+#' Both Parties Think The Mueller Report Was Fair. They Just Completely Disagree On What It Says.
+#' 
+#' The raw data behind the story
+#' 'Both Parties Think The Mueller Report Was Fair. They Just Completely Disagree On What It Says.'
+#' \url{https://fivethirtyeight.com/features/both-parties-think-the-mueller-report-was-fair-they-just-disagree-on-what-it-says/}
+#' 
+#' @format A dataset with 65 rows representing every job approval poll of Robert Mueller that we could find from when Mueller was appointed as special council on May 17, 2017 through May 3, 2019 and 12 variables 
+#' \describe{
+#' \item{start}{the start date of the poll}
+#' \item{end}{the end date of the poll}
+#' \item{pollster}{the name of the pollster}
+#' \item{sample_size}{the size of the poll sample}
+#' \item{population}{unknown}
+#' \item{text}{the text of the poll question}
+#' \item{approve}{the number of approval in the poll}
+#' \item{disapprove}{the number of disapproval in the poll}
+#' \item{unsure}{the number of unsure in the poll}
+#' \item{approve_(republican)}{the number of approval from Republican}
+#' \item{approve_(democrat)}{the number of approval from Democrat}
+#' \item{url}{the url of the poll}
+#' }
+#' 
+#' @source Polls, Washington Post / ABC and Washington Post / Schar School Polls 
+"mueller_approval_polls"
+
+#' The Rise And Fall Of Women’s NCAA Tournament Dynasties
+#' 
+#' The raw data behind the story 
+#' 'The Rise And Fall Of Women’s NCAA Tournament Dynasties'
+#' \url{https://fivethirtyeight.com/features/louisiana-tech-was-the-uconn-of-the-80s/}
+#' 
+#' @format A dataset with 2092 rows representing every team that has participated in the NCAA Division I Women’s Basketball Tournament since it began in 1982 and 19 variables
+#' \describe{
+#' \item{year}{the year of the game which the team participated in}
+#' \item{school}{the school of the participating team}
+#' \item{seed}{The `(OR)` seeding designation in 1983 notes the eight teams that played an opening-round game to become the No. 8 seed in each region.}
+#' \item{conference}{the conference record of the team (if available)}
+#' \item{conf._w}
+#' \item{conf._l}
+#' \item{reg._l}
+#' \item{reg._%}
+#' \item{how_qual}{Whether the school qualified with an automatic bid (by winning its conference or conference tournament) or an at-large bid.}
+#' \item{1st_game_at_home?}{Whether the school played its first-round tournament games on its home court.}
+#' \item{tourney_w}
+#' \item{tourney_l}
+#' \item{tourney_finish}{The round of the final game for each team. OR=opening-round loss (1983 only); 1st=first-round loss; 2nd=second-round loss; RSF=loss in the Sweet 16; RF=loss in the Elite Eight; NSF=loss in the national semifinals; N2nd=national runner-up; Champ=national champions}
+#' \item{full_w}
+#' \item{full_l}
+#' \item{full_%}
+#' }
+#' 
+#' @source NCAA
+"ncaa_womens_basketball_tournament_history"

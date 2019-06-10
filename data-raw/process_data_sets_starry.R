@@ -158,18 +158,9 @@ ncaa_womens_basketball_tournament_history <- ncaa_womens_basketball_tournament_h
     tourney_w = as.logical(tourney_w), 
     tourney_l = as.logical(tourney_l), 
     tourney_finish = as.factor(tourney_finish), 
-    `full_%` = as.numeric(`full_%`)
-  )
+    `full_%` = as.numeric(`full_%`))
 
 levels(ncaa_womens_basketball_tournament_history$`1st_game_at_home?`) <- c(FALSE, TRUE)
 ncaa_womens_basketball_tournament_history$`1st_game_at_home?` <- as.logical(ncaa_womens_basketball_tournament_history$`1st_game_at_home?`)
 
 devtools::use_data(ncaa_womens_basketball_tournament_history, overwrite = TRUE)
-
-# partisan-lean ---------------------------------------------------------------------------
-fivethirtyeight_partisan_lean_districts <- read_csv("data-raw/partisan-lean/fivethirtyeight_partisan_lean_DISTRICTS.csv")
-fivethirtyeight_partisan_lean_states <- read_csv("data-raw/partisan-lean/fivethirtyeight_partisan_lean_STATES.csv")
-
-devtools::use_data(fivethirtyeight_partisan_lean_districts, overwrite = TRUE)
-devtools::use_data(fivethirtyeight_partisan_lean_states, overwrite = TRUE)
-
