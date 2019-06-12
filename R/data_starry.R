@@ -185,6 +185,7 @@
 #' \item{margin}{unknown}
 #' \item{p10_margin}{the margin of p10_seats}
 #' \item{p90_margin}{the margin of p90_seats}
+#' }
 #' 
 #' @note The original dataset included a meaningless column called "state", and all variables under this column was "US". So this column was removed.
 #' @source FiveThirtyEight’s House, Senate And Governor Models
@@ -217,31 +218,34 @@
 #' @source Polls, Washington Post / ABC and Washington Post / Schar School Polls 
 "mueller_approval_polls"
 
-#' The Rise And Fall Of Women’s NCAA Tournament Dynasties
-#' 
-#' The raw data behind the story 
-#' 'The Rise And Fall Of Women’s NCAA Tournament Dynasties'
+#' The Rise And Fall Of Women's NCAA Tournament Dynasties
+#'
+#' The raw data behind the story
+#' 'The Rise And Fall Of Women's NCAA Tournament Dynasties'
 #' \url{https://fivethirtyeight.com/features/louisiana-tech-was-the-uconn-of-the-80s/}
-#' 
-#' @format A dataset with 2092 rows representing every team that has participated in the NCAA Division I Women’s Basketball Tournament since it began in 1982 and 19 variables
+#'
+#' @format A dataset with 2092 rows representing every team that has participated in the NCAA Division I Women's Basketball Tournament since it began in 1982 and 19 variables
 #' \describe{
 #' \item{year}{the year of the game which the team participated in}
 #' \item{school}{the school of the participating team}
 #' \item{seed}{The `(OR)` seeding designation in 1983 notes the eight teams that played an opening-round game to become the No. 8 seed in each region.}
 #' \item{conference}{the conference record of the team (if available)}
-#' \item{conf._w}
-#' \item{conf._l}
-#' \item{reg._l}
-#' \item{reg._%}
+#' \item{conf_w}{number of winning in conference record}
+#' \item{conf_l}{number of losses in conference record}
+#' \item{conf_percent}{percent of winning in conference record}
+#' \item{reg_w}{number of winning in regular-season record}
+#' \item{reg_l}{number of losses in regular-season record}
+#' \item{reg_percent}{percent of winning in regular-season record}
 #' \item{how_qual}{Whether the school qualified with an automatic bid (by winning its conference or conference tournament) or an at-large bid.}
-#' \item{1st_game_at_home?}{Whether the school played its first-round tournament games on its home court.}
-#' \item{tourney_w}
-#' \item{tourney_l}
+#' \item{1st_game_at_home}{Whether the school played its first-round tournament games on its home court.}
+#' \item{tourney_w}{number of winning in tournament record}
+#' \item{tourney_l}{number of losses in tournament record}
 #' \item{tourney_finish}{The round of the final game for each team. OR=opening-round loss (1983 only); 1st=first-round loss; 2nd=second-round loss; RSF=loss in the Sweet 16; RF=loss in the Elite Eight; NSF=loss in the national semifinals; N2nd=national runner-up; Champ=national champions}
-#' \item{full_w}
-#' \item{full_l}
-#' \item{full_%}
+#' \item{full_w}{number of winning in full record}
+#' \item{full_l}{number of losses in full record}
+#' \item{full_percent}{percent of winning in full record}
 #' }
-#' 
+#'
 #' @source NCAA
 "ncaa_womens_basketball_tournament_history"
+

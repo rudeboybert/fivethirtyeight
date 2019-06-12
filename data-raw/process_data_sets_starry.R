@@ -1,6 +1,7 @@
 library(tidyverse)
 library(stringr)
 library(lubridate)
+library(janitor)
 
 # cabinet-turnover ---------------------------------------------------------------
 cabinet_turnover <- read_csv("data-raw/cabinet-turnover/cabinet-turnover.csv")
@@ -140,27 +141,29 @@ mueller_approval_polls <- mueller_approval_polls %>%
 devtools::use_data(mueller_approval_polls, overwrite = TRUE)
 
 # ncaa-womens-basketball-tournament ---------------------------------------------------------------
-ncaa_womens_basketball_tournament_history <- read_csv("data-raw/ncaa-womens-basketball-tournament/ncaa-womens-basketball-tournament-history.csv")
+ncaa_womens_basketball_tournament_history <- read_csv("data-raw/ncaa-womens-basketball-tournament/ncaa-womens-basketball-tournament-history.csv") %>% 
+  clean_names() 
+
 colnames(ncaa_womens_basketball_tournament_history) <- colnames(ncaa_womens_basketball_tournament_history) %>% 
-  tolower() %>% 
-  str_replace_all(" ", "_") 
-  
+  str_replace_all("x", "")
+
 ncaa_womens_basketball_tournament_history <- ncaa_womens_basketball_tournament_history %>% 
   mutate(
     school = as.factor(school), 
+    seed = as.numeric(seed),
     conference = as.factor(conference), 
-    conf._w = as.numeric(conf._w), 
-    conf._l = as.numeric(conf._l), 
-    `conf._%`= as.numeric(`conf._%`), 
-    conf._place = as.factor(conf._place), 
+    conf_w = as.numeric(conf_w), 
+    conf_l = as.numeric(conf_l), 
+    conf_percent = as.numeric(conf_percent),
+    conf_place = as.factor(conf_place), 
     how_qual = as.factor(how_qual), 
-    `1st_game_at_home?`= as.factor(str_replace_all(`1st_game_at_home?`, "\\^", "")),
+    `1st_game_at_home`= as.factor(str_replace_all(`1st_game_at_home`, "\\^", "")),
     tourney_w = as.logical(tourney_w), 
     tourney_l = as.logical(tourney_l), 
     tourney_finish = as.factor(tourney_finish), 
-    `full_%` = as.numeric(`full_%`))
+    full_percent = as.numeric(full_percent))
 
-levels(ncaa_womens_basketball_tournament_history$`1st_game_at_home?`) <- c(FALSE, TRUE)
-ncaa_womens_basketball_tournament_history$`1st_game_at_home?` <- as.logical(ncaa_womens_basketball_tournament_history$`1st_game_at_home?`)
+levels(ncaa_womens_basketball_tournament_history$`1st_game_at_home`) <- c(FALSE, TRUE)
+ncaa_womens_basketball_tournament_history$`1st_game_at_home` <- as.logical(ncaa_womens_basketball_tournament_history$`1st_game_at_home`)
 
 devtools::use_data(ncaa_womens_basketball_tournament_history, overwrite = TRUE)
