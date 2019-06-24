@@ -34,4 +34,7 @@ The raw data behind the story
 \note{
 The original dataset included a meaningless column called "state", and all variables under this column was "US". So this column was removed.
 }
+\seealso{
+\code{\link{governor_state_forecast}}
+}
 \keyword{datasets}

@@ -11,8 +11,8 @@
   \item{race}{election forecast for the gubernatorial race}
   \item{forecastdate}{the date of the forecast}
   \item{version}{version of the election forecast}
-  \item{democrat_winprobability}{the probability of winning for the Democrat}
-  \item{republican_winprobability}{the probability of winning for the Republican}
+  \item{dem_win_prob}{the probability of winning for the Democrat}
+  \item{rep_win_prob}{the probability of winning for the Republican}
   \item{category}{the predicted political affiliation of the forecast}
   \item{democrat_won}{whether the Democrat won}
   \item{republican_won}{whether the Republican won}

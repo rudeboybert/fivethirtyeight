@@ -34,4 +34,7 @@ The raw data behind the story
 \note{
 the original dataset included an empty column "special", which was removed.
 }
+\seealso{
+\code{\link{house_national_forecast}}
+}
 \keyword{datasets}

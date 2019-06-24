@@ -33,4 +33,7 @@ The raw data behind the story
 \note{
 The original dataset included two empty column "district" and "special",which were removed.
 }
+\seealso{
+\code{\link{governor_national_forecast}}
+}
 \keyword{datasets}

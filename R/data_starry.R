@@ -79,8 +79,8 @@
 #'   \item{race}{election forecast for the gubernatorial race}
 #'   \item{forecastdate}{the date of the forecast}
 #'   \item{version}{version of the election forecast}
-#'   \item{democrat_winprobability}{the probability of winning for the Democrat}
-#'   \item{republican_winprobability}{the probability of winning for the Republican}
+#'   \item{dem_win_prob}{the probability of winning for the Democrat}
+#'   \item{rep_win_prob}{the probability of winning for the Republican}
 #'   \item{category}{the predicted political affiliation of the forecast}
 #'   \item{democrat_won}{whether the Democrat won}
 #'   \item{republican_won}{whether the Republican won}
@@ -113,6 +113,7 @@
 #' @source FiveThirtyEight’s House, Senate And Governor Models
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
+#' @seealso \code{\link{governor_state_forecast}}
 "governor_national_forecast"
 
 #' 2018 Governors Forecast
@@ -138,6 +139,7 @@
 #' @source FiveThirtyEight’s House, Senate And Governor Models
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
+#' @seealso \code{\link{governor_national_forecast}}
 "governor_state_forecast"
 
 #' 2018 House Forecast
@@ -164,6 +166,7 @@
 #' @source FiveThirtyEight’s House, Senate And Governor Models
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
+#' @seealso \code{\link{house_national_forecast}}
 "house_district_forecast"
 
 #' 2018 House Forecast
@@ -191,6 +194,7 @@
 #' @source FiveThirtyEight’s House, Senate And Governor Models
 #' Methodology: 
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
+#' @seealso \code{\link{house_district_forecast}}
 "house_national_forecast"
 
 #' Both Parties Think The Mueller Report Was Fair. They Just Completely Disagree On What It Says.
@@ -237,7 +241,7 @@
 #' \item{reg_l}{number of losses in regular-season record}
 #' \item{reg_percent}{percent of winning in regular-season record}
 #' \item{how_qual}{Whether the school qualified with an automatic bid (by winning its conference or conference tournament) or an at-large bid.}
-#' \item{1st_game_at_home}{Whether the school played its first-round tournament games on its home court.}
+#' \item{first_home_game}{Whether the school played its first-round tournament games on its home court.}
 #' \item{tourney_w}{number of winning in tournament record}
 #' \item{tourney_l}{number of losses in tournament record}
 #' \item{tourney_finish}{The round of the final game for each team. OR=opening-round loss (1983 only); 1st=first-round loss; 2nd=second-round loss; RSF=loss in the Sweet 16; RF=loss in the Elite Eight; NSF=loss in the national semifinals; N2nd=national runner-up; Champ=national champions}
@@ -247,5 +251,4 @@
 #' }
 #'
 #' @source NCAA
-"ncaa_womens_basketball_tournament_history"
-
+"ncaa_w_basketball_tournaments"
