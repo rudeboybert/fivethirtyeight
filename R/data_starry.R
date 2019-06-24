@@ -30,10 +30,10 @@
 #'   \item{senate_class}{the class of the senate}
 #'   \item{start_date}{the start date of the poll}
 #'   \item{end_date}{the end odate of the poll}
-#'   \item{DEM_poll}{the percent of support for the Democrat during the poll}
-#'   \item{REP_poll}{the percent of support for the Republican during the poll}
-#'   \item{DEM_result}{the result percent of support for the Democrat during the election}
-#'   \item{REP_result}{the result percent of support for the Republican during the election}
+#'   \item{dem_poll}{the percent of support for the Democrat during the poll}
+#'   \item{rep_poll}{the percent of support for the Republican during the poll}
+#'   \item{dem_result}{the result percent of support for the Democrat during the election}
+#'   \item{rep_result}{the result percent of support for the Republican during the election}
 #'   \item{error}{the difference between the percent of support of one party during the poll and the result percent of support for the same party during the election}
 #'   \item{absolute_error}{the absolutel value of the error value}
 #'   }
@@ -46,7 +46,7 @@
 #' "The 2020 Endorsement Primary - Which Democratic candidates are receiving the most support from prominent members of their party?"
 #' \url{https://projects.fivethirtyeight.com/2020-endorsements/democratic-primary/}.
 #'
-#' @format A data frame with 1000 rows representing endorsements and 13 variables: 
+#' @format A data frame with 1000 rows representing endorsements and 13 variables:
 #' \describe{
 #'   \item{date}{date of the endorsement}
 #'   \item{position}{position of the endorser}
@@ -59,19 +59,20 @@
 #'   \item{order}{order of the endorsement}
 #'   \item{category}{cateogory of the endorsement}
 #'   \item{body}{body of the endorsement}
+#'   \item{district}{district}
 #'   \item{points}{points the endorsement counts for}
 #'   }
-#' @source 2020 endorcement tracker. 
-#' Methodology: 
+#' @source 2020 endorcement tracker.
+#' Methodology:
 #' \url{https://fivethirtyeight.com/methodology/how-our-presidential-endorsement-tracker-works/}.
 "endorsements_2020"
 
 #' How FiveThirtyEight's 2018 Midterm Forecasts Did
-#' 
-#' The raw data behind the story 
+#'
+#' The raw data behind the story
 #' 'How FiveThirtyEight's 2018 Midterm Forecasts Did'
 #' \url{https://fivethirtyeight.com/features/how-fivethirtyeights-2018-midterm-forecasts-did/}
-#' 
+#'
 #' @format A dataframe with 1518 rows representing forecast results (as of December 3, 2018) and 11 variables:
 #' \describe{
 #'   \item{cycle}{cycle of the election}
@@ -90,11 +91,11 @@
 "forecast_results_2018"
 
 #' 2018 Governors Forecast
-#' 
-#' The raw data behind the story 
+#'
+#' The raw data behind the story
 #' 'Forecasting the races for governor'
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
-#' 
+#'
 #' @format A dataframe with 150 rows representing national-level results of the classic, lite, and deluxe gubernatorial forecasts since Oct. 11, 2018. and 11 variables
 #' \describe{
 #' \item{forecastdate}{date of the forecast}
@@ -111,17 +112,17 @@
 #' }
 #' @note The original dataset included a meaningless column called "state", and all variables under this column was "US". So this column was removed.
 #' @source FiveThirtyEight’s House, Senate And Governor Models
-#' Methodology: 
+#' Methodology:
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
 #' @seealso \code{\link{governor_state_forecast}}
 "governor_national_forecast"
 
 #' 2018 Governors Forecast
-#' 
-#' The raw data behind the story 
+#'
+#' The raw data behind the story
 #' 'Forecasting the races for governor'
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
-#' 
+#'
 #' @format A dataframe with 7743 rows representing state-level results of the classic, lite, and deluxe  gubernatorial forecasts since Oct. 11, 2018. and 10 variables
 #' \describe{
 #' \item{forecastdate}{date of the forecast}
@@ -135,19 +136,19 @@
 #' \item{p10_voteshare}{the top 10 percentile of the voteshare}
 #' \item{p90_voteshare}{the top 00 percentile of the voteshare}
 #' }
-#' @note The original dataset included two empty column "district" and "special",which were removed. 
+#' @note The original dataset included two empty column "district" and "special",which were removed.
 #' @source FiveThirtyEight’s House, Senate And Governor Models
-#' Methodology: 
+#' Methodology:
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
 #' @seealso \code{\link{governor_national_forecast}}
 "governor_state_forecast"
 
 #' 2018 House Forecast
-#' 
-#' The raw data behind the story 
+#'
+#' The raw data behind the story
 #' 'Forecasting the race for the House'
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/}
-#' 
+#'
 #' @format A dataframe with 302859 rows representing district-level results of the classic, lite, and deluxe   House forecasts since Aug. 1, 2018 and 11 variables
 #' \describe{
 #' \item{forecastdate}{date of the forecast}
@@ -162,19 +163,19 @@
 #' \item{p10_voteshare}{the top 10 percentile of the voteshare}
 #' \item{p90_voteshare}{the top 00 percentile of the voteshare}
 #' }
-#' @note the original dataset included an empty column "special", which was removed. 
+#' @note the original dataset included an empty column "special", which was removed.
 #' @source FiveThirtyEight’s House, Senate And Governor Models
-#' Methodology: 
+#' Methodology:
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
 #' @seealso \code{\link{house_national_forecast}}
 "house_district_forecast"
 
 #' 2018 House Forecast
-#' 
-#' The raw data behind the story 
+#'
+#' The raw data behind the story
 #' 'Forecasting the race for the House'
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/}
-#' 
+#'
 #' @format A dataframe with 588 rows representing district-level results of the classic, lite, and deluxe House forecasts since Aug. 1, 2018 and 11 variables
 #' \describe{
 #' \item{forecastdate}{date of the forecast}
@@ -189,21 +190,21 @@
 #' \item{p10_margin}{the margin of p10_seats}
 #' \item{p90_margin}{the margin of p90_seats}
 #' }
-#' 
+#'
 #' @note The original dataset included a meaningless column called "state", and all variables under this column was "US". So this column was removed.
 #' @source FiveThirtyEight’s House, Senate And Governor Models
-#' Methodology: 
+#' Methodology:
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
 #' @seealso \code{\link{house_district_forecast}}
 "house_national_forecast"
 
 #' Both Parties Think The Mueller Report Was Fair. They Just Completely Disagree On What It Says.
-#' 
+#'
 #' The raw data behind the story
 #' 'Both Parties Think The Mueller Report Was Fair. They Just Completely Disagree On What It Says.'
 #' \url{https://fivethirtyeight.com/features/both-parties-think-the-mueller-report-was-fair-they-just-disagree-on-what-it-says/}
-#' 
-#' @format A dataset with 65 rows representing every job approval poll of Robert Mueller that we could find from when Mueller was appointed as special council on May 17, 2017 through May 3, 2019 and 12 variables 
+#'
+#' @format A dataset with 65 rows representing every job approval poll of Robert Mueller that we could find from when Mueller was appointed as special council on May 17, 2017 through May 3, 2019 and 12 variables
 #' \describe{
 #' \item{start}{the start date of the poll}
 #' \item{end}{the end date of the poll}
@@ -218,8 +219,8 @@
 #' \item{approve_(democrat)}{the number of approval from Democrat}
 #' \item{url}{the url of the poll}
 #' }
-#' 
-#' @source Polls, Washington Post / ABC and Washington Post / Schar School Polls 
+#'
+#' @source Polls, Washington Post / ABC and Washington Post / Schar School Polls
 "mueller_approval_polls"
 
 #' The Rise And Fall Of Women's NCAA Tournament Dynasties

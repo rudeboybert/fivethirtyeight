@@ -11,10 +11,10 @@
   \item{senate_class}{the class of the senate}
   \item{start_date}{the start date of the poll}
   \item{end_date}{the end odate of the poll}
-  \item{DEM_poll}{the percent of support for the Democrat during the poll}
-  \item{REP_poll}{the percent of support for the Republican during the poll}
-  \item{DEM_result}{the result percent of support for the Democrat during the election}
-  \item{REP_result}{the result percent of support for the Republican during the election}
+  \item{dem_poll}{the percent of support for the Democrat during the poll}
+  \item{rep_poll}{the percent of support for the Republican during the poll}
+  \item{dem_result}{the result percent of support for the Democrat during the election}
+  \item{rep_result}{the result percent of support for the Republican during the election}
   \item{error}{the difference between the percent of support of one party during the poll and the result percent of support for the same party during the election}
   \item{absolute_error}{the absolutel value of the error value}
   }}
