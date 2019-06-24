@@ -4,7 +4,7 @@ language: R
 r:
   - oldrel
   - release
-  - devel
+#  - devel
 sudo: true
 cache: packages
 apt_packages:
