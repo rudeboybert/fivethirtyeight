@@ -7,7 +7,10 @@
 users can plot state abbreviations via `geom_text(aes(label = state_abbrev))`
 instead of using less informative `geom_point()`
 * Added new data sets:
-    + By Starry Zhou: `cabinet_turnover`
+    + By Starry Zhou: `cabinet_turnover`, `august_senate_polls`, `endorsements_2020`, 
+    `forecast_results_2018`, `governor_national_forecast`, `governor_state_forecast`,
+    `house_district_forecast`, `house_national_forecast`, `mueller_approval_polls`,
+    `ncaa_w_basketball_tournaments`
 
 
 # fivethirtyeight 0.4.0

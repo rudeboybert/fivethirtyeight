@@ -20,14 +20,14 @@
 }}
 \source{
 FiveThirtyEight’s House, Senate And Governor Models
-Methodology: 
+Methodology:
 \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
 }
 \usage{
 governor_national_forecast
 }
 \description{
-The raw data behind the story 
+The raw data behind the story
 'Forecasting the races for governor'
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 }

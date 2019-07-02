@@ -25,7 +25,7 @@ FiveThirtyEight's 2018 House Forecast \url{https://projects.fivethirtyeight.com/
 forecast_results_2018
 }
 \description{
-The raw data behind the story 
+The raw data behind the story
 'How FiveThirtyEight's 2018 Midterm Forecasts Did'
 \url{https://fivethirtyeight.com/features/how-fivethirtyeights-2018-midterm-forecasts-did/}
 }

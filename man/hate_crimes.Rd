@@ -31,4 +31,13 @@ The raw data behind the story
 "Higher Rates Of Hate Crimes Are Tied To Income Inequality"
 \url{https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/}.
 }
+\examples{
+library(ggplot2)
+ggplot(hate_crimes, aes(x = share_vote_trump, y = hate_crimes_per_100k_splc)) +
+  geom_text(aes(label = state_abbrev)) +
+  geom_smooth(se = FALSE, method = "lm") +
+  labs(x = "Proportion of votes for Donald Trump",
+       y = "Hate crimes per 100k during Nov 9-18, 2016 (SPLC)",
+       title = "Relationship between Trump support & hate crimes")
+}
 \keyword{datasets}

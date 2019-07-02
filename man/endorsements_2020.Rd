@@ -4,7 +4,7 @@
 \name{endorsements_2020}
 \alias{endorsements_2020}
 \title{The 2020 Endorsement Primary - Which Democratic candidates are receiving the most support from prominent members of their party?}
-\format{A data frame with 1000 rows representing endorsements and 13 variables: 
+\format{A data frame with 1000 rows representing endorsements and 13 variables:
 \describe{
   \item{date}{date of the endorsement}
   \item{position}{position of the endorser}
@@ -17,11 +17,12 @@
   \item{order}{order of the endorsement}
   \item{category}{cateogory of the endorsement}
   \item{body}{body of the endorsement}
+  \item{district}{district}
   \item{points}{points the endorsement counts for}
   }}
 \source{
-2020 endorcement tracker. 
-Methodology: 
+2020 endorcement tracker.
+Methodology:
 \url{https://fivethirtyeight.com/methodology/how-our-presidential-endorsement-tracker-works/}.
 }
 \usage{
