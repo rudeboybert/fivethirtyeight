@@ -147,3 +147,79 @@ ncaa_w_basketball_tournaments <- read_csv("data-raw/ncaa-womens-basketball-tourn
   )
 
 usethis::use_data(ncaa_w_basketball_tournaments, overwrite = TRUE)
+
+# partisan-lean ---------------------------------------------------------------
+partisan_lean_district <- read_csv("data-raw/partisan-lean/fivethirtyeight_partisan_lean_DISTRICTS.csv") %>% 
+  clean_names() 
+usethis::use_data(partisan_lean_district, overwrite = TRUE)
+
+partisan_lean_state <- read_csv("data-raw/partisan-lean/fivethirtyeight_partisan_lean_STATES.csv") %>% 
+  clean_names() %>% 
+  mutate(
+    state = as.factor(state)
+  )
+usethis::use_data(partisan_lean_state, overwrite = TRUE)
+
+# political-elasticity-scores ---------------------------------------------------------------
+elasticity_by_district <- read_csv("data-raw/political-elasticity-scores/elasticity-by-district.csv") %>% 
+  clean_names() 
+usethis::use_data(elasticity_by_district, overwrite = TRUE)
+
+elasticity_by_state <- read_csv("data-raw/political-elasticity-scores/elasticity-by-state.csv") %>% 
+  clean_names() %>% 
+  mutate(
+    state = as.factor(state)
+  )
+usethis::use_data(elasticity_by_state, overwrite = TRUE)
+
+# russia-investigation ---------------------------------------------------------------
+russia_investigation <- read_csv("data-raw/russia-investigation/russia-investigation.csv") %>% 
+  clean_names() %>% 
+  mutate(
+    investigation = as.factor(investigation),
+    name = as.factor(name),
+    type = as.factor(type),
+    president = as.factor(president)
+  )
+  
+usethis::use_data(russia_investigation, overwrite = TRUE)
+
+# senate-forecast-2018 ---------------------------------------------------------------
+senate_national_forecast <- read_csv("https://projects.fivethirtyeight.com/congress-model-2018/senate_national_forecast.csv") %>% 
+  clean_names() %>% 
+  mutate(
+    party = as.factor(party),
+    model = as.factor(model)
+  ) %>%
+  select(-state)
+usethis::use_data(senate_national_forecast, overwrite = TRUE)
+
+senate_seat_forecast <- read_csv("https://projects.fivethirtyeight.com/congress-model-2018/senate_seat_forecast.csv") %>% 
+  clean_names() %>% 
+  mutate(
+    state = as.factor(state),
+    candidate = as.factor(candidate),
+    party = as.factor(party),
+    model =  as.factor(model)
+  )
+usethis::use_data(senate_seat_forecast, overwrite = TRUE)
+
+# trump-lawsuits ---------------------------------------------------------------
+trump_lawsuits <- read_csv("data-raw/trump-lawsuits/trump-lawsuits.csv") %>% 
+  clean_names() %>% 
+  mutate(
+    case_name = as.factor(case_name),
+    plaintiff = as.factor(plaintiff),
+    defendant = as.factor(defendant),
+    current_location = as.factor(current_location),
+    previous_location = as.factor(previous_location),
+    judge = as.factor(judge),
+    capacity = as.factor(capacity),
+    type = as.factor(type),
+    trump_category = as.factor(trump_category),
+    issue = as.factor(issue),
+    status = as.factor(status)
+  )
+usethis::use_data(trump_lawsuits, overwrite = TRUE)
+
+

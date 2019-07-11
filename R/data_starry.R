@@ -253,3 +253,210 @@
 #'
 #' @source NCAA
 "ncaa_w_basketball_tournaments"
+
+#' FiveThirtyEight's Partisan Lean
+#' 
+#' This directory contains the data for FiveThirtyEight's partisan lean, which is used in our 
+#' [House]
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house}
+#' [Senate]
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate}
+#' and [Governer]
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
+#' forecasts. 
+#' 
+#' @format A dataset with 435 rows representing votes and 2 variables 
+#' \describe{
+#' \item{district}{the district of the vote}
+#' \item{pvi_538}{the pvi of the vote}
+#' }
+#' 
+#' @source Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
+#' @seealso \code{\link{partisan_lean_state}}
+"partisan_lean_district"
+
+#' FiveThirtyEight's Partisan Lean
+#' 
+#' This directory contains the data for FiveThirtyEight's partisan lean, which is used in our 
+#' [House]
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house}
+#' [Senate]
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate}
+#' and [Governer]
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
+#' forecasts. 
+#' 
+#' @format A dataset with 50 rows representing states and 2 variables 
+#' \describe{
+#' \item{state}{the state}
+#' \item{pvi_538}{the pvi of the state}
+#' }
+#' 
+#' @source Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
+#' @seealso \code{\link{partisan_lean_district}}
+"partisan_lean_state"
+
+#' Political Elasticity Scores
+#' 
+#' This folder contains the data behind the story 'Election Update: The House Districts That Swing The Most (And Least) With The National Mood'
+#' \url{https://fivethirtyeight.com/features/election-update-the-house-districts-that-swing-the-most-and-least-with-the-national-mood/}
+#' 
+#' @format A dataset with 435 rows representing congressional districts and 2 variables
+#' \describe{
+#' \item{district}{congressional district}
+#' \item{pvi_538}{pvi}
+#' }
+#' 
+#' @source An elasticity score measures how sensitive a state or district it is to changes in the national political environment.
+#' @seealso \code{\link{elasticity_by_state}}
+"elasticity_by_district"
+
+#' Political Elasticity Scores
+#' 
+#' This folder contains the data behind the story 'Election Update: The House Districts That Swing The Most (And Least) With The National Mood'
+#' \url{https://fivethirtyeight.com/features/election-update-the-house-districts-that-swing-the-most-and-least-with-the-national-mood/}
+#' 
+#' @format A dataset with 435 rows representing each state and the District of Columbia and 2 variables
+#' \describe{
+#' \item{state}{state}
+#' \item{pvi_538}{pvi}
+#' }
+#' 
+#' @source An elasticity score measures how sensitive a state or district it is to changes in the national political environment.
+#' @seealso \code{\link{elasticity_by_district}}
+"elasticity_by_state"
+
+#' Russia Investigation
+#' 
+#' This folder contains data behind the story 'Is The Russia Investigation Really Another Watergate?'
+#' \url{https://projects.fivethirtyeight.com/russia-investigation/}
+#' 
+#' @format A dataset with 194 rows representing every special investigation since the Watergate probe began in 1973 and 13 variables
+#' \describe{
+#' \item{investigation}{Unique id for each investigation}
+#' \item{investigation_start}{Start date of the investigation}
+#' \item{investigation_end}{End date of the investigation}
+#' \item{investigation_days}{Length, in days, of the investigation. Days will be negative if the charge occured before the investigation began.}
+#' \item{name}{Name of the person charged (if applicable). Will be blank if there were no charges.}
+#' \item{indictment_days}{Length, in days, from the start of the investigation to the date the person was charged (if applicable). Days will be negative if the charge occured before the investigation began.}
+#' \item{type}{Result of charge (if applicable)}
+#' \item{cp_date}{Date the person pled guilty or was convicted (if applicable)}
+#' \item{cp_days}{Length, in days, from the start of the investigation to the date the person pled guilty or was convicted (if applicable)}
+#' \item{overturned}{Whether or not the relevant person's conviction was overturned}
+#' \item{pardoned}{Whether or not the relevant person's charge was pardoned}
+#' \item{american}{Whether or not the relevant person's charge was a U.S. resident}
+#' \item{president}{President at the center of the investigation}
+#' }
+#' 
+#' @source Information for this story is drawn from an original data set of special counsel, independent counsel and special prosecutor investigations from 1973 to 2019. The data set was created by consulting historical sources, including final reports generated by independent counsels, special counsels and special prosecutors; reports in Congressional Quarterly; and contemporaneous news stories. Secondary historical sources were also consulted, including a 2006 Congressional Research Service report about independent counsel investigations and a history of the Watergate investigation by Stanley Kutler. Data about pardons was obtained from the Office of the Pardon Attorney. Indicted organizations were excluded from our analysis. The data set, which is available on Github, includes the names of all people charged as part of these investigations, as well as the outcome of their cases and the dates of major actions in their cases.
+#' 
+#' 2006 Congressional Research Service report:
+#' \url{https://digital.library.unt.edu/ark:/67531/metadc815038/m2/1/high_res_d/98-19_2006Jun08.pdf}
+#' 
+#' dataset in GitHub:
+#' \url{https://github.com/fivethirtyeight/data/tree/master/russia-investigation}
+"russia_investigation"
+
+#' Senate Forecast 2018
+#'
+#' This file contains links to the data behind FiveThirtyEight's 'Senate forecasts'
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate/}
+#'
+#' @format A dataframe with 450 rows representing national-level results of the classic, lite, and deluxe   Senate forecasts since Aug. 1, 2018 and 11 variables
+#' \describe{
+#' \item{forecastdate}{date of the forecast}
+#' \item{party}{the party of the forecast}
+#' \item{model}{the model of the forecast}
+#' \item{win_probability}{the probability of the corresponding party winning}
+#' \item{mean_seats}{the mean of the number of seats}
+#' \item{median_seats}{the median number of seats}
+#' \item{p10_seats}{the top 10 percentile of number of seats}
+#' \item{p90_seats}{the top 90 percentile of number of seats}
+#' \item{margin}{unknown}
+#' \item{p10_margin}{the margin of p10_seats}
+#' \item{p90_margin}{the margin of p90_seats}
+#' }
+#' @note The original dataset included a meaningless column called "state", and all variables under this column was "US". So this column was removed.
+#' @source FiveThirtyEight’s House, Senate And Governor Models
+#' Methodology:
+#' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
+#' @seealso \code{\link{senate_seat_forecast}}
+"senate_national_forecast"
+
+#' Senate Forecast 2018
+#'
+#' This file contains links to the data behind FiveThirtyEight's 'Senate forecasts'
+#' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate/}
+#'
+#' @format A dataframe with 28353 rows representing seat-level results of the classic, lite, and deluxe Senate forecasts since Aug. 1, 2018 and 12 variables
+#' \describe{
+#' \item{forecastdate}{date of the forecast}
+#' \item{state}{state of the forecast}
+#' \item{class}{class of the forecast}
+#' \item{special}{unknown}
+#' \item{candidate}{name of the candidate}
+#' \item{party}{party of the candidate}
+#' \item{incumbent}{whether the candidate is incumbent}
+#' \item{model}{the model of the forecast}
+#' \item{win_probability}{the probability of the corresponding party winning}
+#' \item{voteshare}{the voteshare of the corresponding party}
+#' \item{p10_voteshare}{the top 10 percentile of the voteshare}
+#' \item{p90_voteshare}{the top 00 percentile of the voteshare}
+#' }
+#' @source FiveThirtyEight’s House, Senate And Governor Models
+#' Methodology:
+#' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
+#' @seealso \code{\link{senate_national_forecast}}
+"senate_seat_forecast"
+
+#' Trump Lawsuits
+#' 
+#' This folder contains the data behind the stories: 
+#' 'What Trump's Legal Battles Tell Us About Presidential Power'
+#' \url{https://fivethirtyeight.com/features/what-trumps-legal-battles-tell-us-about-presidential-power/}
+#' 'Why It Might Be Impossible To Overturn A Presidential Pardon'
+#' \url{https://fivethirtyeight.com/features/why-it-might-be-impossible-to-overturn-a-presidential-pardon/}
+#' 'Will The Supreme Court Fast-Track Cases Involving Trump?'
+#' \url{https://fivethirtyeight.com/features/will-the-supreme-court-fast-track-cases-involving-trump/}
+#' 'Why One of Trump’s Biggest Legal Threats Is New York’s Attorney General'
+#' \url{https://fivethirtyeight.com/features/why-one-of-trumps-biggest-legal-threats-is-new-yorks-attorney-general/}
+#' 'Should Judges Pay Attention To Trump’s Tweets?'
+#' \url{https://fivethirtyeight.com/features/should-judges-pay-attention-to-trumps-tweets/}
+#' 'Trump Is Losing The Legal Fight Against Sanctuary Cities, But It May Still Pay Off Politically'
+#' \url{https://fivethirtyeight.com/features/trump-is-losing-the-legal-fight-against-sanctuary-cities-but-it-may-still-pay-off-politically/}
+#' 'Will Trump’s Latest Lawsuits Keep Congress From Investigating Future Presidents?'
+#' \url{https://fivethirtyeight.com/features/will-trumps-latest-lawsuits-keep-congress-from-investigating-future-presidents/}
+#' 
+#' @format A dataset with 57 rows representing lawsuits and 16 variables
+#' \describe{
+#' \item{docket_number}{Current docket number}
+#' \item{date_filed}{Date lawsuit was originally filed}
+#' \item{case_name}{Case name (current)}
+#' \item{plaintiff}{Names of plaintiffs (if more than five, "et al" for plaintiffs who are not in case name)}
+#' \item{defendant}{Names of defendants (if more than five, "et al" for defendants who are not in case name)}
+#' \item{current_location}{Court the lawsuit is currently in front of}
+#' \item{previous_location}{Other courts the case has appeared before}
+#' \item{jurisdiction}{Where the case is being heard | 1 = Federal; 2 = State}
+#' \item{judge}{Names of the judges the case is currently before}
+#' \item{nature}{PACER code for nature of lawsuit (Not relevant for criminal cases) \url{https://www.pacer.gov/documents/natsuit.pdf}}
+#' \item{trump_category}{Whether the case is related to action before Trump was president, his personal conduct as president, or a policy action as president | 1 = Case directed at pre-presidency action; 2 = Case directed at personal action of Trump as president; 3 = Case directed at policy action of Trump as president}
+#' \item{capacity}{The capacity in which Trump is implicated | 1 = Case directed at Trump personally; 2 = Case directed at action of Trump administration; 3 = Trump as plaintiff; 4 = Trump administration as plaintiff; 5 = Case directed at Trump associate; 6 = Other}
+#' \item{type}{Criminal vs. civil | 1 = Criminal; 2 = Civil}
+#' \item{issue}{Key topic area raised in the case (i.e. emoluments, First Amendment, DACA, etc). Categories created based on key policy topic area or legal issue. Calls are subjective and based on reporting and may change.}
+#' \item{docket_orig}{Original docket number, if case has been appealed or changed jurisdiction}
+#' \item{status}{Whether the case, or the part of the case connected to Trump, is ongoing. | 1 = Case is ongoing; 2 = Case or part of case connected to Trump is closed}
+#' }
+#' @source Approval Polls 
+"trump_lawsuits"
+
+
+
+
+
+
+
+
+
+
+
+
