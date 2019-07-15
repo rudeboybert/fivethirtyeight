@@ -221,5 +221,3 @@ trump_lawsuits <- read_csv("data-raw/trump-lawsuits/trump-lawsuits.csv") %>%
     status = as.factor(status)
   )
 usethis::use_data(trump_lawsuits, overwrite = TRUE)
-
-
