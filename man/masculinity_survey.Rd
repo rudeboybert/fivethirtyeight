@@ -39,7 +39,7 @@ I made heavy editions in Excel to make the dataset easily useable in R.
 # To convert data frame to tidy data (long) format based on one of the characteristics of observations (here, we use sexuality as an example), run:
 
 library(dplyr)
-library(tidyr)
+library(tidyverse)
 library(stringr)
 
 masculinity_survey_sexuality_tidy <- masculinity_survey \%>\% 
