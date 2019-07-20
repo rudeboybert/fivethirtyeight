@@ -19,6 +19,9 @@ elasticity_by_state
 This folder contains the data behind the story 'Election Update: The House Districts That Swing The Most (And Least) With The National Mood'
 \url{https://fivethirtyeight.com/features/election-update-the-house-districts-that-swing-the-most-and-least-with-the-national-mood/}
 }
+\note{
+I used the full names for all states instead of abbreviations.
+}
 \seealso{
 \code{\link{elasticity_by_district}}
 }

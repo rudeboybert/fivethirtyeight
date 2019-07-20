@@ -4,10 +4,11 @@
 \name{partisan_lean_state}
 \alias{partisan_lean_state}
 \title{FiveThirtyEight's Partisan Lean}
-\format{A dataset with 50 rows representing states and 2 variables 
+\format{A dataset with 50 rows representing states and 3 variables 
 \describe{
 \item{state}{the state}
-\item{pvi_538}{the pvi of the state}
+\item{pvi_party}{the party of the vote}
+\item{pvi_amount}{the Cook Partisan Voting Index of the vote}
 }}
 \source{
 Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
@@ -24,6 +25,10 @@ This directory contains the data for FiveThirtyEight's partisan lean, which is u
 and [Governer]
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 forecasts.
+}
+\note{
+The original dataset only has 2 columns: "state" and "pvi_538". I separated the "pvi_538" columns into two. 
+For example, in row 1 of the dataset, the original "pvi_538" = "R+27", and I separated it into “pvi_party" = "R" and "pvi_amount" = "27".
 }
 \seealso{
 \code{\link{partisan_lean_district}}

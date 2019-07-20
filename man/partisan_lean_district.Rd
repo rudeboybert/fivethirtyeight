@@ -4,10 +4,12 @@
 \name{partisan_lean_district}
 \alias{partisan_lean_district}
 \title{FiveThirtyEight's Partisan Lean}
-\format{A dataset with 435 rows representing votes and 2 variables 
+\format{A dataset with 435 rows representing votes and 4 variables 
 \describe{
-\item{district}{the district of the vote}
-\item{pvi_538}{the pvi of the vote}
+\item{state}{the state of the vote}
+\item{disctrict_number}{the disctrict_number of the vote}
+\item{pvi_party}{the party of the vote}
+\item{pvi_amount}{the Cook Partisan Voting Index of the vote}
 }}
 \source{
 Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
@@ -25,7 +27,15 @@ and [Governer]
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 forecasts.
 }
+\note{
+The original dataset only has 2 columns: "discrict" and "pvi_538". I separated each of the 2 columns into two. 
+For example, in row 1 of the dataset, the original "district" = "AK-1", and I separated it into "state" = "Arkansas" and "district_number" = "1";
+the original "pvi_538" = "R+15.21", and I separated it into “pvi_party" = "R" and "pvi_amount" = "15.21". 
+In addition, I used the full names for all states instead of abbreviations.
+}
 \seealso{
+\code{\link{partisan_lean_state}}
+
 \code{\link{partisan_lean_state}}
 }
 \keyword{datasets}

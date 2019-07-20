@@ -265,13 +265,20 @@
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 #' forecasts. 
 #' 
-#' @format A dataset with 435 rows representing votes and 2 variables 
+#' @format A dataset with 435 rows representing votes and 4 variables 
 #' \describe{
-#' \item{district}{the district of the vote}
-#' \item{pvi_538}{the pvi of the vote}
+#' \item{state}{the state of the vote}
+#' \item{disctrict_number}{the disctrict_number of the vote}
+#' \item{pvi_party}{the party of the vote}
+#' \item{pvi_amount}{the Cook Partisan Voting Index of the vote}
 #' }
 #' 
 #' @source Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
+#' @seealso \code{\link{partisan_lean_state}}
+#' @note The original dataset only has 2 columns: "discrict" and "pvi_538". I separated each of the 2 columns into two. 
+#' For example, in row 1 of the dataset, the original "district" = "AK-1", and I separated it into "state" = "Arkansas" and "district_number" = "1";
+#' the original "pvi_538" = "R+15.21", and I separated it into “pvi_party" = "R" and "pvi_amount" = "15.21". 
+#' In addition, I used the full names for all states instead of abbreviations. 
 #' @seealso \code{\link{partisan_lean_state}}
 "partisan_lean_district"
 
@@ -286,13 +293,16 @@
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 #' forecasts. 
 #' 
-#' @format A dataset with 50 rows representing states and 2 variables 
+#' @format A dataset with 50 rows representing states and 3 variables 
 #' \describe{
 #' \item{state}{the state}
-#' \item{pvi_538}{the pvi of the state}
+#' \item{pvi_party}{the party of the vote}
+#' \item{pvi_amount}{the Cook Partisan Voting Index of the vote}
 #' }
 #' 
 #' @source Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
+#' @note The original dataset only has 2 columns: "state" and "pvi_538". I separated the "pvi_538" columns into two. 
+#' For example, in row 1 of the dataset, the original "pvi_538" = "R+27", and I separated it into “pvi_party" = "R" and "pvi_amount" = "27". 
 #' @seealso \code{\link{partisan_lean_district}}
 "partisan_lean_state"
 
@@ -306,8 +316,10 @@
 #' \item{district}{congressional district}
 #' \item{pvi_538}{pvi}
 #' }
-#' 
 #' @source An elasticity score measures how sensitive a state or district it is to changes in the national political environment.
+#' @note The original dataset only has 2 columns: "district" and "elasticity". I separated  the "district" columns into two. 
+#' For example, in row 1 of the dataset, the original "district" = "MI-5", and I separated it into “state" = "Michigan" and "disctrict_number" = "5". 
+#' In addition, I used the full names for all states instead of abbreviations. 
 #' @seealso \code{\link{elasticity_by_state}}
 "elasticity_by_district"
 
@@ -323,6 +335,7 @@
 #' }
 #' 
 #' @source An elasticity score measures how sensitive a state or district it is to changes in the national political environment.
+#' @note I used the full names for all states instead of abbreviations. 
 #' @seealso \code{\link{elasticity_by_district}}
 "elasticity_by_state"
 
@@ -413,19 +426,19 @@
 #' 
 #' This folder contains the data behind the stories: 
 #' 'What Trump's Legal Battles Tell Us About Presidential Power'
-#' \url{https://fivethirtyeight.com/features/what-trumps-legal-battles-tell-us-about-presidential-power/}
+#' \url{https://fivethirtyeight.com/features/what-trumps-legal-battles-tell-us-about-presidential-power/};
 #' 'Why It Might Be Impossible To Overturn A Presidential Pardon'
-#' \url{https://fivethirtyeight.com/features/why-it-might-be-impossible-to-overturn-a-presidential-pardon/}
+#' \url{https://fivethirtyeight.com/features/why-it-might-be-impossible-to-overturn-a-presidential-pardon/};
 #' 'Will The Supreme Court Fast-Track Cases Involving Trump?'
-#' \url{https://fivethirtyeight.com/features/will-the-supreme-court-fast-track-cases-involving-trump/}
+#' \url{https://fivethirtyeight.com/features/will-the-supreme-court-fast-track-cases-involving-trump/};
 #' 'Why One of Trump’s Biggest Legal Threats Is New York’s Attorney General'
-#' \url{https://fivethirtyeight.com/features/why-one-of-trumps-biggest-legal-threats-is-new-yorks-attorney-general/}
+#' \url{https://fivethirtyeight.com/features/why-one-of-trumps-biggest-legal-threats-is-new-yorks-attorney-general/};
 #' 'Should Judges Pay Attention To Trump’s Tweets?'
-#' \url{https://fivethirtyeight.com/features/should-judges-pay-attention-to-trumps-tweets/}
+#' \url{https://fivethirtyeight.com/features/should-judges-pay-attention-to-trumps-tweets/};
 #' 'Trump Is Losing The Legal Fight Against Sanctuary Cities, But It May Still Pay Off Politically'
-#' \url{https://fivethirtyeight.com/features/trump-is-losing-the-legal-fight-against-sanctuary-cities-but-it-may-still-pay-off-politically/}
+#' \url{https://fivethirtyeight.com/features/trump-is-losing-the-legal-fight-against-sanctuary-cities-but-it-may-still-pay-off-politically/};
 #' 'Will Trump’s Latest Lawsuits Keep Congress From Investigating Future Presidents?'
-#' \url{https://fivethirtyeight.com/features/will-trumps-latest-lawsuits-keep-congress-from-investigating-future-presidents/}
+#' \url{https://fivethirtyeight.com/features/will-trumps-latest-lawsuits-keep-congress-from-investigating-future-presidents/};
 #' 
 #' @format A dataset with 57 rows representing lawsuits and 16 variables
 #' \describe{
@@ -448,15 +461,3 @@
 #' }
 #' @source Approval Polls 
 "trump_lawsuits"
-
-
-
-
-
-
-
-
-
-
-
-

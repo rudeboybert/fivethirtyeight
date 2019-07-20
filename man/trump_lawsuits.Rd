@@ -32,18 +32,18 @@ trump_lawsuits
 \description{
 This folder contains the data behind the stories: 
 'What Trump's Legal Battles Tell Us About Presidential Power'
-\url{https://fivethirtyeight.com/features/what-trumps-legal-battles-tell-us-about-presidential-power/}
+\url{https://fivethirtyeight.com/features/what-trumps-legal-battles-tell-us-about-presidential-power/};
 'Why It Might Be Impossible To Overturn A Presidential Pardon'
-\url{https://fivethirtyeight.com/features/why-it-might-be-impossible-to-overturn-a-presidential-pardon/}
+\url{https://fivethirtyeight.com/features/why-it-might-be-impossible-to-overturn-a-presidential-pardon/};
 'Will The Supreme Court Fast-Track Cases Involving Trump?'
-\url{https://fivethirtyeight.com/features/will-the-supreme-court-fast-track-cases-involving-trump/}
+\url{https://fivethirtyeight.com/features/will-the-supreme-court-fast-track-cases-involving-trump/};
 'Why One of Trump’s Biggest Legal Threats Is New York’s Attorney General'
-\url{https://fivethirtyeight.com/features/why-one-of-trumps-biggest-legal-threats-is-new-yorks-attorney-general/}
+\url{https://fivethirtyeight.com/features/why-one-of-trumps-biggest-legal-threats-is-new-yorks-attorney-general/};
 'Should Judges Pay Attention To Trump’s Tweets?'
-\url{https://fivethirtyeight.com/features/should-judges-pay-attention-to-trumps-tweets/}
+\url{https://fivethirtyeight.com/features/should-judges-pay-attention-to-trumps-tweets/};
 'Trump Is Losing The Legal Fight Against Sanctuary Cities, But It May Still Pay Off Politically'
-\url{https://fivethirtyeight.com/features/trump-is-losing-the-legal-fight-against-sanctuary-cities-but-it-may-still-pay-off-politically/}
+\url{https://fivethirtyeight.com/features/trump-is-losing-the-legal-fight-against-sanctuary-cities-but-it-may-still-pay-off-politically/};
 'Will Trump’s Latest Lawsuits Keep Congress From Investigating Future Presidents?'
-\url{https://fivethirtyeight.com/features/will-trumps-latest-lawsuits-keep-congress-from-investigating-future-presidents/}
+\url{https://fivethirtyeight.com/features/will-trumps-latest-lawsuits-keep-congress-from-investigating-future-presidents/};
 }
 \keyword{datasets}
