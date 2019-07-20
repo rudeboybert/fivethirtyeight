@@ -10,7 +10,7 @@ instead of using less informative `geom_point()`
     + By Starry Zhou: `cabinet_turnover`, `august_senate_polls`, `endorsements_2020`, 
     `forecast_results_2018`, `governor_national_forecast`, `governor_state_forecast`,
     `house_district_forecast`, `house_national_forecast`, `mueller_approval_polls`,
-    `ncaa_w_basketball_tournaments`, `partisan_lean_district`, `partisan_lean_state`, `elasticity_by_district`, `elasticity_by_state`, `russia_investigation`, `senate_national_forecast`, `senate_seat_forecast`, `trump_lawsuits`
+    `ncaa_w_basketball_tournaments`, `partisan_lean_district`, `partisan_lean_state`, `elasticity_by_district`, `elasticity_by_state`, `russia_investigation`, `senate_national_forecast`, `senate_seat_forecast`, `trump_lawsuits`,  `masculinity_survey`
 
 # fivethirtyeight 0.4.0
 
