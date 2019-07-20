@@ -241,3 +241,10 @@ trump_lawsuits <- read_csv("data-raw/trump-lawsuits/trump-lawsuits.csv") %>%
   )
 usethis::use_data(trump_lawsuits, overwrite = TRUE)
 
+# masculinity-survey  ---------------------------------------------------------------
+masculinity_survey <- read_csv("data-raw/masculinity-survey/masculinity-survey-r.csv") %>% 
+  clean_names() %>% 
+  mutate(question = as.factor(question),
+         response = as.factor(response)
+         )
+usethis::use_data(masculinity_survey, overwrite = TRUE)
