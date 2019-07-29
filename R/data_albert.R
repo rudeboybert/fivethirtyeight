@@ -6,7 +6,7 @@
 #'
 #' @format A data frame with 56 rows representing airlines and 9 variables:
 #' \describe{
-#'   \item{airline}{airline}
+#'   \item{airline}{airline.}
 #'   \item{incl_reg_subsidiaries}{indicates that regional subsidiaries are included}
 #'   \item{avail_seat_km_per_week}{available seat kilometers flown every week}
 #'   \item{incidents_85_99}{Total number of incidents, 1985-1999}
@@ -1011,3 +1011,4 @@
 #' state_info %>%
 #'   count(region)
 "state_info"
+
