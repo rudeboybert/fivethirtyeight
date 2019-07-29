@@ -113,7 +113,7 @@
 #' \item{cfb}{The percentage of search traffic in the region related to the CFB over the past 5 years}
 #' \item{trump_2016_vote}{The percentage of voters in the region who voted for Trump in the 2016 Presidential Election}
 #' }
-#' @source Google Trends \url{https://g.co/trends/5P8aa}
+#' @source Google Trends \url{https://trends.google.com/}.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(dplyr)

@@ -70,7 +70,7 @@
 #' "D1" means a one-on-one date, "D2" means a 2-on-1, "D3" means a 3-on-1
 #' group date, and so on. Weeks of the show are eliminated by rose
 #' ceremonies, and may not line up exactly with episodes.
-#' @source \url{http://bachelor-nation.wikia.com/wiki/Bachelor_Nation_Wikia}
+#' @source \url{https://bachelor-nation.fandom.com/wiki/Bachelor_Nation_Wiki}
 #' and then missing seasons were filled in by ABC and FiveThirtyEight staffers.
 "bachelorette"
 

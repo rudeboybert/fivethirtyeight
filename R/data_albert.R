@@ -529,7 +529,7 @@
 #'   \item{country}{Country}
 #'   \item{percent}{Percent of marriages that are consanguineous}
 #' }
-#' @source \url{http://www.consang.net/index.php/Main_Page}
+#' @source consang.net
 "cousin_marriage"
 
 
