@@ -21,6 +21,7 @@ library(fivethirtyeight)
 library(ggplot2)
 library(dplyr)
 library(tidytext)
+library(textdata)
 library(stringr)
 library(lubridate)
 library(knitr)
@@ -66,8 +67,10 @@ trump_tokens <- trump_twitter %>%
 # Sentiment analysis
 To measure the sentiment of tweets, we used the AFINN lexicon for each (non-stop) word in a tweet.   The score runs between -5 and 5.  We then sum the scores for each word across all words in one tweet to get a total tweet sentiment score. 
 ```{r sentiment}
+afinn_sentiment <- lexicon_afinn(dir = NULL, delete = FALSE, 
+                                 return_path = FALSE)
 trump_sentiment <- trump_tokens %>% 
-  inner_join(get_sentiments("afinn"), by=c("tokens"="word")) 
+  inner_join(afinn_sentiment, by=c("tokens"="word")) 
 
 trump_full_text_sent <- trump_sentiment %>% 
   group_by(id) %>% 
@@ -80,6 +83,7 @@ trump_full_text_sent <- trump_sentiment %>%
 ```
 
 ## Distribution of sentiment scores
+
 ```{r}
 trump_full_text_sent %>%
   count(score_factor) %>% mutate(prop = prop.table(n))
