@@ -9,3 +9,5 @@
 ^data-raw$
 ^docs$
 ^images_for_guide$
+^doc$
+^Meta$

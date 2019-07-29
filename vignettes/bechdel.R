@@ -135,7 +135,7 @@ median_groups_dom <- bechdel90_13 %>%
   filter(clean_test %in% c("men", "notalk", "nowomen")) %>% 
   group_by(clean_test) %>% 
   summarize(median_roi = median(roi_dom, na.rm = TRUE))
-pass_bech_rom <- data_frame(clean_test = "pass", 
+pass_bech_rom <- tibble(clean_test = "pass", 
                   median_roi = passes_bechtel_rom$median_roi)
 med_groups_dom_full <- bind_rows(pass_bech_rom, median_groups_dom) %>% 
   mutate(group = "U.S. and Canada")
@@ -148,7 +148,7 @@ median_groups_int <- bechdel90_13 %>%
   filter(clean_test %in% c("men", "notalk", "nowomen")) %>% 
   group_by(clean_test) %>% 
   summarize(median_roi = median(roi_int, na.rm = TRUE))
-pass_bech_int <- data_frame(clean_test = "pass", 
+pass_bech_int <- tibble(clean_test = "pass", 
                   median_roi = passes_bechtel_int$median_roi)
 med_groups_int_full <- bind_rows(pass_bech_int, median_groups_int) %>% 
   mutate(group = "International")

@@ -1,12 +1,12 @@
 ---
-title: "Bob Ross - Joy of Painting-"
+title: "Bob Ross - Joy of Painting"
 author: "Jonathan Bouchet"
 date: "`r Sys.Date()`"
 output: 
 rmarkdown::html_vignette:
 df_print: kable
 vignette: |
-  %\VignetteIndexEntry{Comic gender analysis}
+  %\VignetteIndexEntry{Bob Ross' Joy of Painting}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

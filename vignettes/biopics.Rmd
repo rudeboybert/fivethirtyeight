@@ -6,7 +6,7 @@ output:
   rmarkdown::html_vignette:
     df_print: kable
 vignette: |
-  %\VignetteIndexEntry{Biopics tidyverse analysis}
+  %\VignetteIndexEntry{Looking at Biopics of Hollywood}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -48,14 +48,13 @@ plot_theme <- function(base_size = 12) {
 
 ```{r message=FALSE, warning=FALSE}
 library(fivethirtyeight)
-# library(tidyverse)
+library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
 library(scales)
 library(stringr)
-# library(highcharter)
-
+library(highcharter)
 glimpse(biopics)
 ```
 

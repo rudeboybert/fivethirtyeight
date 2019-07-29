@@ -30,7 +30,7 @@ Approval Polls
 trump_lawsuits
 }
 \description{
-This folder contains the data behind the stories: 
+This folder contains the data behind the stories:
 'What Trump's Legal Battles Tell Us About Presidential Power'
 \url{https://fivethirtyeight.com/features/what-trumps-legal-battles-tell-us-about-presidential-power/};
 'Why It Might Be Impossible To Overturn A Presidential Pardon'

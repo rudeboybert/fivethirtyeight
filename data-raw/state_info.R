@@ -8,7 +8,7 @@
 library(usethis)
 library(usmap)
 library(dplyr)
-state_info <- data_frame(
+state_info <- tibble(
   state = c(state.name, "District of Columbia"),
   state_abbrev = c(state.abb, "DC"),
   division = case_when(

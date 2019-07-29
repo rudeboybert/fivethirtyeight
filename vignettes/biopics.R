@@ -26,14 +26,13 @@ plot_theme <- function(base_size = 12) {
 
 ## ----message=FALSE, warning=FALSE----------------------------------------
 library(fivethirtyeight)
-# library(tidyverse)
+library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
 library(scales)
 library(stringr)
-# library(highcharter)
-
+library(highcharter)
 glimpse(biopics)
 
 ## ----fig.width=7---------------------------------------------------------

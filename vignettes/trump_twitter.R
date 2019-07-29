@@ -41,7 +41,7 @@ trump_sentiment <- trump_tokens %>%
 
 trump_full_text_sent <- trump_sentiment %>% 
   group_by(id) %>% 
-  summarise(score = sum(score, na.rm=TRUE)) %>% 
+  summarise(score = sum(value, na.rm=TRUE)) %>% 
   ungroup() %>% 
   right_join(trump_twitter, by="id") %>% 
   mutate(score_factor = ifelse(is.na(score), "Missing score", 
@@ -53,7 +53,8 @@ trump_full_text_sent %>%
   count(score_factor) %>% mutate(prop = prop.table(n))
 
 ## ----sentiment_hist, fig.width=7, , warning=FALSE------------------------
-ggplot(data=trump_full_text_sent, aes(score)) + geom_histogram(bins = 10)
+ggplot(data=trump_full_text_sent, aes(score)) + 
+  geom_histogram(bins = 10)
 
 ## ----plot_time, fig.width=7----------------------------------------------
 sentOverTimeGraph <- ggplot(data=filter(trump_full_text_sent,!is.na(score)), aes(x=created_at, y=score)) +

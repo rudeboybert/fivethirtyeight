@@ -4,7 +4,7 @@
 \name{partisan_lean_state}
 \alias{partisan_lean_state}
 \title{FiveThirtyEight's Partisan Lean}
-\format{A dataset with 50 rows representing states and 3 variables 
+\format{A dataset with 50 rows representing states and 3 variables
 \describe{
 \item{state}{the state}
 \item{pvi_party}{the party of the vote}
@@ -17,7 +17,7 @@ Partisan lean is the average difference between how a state or district votes an
 partisan_lean_state
 }
 \description{
-This directory contains the data for FiveThirtyEight's partisan lean, which is used in our 
+This directory contains the data for FiveThirtyEight's partisan lean, which is used in our
 [House]
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house}
 [Senate]
@@ -27,7 +27,7 @@ and [Governer]
 forecasts.
 }
 \note{
-The original dataset only has 2 columns: "state" and "pvi_538". I separated the "pvi_538" columns into two. 
+The original dataset only has 2 columns: "state" and "pvi_538". I separated the "pvi_538" columns into two.
 For example, in row 1 of the dataset, the original "pvi_538" = "R+27", and I separated it into “pvi_party" = "R" and "pvi_amount" = "27".
 }
 \seealso{

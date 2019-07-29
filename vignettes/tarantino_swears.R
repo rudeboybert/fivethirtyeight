@@ -18,7 +18,7 @@ options(digits = 2)
 movie <- c("Reservoir Dogs", "Pulp Fiction", "Jackie Brown", "Kill Bill: Vol. 1", "Kill Bill: Vol. 2", "Inglorious Basterds", "Django Unchained")
 
 year <- c(1992, 1994, 1997, 2003, 2004, 2009, 2012)
-tarantino_year <- data_frame(movie, year)
+tarantino_year <- tibble(movie, year)
 
 # Combine with existing `tarantino` dataframe
 tarantino_plus_year <- inner_join(x = tarantino, y = tarantino_year, by = "movie")

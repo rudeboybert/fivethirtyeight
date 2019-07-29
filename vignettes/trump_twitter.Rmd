@@ -71,7 +71,7 @@ trump_sentiment <- trump_tokens %>%
 
 trump_full_text_sent <- trump_sentiment %>% 
   group_by(id) %>% 
-  summarise(score = sum(score, na.rm=TRUE)) %>% 
+  summarise(score = sum(value, na.rm=TRUE)) %>% 
   ungroup() %>% 
   right_join(trump_twitter, by="id") %>% 
   mutate(score_factor = ifelse(is.na(score), "Missing score", 
@@ -88,7 +88,8 @@ trump_full_text_sent %>%
 46.4% of tweets did not have sentiment scores.  15.4% were net negative and 36.6% were net positive.
 
 ```{r sentiment_hist, fig.width=7, , warning=FALSE}
-ggplot(data=trump_full_text_sent, aes(score)) + geom_histogram(bins = 10)
+ggplot(data=trump_full_text_sent, aes(score)) + 
+  geom_histogram(bins = 10)
 ```
 
 
@@ -114,6 +115,7 @@ most_pos_trump <- trump_full_text_sent %>%
 
 kable(most_pos_trump, format="html")
 ```
+
 # Examine top 5 most negative tweets
 ```{r, neg_tweets}
 most_neg_trump <- trump_full_text_sent %>% 

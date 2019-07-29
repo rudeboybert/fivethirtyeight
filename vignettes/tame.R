@@ -44,8 +44,8 @@ summary(hate_crimes$hate_crimes_per_100k_splc)
 
 ## ----hate-crime, fig.height=9/2, fig.width=16/2.5, fig.align='center', fig.cap="Relationship between hate crime incidence and income inequality."----
 plot(hate_crimes$gini_index, hate_crimes$hate_crimes_per_100k_splc, 
-     xlab = "Gini index", ylab = "Hate crime rate per 100K", 
-     title = "Hate Crimes per 100K Nov 9-18 2016 (SPLC)")
+     xlab = "Gini index", ylab = "Hate crime rate per 100K")
+title("Hate Crimes per 100K Nov 9-18 2016 (SPLC)")
 
 ## ---- eval=FALSE---------------------------------------------------------
 #  lm(hate_crimes_per_100k_splc ~ gini_index, data = hate_crimes)
