@@ -10,7 +10,7 @@
   \item{percent}{Percent of marriages that are consanguineous}
 }}
 \source{
-\url{http://www.consang.net/index.php/Main_Page}
+consang.net
 }
 \usage{
 cousin_marriage

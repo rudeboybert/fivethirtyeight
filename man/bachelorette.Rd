@@ -31,7 +31,7 @@
   \item{dates_10}{Who was on which date in week 10.}
 }}
 \source{
-\url{http://bachelor-nation.wikia.com/wiki/Bachelor_Nation_Wikia}
+\url{https://bachelor-nation.fandom.com/wiki/Bachelor_Nation_Wiki}
 and then missing seasons were filled in by ABC and FiveThirtyEight staffers.
 }
 \usage{
