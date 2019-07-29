@@ -193,4 +193,4 @@ ggraph(g1,layout='circle') +
 ```
 
 * larger width indicate the frequency of this correlation
-* the most frequent conenction are `tree | trees`, `tree | lake`, `lake | mountain`, which makes sense as seen with the correlation plot.
+* the most frequent connection are `tree | trees`, `tree | lake`, `lake | mountain`, which makes sense as seen with the correlation plot.

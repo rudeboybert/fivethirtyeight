@@ -166,7 +166,7 @@ biopics %>%
 ```
 
 
-* Within biopics that had actors of color,  topics like **Athelete**,**Activist**,**Singer**,**World Leader** and **Actor** had a higher coverage than in biopics that had white actors.
+* Within biopics that had actors of color,  topics like **Athlete**,**Activist**,**Singer**,**World Leader** and **Actor** had a higher coverage than in biopics that had white actors.
 
 
 

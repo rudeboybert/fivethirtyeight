@@ -73,7 +73,7 @@ One overarching goal we shared when designing courses is Cobb's principle of "mi
 knitr::include_graphics("images/data_science_pipeline.png")
 ```
 
-This thinking is in line with Perkins' philosophy of "making learning more meaningful by teaching the 'whole game'" instead of just isolated pieces of a discipline [@Perkins_2010]. So just as how aspiring softball/baseball players first learn to play a simplified version of the game called "teeball" instead of only learning how to swing a bat, we feel that introductory statistics and data science students should be exposed to the entirety of the data/science pipeline early, even if only in a simplified form. 
+This thinking is in line with Perkins' philosophy of "making learning more meaningful by teaching the 'whole game'" instead of just isolated pieces of a discipline [@Perkins_2010]. So just as how aspiring softball/baseball players first learn to play a simplified version of the game called "tee-ball" instead of only learning how to swing a bat, we feel that introductory statistics and data science students should be exposed to the entirety of the data/science pipeline early, even if only in a simplified form. 
 
 Another overarching goal we shared when designing courses is emphasizing the use of "real world" data. Dr. Jenny Bryan at the University of British Columbia and RStudio has famously quoted that traditional data used in the classroom is like a "teddy bear," whereas real world data is more like a "grizzly bear with salmon blood dripping from its mouth" [@bear_tweet]. To shield students from the wrangling and pre-processing necessary to prepare data for analysis is to ultimately do students a disservice, as we would be blinding them to the reality that many statisticians and data scientists spend a substantial amount of their time performing such tasks [@NYT_2014]. 
 
@@ -454,7 +454,7 @@ Chester Ismay was formerly a Data Science/Statistics Consultant and Visiting Ass
 Jennifer Chunn was formerly a full-time lecturer at Seattle University in the Albers School of Business and Economics.  She taught required introductory statistics and regression courses to Business undergraduate majors, as well as a senior-level Applied Econometrics elective.  In addition, she incorporated examples from the `fivethirtyeight` package into her Data Visualization and Statistical Modeling course in the Executive MBA program. She is currently a Manager of Data Science and Analytics at Nordstrom, Inc.
 
 
-## Acknowledgements
+## Acknowledgments
 
 The authors would like to thank Alicia Johnson, Maia Majumder, Nicholas Horton, Nina Sonneborn, Andrew Flowers, and Hadley Wickham for their input and feedback.
 

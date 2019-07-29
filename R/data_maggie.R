@@ -129,7 +129,7 @@
 #'
 #' The raw data behind the story
 #' "How Every NFL Team’s Fans Lean Politically"
-#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: Surveymonkey Data.
+#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: SurveyMonkey Data.
 #'
 #' @format a data frame with 33 rows representing teams and 25 variables:
 #' \describe{

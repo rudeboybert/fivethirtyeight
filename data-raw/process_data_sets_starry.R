@@ -151,12 +151,12 @@ usethis::use_data(ncaa_w_basketball_tournaments, overwrite = TRUE)
 # partisan-lean ---------------------------------------------------------------
 partisan_lean_district <- read_csv("data-raw/partisan-lean/fivethirtyeight_partisan_lean_DISTRICTS.csv") %>% 
   clean_names() %>% 
-  separate(district, c("state", "disctrict_number")) %>% 
+  separate(district, c("state", "district_number")) %>% 
   separate(pvi_538, c("pvi_party", "pvi_amount"))
 partisan_lean_district <- partisan_lean_district %>% 
   mutate(
     state = as.factor(state.name[match(partisan_lean_district$state, state.abb)]), 
-    disctrict_number = as.numeric(disctrict_number), 
+    district_number = as.numeric(district_number), 
     pvi_party = as.factor(pvi_party), 
     pvi_amount = as.numeric(pvi_amount)
   ) 
@@ -176,11 +176,11 @@ usethis::use_data(partisan_lean_state, overwrite = TRUE)
 # political-elasticity-scores ---------------------------------------------------------------
 elasticity_by_district <- read_csv("data-raw/political-elasticity-scores/elasticity-by-district.csv") %>% 
   clean_names() %>% 
-  separate(district, c("state", "disctrict_number")) 
+  separate(district, c("state", "district_number")) 
 elasticity_by_district <- elasticity_by_district %>% 
   mutate(
     state = as.factor(state.name[match(elasticity_by_district$state, state.abb)]), 
-    disctrict_number = as.numeric(disctrict_number)
+    district_number = as.numeric(district_number)
   ) 
 usethis::use_data(elasticity_by_district, overwrite = TRUE)
 

@@ -12,7 +12,7 @@
 #'   \item{start}{Date the appointee was sworn in}
 #'   \item{end}{Date the appointee left office}
 #'   \item{length}{Length of Tenure in days}
-#'   \item{days}{Days into admininstration that the appointee left office}
+#'   \item{days}{Days into administration that the appointee left office}
 #' }
 #' @source Federal Government Website, News Reports
 "cabinet_turnover"
@@ -35,7 +35,7 @@
 #'   \item{dem_result}{the result percent of support for the Democrat during the election}
 #'   \item{rep_result}{the result percent of support for the Republican during the election}
 #'   \item{error}{the difference between the percent of support of one party during the poll and the result percent of support for the same party during the election}
-#'   \item{absolute_error}{the absolutel value of the error value}
+#'   \item{absolute_error}{the absolute value of the error value}
 #'   }
 #' @source Emerson College’s poll of registered voters \url{https://www.emerson.edu/sites/default/files/Files/Academics/ecp-tx-aug2018-pr.pdf}
 "august_senate_polls"
@@ -57,12 +57,12 @@
 #'   \item{endorser_party}{party of the endorser}
 #'   \item{source}{source link of the endorsement}
 #'   \item{order}{order of the endorsement}
-#'   \item{category}{cateogory of the endorsement}
+#'   \item{category}{category of the endorsement}
 #'   \item{body}{body of the endorsement}
 #'   \item{district}{district}
 #'   \item{points}{points the endorsement counts for}
 #'   }
-#' @source 2020 endorcement tracker.
+#' @source 2020 endorsement tracker.
 #' Methodology:
 #' \url{https://fivethirtyeight.com/methodology/how-our-presidential-endorsement-tracker-works/}.
 "endorsements_2020"
@@ -261,21 +261,21 @@
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house}
 #' [Senate]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate}
-#' and [Governer]
+#' and [Governor]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 #' forecasts.
 #'
 #' @format A dataset with 435 rows representing votes and 4 variables
 #' \describe{
 #' \item{state}{the state of the vote}
-#' \item{disctrict_number}{the disctrict_number of the vote}
+#' \item{district_number}{the district_number of the vote}
 #' \item{pvi_party}{the party of the vote}
 #' \item{pvi_amount}{the Cook Partisan Voting Index of the vote}
 #' }
 #'
 #' @source Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
 #' @seealso \code{\link{partisan_lean_state}}
-#' @note The original dataset only has 2 columns: "discrict" and "pvi_538". I separated each of the 2 columns into two.
+#' @note The original dataset only has 2 columns: "district" and "pvi_538". I separated each of the 2 columns into two.
 #' For example, in row 1 of the dataset, the original "district" = "AK-1", and I separated it into "state" = "Arkansas" and "district_number" = "1";
 #' the original "pvi_538" = "R+15.21", and I separated it into “pvi_party" = "R" and "pvi_amount" = "15.21".
 #' In addition, I used the full names for all states instead of abbreviations.
@@ -289,7 +289,7 @@
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house}
 #' [Senate]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate}
-#' and [Governer]
+#' and [Governor]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 #' forecasts.
 #'
@@ -318,7 +318,7 @@
 #' }
 #' @source An elasticity score measures how sensitive a state or district it is to changes in the national political environment.
 #' @note The original dataset only has 2 columns: "district" and "elasticity". I separated  the "district" columns into two.
-#' For example, in row 1 of the dataset, the original "district" = "MI-5", and I separated it into “state" = "Michigan" and "disctrict_number" = "5".
+#' For example, in row 1 of the dataset, the original "district" = "MI-5", and I separated it into “state" = "Michigan" and "district_number" = "5".
 #' In addition, I used the full names for all states instead of abbreviations.
 #' @seealso \code{\link{elasticity_by_state}}
 "elasticity_by_district"
@@ -349,9 +349,9 @@
 #' \item{investigation}{Unique id for each investigation}
 #' \item{investigation_start}{Start date of the investigation}
 #' \item{investigation_end}{End date of the investigation}
-#' \item{investigation_days}{Length, in days, of the investigation. Days will be negative if the charge occured before the investigation began.}
+#' \item{investigation_days}{Length, in days, of the investigation. Days will be negative if the charge occurred before the investigation began.}
 #' \item{name}{Name of the person charged (if applicable). Will be blank if there were no charges.}
-#' \item{indictment_days}{Length, in days, from the start of the investigation to the date the person was charged (if applicable). Days will be negative if the charge occured before the investigation began.}
+#' \item{indictment_days}{Length, in days, from the start of the investigation to the date the person was charged (if applicable). Days will be negative if the charge occurred before the investigation began.}
 #' \item{type}{Result of charge (if applicable)}
 #' \item{cp_date}{Date the person pled guilty or was convicted (if applicable)}
 #' \item{cp_days}{Length, in days, from the start of the investigation to the date the person pled guilty or was convicted (if applicable)}
@@ -483,7 +483,7 @@
 #' \item{straight_no}{the ratio of non-straight participants who selected this response}
 #' }
 #' @note The original `masculinity-survey.csv` contains the results of a survey of 1,615 adult men conducted by SurveyMonkey in partnership with FiveThirtyEight and WNYC Studios from May 10-22, 2018. The modeled error estimate for this survey is plus or minus 2.5 percentage points. The percentages have been weighted for age, race, education, and geography using the Census Bureau’s American Community Survey to reflect the demographic composition of the United States age 18 and over. Crosstabs with less than 100 respondents have been left blank because responses would not be statistically significant.
-#' I made heavy editions in Excel to make the dataset easily useable in R.
+#' I made heavy editions in Excel to make the dataset easily usable in R.
 #' @source The original survey responses and original datasets can be found here:
 #' \url{https://github.com/fivethirtyeight/data/tree/master/masculinity-survey}
 #' @examples
