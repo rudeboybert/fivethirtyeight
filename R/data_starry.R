@@ -255,95 +255,95 @@
 "ncaa_w_basketball_tournaments"
 
 #' FiveThirtyEight's Partisan Lean
-#' 
-#' This directory contains the data for FiveThirtyEight's partisan lean, which is used in our 
+#'
+#' This directory contains the data for FiveThirtyEight's partisan lean, which is used in our
 #' [House]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house}
 #' [Senate]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate}
 #' and [Governer]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
-#' forecasts. 
-#' 
-#' @format A dataset with 435 rows representing votes and 4 variables 
+#' forecasts.
+#'
+#' @format A dataset with 435 rows representing votes and 4 variables
 #' \describe{
 #' \item{state}{the state of the vote}
 #' \item{disctrict_number}{the disctrict_number of the vote}
 #' \item{pvi_party}{the party of the vote}
 #' \item{pvi_amount}{the Cook Partisan Voting Index of the vote}
 #' }
-#' 
+#'
 #' @source Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
 #' @seealso \code{\link{partisan_lean_state}}
-#' @note The original dataset only has 2 columns: "discrict" and "pvi_538". I separated each of the 2 columns into two. 
+#' @note The original dataset only has 2 columns: "discrict" and "pvi_538". I separated each of the 2 columns into two.
 #' For example, in row 1 of the dataset, the original "district" = "AK-1", and I separated it into "state" = "Arkansas" and "district_number" = "1";
-#' the original "pvi_538" = "R+15.21", and I separated it into “pvi_party" = "R" and "pvi_amount" = "15.21". 
-#' In addition, I used the full names for all states instead of abbreviations. 
+#' the original "pvi_538" = "R+15.21", and I separated it into “pvi_party" = "R" and "pvi_amount" = "15.21".
+#' In addition, I used the full names for all states instead of abbreviations.
 #' @seealso \code{\link{partisan_lean_state}}
 "partisan_lean_district"
 
 #' FiveThirtyEight's Partisan Lean
-#' 
-#' This directory contains the data for FiveThirtyEight's partisan lean, which is used in our 
+#'
+#' This directory contains the data for FiveThirtyEight's partisan lean, which is used in our
 #' [House]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house}
 #' [Senate]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate}
 #' and [Governer]
 #' \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
-#' forecasts. 
-#' 
-#' @format A dataset with 50 rows representing states and 3 variables 
+#' forecasts.
+#'
+#' @format A dataset with 50 rows representing states and 3 variables
 #' \describe{
 #' \item{state}{the state}
 #' \item{pvi_party}{the party of the vote}
 #' \item{pvi_amount}{the Cook Partisan Voting Index of the vote}
 #' }
-#' 
+#'
 #' @source Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
-#' @note The original dataset only has 2 columns: "state" and "pvi_538". I separated the "pvi_538" columns into two. 
-#' For example, in row 1 of the dataset, the original "pvi_538" = "R+27", and I separated it into “pvi_party" = "R" and "pvi_amount" = "27". 
+#' @note The original dataset only has 2 columns: "state" and "pvi_538". I separated the "pvi_538" columns into two.
+#' For example, in row 1 of the dataset, the original "pvi_538" = "R+27", and I separated it into “pvi_party" = "R" and "pvi_amount" = "27".
 #' @seealso \code{\link{partisan_lean_district}}
 "partisan_lean_state"
 
 #' Political Elasticity Scores
-#' 
+#'
 #' This folder contains the data behind the story 'Election Update: The House Districts That Swing The Most (And Least) With The National Mood'
 #' \url{https://fivethirtyeight.com/features/election-update-the-house-districts-that-swing-the-most-and-least-with-the-national-mood/}
-#' 
+#'
 #' @format A dataset with 435 rows representing congressional districts and 2 variables
 #' \describe{
 #' \item{district}{congressional district}
 #' \item{pvi_538}{pvi}
 #' }
 #' @source An elasticity score measures how sensitive a state or district it is to changes in the national political environment.
-#' @note The original dataset only has 2 columns: "district" and "elasticity". I separated  the "district" columns into two. 
-#' For example, in row 1 of the dataset, the original "district" = "MI-5", and I separated it into “state" = "Michigan" and "disctrict_number" = "5". 
-#' In addition, I used the full names for all states instead of abbreviations. 
+#' @note The original dataset only has 2 columns: "district" and "elasticity". I separated  the "district" columns into two.
+#' For example, in row 1 of the dataset, the original "district" = "MI-5", and I separated it into “state" = "Michigan" and "disctrict_number" = "5".
+#' In addition, I used the full names for all states instead of abbreviations.
 #' @seealso \code{\link{elasticity_by_state}}
 "elasticity_by_district"
 
 #' Political Elasticity Scores
-#' 
+#'
 #' This folder contains the data behind the story 'Election Update: The House Districts That Swing The Most (And Least) With The National Mood'
 #' \url{https://fivethirtyeight.com/features/election-update-the-house-districts-that-swing-the-most-and-least-with-the-national-mood/}
-#' 
+#'
 #' @format A dataset with 435 rows representing each state and the District of Columbia and 2 variables
 #' \describe{
 #' \item{state}{state}
 #' \item{pvi_538}{pvi}
 #' }
-#' 
+#'
 #' @source An elasticity score measures how sensitive a state or district it is to changes in the national political environment.
-#' @note I used the full names for all states instead of abbreviations. 
+#' @note I used the full names for all states instead of abbreviations.
 #' @seealso \code{\link{elasticity_by_district}}
 "elasticity_by_state"
 
 #' Russia Investigation
-#' 
+#'
 #' This folder contains data behind the story 'Is The Russia Investigation Really Another Watergate?'
 #' \url{https://projects.fivethirtyeight.com/russia-investigation/}
-#' 
+#'
 #' @format A dataset with 194 rows representing every special investigation since the Watergate probe began in 1973 and 13 variables
 #' \describe{
 #' \item{investigation}{Unique id for each investigation}
@@ -360,12 +360,12 @@
 #' \item{american}{Whether or not the relevant person's charge was a U.S. resident}
 #' \item{president}{President at the center of the investigation}
 #' }
-#' 
+#'
 #' @source Information for this story is drawn from an original data set of special counsel, independent counsel and special prosecutor investigations from 1973 to 2019. The data set was created by consulting historical sources, including final reports generated by independent counsels, special counsels and special prosecutors; reports in Congressional Quarterly; and contemporaneous news stories. Secondary historical sources were also consulted, including a 2006 Congressional Research Service report about independent counsel investigations and a history of the Watergate investigation by Stanley Kutler. Data about pardons was obtained from the Office of the Pardon Attorney. Indicted organizations were excluded from our analysis. The data set, which is available on Github, includes the names of all people charged as part of these investigations, as well as the outcome of their cases and the dates of major actions in their cases.
-#' 
+#'
 #' 2006 Congressional Research Service report:
 #' \url{https://digital.library.unt.edu/ark:/67531/metadc815038/m2/1/high_res_d/98-19_2006Jun08.pdf}
-#' 
+#'
 #' dataset in GitHub:
 #' \url{https://github.com/fivethirtyeight/data/tree/master/russia-investigation}
 "russia_investigation"
@@ -423,8 +423,8 @@
 "senate_seat_forecast"
 
 #' Trump Lawsuits
-#' 
-#' This folder contains the data behind the stories: 
+#'
+#' This folder contains the data behind the stories:
 #' 'What Trump's Legal Battles Tell Us About Presidential Power'
 #' \url{https://fivethirtyeight.com/features/what-trumps-legal-battles-tell-us-about-presidential-power/};
 #' 'Why It Might Be Impossible To Overturn A Presidential Pardon'
@@ -439,7 +439,7 @@
 #' \url{https://fivethirtyeight.com/features/trump-is-losing-the-legal-fight-against-sanctuary-cities-but-it-may-still-pay-off-politically/};
 #' 'Will Trump’s Latest Lawsuits Keep Congress From Investigating Future Presidents?'
 #' \url{https://fivethirtyeight.com/features/will-trumps-latest-lawsuits-keep-congress-from-investigating-future-presidents/};
-#' 
+#'
 #' @format A dataset with 57 rows representing lawsuits and 16 variables
 #' \describe{
 #' \item{docket_number}{Current docket number}
@@ -459,15 +459,15 @@
 #' \item{docket_orig}{Original docket number, if case has been appealed or changed jurisdiction}
 #' \item{status}{Whether the case, or the part of the case connected to Trump, is ongoing. | 1 = Case is ongoing; 2 = Case or part of case connected to Trump is closed}
 #' }
-#' @source Approval Polls 
+#' @source Approval Polls
 "trump_lawsuits"
 
 #'  Masculinity Survey
-#' 
-#' This folder contains the data behind the story: 
+#'
+#' This folder contains the data behind the story:
 #' "What Do Men Think It Means To Be A Man?"
 #' \url{https://fivethirtyeight.com/features/what-do-men-think-it-means-to-be-a-man}
-#' @format A dataset with 189 rows representing answers and 12 variables: 
+#' @format A dataset with 189 rows representing answers and 12 variables:
 #' \describe{
 #' \item{question}{the survey question}
 #' \item{response}{the survey response}
@@ -483,24 +483,27 @@
 #' \item{straight_no}{the ratio of non-straight participants who selected this response}
 #' }
 #' @note The original `masculinity-survey.csv` contains the results of a survey of 1,615 adult men conducted by SurveyMonkey in partnership with FiveThirtyEight and WNYC Studios from May 10-22, 2018. The modeled error estimate for this survey is plus or minus 2.5 percentage points. The percentages have been weighted for age, race, education, and geography using the Census Bureau’s American Community Survey to reflect the demographic composition of the United States age 18 and over. Crosstabs with less than 100 respondents have been left blank because responses would not be statistically significant.
-#' I made heavy editions in Excel to make the dataset easily useable in R. 
-#' @source The original survey responses and original datasets can be found here: 
-#' \url{https://github.com/fivethirtyeight/data/tree/master/masculinity-survey} 
-#' @examples 
-#' # To convert data frame to tidy data (long) format based on one of the characteristics of observations (here, we use sexuality as an example), run:
-#' 
+#' I made heavy editions in Excel to make the dataset easily useable in R.
+#' @source The original survey responses and original datasets can be found here:
+#' \url{https://github.com/fivethirtyeight/data/tree/master/masculinity-survey}
+#' @examples
 #' library(dplyr)
-#' library(tidyverse)
+#' library(ggplot2)
+#' library(tidyr)
 #' library(stringr)
-#' 
-#' masculinity_survey_sexuality_tidy <- masculinity_survey %>% 
-#' gather(key = sexuality, value = ratio_by_sexuality, -c(question, response, overall, age_18_34, age_35_64, age_65_over, white_yes, white_no, children_yes, children_no))
-#' 
-#' # To plot the side-by-side bar chart for the response ratio of the first question of the survey, based on the sexuality of the participants, run:
-#' 
-#' how_maschuline <- masculinity_survey_sexuality_tidy %>% 
-#' filter(question == 'In general, how masculine or "manly" do you feel?') 
-#' 
-#' ggplot(data = how_maschuline, aes(x = response, y = ratio_by_sexuality, fill = sexuality)) +
-#' geom_bar(stat="identity", position = 'dodge')
+#'
+#' # Data wrangling
+#' masculinity_tidy <- masculinity_survey %>%
+#'   # Narrow down rows to those pertaining to first question of survey:
+#'   filter(question == 'In general, how masculine or "manly" do you feel?') %>%
+#'   # Eliminate columns not relating to sexual orientaiton:
+#'   select(-c(age_18_34, age_35_64, age_65_over, white_yes, white_no, children_yes,
+#'             children_no, overall)) %>%
+#'   # Convert data frame to tidy data (long) format:
+#'   gather(key = sexuality, value = ratio_by_sexuality, -c(question, response) )
+#'
+#' # Visualize results
+#' ggplot(data = masculinity_tidy, aes(x = response, y = ratio_by_sexuality, fill = sexuality)) +
+#'   geom_bar(stat="identity", position = 'dodge') +
+#'   labs(x = "Response", y = "Proportion", labs = "Sexuality")
 "masculinity_survey"

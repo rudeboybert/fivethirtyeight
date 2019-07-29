@@ -4,7 +4,7 @@
 \name{masculinity_survey}
 \alias{masculinity_survey}
 \title{Masculinity Survey}
-\format{A dataset with 189 rows representing answers and 12 variables: 
+\format{A dataset with 189 rows representing answers and 12 variables:
 \describe{
 \item{question}{the survey question}
 \item{response}{the survey response}
@@ -20,14 +20,14 @@
 \item{straight_no}{the ratio of non-straight participants who selected this response}
 }}
 \source{
-The original survey responses and original datasets can be found here: 
+The original survey responses and original datasets can be found here:
 \url{https://github.com/fivethirtyeight/data/tree/master/masculinity-survey}
 }
 \usage{
 masculinity_survey
 }
 \description{
-This folder contains the data behind the story: 
+This folder contains the data behind the story:
 "What Do Men Think It Means To Be A Man?"
 \url{https://fivethirtyeight.com/features/what-do-men-think-it-means-to-be-a-man}
 }
@@ -36,21 +36,24 @@ The original `masculinity-survey.csv` contains the results of a survey of 1,615 
 I made heavy editions in Excel to make the dataset easily useable in R.
 }
 \examples{
-# To convert data frame to tidy data (long) format based on one of the characteristics of observations (here, we use sexuality as an example), run:
-
 library(dplyr)
-library(tidyverse)
+library(ggplot2)
+library(tidyr)
 library(stringr)
 
-masculinity_survey_sexuality_tidy <- masculinity_survey \%>\% 
-gather(key = sexuality, value = ratio_by_sexuality, -c(question, response, overall, age_18_34, age_35_64, age_65_over, white_yes, white_no, children_yes, children_no))
+# Data wrangling
+masculinity_tidy <- masculinity_survey \%>\%
+  # Narrow down rows to those pertaining to first question of survey:
+  filter(question == 'In general, how masculine or "manly" do you feel?') \%>\%
+  # Eliminate columns not relating to sexual orientaiton:
+  select(-c(age_18_34, age_35_64, age_65_over, white_yes, white_no, children_yes,
+            children_no, overall)) \%>\%
+  # Convert data frame to tidy data (long) format:
+  gather(key = sexuality, value = ratio_by_sexuality, -c(question, response) )
 
-# To plot the side-by-side bar chart for the response ratio of the first question of the survey, based on the sexuality of the participants, run:
-
-how_maschuline <- masculinity_survey_sexuality_tidy \%>\% 
-filter(question == 'In general, how masculine or "manly" do you feel?') 
-
-ggplot(data = how_maschuline, aes(x = response, y = ratio_by_sexuality, fill = sexuality)) +
-geom_bar(stat="identity", position = 'dodge')
+# Visualize results
+ggplot(data = masculinity_tidy, aes(x = response, y = ratio_by_sexuality, fill = sexuality)) +
+  geom_bar(stat="identity", position = 'dodge') +
+  labs(x = "Response", y = "Proportion", labs = "Sexuality")
 }
 \keyword{datasets}
