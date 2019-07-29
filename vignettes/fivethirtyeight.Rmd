@@ -11,7 +11,6 @@ vignette: |
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(fivethirtyeight)
-# library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(readr)

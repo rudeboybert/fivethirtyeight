@@ -17,7 +17,6 @@ Load required packages to reproduce analysis as well as the dataset.
 
 ```{r, message = FALSE, warning = FALSE}
 library(fivethirtyeight)
-# library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(tibble)

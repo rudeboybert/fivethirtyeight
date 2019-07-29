@@ -19,7 +19,6 @@ This vignette is based on the data collected for the FiveThirtyEight study [A Co
 
 ```{r libraries, message = FALSE, warning = FALSE}
 library(fivethirtyeight)
-# library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(stringr)

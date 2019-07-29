@@ -16,7 +16,6 @@ This vignette is based on [538 study : Comic Books Are Still Made By Men, For Me
 ```{r, message = FALSE, warning = FALSE}
 #load packages and csv file
 library(fivethirtyeight)
-# library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(knitr)
