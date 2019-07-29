@@ -30,18 +30,20 @@ r_packages:
   - knitr
   - rmarkdown
   - scales
-  - tidytext
   - ggthemes
+  - gridExtra
+  - slam
+  - highcharter
+  - tidytext
+  - textdata
   - hunspell
   - fmsb
-  - gridExtra
+  - wordcloud
   - corrplot
   - ggraph
   - igraph
-  - highcharter
-  - slam
-  - wordcloud
-  
+
+
 r_github_packages:
   - r-lib/pkgdown
   - rudeboybert/fivethirtyeight
