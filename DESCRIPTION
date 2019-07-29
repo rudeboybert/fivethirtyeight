@@ -48,6 +48,7 @@ Suggests:
     slam (>= 0.1-42),
     highcharter (>= 0.7),
     tidytext,
+    textdata,
     hunspell,
     fmsb,
     wordcloud,
