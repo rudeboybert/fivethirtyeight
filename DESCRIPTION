@@ -53,6 +53,6 @@ Suggests:
     corrplot,
     ggraph,
     igraph,
-    highcharter,
+    highcharter (>= 0.7),
     janitor
 VignetteBuilder: knitr
