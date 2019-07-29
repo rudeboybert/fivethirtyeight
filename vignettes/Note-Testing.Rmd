@@ -1,0 +1,18 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+#Note
+```{r}
+@format the data has 5 rows representing each drivers, and 4 varibales:
+#' \describe{
+#'\item{state}{the state of the driver}
+#'\item{percentage_of_the_driver_involved_in_fatal_collision_speeding}{percentage of the driver involved in fatal collision who is speeding}
+#'\item{number_of_drivers_involved_in_fatal_collisions_per_billion_miles}{number_of_drivers_involved_in_fatal_collisions_per_billion_miles}
+#'           \item{percentage_of_drivers_involved_in_fatal_collisions_who_were_alcohol_impaired}{percentage_of_drivers_involved_in_fatal_collisions_who_were_alcohol_impaired}
+#'           }
+#' @source Smith College testing data \url{https://github.com/Starryz/fivethirtyeight/wiki/Instructions}
+"Bad_Drivers_ops"
+```
+

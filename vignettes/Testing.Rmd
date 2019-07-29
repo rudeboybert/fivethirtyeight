@@ -1,0 +1,33 @@
+---
+title: "Testing"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Load Package
+```{r}
+library(tidyverse)
+
+library(stringr)
+
+library(lubridate)
+
+library(janitor)
+
+library(usethis)
+#install.packages("roxygen2")
+```
+
+#Tidy Data
+```{r}
+Bad_Drivers_ops<-read_csv("test_bad_drivers.csv")%>%
+  clean_names()%>%
+  mutate(state=as.factor(state))
+
+usethis::use_data(Bad_Drivers, overwrite = TRUE)
+
+```
+
