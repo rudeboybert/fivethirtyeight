@@ -22,7 +22,7 @@ This directory contains the data for FiveThirtyEight's partisan lean, which is u
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house}
 [Senate]
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate}
-and [Governer]
+and [Governor]
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 forecasts.
 }

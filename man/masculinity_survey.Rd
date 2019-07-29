@@ -33,7 +33,7 @@ This folder contains the data behind the story:
 }
 \note{
 The original `masculinity-survey.csv` contains the results of a survey of 1,615 adult men conducted by SurveyMonkey in partnership with FiveThirtyEight and WNYC Studios from May 10-22, 2018. The modeled error estimate for this survey is plus or minus 2.5 percentage points. The percentages have been weighted for age, race, education, and geography using the Census Bureau’s American Community Survey to reflect the demographic composition of the United States age 18 and over. Crosstabs with less than 100 respondents have been left blank because responses would not be statistically significant.
-I made heavy editions in Excel to make the dataset easily useable in R.
+I made heavy editions in Excel to make the dataset easily usable in R.
 }
 \examples{
 library(dplyr)
@@ -54,6 +54,7 @@ masculinity_tidy <- masculinity_survey \%>\%
 # Visualize results
 ggplot(data = masculinity_tidy, aes(x = response, y = ratio_by_sexuality, fill = sexuality)) +
   geom_bar(stat="identity", position = 'dodge') +
-  labs(x = "Response", y = "Proportion", labs = "Sexuality")
+  labs(x = "Response", y = "Proportion", labs = "Sexuality",
+       title = "In general, how masculine or 'manly' do you feel?")
 }
 \keyword{datasets}

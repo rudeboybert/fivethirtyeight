@@ -9,9 +9,9 @@
 \item{investigation}{Unique id for each investigation}
 \item{investigation_start}{Start date of the investigation}
 \item{investigation_end}{End date of the investigation}
-\item{investigation_days}{Length, in days, of the investigation. Days will be negative if the charge occured before the investigation began.}
+\item{investigation_days}{Length, in days, of the investigation. Days will be negative if the charge occurred before the investigation began.}
 \item{name}{Name of the person charged (if applicable). Will be blank if there were no charges.}
-\item{indictment_days}{Length, in days, from the start of the investigation to the date the person was charged (if applicable). Days will be negative if the charge occured before the investigation began.}
+\item{indictment_days}{Length, in days, from the start of the investigation to the date the person was charged (if applicable). Days will be negative if the charge occurred before the investigation began.}
 \item{type}{Result of charge (if applicable)}
 \item{cp_date}{Date the person pled guilty or was convicted (if applicable)}
 \item{cp_days}{Length, in days, from the start of the investigation to the date the person pled guilty or was convicted (if applicable)}

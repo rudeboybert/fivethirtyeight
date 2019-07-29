@@ -21,7 +21,7 @@ This folder contains the data behind the story 'Election Update: The House Distr
 }
 \note{
 The original dataset only has 2 columns: "district" and "elasticity". I separated  the "district" columns into two.
-For example, in row 1 of the dataset, the original "district" = "MI-5", and I separated it into “state" = "Michigan" and "disctrict_number" = "5".
+For example, in row 1 of the dataset, the original "district" = "MI-5", and I separated it into “state" = "Michigan" and "district_number" = "5".
 In addition, I used the full names for all states instead of abbreviations.
 }
 \seealso{

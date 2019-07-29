@@ -12,7 +12,7 @@
   \item{start}{Date the appointee was sworn in}
   \item{end}{Date the appointee left office}
   \item{length}{Length of Tenure in days}
-  \item{days}{Days into admininstration that the appointee left office}
+  \item{days}{Days into administration that the appointee left office}
 }}
 \source{
 Federal Government Website, News Reports

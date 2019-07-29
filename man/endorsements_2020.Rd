@@ -15,13 +15,13 @@
   \item{endorser_party}{party of the endorser}
   \item{source}{source link of the endorsement}
   \item{order}{order of the endorsement}
-  \item{category}{cateogory of the endorsement}
+  \item{category}{category of the endorsement}
   \item{body}{body of the endorsement}
   \item{district}{district}
   \item{points}{points the endorsement counts for}
   }}
 \source{
-2020 endorcement tracker.
+2020 endorsement tracker.
 Methodology:
 \url{https://fivethirtyeight.com/methodology/how-our-presidential-endorsement-tracker-works/}.
 }

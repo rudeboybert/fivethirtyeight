@@ -16,7 +16,7 @@
   \item{dem_result}{the result percent of support for the Democrat during the election}
   \item{rep_result}{the result percent of support for the Republican during the election}
   \item{error}{the difference between the percent of support of one party during the poll and the result percent of support for the same party during the election}
-  \item{absolute_error}{the absolutel value of the error value}
+  \item{absolute_error}{the absolute value of the error value}
   }}
 \source{
 Emerson College’s poll of registered voters \url{https://www.emerson.edu/sites/default/files/Files/Academics/ecp-tx-aug2018-pr.pdf}

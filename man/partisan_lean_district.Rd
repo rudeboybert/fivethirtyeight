@@ -7,7 +7,7 @@
 \format{A dataset with 435 rows representing votes and 4 variables
 \describe{
 \item{state}{the state of the vote}
-\item{disctrict_number}{the disctrict_number of the vote}
+\item{district_number}{the district_number of the vote}
 \item{pvi_party}{the party of the vote}
 \item{pvi_amount}{the Cook Partisan Voting Index of the vote}
 }}
@@ -23,12 +23,12 @@ This directory contains the data for FiveThirtyEight's partisan lean, which is u
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house}
 [Senate]
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate}
-and [Governer]
+and [Governor]
 \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/}
 forecasts.
 }
 \note{
-The original dataset only has 2 columns: "discrict" and "pvi_538". I separated each of the 2 columns into two.
+The original dataset only has 2 columns: "district" and "pvi_538". I separated each of the 2 columns into two.
 For example, in row 1 of the dataset, the original "district" = "AK-1", and I separated it into "state" = "Arkansas" and "district_number" = "1";
 the original "pvi_538" = "R+15.21", and I separated it into “pvi_party" = "R" and "pvi_amount" = "15.21".
 In addition, I used the full names for all states instead of abbreviations.

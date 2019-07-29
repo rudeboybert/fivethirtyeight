@@ -505,5 +505,6 @@
 #' # Visualize results
 #' ggplot(data = masculinity_tidy, aes(x = response, y = ratio_by_sexuality, fill = sexuality)) +
 #'   geom_bar(stat="identity", position = 'dodge') +
-#'   labs(x = "Response", y = "Proportion", labs = "Sexuality")
+#'   labs(x = "Response", y = "Proportion", labs = "Sexuality",
+#'        title = "In general, how masculine or 'manly' do you feel?")
 "masculinity_survey"
