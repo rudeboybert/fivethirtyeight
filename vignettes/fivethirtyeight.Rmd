@@ -19,34 +19,25 @@ library(knitr)
 ```
 
 
-## Motivation
+## Data Sets
 
-We are involved in statistics and data science education, in particular at the
-introductory undergraduate level. As such, we are always looking for data sets that 
-balance being
-
-1. **Rich enough** to answer meaningful questions with, **real enough** to ensure that there is context, and **realistic enough** to convey to students that data as it exists "in the wild" often needs processing. 
-1. Easily and quickly accessible to novices, so that we [minimize the prerequisites to research](https://arxiv.org/abs/1507.05346). 
-
-It has been our experience that many data sets that exist in R packages, such as the 
- [`nycflights13`](https://github.com/hadley/nycflights13), 
-[`babynames`](https://github.com/hadley/babynames), and [`gapminder`](https://github.com/jennybc/gapminder)
-packages, are of great pedagogical value as they:
-
-* Satisfy the above two goals.
-* Are in standardized format as they fit into the [tidy tools](https://CRAN.R-project.org/package=tidyverse/vignettes/manifesto.html) ecosystem.
-* Are really fun to play with!
-
-It is along these lines that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at [FiveThirtyEight.com](http://fivethirtyeight.com/), a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on [GitHub](https://github.com/fivethirtyeight/data), a web-based repository for collaboration on code and data. 
-
-With consultation from [Andrew Flowers](http://fivethirtyeight.com/contributors/andrew-flowers/) and [Andrei Scheinkman](http://fivethirtyeight.com/contributors/andrei-scheinkman/) of FiveThirtyEight, we go one step further by:
-
-1. Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data right away.
-2. Packaging it all in an easy to load format: package installation instead of working with CSV files.
-3. Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.
-
-
-
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+datasets <- read_csv("https://goo.gl/OT8iHa") %>% 
+  filter(!is.na(DATAFRAME_NAME)) %>% 
+  mutate(DATAFRAME_NAME = paste("`", DATAFRAME_NAME, "`", sep="")) %>% 
+  transmute(
+    `Data Frame Name` = DATAFRAME_NAME,
+    `Article Title` = ARTICLE_TITLE,
+    `Filed Under` = ARTICLE_FILED_UNDER,
+    `Author 1` = ARTICLE_AUTHOR_1,
+    `Author 2` = ARTICLE_AUTHOR_2,
+    `Author 3` = ARTICLE_AUTHOR_3,
+    Date = ARTICLE_DATE,
+    URL = ARTICLE_URL
+  ) %>% 
+  arrange(`Data Frame Name`)
+kable(datasets)
+```
 
 
 
@@ -83,25 +74,28 @@ guidelines:
 
 
 
+## Motivation
 
-## Data Sets
+We are involved in statistics and data science education, in particular at the
+introductory undergraduate level. As such, we are always looking for data sets that 
+balance being
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-datasets <- read_csv("https://goo.gl/OT8iHa") %>% 
-  filter(!is.na(DATAFRAME_NAME)) %>% 
-  mutate(DATAFRAME_NAME = paste("`", DATAFRAME_NAME, "`", sep="")) %>% 
-  transmute(
-    `Data Frame Name` = DATAFRAME_NAME,
-    `Article Title` = ARTICLE_TITLE,
-    `Filed Under` = ARTICLE_FILED_UNDER,
-    `Author 1` = ARTICLE_AUTHOR_1,
-    `Author 2` = ARTICLE_AUTHOR_2,
-    `Author 3` = ARTICLE_AUTHOR_3,
-    Date = ARTICLE_DATE,
-    URL = ARTICLE_URL
-  ) %>% 
-  arrange(`Data Frame Name`)
-kable(datasets)
-```
+1. **Rich enough** to answer meaningful questions with, **real enough** to ensure that there is context, and **realistic enough** to convey to students that data as it exists "in the wild" often needs processing. 
+1. Easily and quickly accessible to novices, so that we [minimize the prerequisites to research](https://arxiv.org/abs/1507.05346). 
 
+It has been our experience that many data sets that exist in R packages, such as the 
+ [`nycflights13`](https://github.com/hadley/nycflights13), 
+[`babynames`](https://github.com/hadley/babynames), and [`gapminder`](https://github.com/jennybc/gapminder)
+packages, are of great pedagogical value as they:
 
+* Satisfy the above two goals.
+* Are in standardized format as they fit into the [tidy tools](https://CRAN.R-project.org/package=tidyverse/vignettes/manifesto.html) ecosystem.
+* Are really fun to play with!
+
+It is along these lines that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at [FiveThirtyEight.com](http://fivethirtyeight.com/), a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on [GitHub](https://github.com/fivethirtyeight/data), a web-based repository for collaboration on code and data. 
+
+With consultation from [Andrew Flowers](http://fivethirtyeight.com/contributors/andrew-flowers/) and [Andrei Scheinkman](http://fivethirtyeight.com/contributors/andrei-scheinkman/) of FiveThirtyEight, we go one step further by:
+
+1. Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data right away.
+2. Packaging it all in an easy to load format: package installation instead of working with CSV files.
+3. Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.

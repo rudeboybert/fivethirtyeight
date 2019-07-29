@@ -35,6 +35,7 @@ r_packages:
   - slam
   - highcharter
   - tidytext
+  - textdata
   - hunspell
   - fmsb
   - wordcloud
