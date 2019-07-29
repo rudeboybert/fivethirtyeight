@@ -32,12 +32,11 @@ remotes::install_github("rudeboybert/fivethirtyeight", build_vignettes = TRUE)
 
 ## Usage
 
-### Example Usage
-
 ``` r
 library(fivethirtyeight)
 
-# Bechdel data set (note that data is lazy loaded so one can also just access `bechdel` without running `data(bechdel)`):
+# Load the bechdel data set. Note that all data in the fivethirtyeight package
+# is lazy-loaded, so one can also access this data without running data(bechdel).
 data(bechdel)
 head(bechdel)
 ?bechdel
@@ -51,24 +50,40 @@ data(package = "fivethirtyeight")
 vignette("fivethirtyeight", package = "fivethirtyeight")
 ```
 
-### Data Analysis Examples in Vignettes
+## Article in “Technology Innovations in Statistics Education”
 
-For some data sets, there is an example analysis in a package vignette.
-For example, we did this using the [R
-code](https://github.com/fivethirtyeight/data/blob/master/bechdel/analyze-bechdel.R)
-for the article [The Dollar-And-Cents Case Against Hollywood’s Exclusion
-of
-Women](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women)
-here:
+The `fivethirtyeight` package was featured in [The fivethirtyeight R
+Package: “Tame Data” Principles for Introductory Statistics and Data
+Science Courses](https://escholarship.org/uc/item/0rx1231m) by Kim,
+Ismay, and Chunn (2018) published in Volume 11, Issue 1 of the journal
+“Technology Innovations in Statistics Education”.
+
+**Abstract**: *As statistics and data science instructors, we often seek
+to use data in our courses that are rich, real, realistic, and relevant.
+To this end we created the fivethirtyeight R package of data and code
+behind the stories and interactives at the data journalism website
+FiveThirtyEight.com. After a discussion on the conflicting pedagogical
+goals of “minimizing prerequisites to research” (Cobb 2015) while at the
+same time presenting students with a realistic view of data as it exists
+“in the wild,” we articulate how a desired balance between these two
+goals informed the design of the package. The details behind this
+balance are articulated as our proposed “Tame data principles for
+introductory statistics and data science courses.” Details of the
+package’s construction and example uses are included as well.*
+
+## Data Analysis Examples in Vignettes
+
+For some data sets, there are user-contributed example analyses in the
+form a package vignette. For example, look at [“Bechdel analysis using
+the
+`tidyverse`”](https://fivethirtyeight-r.netlify.com/articles/bechdel.html)
+based on the `bechdel` dataset used in the article [The Dollar-And-Cents
+Case Against Hollywood’s Exclusion of
+Women](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women).
+For a complete list of vignettes run
 
 ``` r
-vignette("bechdel", package = "fivethirtyeight")
-```
-
-For a complete list of vignettes run:
-
-``` r
-browseVignettes(package = "fivethirtyeight")
+vignette("user_contributed_vignettes.Rmd", package = "fivethirtyeight")
 ```
 
 ## More Information
@@ -88,45 +103,26 @@ browseVignettes(package = "fivethirtyeight")
         [GitHub](https://github.com/fivethirtyeight/data) with
     2.  the data frames in the package with
     3.  information on the corresponding article
-  - See the package vignette for:
-    1.  Our motivation for creating this package.
-    2.  Guidelines we followed preparing the data sets and links to the
-        code.
-    3.  A more detailed list of all data sets.
 
-<!-- end list -->
-
-``` r
-vignette("fivethirtyeight", package = "fivethirtyeight")
-```
-
+<!--
 ## Collaborate
 
 ### Data Analysis Examples in Vignettes
 
-In many instances, the data sets on the original 538 GitHub repository
-had the R code used in the analysis. We would love to have these, or any
-other interesting analyses, in the form of package vignettes. We ask you
-follow these guidelines as much as possible:
+In many instances, the data sets on the original 538 GitHub repository had the R code used in the analysis. We would love to have these, or any other interesting analyses, in the form of package vignettes. We ask you follow these guidelines as much as possible:
 
-1.  Use
-    [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/)
-    packages: `ggplot2`, `dplyr`, `tidyr`, `modelr`, etc.
-2.  Use [R Markdown](http://rmarkdown.rstudio.com/):
-      - In particular the Package Vignette (HTML) template option when
-        creating an R Markdown document.
-      - Have the name of the R Markdown file match the name of the data
-        set. Ex: `vignettes/bechdel.Rmd`
-3.  Follow the GitHub fork/pull request
-    [model](https://guides.github.com/introduction/flow/). Otherwise,
-    contact us directly.
+1. Use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) packages: `ggplot2`, `dplyr`, `tidyr`, `modelr`, etc.
+1. Use [R Markdown](http://rmarkdown.rstudio.com/):
+    + In particular the Package Vignette (HTML) template option when creating an R Markdown document.
+    + Have the name of the R Markdown file match the name of the data set. Ex: `vignettes/bechdel.Rmd`
+1. Follow the GitHub fork/pull request [model](https://guides.github.com/introduction/flow/). Otherwise, contact us directly.
+
+
 
 ### Contributing to the Package
 
 If you want to contribute to the package:
 
-  - We followed the principles in Hadley Wickham’s [R
-    packages](http://r-pkgs.had.co.nz/) book
-  - Preliminary instructions for automating R package documentation and
-    collecting data about the data sets is available
-    [here](https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md).
+* We followed the principles in Hadley Wickham's [R packages](http://r-pkgs.had.co.nz/) book
+* Preliminary instructions for automating R package documentation and collecting data about the data sets is available [here](https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md).
+-->
