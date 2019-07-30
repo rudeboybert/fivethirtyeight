@@ -81,6 +81,9 @@
       <a href="articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
     </li>
     <li>
+      <a href="articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
+    </li>
+    <li>
       <a href="articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
     </li>
   </ul>
@@ -156,7 +159,7 @@
 <div id="data-analysis-examples-in-vignettes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-analysis-examples-in-vignettes" class="anchor"></a>Data Analysis Examples in Vignettes</h2>
-<p>For some data sets, there are user-contributed example analyses in the form a package vignette. For example, look at <a href="https://fivethirtyeight-r.netlify.com/articles/bechdel.html">“Bechdel analysis using the <code>tidyverse</code>”</a> based on the <code>bechdel</code> dataset used in the article <a href="http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women">The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women</a>. For a complete list of vignettes run</p>
+<p>For some data sets, there are user-contributed example analyses in the form a package vignette. For example, look at <a href="https://fivethirtyeight-r.netlify.com/articles/bechdel.html">“Bechdel analysis using the <code>tidyverse</code>”</a> based on the <code>bechdel</code> dataset used in the article <a href="https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women">The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women</a>. For a complete list of vignettes run</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"user_contributed_vignettes.Rmd"</span>, <span class="dt">package =</span> <span class="st">"fivethirtyeight"</span>)</a></code></pre></div>
 </div>
 <div id="more-information" class="section level2">
@@ -181,7 +184,7 @@
 In many instances, the data sets on the original 538 GitHub repository had the R code used in the analysis. We would love to have these, or any other interesting analyses, in the form of package vignettes. We ask you follow these guidelines as much as possible:
 
 1. Use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) packages: `ggplot2`, `dplyr`, `tidyr`, `modelr`, etc.
-1. Use [R Markdown](http://rmarkdown.rstudio.com/):
+1. Use [R Markdown](https://rmarkdown.rstudio.com/):
     + In particular the Package Vignette (HTML) template option when creating an R Markdown document.
     + Have the name of the R Markdown file match the name of the data set. Ex: `vignettes/bechdel.Rmd`
 1. Follow the GitHub fork/pull request [model](https://guides.github.com/introduction/flow/). Otherwise, contact us directly.
@@ -192,7 +195,7 @@ In many instances, the data sets on the original 538 GitHub repository had the R
 
 If you want to contribute to the package:
 
-* We followed the principles in Hadley Wickham's [R packages](http://r-pkgs.had.co.nz/) book
+* We followed the principles in Hadley Wickham's [R packages](https://r-pkgs.had.co.nz/) book
 * Preliminary instructions for automating R package documentation and collecting data about the data sets is available [here](https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md).
 -->
 </div>
@@ -240,8 +243,8 @@ If you want to contribute to the package:
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/rudeboybert/fivethirtyeight"><img src="https://travis-ci.org/rudeboybert/fivethirtyeight.svg?branch=master" alt="Build Status"></a></li>
 <li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="http://cran.r-project.org/package=fivethirtyeight"><img src="https://www.r-pkg.org/badges/version/fivethirtyeight" alt="CRAN_Status_Badge"></a></li>
-<li><a href="http://www.r-pkg.org/pkg/fivethirtyeight"><img src="https://cranlogs.r-pkg.org/badges/fivethirtyeight" alt="CRAN RStudio mirror downloads"></a></li>
+<li><a href="https://cran.r-project.org/package=fivethirtyeight"><img src="https://www.r-pkg.org/badges/version/fivethirtyeight" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://www.r-pkg.org/pkg/fivethirtyeight"><img src="https://cranlogs.r-pkg.org/badges/fivethirtyeight" alt="CRAN RStudio mirror downloads"></a></li>
 </ul>
 </div>
 </div>

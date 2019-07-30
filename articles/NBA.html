@@ -78,6 +78,9 @@
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
     </li>
     <li>
+      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
+    </li>
+    <li>
       <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
     </li>
   </ul>
@@ -119,7 +122,7 @@
 
     
     
-<p>This vignette is based on data collected for the 538 story entitled “Projecting The Top 50 Players In The 2015 NBA Draft Class” by Neil Paine and Zach Bradshaw available <a href="http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/">here</a>.</p>
+<p>This vignette is based on data collected for the 538 story entitled “Projecting The Top 50 Players In The 2015 NBA Draft Class” by Neil Paine and Zach Bradshaw available <a href="https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/">here</a>.</p>
 <p>First, we load the required packages to reproduce analysis.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(fivethirtyeight)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</a>
@@ -131,7 +134,7 @@
 <div id="group-the-projected-statistical-plus-minus-by-year" class="section level1">
 <h1 class="hasAnchor">
 <a href="#group-the-projected-statistical-plus-minus-by-year" class="anchor"></a>Group the projected statistical plus-minus by year</h1>
-<p>The <code>nba_draft_2015</code> data frame features National Basketball Association players and prospects. Each player has a <code>draft_year</code> that corresponds to the year the player was drafted into the NBA, if at all. We are interested in analyzing the average <code>projected_spm</code> for each draft year. Here, <code>projected_spm</code> corresponds to FiveThirtyEight’s model of projected statistical plus-minus over year 2-5 of the player’s NBA career. Plus-minus is defined by <a href="http://www.basketball-reference.com/about/bpm.html">BasketballReference.com</a> as “box score-based metric for evaluating basketball players’ quality and contribution to the team.” It is measured on a per 100 possessions basis to factor out playing time and adjusted so that the score is relative to the average NBA player. Further from BasketballReference, “0.0 is league average, +5 means the player is 5 points better than an average player over 100 possessions (which is about All-NBA level), -2 is replacement level, and -5 is really bad.”</p>
+<p>The <code>nba_draft_2015</code> data frame features National Basketball Association players and prospects. Each player has a <code>draft_year</code> that corresponds to the year the player was drafted into the NBA, if at all. We are interested in analyzing the average <code>projected_spm</code> for each draft year. Here, <code>projected_spm</code> corresponds to FiveThirtyEight’s model of projected statistical plus-minus over year 2-5 of the player’s NBA career. Plus-minus is defined by <a href="https://www.basketball-reference.com/about/bpm.html">BasketballReference.com</a> as “box score-based metric for evaluating basketball players’ quality and contribution to the team.” It is measured on a per 100 possessions basis to factor out playing time and adjusted so that the score is relative to the average NBA player. Further from BasketballReference, “0.0 is league average, +5 means the player is 5 points better than an average player over 100 possessions (which is about All-NBA level), -2 is replacement level, and -5 is really bad.”</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">nba_yearly &lt;-<span class="st"> </span>nba_draft_<span class="dv">2015</span> <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(draft_year) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="dt">mean_proj_spm =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(projected_spm))</a>

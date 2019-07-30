@@ -115,6 +115,9 @@ https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/" />
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
     </li>
     <li>
+      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
+    </li>
+    <li>
       <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
     </li>
   </ul>
@@ -161,7 +164,11 @@ https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/" />
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A dataframe with 302859 rows representing district-level results of the classic, lite, and deluxe   House forecasts since Aug. 1, 2018 and 11 variables</p><dl class='dl-horizontal'>
+    <p>Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset 
+see Examples below. The preview is a data frame with 10 rows representing 
+district-level results of the classic, lite, and deluxe house forecasts 
+since 2018/08/01 and 11 variables.</p><dl class='dl-horizontal'>
 <dt>forecastdate</dt><dd><p>date of the forecast</p></dd>
 <dt>state</dt><dd><p>state of the forecast</p></dd>
 <dt>district</dt><dd><p>district of the forecast</p></dd>
@@ -190,6 +197,37 @@ Methodology:
     <div class='dont-index'><p><code><a href='house_national_forecast.html'>house_national_forecast</a></code></p></div>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the following code:</span>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>readr</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>janitor</span>)
+
+<span class='no'>house_district_forecast</span> <span class='kw'>&lt;-</span>
+  <span class='st'>"https://projects.fivethirtyeight.com/congress-model-2018/house_district_forecast.csv"</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(
+    <span class='kw'>state</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span>(<span class='no'>state</span>),
+    <span class='kw'>district</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span>(<span class='no'>district</span>),
+    <span class='kw'>party</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span>(<span class='no'>party</span>),
+    <span class='kw'>model</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span>(<span class='no'>model</span>)
+  ) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span>(-<span class='no'>special</span>)</div><div class='output co'>#&gt; <span class='message'>Parsed with column specification:</span>
+#&gt; <span class='message'>cols(</span>
+#&gt; <span class='message'>  forecastdate = col_date(format = ""),</span>
+#&gt; <span class='message'>  state = col_character(),</span>
+#&gt; <span class='message'>  district = col_double(),</span>
+#&gt; <span class='message'>  special = col_logical(),</span>
+#&gt; <span class='message'>  candidate = col_character(),</span>
+#&gt; <span class='message'>  party = col_character(),</span>
+#&gt; <span class='message'>  incumbent = col_logical(),</span>
+#&gt; <span class='message'>  model = col_character(),</span>
+#&gt; <span class='message'>  win_probability = col_double(),</span>
+#&gt; <span class='message'>  voteshare = col_double(),</span>
+#&gt; <span class='message'>  p10_voteshare = col_double(),</span>
+#&gt; <span class='message'>  p90_voteshare = col_double()</span>
+#&gt; <span class='message'>)</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -202,7 +240,9 @@ Methodology:
       <li><a href="#note">Note</a></li>
 
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
