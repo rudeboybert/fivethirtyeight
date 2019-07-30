@@ -7,7 +7,7 @@
 \format{A data frame with 1794 rows representing movies and 15 variables:
 \describe{
   \item{year}{Year of release}
-  \item{imdb}{Text to construct IMDB url. Ex: \url{http://www.imdb.com/title/tt1711425}}
+  \item{imdb}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
   \item{title}{Movie test}
   \item{test}{bechdel test result (detailed, with discrepancies indicated)}
   \item{clean_test}{bechdel test result (detailed): \code{ok} = passes test, \code{dubious}, \code{men} = women only talk about men, \code{notalk} = women don't talk to each other, \code{nowomen} = fewer than two women }
@@ -23,7 +23,7 @@
   \item{decade_code}{}
 }}
 \source{
-\url{www.bechdeltest.com} and \url{www.the-numbers.com}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
+\url{http://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
 }
 \usage{
 bechdel

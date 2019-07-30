@@ -1,6 +1,7 @@
 library(tidyverse)
 library(stringr)
 library(lubridate)
+library(usethis)
 
 
 
@@ -12,7 +13,7 @@ colnames(police_locals) <- colnames(police_locals) %>%
   str_replace_all("-", "_")
 police_locals <- police_locals %>% rename(force_size=police_force_size)
 
-devtools::use_data(police_locals, overwrite = TRUE)
+usethis::use_data(police_locals, overwrite = TRUE)
 
 
 
@@ -32,7 +33,7 @@ cand_events_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/event
 colnames(cand_events_20150114) <- colnames(cand_events_20150114) %>% tolower()
 cand_events_20150114 <- cand_events_20150114 %>%
   mutate(date = dmy(paste(date,"2015")) )
-devtools::use_data(cand_events_20150114, overwrite = TRUE)
+usethis::use_data(cand_events_20150114, overwrite = TRUE)
 
 cand_state_20150114 <- read_csv("data-raw/potential-candidates/2015_01_14/statements.csv")
 colnames(cand_state_20150114) <- colnames(cand_state_20150114) %>% tolower()
@@ -43,14 +44,14 @@ cand_state_20150114 <- cand_state_20150114 %>%
   mutate(date = dmy(paste(date,"2015")),
          score = factor(score, labels = c("Not running", "Haven't ruled out running but leaning towards no",
                                           "Unsure","Actively exploring or seriously considering")))
-devtools::use_data(cand_state_20150114, overwrite = TRUE)
+usethis::use_data(cand_state_20150114, overwrite = TRUE)
 
 
 cand_events_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/events.csv")
 colnames(cand_events_20150130) <- colnames(cand_events_20150130) %>% tolower()
 cand_events_20150130 <- cand_events_20150130 %>%
   mutate(date = dmy(paste(date,"2015")) )
-devtools::use_data(cand_events_20150130, overwrite = TRUE)
+usethis::use_data(cand_events_20150130, overwrite = TRUE)
 
 cand_state_20150130 <- read_csv("data-raw/potential-candidates/2015_01_30/statements.csv")
 colnames(cand_state_20150130) <- colnames(cand_state_20150130) %>% tolower()
@@ -61,7 +62,7 @@ cand_state_20150130 <- cand_state_20150130 %>%
   mutate(date = dmy(paste(date,"2015")),
          score = factor(score, labels = c("Not running", "Haven't ruled out running but leaning towards no",
                                           "Unsure","Actively exploring or seriously considering")))
-devtools::use_data(cand_state_20150130, overwrite = TRUE)
+usethis::use_data(cand_state_20150130, overwrite = TRUE)
 
 
 
@@ -73,7 +74,7 @@ pres_commencement <- pres_commencement %>%
   mutate(date = mdy(date)) %>%
   rename(pres = president, pres_name = president_name)
 
-devtools::use_data(pres_commencement, overwrite = TRUE)
+usethis::use_data(pres_commencement, overwrite = TRUE)
 
 
 
@@ -95,7 +96,7 @@ pulitzer <- pulitzer %>%
          num_finals1990_2014 = winners_and_finalists_1990_2014) %>%
   mutate(pctchg_circ = as.integer(str_replace(pctchg_circ, "%","")))
 
-devtools::use_data(pulitzer, overwrite = TRUE)
+usethis::use_data(pulitzer, overwrite = TRUE)
 
 
 
@@ -107,7 +108,7 @@ devtools::use_data(pulitzer, overwrite = TRUE)
 # religion-survey ---------------------------------------------------------------
 #religion_survey <- read_csv("data-raw/religion-survey/religion-survey-results.csv")
 #need to create all variable names
-#devtools::use_data(religion_survey, overwrite = TRUE)
+#usethis::use_data(religion_survey, overwrite = TRUE)
 
 
 # san-andreas ---------------------------------------------------------------
@@ -148,21 +149,21 @@ san_andreas <- san_andreas %>%
                                           "$50,000 to $74,999", "$75,000 to $99,999", "$100,000 to $124,999",
                                           "$125,000 to $149,999", "$150,000 to $174,999", "$175,000 to $199,999",
                                           "$200,000 and up", "Prefer not to answer"), ordered=TRUE))
-devtools::use_data(san_andreas, overwrite = TRUE)
+usethis::use_data(san_andreas, overwrite = TRUE)
 
 
 
 # sleeping-alone-data ---------------------------------------------------------------
 # sleeping_alone_data <- read_csv("data-raw/sleeping-alone-data/sleeping-alone-data.csv")
 # much data editing needed
-#devtools::use_data(sleeping_alone_data, overwrite = TRUE)
+#usethis::use_data(sleeping_alone_data, overwrite = TRUE)
 
 
 
 # star-wars-survey ---------------------------------------------------------------
 # star_wars_survey <- read_csv("data-raw/star-wars-survey/StarWars.csv")
 # much data editing needed
-#devtools::use_data(star_wars_survey, overwrite = TRUE)
+#usethis::use_data(star_wars_survey, overwrite = TRUE)
 
 
 
@@ -205,7 +206,7 @@ steak_survey <- steak_survey %>%
          educ = factor(educ, levels = c("Less than high school degree", "High school degree",
                                         "Some college or Associate degree","Bachelor degree",
                                         "Graduate degree"), ordered=TRUE))
-devtools::use_data(steak_survey, overwrite = TRUE)
+usethis::use_data(steak_survey, overwrite = TRUE)
 
 
 
@@ -219,7 +220,7 @@ tarantino <- read_csv("data-raw/tarantino/tarantino.csv")
 tarantino <- tarantino %>%
   mutate(profane = ifelse(type == "word", TRUE, FALSE)) %>%
   select(movie, profane, word, minutes_in)
-devtools::use_data(tarantino, overwrite = TRUE)
+usethis::use_data(tarantino, overwrite = TRUE)
 
 
 
@@ -236,20 +237,20 @@ tennis_events_time <- tennis_events_time %>%
   rename(sec_added = seconds_added_per_point) %>%
   select(-years)
 
-devtools::use_data(tennis_events_time, overwrite = TRUE)
+usethis::use_data(tennis_events_time, overwrite = TRUE)
 
 
 
 tennis_players_time <- read_csv("data-raw/tennis-time/players_time.csv")
 tennis_players_time <- tennis_players_time %>% rename(sec_added = seconds_added_per_point)
-devtools::use_data(tennis_players_time, overwrite = TRUE)
+usethis::use_data(tennis_players_time, overwrite = TRUE)
 
 tennis_serve_time <- read_csv("data-raw/tennis-time/serve_times.csv")
 tennis_serve_time <- tennis_serve_time %>%
   mutate(date = dmy(day)) %>%
   rename(sec_between = seconds_before_next_point) %>%
   select(-day)
-devtools::use_data(tennis_serve_time, overwrite = TRUE)
+usethis::use_data(tennis_serve_time, overwrite = TRUE)
 
 
 
@@ -263,7 +264,7 @@ devtools::use_data(tennis_serve_time, overwrite = TRUE)
 #thanksgiving_2015 <- read_csv("data-raw/thanksgiving-2015/thanksgiving-2015-poll-data.csv")
 #
 #need to create all variable names
-#devtools::use_data(thanksgiving_2015, overwrite = TRUE)
+#usethis::use_data(thanksgiving_2015, overwrite = TRUE)
 
 
 
@@ -272,7 +273,7 @@ trump_news <- read_csv("data-raw/trump-news/trump_news_data.csv")
 trump_news <- trump_news %>%
   mutate(date = mdy(date)) %>%
   rename(major_cat = major_category)
-devtools::use_data(trump_news, overwrite = TRUE)
+usethis::use_data(trump_news, overwrite = TRUE)
 
 
 
@@ -280,13 +281,13 @@ devtools::use_data(trump_news, overwrite = TRUE)
 trump_twitter <- read_csv("data-raw/trump-twitter/realDonaldTrump_poll_tweets.csv")
 trump_twitter <- trump_twitter %>%
   mutate(created_at = mdy_hms(created_at))
-devtools::use_data(trump_twitter, overwrite = TRUE)
+usethis::use_data(trump_twitter, overwrite = TRUE)
 
 
 # unisex-names ---------------------------------------------------------------
 unisex_names <- read_csv("data-raw/unisex-names/unisex_names_table.csv")
 unisex_names <- unisex_names %>% select(-X1)
-devtools::use_data(unisex_names, overwrite = TRUE)
+usethis::use_data(unisex_names, overwrite = TRUE)
 
 
 # us-weather-history ---------------------------------------------------------------
@@ -318,7 +319,7 @@ weather_check <- weather_check %>%
                                           "$125,000 to $149,999", "$150,000 to $174,999", "$175,000 to $199,999",
                                           "$200,000 and up", "Prefer not to answer"), ordered=TRUE))
 
-devtools::use_data(weather_check, overwrite = TRUE)
+usethis::use_data(weather_check, overwrite = TRUE)
 
 
 
@@ -341,7 +342,7 @@ riddler_castles <- riddler_castles %>%
 colnames(riddler_castles) <- colnames(riddler_castles) %>%
   tolower() %>%
   str_replace_all(" ", "")
-devtools::use_data(riddler_castles, overwrite = TRUE)
+usethis::use_data(riddler_castles, overwrite = TRUE)
 
 # riddler-castles2 ---------------------------------------------------------------
 riddler_castles2 <- read_csv("data-raw/riddler-castles/castle-solutions-2.csv", na=c("","NA","-"))
@@ -350,7 +351,7 @@ riddler_castles2 <- riddler_castles2 %>%
 colnames(riddler_castles2) <- colnames(riddler_castles2) %>%
   tolower() %>%
   str_replace_all(" ", "")
-devtools::use_data(riddler_castles2, overwrite = TRUE)
+usethis::use_data(riddler_castles2, overwrite = TRUE)
 
 # antiquities-act ---------------------------------------------------------------
 antiquities_act <- read_csv("data-raw/antiquities-act/actions_under_antiquities_act.csv", na=c("","NA"))
@@ -364,11 +365,15 @@ antiquities_act <- antiquities_act %>%
          date = mdy(paste(month(date), day(date), year, sep="/")),
          #remove text from acres_affected variable
          acres_affected = as.numeric(str_replace_all(acres_affected, "[^0-9\\.]","")))
-devtools::use_data(antiquities_act, overwrite = TRUE)
+usethis::use_data(antiquities_act, overwrite = TRUE)
 
 # goose ---------------------------------------------------------------
-goose <- read_csv("data-raw/goose/goose_rawdata.csv", na=c("","NA"))
-devtools::use_data(goose, overwrite = TRUE)
+goose <- 
+  "https://github.com/fivethirtyeight/data/raw/master/goose/goose_rawdata.csv" %>% 
+  read_csv(na = c("", "NA")) %>% 
+  # Given that data frame is large, only include preview of data in package:
+  slice(1:10)
+usethis::use_data(goose, overwrite = TRUE)
 
 # tenth-circuit ---------------------------------------------------------------
 tenth_circuit <- read_csv("data-raw/tenth-circuit/tenth-circuit.csv", na=c("","NA"))
@@ -381,7 +386,6 @@ tenth_circuit <- tenth_circuit %>%
   rename(vote1_liberal = vote1,
          vote2_liberal = vote2,
          vote3_liberal = vote3)
-
-devtools::use_data(tenth_circuit, overwrite = TRUE)
+usethis::use_data(tenth_circuit, overwrite = TRUE)
 
 

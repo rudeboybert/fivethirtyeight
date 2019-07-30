@@ -7,7 +7,7 @@
 \format{A data frame with 761 rows representing movies and 14 variables:
 \describe{
   \item{title}{Title of the film.}
-  \item{site}{Text to construct IMDB url. Ex: \url{http://www.imdb.com/title/tt1711425}}
+  \item{site}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
   \item{country}{Country of origin.}
   \item{year_release}{Year of release.}
   \item{box_office}{Gross earnings at U.S. box office.}
@@ -22,7 +22,7 @@
   \item{lead_actor_actress}{The actor or actress who played the subject.}
 }}
 \source{
-IMDB \url{http://www.imdb.com/}
+IMDB \url{https://www.imdb.com/}
 }
 \usage{
 biopics
@@ -32,6 +32,6 @@ The raw data behind the story
 "'Straight Outta Compton' Is The Rare Biopic Not About White Dudes"
 \url{https://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/}.
 An analysis using this data was contributed by Pradeep Adhokshaja as a package vignette at
-\url{http://fivethirtyeight-r.netlify.com/articles/biopics.html}.
+\url{https://fivethirtyeight-r.netlify.com/articles/biopics.html}.
 }
 \keyword{datasets}

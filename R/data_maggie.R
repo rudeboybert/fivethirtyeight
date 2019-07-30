@@ -62,8 +62,8 @@
 #'
 #' @format Because of R package size restrictions, only a preview of the
 #' first 10 rows of this dataset is included; to obtain the entire dataset
-#' (1920 to 2018 games) see Examples below. A data frame with 10 rows
-#' representing games and 14 variables:
+#' (1920 to present games) see Examples below. The preview is a data frame with 
+#' 10 rows representing games and 14 variables:
 #' \describe{
 #'  \item{date}{Date}
 #'  \item{season}{Season year, 1920-2018}
@@ -82,16 +82,19 @@
 #' }
 #' @source See \url{https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv}
 #' # To obtain the entire dataset, run the following code:
-#' library(dplyr)
-#' library(tidyr)
 #' library(readr)
+#' library(dplyr)
 #' library(janitor)
-#' nfl_elo <- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") %>%
+#' 
+#' nfl_elo <- 
+#'   "https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv" %>% 
+#'   read_csv() %>%
 #'   clean_names() %>%
 #'   mutate(
 #'     team1 = as.factor(team1),
 #'     team2 = as.factor(team2),
-#'     neutral = ifelse(neutral == 1, TRUE, FALSE))
+#'     neutral = ifelse(neutral == 1, TRUE, FALSE)
+#'   )
 "nfl_elo"
 
 
@@ -505,7 +508,7 @@
 #'            4: Withdraw U.S. support for major trade agreements
 #'            5: Introduce tighter restrictions on those entering the U.S. from some majority-Muslim countries}
 #' }
-#' @source Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
+#' @source Pew Research Center \url{https://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
 #' @seealso \code{\link{trumpworld_polls}}
 "trumpworld_issues"
 
@@ -561,7 +564,7 @@
 #' \item{venezuela}{The percentage of people from Venezuela who answered the poll question positively}
 #' \item{question}{The item being polled. Specifically, whether respondents: 1) Have a favorable view of the U.S. or 2) Trust the U.S. President when it comes to foreign affairs}
 #' }
-#' @source Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
+#' @source Pew Research Center \url{https://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(dplyr)
@@ -649,5 +652,5 @@
 #' \item{date}{Date of the match}
 #' \item{wins}{Number of cumulative wins for the boxer including the match at the specified date}
 #' }
-#' @source Box Rec \url{http://boxrec.com/}
+#' @source Box Rec \url{https://boxrec.com/}
 "undefeated"

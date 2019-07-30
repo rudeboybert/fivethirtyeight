@@ -6,7 +6,7 @@
 \title{The Football Hall Of Fame Has A Receiver Problem}
 \format{A data frame with 6496 rows representing National Football League wide receivers and 6 variables:
 \describe{
-  \item{pfr_player_id}{Player identification code at \url{Pro-Football-Reference.com}}
+  \item{pfr_player_id}{Player identification code at \url{https://www.pro-football-reference.com/}}
   \item{player_name}{The player's name}
   \item{career_try}{Career True Receiving Yards}
   \item{career_ranypa}{Adjusted Net Yards Per Attempt (relative to average) of player's career teams, weighted by TRY w/ each team}

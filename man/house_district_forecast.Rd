@@ -4,7 +4,11 @@
 \name{house_district_forecast}
 \alias{house_district_forecast}
 \title{2018 House Forecast}
-\format{A dataframe with 302859 rows representing district-level results of the classic, lite, and deluxe   House forecasts since Aug. 1, 2018 and 11 variables
+\format{Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset 
+see Examples below. The preview is a data frame with 10 rows representing 
+district-level results of the classic, lite, and deluxe house forecasts 
+since 2018/08/01 and 11 variables.
 \describe{
 \item{forecastdate}{date of the forecast}
 \item{state}{state of the forecast}
@@ -33,6 +37,24 @@ The raw data behind the story
 }
 \note{
 the original dataset included an empty column "special", which was removed.
+}
+\examples{
+# To obtain the entire dataset, run the following code:
+library(readr)
+library(dplyr)
+library(janitor)
+
+house_district_forecast <- 
+  "https://projects.fivethirtyeight.com/congress-model-2018/house_district_forecast.csv" \%>\% 
+  read_csv() \%>\%
+  clean_names() \%>\%
+  mutate(
+    state = as.factor(state),
+    district = as.factor(district),
+    party = as.factor(party),
+    model = as.factor(model)
+  ) \%>\%
+  select(-special)
 }
 \seealso{
 \code{\link{house_national_forecast}}

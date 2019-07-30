@@ -23,7 +23,7 @@
   \item{show_notes}{The seasons of shows counted in #Shows}
 }}
 \source{
-IMDB \url{http://imdb.com}
+IMDB \url{https://imdb.com}
 }
 \usage{
 mad_men

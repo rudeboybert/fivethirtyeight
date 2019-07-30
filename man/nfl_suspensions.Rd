@@ -15,7 +15,7 @@
   \item{source}{news source}
 }}
 \source{
-\url{http://en.wikipedia.org/wiki/List_of_players_and_coaches_suspended_by_the_NFL}, \url{http://www.spotrac.com/fines-tracker/nfl/suspensions/}
+\url{https://en.wikipedia.org/wiki/List_of_players_and_coaches_suspended_by_the_NFL}, \url{https://www.spotrac.com/fines-tracker/nfl/suspensions/}
 }
 \usage{
 nfl_suspensions

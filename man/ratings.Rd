@@ -4,7 +4,10 @@
 \name{ratings}
 \alias{ratings}
 \title{An Inconvenient Sequel}
-\format{A data frame with 80053 rows representing movie ratings and 27 variables:
+\format{Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
+(80,053 rows) see Examples below. The preview is a data frame with 10 rows 
+representing movie ratings and 27 variables:
 \describe{
   \item{timestamp}{The date at which the rating was recorded.}
   \item{respondents}{The number of respondents in a category associated with a given timestamp.}
@@ -35,7 +38,7 @@
   \item{pct_10}{The percentage of votes denoting a rating of ten that respondents gave.}
 }}
 \source{
-IMBD \url{http://www.imdb.com/title/tt6322922/ratings} and
+IMBD \url{https://www.imdb.com/title/tt6322922/ratings} and
 see \url{https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel}
 }
 \usage{
@@ -47,6 +50,23 @@ The raw data behind the story
 \url{https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/}.
 }
 \examples{
+# To obtain the entire dataset, run the following code:
+library(readr)
+library(dplyr)
+ratings <- 
+  "https://github.com/fivethirtyeight/data/raw/master/inconvenient-sequel/ratings.csv" \%>\%
+  read_csv() \%>\%
+  mutate(category = as.factor(category)) \%>\% 
+  rename(
+    votes_1 = `1_votes`, votes_2 = `2_votes`, votes_3 = `3_votes`, 
+    votes_4 = `4_votes`, votes_5 = `5_votes`, votes_6 = `6_votes`,
+    votes_7 = `7_votes`, votes_8 = `8_votes`, votes_9 = `9_votes`,
+    votes_10 = `10_votes`,
+    pct_1 = `1_pct`, pct_2 = `2_pct`, pct_3 = `3_pct`, pct_4 = `4_pct`,
+    pct_5 = `5_pct`, pct_6 = `6_pct`, pct_7 = `7_pct`, pct_8 = `8_pct`,
+    pct_9 = `9_pct`, pct_10 = `10_pct`
+  )
+
 # To convert data frame to tidy data (long) format, run:
 library(dplyr)
 library(tidyr)

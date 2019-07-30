@@ -16,7 +16,7 @@
   \item{url}{Genius link}
 }}
 \source{
-Genius \url{http://genius.com/}
+Genius \url{https://genius.com/}
 }
 \usage{
 hiphop_cand_lyrics
@@ -24,6 +24,6 @@ hiphop_cand_lyrics
 \description{
 The raw data behind the story
 "Hip-Hop Is Turning On Donald Trump"
-\url{http://projects.fivethirtyeight.com/clinton-trump-hip-hop-lyrics/}.
+\url{https://projects.fivethirtyeight.com/clinton-trump-hip-hop-lyrics/}.
 }
 \keyword{datasets}

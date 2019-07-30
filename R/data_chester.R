@@ -56,7 +56,7 @@
 #'
 #' The raw data behind the story
 #' "Hip-Hop Is Turning On Donald Trump"
-#' \url{http://projects.fivethirtyeight.com/clinton-trump-hip-hop-lyrics/}.
+#' \url{https://projects.fivethirtyeight.com/clinton-trump-hip-hop-lyrics/}.
 #'
 #' @format A data frame with 377 rows representing hip-hop songs referencing POTUS candidates in 2016 and 8 variables:
 #' \describe{
@@ -69,7 +69,7 @@
 #'   \item{line}{Lyrics}
 #'   \item{url}{Genius link}
 #' }
-#' @source Genius \url{http://genius.com/}
+#' @source Genius \url{https://genius.com/}
 "hiphop_cand_lyrics"
 
 
@@ -112,7 +112,7 @@
 #'   \item{high_emp}{}
 #'   \item{low_emp}{}
 #' }
-#' @source Bureau of Labor Statistics \url{http://www.bls.gov/oes/current/oes254021.htm#(1)}
+#' @source Bureau of Labor Statistics \url{https://www.bls.gov/oes/current/oes254021.htm#(1)}
 "librarians"
 
 
@@ -141,7 +141,7 @@
 #'   \item{support_notes}{The list of films counted in #SUPPORT}
 #'   \item{show_notes}{The seasons of shows counted in #Shows}
 #' }
-#' @source IMDB \url{http://imdb.com}
+#' @source IMDB \url{https://imdb.com}
 "mad_men"
 
 
@@ -216,7 +216,7 @@
 #'   \item{pitper9innasg}{Expected pitching runs added above average (from talent) based on IP in ASG, scaled to a 9-inning game}
 #'   \item{totper9innasg}{Expected runs added above average (from talent) based on PA/IP in ASG, scaled to a 9-inning game}
 #' }
-#' @source \url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
+#' @source \url{https://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
 "mlb_as_play_talent"
 
 
@@ -267,7 +267,7 @@
 #' "Projecting The Top 50 Players In The 2015 NBA Draft Class"
 #' \url{https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}.
 #' An analysis using this data was contributed by G. Elliott Morris as a package vignette at
-#' \url{http://fivethirtyeight-r.netlify.com/articles/nba.html}.
+#' \url{https://fivethirtyeight-r.netlify.com/articles/nba.html}.
 #'
 #' @format A data frame with 1090 rows representing National Basketball Association players/prospects and 9 variables:
 #' \describe{
@@ -297,7 +297,7 @@
 #'   \item{player_name}{Name of player}
 #'   \item{tattoos}{TRUE corresponds to player having tattoos, FALSE corresponds to not}
 #' }
-#' @source Ethan Swan \url{http://nbatattoos.tumblr.com/}
+#' @source Ethan Swan \url{https://nbatattoos.tumblr.com/}
 "nba_tattoos"
 
 
@@ -328,7 +328,7 @@
 #'   \item{uniform}{Uniform - Stylishness of uniform design, according to Uni Watch's Paul Lukas}
 #'   \item{big_market}{Big Market - Size of market in terms of population, where bigger is better}
 #' }
-#' @source \url{http://www.espn.com/sportsnation/teamrankings}, \url{http://www.allourideas.org/nflteampickingsample}
+#' @source \url{https://www.espn.com/sportsnation/teamrankings}, \url{https://www.allourideas.org/nflteampickingsample}
 "nfl_fav_team"
 
 
@@ -349,7 +349,7 @@
 #'   \item{year}{year of suspension}
 #'   \item{source}{news source}
 #' }
-#' @source \url{http://en.wikipedia.org/wiki/List_of_players_and_coaches_suspended_by_the_NFL}, \url{http://www.spotrac.com/fines-tracker/nfl/suspensions/}
+#' @source \url{https://en.wikipedia.org/wiki/List_of_players_and_coaches_suspended_by_the_NFL}, \url{https://www.spotrac.com/fines-tracker/nfl/suspensions/}
 "nfl_suspensions"
 
 
@@ -395,7 +395,7 @@
 #'
 #' @format A data frame with 6496 rows representing National Football League wide receivers and 6 variables:
 #' \describe{
-#'   \item{pfr_player_id}{Player identification code at \url{Pro-Football-Reference.com}}
+#'   \item{pfr_player_id}{Player identification code at \url{https://www.pro-football-reference.com/}}
 #'   \item{player_name}{The player's name}
 #'   \item{career_try}{Career True Receiving Yards}
 #'   \item{career_ranypa}{Adjusted Net Yards Per Attempt (relative to average) of player's career teams, weighted by TRY w/ each team}
@@ -524,7 +524,7 @@
 #'   \item{lat}{Latitude of the event location}
 #'   \item{lng}{Longitude of the event location}
 #' }
-#' @source \url{https://hillaryspeeches.com/}, \url{http://www.conservativedailynews.com/}
+#' @source \url{https://hillaryspeeches.com/}, \url{https://www.conservativedailynews.com/}
 "pres_2016_trail"
 
 

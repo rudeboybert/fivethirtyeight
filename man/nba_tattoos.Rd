@@ -10,7 +10,7 @@
   \item{tattoos}{TRUE corresponds to player having tattoos, FALSE corresponds to not}
 }}
 \source{
-Ethan Swan \url{http://nbatattoos.tumblr.com/}
+Ethan Swan \url{https://nbatattoos.tumblr.com/}
 }
 \usage{
 nba_tattoos

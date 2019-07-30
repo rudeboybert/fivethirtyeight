@@ -4,7 +4,10 @@
 \name{comic_characters}
 \alias{comic_characters}
 \title{Comic Books Are Still Made By Men, For Men And About Men}
-\format{A data frame with 23272 rows representing characters and 16 variables:
+\format{Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
+(23,272 rows) see Examples below. The preview is a data frame with 10 rows 
+representing characters and 16 variables:
 \describe{
   \item{publisher}{Comic publisher: DC Comics or Marvel}
   \item{page_id}{The unique identifier for that characters page within the wikia}
@@ -24,8 +27,8 @@
   \item{date}{The date of the character's first appearance in a comic book, if available}
 }}
 \source{
-DC Wikia \url{http://dc.wikia.com/wiki/Main_Page} and Marvel Wikia
-\url{http://marvel.wikia.com/Main_Page}. Characters were scraped on August 24,
+DC Wikia \url{https://dc.wikia.com/wiki/Main_Page} and Marvel Wikia
+\url{https://marvel.wikia.com/Main_Page}. Characters were scraped on August 24,
 2014. Appearance counts were scraped on September 2, 2014. The
 month and year of the first issue each character appeared in was pulled on
 October 6, 2014.
@@ -38,6 +41,46 @@ The raw data behind the story
 "Comic Books Are Still Made By Men, For Men And About Men"
 \url{https://fivethirtyeight.com/features/women-in-comic-books/}.
 An analysis using this data was contributed by Jonathan Bouchet as a package vignette at
-\url{http://fivethirtyeight-r.netlify.com/articles/comics_gender.html}.
+\url{https://fivethirtyeight-r.netlify.com/articles/comics_gender.html}.
+}
+\examples{
+# To obtain the entire dataset, run the following code:
+library(readr)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(janitor)
+
+# Get DC characters:
+comic_characters_dc <- 
+  "https://github.com/fivethirtyeight/data/raw/master/comic-characters/dc-wikia-data.csv" \%>\% 
+  read_csv() \%>\% 
+  clean_names() \%>\% 
+  mutate(publisher = "DC")
+
+# Get Marvel characters:
+comic_characters_marvel <- 
+  "https://github.com/fivethirtyeight/data/raw/master/comic-characters/marvel-wikia-data.csv" \%>\% 
+  read_csv() \%>\% 
+  clean_names() \%>\% 
+  mutate(publisher = "Marvel")
+
+# Merge two dataset and perform further data wrangling:
+comic_characters <-
+  comic_characters_dc \%>\% 
+  bind_rows(comic_characters_marvel) \%>\% 
+  separate(first_appearance, c("year2", "month"), ", ", remove = FALSE) \%>\%
+  mutate(
+    # If month was missing, set as January and day as 01:
+    month = ifelse(is.na(month), "01", month),
+    day = "01",
+    # Note some years missing:
+    date = ymd(paste(year, month, day, sep = "-")),
+    align = factor(
+      align, 
+      levels = c("Bad Characters", "Reformed Criminals", "Netural Characters", "Good Characters"),
+      ordered = TRUE)
+  ) \%>\%
+  select(publisher, everything(), -c(year2, day))
 }
 \keyword{datasets}

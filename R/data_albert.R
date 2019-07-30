@@ -16,7 +16,7 @@
 #'   \item{fatal_accidents_00_14}{Total number of fatal accidents, 2000-2014}
 #'   \item{fatalities_00_14}{Total number of fatalities, 2000-2014}
 #' }
-#' @source Aviation Safety Network \url{http://aviation-safety.net}.
+#' @source Aviation Safety Network \url{https://aviation-safety.net}.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(dplyr)
@@ -101,7 +101,7 @@
 #' @format A data frame with 1794 rows representing movies and 15 variables:
 #' \describe{
 #'   \item{year}{Year of release}
-#'   \item{imdb}{Text to construct IMDB url. Ex: \url{http://www.imdb.com/title/tt1711425}}
+#'   \item{imdb}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
 #'   \item{title}{Movie test}
 #'   \item{test}{bechdel test result (detailed, with discrepancies indicated)}
 #'   \item{clean_test}{bechdel test result (detailed): \code{ok} = passes test, \code{dubious}, \code{men} = women only talk about men, \code{notalk} = women don't talk to each other, \code{nowomen} = fewer than two women }
@@ -121,7 +121,7 @@
 #' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://CRAN.R-project.org/package=fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running:
 #' \code{vignette("bechdel", package = "fivethirtyeight")}
 #'
-#' @source \url{www.bechdeltest.com} and \url{www.the-numbers.com}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
+#' @source \url{http://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
 "bechdel"
 
 
@@ -162,12 +162,12 @@
 #' "'Straight Outta Compton' Is The Rare Biopic Not About White Dudes"
 #' \url{https://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/}.
 #' An analysis using this data was contributed by Pradeep Adhokshaja as a package vignette at
-#' \url{http://fivethirtyeight-r.netlify.com/articles/biopics.html}.
+#' \url{https://fivethirtyeight-r.netlify.com/articles/biopics.html}.
 #'
 #' @format A data frame with 761 rows representing movies and 14 variables:
 #' \describe{
 #'   \item{title}{Title of the film.}
-#'   \item{site}{Text to construct IMDB url. Ex: \url{http://www.imdb.com/title/tt1711425}}
+#'   \item{site}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
 #'   \item{country}{Country of origin.}
 #'   \item{year_release}{Year of release.}
 #'   \item{box_office}{Gross earnings at U.S. box office.}
@@ -181,7 +181,7 @@
 #'   \item{subject_sex}{Sex of subject.}
 #'   \item{lead_actor_actress}{The actor or actress who played the subject.}
 #' }
-#' @source IMDB \url{http://www.imdb.com/}
+#' @source IMDB \url{https://www.imdb.com/}
 "biopics"
 
 
@@ -192,7 +192,7 @@
 #' "A Statistical Analysis of the Work of Bob Ross"
 #' \url{https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/}.
 #' An analysis using this data was contributed by Jonathan Bouchet as a package vignette at
-#' \url{http://fivethirtyeight-r.netlify.com/articles/bob_ross.html}.
+#' \url{https://fivethirtyeight-r.netlify.com/articles/bob_ross.html}.
 #'
 #' @format A data frame with 403 rows representing episodes and 71 variables:
 #' \describe{
@@ -432,9 +432,12 @@
 #' "Comic Books Are Still Made By Men, For Men And About Men"
 #' \url{https://fivethirtyeight.com/features/women-in-comic-books/}.
 #' An analysis using this data was contributed by Jonathan Bouchet as a package vignette at
-#' \url{http://fivethirtyeight-r.netlify.com/articles/comics_gender.html}.
+#' \url{https://fivethirtyeight-r.netlify.com/articles/comics_gender.html}.
 #'
-#' @format A data frame with 23272 rows representing characters and 16 variables:
+#' @format Because of R package size restrictions, only a preview of the
+#' first 10 rows of this dataset is included; to obtain the entire dataset
+#' (23,272 rows) see Examples below. The preview is a data frame with 10 rows 
+#' representing characters and 16 variables:
 #' \describe{
 #'   \item{publisher}{Comic publisher: DC Comics or Marvel}
 #'   \item{page_id}{The unique identifier for that characters page within the wikia}
@@ -453,11 +456,50 @@
 #'   \item{year}{The year of the character's first appearance in a comic book, if available}
 #'   \item{date}{The date of the character's first appearance in a comic book, if available}
 #' }
-#' @source DC Wikia \url{http://dc.wikia.com/wiki/Main_Page} and Marvel Wikia
-#' \url{http://marvel.wikia.com/Main_Page}. Characters were scraped on August 24,
+#' @source DC Wikia \url{https://dc.wikia.com/wiki/Main_Page} and Marvel Wikia
+#' \url{https://marvel.wikia.com/Main_Page}. Characters were scraped on August 24,
 #' 2014. Appearance counts were scraped on September 2, 2014. The
 #' month and year of the first issue each character appeared in was pulled on
 #' October 6, 2014.
+#' @examples 
+#' # To obtain the entire dataset, run the following code:
+#' library(readr)
+#' library(dplyr)
+#' library(tidyr)
+#' library(lubridate)
+#' library(janitor)
+#' 
+#' # Get DC characters:
+#' comic_characters_dc <- 
+#'   "https://github.com/fivethirtyeight/data/raw/master/comic-characters/dc-wikia-data.csv" %>% 
+#'   read_csv() %>% 
+#'   clean_names() %>% 
+#'   mutate(publisher = "DC")
+#' 
+#' # Get Marvel characters:
+#' comic_characters_marvel <- 
+#'   "https://github.com/fivethirtyeight/data/raw/master/comic-characters/marvel-wikia-data.csv" %>% 
+#'   read_csv() %>% 
+#'   clean_names() %>% 
+#'   mutate(publisher = "Marvel")
+#' 
+#' # Merge two dataset and perform further data wrangling:
+#' comic_characters <-
+#'   comic_characters_dc %>% 
+#'   bind_rows(comic_characters_marvel) %>% 
+#'   separate(first_appearance, c("year2", "month"), ", ", remove = FALSE) %>%
+#'   mutate(
+#'     # If month was missing, set as January and day as 01:
+#'     month = ifelse(is.na(month), "01", month),
+#'     day = "01",
+#'     # Note some years missing:
+#'     date = ymd(paste(year, month, day, sep = "-")),
+#'     align = factor(
+#'       align, 
+#'       levels = c("Bad Characters", "Reformed Criminals", "Netural Characters", "Good Characters"),
+#'       ordered = TRUE)
+#'   ) %>%
+#'   select(publisher, everything(), -c(year2, day))
 "comic_characters"
 
 
@@ -609,7 +651,7 @@
 #'   \item{sedative_freq}{Median number of times a user used sedatives}
 #' }
 #' @source National Survey on Drug Use and Health from the Substance Abuse and
-#' Mental Health Data Archive \url{http://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
+#' Mental Health Data Archive \url{https://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(dplyr)

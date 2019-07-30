@@ -4,7 +4,10 @@
 \name{spi_matches}
 \alias{spi_matches}
 \title{Match-by-match SPI ratings and forecasts back to 2016}
-\format{A data frame with 10182 rows representing soccer matches and 13 variables:
+\format{Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
+(30,533 rows) see Examples below. The preview is a data frame with 10 rows 
+representing soccer matches and 13 variables:
 \describe{
   \item{date}{The date that the match took place.}
   \item{league_id}{A numerical identifier of the league within which the match was played.}
@@ -39,6 +42,14 @@ spi_matches
 The raw data behind the stories "Club Soccer Predictions"
 \url{https://projects.fivethirtyeight.com/soccer-predictions/} and "Global Club Soccer Rankings"
 \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
+}
+\examples{
+# To obtain the entire dataset, run the following code:
+library(readr)
+library(dplyr)
+spi_matches <- 
+  "https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv" \%>\% 
+  read_csv() 
 }
 \seealso{
 \code{\link{spi_global_rankings}}

@@ -11,7 +11,7 @@ vignette: |
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette is based on data collected for the 538 story entitled "Projecting The Top 50 Players In The 2015 NBA Draft Class" by Neil Paine and Zach Bradshaw available [here](http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/).
+This vignette is based on data collected for the 538 story entitled "Projecting The Top 50 Players In The 2015 NBA Draft Class" by Neil Paine and Zach Bradshaw available [here](https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/).
 
 First, we load the required packages to reproduce analysis.  
 
@@ -27,7 +27,7 @@ options(scipen = 99)
 
 # Group the projected statistical plus-minus by year
 
-The `nba_draft_2015` data frame features National Basketball Association players and prospects.  Each player has a `draft_year` that corresponds to the year the player was drafted into the NBA, if at all.  We are interested in analyzing the average `projected_spm` for each draft year.  Here, `projected_spm` corresponds to FiveThirtyEight's model of projected statistical plus-minus over year 2-5 of the player's NBA career.  Plus-minus is defined by [ BasketballReference.com](http://www.basketball-reference.com/about/bpm.html) as "box score-based metric for evaluating basketball players' quality and contribution to the team."  It is measured on a per 100 possessions basis to factor out playing time and adjusted so that the score is relative to the average NBA player.  Further from BasketballReference, "0.0 is league average, +5 means the player is 5 points better than an average player over 100 possessions (which is about All-NBA level), -2 is replacement level, and -5 is really bad."  
+The `nba_draft_2015` data frame features National Basketball Association players and prospects.  Each player has a `draft_year` that corresponds to the year the player was drafted into the NBA, if at all.  We are interested in analyzing the average `projected_spm` for each draft year.  Here, `projected_spm` corresponds to FiveThirtyEight's model of projected statistical plus-minus over year 2-5 of the player's NBA career.  Plus-minus is defined by [ BasketballReference.com](https://www.basketball-reference.com/about/bpm.html) as "box score-based metric for evaluating basketball players' quality and contribution to the team."  It is measured on a per 100 possessions basis to factor out playing time and adjusted so that the score is relative to the average NBA player.  Further from BasketballReference, "0.0 is league average, +5 means the player is 5 points better than an average player over 100 possessions (which is about All-NBA level), -2 is replacement level, and -5 is really bad."  
 
 ```{r data_year}
 nba_yearly <- nba_draft_2015 %>% 

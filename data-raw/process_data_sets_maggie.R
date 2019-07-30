@@ -1,5 +1,6 @@
 library(tidyverse)
 library(janitor)
+library(usethis)
 
 # nba-carmelo---------------------------------------------------------------------
 nba_carmelo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.csv") %>%
@@ -11,19 +12,25 @@ nba_carmelo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.
     playoff = ifelse(is.na(playoff), FALSE, TRUE),
     neutral = ifelse(neutral == 1, TRUE, FALSE)
   ) %>%
+  # Given that data frame is large, only include preview of data in package:
   slice(1:10)
-devtools::use_data(nba_carmelo, overwrite = TRUE)
+usethis::use_data(nba_carmelo, overwrite = TRUE)
 
 
 
 # nfl-elo---------------------------------------------------------------------
-nfl_elo <- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") %>%
+nfl_elo <- 
+  "https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv" %>% 
+  read_csv() %>%
   clean_names() %>%
   mutate(
     team1 = as.factor(team1),
     team2 = as.factor(team2),
-    neutral = ifelse(neutral == 1, TRUE, FALSE))
-devtools::use_data(nfl_elo, overwrite = TRUE)
+    neutral = ifelse(neutral == 1, TRUE, FALSE)
+  ) %>% 
+  # Given that data frame is large, only include preview of data in package:
+  slice(1:10)
+usethis::use_data(nfl_elo, overwrite = TRUE)
 
 
 
@@ -43,7 +50,7 @@ nfl_fandom_google <- read_csv("data-raw/nfl-fandom/NFL_fandom_data-google_trends
     cfb = as.numeric(str_replace_all(cfb, "%", "")),
     trump_2016_vote = as.numeric(str_replace_all(trump_2016_vote, "%", ""))
   )
-devtools::use_data(nfl_fandom_google, overwrite = TRUE)
+usethis::use_data(nfl_fandom_google, overwrite = TRUE)
 
 nfl_fandom_surveymonkey <- read_csv(
   "data-raw/nfl-fandom/NFL_fandom_data-surveymonkey.csv",
@@ -75,7 +82,7 @@ nfl_fandom_surveymonkey <- read_csv(
 colnames(nfl_fandom_surveymonkey) <- colnames(nfl_fandom_surveymonkey) %>%
   str_replace_all(pattern="_1", replacement="_ind") %>%
   str_replace_all(pattern="_2", replacement="_gop")
-devtools::use_data(nfl_fandom_surveymonkey, overwrite = TRUE)
+usethis::use_data(nfl_fandom_surveymonkey, overwrite = TRUE)
 
 
 
@@ -89,7 +96,7 @@ google_trends <- read_csv("data-raw/puerto-rico-media/google_trends.csv") %>%
     hurricane_irma_us = hurricane_irma_united_states,
     hurricane_maria_us = hurricane_maria_united_states,
     hurricane_jose_us = hurricane_jose_united_states)
-devtools::use_data(google_trends, overwrite = TRUE)
+usethis::use_data(google_trends, overwrite = TRUE)
 
 # Data on the number of sentences per day that mention Hurricanes Harvey, Irma,
 # Jose, and Maria in online news
@@ -98,7 +105,7 @@ mediacloud_hurricanes <- read_csv("data-raw/puerto-rico-media/mediacloud_hurrica
   mutate(
     date = as.Date(date, format= "%m / %d / %y")
   )
-devtools::use_data(mediacloud_hurricanes, overwrite = TRUE)
+usethis::use_data(mediacloud_hurricanes, overwrite = TRUE)
 
 # Data on the number of sentences per day
 # that mention Puerto Rico, Texas, and Florida in online news
@@ -107,11 +114,11 @@ mediacloud_states <- read_csv("data-raw/puerto-rico-media/mediacloud_states.csv"
   mutate(
     date = as.Date(date, format= "%m / %d / %y")
   )
-devtools::use_data(mediacloud_states, overwrite = TRUE)
+usethis::use_data(mediacloud_states, overwrite = TRUE)
 
 # A list of sources included in Media Cloud's "U.S. Top Online News" collection
 mediacloud_online_news <- read_csv("data-raw/puerto-rico-media/mediacloud_top_online_news.csv")
-devtools::use_data(mediacloud_online_news, overwrite = TRUE)
+usethis::use_data(mediacloud_online_news, overwrite = TRUE)
 
 # Data on the number of headlines that mention Puerto Rico, Texas, and Florida,
 # as well as headlines that mention each location and 'President' or 'Trump'.
@@ -125,7 +132,7 @@ mediacloud_trump <- read_csv("data-raw/puerto-rico-media/mediacloud_trump.csv") 
     texas = title_texas,
     texas_and_trump = title_texas_and_title_trump_or_title_president
   )
-devtools::use_data(mediacloud_trump, overwrite = TRUE)
+usethis::use_data(mediacloud_trump, overwrite = TRUE)
 
 # Data on the percent of sentences per day in TV News that mention Hurricanes
 # Harvey, Irma, Jose, and Maria.
@@ -134,7 +141,7 @@ tv_hurricanes <- read_csv("data-raw/puerto-rico-media/tv_hurricanes.csv") %>%
   mutate(
     date = as.Date(date, format= "%m / %d / %y")
   )
-devtools::use_data(tv_hurricanes, overwrite = TRUE)
+usethis::use_data(tv_hurricanes, overwrite = TRUE)
 
 # Data on the percent of sentences per day in TV News that mention Hurricanes
 # Harvey, Irma, Jose, and Maria by network.
@@ -144,21 +151,21 @@ tv_hurricanes_by_network <- read_csv("data-raw/puerto-rico-media/tv_hurricanes_b
     date = as.Date(date, format= "%m / %d / %y"),
     query = as.factor(query)
   )
-devtools::use_data(tv_hurricanes_by_network, overwrite = TRUE)
+usethis::use_data(tv_hurricanes_by_network, overwrite = TRUE)
 
 # Data on the percent of sentences per day in TV News that mention Puerto Rico,
 # Texas, and Florida.
 tv_states <- read_csv("data-raw/puerto-rico-media/tv_states.csv") %>%
   clean_names() %>%
   mutate(date = as.Date(date, format= "%m / %d / %y"))
-devtools::use_data(tv_states, overwrite = TRUE)
+usethis::use_data(tv_states, overwrite = TRUE)
 
 
 
 # riddler-pick-lowest---------------------------------------------------------------------
 riddler_pick_lowest <- read_csv("data-raw/riddler-pick-lowest/low_numbers.csv") %>%
   clean_names()
-devtools::use_data(riddler_pick_lowest, overwrite = TRUE)
+usethis::use_data(riddler_pick_lowest, overwrite = TRUE)
 
 
 
@@ -171,7 +178,7 @@ sandy_311 <- read_csv("data-raw/sandy-311-calls/sandy-311-calls-by-day.csv") %>%
     nys_emergency_mg = nysemergencymg
   ) %>%
   mutate(date = as.Date(date, format= "%m / %d / %y"))
-devtools::use_data(sandy_311, overwrite = TRUE)
+usethis::use_data(sandy_311, overwrite = TRUE)
 
 
 
@@ -200,7 +207,7 @@ trump_approval_poll <- read_csv("https://projects.fivethirtyeight.com/trump-appr
     created_date = createddate
   ) %>%
   select(-c(president, model_date, influence))
-devtools::use_data(trump_approval_poll, overwrite = TRUE)
+usethis::use_data(trump_approval_poll, overwrite = TRUE)
 
 trump_approval_trend <- read_csv("https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv") %>%
   clean_names() %>%
@@ -217,7 +224,7 @@ trump_approval_trend <- read_csv("https://projects.fivethirtyeight.com/trump-app
     disapprove_low = disapprove_lo
   ) %>%
   select(-c(president))
-devtools::use_data(trump_approval_trend, overwrite = TRUE)
+usethis::use_data(trump_approval_trend, overwrite = TRUE)
 
 
 
@@ -256,7 +263,7 @@ trumpworld_issues <- bind_rows(
   trumpworld_issue_1, trumpworld_issue_2, trumpworld_issue_3,
   trumpworld_issue_4, trumpworld_issue_5
 )
-devtools::use_data(trumpworld_issues, overwrite = TRUE)
+usethis::use_data(trumpworld_issues, overwrite = TRUE)
 
 trumpworld_pres <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-pres.csv") %>%
   clean_names() %>%
@@ -265,7 +272,7 @@ trumpworld_us <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-us.csv") %>%
   clean_names() %>%
   mutate(question = "Trust President")
 trumpworld_polls <- bind_rows(trumpworld_pres, trumpworld_us)
-devtools::use_data(trumpworld_polls, overwrite = TRUE)
+usethis::use_data(trumpworld_polls, overwrite = TRUE)
 
 
 
@@ -282,7 +289,7 @@ real_donald_trump <- read_csv("data-raw/twitter-ratio/realDonaldTrump.csv") %>%
   )
 twitter_presidents <- bind_rows(barack_obama, real_donald_trump) %>%
   select(created_at, user, everything())
-devtools::use_data(twitter_presidents, overwrite=TRUE)
+usethis::use_data(twitter_presidents, overwrite=TRUE)
 
 senators <- read_csv("data-raw/twitter-ratio/senators.csv") %>%
   mutate(
@@ -293,10 +300,10 @@ senators <- read_csv("data-raw/twitter-ratio/senators.csv") %>%
   ) %>%
   select(created_at, user, everything()) %>%
   slice(1:10)
-devtools::use_data(senators, overwrite = TRUE)
+usethis::use_data(senators, overwrite = TRUE)
 
 
 
 # undefeated-boxers---------------------------------------------------------------------
 undefeated <- read_csv("data-raw/undefeated-boxers/undefeated.csv")
-devtools::use_data(undefeated, overwrite = TRUE)
+usethis::use_data(undefeated, overwrite = TRUE)

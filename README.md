@@ -7,9 +7,9 @@
 Status](https://travis-ci.org/rudeboybert/fivethirtyeight.svg?branch=master)](https://travis-ci.org/rudeboybert/fivethirtyeight)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fivethirtyeight)](http://cran.r-project.org/package=fivethirtyeight)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fivethirtyeight)](https://cran.r-project.org/package=fivethirtyeight)
 [![CRAN RStudio mirror
-downloads](https://cranlogs.r-pkg.org/badges/fivethirtyeight)](http://www.r-pkg.org/pkg/fivethirtyeight)
+downloads](https://cranlogs.r-pkg.org/badges/fivethirtyeight)](https://www.r-pkg.org/pkg/fivethirtyeight)
 
 An R package that provides access to the code and data sets published by
 FiveThirtyEight <https://github.com/fivethirtyeight/data>. Note that
@@ -81,7 +81,7 @@ the
 `tidyverse`”](https://fivethirtyeight-r.netlify.com/articles/bechdel.html)
 based on the `bechdel` dataset used in the article [The Dollar-And-Cents
 Case Against Hollywood’s Exclusion of
-Women](http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women).
+Women](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women).
 For a complete list of vignettes run
 
 ``` r
@@ -112,7 +112,7 @@ vignette("user_contributed_vignettes.Rmd", package = "fivethirtyeight")
 In many instances, the data sets on the original 538 GitHub repository had the R code used in the analysis. We would love to have these, or any other interesting analyses, in the form of package vignettes. We ask you follow these guidelines as much as possible:
 
 1. Use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) packages: `ggplot2`, `dplyr`, `tidyr`, `modelr`, etc.
-1. Use [R Markdown](http://rmarkdown.rstudio.com/):
+1. Use [R Markdown](https://rmarkdown.rstudio.com/):
     + In particular the Package Vignette (HTML) template option when creating an R Markdown document.
     + Have the name of the R Markdown file match the name of the data set. Ex: `vignettes/bechdel.Rmd`
 1. Follow the GitHub fork/pull request [model](https://guides.github.com/introduction/flow/). Otherwise, contact us directly.
@@ -123,6 +123,6 @@ In many instances, the data sets on the original 538 GitHub repository had the R
 
 If you want to contribute to the package:
 
-* We followed the principles in Hadley Wickham's [R packages](http://r-pkgs.had.co.nz/) book
+* We followed the principles in Hadley Wickham's [R packages](https://r-pkgs.had.co.nz/) book
 * Preliminary instructions for automating R package documentation and collecting data about the data sets is available [here](https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md).
 -->

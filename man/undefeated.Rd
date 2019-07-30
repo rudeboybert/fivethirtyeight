@@ -12,7 +12,7 @@
 \item{wins}{Number of cumulative wins for the boxer including the match at the specified date}
 }}
 \source{
-Box Rec \url{http://boxrec.com/}
+Box Rec \url{https://boxrec.com/}
 }
 \usage{
 undefeated

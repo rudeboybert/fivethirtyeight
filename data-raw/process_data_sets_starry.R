@@ -88,18 +88,23 @@ usethis::use_data(governor_state_forecast, overwrite = TRUE)
 
 
 # house-forecast-2018 ---------------------------------------------------------------
-house_district_forecast <- read_csv("https://projects.fivethirtyeight.com/congress-model-2018/house_district_forecast.csv") %>%
+house_district_forecast <- 
+  "https://projects.fivethirtyeight.com/congress-model-2018/house_district_forecast.csv" %>% 
+  read_csv() %>%
   clean_names() %>%
   mutate(
     state = as.factor(state),
     district = as.factor(district),
-    candidate = as.factor(candidate),
     party = as.factor(party),
-    incumbent = as.logical(incumbent),
     model = as.factor(model)
   ) %>%
-  select(-special)
-house_national_forecast <- read_csv("https://projects.fivethirtyeight.com/congress-model-2018/house_national_forecast.csv") %>%
+  select(-special) %>% 
+  # Given that data frame is large, only include preview of data in package:
+  slice(1:10)
+
+house_national_forecast <- 
+  "https://projects.fivethirtyeight.com/congress-model-2018/house_national_forecast.csv" %>% 
+  read_csv() %>%
   clean_names() %>%
   mutate(
     party = as.factor (party),
@@ -126,7 +131,7 @@ usethis::use_data(mueller_approval_polls, overwrite = TRUE)
 
 
 # ncaa-womens-basketball-tournament ---------------------------------------------------------------
-ncaa_w_basketball_tournaments <- read_csv("data-raw/ncaa-womens-basketball-tournament/ncaa-womens-basketball-tournament-history.csv") %>%
+ncaa_w_bball_tourney <- read_csv("data-raw/ncaa-womens-basketball-tournament/ncaa-womens-basketball-tournament-history.csv") %>%
   clean_names() %>%
   rename(first_home_game = x1st_game_at_home) %>%
   mutate(
@@ -145,8 +150,7 @@ ncaa_w_basketball_tournaments <- read_csv("data-raw/ncaa-womens-basketball-tourn
     full_percent = as.numeric(full_percent),
     first_home_game = as.logical(ifelse(first_home_game == "Y", TRUE, FALSE))
   )
-
-usethis::use_data(ncaa_w_basketball_tournaments, overwrite = TRUE)
+usethis::use_data(ncaa_w_bball_tourney, overwrite = TRUE)
 
 # partisan-lean ---------------------------------------------------------------
 partisan_lean_district <- read_csv("data-raw/partisan-lean/fivethirtyeight_partisan_lean_DISTRICTS.csv") %>% 

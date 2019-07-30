@@ -1,6 +1,8 @@
 library(tidyverse)
 library(stringr)
 library(lubridate)
+library(janitor)
+library(usethis)
 
 
 
@@ -17,7 +19,7 @@ airline_safety <- airline_safety %>%
     airline = ifelse(incl_reg_subsidiaries, str_sub(airline, end=-2), airline)
     ) %>%
   select(airline, incl_reg_subsidiaries, everything())
-devtools::use_data(airline_safety, overwrite = TRUE)
+usethis::use_data(airline_safety, overwrite = TRUE)
 
 
 
@@ -26,7 +28,7 @@ drinks <- read_csv("data-raw/alcohol-consumption/drinks.csv")
 colnames(drinks) <- colnames(drinks) %>%
   tolower() %>%
   str_replace_all(" ", "_")
-devtools::use_data(drinks, overwrite = TRUE)
+usethis::use_data(drinks, overwrite = TRUE)
 
 
 
@@ -64,7 +66,7 @@ avengers <- avengers %>%
     # paste(year, month, "01", sep="-")),
     # full_reserve_avengers_intro2 = parse_date_time(date, "y-b-d")
   )
-devtools::use_data(avengers, overwrite = TRUE)
+usethis::use_data(avengers, overwrite = TRUE)
 
 
 
@@ -84,7 +86,7 @@ bad_drivers <- bad_drivers %>%
     insurance_premiums = `car_insurance_premiums_($)`,
     losses = `losses_incurred_by_insurance_companies_for_collisions_per_insured_driver_($)`
   )
-devtools::use_data(bad_drivers, overwrite = TRUE)
+usethis::use_data(bad_drivers, overwrite = TRUE)
 
 
 
@@ -113,7 +115,7 @@ bechdel <- bechdel %>%
     # Set levels to factors
     clean_test = factor(clean_test, levels = c("nowomen", "notalk", "men", "dubious", "ok"), ordered=TRUE)
   )
-devtools::use_data(bechdel, overwrite = TRUE)
+usethis::use_data(bechdel, overwrite = TRUE)
 
 
 
@@ -140,7 +142,7 @@ biopics <- biopics %>%
     site = str_sub(site, 27, 35)
   ) %>%
   select(-units)
-devtools::use_data(biopics, overwrite = TRUE)
+usethis::use_data(biopics, overwrite = TRUE)
 
 
 
@@ -155,7 +157,7 @@ US_births_1994_2003 <- US_births_1994_2003 %>%
     day_of_week = wday(date, label=TRUE)
     ) %>%
   select(year, month, date_of_month, date, everything())
-devtools::use_data(US_births_1994_2003, overwrite = TRUE)
+usethis::use_data(US_births_1994_2003, overwrite = TRUE)
 
 US_births_2000_2014 <- read_csv("data-raw/births/US_births_2000-2014_SSA.csv")
 colnames(US_births_2000_2014) <- colnames(US_births_2000_2014) %>%
@@ -167,7 +169,7 @@ US_births_2000_2014 <- US_births_2000_2014 %>%
     day_of_week = wday(date, label=TRUE)
   ) %>%
   select(year, month, date_of_month, date, everything())
-devtools::use_data(US_births_2000_2014, overwrite = TRUE)
+usethis::use_data(US_births_2000_2014, overwrite = TRUE)
 
 
 
@@ -183,7 +185,7 @@ bob_ross <- bob_ross %>%
     episode_num = as.numeric(str_sub(episode, 5, 6))
   ) %>%
   select(episode, season, episode_num, everything())
-devtools::use_data(bob_ross, overwrite = TRUE)
+usethis::use_data(bob_ross, overwrite = TRUE)
 
 
 
@@ -205,7 +207,7 @@ classic_rock_raw_data <- classic_rock_raw_data %>%
     ) %>%
   mutate(date_time = as.POSIXct(time, origin = "1970-01-01")) %>%
   select(song, artist, callsign, time, date_time, unique_id, combined)
-devtools::use_data(classic_rock_raw_data, overwrite = TRUE)
+usethis::use_data(classic_rock_raw_data, overwrite = TRUE)
 
 classic_rock_song_list <- read_csv("data-raw/classic-rock/classic-rock-song-list.csv")
 colnames(classic_rock_song_list) <- colnames(classic_rock_song_list) %>%
@@ -220,7 +222,7 @@ classic_rock_song_list <- classic_rock_song_list %>%
     playcount_has_year = `f*g`
   ) %>%
   mutate(has_year = as.logical(has_year))
-devtools::use_data(classic_rock_song_list, overwrite = TRUE)
+usethis::use_data(classic_rock_song_list, overwrite = TRUE)
 
 
 
@@ -239,7 +241,7 @@ college_all_ages <- college_all_ages %>%
   select(major_code, major, major_category, total, employed,
          employed_fulltime_yearround, unemployed, unemployment_rate,
          p25th, median, p75th)
-devtools::use_data(college_all_ages, overwrite = TRUE)
+usethis::use_data(college_all_ages, overwrite = TRUE)
 
 college_grad_students <- read_csv("data-raw/college-majors/grad-students.csv")
 colnames(college_grad_students) <- colnames(college_grad_students) %>%
@@ -268,7 +270,7 @@ college_grad_students <- college_grad_students %>%
          nongrad_p25th, nongrad_median, nongrad_p75th,
          grad_share, grad_premium
          )
-devtools::use_data(college_grad_students, overwrite = TRUE)
+usethis::use_data(college_grad_students, overwrite = TRUE)
 
 # Redundant: These are the first three columns of college_all_ages and
 # college_grad_students
@@ -279,7 +281,7 @@ devtools::use_data(college_grad_students, overwrite = TRUE)
 # college_majors <- college_majors %>%
 #   rename(major_code = fod1p) %>%
 #   mutate(major = str_to_title(major))
-# devtools::use_data(college_majors, overwrite = TRUE)
+# usethis::use_data(college_majors, overwrite = TRUE)
 
 college_recent_grads <- read_csv("data-raw/college-majors/recent-grads.csv")
 colnames(college_recent_grads) <- colnames(college_recent_grads) %>%
@@ -304,7 +306,7 @@ college_recent_grads <- college_recent_grads %>%
          p25th, median, p75th,
          college_jobs, non_college_jobs, low_wage_jobs
          )
-devtools::use_data(college_recent_grads, overwrite = TRUE)
+usethis::use_data(college_recent_grads, overwrite = TRUE)
 
 # Redundant: Simply a subset of college_recent_grads
 # college_women_stem <- read_csv("data-raw/college-majors/women-stem.csv")
@@ -316,53 +318,45 @@ devtools::use_data(college_recent_grads, overwrite = TRUE)
 #     median = as.double(median),
 #     major = str_to_title(major)
 #     )
-# devtools::use_data(college_women_stem, overwrite = TRUE)
+# usethis::use_data(college_women_stem, overwrite = TRUE)
 
 
 
 # comic-characters -------------------------------------------------------------
-comic_characters_dc <- read_csv("data-raw/comic-characters/dc-wikia-data.csv")
-colnames(comic_characters_dc) <- colnames(comic_characters_dc) %>%
-  tolower() %>%
-  str_replace_all(" ", "_")
-comic_characters_dc <- comic_characters_dc %>%
+# Get DC characters:
+comic_characters_dc <- 
+  "data-raw/comic-characters/dc-wikia-data.csv" %>% 
+  read_csv() %>% 
+  clean_names() %>% 
+  mutate(publisher = "DC")
+
+# Get Marvel characters:
+comic_characters_marvel <- 
+  "data-raw/comic-characters/marvel-wikia-data.csv" %>% 
+  read_csv() %>% 
+  clean_names() %>% 
+  mutate(publisher = "Marvel")
+
+# Merge two dataset and perform further data wrangling:
+comic_characters <-
+  comic_characters_dc %>% 
+  bind_rows(comic_characters_marvel) %>% 
   separate(first_appearance, c("year2", "month"), ", ", remove = FALSE) %>%
   mutate(
-    publisher = "DC",
-    # If month was missing, set as January. Set day as 01
+    # If month was missing, set as January and day as 01:
     month = ifelse(is.na(month), "01", month),
     day = "01",
-    # Note some years missing
-    date = ymd(paste(year, month, day, sep="-")),
-    align = factor(align, levels=c("Bad Characters", "Reformed Criminals", "Netural Characters", "Good Characters"),
-                   ordered=TRUE)
+    # Note some years missing:
+    date = ymd(paste(year, month, day, sep = "-")),
+    align = factor(
+      align, 
+      levels = c("Bad Characters", "Reformed Criminals", "Netural Characters", "Good Characters"),
+      ordered = TRUE)
   ) %>%
-  select(-c(year2, day))
-
-comic_characters_marvel <- read_csv("data-raw/comic-characters/marvel-wikia-data.csv")
-colnames(comic_characters_marvel) <- colnames(comic_characters_marvel) %>%
-  tolower() %>%
-  str_replace_all(" ", "_")
-comic_characters_marvel <- comic_characters_marvel %>%
-  separate(first_appearance, c("month", "year2"), "-", remove = FALSE) %>%
-  mutate(
-    publisher = "Marvel",
-    # If month was missing, set as January. Set day as 01
-    month = ifelse(is.na(month), "Jan", month),
-    day = "01",
-    # Note some years missing
-    date = ymd(paste(year, month, day, sep="-")),
-    # Make first_appearance variable format match that of DC comics
-    month = month.name[month(date)],
-    first_appearance = paste(year, month, sep=", "),
-    align = factor(align, levels=c("Bad Characters", "Reformed Criminals", "Netural Characters", "Good Characters"),
-                   ordered=TRUE)
-  ) %>%
-  select(-c(year2, day))
-
-comic_characters <- bind_rows(comic_characters_marvel, comic_characters_dc) %>%
-  select(publisher, everything())
-devtools::use_data(comic_characters, overwrite = TRUE)
+  select(publisher, everything(), -c(year2, day)) %>% 
+  # Given that data frame is large, only include preview of data in package:
+  slice(1:10)
+usethis::use_data(comic_characters, overwrite = TRUE)
 
 
 
@@ -411,7 +405,7 @@ comma_survey <- comma_survey %>%
   ) %>%
   select(respondent_id, gender, age, household_income,
          education, location, everything())
-devtools::use_data(comma_survey, overwrite = TRUE)
+usethis::use_data(comma_survey, overwrite = TRUE)
 
 
 
@@ -432,7 +426,7 @@ colnames(congress_age) <- colnames(congress_age) %>%
 
 congress_age <- congress_age %>%
   mutate(incumbent = ifelse(incumbent == "Yes", TRUE, FALSE))
-devtools::use_data(congress_age, overwrite = TRUE)
+usethis::use_data(congress_age, overwrite = TRUE)
 
 
 
@@ -441,7 +435,7 @@ cousin_marriage <- read_csv("data-raw/cousin-marriage/cousin-marriage-data.csv")
 colnames(cousin_marriage) <- colnames(cousin_marriage) %>%
   tolower() %>%
   str_replace_all(" ", "_")
-devtools::use_data(cousin_marriage, overwrite = TRUE)
+usethis::use_data(cousin_marriage, overwrite = TRUE)
 
 
 
@@ -459,7 +453,7 @@ daily_show_guests <- daily_show_guests %>%
     # Try to consolidate category of guest a bit
     google_knowledge_occupation = tolower(google_knowledge_occupation)
     )
-devtools::use_data(daily_show_guests, overwrite = TRUE)
+usethis::use_data(daily_show_guests, overwrite = TRUE)
 
 
 
@@ -470,7 +464,7 @@ colnames(democratic_bench) <- colnames(democratic_bench) %>%
   str_replace_all(" ", "_")
 democratic_bench <- democratic_bench %>%
   rename(candidate = cand)
-devtools::use_data(democratic_bench, overwrite = TRUE)
+usethis::use_data(democratic_bench, overwrite = TRUE)
 
 
 
@@ -485,7 +479,7 @@ drug_use <- drug_use %>%
   mutate(age = factor(age, levels=c("12", "13", "14", "15", "16", "17", "18", "19", "20", "21",
                                     "22-23", "24-25", "26-29", "30-34","35-49", "50-64", "65+"),
                       ordered=TRUE))
-devtools::use_data(drug_use, overwrite = TRUE)
+usethis::use_data(drug_use, overwrite = TRUE)
 
 
 
@@ -494,7 +488,7 @@ senate_polls <- read_csv("data-raw/early-senate-polls/early-senate-polls.csv")
 colnames(senate_polls) <- colnames(senate_polls) %>%
   tolower() %>%
   str_replace_all(" ", "_")
-devtools::use_data(senate_polls, overwrite = TRUE)
+usethis::use_data(senate_polls, overwrite = TRUE)
 
 
 # elo-blatter ------------------------------------------------------------------
@@ -502,7 +496,7 @@ elo_blatter <- read_csv("data-raw/elo-blatter/elo_blatter.csv")
 colnames(elo_blatter) <- colnames(elo_blatter) %>%
   tolower() %>%
   str_replace_all(" ", "_")
-devtools::use_data(elo_blatter, overwrite = TRUE)
+usethis::use_data(elo_blatter, overwrite = TRUE)
 
 
 
@@ -513,7 +507,7 @@ colnames(endorsements) <- colnames(endorsements) %>%
   str_replace_all(" ", "_")
 endorsements <- endorsements %>%
   mutate(won_primary = ifelse(won_primary == "Yes", TRUE, FALSE))
-devtools::use_data(endorsements, overwrite = TRUE)
+usethis::use_data(endorsements, overwrite = TRUE)
 
 
 
@@ -528,7 +522,7 @@ fandango <- fandango %>%
     year = str_replace_all(year, "\\)", ""),
     year = as.numeric(year)
     )
-devtools::use_data(fandango, overwrite = TRUE)
+usethis::use_data(fandango, overwrite = TRUE)
 
 fandango_scrape <- read_csv("data-raw/fandango/fandango_scrape.csv")
 colnames(fandango_scrape) <- colnames(fandango_scrape) %>%
@@ -541,7 +535,7 @@ colnames(fandango_scrape) <- colnames(fandango_scrape) %>%
 #     year = str_replace_all(year, "\\)", ""),
 #     year = as.numeric(year)
 #   )
-# devtools::use_data(fandango_scrape, overwrite = TRUE)
+# usethis::use_data(fandango_scrape, overwrite = TRUE)
 
 
 
@@ -551,7 +545,7 @@ fifa_audience <- read_csv("data-raw/fifa/fifa_countries_audience.csv")
 colnames(fifa_audience) <- colnames(fifa_audience) %>%
   tolower() %>%
   str_replace_all(" ", "_")
-devtools::use_data(fifa_audience, overwrite = TRUE)
+usethis::use_data(fifa_audience, overwrite = TRUE)
 
 
 
@@ -675,7 +669,7 @@ flying %>%
          wake_up_walk, baby, unruly_child, unsold_seat, talk_stranger) %>%
   apply(2, table)
 
-devtools::use_data(flying, overwrite = TRUE)
+usethis::use_data(flying, overwrite = TRUE)
 
 
 
@@ -719,7 +713,7 @@ food_world_cup <- food_world_cup %>%
          italy, ivory_coast, japan, mexico, nigeria, portugal,
          russia, south_korea, spain, switzerland, thailand,
          the_netherlands, turkey, united_states, uruguay, vietnam)
-devtools::use_data(food_world_cup, overwrite = TRUE)
+usethis::use_data(food_world_cup, overwrite = TRUE)
 
 
 
@@ -732,7 +726,7 @@ love_actually_adj <- replace(love_actually_adj, is.na(love_actually_adj), 0)
 for(i in 1:nrow(love_actually_adj)){
   love_actually_adj[i, -1] <- t(love_actually_adj[, i+1])
 }
-devtools::use_data(love_actually_adj, overwrite = TRUE)
+usethis::use_data(love_actually_adj, overwrite = TRUE)
 
 love_actually_appearance <- read_csv("data-raw/love-actually/love_actually_appearances.csv") %>%
   # Only first 71 rows had data
@@ -740,7 +734,7 @@ love_actually_appearance <- read_csv("data-raw/love-actually/love_actually_appea
 # Replace all NA's with FALSE
 love_actually_appearance <- replace(love_actually_appearance, is.na(love_actually_appearance), FALSE)
 
-devtools::use_data(love_actually_appearance, overwrite = TRUE)
+usethis::use_data(love_actually_appearance, overwrite = TRUE)
 
 
 

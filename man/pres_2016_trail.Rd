@@ -13,7 +13,7 @@
   \item{lng}{Longitude of the event location}
 }}
 \source{
-\url{https://hillaryspeeches.com/}, \url{http://www.conservativedailynews.com/}
+\url{https://hillaryspeeches.com/}, \url{https://www.conservativedailynews.com/}
 }
 \usage{
 pres_2016_trail

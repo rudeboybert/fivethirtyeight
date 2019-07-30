@@ -17,7 +17,7 @@
   \item{low_emp}{}
 }}
 \source{
-Bureau of Labor Statistics \url{http://www.bls.gov/oes/current/oes254021.htm#(1)}
+Bureau of Labor Statistics \url{https://www.bls.gov/oes/current/oes254021.htm#(1)}
 }
 \usage{
 librarians

@@ -17,7 +17,7 @@
   \item{fatalities_00_14}{Total number of fatalities, 2000-2014}
 }}
 \source{
-Aviation Safety Network \url{http://aviation-safety.net}.
+Aviation Safety Network \url{https://aviation-safety.net}.
 }
 \usage{
 airline_safety

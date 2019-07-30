@@ -6,8 +6,8 @@
 \title{The Complete History Of The NFL 2017 NFL Predictions}
 \format{Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
-(1920 to 2018 games) see Examples below. A data frame with 10 rows
-representing games and 14 variables:
+(1920 to present games) see Examples below. The preview is a data frame with 
+10 rows representing games and 14 variables:
 \describe{
  \item{date}{Date}
  \item{season}{Season year, 1920-2018}
@@ -27,16 +27,19 @@ representing games and 14 variables:
 \source{
 See \url{https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv}
 # To obtain the entire dataset, run the following code:
-library(dplyr)
-library(tidyr)
 library(readr)
+library(dplyr)
 library(janitor)
-nfl_elo <- read_csv("https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv") %>%
+
+nfl_elo <- 
+  "https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv" %>% 
+  read_csv() %>%
   clean_names() %>%
   mutate(
     team1 = as.factor(team1),
     team2 = as.factor(team2),
-    neutral = ifelse(neutral == 1, TRUE, FALSE))
+    neutral = ifelse(neutral == 1, TRUE, FALSE)
+  )
 }
 \usage{
 nfl_elo

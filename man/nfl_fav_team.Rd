@@ -25,7 +25,7 @@
   \item{big_market}{Big Market - Size of market in terms of population, where bigger is better}
 }}
 \source{
-\url{http://www.espn.com/sportsnation/teamrankings}, \url{http://www.allourideas.org/nflteampickingsample}
+\url{https://www.espn.com/sportsnation/teamrankings}, \url{https://www.allourideas.org/nflteampickingsample}
 }
 \usage{
 nfl_fav_team

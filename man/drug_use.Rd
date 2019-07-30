@@ -37,7 +37,7 @@
 }}
 \source{
 National Survey on Drug Use and Health from the Substance Abuse and
-Mental Health Data Archive \url{http://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
+Mental Health Data Archive \url{https://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
 }
 \usage{
 drug_use

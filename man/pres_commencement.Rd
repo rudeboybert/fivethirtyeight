@@ -16,7 +16,7 @@
   \item{room}{Room in which speech was delivered}
 }}
 \source{
-American Presidency Project, Gerhard Peters and John T. Woolley \url{http://www.presidency.ucsb.edu}
+American Presidency Project, Gerhard Peters and John T. Woolley \url{https://www.presidency.ucsb.edu}
 }
 \usage{
 pres_commencement

@@ -4,7 +4,10 @@
 \name{goose}
 \alias{goose}
 \title{The Save Ruined Relief Pitching. The Goose Egg Can Fix It.}
-\format{A data frame with 30,533 rows representing pitchers and 12 variables:
+\format{Because of R package size restrictions, only a preview of the
+first 10 rows of this dataset is included; to obtain the entire dataset
+(30,533 rows) see Examples below. The preview is a data frame with 10 rows 
+representing pitchers and 12 variables:
 \describe{
   \item{name}{Pitcher name}
   \item{year}{Start year of season}
@@ -20,7 +23,7 @@
   \item{key_retro}{Retrosheet unique player identifier}
 }}
 \source{
-Retrosheet \url{http://www.retrosheet.org/}
+Retrosheet \url{https://www.retrosheet.org/}
 }
 \usage{
 goose
@@ -29,5 +32,13 @@ goose
 The raw data behind the story
 "The Save Ruined Relief Pitching. The Goose Egg Can Fix It."
 \url{https://fivethirtyeight.com/features/goose-egg-new-save-stat-relief-pitchers/}.
+}
+\examples{
+# To obtain the entire dataset, run the following code:
+library(readr)
+library(dplyr)
+goose <- 
+  "https://github.com/fivethirtyeight/data/raw/master/goose/goose_rawdata.csv" \%>\% 
+  read_csv(na = c("", "NA"))
 }
 \keyword{datasets}

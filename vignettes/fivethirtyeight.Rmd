@@ -17,11 +17,10 @@ library(readr)
 library(knitr)
 ```
 
-
-## Data Sets
-
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
-datasets <- read_csv("https://goo.gl/OT8iHa") %>% 
+datasets <- 
+  "https://goo.gl/OT8iHa" %>% 
+  read_csv() %>% 
   filter(!is.na(DATAFRAME_NAME)) %>% 
   mutate(DATAFRAME_NAME = paste("`", DATAFRAME_NAME, "`", sep="")) %>% 
   transmute(
@@ -31,11 +30,43 @@ datasets <- read_csv("https://goo.gl/OT8iHa") %>%
     `Author 1` = ARTICLE_AUTHOR_1,
     `Author 2` = ARTICLE_AUTHOR_2,
     `Author 3` = ARTICLE_AUTHOR_3,
+    Preview = `ONLY PREVIEW OF FIRST 10 ROWS INCLUDED IN PACKAGE?`,
     Date = ARTICLE_DATE,
     URL = ARTICLE_URL
   ) %>% 
+  mutate(
+    `Filed Under` = ifelse(is.na(`Filed Under`), "", `Filed Under`),
+    `Author 1` = ifelse(is.na(`Author 1`), "", `Author 1`),
+    `Author 2` = ifelse(is.na(`Author 2`), "", `Author 2`),
+    `Author 3` = ifelse(is.na(`Author 3`), "", `Author 3`)
+  ) %>% 
   arrange(`Data Frame Name`)
-kable(datasets)
+
+preview <- datasets %>% 
+  filter(Preview == "Y") %>% 
+  pull(`Data Frame Name`)
+```
+
+## Note
+
+Given CRAN package size restrictions, the following `r length(preview)` datasets only consist of a preview of the first 10 rows of the full dataset. Code to load the full dataset are provided in the respective help file examples. For example, type `?house_district_forecast`.
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+preview %>% 
+  matrix(ncol=3) %>% 
+  kable()
+```
+
+
+
+## Datasets
+
+Here are all `r nrow(datasets)` datasets included in the `fivethirtyeight` package:
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+datasets %>% 
+  select(-Preview) %>% 
+  kable()
 ```
 
 
@@ -63,7 +94,7 @@ guidelines:
     1. Categorical variables whose possible levels are either unknown or of a very large number are represented as `character`s.
     1. Any "yes/no" character encoding of binary variables is converted to `TRUE/FALSE` logical variables. 
 1. **Tidy data format**: 
-    1. Whenever possible, save all data frames in ["tidy" data](http://vita.had.co.nz/papers/tidy-data.html) format:
+    1. Whenever possible, save all data frames in ["tidy" data](https://vita.had.co.nz/papers/tidy-data.html) format:
         a) Each variable forms a column.
         a) Each observation forms a row.
         a) Each type of observational unit forms a table.
@@ -91,9 +122,9 @@ packages, are of great pedagogical value as they:
 * Are in standardized format as they fit into the [tidy tools](https://CRAN.R-project.org/package=tidyverse/vignettes/manifesto.html) ecosystem.
 * Are really fun to play with!
 
-It is along these lines that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at [FiveThirtyEight.com](http://fivethirtyeight.com/), a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on [GitHub](https://github.com/fivethirtyeight/data), a web-based repository for collaboration on code and data. 
+It is along these lines that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at [FiveThirtyEight.com](https://fivethirtyeight.com/), a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on [GitHub](https://github.com/fivethirtyeight/data), a web-based repository for collaboration on code and data. 
 
-With consultation from [Andrew Flowers](http://fivethirtyeight.com/contributors/andrew-flowers/) and [Andrei Scheinkman](http://fivethirtyeight.com/contributors/andrei-scheinkman/) of FiveThirtyEight, we go one step further by:
+With consultation from [Andrew Flowers](https://fivethirtyeight.com/contributors/andrew-flowers/) and [Andrei Scheinkman](https://fivethirtyeight.com/contributors/andrei-scheinkman/) of FiveThirtyEight, we go one step further by:
 
 1. Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data right away.
 2. Packaging it all in an easy to load format: package installation instead of working with CSV files.

@@ -19,7 +19,7 @@
            5: Introduce tighter restrictions on those entering the U.S. from some majority-Muslim countries}
 }}
 \source{
-Pew Research Center \url{http://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
+Pew Research Center \url{https://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
 }
 \usage{
 trumpworld_issues

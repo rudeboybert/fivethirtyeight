@@ -135,7 +135,7 @@
 #'   \item{building}{Name of building in which speech was delivered}
 #'   \item{room}{Room in which speech was delivered}
 #' }
-#' @source American Presidency Project, Gerhard Peters and John T. Woolley \url{http://www.presidency.ucsb.edu}
+#' @source American Presidency Project, Gerhard Peters and John T. Woolley \url{https://www.presidency.ucsb.edu}
 "pres_commencement"
 
 
@@ -218,7 +218,7 @@
 #' \url{https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/}.
 #' An analysis using this data was contributed by Olivia Barrows, Jojo Miller, and Jayla Nakayama
 #' as a package vignette at
-#' \url{http://fivethirtyeight-r.netlify.com/articles/tarantino_swears.html}.
+#' \url{https://fivethirtyeight-r.netlify.com/articles/tarantino_swears.html}.
 #'
 #' @format A data frame with 1894 rows representing curse/death instances and 4 variables:
 #' \describe{
@@ -298,7 +298,7 @@
 #'   \item{major_cat}{Story classification}
 #'   \item{detail}{}
 #' }
-#' @source Memeorandum \url{http://www.memeorandum.com/}.
+#' @source Memeorandum \url{https://www.memeorandum.com/}.
 "trump_news"
 
 
@@ -309,7 +309,7 @@
 #' \url{https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/}.
 #' Tweets posted on twitter by Donald Trump (@@realDonaldTrump).
 #' An analysis using this data was contributed by Adam Spannbauer as a package vignette at
-#' \url{http://fivethirtyeight-r.netlify.com/articles/trump_twitter.html}.
+#' \url{https://fivethirtyeight-r.netlify.com/articles/trump_twitter.html}.
 #'
 #' @format A data frame with 448 rows representing tweets and 3 variables:
 #' \describe{
@@ -458,7 +458,10 @@
 #' "The Save Ruined Relief Pitching. The Goose Egg Can Fix It."
 #' \url{https://fivethirtyeight.com/features/goose-egg-new-save-stat-relief-pitchers/}.
 #'
-#' @format A data frame with 30,533 rows representing pitchers and 12 variables:
+#' @format Because of R package size restrictions, only a preview of the
+#' first 10 rows of this dataset is included; to obtain the entire dataset
+#' (30,533 rows) see Examples below. The preview is a data frame with 10 rows 
+#' representing pitchers and 12 variables:
 #' \describe{
 #'   \item{name}{Pitcher name}
 #'   \item{year}{Start year of season}
@@ -473,7 +476,14 @@
 #'   \item{gwar}{Goose Wins Above Replacement}
 #'   \item{key_retro}{Retrosheet unique player identifier}
 #' }
-#' @source Retrosheet \url{http://www.retrosheet.org/}
+#' @source Retrosheet \url{https://www.retrosheet.org/}
+#' @examples 
+#' # To obtain the entire dataset, run the following code:
+#' library(readr)
+#' library(dplyr)
+#' goose <- 
+#'   "https://github.com/fivethirtyeight/data/raw/master/goose/goose_rawdata.csv" %>% 
+#'   read_csv(na = c("", "NA"))
 "goose"
 
 #' For A Trump Nominee, Neil Gorsuch’s Record Is Surprisingly Moderate On Immigration

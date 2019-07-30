@@ -2,15 +2,21 @@
 
 * Added vignette corresponding to Technology Innovations in Statistics Education [paper](https://escholarship.org/uc/item/0rx1231m#main)
 * Removed tidyverse from `DESCRIPTION` Depends, Imports, or Suggests fields
-* Added `state_info` dataframe of state name, abbreviation, US census division/region
+* Added `state_info` data frame of state name, abbreviation, US census division/region
 * Added `state_abbrev` variable to `hate_crimes` dataset so that 
 users can plot state abbreviations via `geom_text(aes(label = state_abbrev))`
 instead of using less informative `geom_point()`
+* Given CRAN package size restrictions, the following datasets only consist of a preview of the first 10 rows of the entire dataset: `comic_characters`, `goose`, `house_district_forecast`, `mlb_elo`, `nba_carmelo`, `nfl_elo`, `ratings`, `senators`, and `spi_matches`. Code to load the entire dataset are provided in the respective help file examples.
 * Added new data sets:
-    + By Starry Zhou: `cabinet_turnover`, `august_senate_polls`, `endorsements_2020`, 
+    + By Starry Zhou: `august_senate_polls`, `cabinet_turnover`, 
+    `elasticity_by_district`, `elasticity_by_state`, `endorsements_2020`, 
     `forecast_results_2018`, `governor_national_forecast`, `governor_state_forecast`,
-    `house_district_forecast`, `house_national_forecast`, `mueller_approval_polls`,
-    `ncaa_w_basketball_tournaments`, `partisan_lean_district`, `partisan_lean_state`, `elasticity_by_district`, `elasticity_by_state`, `russia_investigation`, `senate_national_forecast`, `senate_seat_forecast`, `trump_lawsuits`,  `masculinity_survey`
+    `house_district_forecast`, `house_national_forecast`, `masculinity_survey`, 
+    `mueller_approval_polls`, `ncaa_w_bball_tourney`, `partisan_lean_district`, 
+    `partisan_lean_state`, `russia_investigation`, `senate_national_forecast`, 
+    `senate_seat_forecast`, `trump_lawsuits`, 
+    
+    
 
 # fivethirtyeight 0.4.0
 
