@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How Many Fucks Does Tarantino Give? • fivethirtyeight</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="How Many Fucks Does Tarantino Give?">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
@@ -38,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -65,7 +66,7 @@
       <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
     </li>
     <li>
-      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting-</a>
+      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting</a>
     </li>
     <li>
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
@@ -75,9 +76,6 @@
     </li>
     <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
-    </li>
-    <li>
-      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
     <li>
       <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
@@ -91,7 +89,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -104,13 +102,14 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>How Many Fucks Does Tarantino Give?</h1>
                         <h4 class="author">Olivia Barrows, Jojo Miller, and Jayla Nakayama</h4>
             
-            <h4 class="date">2018-12-29</h4>
+            <h4 class="date">2019-07-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/tarantino_swears.Rmd"><code>vignettes/tarantino_swears.Rmd</code></a></small>
       <div class="hidden name"><code>tarantino_swears.Rmd</code></div>
@@ -120,16 +119,15 @@
     
     
 <p>This vignette is based on the data collected for the FiveThirtyEight study <a href="https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/">A Complete Catalog Of Every Time Someone Cursed Or Bled Out In A Quentin Tarantino Movie</a>, with a focus on the use of swear words in his films.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(fivethirtyeight)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># library(tidyverse)</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(dplyr)</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(stringr)</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(knitr)</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggthemes)</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co"># Set default number of digits printed</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">options</a></span>(<span class="dt">digits =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(fivethirtyeight)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(dplyr)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(stringr)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(knitr)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggthemes)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co"># Set default number of digits printed</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="kw"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="dt">digits =</span> <span class="dv">2</span>)</a></code></pre></div>
 <div id="points-of-analysis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#points-of-analysis" class="anchor"></a>Points of Analysis</h2>
@@ -143,30 +141,30 @@
 <a href="#preparing-the-data" class="anchor"></a>Preparing the Data</h3>
 <p>For this analysis, there is first the need to create a new dataframe, which will be called <code>tarantino_year</code>. This new dataframe includes the year of release for each film. Once created, the <code>tarantino_year</code> dataframe needs to be merged with the already existing <code>tarantino</code> dataframe, so the <code>year</code> variable will be present for analysis in the <code>tarantino_plus_year</code> data frame.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># Create new dataframe assigning year of release to movies</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">movie &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"Reservoir Dogs"</span>, <span class="st">"Pulp Fiction"</span>, <span class="st">"Jackie Brown"</span>, <span class="st">"Kill Bill: Vol. 1"</span>, <span class="st">"Kill Bill: Vol. 2"</span>, <span class="st">"Inglorious Basterds"</span>, <span class="st">"Django Unchained"</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">movie &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Reservoir Dogs"</span>, <span class="st">"Pulp Fiction"</span>, <span class="st">"Jackie Brown"</span>, <span class="st">"Kill Bill: Vol. 1"</span>, <span class="st">"Kill Bill: Vol. 2"</span>, <span class="st">"Inglorious Basterds"</span>, <span class="st">"Django Unchained"</span>)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">year &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1992</span>, <span class="dv">1994</span>, <span class="dv">1997</span>, <span class="dv">2003</span>, <span class="dv">2004</span>, <span class="dv">2009</span>, <span class="dv">2012</span>)</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">tarantino_year &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/reexports.html">data_frame</a></span>(movie, year)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">year &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1992</span>, <span class="dv">1994</span>, <span class="dv">1997</span>, <span class="dv">2003</span>, <span class="dv">2004</span>, <span class="dv">2009</span>, <span class="dv">2012</span>)</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">tarantino_year &lt;-<span class="st"> </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">tibble</a></span>(movie, year)</a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co"># Combine with existing `tarantino` dataframe</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8">tarantino_plus_year &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(<span class="dt">x =</span> tarantino, <span class="dt">y =</span> tarantino_year, <span class="dt">by =</span> <span class="st">"movie"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb2-8" data-line-number="8">tarantino_plus_year &lt;-<span class="st"> </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(<span class="dt">x =</span> tarantino, <span class="dt">y =</span> tarantino_year, <span class="dt">by =</span> <span class="st">"movie"</span>)</a></code></pre></div>
 <p>The final step in preparing the <code>tarantino_plus_year</code> dataframe for this analysis is to filter out unnecessary information, keeping only entries with the value of <code>TRUE</code> under the <code>profane</code> variable.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">tarantino_swears &lt;-<span class="st"> </span>tarantino_plus_year <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(profane <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">tarantino_swears &lt;-<span class="st"> </span>tarantino_plus_year <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(profane <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>)</a></code></pre></div>
 </div>
 <div id="total-swear-word-usage-over-tarantinos-career" class="section level3">
 <h3 class="hasAnchor">
 <a href="#total-swear-word-usage-over-tarantinos-career" class="anchor"></a>Total Swear Word Usage Over Tarantino’s Career</h3>
 <p>Using the altered <code>tarantino_swears</code> dataframe, we can see how many times curse words are used in each of the movies. To better visualize how Tarantino’s usage of swearing has changed over the years, we first ordered the movies by year of release, and then created a graphic with this re-ordered data. A table is provided below, for referencing year of release.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># Ordering the movies by release year</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">by_year &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"Reservoir Dogs"</span>, <span class="st">"Pulp Fiction"</span>, <span class="st">"Jackie Brown"</span>, <span class="st">"Kill Bill: Vol. 1"</span>, <span class="st">"Kill Bill: Vol. 2"</span>, </a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">by_year &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Reservoir Dogs"</span>, <span class="st">"Pulp Fiction"</span>, <span class="st">"Jackie Brown"</span>, <span class="st">"Kill Bill: Vol. 1"</span>, <span class="st">"Kill Bill: Vol. 2"</span>, </a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="st">"Inglorious Basterds"</span>, <span class="st">"Django Unchained"</span>)</a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">tarantino_factor &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">movie =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/factor">factor</a></span>(tarantino_swears<span class="op">$</span>movie, <span class="dt">levels =</span> by_year))</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">movie =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(tarantino_swears<span class="op">$</span>movie, <span class="dt">levels =</span> by_year))</a>
 <a class="sourceLine" id="cb4-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co"># Plotting the amount of swear words used in each movie</span></a>
 <a class="sourceLine" id="cb4-8" data-line-number="8"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data =</span> tarantino_factor, <span class="dt">mapping =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> movie, <span class="dt">fill =</span> movie)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb4-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>(<span class="dt">color =</span> <span class="st">"white"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/pkg/ggthemes/man/theme_fivethirtyeight.html">theme_fivethirtyeight</a></span>() <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb4-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">x =</span> <span class="st">"Movie"</span>, <span class="dt">y =</span> <span class="st">"Swear Count"</span>, <span class="dt">title =</span> <span class="st">"Total Swear Word Usage Per Movie"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb4-12" data-line-number="12"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="dt">axis.text.x =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</a></code></pre></div>
 <p><img src="tarantino_swears_files/figure-html/plot1-1.png" width="691.2"></p>
@@ -193,26 +191,26 @@
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Creating the categories</span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">tarantino_swears &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">swear_category =</span> </a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">       <span class="kw"><a href="http://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"ass"</span>, word) <span class="op">~</span><span class="st"> "ass"</span>, </a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">                 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"shit|merde"</span>, word) <span class="op">~</span><span class="st"> "shit"</span>, </a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">                 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"fuck"</span>, word) <span class="op">~</span><span class="st"> "fuck"</span>, </a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">                 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"damn|hell"</span>, word) <span class="op">~</span><span class="st"> "damnation"</span>, </a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">                 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"bastard"</span>, word) <span class="op">~</span><span class="st"> "bastard"</span>, </a>
-<a class="sourceLine" id="cb6-9" data-line-number="9">                 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"dick|cock"</span>, word) <span class="op">~</span><span class="st"> "dick"</span>, </a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">                 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"bitch|cunt|pussy|faggot|slut"</span>, word) <span class="op">~</span><span class="st"> "gender"</span>, </a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">                 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"gook|jap|jew|n-word|negro|slope|wetback|squaw"</span>, word) <span class="op">~</span><span class="st"> "race"</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">swear_category =</span> </a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">       <span class="kw"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">"ass"</span>, word) <span class="op">~</span><span class="st"> "ass"</span>, </a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">                 <span class="kw"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">"shit|merde"</span>, word) <span class="op">~</span><span class="st"> "shit"</span>, </a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">                 <span class="kw"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">"fuck"</span>, word) <span class="op">~</span><span class="st"> "fuck"</span>, </a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">                 <span class="kw"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">"damn|hell"</span>, word) <span class="op">~</span><span class="st"> "damnation"</span>, </a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">                 <span class="kw"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">"bastard"</span>, word) <span class="op">~</span><span class="st"> "bastard"</span>, </a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">                 <span class="kw"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">"dick|cock"</span>, word) <span class="op">~</span><span class="st"> "dick"</span>, </a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">                 <span class="kw"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">"bitch|cunt|pussy|faggot|slut"</span>, word) <span class="op">~</span><span class="st"> "gender"</span>, </a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">                 <span class="kw"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">"gook|jap|jew|n-word|negro|slope|wetback|squaw"</span>, word) <span class="op">~</span><span class="st"> "race"</span>))</a></code></pre></div>
 <p>With these categories defined, we can produce a table called <code>Profanity_Sum</code> showing how often swear words of each category were used during Tarantino’s movies.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">Profanity_Sum &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(movie) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">Ass =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "ass"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">            <span class="dt">Shit =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "shit"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5">            <span class="dt">Fuck =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "fuck"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb7-6" data-line-number="6">            <span class="dt">Dick =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "dick"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb7-7" data-line-number="7">            <span class="dt">Damnation =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "damnation"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb7-8" data-line-number="8">            <span class="dt">Bastard =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "bastard"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb7-9" data-line-number="9">            <span class="dt">Gender =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "gender"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
-<a class="sourceLine" id="cb7-10" data-line-number="10">            <span class="dt">Race =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "race"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(movie) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">Ass =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "ass"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">            <span class="dt">Shit =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "shit"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">            <span class="dt">Fuck =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "fuck"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">            <span class="dt">Dick =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "dick"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">            <span class="dt">Damnation =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "damnation"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">            <span class="dt">Bastard =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "bastard"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">            <span class="dt">Gender =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "gender"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">            <span class="dt">Race =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "race"</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,</a>
 <a class="sourceLine" id="cb7-11" data-line-number="11">            <span class="dt">Unspeakable =</span> Gender <span class="op">+</span><span class="st"> </span>Race)</a>
 <a class="sourceLine" id="cb7-12" data-line-number="12">Profanity_Sum</a></code></pre></div>
 <pre><code>## # A tibble: 7 x 10
@@ -235,11 +233,11 @@
 </ul>
 <p>You may notice the <code>Unspeakable</code> variable, which is a combination of the <code>gender</code> and <code>race</code> categories from the earlier code. It is possible to break this variable down relative to each movie, showing how often either category had swear words used.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">Unspeakable_Sum &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(movie) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">gen_por =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "gender"</span>),</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4">            <span class="dt">race_por =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/mean">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "race"</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">Gender_Derogatory =</span> gen_por <span class="op">*</span><span class="st"> </span><span class="dv">100</span>, <span class="dt">Race_Derogatory =</span> race_por <span class="op">*</span><span class="st"> </span><span class="dv">100</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="op">-</span>gen_por, <span class="op">-</span>race_por)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(movie) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="dt">gen_por =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "gender"</span>),</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">            <span class="dt">race_por =</span> <span class="kw"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(swear_category <span class="op">==</span><span class="st"> "race"</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">Gender_Derogatory =</span> gen_por <span class="op">*</span><span class="st"> </span><span class="dv">100</span>, <span class="dt">Race_Derogatory =</span> race_por <span class="op">*</span><span class="st"> </span><span class="dv">100</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="op">-</span>gen_por, <span class="op">-</span>race_por)</a>
 <a class="sourceLine" id="cb9-7" data-line-number="7">Unspeakable_Sum</a></code></pre></div>
 <pre><code>## # A tibble: 7 x 3
 ##   movie               Gender_Derogatory Race_Derogatory
@@ -267,18 +265,18 @@
 <h3 class="hasAnchor">
 <a href="#how-many-fucks-does-tarantino-actually-give" class="anchor"></a>How Many Fucks Does Tarantino Actually Give?</h3>
 <p>Looking at the dataframe <code>tarantino_swears</code>, the next question we have to ask is ‘How many fucks <em>exactly</em> does Tarantino give in each of his movies?’ First, however, it is necessary to filter for only usages of the word ‘fuck’ and its variations.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">tarantino_fuck &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(swear_category <span class="op">==</span><span class="st"> "fuck"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">tarantino_fuck &lt;-<span class="st"> </span>tarantino_swears <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(swear_category <span class="op">==</span><span class="st"> "fuck"</span>)</a></code></pre></div>
 <p>At this point, we are able to create a preliminary graph, which details the amount of all fucks given throughout each movie.The following information displays what this amount is, spread out over the time of the movie. We chose to divide the amount of swearing over the course of the movie in this manner because it allows us to examine what parts of each movie include the most swearing.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data =</span> tarantino_fuck, <span class="dt">mapping =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> minutes_in)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span>(<span class="dt">binwidth =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">"white"</span>, <span class="dt">fill =</span> <span class="st">"springgreen2"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span>(<span class="op">~</span>movie) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/pkg/ggthemes/man/theme_fivethirtyeight.html">theme_fivethirtyeight</a></span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">x =</span> <span class="st">"Minutes In"</span>, <span class="dt">y =</span> <span class="st">"Fucks Given"</span>, <span class="dt">title =</span> <span class="st">"Fucks Tarantino Gives Per Movie"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb12-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="dt">axis.text.x =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</a></code></pre></div>
 <p><img src="tarantino_swears_files/figure-html/given-1.png" width="691.2"></p>
 <p>This can be further broken down to show what <em>types</em> of fucks Tarantino gives.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data =</span> tarantino_fuck, <span class="dt">mapping =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> minutes_in, <span class="dt">fill =</span> word)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span>(<span class="dt">binwidth =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">"white"</span>) <span class="op">+</span><span class="st"> </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span>(<span class="op">~</span>movie) <span class="op">+</span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggthemes/topics/theme_fivethirtyeight">theme_fivethirtyeight</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/pkg/ggthemes/man/theme_fivethirtyeight.html">theme_fivethirtyeight</a></span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">x =</span> <span class="st">"Minutes In"</span>, <span class="dt">y =</span> <span class="st">"Fucks Given"</span>, <span class="dt">title =</span> <span class="st">"Fucks Tarantino Gives Per Movie (by Type)"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb13-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="dt">axis.text.x =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</a></code></pre></div>
 <p><img src="tarantino_swears_files/figure-html/type_given-1.png" width="691.2"></p>
@@ -316,17 +314,20 @@
 </div>
 
 
+
       <footer><div class="copyright">
   <p>Developed by Albert Y. Kim, Chester Ismay, Jennifer Chunn.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

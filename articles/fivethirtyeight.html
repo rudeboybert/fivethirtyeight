@@ -8,8 +8,9 @@
 <title>
 <code>fivethirtyeight</code> Package • fivethirtyeight</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="&lt;code&gt;fivethirtyeight&lt;/code&gt; Package">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
@@ -39,7 +40,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -66,7 +67,7 @@
       <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
     </li>
     <li>
-      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting-</a>
+      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting</a>
     </li>
     <li>
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
@@ -76,9 +77,6 @@
     </li>
     <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
-    </li>
-    <li>
-      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
     <li>
       <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
@@ -92,7 +90,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -105,6 +103,7 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -112,7 +111,7 @@
 <code>fivethirtyeight</code> Package</h1>
                         <h4 class="author">Albert Y. Kim, Chester Ismay, and Jennifer Chunn</h4>
             
-            <h4 class="date">2018-12-29</h4>
+            <h4 class="date">2019-07-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/fivethirtyeight.Rmd"><code>vignettes/fivethirtyeight.Rmd</code></a></small>
       <div class="hidden name"><code>fivethirtyeight.Rmd</code></div>
@@ -121,81 +120,6 @@
 
     
     
-<div id="motivation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#motivation" class="anchor"></a>Motivation</h2>
-<p>We are involved in statistics and data science education, in particular at the introductory undergraduate level. As such, we are always looking for data sets that balance being</p>
-<ol style="list-style-type: decimal">
-<li>
-<strong>Rich enough</strong> to answer meaningful questions with, <strong>real enough</strong> to ensure that there is context, and <strong>realistic enough</strong> to convey to students that data as it exists “in the wild” often needs processing.</li>
-<li>Easily and quickly accessible to novices, so that we <a href="https://arxiv.org/abs/1507.05346">minimize the prerequisites to research</a>.</li>
-</ol>
-<p>It has been our experience that many data sets that exist in R packages, such as the <a href="https://github.com/hadley/nycflights13"><code>nycflights13</code></a>, <a href="https://github.com/hadley/babynames"><code>babynames</code></a>, and <a href="https://github.com/jennybc/gapminder"><code>gapminder</code></a> packages, are of great pedagogical value as they:</p>
-<ul>
-<li>Satisfy the above two goals.</li>
-<li>Are in standardized format as they fit into the <a href="https://CRAN.R-project.org/package=tidyverse/vignettes/manifesto.html">tidy tools</a> ecosystem.</li>
-<li>Are really fun to play with!</li>
-</ul>
-<p>It is along these lines that we present <code>fivethirtyeight</code>: an R package of data and code behind the stories and interactives at <a href="http://fivethirtyeight.com/">FiveThirtyEight.com</a>, a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on <a href="https://github.com/fivethirtyeight/data">GitHub</a>, a web-based repository for collaboration on code and data.</p>
-<p>With consultation from <a href="http://fivethirtyeight.com/contributors/andrew-flowers/">Andrew Flowers</a> and <a href="http://fivethirtyeight.com/contributors/andrei-scheinkman/">Andrei Scheinkman</a> of FiveThirtyEight, we go one step further by:</p>
-<ol style="list-style-type: decimal">
-<li>Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data right away.</li>
-<li>Packaging it all in an easy to load format: package installation instead of working with CSV files.</li>
-<li>Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.</li>
-</ol>
-</div>
-<div id="guidelines" class="section level2">
-<h2 class="hasAnchor">
-<a href="#guidelines" class="anchor"></a>Guidelines</h2>
-<p>In order to make the data easily accessible to R novices, we pre-process the original data sets as they exist in the <a href="https://github.com/fivethirtyeight/data">538 GitHub repository</a> to adhere to the following guidelines:</p>
-<ol style="list-style-type: decimal">
-<li>
-<strong>Naming conventions for data frame and variable names</strong>:
-<ol style="list-style-type: decimal">
-<li>Whenever possible, all names should be no more than 20 characters long. Exceptions to this rule exist when shortening the names to less than 20 characters would lead to a loss of information.</li>
-<li>Use only lower case characters and replace all spaces with underscores. This format is known as <code>snake_case</code> and is an alternative to <code>camelCase</code>.</li>
-<li>In the case of variable (column) names within a data frame, use underscores instead of spaces.</li>
-</ol>
-</li>
-<li>
-<strong>Variables identifying observational units</strong>:
-<ol style="list-style-type: decimal">
-<li>Any variables uniquely identifying each observational unit should be in the left-hand columns.</li>
-</ol>
-</li>
-<li>
-<strong>Dates</strong>:
-<ol style="list-style-type: decimal">
-<li>If only a <code>year</code> variable exists, then it should be represented as a numerical variable.</li>
-<li>If there are <code>year</code> and <code>month</code> variables, then convert them to <code>Date</code> objects as <code>year-month-01</code>. In other words, associate all observations from the same month to have a <code>day</code> of <code>01</code> so that a correct <code>Date</code> object can be assigned.</li>
-<li>If there are <code>year</code>, <code>month</code>, and <code>day</code> variables, then convert them to <code>Date</code> objects as <code>year-month-day</code>.</li>
-</ol>
-</li>
-<li>
-<strong>Ordered Factors, Factors, Characters, and Logicals</strong>:
-<ol style="list-style-type: decimal">
-<li>Ordinal categorical variables are represented as <code>ordered</code> factors.</li>
-<li>Categorical variables with a fixed and known set of levels are represented as regular <code>factor</code>s.</li>
-<li>Categorical variables whose possible levels are either unknown or of a very large number are represented as <code>character</code>s.</li>
-<li>Any “yes/no” character encoding of binary variables is converted to <code>TRUE/FALSE</code> logical variables.</li>
-</ol>
-</li>
-<li>
-<strong>Tidy data format</strong>:
-<ol style="list-style-type: decimal">
-<li>Whenever possible, save all data frames in <a href="http://vita.had.co.nz/papers/tidy-data.html">“tidy” data</a> format:
-<ol style="list-style-type: lower-alpha">
-<li>Each variable forms a column.</li>
-<li>Each observation forms a row.</li>
-<li>Each type of observational unit forms a table.</li>
-</ol>
-</li>
-<li>If converting the raw data to “tidy” data format alters the dataset too much, then make the code to convert to tidy format easily accessible in the help file.</li>
-</ol>
-</li>
-</ol>
-<p><strong>Note</strong>: The code used to pre-process the data can be found on the <a href="https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw">GitHub repository</a> for the package in the <code>process_data_sets.R</code> files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.</p>
-</div>
 <div id="data-sets" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-sets" class="anchor"></a>Data Sets</h2>
@@ -242,6 +166,16 @@
 <td align="left"><a href="https://fivethirtyeight.com/features/trump-might-be-the-first-president-to-scrap-a-national-monument/" class="uri">https://fivethirtyeight.com/features/trump-might-be-the-first-president-to-scrap-a-national-monument/</a></td>
 </tr>
 <tr class="even">
+<td align="left"><code>august_senate_polls</code></td>
+<td align="left">How Much Trouble Is Ted Cruz Really In?</td>
+<td align="left">Pollapalooza</td>
+<td align="left">Dhrimil Mehta</td>
+<td align="left">Janie Velencia</td>
+<td align="left">NA</td>
+<td align="left">2018-08-31</td>
+<td align="left"><a href="https://fivethirtyeight.com/features/how-much-trouble-is-ted-cruz-really-in/" class="uri">https://fivethirtyeight.com/features/how-much-trouble-is-ted-cruz-really-in/</a></td>
+</tr>
+<tr class="odd">
 <td align="left"><code>avengers</code></td>
 <td align="left">Joining The Avengers Is As Deadly As Jumping Off A Four-Story Building</td>
 <td align="left">Movies</td>
@@ -251,7 +185,7 @@
 <td align="left">2015-05-12</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/" class="uri">http://fivethirtyeight.com/features/avengers-death-comics-age-of-ultron/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>bachelorette</code></td>
 <td align="left">How To Spot A Front-Runner On The ‘Bachelor’ Or ‘Bachelorette’</td>
 <td align="left">TV</td>
@@ -261,7 +195,7 @@
 <td align="left">2017-05-22</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/the-bachelorette/" class="uri">https://fivethirtyeight.com/features/the-bachelorette/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>bad_drivers</code></td>
 <td align="left">Dear Mona, Which State Has The Worst Drivers?</td>
 <td align="left">Hope the Numbers Help</td>
@@ -271,7 +205,7 @@
 <td align="left">2014-10-24</td>
 <td align="left"><a href="http://fivethirtyeight.com/datalab/which-state-has-the-worst-drivers/" class="uri">http://fivethirtyeight.com/datalab/which-state-has-the-worst-drivers/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>bechdel</code></td>
 <td align="left">The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women</td>
 <td align="left">Movies</td>
@@ -281,7 +215,7 @@
 <td align="left">2014-04-01</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/" class="uri">http://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>biopics</code></td>
 <td align="left">Straight Outta Compton Is The Rare Biopic Not About White Dudes</td>
 <td align="left">Movies</td>
@@ -291,7 +225,7 @@
 <td align="left">2015-08-14</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/" class="uri">http://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>bob_ross</code></td>
 <td align="left">A Statistical Analysis of the Work of Bob Ross</td>
 <td align="left">Happy Spreadsheets</td>
@@ -300,6 +234,16 @@
 <td align="left">NA</td>
 <td align="left">2014-04-14</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/" class="uri">http://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>cabinet_turnover</code></td>
+<td align="left">Two Years In, Turnover In Trump’s Cabinet Is Still Historically High</td>
+<td align="left">Trump Cabinet</td>
+<td align="left">Nathaniel Rakich</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2019-01-08</td>
+<td align="left"><a href="https://fivethirtyeight.com/features/two-years-in-turnover-in-trumps-cabinet-is-still-historically-high/" class="uri">https://fivethirtyeight.com/features/two-years-in-turnover-in-trumps-cabinet-is-still-historically-high/</a></td>
 </tr>
 <tr class="even">
 <td align="left"><code>cand_events_20150114</code></td>
@@ -502,6 +446,16 @@
 <td align="left"><a href="http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/" class="uri">http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/</a></td>
 </tr>
 <tr class="even">
+<td align="left"><code>endorsements_2020</code></td>
+<td align="left">The 2020 Endorsement Primary</td>
+<td align="left">NA</td>
+<td align="left">Aarom Bycoffe</td>
+<td align="left">Rachael Dottle</td>
+<td align="left">Dustin Dienhart and Derek Shan</td>
+<td align="left">2019-05-29</td>
+<td align="left"><a href="https://projects.fivethirtyeight.com/2020-endorsements/democratic-primary/" class="uri">https://projects.fivethirtyeight.com/2020-endorsements/democratic-primary/</a></td>
+</tr>
+<tr class="odd">
 <td align="left"><code>endorsements</code></td>
 <td align="left">Pols And Polls Say The Same Thing: Jeb Bush Is A Weak Front-Runner</td>
 <td align="left">2016 Kickoff</td>
@@ -511,7 +465,7 @@
 <td align="left">2015-06-15</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/pols-and-polls-say-the-same-thing-jeb-bush-is-a-weak-front-runner/" class="uri">http://fivethirtyeight.com/features/pols-and-polls-say-the-same-thing-jeb-bush-is-a-weak-front-runner/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>fandango</code></td>
 <td align="left">Be Suspicious Of Online Movie Ratings, Especially Fandango’s</td>
 <td align="left">Movies</td>
@@ -521,7 +475,7 @@
 <td align="left">2015-10-15</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/fandango-movies-ratings/" class="uri">http://fivethirtyeight.com/features/fandango-movies-ratings/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>fifa_audience</code></td>
 <td align="left">How To Break FIFA</td>
 <td align="left">The Beautiful Game</td>
@@ -531,7 +485,7 @@
 <td align="left">2015-05-28</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/how-to-break-fifa/" class="uri">http://fivethirtyeight.com/features/how-to-break-fifa/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>flying</code></td>
 <td align="left">41 Percent Of Fliers Think You’re Rude If You Recline Your Seat</td>
 <td align="left">NA</td>
@@ -541,7 +495,7 @@
 <td align="left">2014-09-06</td>
 <td align="left"><a href="http://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/" class="uri">http://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>food_world_cup</code></td>
 <td align="left">The FiveThirtyEight International Food Association’s 2014 World Cup</td>
 <td align="left">FiveThirtyAte</td>
@@ -550,6 +504,16 @@
 <td align="left">NA</td>
 <td align="left">2014-06-25</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/" class="uri">http://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/</a></td>
+</tr>
+<tr class="even">
+<td align="left"><code>forecast_results_2018</code></td>
+<td align="left">How FiveThirtyEight’s 2018 Midterm Forecasts Did</td>
+<td align="left">2018 Election</td>
+<td align="left">Nate Silver</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2018-12-04</td>
+<td align="left"><a href="https://fivethirtyeight.com/features/how-fivethirtyeights-2018-midterm-forecasts-did/" class="uri">https://fivethirtyeight.com/features/how-fivethirtyeights-2018-midterm-forecasts-did/</a></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>google_trends</code></td>
@@ -570,6 +534,26 @@
 <td align="left">NA</td>
 <td align="left">NA</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/goose-egg-new-save-stat-relief-pitchers/" class="uri">https://fivethirtyeight.com/features/goose-egg-new-save-stat-relief-pitchers/</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>governor_national_forecast</code></td>
+<td align="left">How FiveThirtyEight’s 2018 Midterm Forecasts Did</td>
+<td align="left">2018 Election</td>
+<td align="left">Nate Silver</td>
+<td align="left">Design and development by Jay Boice, Aaron Bycoffe, Rachael Dottle, Ritchie King, Ella Koeze, Andrei Scheinkman, Gus Wezerek and Julia Wolfe. Research by Dustin Dienhart, Andrea Jones-Rooy, Dhrumil Mehta, Mai Nguyen, Nathaniel Rakich, Derek Shan and Geoffrey Skelley.</td>
+<td align="left">NA</td>
+<td align="left">2018-11-06</td>
+<td align="left"><a href="https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/" class="uri">https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/</a></td>
+</tr>
+<tr class="even">
+<td align="left"><code>governor_state_forecast</code></td>
+<td align="left">How FiveThirtyEight’s 2018 Midterm Forecasts Did</td>
+<td align="left">2018 Election</td>
+<td align="left">Nate Silver</td>
+<td align="left">Design and development by Jay Boice, Aaron Bycoffe, Rachael Dottle, Ritchie King, Ella Koeze, Andrei Scheinkman, Gus Wezerek and Julia Wolfe. Research by Dustin Dienhart, Andrea Jones-Rooy, Dhrumil Mehta, Mai Nguyen, Nathaniel Rakich, Derek Shan and Geoffrey Skelley.</td>
+<td align="left">NA</td>
+<td align="left">2018-11-06</td>
+<td align="left"><a href="https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/" class="uri">https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/</a></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>hate_crimes</code></td>
@@ -610,6 +594,26 @@
 <td align="left">NA</td>
 <td align="left">2014-09-17</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/" class="uri">http://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>house_district_forecast</code></td>
+<td align="left">Forecasting the race for the House</td>
+<td align="left">2018 Election</td>
+<td align="left">Nate Silver</td>
+<td align="left">Design and development by Jay Boice, Emma Brillhart, Aaron Bycoffe, Rachael Dottle, Lauren Eastridge, Ritchie King, Ella Koeze, Andrei Scheinkman, Gus Wezerek and Julia Wolfe. Research by Dustin Dienhart, Andrea Jones-Rooy, Dhrumil Mehta, Mai Nguyen, Nathaniel Rakich, Derek Shan and Geoffrey Skelley.</td>
+<td align="left">NA</td>
+<td align="left">2018-11-06</td>
+<td align="left"><a href="https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/" class="uri">https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/</a></td>
+</tr>
+<tr class="even">
+<td align="left"><code>house_national_forecast</code></td>
+<td align="left">Forecasting the race for the House</td>
+<td align="left">2018 Election</td>
+<td align="left">Nate Silver</td>
+<td align="left">Design and development by Jay Boice, Emma Brillhart, Aaron Bycoffe, Rachael Dottle, Lauren Eastridge, Ritchie King, Ella Koeze, Andrei Scheinkman, Gus Wezerek and Julia Wolfe. Research by Dustin Dienhart, Andrea Jones-Rooy, Dhrumil Mehta, Mai Nguyen, Nathaniel Rakich, Derek Shan and Geoffrey Skelley.</td>
+<td align="left">NA</td>
+<td align="left">2018-11-06</td>
+<td align="left"><a href="https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/" class="uri">https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/</a></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>index</code></td>
@@ -742,6 +746,16 @@
 <td align="left"><a href="https://projects.fivethirtyeight.com/complete-history-of-mlb/" class="uri">https://projects.fivethirtyeight.com/complete-history-of-mlb/</a></td>
 </tr>
 <tr class="even">
+<td align="left"><code>mueller_approval_polls</code></td>
+<td align="left">Both Parties Think The Mueller Report Was Fair. They Just Completely Disagree On What It Says.</td>
+<td align="left">Russia Investigation</td>
+<td align="left">Dhrumil Mehta</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left"><a href="https://fivethirtyeight.com/features/both-parties-think-the-mueller-report-was-fair-they-just-disagree-on-what-it-says/" class="uri">https://fivethirtyeight.com/features/both-parties-think-the-mueller-report-was-fair-they-just-disagree-on-what-it-says/</a></td>
+</tr>
+<tr class="odd">
 <td align="left"><code>murder_2015_final</code></td>
 <td align="left">A Handful Of Cities Are Driving 2016’s Rise In Murder</td>
 <td align="left">Crime</td>
@@ -751,7 +765,7 @@
 <td align="left">2016-10-06</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/" class="uri">http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>murder_2016_prelim</code></td>
 <td align="left">A Handful Of Cities Are Driving 2016’s Rise In Murder</td>
 <td align="left">Crime</td>
@@ -761,7 +775,7 @@
 <td align="left">2016-10-06</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/" class="uri">http://fivethirtyeight.com/features/a-handful-of-cities-are-driving-2016s-rise-in-murders/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>nba_carmelo</code></td>
 <td align="left">The Complete History Of The NBA</td>
 <td align="left">NA</td>
@@ -771,7 +785,7 @@
 <td align="left">NA</td>
 <td align="left"><a href="https://projects.fivethirtyeight.com/complete-history-of-the-nba/#warriors" class="uri">https://projects.fivethirtyeight.com/complete-history-of-the-nba/#warriors</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>nba_draft_2015</code></td>
 <td align="left">Projecting The Top 50 Players In The 2015 NBA Draft Class</td>
 <td align="left">Basketball</td>
@@ -781,7 +795,7 @@
 <td align="left">2015-06-19</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/" class="uri">http://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>nba_elo</code></td>
 <td align="left">NA</td>
 <td align="left">NA</td>
@@ -791,7 +805,7 @@
 <td align="left">NA</td>
 <td align="left">NA</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>nba_tattoos</code></td>
 <td align="left">Accurately Counting NBA Tattoos Isn’t Easy, Even If You’re Up Close</td>
 <td align="left">NA</td>
@@ -800,6 +814,16 @@
 <td align="left">NA</td>
 <td align="left">2014-06-07</td>
 <td align="left"><a href="http://fivethirtyeight.com/datalab/accurately-counting-nba-tattoos-isnt-easy-even-if-youre-up-close/" class="uri">http://fivethirtyeight.com/datalab/accurately-counting-nba-tattoos-isnt-easy-even-if-youre-up-close/</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ncaa-womens-basketball-tournament</code></td>
+<td align="left">The Rise And Fall of Women’s College Basketball Dynasties</td>
+<td align="left">College Basketball</td>
+<td align="left">Neil Paine</td>
+<td align="left">Sara Ziegler</td>
+<td align="left">NA</td>
+<td align="left">2019-03-06</td>
+<td align="left"><a href="https://fivethirtyeight.com/features/louisiana-tech-was-the-uconn-of-the-80s/" class="uri">https://fivethirtyeight.com/features/louisiana-tech-was-the-uconn-of-the-80s/</a></td>
 </tr>
 <tr class="even">
 <td align="left"><code>nfl_elo</code></td>
@@ -932,6 +956,16 @@
 <td align="left">NA</td>
 </tr>
 <tr class="odd">
+<td align="left"><code>partisan_lean_district</code></td>
+<td align="left">FiveThirtyEight’s Partisan Lean</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
 <td align="left"><code>police_deaths</code></td>
 <td align="left">The Dallas Shooting Was Among The Deadliest For Police In U.S. History</td>
 <td align="left">Law Enforcement</td>
@@ -941,7 +975,7 @@
 <td align="left">2016-07-08</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/the-dallas-shooting-was-among-the-deadliest-for-police-in-u-s-history/" class="uri">https://fivethirtyeight.com/features/the-dallas-shooting-was-among-the-deadliest-for-police-in-u-s-history/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>police_killings</code></td>
 <td align="left">Where Police Have Killed Americans In 2015</td>
 <td align="left">Police Killings</td>
@@ -951,7 +985,7 @@
 <td align="left">2015-06-03</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015" class="uri">http://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>police_locals</code></td>
 <td align="left">Most Police Don’t Live In The Cities They Serve</td>
 <td align="left">Ferguson</td>
@@ -961,7 +995,7 @@
 <td align="left">2014-08-20</td>
 <td align="left"><a href="http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/" class="uri">http://fivethirtyeight.com/datalab/most-police-dont-live-in-the-cities-they-serve/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>pres_2016_trail</code></td>
 <td align="left">The Last 10 Weeks Of 2016 Campaign Stops In One Handy Gif</td>
 <td align="left">2016 Election</td>
@@ -971,7 +1005,7 @@
 <td align="left">2016-12-16</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/the-last-10-weeks-of-2016-campaign-stops-in-one-handy-gif/" class="uri">https://fivethirtyeight.com/features/the-last-10-weeks-of-2016-campaign-stops-in-one-handy-gif/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>pres_commencement</code></td>
 <td align="left">Sitting Presidents Give Way More Commencement Speeches Than They Used To</td>
 <td align="left">Higher Education</td>
@@ -981,7 +1015,7 @@
 <td align="left">2016-05-11</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/sitting-presidents-give-way-more-commencement-speeches-than-they-used-to/" class="uri">http://fivethirtyeight.com/features/sitting-presidents-give-way-more-commencement-speeches-than-they-used-to/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>pulitzer</code></td>
 <td align="left">Do Pulitzers Help Newspapers Keep Readers?</td>
 <td align="left">Awards</td>
@@ -991,7 +1025,7 @@
 <td align="left">2014-04-15</td>
 <td align="left"><a href="http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/" class="uri">http://fivethirtyeight.com/datalab/do-pulitzers-help-newspapers-keep-readers/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>ratings</code></td>
 <td align="left">Al Gore’s New Movie Exposes The Big Flaw In Online Movie Ratings</td>
 <td align="left">Movies</td>
@@ -1001,7 +1035,7 @@
 <td align="left">2017-09-07</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/" class="uri">https://fivethirtyeight.com/features/al-gores-new-movie-exposes-the-big-flaw-in-online-movie-ratings/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>riddler_castles</code></td>
 <td align="left">Can You Rule Riddler Nation?</td>
 <td align="left">The Riddler</td>
@@ -1011,7 +1045,7 @@
 <td align="left">2017-02-03</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/can-you-rule-riddler-nation/" class="uri">https://fivethirtyeight.com/features/can-you-rule-riddler-nation/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>riddler_castles2</code></td>
 <td align="left">The Battle For Riddler Nation, Round 2</td>
 <td align="left">The Riddler</td>
@@ -1021,7 +1055,7 @@
 <td align="left">2017-05-19</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/the-battle-for-riddler-nation-round-2/" class="uri">http://fivethirtyeight.com/features/the-battle-for-riddler-nation-round-2/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>riddler_pick_lowest</code></td>
 <td align="left">Pick A Number, Any Number</td>
 <td align="left">The Riddler</td>
@@ -1030,6 +1064,16 @@
 <td align="left">NA</td>
 <td align="left">2017-07-28</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/pick-a-number-any-number/" class="uri">https://fivethirtyeight.com/features/pick-a-number-any-number/</a></td>
+</tr>
+<tr class="even">
+<td align="left"><code>russia_investigation</code></td>
+<td align="left">Is The Russia Investigation Really Another Watergate?</td>
+<td align="left">NA</td>
+<td align="left">Amelia Thomson-DeVeaux</td>
+<td align="left">Julia Wolfe</td>
+<td align="left">NA</td>
+<td align="left">2019-03-22</td>
+<td align="left"><a href="https://projects.fivethirtyeight.com/russia-investigation/" class="uri">https://projects.fivethirtyeight.com/russia-investigation/</a></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>san_andreas</code></td>
@@ -1052,6 +1096,16 @@
 <td align="left"><a href="https://projects.fivethirtyeight.com/sandy-311/" class="uri">https://projects.fivethirtyeight.com/sandy-311/</a></td>
 </tr>
 <tr class="odd">
+<td align="left"><code>senate_national_forecast</code></td>
+<td align="left">Senate forecasts</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2018-11-06</td>
+<td align="left"><a href="https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate/" class="uri">https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate/</a></td>
+</tr>
+<tr class="even">
 <td align="left"><code>senate_polls</code></td>
 <td align="left">Early Senate Polls Have Plenty to Tell Us About November</td>
 <td align="left">2014 Midterms</td>
@@ -1061,7 +1115,7 @@
 <td align="left">2014-04-16</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/early-senate-polls-have-plenty-to-tell-us-about-november/" class="uri">http://fivethirtyeight.com/features/early-senate-polls-have-plenty-to-tell-us-about-november/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>senators</code></td>
 <td align="left">The Worst Tweeter In Politics Isn’t Trump</td>
 <td align="left">The Trump Administration</td>
@@ -1071,7 +1125,7 @@
 <td align="left">2017-10-24</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/the-worst-tweeter-in-politics-isnt-trump/" class="uri">https://fivethirtyeight.com/features/the-worst-tweeter-in-politics-isnt-trump/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>state_payrolls</code></td>
 <td align="left">NA</td>
 <td align="left">NA</td>
@@ -1081,7 +1135,7 @@
 <td align="left">NA</td>
 <td align="left">NA</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>steak_survey</code></td>
 <td align="left">How Americans Like Their Steak</td>
 <td align="left">FiveThirtyAte</td>
@@ -1091,7 +1145,7 @@
 <td align="left">2014-05-16</td>
 <td align="left"><a href="http://fivethirtyeight.com/datalab/how-americans-like-their-steak/" class="uri">http://fivethirtyeight.com/datalab/how-americans-like-their-steak/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>tarantino</code></td>
 <td align="left">A Complete Catalog Of Every Time Someone Cursed Or Bled Out In A Quentin Tarantino Movie</td>
 <td align="left">Word Count</td>
@@ -1101,7 +1155,7 @@
 <td align="left">2015-12-09</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/" class="uri">http://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>tennis_events_time</code></td>
 <td align="left">Why Some Tennis Matches Take Forever</td>
 <td align="left">Tick Tock</td>
@@ -1111,7 +1165,7 @@
 <td align="left">2015-06-06</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/" class="uri">http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>tennis_players_time</code></td>
 <td align="left">Why Some Tennis Matches Take Forever</td>
 <td align="left">Tick Tock</td>
@@ -1121,7 +1175,7 @@
 <td align="left">2015-06-06</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/" class="uri">http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>tennis_serve_time</code></td>
 <td align="left">Why Some Tennis Matches Take Forever</td>
 <td align="left">Tick Tock</td>
@@ -1131,7 +1185,7 @@
 <td align="left">2015-06-06</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/" class="uri">http://fivethirtyeight.com/features/why-some-tennis-matches-take-forever/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>tenth_circuit</code></td>
 <td align="left">For A Trump Nominee, Neil Gorsuch’s Record Is Surprisingly Moderate On Immigration</td>
 <td align="left">Supreme Court</td>
@@ -1141,7 +1195,7 @@
 <td align="left">2017-03-27</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/for-a-trump-nominee-neil-gorsuchs-record-is-surprisingly-moderate-on-immigration/?ex_cid=538twitter" class="uri">https://fivethirtyeight.com/features/for-a-trump-nominee-neil-gorsuchs-record-is-surprisingly-moderate-on-immigration/?ex_cid=538twitter</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>trump_approval_poll</code></td>
 <td align="left">How Popular is Donald Trump</td>
 <td align="left">NA</td>
@@ -1151,7 +1205,7 @@
 <td align="left">NA</td>
 <td align="left"><a href="https://projects.fivethirtyeight.com/trump-approval-ratings/" class="uri">https://projects.fivethirtyeight.com/trump-approval-ratings/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>trump_approval_trend</code></td>
 <td align="left">How Popular is Donald Trump</td>
 <td align="left">NA</td>
@@ -1160,6 +1214,16 @@
 <td align="left">Nate Silver</td>
 <td align="left">NA</td>
 <td align="left"><a href="https://projects.fivethirtyeight.com/trump-approval-ratings/" class="uri">https://projects.fivethirtyeight.com/trump-approval-ratings/</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>trump_lawsuits</code></td>
+<td align="left">MANY</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
 </tr>
 <tr class="even">
 <td align="left"><code>trump_news</code></td>
@@ -1304,6 +1368,81 @@
 </tbody>
 </table>
 </div>
+<div id="guidelines" class="section level2">
+<h2 class="hasAnchor">
+<a href="#guidelines" class="anchor"></a>Guidelines</h2>
+<p>In order to make the data easily accessible to R novices, we pre-process the original data sets as they exist in the <a href="https://github.com/fivethirtyeight/data">538 GitHub repository</a> to adhere to the following guidelines:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Naming conventions for data frame and variable names</strong>:
+<ol style="list-style-type: decimal">
+<li>Whenever possible, all names should be no more than 20 characters long. Exceptions to this rule exist when shortening the names to less than 20 characters would lead to a loss of information.</li>
+<li>Use only lower case characters and replace all spaces with underscores. This format is known as <code>snake_case</code> and is an alternative to <code>camelCase</code>.</li>
+<li>In the case of variable (column) names within a data frame, use underscores instead of spaces.</li>
+</ol>
+</li>
+<li>
+<strong>Variables identifying observational units</strong>:
+<ol style="list-style-type: decimal">
+<li>Any variables uniquely identifying each observational unit should be in the left-hand columns.</li>
+</ol>
+</li>
+<li>
+<strong>Dates</strong>:
+<ol style="list-style-type: decimal">
+<li>If only a <code>year</code> variable exists, then it should be represented as a numerical variable.</li>
+<li>If there are <code>year</code> and <code>month</code> variables, then convert them to <code>Date</code> objects as <code>year-month-01</code>. In other words, associate all observations from the same month to have a <code>day</code> of <code>01</code> so that a correct <code>Date</code> object can be assigned.</li>
+<li>If there are <code>year</code>, <code>month</code>, and <code>day</code> variables, then convert them to <code>Date</code> objects as <code>year-month-day</code>.</li>
+</ol>
+</li>
+<li>
+<strong>Ordered Factors, Factors, Characters, and Logicals</strong>:
+<ol style="list-style-type: decimal">
+<li>Ordinal categorical variables are represented as <code>ordered</code> factors.</li>
+<li>Categorical variables with a fixed and known set of levels are represented as regular <code>factor</code>s.</li>
+<li>Categorical variables whose possible levels are either unknown or of a very large number are represented as <code>character</code>s.</li>
+<li>Any “yes/no” character encoding of binary variables is converted to <code>TRUE/FALSE</code> logical variables.</li>
+</ol>
+</li>
+<li>
+<strong>Tidy data format</strong>:
+<ol style="list-style-type: decimal">
+<li>Whenever possible, save all data frames in <a href="http://vita.had.co.nz/papers/tidy-data.html">“tidy” data</a> format:
+<ol style="list-style-type: lower-alpha">
+<li>Each variable forms a column.</li>
+<li>Each observation forms a row.</li>
+<li>Each type of observational unit forms a table.</li>
+</ol>
+</li>
+<li>If converting the raw data to “tidy” data format alters the dataset too much, then make the code to convert to tidy format easily accessible in the help file.</li>
+</ol>
+</li>
+</ol>
+<p><strong>Note</strong>: The code used to pre-process the data can be found on the <a href="https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw">GitHub repository</a> for the package in the <code>process_data_sets.R</code> files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.</p>
+</div>
+<div id="motivation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#motivation" class="anchor"></a>Motivation</h2>
+<p>We are involved in statistics and data science education, in particular at the introductory undergraduate level. As such, we are always looking for data sets that balance being</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Rich enough</strong> to answer meaningful questions with, <strong>real enough</strong> to ensure that there is context, and <strong>realistic enough</strong> to convey to students that data as it exists “in the wild” often needs processing.</li>
+<li>Easily and quickly accessible to novices, so that we <a href="https://arxiv.org/abs/1507.05346">minimize the prerequisites to research</a>.</li>
+</ol>
+<p>It has been our experience that many data sets that exist in R packages, such as the <a href="https://github.com/hadley/nycflights13"><code>nycflights13</code></a>, <a href="https://github.com/hadley/babynames"><code>babynames</code></a>, and <a href="https://github.com/jennybc/gapminder"><code>gapminder</code></a> packages, are of great pedagogical value as they:</p>
+<ul>
+<li>Satisfy the above two goals.</li>
+<li>Are in standardized format as they fit into the <a href="https://CRAN.R-project.org/package=tidyverse/vignettes/manifesto.html">tidy tools</a> ecosystem.</li>
+<li>Are really fun to play with!</li>
+</ul>
+<p>It is along these lines that we present <code>fivethirtyeight</code>: an R package of data and code behind the stories and interactives at <a href="http://fivethirtyeight.com/">FiveThirtyEight.com</a>, a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on <a href="https://github.com/fivethirtyeight/data">GitHub</a>, a web-based repository for collaboration on code and data.</p>
+<p>With consultation from <a href="http://fivethirtyeight.com/contributors/andrew-flowers/">Andrew Flowers</a> and <a href="http://fivethirtyeight.com/contributors/andrei-scheinkman/">Andrei Scheinkman</a> of FiveThirtyEight, we go one step further by:</p>
+<ol style="list-style-type: decimal">
+<li>Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data right away.</li>
+<li>Packaging it all in an easy to load format: package installation instead of working with CSV files.</li>
+<li>Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.</li>
+</ol>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -1311,9 +1450,9 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#motivation">Motivation</a></li>
+<li><a href="#data-sets">Data Sets</a></li>
       <li><a href="#guidelines">Guidelines</a></li>
-      <li><a href="#data-sets">Data Sets</a></li>
+      <li><a href="#motivation">Motivation</a></li>
       </ul>
 </div>
       </div>
@@ -1321,17 +1460,20 @@
 </div>
 
 
+
       <footer><div class="copyright">
   <p>Developed by Albert Y. Kim, Chester Ismay, Jennifer Chunn.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

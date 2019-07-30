@@ -16,13 +16,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -50,6 +52,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
 <![endif]-->
 
 
+
   </head>
 
   <body>
@@ -74,7 +77,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -101,7 +104,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
       <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
     </li>
     <li>
-      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting-</a>
+      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting</a>
     </li>
     <li>
       <a href="../articles/comics_gender.html">Gender in Comic Books</a>
@@ -111,9 +114,6 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
     </li>
     <li>
       <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
-    </li>
-    <li>
-      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
     <li>
       <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
@@ -128,7 +128,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -139,6 +139,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -187,12 +188,12 @@ Analysis of the submitted solutions can be found at: <a href='https://fivethirty
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>dplyr</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>tidyr</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>stringr</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyr</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>stringr</span>)
 <span class='no'>riddler_castles_tidy</span><span class='kw'>&lt;-</span><span class='no'>riddler_castles2</span> <span class='kw'>%&gt;%</span>
    <span class='fu'><a href='https://tidyr.tidyverse.org/reference/gather.html'>gather</a></span>(<span class='kw'>key</span> <span class='kw'>=</span> <span class='no'>castle</span> , <span class='kw'>value</span> <span class='kw'>=</span> <span class='no'>soldiers</span>, <span class='no'>castle1</span>:<span class='no'>castle10</span>) <span class='kw'>%&gt;%</span>
-   <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>castle</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/numeric'>as.numeric</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/stringr/topics/str_replace'>str_replace</a></span>(<span class='no'>castle</span>, <span class='st'>"castle"</span>,<span class='st'>""</span>)))</div></pre>
+   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>castle</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace</a></span>(<span class='no'>castle</span>, <span class='st'>"castle"</span>,<span class='st'>""</span>)))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -210,19 +211,23 @@ Analysis of the submitted solutions can be found at: <a href='https://fivethirty
   </div>
 </div>
 
+
       <footer>
       <div class="copyright">
   <p>Developed by Albert Y. Kim, Chester Ismay, Jennifer Chunn.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
