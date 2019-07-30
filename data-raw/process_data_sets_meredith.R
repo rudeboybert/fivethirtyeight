@@ -120,7 +120,8 @@ mayweather_mcgregor_tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv"
     emojis = as.logical(emojis),
     retweeted = as.logical(retweeted),
     id = as.character(id)
-  )
+  ) %>% 
+  slice(1:10)
 usethis::use_data(mayweather_mcgregor_tweets, overwrite = TRUE)
 
 
