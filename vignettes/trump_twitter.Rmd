@@ -145,9 +145,9 @@ plotSentByTime <- function(trump_tweet_times, timeGroupVar) {
   timeVarLabel <- str_to_title(timeVar)
   
   trump_tweet_time_sent <- trump_tweet_times %>% 
-    rename_(timeGroup = timeVar) %>% 
+    rename(timeGroup = !! timeVar) %>% 
     group_by(timeGroup) %>% 
-    summarise(score = mean(score, na.rm=TRUE),Count = n()) %>% 
+    summarise(score = mean(score, na.rm=TRUE), Count = n()) %>% 
     ungroup()
 
   ggplot(trump_tweet_time_sent, aes(x=timeGroup, y=Count, fill = score)) +
@@ -159,7 +159,7 @@ plotSentByTime <- function(trump_tweet_times, timeGroupVar) {
 
 
 ```{r plot_hour, fig.width=7, warning=FALSE}
-plotSentByTime(trump_tweet_times, hour)
+plotSentByTime(trump_tweet_times, "hour")
 ```
 
 * Trump tweets the least between 4 and 10 am. 
@@ -167,14 +167,14 @@ plotSentByTime(trump_tweet_times, hour)
 
 
 ```{r plot_weekday, fig.width=7, warning=FALSE}
-plotSentByTime(trump_tweet_times, weekday)
+plotSentByTime(trump_tweet_times, "weekday")
 ```
 
 * Trump tweeted the most on Tuesday and Wednesday 
 * Trump was most positive in the second part of the work week (Wed, Thurs, Fri)
 
 ```{r plot_month, fig.width=7, warning=FALSE}
-plotSentByTime(trump_tweet_times, month_over_time)
+plotSentByTime(trump_tweet_times, "month_over_time")
 ```
 
 * In this dataset, the number of tweets decreased after November 2015 and drastically dropped off after March 2016.  It is unclear if this is a result of actual decrease in tweeting frequency or a result of the data collection process.
