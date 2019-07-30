@@ -4,7 +4,7 @@ Description: Datasets and code published by the data journalism website
     'FiveThirtyEight' available at <https://github.com/fivethirtyeight/data>. 
     Note that while we received guidance from editors at 'FiveThirtyEight', this 
     package is not officially published by 'FiveThirtyEight'.
-Version: 0.4.0.9000
+Version: 0.5.0
 Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = c("aut", "cre")),
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
@@ -44,15 +44,5 @@ Suggests:
     scales,
     broom,
     magrittr,
-    rmarkdown,
-    slam (>= 0.1-42),
-    highcharter (>= 0.7),
-    tidytext,
-    textdata,
-    hunspell,
-    fmsb,
-    wordcloud,
-    corrplot,
-    ggraph,
-    igraph
+    rmarkdown
 VignetteBuilder: knitr
