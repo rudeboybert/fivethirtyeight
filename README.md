@@ -96,8 +96,6 @@ vignette("user_contributed_vignettes.Rmd", package = "fivethirtyeight")
     his rstudio::conf talk in Orlando, Florida in January. The video of
     his talk is available
     [here](https://www.rstudio.com/resources/videos/finding-and-telling-stories-with-r/).
-  - We’re now featured on
-    [Kaggle](https://www.kaggle.com/fivethirtyeight/fivethirtyeight)\!
   - Click this [Google
     Sheet](https://docs.google.com/spreadsheets/d/1IMWAHNPIDzplafWW6AGnGyHmB1BMjohEw_V5HmT70Gs/edit#gid=840984416)
     for a master spreadsheet connecting
