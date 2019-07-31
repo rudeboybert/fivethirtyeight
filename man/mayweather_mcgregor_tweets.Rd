@@ -32,19 +32,17 @@ The raw data behind the story
 \url{https://fivethirtyeight.com/?post_type=fte_features&p=161615}.
 }
 \examples{
-# To obtain the entire dataset, run the code inside the following if statement:
-if(FALSE){
-  library(dplyr)
-  library(tidyr)
-  library(readr)
-  url <-
-   "https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv"
-  mayweather_mcgregor_tweets <- read_csv(url) \%>\%
-    mutate(
-      emojis = as.logical(emojis),
-      retweeted = as.logical(retweeted),
-      id = as.character(id)
-    )
-}
+# To obtain the entire dataset, run the following code:
+library(dplyr)
+library(readr)
+
+mayweather_mcgregor_tweets <-
+  "https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv" \%>\%
+  read_csv() \%>\%
+  mutate(
+    emojis = as.logical(emojis),
+    retweeted = as.logical(retweeted),
+    id = as.character(id)
+  )
 }
 \keyword{datasets}

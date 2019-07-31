@@ -42,15 +42,14 @@ library(fivethirtyeight)
 data(bechdel)
 head(bechdel)
 ?bechdel
+
 # If using RStudio:
 View(bechdel)
-
-# To see a list of all data sets:
-data(package = "fivethirtyeight")
-
-# To see a more detailed list of all data sets, see the package vignette:
-vignette("fivethirtyeight", package = "fivethirtyeight")
 ```
+
+To see a detailed list of all 127 datasets, including information on the
+corresponding articles published on FiveThirtyEight.com, click
+[here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
 
 ## Article in “Technology Innovations in Statistics Education”
 

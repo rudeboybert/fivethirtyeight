@@ -284,20 +284,18 @@
 #' Data was collected on August 27, 2017 between 12:05 a.m. and 1:15 a.m. EDT
 #' using the Twitter streaming API. \url{https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor}
 #' @examples
-#' # To obtain the entire dataset, run the code inside the following if statement:
-#' if(FALSE){
-#'   library(dplyr)
-#'   library(tidyr)
-#'   library(readr)
-#'   url <-
-#'    "https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv"
-#'   mayweather_mcgregor_tweets <- read_csv(url) %>%
-#'     mutate(
-#'       emojis = as.logical(emojis),
-#'       retweeted = as.logical(retweeted),
-#'       id = as.character(id)
-#'     )
-#' }
+#' # To obtain the entire dataset, run the following code:
+#' library(dplyr)
+#' library(readr)
+#' 
+#' mayweather_mcgregor_tweets <-
+#'   "https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv" %>%
+#'   read_csv() %>%
+#'   mutate(
+#'     emojis = as.logical(emojis),
+#'     retweeted = as.logical(retweeted),
+#'     id = as.character(id)
+#'   )
 "mayweather_mcgregor_tweets"
 
 

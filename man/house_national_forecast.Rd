@@ -4,7 +4,7 @@
 \name{house_national_forecast}
 \alias{house_national_forecast}
 \title{2018 House Forecast}
-\format{A dataframe with 588 rows representing district-level results of the 
+\format{A dataframe with 588 rows representing district-level results of the
 classic, lite, and deluxe house forecasts since 2018/08/01 and 11 variables.
 \describe{
 \item{forecastdate}{date of the forecast}
