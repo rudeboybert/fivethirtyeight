@@ -19,7 +19,7 @@ This is a resubmission. In this version I have:
 
 ## R CMD check results
 
-There were no ERRORs or WARNINGs. There were 3 NOTEs:
+There were originally no ERRORs or WARNINGs. There were 3 NOTEs:
 
 * From Rhub (R-devel): one example had CPU or elapsed time > 5s (`comic_characters`), but this NOTE did not occur in any other test environment.
 * From Rhub (R-release): one example had CPU or elapsed time > 5s (`ratings`), but this NOTE did not occur in any other test environment.
