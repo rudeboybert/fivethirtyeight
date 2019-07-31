@@ -68,7 +68,7 @@ https://fivethirtyeight.com/?post_type=fte_features&amp;amp;p=161615." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0.9000</span>
       </span>
     </div>
 
@@ -186,20 +186,27 @@ using the Twitter streaming API. <a href='https://github.com/fivethirtyeight/dat
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the code inside the following if statement:</span>
-<span class='kw'>if</span>(<span class='fl'>FALSE</span>){
-  <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)
-  <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyr</span>)
-  <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>readr</span>)
-  <span class='no'>url</span> <span class='kw'>&lt;-</span>
-   <span class='st'>"https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv"</span>
-  <span class='no'>mayweather_mcgregor_tweets</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span>(<span class='no'>url</span>) <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(
-      <span class='kw'>emojis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/logical.html'>as.logical</a></span>(<span class='no'>emojis</span>),
-      <span class='kw'>retweeted</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/logical.html'>as.logical</a></span>(<span class='no'>retweeted</span>),
-      <span class='kw'>id</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='no'>id</span>)
-    )
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='co'># To obtain the entire dataset, run the following code:</span>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>readr</span>)
+
+<span class='no'>mayweather_mcgregor_tweets</span> <span class='kw'>&lt;-</span>
+  <span class='st'>"https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv"</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(
+    <span class='kw'>emojis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/logical.html'>as.logical</a></span>(<span class='no'>emojis</span>),
+    <span class='kw'>retweeted</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/logical.html'>as.logical</a></span>(<span class='no'>retweeted</span>),
+    <span class='kw'>id</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='no'>id</span>)
+  )</div><div class='output co'>#&gt; <span class='message'>Parsed with column specification:</span>
+#&gt; <span class='message'>cols(</span>
+#&gt; <span class='message'>  created_at = col_datetime(format = ""),</span>
+#&gt; <span class='message'>  emojis = col_logical(),</span>
+#&gt; <span class='message'>  id = col_double(),</span>
+#&gt; <span class='message'>  link = col_character(),</span>
+#&gt; <span class='message'>  retweeted = col_logical(),</span>
+#&gt; <span class='message'>  screen_name = col_character(),</span>
+#&gt; <span class='message'>  text = col_character()</span>
+#&gt; <span class='message'>)</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

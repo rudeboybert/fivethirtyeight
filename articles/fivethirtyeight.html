@@ -5,13 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-<code>fivethirtyeight</code> Package • fivethirtyeight</title>
+<title>fivethirtyeight Package • fivethirtyeight</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="&lt;code&gt;fivethirtyeight&lt;/code&gt; Package">
+<script src="../pkgdown.js"></script><meta property="og:title" content="fivethirtyeight Package">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -32,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0.9000</span>
       </span>
     </div>
 
@@ -110,11 +109,10 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>
-<code>fivethirtyeight</code> Package</h1>
+      <h1>fivethirtyeight Package</h1>
                         <h4 class="author">Albert Y. Kim, Chester Ismay, and Jennifer Chunn</h4>
             
-            <h4 class="date">2019-07-30</h4>
+            <h4 class="date">2019-07-31</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/fivethirtyeight.Rmd"><code>vignettes/fivethirtyeight.Rmd</code></a></small>
       <div class="hidden name"><code>fivethirtyeight.Rmd</code></div>
@@ -126,29 +124,16 @@
 <div id="note" class="section level2">
 <h2 class="hasAnchor">
 <a href="#note" class="anchor"></a>Note</h2>
-<p>Given CRAN package size restrictions, the following 9 datasets only consist of a preview of the first 10 rows of the full dataset. Code to load the full dataset are provided in the respective help file examples. For example, type <code><a href="../reference/house_district_forecast.html">?house_district_forecast</a></code>.</p>
-<table class="table"><tbody>
-<tr class="odd">
-<td align="left"><code>comic_characters</code></td>
-<td align="left"><code>mlb_elo</code></td>
-<td align="left"><code>ratings</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>goose</code></td>
-<td align="left"><code>nba_carmelo</code></td>
-<td align="left"><code>senators</code></td>
-</tr>
-<tr class="odd">
-<td align="left"><code>house_district_forecast</code></td>
-<td align="left"><code>nfl_elo</code></td>
-<td align="left"><code>spi_matches</code></td>
-</tr>
-</tbody></table>
+<p>All 127 datasets included in the <code>fivethirtyeight</code> package are listed in the next section. However due to CRAN-hosted R package size restrictions, the following 10 datasets out of 127 only consist of a preview of the first 10 rows of the full dataset. Code to load the full dataset into R are provided in the respective help file example. For example, type <code><a href="../reference/house_district_forecast.html">?house_district_forecast</a></code> into R.</p>
+<pre><code>##  [1] "comic_characters"           "goose"                     
+##  [3] "house_district_forecast"    "mayweather_mcgregor_tweets"
+##  [5] "mlb_elo"                    "nba_carmelo"               
+##  [7] "nfl_elo"                    "ratings"                   
+##  [9] "senators"                   "spi_matches"</code></pre>
 </div>
-<div id="datasets" class="section level2">
+<div id="all-datasets" class="section level2">
 <h2 class="hasAnchor">
-<a href="#datasets" class="anchor"></a>Datasets</h2>
-<p>Here are all 125 datasets included in the <code>fivethirtyeight</code> package:</p>
+<a href="#all-datasets" class="anchor"></a>All datasets</h2>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Data Frame Name</th>
@@ -472,16 +457,6 @@
 <td align="left"><a href="http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/" class="uri">http://fivethirtyeight.com/features/blatters-reign-at-fifa-hasnt-helped-soccers-poor/</a></td>
 </tr>
 <tr class="even">
-<td align="left"><code>endorsements_2020</code></td>
-<td align="left">The 2020 Endorsement Primary</td>
-<td align="left"></td>
-<td align="left">Aarom Bycoffe</td>
-<td align="left">Rachael Dottle</td>
-<td align="left">Dustin Dienhart and Derek Shan</td>
-<td align="left">2019-05-29</td>
-<td align="left"><a href="https://projects.fivethirtyeight.com/2020-endorsements/democratic-primary/" class="uri">https://projects.fivethirtyeight.com/2020-endorsements/democratic-primary/</a></td>
-</tr>
-<tr class="odd">
 <td align="left"><code>endorsements</code></td>
 <td align="left">Pols And Polls Say The Same Thing: Jeb Bush Is A Weak Front-Runner</td>
 <td align="left">2016 Kickoff</td>
@@ -490,6 +465,16 @@
 <td align="left"></td>
 <td align="left">2015-06-15</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/pols-and-polls-say-the-same-thing-jeb-bush-is-a-weak-front-runner/" class="uri">http://fivethirtyeight.com/features/pols-and-polls-say-the-same-thing-jeb-bush-is-a-weak-front-runner/</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>endorsements_2020</code></td>
+<td align="left">The 2020 Endorsement Primary</td>
+<td align="left"></td>
+<td align="left">Aarom Bycoffe</td>
+<td align="left">Rachael Dottle</td>
+<td align="left">Dustin Dienhart and Derek Shan</td>
+<td align="left">2019-05-29</td>
+<td align="left"><a href="https://projects.fivethirtyeight.com/2020-endorsements/democratic-primary/" class="uri">https://projects.fivethirtyeight.com/2020-endorsements/democratic-primary/</a></td>
 </tr>
 <tr class="even">
 <td align="left"><code>fandango</code></td>
@@ -642,16 +627,6 @@
 <td align="left"><a href="https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/" class="uri">https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/</a></td>
 </tr>
 <tr class="odd">
-<td align="left"><code>index</code></td>
-<td align="left">NA</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-</tr>
-<tr class="even">
 <td align="left"><code>librarians</code></td>
 <td align="left">Where Are America’s Librarians?</td>
 <td align="left">Jobs</td>
@@ -661,7 +636,7 @@
 <td align="left">2014-04-11</td>
 <td align="left"><a href="http://fivethirtyeight.com/datalab/where-are-americas-librarians/" class="uri">http://fivethirtyeight.com/datalab/where-are-americas-librarians/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>love_actually_adj</code></td>
 <td align="left">The Definitive Analysis Of ‘Love Actually,’ The Greatest Christmas Movie Of Our Time</td>
 <td align="left">Movies</td>
@@ -671,7 +646,7 @@
 <td align="left">2016-12-22</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/" class="uri">http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>love_actually_appearance</code></td>
 <td align="left">The Definitive Analysis Of ‘Love Actually,’ The Greatest Christmas Movie Of Our Time</td>
 <td align="left">Movies</td>
@@ -681,7 +656,7 @@
 <td align="left">2016-12-22</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/" class="uri">http://fivethirtyeight.com/features/the-definitive-analysis-of-love-actually-the-greatest-christmas-movie-of-our-time/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>mad_men</code></td>
 <td align="left">Mad Men Is Ending. What’s Next For The Cast?</td>
 <td align="left">TV</td>
@@ -691,7 +666,7 @@
 <td align="left">2015-05-15</td>
 <td align="left"><a href="http://fivethirtyeight.com/datalab/mad-men-is-ending-whats-next-for-the-cast/" class="uri">http://fivethirtyeight.com/datalab/mad-men-is-ending-whats-next-for-the-cast/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>male_flight_attend</code></td>
 <td align="left">Dear Mona, How Many Flight Attendants Are Men?</td>
 <td align="left">Hope the Numbers Help</td>
@@ -700,6 +675,16 @@
 <td align="left"></td>
 <td align="left">2014-10-03</td>
 <td align="left"><a href="http://fivethirtyeight.com/datalab/dear-mona-how-many-flight-attendants-are-men/" class="uri">http://fivethirtyeight.com/datalab/dear-mona-how-many-flight-attendants-are-men/</a></td>
+</tr>
+<tr class="even">
+<td align="left"><code>mayweather_mcgregor_tweets</code></td>
+<td align="left">The Mayweather-McGregor Fight As Told Through Emojis</td>
+<td align="left">Mayweather vs. McGregor</td>
+<td align="left">Dhrumil Mehta</td>
+<td align="left">Oliver Roeder</td>
+<td align="left">Rachel Dottle</td>
+<td align="left">2017-08-30</td>
+<td align="left"><a href="https://fivethirtyeight.com/?post_type=fte_features&amp;p=161615" class="uri">https://fivethirtyeight.com/?post_type=fte_features&amp;p=161615</a></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>mediacloud_hurricanes</code></td>
@@ -1312,7 +1297,7 @@
 <td align="left"><a href="https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/" class="uri">https://fivethirtyeight.com/features/what-the-world-thinks-of-trump/</a></td>
 </tr>
 <tr class="even">
-<td align="left"><code>tv_hurricanes_by_network</code></td>
+<td align="left"><code>tv_hurricanes</code></td>
 <td align="left">The Media Really Started Paying Attention to Puerto Rico When Trump Did</td>
 <td align="left">Puerto Rico</td>
 <td align="left">Dhrumil Mehta</td>
@@ -1322,7 +1307,7 @@
 <td align="left"><a href="https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/" class="uri">https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/</a></td>
 </tr>
 <tr class="odd">
-<td align="left"><code>tv_hurricanes</code></td>
+<td align="left"><code>tv_hurricanes_by_network</code></td>
 <td align="left">The Media Really Started Paying Attention to Puerto Rico When Trump Did</td>
 <td align="left">Puerto Rico</td>
 <td align="left">Dhrumil Mehta</td>
@@ -1342,16 +1327,6 @@
 <td align="left"><a href="https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/" class="uri">https://fivethirtyeight.com/features/the-media-really-started-paying-attention-to-puerto-rico-when-trump-did/</a></td>
 </tr>
 <tr class="odd">
-<td align="left"><code>tweets</code></td>
-<td align="left">The Mayweather-McGregor Fight As Told Through Emojis</td>
-<td align="left">Mayweather vs. McGregor</td>
-<td align="left">Dhrumil Mehta</td>
-<td align="left">Oliver Roeder</td>
-<td align="left">Rachel Dottle</td>
-<td align="left">2017-08-30</td>
-<td align="left"><a href="https://fivethirtyeight.com/?post_type=fte_features&amp;p=161615" class="uri">https://fivethirtyeight.com/?post_type=fte_features&amp;p=161615</a></td>
-</tr>
-<tr class="even">
 <td align="left"><code>twitter_presidents</code></td>
 <td align="left">The Worst Tweeter In Politics Isn’t Trump</td>
 <td align="left">The Trump Administration</td>
@@ -1361,7 +1336,7 @@
 <td align="left">2017-10-24</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/the-worst-tweeter-in-politics-isnt-trump/" class="uri">https://fivethirtyeight.com/features/the-worst-tweeter-in-politics-isnt-trump/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>undefeated</code></td>
 <td align="left">Mayweather Is Defined By The Zero Next To His Name</td>
 <td align="left">Mayweather vs. McGregor</td>
@@ -1371,7 +1346,7 @@
 <td align="left">2017-08-18</td>
 <td align="left"><a href="https://fivethirtyeight.com/features/mayweather-is-defined-by-the-zero-next-to-his-name/" class="uri">https://fivethirtyeight.com/features/mayweather-is-defined-by-the-zero-next-to-his-name/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>unisex_names</code></td>
 <td align="left">The Most Common Unisex Names In America: Is Yours One Of Them?</td>
 <td align="left"></td>
@@ -1381,7 +1356,7 @@
 <td align="left">2015-06-10</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/there-are-922-unisex-names-in-america-is-yours-one-of-them/" class="uri">http://fivethirtyeight.com/features/there-are-922-unisex-names-in-america-is-yours-one-of-them/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>US_births_1994_2003</code></td>
 <td align="left">Some People Are Too Superstitious To Have A Baby On Friday The 13th</td>
 <td align="left">Parenting</td>
@@ -1391,7 +1366,7 @@
 <td align="left">2016-05-13</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>US_births_2000_2014</code></td>
 <td align="left">Some People Are Too Superstitious To Have A Baby On Friday The 13th</td>
 <td align="left">Parenting</td>
@@ -1401,7 +1376,7 @@
 <td align="left">2016-05-13</td>
 <td align="left"><a href="http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>weather_check</code></td>
 <td align="left">Where People Go To Check The Weather</td>
 <td align="left">Weather</td>
@@ -1414,16 +1389,40 @@
 </tbody>
 </table>
 </div>
-<div id="guidelines" class="section level2">
+<div id="motivation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#guidelines" class="anchor"></a>Guidelines</h2>
-<p>In order to make the data easily accessible to R novices, we pre-process the original data sets as they exist in the <a href="https://github.com/fivethirtyeight/data">538 GitHub repository</a> to adhere to the following guidelines:</p>
+<a href="#motivation" class="anchor"></a>Motivation</h2>
+<p>The motivation for creating this package is articulated in <a href="https://escholarship.org/uc/item/0rx1231m">The fivethirtyeight R Package: “Tame Data” Principles for Introductory Statistics and Data Science Courses</a> by Kim, Ismay, and Chunn (2018) published in Volume 11, Issue 1 of the journal “Technology Innovations in Statistics Education”. Here is an executive summary.</p>
+<p>We are involved in statistics and data science education, in particular at the introductory undergraduate level. As such, we are always looking for data sets that balance being:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Rich enough</strong> to answer meaningful questions with, <strong>real enough</strong> to ensure that there is context, and <strong>realistic enough</strong> to convey to students that data as it exists “in the wild” often needs processing.</li>
+<li>Easily and quickly accessible to novices, so that we <a href="https://arxiv.org/abs/1507.05346">minimize the prerequisites to research</a>.</li>
+</ol>
+<p>It has been our experience that many data sets that exist in R packages, such as the <a href="https://github.com/hadley/nycflights13"><code>nycflights13</code></a>, <a href="https://github.com/hadley/babynames"><code>babynames</code></a>, and <a href="https://github.com/jennybc/gapminder"><code>gapminder</code></a> packages, are of great pedagogical value as they:</p>
+<ul>
+<li>Satisfy the above two goals.</li>
+<li>Are in standardized format as they fit into the <a href="https://CRAN.R-project.org/package=tidyverse/vignettes/manifesto.html">tidy tools</a> ecosystem.</li>
+<li>Are really fun to play with!</li>
+</ul>
+<p>It is along these lines that we present <code>fivethirtyeight</code>: an R package of data and code behind the stories and interactives at <a href="https://fivethirtyeight.com/">FiveThirtyEight.com</a>, a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on <a href="https://github.com/fivethirtyeight/data">GitHub</a>, a web-based repository for collaboration on code and data.</p>
+<p>With consultation from <a href="https://fivethirtyeight.com/contributors/andrew-flowers/">Andrew Flowers</a> and <a href="https://fivethirtyeight.com/contributors/andrei-scheinkman/">Andrei Scheinkman</a> of FiveThirtyEight, we go one step further by:</p>
+<ol style="list-style-type: decimal">
+<li>Doing just enough pre-processing (i.e. data “taming”) so that statistics and data science novices can sink their teeth into the data right away.</li>
+<li>Packaging it all in an easy to load format: package installation instead of working with CSV files.</li>
+<li>Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.</li>
+</ol>
+</div>
+<div id="tame-data-principles" class="section level2">
+<h2 class="hasAnchor">
+<a href="#tame-data-principles" class="anchor"></a>“Tame” data principles</h2>
+<p>In order to make the data easily accessible to R novices, we pre-process the original data sets as they exist in the <a href="https://github.com/fivethirtyeight/data">538 GitHub repository</a> to adhere to the following “tame” data guidelines:</p>
 <ol style="list-style-type: decimal">
 <li>
 <strong>Naming conventions for data frame and variable names</strong>:
 <ol style="list-style-type: decimal">
 <li>Whenever possible, all names should be no more than 20 characters long. Exceptions to this rule exist when shortening the names to less than 20 characters would lead to a loss of information.</li>
-<li>Use only lower case characters and replace all spaces with underscores. This format is known as <code>snake_case</code> and is an alternative to <code>camelCase</code>.</li>
+<li>Use only lower case characters and replace all spaces with underscores. This format is known as <code>snake_case</code> and is an alternative to <code>camelCase</code>, where successive words are delineated with upper case characters.</li>
 <li>In the case of variable (column) names within a data frame, use underscores instead of spaces.</li>
 </ol>
 </li>
@@ -1453,41 +1452,18 @@
 <li>
 <strong>Tidy data format</strong>:
 <ol style="list-style-type: decimal">
-<li>Whenever possible, save all data frames in <a href="https://vita.had.co.nz/papers/tidy-data.html">“tidy” data</a> format:
+<li>Whenever possible, save all data frames in “tidy” data format as defined by <span class="citation">@wickham_2014</span>:
 <ol style="list-style-type: lower-alpha">
 <li>Each variable forms a column.</li>
 <li>Each observation forms a row.</li>
 <li>Each type of observational unit forms a table.</li>
 </ol>
 </li>
-<li>If converting the raw data to “tidy” data format alters the dataset too much, then make the code to convert to tidy format easily accessible in the help file.</li>
+<li>If converting the raw data to “tidy” data format alters the dataset too much, then make the code to convert to tidy format easily accessible.</li>
 </ol>
 </li>
 </ol>
 <p><strong>Note</strong>: The code used to pre-process the data can be found on the <a href="https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw">GitHub repository</a> for the package in the <code>process_data_sets.R</code> files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.</p>
-</div>
-<div id="motivation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#motivation" class="anchor"></a>Motivation</h2>
-<p>We are involved in statistics and data science education, in particular at the introductory undergraduate level. As such, we are always looking for data sets that balance being</p>
-<ol style="list-style-type: decimal">
-<li>
-<strong>Rich enough</strong> to answer meaningful questions with, <strong>real enough</strong> to ensure that there is context, and <strong>realistic enough</strong> to convey to students that data as it exists “in the wild” often needs processing.</li>
-<li>Easily and quickly accessible to novices, so that we <a href="https://arxiv.org/abs/1507.05346">minimize the prerequisites to research</a>.</li>
-</ol>
-<p>It has been our experience that many data sets that exist in R packages, such as the <a href="https://github.com/hadley/nycflights13"><code>nycflights13</code></a>, <a href="https://github.com/hadley/babynames"><code>babynames</code></a>, and <a href="https://github.com/jennybc/gapminder"><code>gapminder</code></a> packages, are of great pedagogical value as they:</p>
-<ul>
-<li>Satisfy the above two goals.</li>
-<li>Are in standardized format as they fit into the <a href="https://CRAN.R-project.org/package=tidyverse/vignettes/manifesto.html">tidy tools</a> ecosystem.</li>
-<li>Are really fun to play with!</li>
-</ul>
-<p>It is along these lines that we present <code>fivethirtyeight</code>: an R package of data and code behind the stories and interactives at <a href="https://fivethirtyeight.com/">FiveThirtyEight.com</a>, a data-driven journalism website founded by Nate Silver and owned by ESPN. FiveThirtyEight has been very forward thinking in making the data used in many of their articles open and accessible on <a href="https://github.com/fivethirtyeight/data">GitHub</a>, a web-based repository for collaboration on code and data.</p>
-<p>With consultation from <a href="https://fivethirtyeight.com/contributors/andrew-flowers/">Andrew Flowers</a> and <a href="https://fivethirtyeight.com/contributors/andrei-scheinkman/">Andrei Scheinkman</a> of FiveThirtyEight, we go one step further by:</p>
-<ol style="list-style-type: decimal">
-<li>Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data right away.</li>
-<li>Packaging it all in an easy to load format: package installation instead of working with CSV files.</li>
-<li>Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.</li>
-</ol>
 </div>
   </div>
 
@@ -1497,9 +1473,9 @@
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#note">Note</a></li>
-      <li><a href="#datasets">Datasets</a></li>
-      <li><a href="#guidelines">Guidelines</a></li>
+      <li><a href="#all-datasets">All datasets</a></li>
       <li><a href="#motivation">Motivation</a></li>
+      <li><a href="#tame-data-principles">“Tame” data principles</a></li>
       </ul>
 </div>
       </div>
