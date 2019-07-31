@@ -1,5 +1,5 @@
 ---
-title: "`fivethirtyeight` Package"
+title: "fivethirtyeight Package"
 author: "Albert Y. Kim, Chester Ismay, and Jennifer Chunn"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -15,14 +15,13 @@ library(ggplot2)
 library(dplyr)
 library(readr)
 library(knitr)
-```
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+# Import master Google Sheet of all 538 data available here:
+# https://docs.google.com/spreadsheets/d/1IMWAHNPIDzplafWW6AGnGyHmB1BMjohEw_V5HmT70Gs/edit#gid=840984416
 datasets <- 
   "https://goo.gl/OT8iHa" %>% 
   read_csv() %>% 
   filter(!is.na(DATAFRAME_NAME)) %>% 
-  mutate(DATAFRAME_NAME = paste("`", DATAFRAME_NAME, "`", sep="")) %>% 
   transmute(
     `Data Frame Name` = DATAFRAME_NAME,
     `Article Title` = ARTICLE_TITLE,
@@ -42,73 +41,37 @@ datasets <-
   ) %>% 
   arrange(`Data Frame Name`)
 
-preview <- datasets %>% 
+preview_only_datasets <- datasets %>% 
   filter(Preview == "Y") %>% 
   pull(`Data Frame Name`)
 ```
 
 ## Note
 
-Given CRAN package size restrictions, the following `r length(preview)` datasets only consist of a preview of the first 10 rows of the full dataset. Code to load the full dataset are provided in the respective help file examples. For example, type `?house_district_forecast`.
+All `r nrow(datasets)` datasets included in the `fivethirtyeight` package are listed in the next section. However due to CRAN-hosted R package size restrictions, the following `r length(preview_only_datasets)` datasets out of `r nrow(datasets)` only consist of a preview of the first 10 rows of the full dataset. Code to load the full dataset into R are provided in the respective help file example. For example, type `?house_district_forecast` into R.
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
-preview %>% 
-  matrix(ncol=3) %>% 
-  kable()
+preview_only_datasets
 ```
 
-
-
-## Datasets
-
-Here are all `r nrow(datasets)` datasets included in the `fivethirtyeight` package:
+## All datasets
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 datasets %>% 
+  mutate(`Data Frame Name` = paste("`", `Data Frame Name`, "`", sep="")) %>% 
   select(-Preview) %>% 
   kable()
 ```
 
 
 
-## Guidelines
-
-In order to make the data easily accessible to R novices, we pre-process the
-original data sets as they exist in the [538 GitHub 
-repository](https://github.com/fivethirtyeight/data) to adhere to the following 
-guidelines:
-
-1. **Naming conventions for data frame and variable names**:
-    1. Whenever possible, all names should be no more than 20 characters long. Exceptions to this rule exist when shortening the names to less than 20 characters would lead to a loss of information.
-    1. Use only lower case characters and replace all spaces with underscores. This format is known as `snake_case` and is an alternative to `camelCase`.
-    1. In the case of variable (column) names within a data frame, use underscores instead of spaces.
-1. **Variables identifying observational units**:
-    1. Any variables uniquely identifying each observational unit should be in the left-hand columns. 
-1. **Dates**:
-    1. If only a `year` variable exists, then it should be represented as a numerical variable.
-    1. If there are `year` and `month` variables, then convert them to `Date` objects as `year-month-01`. In other words, associate all observations from the same month to have a `day` of `01` so that a correct `Date` object can be assigned.
-    1. If there are `year`, `month`, and `day` variables, then convert them to `Date` objects as `year-month-day`.
-1. **Ordered Factors, Factors, Characters, and Logicals**:
-    1. Ordinal categorical variables are represented as `ordered` factors.
-    1. Categorical variables with a fixed and known set of levels are represented as regular `factor`s.
-    1. Categorical variables whose possible levels are either unknown or of a very large number are represented as `character`s.
-    1. Any "yes/no" character encoding of binary variables is converted to `TRUE/FALSE` logical variables. 
-1. **Tidy data format**: 
-    1. Whenever possible, save all data frames in ["tidy" data](https://vita.had.co.nz/papers/tidy-data.html) format:
-        a) Each variable forms a column.
-        a) Each observation forms a row.
-        a) Each type of observational unit forms a table.
-    1. If converting the raw data to "tidy" data format alters the dataset too much, then make the code to convert to tidy format easily accessible in the help file. 
-
-**Note**: The code used to pre-process the data can be found on the [GitHub repository](https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw) for the package in the `process_data_sets.R` files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.
-
-
-
 ## Motivation
+
+The motivation for creating this package is articulated in [The fivethirtyeight R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses](https://escholarship.org/uc/item/0rx1231m) by Kim, Ismay, and Chunn (2018) published in Volume 11, Issue 1 of the journal "Technology Innovations in Statistics Education". Here is an executive summary.
 
 We are involved in statistics and data science education, in particular at the
 introductory undergraduate level. As such, we are always looking for data sets that 
-balance being
+balance being:
 
 1. **Rich enough** to answer meaningful questions with, **real enough** to ensure that there is context, and **realistic enough** to convey to students that data as it exists "in the wild" often needs processing. 
 1. Easily and quickly accessible to novices, so that we [minimize the prerequisites to research](https://arxiv.org/abs/1507.05346). 
@@ -126,6 +89,38 @@ It is along these lines that we present `fivethirtyeight`: an R package of data 
 
 With consultation from [Andrew Flowers](https://fivethirtyeight.com/contributors/andrew-flowers/) and [Andrei Scheinkman](https://fivethirtyeight.com/contributors/andrei-scheinkman/) of FiveThirtyEight, we go one step further by:
 
-1. Doing just enough pre-processing so that statistics and data science novices can sink their teeth into the data right away.
+1. Doing just enough pre-processing (i.e. data "taming") so that statistics and data science novices can sink their teeth into the data right away.
 2. Packaging it all in an easy to load format: package installation instead of working with CSV files.
 3. Providing easily accessible documentation: The help file for each data set includes a thorough description of the observational unit and all variables, a link to the original article, and (if listed) the data sources.
+
+
+## "Tame" data principles
+
+In order to make the data easily accessible to R novices, we pre-process the
+original data sets as they exist in the [538 GitHub
+repository](https://github.com/fivethirtyeight/data) to adhere to the following
+"tame" data guidelines:
+
+1. **Naming conventions for data frame and variable names**:
+    1. Whenever possible, all names should be no more than 20 characters long. Exceptions to this rule exist when shortening the names to less than 20 characters would lead to a loss of information.
+    1. Use only lower case characters and replace all spaces with underscores. This format is known as `snake_case` and is an alternative to `camelCase`, where successive words are delineated with upper case characters.
+    1. In the case of variable (column) names within a data frame, use underscores instead of spaces.
+1. **Variables identifying observational units**:
+    1. Any variables uniquely identifying each observational unit should be in the left-hand columns. 
+1. **Dates**:
+    1. If only a `year` variable exists, then it should be represented as a numerical variable.
+    1. If there are `year` and `month` variables, then convert them to `Date` objects as `year-month-01`. In other words, associate all observations from the same month to have a `day` of `01` so that a correct `Date` object can be assigned.
+    1. If there are `year`, `month`, and `day` variables, then convert them to `Date` objects as `year-month-day`.
+1. **Ordered Factors, Factors, Characters, and Logicals**:
+    1. Ordinal categorical variables are represented as `ordered` factors.
+    1. Categorical variables with a fixed and known set of levels are represented as regular `factor`s.
+    1. Categorical variables whose possible levels are either unknown or of a very large number are represented as `character`s.
+    1. Any "yes/no" character encoding of binary variables is converted to `TRUE/FALSE` logical variables. 
+1. **Tidy data format**: 
+    1. Whenever possible, save all data frames in "tidy" data format as defined by @wickham_2014:
+        a) Each variable forms a column.
+        a) Each observation forms a row.
+        a) Each type of observational unit forms a table.
+    1. If converting the raw data to "tidy" data format alters the dataset too much, then make the code to convert to tidy format easily accessible. 
+
+**Note**: The code used to pre-process the data can be found on the [GitHub repository](https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw) for the package in the `process_data_sets.R` files. These can serve as data manipulation/wrangling examples and exercises for more advanced students.
