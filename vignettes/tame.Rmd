@@ -6,7 +6,7 @@ author: "Albert Y. Kim, Chester Ismay, and Jennifer Chunn"
 bibliography: bibliography.bib
 output: rmarkdown::html_vignette
 vignette: |
-  %\VignetteIndexEntry{Technology Innovations in Statistics Education}
+  %\VignetteIndexEntry{Article in Technology Innovations in Statistics Education}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
