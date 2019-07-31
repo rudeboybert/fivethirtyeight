@@ -48,7 +48,7 @@ preview_only_datasets <- datasets %>%
 
 ## Note
 
-All `r nrow(datasets)` datasets included in the `fivethirtyeight` package are listed in the next section. However due to CRAN-hosted R package size restrictions, the following `r length(preview_only_datasets)` datasets out of `r nrow(datasets)` only consist of a preview of the first 10 rows of the full dataset. Code to load the full dataset into R are provided in the respective help file example. For example, type `?house_district_forecast` into R.
+All `r nrow(data(package = "fivethirtyeight")[[3]])` datasets included in the `fivethirtyeight` package are listed in the next section. However due to CRAN-hosted R package size restrictions, the following `r length(preview_only_datasets)` datasets out of `r nrow(data(package = "fivethirtyeight")[[3]])` only consist of a preview of the first 10 rows of the full dataset. Code to load the full dataset into R are provided in the respective help file example. For example, type `?house_district_forecast` into R.
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 preview_only_datasets
