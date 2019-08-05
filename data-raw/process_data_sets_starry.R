@@ -190,9 +190,8 @@ usethis::use_data(elasticity_by_district, overwrite = TRUE)
 
 elasticity_by_state <- read_csv("data-raw/political-elasticity-scores/elasticity-by-state.csv") %>% 
   clean_names() %>% 
-  mutate(
-    state = as.factor(state.name[match(elasticity_by_state$state, state.abb)]), 
-  )
+  left_join(state_info, by = c("state" = "state_abbrev")) %>% 
+  select(state, state_name = state.y, elasticity)
 usethis::use_data(elasticity_by_state, overwrite = TRUE)
 
 # russia-investigation ---------------------------------------------------------------
