@@ -8,16 +8,18 @@
 
 <title>fivethirtyeight: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight' — fivethirtyeight • fivethirtyeight</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -32,14 +34,15 @@
 
 
 
-<meta property="og:title" content="fivethirtyeight: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight' — fivethirtyeight" />
 
+<meta property="og:title" content="fivethirtyeight: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight' — fivethirtyeight" />
 <meta property="og:description" content="An R package that provides access to the code and data sets
 published by FiveThirtyEight https://github.com/fivethirtyeight/data. Note
 that while we received guidance from editors at 538, this package is not
 officially published by 538. Contribute to this package at
 https://github.com/rudeboybert/fivethirtyeight." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -128,7 +131,6 @@ https://github.com/rudeboybert/fivethirtyeight." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight">
@@ -155,16 +157,15 @@ https://github.com/rudeboybert/fivethirtyeight." />
     </div>
 
     <div class="ref-description">
-    
     <p>An R package that provides access to the code and data sets
 published by FiveThirtyEight <a href='https://github.com/fivethirtyeight/data'>https://github.com/fivethirtyeight/data</a>. Note
 that while we received guidance from editors at 538, this package is not
 officially published by 538. Contribute to this package at
 <a href='https://github.com/rudeboybert/fivethirtyeight'>https://github.com/rudeboybert/fivethirtyeight</a>.</p>
-    
     </div>
 
-        
+
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Example usage:</span>
@@ -181,7 +182,8 @@ officially published by 538. Contribute to this package at
 #&gt; # … with 5 more variables: budget_2013 &lt;int&gt;, domgross_2013 &lt;dbl&gt;,
 #&gt; #   intgross_2013 &lt;dbl&gt;, period_code &lt;int&gt;, decade_code &lt;int&gt;</div><div class='input'>
 <span class='co'># All information about any data set can be found in the help file:</span>
-?<span class='no'>bechdel</span></div><div class='output co'>#&gt; <span class='message'>Rendering development documentation for 'bechdel'</span></div><div class='input'>
+?<span class='no'>bechdel</span>
+
 <span class='co'># To view a list of all data sets:</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"fivethirtyeight"</span>)
 
@@ -195,7 +197,6 @@ officially published by 538. Contribute to this package at
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-            
       <li><a href="#examples">Examples</a></li>
     </ul>
 
@@ -209,7 +210,7 @@ officially published by 538. Contribute to this package at
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>

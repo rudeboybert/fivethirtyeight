@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trump Twitter analysis using the <code>tidyverse</code> • fivethirtyeight</title>
+<title>Trump Twitter analysis using the `tidyverse` • fivethirtyeight</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Trump Twitter analysis using the &lt;code&gt;tidyverse&lt;/code&gt;">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Trump Twitter analysis using the `tidyverse`">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -113,7 +113,7 @@
 </h1>
                         <h4 class="author">Adam Spannbauer and Jennifer Chunn</h4>
             
-            <h4 class="date">2019-08-05</h4>
+            <h4 class="date">2019-10-28</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/trump_twitter.Rmd"><code>vignettes/trump_twitter.Rmd</code></a></small>
       <div class="hidden name"><code>trump_twitter.Rmd</code></div>
@@ -149,7 +149,7 @@
 <h1 class="hasAnchor">
 <a href="#create-vectorised-stemming-function-using-hunspell" class="anchor"></a>Create vectorised stemming function using hunspell</h1>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">my_hunspell_stem &lt;-<span class="st"> </span><span class="cf">function</span>(token) {</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">  stem_token &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/hunspell/man/hunspell.html">hunspell_stem</a></span>(token)[[<span class="dv">1</span>]]</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">  stem_token &lt;-<span class="st"> </span><span class="kw"><a href="https://docs.ropensci.org/hunspell/reference/hunspell.html">hunspell_stem</a></span>(token)[[<span class="dv">1</span>]]</a>
 <a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="cf">if</span> (<span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(stem_token) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span>(token) <span class="cf">else</span> <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span>(stem_token[<span class="dv">1</span>])</a>
 <a class="sourceLine" id="cb6-4" data-line-number="4">}</a>
 <a class="sourceLine" id="cb6-5" data-line-number="5">vec_hunspell_stem &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/Vectorize.html">Vectorize</a></span>(my_hunspell_stem, <span class="st">"token"</span>)</a></code></pre></div>
@@ -354,6 +354,7 @@ Ted Cruz is a nervous wreck. He is making reckless charges not caring for the tr
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+
         <div id="tocnav">
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
@@ -383,7 +384,7 @@ Ted Cruz is a nervous wreck. He is making reckless charges not caring for the tr
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>

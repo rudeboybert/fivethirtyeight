@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Looking at Biopics of Hollywood • fivethirtyeight</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Looking at Biopics of Hollywood">
 <meta property="og:description" content="">
@@ -112,7 +112,7 @@
       <h1>Looking at Biopics of Hollywood</h1>
                         <h4 class="author">Pradeep Adhokshaja</h4>
             
-            <h4 class="date">05 August, 2019</h4>
+            <h4 class="date">28 October, 2019</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/biopics.Rmd"><code>vignettes/biopics.Rmd</code></a></small>
       <div class="hidden name"><code>biopics.Rmd</code></div>
@@ -309,7 +309,7 @@
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">biopics<span class="op">$</span>type_of_subject &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span>(<span class="st">" "</span>,<span class="st">""</span>,biopics<span class="op">$</span>type_of_subject)</a>
 <a class="sourceLine" id="cb11-2" data-line-number="2">biopics &lt;-<span class="st"> </span>biopics <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb11-3" data-line-number="3"><span class="st">     </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">type_of_subject =</span> <span class="kw"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/character.html">as.character</a></span>(type_of_subject), <span class="st">"/"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="st">     </span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/unnest.html">unnest</a></span>(type_of_subject)</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="st">     </span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/nest.html">unnest</a></span>(type_of_subject)</a>
 <a class="sourceLine" id="cb11-5" data-line-number="5">biopics<span class="op">$</span>type_of_subject &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span>(biopics<span class="op">$</span>type_of_subject)</a>
 <a class="sourceLine" id="cb11-6" data-line-number="6">women_percent &lt;-biopics <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb11-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(subject_sex<span class="op">==</span><span class="st">"Female"</span>) <span class="op">%&gt;%</span><span class="st">  </span></a>
@@ -330,14 +330,14 @@
 <a class="sourceLine" id="cb11-22" data-line-number="22"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline</a></span>(<span class="dt">color =</span> <span class="st">"gray40"</span>, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb11-23" data-line-number="23"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span>(<span class="dt">alpha =</span> <span class="fl">0.1</span>, <span class="dt">size =</span> <span class="dv">1</span>, <span class="dt">width =</span> <span class="fl">0.3</span>, <span class="dt">height =</span> <span class="fl">0.3</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb11-24" data-line-number="24"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">label =</span> type_of_subject), <span class="dt">check_overlap =</span> <span class="ot">TRUE</span>, <span class="dt">vjust =</span> <span class="fl">1.5</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb11-25" data-line-number="25"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span>(<span class="dt">labels =</span> <span class="kw"><a href="https://rdrr.io/pkg/scales/man/number_format.html">percent_format</a></span>(),<span class="dt">limits =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>,<span class="fl">0.322</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb11-26" data-line-number="26"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span>(<span class="dt">labels =</span> <span class="kw"><a href="https://rdrr.io/pkg/scales/man/number_format.html">percent_format</a></span>(),<span class="dt">limits=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>,<span class="fl">0.322</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-25" data-line-number="25"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span>(<span class="dt">labels =</span> <span class="kw"><a href="https://scales.r-lib.org//reference/number_format.html">percent_format</a></span>(),<span class="dt">limits =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>,<span class="fl">0.322</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-26" data-line-number="26"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span>(<span class="dt">labels =</span> <span class="kw"><a href="https://scales.r-lib.org//reference/number_format.html">percent_format</a></span>(),<span class="dt">limits=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>,<span class="fl">0.322</span>)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb11-27" data-line-number="27"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_color_gradient</a></span>( <span class="dt">low =</span> <span class="st">"red"</span>, <span class="dt">high =</span> <span class="st">"gray75"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb11-28" data-line-number="28"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="dt">legend.position=</span><span class="st">"none"</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb11-29" data-line-number="29"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">y =</span> <span class="st">"Biopics Involving Men"</span>, <span class="dt">x =</span><span class="st">"Biopics Involving Women"</span>,<span class="dt">text=</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="dt">size=</span><span class="dv">10</span>),</a>
 <a class="sourceLine" id="cb11-30" data-line-number="30">       <span class="dt">plot.title=</span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="dt">hjust=</span><span class="fl">0.5</span>))<span class="op">+</span></a>
 <a class="sourceLine" id="cb11-31" data-line-number="31"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="st">"Relative Frequency of Subjects(Gender Wise)"</span>)</a></code></pre></div>
-<pre><code>## Warning: Removed 17 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 16 rows containing missing values (geom_point).</code></pre>
 <p><img src="biopics_files/figure-html/unnamed-chunk-11-1.png" width="672"></p>
 <p>Topics that are close to the line indicate topics that have similar frequencies in both the sets of data. These topics include <em>government</em>,<em>academic</em> and <em>activist</em>. Topics that are far from this line are topics that are found frequently in one set but not the other.For example,a larger percentage of biopics that involved women,portrayed authors. By looking at the other side, topics like <em>military</em> had a higher percentage of coverage in biopics involving men than women.More the red color of the text, the more frequently the topic appears in biopics related to men.</p>
 </div>
@@ -470,6 +470,7 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+
         <div id="tocnav">
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
@@ -493,7 +494,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>
