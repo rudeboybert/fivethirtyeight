@@ -45,3 +45,4 @@ NULL
 #' @source Two collections in the Media Cloud \url{https://mediacloud.org/} database U.S. Top Online News \url{https://sources.mediacloud.org/#/collections/58722749} and U.S. Top Digital Native News \url{https://sources.mediacloud.org/#/collections/57078150}
 #' @export
 "media_mentions_online"
+
