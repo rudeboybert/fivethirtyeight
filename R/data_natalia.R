@@ -23,9 +23,7 @@ NULL
 #'   \item{pct_of_all_candidate_clips}{percentage of clips in which that specific candidate is mentioned out of all clips mentioning any candidate for that week (matched_clips / all_candidate_clips)}
 #'   \item{query}{query used for the GDELT Television API}
 #' }
-#' @export
 #' @source The GDELT Television API \url{https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/}, which processes the data from the TV News Archive \url{https://archive.org/details/tv}.
-#' @export
 "media_mentions_cable"
 
 #' @rdname media_mentions
@@ -41,8 +39,6 @@ NULL
 #'   \item{pct_of_all_candidate_stories}{percentage of stories in which that specific candidate is mentioned out of all stories mentioning any candidate for that week (matched_stories / all_candidate_stories)}
 #'   \item{query}{query for Media Cloud}
 #'}
-#' @export
 #' @source Two collections in the Media Cloud \url{https://mediacloud.org/} database U.S. Top Online News \url{https://sources.mediacloud.org/#/collections/58722749} and U.S. Top Digital Native News \url{https://sources.mediacloud.org/#/collections/57078150}
-#' @export
 "media_mentions_online"
 
