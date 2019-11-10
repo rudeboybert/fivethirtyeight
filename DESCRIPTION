@@ -19,7 +19,8 @@ Authors@R: c(
     person("Pradeep", "Adhokshaja",  role = "ctb"),
     person("Olivia", "Barrows", role = "ctb"),
     person("Jojo", "Miller", role = "ctb"),
-    person("Jayla", "Nakayama", role = "ctb"))
+    person("Jayla", "Nakayama", role = "ctb"),
+    person("Natalia", "Iannucci", email = "iannuccinatalia@gmail.com", role = "ctb"))
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
     R (>= 3.2.4)
