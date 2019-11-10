@@ -1,5 +1,5 @@
-#' @name media_mentions
-#' @rdname media_mentions
+#' @name media_mentions_2020
+#' @rdname media_mentions_2020
 #' 
 #' @title 2020 Presidential Candidates Media Mentions
 #' 
@@ -9,7 +9,7 @@
 #' 
 NULL
 
-#' @rdname media_mentions
+#' @rdname media_mentions_2020
 #'
 #' @format 2 dataframes about 2020 presidential candidate media mentions
 #' @section media_mentions_cable:
@@ -26,9 +26,7 @@ NULL
 #' @source The GDELT Television API \url{https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/}, which processes the data from the TV News Archive \url{https://archive.org/details/tv}.
 "media_mentions_cable"
 
-#' @rdname media_mentions
-#'
-#' @format
+#' @rdname media_mentions_2020
 #' @section media_mentions_online:  
 #' A data frame with 954 rows representing weeks and 6 variables:
 #' \describe{

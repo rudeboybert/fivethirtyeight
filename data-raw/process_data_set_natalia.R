@@ -4,6 +4,7 @@ library(lubridate)
 library(janitor)
 library(usethis)
 
+# media-mentions-2020---------------------------------------------------------------------
 media_mentions_cable <- read_csv("data-raw/media-mentions-2020/cable_weekly.csv")
 media_mentions_online <- read_csv("data-raw/media-mentions-2020/online_weekly.csv")
 
