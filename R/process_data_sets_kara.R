@@ -23,3 +23,4 @@ nba_elo_latest[13:22] <- as.numeric(as.character(nba_elo_latest[13:22]))
 #setting up .rda
 usethis::use_data(nba_elo, overwrite = TRUE)
 usethis::use_data(nba_elo_latest, overwrite = TRUE)
+
