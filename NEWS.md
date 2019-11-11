@@ -1,6 +1,7 @@
 # fivethirtyeight 0.5.0.9000
 
-
+* Added new data sets: 
+    + By Kara Van Allen: `nba_elo`, `nba_elo_latest`
 
 # fivethirtyeight 0.5.0
 
