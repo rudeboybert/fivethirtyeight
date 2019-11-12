@@ -1,5 +1,6 @@
 # fivethirtyeight 0.5.0.9000
-
+* Added new data sets: 
+    + By Rana Gahwagy:`quasi_winshares`
 
 
 # fivethirtyeight 0.5.0
