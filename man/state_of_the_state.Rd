@@ -27,7 +27,7 @@ A data frame with 50 rows representing the 50 U.S. states and 5 variables:
   \item{state}{the state}
   \item{governer}{the name of the state's governer}
   \item{party}{the party of the state's governer}
-  \item{filename}{the filename of the speech in the speeches folder}
+  \item{filename}{the filename of the speech in the speeches folder at \url{https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw/state-of-the-state/speeches}}
   \item{url}{a link to an official/media source for the speech}
   }
 }
