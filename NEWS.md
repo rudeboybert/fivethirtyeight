@@ -1,5 +1,6 @@
 # fivethirtyeight 0.5.0.9000
-
+* Added new data set:
+  + By Sunni Raleigh: `wwc_2019_forecasts`, `wwc_2019_matches`
 
 
 # fivethirtyeight 0.5.0

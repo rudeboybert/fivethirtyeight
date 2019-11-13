@@ -20,6 +20,7 @@ Authors@R: c(
     person("Olivia", "Barrows", role = "ctb"),
     person("Jojo", "Miller", role = "ctb"),
     person("Jayla", "Nakayama", role = "ctb"))
+    person("Sunni", "Raleigh", email = "sunniraleigh@gmail.com", role = "ctb")
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
     R (>= 3.2.4)
