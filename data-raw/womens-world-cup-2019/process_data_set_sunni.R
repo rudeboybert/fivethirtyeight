@@ -21,16 +21,11 @@ wwc_2019_forecasts <- readr::read_csv("https://projects.fivethirtyeight.com/socc
   clean_names() %>%
   mutate(
     team = to_snake_case(team),
-    date = as.Date(forecast_timestamp),
+    forecast_timestamp = as.Date(forecast_timestamp),
     group = as.factor(group),
     team = as.factor(team)
     ) %>%
-  select(-c(forecast_timestamp, timestamp))
-
-wwc_2019_forecasts <- wwc_2019_forecasts[c(
-  "date", "team", "group", "spi", "global_o", "global_d", "sim_wins", "sim_ties", "sim_losses",
-  "sim_goal_diff", "goals_scored", "goals_against", "group_1", "group_2", "group_3", "group_4",
-  "make_round_of_16", "make_quarters", "make_semis", "make_final", "win_league"
-)]
+  rename(date = forecast_timestamp) %>%
+  select(-timestamp)
 
 usethis::use_data(wwc_2019_forecasts, overwrite = TRUE)
