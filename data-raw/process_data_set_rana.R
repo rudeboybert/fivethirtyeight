@@ -18,9 +18,9 @@ quasi_winshares <- read_csv("data-raw/mlb-quasi-win-shares/quasi_winshares.csv")
     #defense positions as lgl (played or not)
     P = str_detect(def_pos, "P"),
     C = str_detect(def_pos, "C"),
-    "1B" = str_detect(def_pos, "1B"),
-    "2B" = str_detect(def_pos, "2B"),
-    "3B" = str_detect(def_pos, "3B"),
+    "1B" = str_detect(def_pos, "X1B"),
+    "2B" = str_detect(def_pos, "X2B"),
+    "3B" = str_detect(def_pos, "X3B"),
     SS = str_detect(def_pos, "SS"),
     LF = str_detect(def_pos, "LF"),
     CF = str_detect(def_pos, "CF"),
