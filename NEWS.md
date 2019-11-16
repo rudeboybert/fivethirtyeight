@@ -2,6 +2,7 @@
 * Added new data sets:
     + By Natalia Iannucci: `media_mentions_cable`, `media_mentions_online`
     + By Marium Tapal: `state_index`, `state_words`
+    + By Danica Miguek : `historical_RAPTOR_by_player`, `historical_RAPTOR_by_team`,               `modern_RAPTOR_by_player`, `modern_RAPTOR_by_team`
 
 
 # fivethirtyeight 0.5.0
