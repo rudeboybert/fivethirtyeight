@@ -1,6 +1,8 @@
 # fivethirtyeight 0.5.0.9000
-* Added new data set:
-  + By Sunni Raleigh: `wwc_2019_forecasts`, `wwc_2019_matches`
+* Added new data sets:
+    + By Natalia Iannucci: `media_mentions_cable`, `media_mentions_online`
+    + By Marium Tapal: `state_index`, `state_words`
+    + By Sunni Raleigh: `wwc_2019_forecasts`, `wwc_2019_matches`
 
 
 # fivethirtyeight 0.5.0
