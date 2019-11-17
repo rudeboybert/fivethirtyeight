@@ -20,7 +20,10 @@ Authors@R: c(
     person("Olivia", "Barrows", role = "ctb"),
     person("Jojo", "Miller", role = "ctb"),
     person("Jayla", "Nakayama", role = "ctb"),
-    person("Kara", "Van Allen", role = "ctb"))
+    person("Natalia", "Iannucci", email = "iannuccinatalia@gmail.com", role = "ctb"),
+    person("Marium", "Tapal", email = "mariumtapal@gmail.com", role = "ctb"),
+    person("Kara", "Van Allen", email = "kkv354@gmail.com" role = "ctb"))
+
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
     R (>= 3.2.4)
