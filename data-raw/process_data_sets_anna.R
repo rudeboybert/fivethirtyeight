@@ -17,3 +17,4 @@ foul_balls <- read_csv("data-raw/foul-balls/foul-balls.csv") %>%
 
 usethis::use_data(foul_balls, overwrite = TRUE)
 
+
