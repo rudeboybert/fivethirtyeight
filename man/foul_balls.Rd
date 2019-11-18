@@ -9,7 +9,7 @@
   \item{matchup}{the two teams that played}
   \item{game_date}{date of the most foul heavy day at each stadium}
   \item{type_of_hit}{fly, grounder, line drive, popup, batter hits self}
-  \item{exit_velocty}{recorded velocity of each hit}
+  \item{exit_velocity}{recorded velocity of each hit}
   \item{predicted_zone}{zone predicted the foul ball would land in guaging angles}
   \item{camera_zone}{actual zone the ball landed it confirmed by camera angles}
   \item{used_zone}{zone used for analysis}
