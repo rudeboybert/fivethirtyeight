@@ -2,7 +2,7 @@
 * Added new data sets:
     + By Natalia Iannucci: `media_mentions_cable`, `media_mentions_online`
     + By Marium Tapal: `state_index`, `state_words`
-    + By Jane Bang:`nba_draymond`
+    + By Jane Bang: `nba_draymond`
 
 
 # fivethirtyeight 0.5.0
