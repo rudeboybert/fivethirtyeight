@@ -1,7 +1,7 @@
 #' A Better Way to Evaluate NBA Defense.
 #'
 #' The raw data behind the story
-#' "A Better Way to Evaluate NBA Defense "
+#' "A Better Way to Evaluate NBA Defense"
 #' \url{https://fivethirtyeight.com/features/a-better-way-to-evaluate-nba-defense/}.
 #'
 #' @format A data frame with 3009 rows representing DRAYMOND ratings (Defensive Rating Accounting for Yielding Minimal Openness by Nearest Defender) for every player since the 2013-14 season with 4 variables:
