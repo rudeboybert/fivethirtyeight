@@ -1,4 +1,4 @@
-#' A Better Way to Evaluate NBA Defense 
+#' A Better Way to Evaluate NBA Defense.
 #'
 #' The raw data behind the story
 #' "A Better Way to Evaluate NBA Defense "
