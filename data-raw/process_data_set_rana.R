@@ -27,7 +27,7 @@ quasi_winshares <- read_csv("data-raw/mlb-quasi-win-shares/quasi_winshares.csv")
     RF = str_detect(def_pos, "RF"),
     #change null values
     prev_franch = replace(prev_franch, prev_franch == "NULL", NA), 
-    next_franch = replace(next_franch, next_franch == "NULL", NA )
+    next_franch = replace(next_franch, next_franch == "NULL", NA)
   ) %>%
   select(-def_pos)
 
