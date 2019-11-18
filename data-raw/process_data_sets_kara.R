@@ -11,14 +11,16 @@ nba_elo_latest <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_e
 #tidying and taming data for nba_elo
 nba_elo %>% clean_names()
 gsub(x = colnames(nba_elo), pattern = "-", replacement = "_")
-nba_elo[13:22] <- as.numeric(as.character(nba_elo[13:22]))
 
+nba_elo <- nba_elo %>%
+  mutate_if(is.logical, as.numeric)
 
 #tidying and taming data for nba_elo_latest
 nba_elo_latest %>% clean_names()
 gsub(x = colnames(nba_elo_latest), pattern = "-", replacement = "_")
 
-nba_elo_latest[13:22] <- as.numeric(as.character(nba_elo_latest[13:22]))
+nba_elo_latest <- nba_elo_latest %>%
+  mutate_if(is.logical, as.numeric)
 
 #setting up .rda
 usethis::use_data(nba_elo, overwrite = TRUE)
