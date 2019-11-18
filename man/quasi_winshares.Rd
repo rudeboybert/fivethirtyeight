@@ -4,7 +4,7 @@
 \name{quasi_winshares}
 \alias{quasi_winshares}
 \title{The Twins’ Magical Run Will Likely Go Through The Yankees. (Because Of Course.)}
-\format{A data frame contains 98,796 rows representing Quasi-Win Shares (QWS), prorated to 162 team games, for every player from 1901 as of Sept. 27, 2019 and,  and 16 variables:
+\format{A data frame contains 98,796 rows representing Quasi-Win Shares(QWS), prorated to 162 team games, for every player from 1901 as of Sept. 27, 2019 and,  and 16 variables:
 \describe{
   \item{name_common}{Player name}
   \item{age}{Player's age on June 30 of season}
