@@ -10,8 +10,8 @@ wwc_2019_matches <- readr::read_csv("https://projects.fivethirtyeight.com/soccer
   clean_names() %>%
   select(-c(league, league_id)) %>%
   mutate(
-    team1 = to_snake_case(team1),
-    team2 = to_snake_case(team2)
+    team1 = str_remove_all(to_snake_case(team1), "_women"),
+    team2 = str_remove_all(to_snake_case(team2), "_women")
     )
 
 usethis::use_data(wwc_2019_matches, overwrite = TRUE)
@@ -26,6 +26,7 @@ wwc_2019_forecasts <- readr::read_csv("https://projects.fivethirtyeight.com/socc
     team = as.factor(team)
     ) %>%
   rename(date = forecast_timestamp) %>%
-  select(-timestamp)
+  select(-timestamp) %>%
+  arrange(date, group)
 
 usethis::use_data(wwc_2019_forecasts, overwrite = TRUE)
