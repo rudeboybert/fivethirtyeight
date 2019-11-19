@@ -14,5 +14,7 @@
 #'   \item{camera_zone}{actual zone the ball landed it confirmed by camera angles}
 #'   \item{used_zone}{zone used for analysis}
 #' }
-#' @source Baseball Savant 
+#' @details Information on the Zones from the 538 original article: Zones 1, 2 and 3 are the areas behind home plate and the dugouts. Zones 4 and 5 make up most of the foul territory outside the baselines up until the foul pole. Zones 6 and 7 include the areas beyond the foul poles.
+#' @source Baseball Savant \url{https://baseballsavant.mlb.com/}.
 'foul_balls' 
+

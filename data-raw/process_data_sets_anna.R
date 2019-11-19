@@ -9,6 +9,7 @@ library(usethis)
 foul_balls <- read_csv("data-raw/foul-balls/foul-balls.csv") %>% 
   clean_names() %>% 
   mutate(
+    matchup = str_replace_all(matchup, c("VS" = "vs", "Diamondsbacks" = "Diamondbacks")),
     type_of_hit = as.factor(type_of_hit),
     camera_zone = as.factor(camera_zone),
     used_zone = as.factor(used_zone),
