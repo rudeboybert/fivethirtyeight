@@ -3,6 +3,7 @@
     + By Natalia Iannucci: `media_mentions_cable`, `media_mentions_online`
     + By Marium Tapal: `state_index`, `state_words`
     + By Irene Ryan: `castle_solutions`, `castle_solutions_2`, `castle_solutions_3`
+    + By Jane Bang: `nba_draymond`
 
 
 # fivethirtyeight 0.5.0
