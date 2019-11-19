@@ -1,6 +1,6 @@
 #' The Complete History Of The NBA
 #' 
-#' This directory contains the data behind the [Complete History Of The NBA](http://fivethirtyeight.com/interactives/the-complete-history-of-every-nba-team-by-elo) interactive. Data updated periodically. Game information is from [Basketball-Reference.com](http://www.basketball-reference.com/).
+#' This directory contains the data behind the interactive \url{http://fivethirtyeight.com/interactives/the-complete-history-of-every-nba-team-by-elo}. Data updated periodically. Game information is from \url{http://www.basketball-reference.com/}.
 #' 
 #' \describe{
 #' \item{gameorder}{Play order of game in NBA history}
@@ -29,4 +29,4 @@
 #' 
 #' 
 
-"nbaallelo"
+"nba_all_elo"
