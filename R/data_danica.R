@@ -15,18 +15,25 @@ NULL
 #' @format 2 dataframes about Raptor players and teams by era
 #' 
 #' @section raptor_by_player:
-#' A dataframe with 20492 rows representing every player by era and 22 variables:
+#' A dataframe with 20492 rows representing every player broken out by season and era and 22 variables:
 #' \describe{
-#'  \item{player_id}{player ID}{\url{Basketball-Reference.com}}
+#'  \item{player_name}{Player Name}
+#'  \item{player_id}{Player ID}{\url{Basketball-Reference.com}}
 #'  \item{season}{Season}
 #'  \item{poss}{Possessions played}
 #'  \item{mp}{Minutes played}
-#'  \item{raptor_box_offense}{Values are missing when era is historical}
-#'  \item{raptor_box_defense}{Values are missing when era is historical}
-#'  \item{raptor_box_total}{Values are missing when era is historical}
-#'  \item{raptor_onoff_offense}{Values are missing when era is historical}
-#'  \item{raptor_onoff_defense}{Values are missing when era is historical}
-#'  \item{raptor_onoff_total}{{Values are missing when era is historical}}
+#'  \item{raptor_box_offense}{Points above average per 100 possessions added by player on offense, based only on box score estimate
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_box_defense}{Points above average per 100 possessions added by player on defense, based only on box score estimate
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_box_total}{Points above average per 100 possessions added by player, based only on box score estimate
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_onoff_offense}{Points above average per 100 possessions added by player on offense, based only on plus-minus data
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_onoff_defense}{Points above average per 100 possessions added by player on defense, based only on plus-minus data
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_onoff_total}{Points above average per 100 possessions added by player, based only on plus-minus data
+#'       (Values are missing when era is historical)}
 #'  \item{raptor_offense}{Points above average per 100 possessions added by player on offense, using both box and on-off components}
 #'  \item{raptor_defense}{Points above average per 100 possessions added by player on defense, using both box and on-off components}
 #'  \item{raptor_total}{Points above average per 100 possessions added by player on both offense and defense, using both box and on-off components}
@@ -44,21 +51,27 @@ NULL
 
 #' @rdname nba_raptor
 #' @section raptor_by_team:
-#' A dataframe with 32055 rows representing every player by era and 24 variables:
+#' A dataframe with 32055 rows representing every team broken out by team, season, season_type, and era and 24 variables:
 #' \describe{
 #'  \item{player_name}{Player name}
-#'  \item{player_id}{player ID}{\url{Basketball-Reference.com}}
+#'  \item{player_id}{Player ID}{\url{Basketball-Reference.com}}
 #'  \item{season}{Season}
 #'  \item{season_type}{Regular season (RS) or playoff (PO)}
 #'  \item{team}{Basketball-Reference ID of team}
 #'  \item{poss}{Possessions played}
 #'  \item{mp}{Minutes played}
-#'  \item{raptor_box_offense}{Values are missing when era is historical}
-#'  \item{raptor_box_defense}{Values are missing when era is historical}
-#'  \item{raptor_box_total}{Values are missing when era is historical}
-#'  \item{raptor_onoff_offense}{Values are missing when era is historical}
-#'  \item{raptor_onoff_defense}{Values are missing when era is historical}
-#'  \item{raptor_onoff_total}{{Values are missing when era is historical}}
+#'  \item{raptor_box_offense}{Points above average per 100 possessions added by player on offense, based only on box score estimate
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_box_defense}{Points above average per 100 possessions added by player on defense, based only on box score estimate
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_box_total}{Points above average per 100 possessions added by player, based only on box score estimate
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_onoff_offense}{Points above average per 100 possessions added by player on offense, based only on plus-minus data
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_onoff_defense}{Points above average per 100 possessions added by player on defense, based only on plus-minus data
+#'       (Values are missing when era is historical)}
+#'  \item{raptor_onoff_total}{Points above average per 100 possessions added by player, based only on plus-minus data
+#'       (Values are missing when era is historical)}
 #'  \item{raptor_offense}{Points above average per 100 possessions added by player on offense, using both box and on-off components}
 #'  \item{raptor_defense}{Points above average per 100 possessions added by player on defense, using both box and on-off components}
 #'  \item{raptor_total}{Points above average per 100 possessions added by player on both offense and defense, using both box and on-off components}
