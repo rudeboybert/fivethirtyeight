@@ -1,7 +1,10 @@
 #' The Complete History Of The NBA
 #' 
-#' This directory contains the data behind the interactive \url{http://fivethirtyeight.com/interactives/the-complete-history-of-every-nba-team-by-elo}. Data updated periodically. Game information is from \url{http://www.basketball-reference.com/}.
+#' This directory contains the data behind the interactive 
+#' "The Complete History Of The NBA"
+#' \url{http://fivethirtyeight.com/interactives/the-complete-history-of-every-nba-team-by-elo}.
 #' 
+#' @format A data frame with 63157 rows representing basketball games and 23 variables:
 #' \describe{
 #' \item{gameorder}{Play order of game in NBA history}
 #' \item{game_id}{Unique ID for each game}
@@ -27,6 +30,6 @@
 #' \item{forecast}{Elo-based chances of winning for the team in the team_id column, based on elo ratings and game location}
 #' \item{notes}{Additional information}}
 #' 
-#' 
+#' @source Basketball Reference: \url{http://www.basketball-reference.com/}.
 
 "nba_all_elo"
