@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Citation and Authors • fivethirtyeight</title>
+<title>A Better Way to Evaluate NBA Defense — nba_draymond • fivethirtyeight</title>
 
 
 <!-- jquery -->
@@ -29,13 +29,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Citation and Authors" />
+<meta property="og:title" content="A Better Way to Evaluate NBA Defense — nba_draymond" />
+<meta property="og:description" content="The raw data behind the story
+&quot;A Better Way to Evaluate NBA Defense&quot;
+https://fivethirtyeight.com/features/a-better-way-to-evaluate-nba-defense/." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +58,7 @@
   </head>
 
   <body>
-    <div class="container template-citation-authors">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -66,7 +70,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">fivethirtyeight</a>
+        <a class="navbar-link" href="../index.html">fivethirtyeight</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0.9000</span>
       </span>
     </div>
@@ -74,16 +78,16 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="articles/fivethirtyeight.html">Get started</a>
+  <a href="../articles/fivethirtyeight.html">Get started</a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -93,36 +97,36 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
+      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
     </li>
     <li>
-      <a href="articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
+      <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
     </li>
     <li>
-      <a href="articles/biopics.html">Looking at Biopics of Hollywood</a>
+      <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
     </li>
     <li>
-      <a href="articles/bob_ross.html">Bob Ross - Joy of Painting</a>
+      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting</a>
     </li>
     <li>
-      <a href="articles/comics_gender.html">Gender in Comic Books</a>
+      <a href="../articles/comics_gender.html">Gender in Comic Books</a>
     </li>
     <li>
-      <a href="articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
+      <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
     </li>
     <li>
-      <a href="articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
+      <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
     </li>
     <li>
-      <a href="articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
+      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
     <li>
-      <a href="articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
+      <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
     </li>
   </ul>
 </li>
 <li>
-  <a href="news/index.html">Changelog</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -143,102 +147,44 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Citation</h1>
-      <small class="dont-index">Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/inst/CITATION'><code>inst/CITATION</code></a></small>
+    <h1>A Better Way to Evaluate NBA Defense</h1>
+    <small class="dont-index">Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_jane.R'><code>R/data_jane.R</code></a></small>
+    <div class="hidden name"><code>nba_draymond.Rd</code></div>
     </div>
 
-    <p>Kim, A. Y. and Ismay, C. and Chunn, J. (2018) The fivethirtyeight R Package: 'Tame Data' Principles for Introductory Statistics and Data Science Courses, Technology Innovations in Statistics Education. 11(1)</p>
-    <pre>@Article{,
-  author = {Albert Y. Kim and Chester Ismay and Jennifer Chunn},
-  title = {The fivethirtyeight R Package: 'Tame Data' Principles for Introductory Statistics and Data Science Courses},
-  journal = {Technology Innovations in Statistics Education},
-  year = {2018},
-  volume = {11},
-  issue = {1},
-  url = {https://escholarship.org/uc/item/0rx1231m},
-}</pre>
-
-    <div class="page-header">
-      <h1>Authors</h1>
+    <div class="ref-description">
+    <p>The raw data behind the story
+"A Better Way to Evaluate NBA Defense"
+<a href='https://fivethirtyeight.com/features/a-better-way-to-evaluate-nba-defense/'>https://fivethirtyeight.com/features/a-better-way-to-evaluate-nba-defense/</a>.</p>
     </div>
 
-    <ul class="list-unstyled">
-      <li>
-        <p><strong>Albert Y. Kim</strong>. Author, maintainer. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Chester Ismay</strong>. Author. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Jennifer Chunn</strong>. Author. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Meredith Manley</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Maggie Shea</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Starry Yujia Zhou</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Andrew Flowers</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Jonathan Bouchet</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>G. Elliott Morris</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Adam Spannbauer</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Pradeep Adhokshaja</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Olivia Barrows</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Jojo Miller</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Jayla Nakayama</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Natalia Iannucci</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Marium Tapal</strong>. Contributor. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Jane Bang</strong>. Contributor. 
-        </p>
-      </li>
+    <pre class="usage"><span class='no'>nba_draymond</span></pre>
+
+
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A data frame with 3009 rows representing DRAYMOND ratings (Defensive Rating Accounting for Yielding Minimal Openness by Nearest Defender) for every player since the 2013-14 season with 4 variables:</p><dl class='dl-horizontal'>
+  <dt>season</dt><dd><p>The second year of the season; for example, 2018-2019 season would be listed as 2019</p></dd>
+  <dt>player</dt><dd><p>Name of the player</p></dd>
+  <dt>possessions</dt><dd><p>Number of possessions a player during the season</p></dd>
+  <dt>draymond</dt><dd><p>Defensive Rating Accounting for Yielding Minimal Openness by Nearest Defender</p></dd>
+</dl>
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>see <a href='https://github.com/fivethirtyeight/data/tree/master/nba-draymond'>https://github.com/fivethirtyeight/data/tree/master/nba-draymond</a></p>
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#format">Format</a></li>
+      <li><a href="#source">Source</a></li>
     </ul>
 
   </div>
-
 </div>
-
 
 
       <footer>

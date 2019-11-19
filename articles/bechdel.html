@@ -113,7 +113,7 @@
 </h1>
                         <h4 class="author">Chester Ismay</h4>
             
-            <h4 class="date">2019-11-13</h4>
+            <h4 class="date">2019-11-19</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/bechdel.Rmd"><code>vignettes/bechdel.Rmd</code></a></small>
       <div class="hidden name"><code>bechdel.Rmd</code></div>
@@ -356,7 +356,7 @@
 <a class="sourceLine" id="cb36-14" data-line-number="14">                                            <span class="st">"Women only talk about men"</span>,</a>
 <a class="sourceLine" id="cb36-15" data-line-number="15">                                            <span class="st">"Passes Bechdel Test"</span>))) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb36-16" data-line-number="16"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">group =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(group, <span class="dt">levels =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"U.S. and Canada"</span>, <span class="st">"International"</span>))) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb36-17" data-line-number="17"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">median_roi_dol =</span> <span class="kw"><a href="https://scales.r-lib.org//reference/dollar_format.html">dollar</a></span>(median_roi))</a></code></pre></div>
+<a class="sourceLine" id="cb36-17" data-line-number="17"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">median_roi_dol =</span> <span class="kw"><a href="https://scales.r-lib.org//reference/label_dollar.html">dollar</a></span>(median_roi))</a></code></pre></div>
 <p>Using only a few functions to plot</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data =</span> med_groups, <span class="dt">mapping =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> clean_test, <span class="dt">y =</span> median_roi, </a>
 <a class="sourceLine" id="cb37-2" data-line-number="2">                                        <span class="dt">fill =</span> group)) <span class="op">+</span></a>
