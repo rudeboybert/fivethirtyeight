@@ -3,7 +3,6 @@
 \docType{package}
 \name{fivethirtyeight}
 \alias{fivethirtyeight}
-\alias{fivethirtyeight-package}
 \title{fivethirtyeight: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight'}
 \description{
 An R package that provides access to the code and data sets
