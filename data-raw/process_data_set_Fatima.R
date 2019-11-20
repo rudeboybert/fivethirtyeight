@@ -8,22 +8,14 @@ library(usethis)
 impeachment_polls <- read_csv("data-raw/impeachment-polls/IMPEACHMENT-POLLS - Public Master List.csv") %>%
   clean_names() %>%
   mutate(
-    Start = col_date(format = ""),
-    End = col_date(format = ""),
-    pollster = as.factor(pollster),
+    start = mdy(start),
+    end = mdy(end),
     sponsor = as.factor(sponsor),
-    Pop = as.factor(Pop),
+    pollster = as.factor(pollster),
+    pop = as.factor(pop),
+    tracking = as.logical(tracking),
+    pollster = as.factor(pollster),
     category = as.factor(category),
-    `Include?` = as.logical(`Include?`))
-
-names(impeachment_polls)[names(impeachment_polls)== "start"] <- "Start_Date"
-names(impeachment_polls)[names(impeachment_polls)== "end"] <- "End_Date"
-names(impeachment_polls)[names(impeachment_polls)== "pollster"] <- "Pollster"
-names(impeachment_polls)[names(impeachment_polls)== "sponsor"] <- "Poll_Sponsor"
-names(impeachment_polls)[names(impeachment_polls)== "text"] <- "Poll _Question"
-names(impeachment_polls)[names(impeachment_polls)== "category"] <- "Poll_Type"
-names(impeachment_polls)[names(impeachment_polls)== "yes"] <- "Yes"
-names(impeachment_polls)[names(impeachment_polls)=="no"] <- "No"
-names(impeachment_polls)[names(impeachment_polls)== "unsure"] <- "Unsure"
+    include = as.logical(include))
 
 usethis::use_data(impeachment_polls, overwrite = TRUE)
