@@ -1,0 +1,35 @@
+#' The Complete History Of The NBA
+#' 
+#' This directory contains the data behind the interactive 
+#' "The Complete History Of The NBA"
+#' \url{http://fivethirtyeight.com/interactives/the-complete-history-of-every-nba-team-by-elo}.
+#' 
+#' @format A data frame with 63157 rows representing basketball games and 23 variables:
+#' \describe{
+#' \item{gameorder}{Play order of game in NBA history}
+#' \item{game_id}{Unique ID for each game}
+#' \item{lg_id}{Which league the game was played in}
+#' \item{year_id}{Season id, named based on year in which the season ended}
+#' \item{date_game}{Game date}
+#' \item{seasongame}{Number of games home team has played in season}
+#' \item{is_playoffs}{Flag for playoff games}
+#' \item{team_id}{Three letter code for home team name, from Basketball Reference}
+#' \item{fran_id}{Home team franchise id. Multiple team_ids can fall under the same fran_id due to name changes or moves. Interactive is grouped by fran_id.}
+#' \item{pts}{Points scored by home team}
+#' \item{elo_i}{Home team elo entering the game}
+#' \item{elo_n}{Home team elo following the game}
+#' \item{win_equiv}{Equivalent number of wins in a 82-game season for a team of elo_n quality}
+#' \item{opp_id}{Team id of opponent}
+#' \item{opp_fran}{Franchise id of opponent}
+#' \item{opp_pts}{Points scored by opponent}
+#' \item{opp_elo_i}{Opponent elo entering the game}
+#' \item{opp_elo_n}{Opponent elo following the game}
+#' \item{opp_win_equiv}{Opponent equivalent number of wins in a 82-game season for a team of elo_n quality}
+#' \item{opp_seasongame}{Number of games opponent has played in season}
+#' \item{game_result}{Win or loss for team in the team_id column}
+#' \item{forecast}{Elo-based chances of winning for the team in the team_id column, based on elo ratings and game location}
+#' \item{notes}{Additional information}}
+#' 
+#' @source Basketball Reference: \url{http://www.basketball-reference.com/}.
+
+"nba_all_elo"

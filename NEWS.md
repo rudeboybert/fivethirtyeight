@@ -11,6 +11,7 @@
     + By Anna Ballou: `foul_balls` 
     + By Jane Bang: `nba_draymond`
     + By Kara Van Allen: `nba_elo`, `nba_elo_latest`
+    + By Jessica Keast: `nba_all_elo`
 
 
 # fivethirtyeight 0.5.0
