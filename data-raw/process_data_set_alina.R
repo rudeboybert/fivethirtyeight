@@ -11,7 +11,6 @@ dem_candidates <- read_csv("data-raw/primary-candidates-2018/dem_candidates.csv"
   #change classes from character to factor and date to date
   mutate(
     state = as.factor(state),
-    district = as.factor(district),
     office_type = as.factor(office_type),
     race_type = as.factor(race_type),
     primary_status = as.factor(primary_status),
@@ -39,6 +38,26 @@ dem_candidates <- read_csv("data-raw/primary-candidates-2018/dem_candidates.csv"
     wfp_endorsed = as.factor(wfp_endorsed),
     no_labels_support = as.factor(no_labels_support)
   )
+
+#transform district variable into 2 variables: 
+
+#body of government
+dem_candidates <- dem_candidates %>%
+  mutate(
+    body = case_when(
+      str_detect(district,"Governor") ~ "governor",
+      str_detect(district, "House") ~ "house",
+      str_detect(district, "Senate") ~ "senate"),
+    body = as.factor(body)
+  )
+
+#district number
+dem_candidates <- dem_candidates %>%
+  mutate(
+    district_num = as.double(str_extract(district, "[[:digit:]]+")))
+
+#remove original district variable
+dem_candidates$district <- NULL
 
 #change levels from Yes/No to TRUE/FALSE for relevant variables
 levels(dem_candidates$won_primary) <- c(FALSE,TRUE)
@@ -86,5 +105,8 @@ dem_candidates <- dem_candidates %>%
     vote_vets_endorsed = as.logical(vote_vets_endorsed),
     no_labels_support = as.logical(no_labels_support)
   )
+
+dem_candidates <- dem_candidates %>%
+  select(candidate, state, body, district_num, office_type, everything())
 
 usethis::use_data(dem_candidates, overwrite = TRUE)

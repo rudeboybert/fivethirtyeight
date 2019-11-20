@@ -8,7 +8,8 @@
 \describe{
   \item{candidate}{All candidates who received votes in 2018’s Democratic primary elections for U.S. Senate, U.S. House and governor in which no incumbent ran. Supplied by Ballotpedia.}
   \item{state}{The state in which the candidate ran. Supplied by Ballotpedia.}
-  \item{district}{The office and, if applicable, congressional district number for which the candidate ran. Supplied by Ballotpedia.}
+  \item{body}{The body of government for which the candidate ran. Supplied by Ballotpedia.}
+  \item{district_num}{If applicable, congressional district number for which the candidate ran. Supplied by Ballotpedia.}
   \item{office_type}{The office for which the candidate ran. Supplied by Ballotpedia.}
   \item{race_type}{Whether it was a “regular” or “special” election. Supplied by Ballotpedia.}
   \item{race_primary_election_date}{The date on which the primary was held. Supplied by Ballotpedia.}
