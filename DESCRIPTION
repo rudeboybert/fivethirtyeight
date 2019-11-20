@@ -23,6 +23,7 @@ Authors@R: c(
     person("Natalia", "Iannucci", email = "iannuccinatalia@gmail.com", role = "ctb"),
     person("Marium", "Tapal", email = "mariumtapal@gmail.com", role = "ctb"),
     person("Irene", "Ryan", email = "ryan.irene3@gmail.com", role = "ctb"),
+    person("Danica", "Miguel", email = "dmiguel@smith.edu", role = "ctb"),
     person("Sunni", "Raleigh", email = "sunnigraleigh@gmail.com", role = "ctb"),
     person("Anna", "Ballou", email = "afballou16@gmail.com", role = "ctb"),
     person("Jane", "Bang", email = "carolbjy@gmail.com", role = "ctb"))
