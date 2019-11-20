@@ -8,6 +8,9 @@ library(usethis)
 nba_elo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.csv")
 nba_elo_latest <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo_latest.csv")
 
+rownames(nba_elo) <- NULL
+rownames(nba_elo_latest) <- NULL
+
 #tidying and taming data for nba_elo
 nba_elo %>% clean_names()
 gsub(x = colnames(nba_elo), pattern = "-", replacement = "_")
