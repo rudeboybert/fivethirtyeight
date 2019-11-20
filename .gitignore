@@ -12,3 +12,5 @@ inst/doc
 docs/*
 doc
 Meta
+data/nba_elo.rda
+man/nbaallelo.Rd
