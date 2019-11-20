@@ -2,6 +2,7 @@
 * Added new data sets:
     + By Natalia Iannucci: `media_mentions_cable`, `media_mentions_online`
     + By Marium Tapal: `state_index`, `state_words`
+    + By Danica Miguel : `raptor_by_player`,`raptor_by_team`
     + By Sunni Raleigh: `wwc_2019_forecasts`, `wwc_2019_matches`
     + By Anna Ballou: `foul_balls` 
     + By Jane Bang: `nba_draymond`
