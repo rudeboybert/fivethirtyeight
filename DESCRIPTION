@@ -23,6 +23,8 @@ Authors@R: c(
     person("Natalia", "Iannucci", email = "iannuccinatalia@gmail.com", role = "ctb"),
     person("Marium", "Tapal", email = "mariumtapal@gmail.com", role = "ctb"),
     person("Irene", "Ryan", email = "ryan.irene3@gmail.com", role = "ctb"),
+    person("Sunni", "Raleigh", email = "sunnigraleigh@gmail.com", role = "ctb"),
+    person("Anna", "Ballou", email = "afballou16@gmail.com", role = "ctb"),
     person("Jane", "Bang", email = "carolbjy@gmail.com", role = "ctb"))
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
@@ -32,7 +34,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/rudeboybert/fivethirtyeight
 BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.0
 Suggests:
     ggplot2,
     dplyr,
