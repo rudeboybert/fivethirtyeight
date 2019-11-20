@@ -22,7 +22,7 @@ Authors@R: c(
     person("Jayla", "Nakayama", role = "ctb"),
     person("Natalia", "Iannucci", email = "iannuccinatalia@gmail.com", role = "ctb"),
     person("Marium", "Tapal", email = "mariumtapal@gmail.com", role = "ctb"),
-    person("Irene", "Ryan", email = "ryan.irene3@gmail.com", role = "ctb"))
+    person("Irene", "Ryan", email = "ryan.irene3@gmail.com", role = "ctb"),
     person("Jane", "Bang", email = "carolbjy@gmail.com", role = "ctb"))
 Maintainer: Albert Y. Kim <albert.ys.kim@gmail.com>
 Depends:
