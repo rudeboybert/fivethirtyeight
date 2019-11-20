@@ -8,14 +8,14 @@
 #' \describe{
 #' \item{Start}{Poll start date, the first date responses were collected}
 #' \item{End}{Poll end date, the last date responses collected}
-#' \item{Pollster}
-#' \item{Sponsor}{sponsor of poll}
+#' \item{Pollster}{entity/organization that created poll and collected poll data}
+#' \item{Sponsor}{sponsor of pollster}
 #' \item{SampleSize}{number of responders in each of the polls included}
-#' \item{Pop}
-#' \item{tracking}{logical, true false}
+#' \item{Pop}{categorical var taking on 3 values: a, rv, lv}
+#' \item{tracking}{true/false logical, not sure what this is measuring though}
 #' \item{Text}{Poll Question}
-#' \item{Category}{}
-#' \item{Include?}{}
+#' \item{Category}{Poll Question Category}
+#' \item{Include?}{yes/no logical, not sure what this is measuring though}
 #' \item{Yes}{% of repsondents in sample who answered "Yes" to the poll question}
 #' \item{No}{% of respondents in sample  who answered "No" to the poll question}
 #' \item{Unsure}{% of respondents in sample who did not answer "Yes" or "No" to the poll question, i.e. "not sure", "unsure"}
