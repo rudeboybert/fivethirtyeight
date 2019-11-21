@@ -2,6 +2,7 @@
 * Added new data sets:
     + By Natalia Iannucci: `media_mentions_cable`, `media_mentions_online`
     + By Marium Tapal: `state_index`, `state_words`
+    + By Lizette Carpenter: `cabinet_turnover`
 
 
 # fivethirtyeight 0.5.0
