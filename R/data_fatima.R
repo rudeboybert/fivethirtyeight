@@ -8,14 +8,14 @@
 #' \describe{
 #' \item{Start}{Poll start date, the first date responses were collected}
 #' \item{End}{Poll end date, the last date responses collected}
-#' \item{Pollster}
+#' \item{Pollster}{entity/organization that create poll and collected poll data}
 #' \item{Sponsor}{sponsor of poll}
 #' \item{SampleSize}{number of responders in each of the polls included}
-#' \item{Pop}
-#' \item{tracking}{logical, true false}
-#' \item{Text}{Poll Question}
-#' \item{Category}{}
-#' \item{Include?}{}
+#' \item{Pop}{unknown value, factor with 3 values -- a, rv, lv}
+#' \item{tracking}{unknown value, logical true false}
+#' \item{Text}{poll question}
+#' \item{Category}{poll question category, 5 known values -- impeach_and_remove, reasons, impeach, begin_proceedings, begin_inquiry}
+#' \item{Include?}{unknown value, logical yes no}
 #' \item{Yes}{% of repsondents in sample who answered "Yes" to the poll question}
 #' \item{No}{% of respondents in sample  who answered "No" to the poll question}
 #' \item{Unsure}{% of respondents in sample who did not answer "Yes" or "No" to the poll question, i.e. "not sure", "unsure"}

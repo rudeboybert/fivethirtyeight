@@ -1,7 +1,21 @@
 # fivethirtyeight 0.5.0.9000
+
 * Added new data sets:
     + By Natalia Iannucci: `media_mentions_cable`, `media_mentions_online`
+<<<<<<< HEAD
+=======
+    + By Marium Tapal: `state_index`, `state_words`
+    + By Irene Ryan: `castle_solutions`, `castle_solutions_2`, `castle_solutions_3`
+    + By Alina Barylsky: `dem_candidates`
+    + By Rana Gahwagy:`quasi_winshares`
+    + By Danica Miguel : `raptor_by_player`,`raptor_by_team`
+    + By Sunni Raleigh: `wwc_2019_forecasts`, `wwc_2019_matches`
+    + By Anna Ballou: `foul_balls` 
+    + By Jane Bang: `nba_draymond`
+    + By Jessica Keast: `nba_all_elo`
     + By Fatima Keita: `impeachment_polls`
+
+>>>>>>> 4ede5e1c30ec8e274163eb552c27c85cb9faa69d
 
 
 # fivethirtyeight 0.5.0
