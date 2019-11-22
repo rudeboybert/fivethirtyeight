@@ -18,16 +18,16 @@
 #'   \item{include}{yes/no logical -- value unknown}
 #'   \item{yes}{% of repsondents in sample who answered "Yes" to the poll question}
 #'   \item{no}{% of respondents in sample  who answered "No" to the poll question}
-#'   \item{unsure}{% of respondents in sample who did not answer "Yes" or "No" to the poll question, i.e. "not sure", "unsure"}
+#'   \item{unsure}{% of respondents in sample who did not answer "Yes" or "No" to the poll question}
 #'   \item{rep_sample}{number of Republican respondents in sample}
-#'   \item{rep_yes}{% of Republican respondents who answered "yes" to poll question}
-#'   \item{rep_no}{% of Republican respondents who answered "no" to poll question}
+#'   \item{rep_yes}{% of Republican respondents who answered "yes"}
+#'   \item{rep_no}{% of Republican respondents who answered "no"}
 #'   \item{dem_sample}{number of Democrat respondents in sample}
-#'   \item{dem_yes}{% of Democrat respondents who answered "yes" to poll question}
-#'   \item{dem_no}{% of Democrat respondents who answered "no" to poll question}
+#'   \item{dem_yes}{% of Democrat respondents who answered "yes"}
+#'   \item{dem_no}{% of Democrat respondents who answered "no"}
 #'   \item{ind_sample}{number of Independent respondents in sample}
-#'   \item{ind_yes}{% of Independent respondents who answered "yes" to poll question}
-#'   \item{ind_no}{% of Independent respondents who answered "no" to poll question}
+#'   \item{ind_yes}{% of Independent respondents who answered "yes"}
+#'   \item{ind_no}{% of Independent respondents who answered "no"}
 #'   \item{url}{URL links to poll websites}
 #'   \item{notes}{any notes relating to polls in sample}
 #'   }

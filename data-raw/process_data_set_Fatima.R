@@ -13,7 +13,6 @@ impeachment_polls <- read_csv("data-raw/impeachment-polls/IMPEACHMENT-POLLS - Pu
     sponsor = as.factor(sponsor),
     pollster = as.factor(pollster),
     pop = as.factor(pop),
-    tracking = as.logical(tracking),
     pollster = as.factor(pollster),
     category = as.factor(category),
     include = as.logical(include))
