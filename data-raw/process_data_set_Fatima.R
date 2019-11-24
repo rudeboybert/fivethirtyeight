@@ -14,7 +14,7 @@ impeachment_polls <- read_csv("data-raw/impeachment-polls/IMPEACHMENT-POLLS - Pu
     pollster = as.factor(pollster),
     pop = as.factor(pop),
     pollster = as.factor(pollster),
-    category = as.factor(category),
+    category = as.factor(category), 
     include = as.logical(include))
 
 usethis::use_data(impeachment_polls, overwrite = TRUE)
