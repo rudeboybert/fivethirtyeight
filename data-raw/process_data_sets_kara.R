@@ -12,18 +12,22 @@ rownames(nba_elo) <- NULL
 rownames(nba_elo_latest) <- NULL
 
 #tidying and taming data for nba_elo
-nba_elo %>% clean_names()
-gsub(x = colnames(nba_elo), pattern = "-", replacement = "_")
+nba_elo <- nba_elo %>% clean_names()
 
 nba_elo <- nba_elo %>%
   mutate_if(is.logical, as.numeric)
 
+nba_elo$neutral <- as.logical(nba_elo$neutral)
+
+
 #tidying and taming data for nba_elo_latest
-nba_elo_latest %>% clean_names()
-gsub(x = colnames(nba_elo_latest), pattern = "-", replacement = "_")
+nba_elo_latest <- nba_elo_latest %>% clean_names()
 
 nba_elo_latest <- nba_elo_latest %>%
   mutate_if(is.logical, as.numeric)
+
+nba_elo_latest$neutral <- as.logical(nba_elo_latest$neutral)
+
 
 #setting up .rda
 usethis::use_data(nba_elo, overwrite = TRUE)
