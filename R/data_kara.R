@@ -1,9 +1,10 @@
 #' NBA Elo Ratings Through History
 #' 
-#' The data behind the Elo and RAPTOR ratings for NBA teams used in various stories like this one: 
-#' \url{https://projects.fivethirtyeight.com/complete-history-of-the-nba/#raptors}
+#' The data behind several stories, including
+#' "The Complete History of the NBA"
+#' \url{https://projects.fivethirtyeight.com/complete-history-of-the-nba}
 #' 
-#'   @format A data frame with 69636 rows representing every game in the NBA, and 24 variables:
+#' @format A data frame with 69636 rows representing every game in the NBA, and 24 variables:
 #' \describe{
 #'   \item{date}{Date}
 #'   \item{season}{the season in which the game was played}
