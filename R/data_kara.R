@@ -8,8 +8,8 @@
 #' \describe{
 #'   \item{date}{Date}
 #'   \item{season}{the season in which the game was played}
-#'   \item{neutral}{1 if the game was played on neutral territory, 0 if not}
-#'   \item{playoff}{1 if the game was played in a playoff, o if not}
+#'   \item{neutral}{True if the game was played on neutral territory, False if not}
+#'   \item{playoff}{True if the game was played in a playoff, False if not}
 #'   \item{team1}{name of first team}
 #'   \item{team2}{name of second team}
 #'   \item{elo1_pre}{Team 1 Elo rating before game}
@@ -33,8 +33,8 @@
 #' \describe{
 #'   \item{date}{Date}
 #'   \item{season}{the season in which the game was played}
-#'   \item{neutral}{1 if the game was played on neutral territory, 0 if not}
-#'   \item{playoff}{1 if the game was played in a playoff, o if not}
+#'   \item{neutral}{True if the game was played on neutral territory, False if not}
+#'   \item{playoff}{True if the game was played in a playoff, False if not}
 #'   \item{team1}{name of first team}
 #'   \item{team2}{name of second team}
 #'   \item{elo1_pre}{Team 1 Elo rating before game}

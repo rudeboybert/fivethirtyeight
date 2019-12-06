@@ -15,18 +15,16 @@ rownames(nba_elo_latest) <- NULL
 nba_elo <- nba_elo %>% clean_names()
 
 nba_elo <- nba_elo %>%
-  mutate_if(is.logical, as.numeric)
-
-nba_elo$neutral <- as.logical(nba_elo$neutral)
+  mutate_if(is.logical, as.numeric) %>%
+  mutate(neutral = as.logical(neutral))
 
 
 #tidying and taming data for nba_elo_latest
 nba_elo_latest <- nba_elo_latest %>% clean_names()
 
 nba_elo_latest <- nba_elo_latest %>%
-  mutate_if(is.logical, as.numeric)
-
-nba_elo_latest$neutral <- as.logical(nba_elo_latest$neutral)
+  mutate_if(is.logical, as.numeric) %>%
+  mutate(neutral = as.logical(neutral))
 
 
 #setting up .rda
