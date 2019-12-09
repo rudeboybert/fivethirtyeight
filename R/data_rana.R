@@ -1,4 +1,4 @@
-#'The Twins’ Magical Run Will Likely Go Through The Yankees. (Because Of Course.)
+#' The Twins’ Magical Run Will Likely Go Through The Yankees. (Because Of Course.)
 #' 
 #' The raw data behind the story 
 #' "The Twins’ Magical Run Will Likely Go Through The Yankees. (Because Of Course.)"

@@ -12,6 +12,7 @@
     + By Jane Bang: `nba_draymond`
     + By Kara Van Allen: `nba_elo`, `nba_elo_latest`
     + By Jessica Keast: `nba_all_elo`
+    + By Fatima Keita: `impeachment_polls`
 
 
 # fivethirtyeight 0.5.0
