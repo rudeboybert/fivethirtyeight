@@ -1,22 +1,3 @@
-#' Two Years In, Turnover In Trump’s Cabinet Is Still Historically High
-#'
-#' The raw data behind the story
-#' "Two Years In, Turnover In Trump’s Cabinet Is Still Historically High"
-#' \url{https://fivethirtyeight.com/features/two-years-in-turnover-in-trumps-cabinet-is-still-historically-high/}.
-#'
-#' @format A data frame with 312 rows representing cabinet members and 7 variables:
-#' \describe{
-#'   \item{president}{Last name of sitting President}
-#'   \item{position}{Cabinet Position}
-#'   \item{appointee}{Appointee's full name}
-#'   \item{start}{Date the appointee was sworn in}
-#'   \item{end}{Date the appointee left office}
-#'   \item{length}{Length of Tenure in days}
-#'   \item{days}{Days into administration that the appointee left office}
-#' }
-#' @source Federal Government Website, News Reports
-"cabinet_turnover"
-
 #' How Much Trouble Is Ted Cruz Really In?
 #'
 #' The raw data behind the story

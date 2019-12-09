@@ -3,6 +3,7 @@
 * Added new data sets:
     + By Natalia Iannucci: `media_mentions_cable`, `media_mentions_online`
     + By Marium Tapal: `state_index`, `state_words`
+    + By Lizette Carpenter: `cabinet_turnover`
     + By Irene Ryan: `castle_solutions`, `castle_solutions_2`, `castle_solutions_3`
     + By Alina Barylsky: `dem_candidates`
     + By Rana Gahwagy:`quasi_winshares`
@@ -12,7 +13,6 @@
     + By Jane Bang: `nba_draymond`
     + By Jessica Keast: `nba_all_elo`
     + By Fatima Keita: `impeachment_polls`
-
 
 
 # fivethirtyeight 0.5.0
