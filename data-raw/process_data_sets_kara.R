@@ -16,7 +16,8 @@ nba_elo <- nba_elo %>% clean_names()
 
 nba_elo <- nba_elo %>%
   mutate_if(is.logical, as.numeric) %>%
-  mutate(neutral = as.logical(neutral))
+  mutate(neutral = as.logical(neutral)) %>%
+  mutate(playoff = as.logical(playoff))
 
 
 #tidying and taming data for nba_elo_latest
@@ -24,7 +25,8 @@ nba_elo_latest <- nba_elo_latest %>% clean_names()
 
 nba_elo_latest <- nba_elo_latest %>%
   mutate_if(is.logical, as.numeric) %>%
-  mutate(neutral = as.logical(neutral))
+  mutate(neutral = as.logical(neutral)) %>%
+  mutate(playoff = as.logical(playoff))
 
 
 #setting up .rda
