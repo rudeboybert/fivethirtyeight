@@ -5,7 +5,7 @@
 #' \url{https://projects.fivethirtyeight.com/impeachment-polls/}
 #' 
 #' @format A data frame with 388 rows of polling data and 24 variables:
-#' \describe {
+#' \describe{
 #'   \item{start}{Poll start date, the first date responses were collected}
 #'   \item{end}{Poll end date, the last date responses were collected}
 #'   \item{pollster}{entity/organization that created poll, collected and published data}
@@ -29,7 +29,7 @@
 #'   \item{ind_yes}{Percent of Independent respondents who answered "yes"}
 #'   \item{ind_no}{Percent of Independent respondents who answered "no"}
 #'   \item{url}{URL links to poll websites}
-#'   \item{notes}{any notes relating to polls in sample}
+#'   \item{notes}{any notes relating to polls in sample
 #'   }
 #' @source data from \url{https://github.com/fivethirtyeight/data/tree/master/impeachment-polls}.
 "impeachment_polls"
