@@ -1,10 +1,20 @@
-#' NBA Elo Ratings Through History
+#' @name nba_elo
+#' @rdname nba_elo
 #' 
-#' The data behind several stories, including
+#' @title NBA Elo Ratings
+#' 
+#' @description  The raw data behind all nba predictions, including the story
 #' "The Complete History of the NBA"
 #' \url{https://projects.fivethirtyeight.com/complete-history-of-the-nba}
 #' 
-#' @format A data frame with 69636 rows representing every game in the NBA, and 24 variables:
+NULL
+
+#' @rdname nba_elo
+#' 
+#' @format 2 data frames about NBA Elo prediction ratings 
+#' 
+#' @section nba_elo:
+#' A data frame with 69636 rows representing every game in the NBA, and 24 variables:
 #' \describe{
 #'   \item{date}{Date}
 #'   \item{season}{the season in which the game was played}
@@ -24,12 +34,10 @@
 #'   
 "nba_elo"
 
-#' NBA Elo Ratings for this season
+#' @rdname nba_elo
 #' 
-#' The data behind the Elo and RAPTOR ratings for NBA teams used in various stories like this one: 
-#' \url{https://projects.fivethirtyeight.com/complete-history-of-the-nba/#raptors}
-#' 
-#'   @format A data frame with 1230 rows representing game played during the most current season of the NBA, and 24 variables:
+#' @section nba_elo_latest:
+#' A data frame with 1230 rows representing game played during the most current season of the NBA, and 24 variables:
 #' \describe{
 #'   \item{date}{Date}
 #'   \item{season}{the season in which the game was played}
