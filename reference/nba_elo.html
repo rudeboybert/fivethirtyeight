@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Do Americans Support Impeaching Trump? — impeachment_polls • fivethirtyeight</title>
+<title>NBA Elo Ratings — nba_elo • fivethirtyeight</title>
 
 
 <!-- jquery -->
@@ -35,10 +35,10 @@
 
 
 
-<meta property="og:title" content="Do Americans Support Impeaching Trump? — impeachment_polls" />
-<meta property="og:description" content="Raw data behind this story
-&quot;Do Americans Support Impeaching Trump?&quot;
-https://projects.fivethirtyeight.com/impeachment-polls/" />
+<meta property="og:title" content="NBA Elo Ratings — nba_elo" />
+<meta property="og:description" content="The raw data behind all nba predictions, including the story
+&quot;The Complete History of the NBA&quot;
+https://projects.fivethirtyeight.com/complete-history-of-the-nba" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -149,59 +149,77 @@ https://projects.fivethirtyeight.com/impeachment-polls/" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Do Americans Support Impeaching Trump?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_fatima.R'><code>R/data_fatima.R</code></a></small>
-    <div class="hidden name"><code>impeachment_polls.Rd</code></div>
+    <h1>NBA Elo Ratings</h1>
+    <small class="dont-index">Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_kara.R'><code>R/data_kara.R</code></a></small>
+    <div class="hidden name"><code>nba_elo.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Raw data behind this story
-"Do Americans Support Impeaching Trump?"
-<a href='https://projects.fivethirtyeight.com/impeachment-polls/'>https://projects.fivethirtyeight.com/impeachment-polls/</a></p>
+    <p>The raw data behind all nba predictions, including the story
+"The Complete History of the NBA"
+<a href='https://projects.fivethirtyeight.com/complete-history-of-the-nba'>https://projects.fivethirtyeight.com/complete-history-of-the-nba</a></p>
     </div>
 
-    <pre class="usage"><span class='no'>impeachment_polls</span></pre>
+    <pre class="usage"><span class='no'>nba_elo</span>
+
+<span class='no'>nba_elo_latest</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 388 rows of polling data and 24 variables:</p><dl class='dl-horizontal'>
-  <dt>start</dt><dd><p>Poll start date, the first date responses were collected</p></dd>
-  <dt>end</dt><dd><p>Poll end date, the last date responses were collected</p></dd>
-  <dt>pollster</dt><dd><p>entity/organization that created poll, collected and published data</p></dd>
-  <dt>sponsor</dt><dd><p>sponsor of pollster</p></dd>
-  <dt>sample_size</dt><dd><p>number of respondents for each</p></dd>
-  <dt>pop</dt><dd><p>categorical variable with 3 categories: a, rv, lv -- value unknown</p></dd>
-  <dt>tracking</dt><dd><p>true/false logical -- value unknown</p></dd>
-  <dt>text</dt><dd><p>poll question</p></dd>
-  <dt>category</dt><dd><p>category of poll question with 5 categories: impeach and remove, begin proceedings, begin inquiry, reasons, impeach</p></dd>
-  <dt>include</dt><dd><p>yes/no logical -- value unknown</p></dd>
-  <dt>yes</dt><dd><p>Percent of repsondents in sample who answered "Yes" to the poll question</p></dd>
-  <dt>no</dt><dd><p>Percent of respondents in sample  who answered "No" to the poll question</p></dd>
-  <dt>unsure</dt><dd><p>Percent of respondents in sample who did not answer "Yes" or "No" to the poll question</p></dd>
-  <dt>rep_sample</dt><dd><p>number of Republican respondents in sample</p></dd>
-  <dt>rep_yes</dt><dd><p>Percent of Republican respondents who answered "yes"</p></dd>
-  <dt>rep_no</dt><dd><p>Percent of Republican respondents who answered "no"</p></dd>
-  <dt>dem_sample</dt><dd><p>number of Democrat respondents in sample</p></dd>
-  <dt>dem_yes</dt><dd><p>Percent of Democrat respondents who answered "yes"</p></dd>
-  <dt>dem_no</dt><dd><p>Percent of Democrat respondents who answered "no"</p></dd>
-  <dt>ind_sample</dt><dd><p>number of Independent respondents in sample</p></dd>
-  <dt>ind_yes</dt><dd><p>Percent of Independent respondents who answered "yes"</p></dd>
-  <dt>ind_no</dt><dd><p>Percent of Independent respondents who answered "no"</p></dd>
-  <dt>url</dt><dd><p>URL links to poll websites</p></dd>
-  <dt>notes</dt><dd><p>any notes relating to polls in sample</p></dd>
+    <p>2 data frames about NBA Elo prediction ratings</p>
+    <h2 class="hasAnchor" id="nba-elo"><a class="anchor" href="#nba-elo"></a>nba_elo</h2>
+
+    
+
+<p>A data frame with 69636 rows representing every game in the NBA, and 24 variables:</p><dl class='dl-horizontal'>
+  <dt>date</dt><dd><p>Date</p></dd>
+  <dt>season</dt><dd><p>the season in which the game was played</p></dd>
+  <dt>neutral</dt><dd><p>True if the game was played on neutral territory, False if not</p></dd>
+  <dt>playoff</dt><dd><p>True if the game was played in a playoff, False if not</p></dd>
+  <dt>team1</dt><dd><p>name of first team</p></dd>
+  <dt>team2</dt><dd><p>name of second team</p></dd>
+  <dt>elo1_pre</dt><dd><p>Team 1 Elo rating before game</p></dd>
+  <dt>elo2_pre</dt><dd><p>Team 2 Elo rating before game</p></dd>
+  <dt>elo_prob1</dt><dd><p>Team 1's probability of winning based on Elo rating</p></dd>
+  <dt>elo_prob2</dt><dd><p>Team 2's probability of winning based on Elo rating</p></dd>
+  <dt>elo1_post</dt><dd><p>Team 1 Elo rating after the game</p></dd>
+  <dt>elo2_post</dt><dd><p>Team 2 Elo rating after the game</p></dd>
+  <dt>score1</dt><dd><p>the score of team 1</p></dd>
+  <dt>score2</dt><dd><p>the score of team 2</p></dd>
   
 </dl>
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>data from <a href='https://github.com/fivethirtyeight/data/tree/master/impeachment-polls'>https://github.com/fivethirtyeight/data/tree/master/impeachment-polls</a>.</p>
+    <h2 class="hasAnchor" id="nba-elo-latest"><a class="anchor" href="#nba-elo-latest"></a>nba_elo_latest</h2>
+
+    
+
+<p>A data frame with 1230 rows representing game played during the most current season of the NBA, and 24 variables:</p><dl class='dl-horizontal'>
+  <dt>date</dt><dd><p>Date</p></dd>
+  <dt>season</dt><dd><p>the season in which the game was played</p></dd>
+  <dt>neutral</dt><dd><p>True if the game was played on neutral territory, False if not</p></dd>
+  <dt>playoff</dt><dd><p>True if the game was played in a playoff, False if not</p></dd>
+  <dt>team1</dt><dd><p>name of first team</p></dd>
+  <dt>team2</dt><dd><p>name of second team</p></dd>
+  <dt>elo1_pre</dt><dd><p>Team 1 Elo rating before game</p></dd>
+  <dt>elo2_pre</dt><dd><p>Team 2 Elo rating before game</p></dd>
+  <dt>elo_prob1</dt><dd><p>Team 1's probability of winning based on Elo rating</p></dd>
+  <dt>elo_prob2</dt><dd><p>Team 2's probability of winning based on Elo rating</p></dd>
+  <dt>elo1_post</dt><dd><p>Team 1 Elo rating after the game</p></dd>
+  <dt>elo2_post</dt><dd><p>Team 2 Elo rating after the game</p></dd>
+  <dt>score1</dt><dd><p>the score of team 1</p></dd>
+  <dt>score2</dt><dd><p>the score of team 2</p></dd>
+  
+</dl>
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#format">Format</a></li>
-      <li><a href="#source">Source</a></li>
+      <li><a href="#nba-elo">nba_elo</a></li>
+      <li><a href="#nba-elo-latest">nba_elo_latest</a></li>
     </ul>
 
   </div>
