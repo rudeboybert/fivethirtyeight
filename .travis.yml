@@ -42,10 +42,10 @@ r_packages:
   - corrplot
   - ggraph
   - igraph
+  - pkgdown
 
 
 r_github_packages:
-  - r-lib/pkgdown
   - rudeboybert/fivethirtyeight
 
 before_deploy:
