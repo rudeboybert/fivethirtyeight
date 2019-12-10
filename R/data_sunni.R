@@ -42,8 +42,6 @@ NULL
 
 
 #' @rdname wwc_2019
-#' 
-#' @format 
 #' @section wwc_2019_matches:
 #' 2019 Women's World Cup Predictions
 #' A data frame with 52 rows representing Women's World Cup matches, and 18 variables:

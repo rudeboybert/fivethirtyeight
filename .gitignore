@@ -3,7 +3,6 @@
 .RData
 .Ruserdata
 .Rapp.history
-*.Rproj
 .httr-oauth
 data/.DS_Store
 inst/doc

@@ -4,19 +4,6 @@ library(lubridate)
 library(janitor)
 library(usethis)
 
-# cabinet-turnover ---------------------------------------------------------------
-cabinet_turnover <- read_csv("data-raw/cabinet-turnover/cabinet-turnover.csv") %>%
-  clean_names() %>%
-  mutate(
-    start = as.Date(start, "%m/%d/%y"), # change format
-    end = as.Date(end, "%m/%d/%y"), # change format
-    president = as.factor(president),
-    position = as.factor(position),
-    length = as.numeric(length),
-    days = as.numeric(days)
-  )
-
-usethis::use_data(cabinet_turnover, overwrite = TRUE)
 
 
 # august-senate-polls ---------------------------------------------------------------
