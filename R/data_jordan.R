@@ -29,5 +29,5 @@
 #'   \item{spelling}{TRUE if song spells something out, FALSE if not}
 #'   \item{trope_count}{total number of tropes in song}
 #'   \item{spotify_id}{Spotify id for song}}
-#' @source Spotify \url{spotify.com}
+#' @source Spotify \url{https://www.spotify.com/us/}
 "fight_songs"
