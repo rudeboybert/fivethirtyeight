@@ -6,6 +6,7 @@
     + By Sunni Raleigh: `wwc_2019_forecasts`, `wwc_2019_matches`
     + By Anna Ballou: `foul_balls` 
     + By Jane Bang: `nba_draymond`
+    + By Jordan Moody: `fight_songs`
 
 
 # fivethirtyeight 0.5.0
