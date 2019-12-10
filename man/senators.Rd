@@ -43,7 +43,7 @@ if(FALSE){
       party = as.factor(party),
       state = as.factor(state),
       created_at = as.POSIXct(created_at, tz = "GMT", format = "\%m/\%d/\%Y \%H:\%M"),
-      text =  gsub("[^\\x01-\\x7F]", "", text)
+      text =  gsub("[^\x01-\x7F]", "", text)
     ) \%>\%
     select(created_at, user, everything())
 }
