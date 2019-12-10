@@ -78,7 +78,7 @@ For some data sets, there are user-contributed example analyses in the form a pa
 Women](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women). For a complete list of vignettes run
 
 ```{r, eval = FALSE}
-vignette("user_contributed_vignettes.Rmd", package = "fivethirtyeight")
+vignette("user_contributed_vignettes", package = "fivethirtyeight")
 ```
 
 

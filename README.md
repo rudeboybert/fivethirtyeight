@@ -84,7 +84,7 @@ Women](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-ho
 For a complete list of vignettes run
 
 ``` r
-vignette("user_contributed_vignettes.Rmd", package = "fivethirtyeight")
+vignette("user_contributed_vignettes", package = "fivethirtyeight")
 ```
 
 ## More Information
