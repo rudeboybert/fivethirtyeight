@@ -11,9 +11,11 @@
     + By Sunni Raleigh: `wwc_2019_forecasts`, `wwc_2019_matches`
     + By Anna Ballou: `foul_balls` 
     + By Jane Bang: `nba_draymond`
+    + By Jordan Moody: `fight_songs`
     + By Kara Van Allen: `nba_elo`, `nba_elo_latest`
     + By Jessica Keast: `nba_all_elo`
     + By Fatima Keita: `impeachment_polls`
+
 
 
 # fivethirtyeight 0.5.0
