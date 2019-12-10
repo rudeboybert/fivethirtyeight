@@ -12,24 +12,19 @@ rownames(nba_elo) <- NULL
 rownames(nba_elo_latest) <- NULL
 
 #tidying and taming data for nba_elo
-nba_elo <- nba_elo %>% clean_names()
-
 nba_elo <- nba_elo %>%
+  clean_names() %>%
   mutate_if(is.logical, as.numeric) %>%
   mutate(neutral = as.logical(neutral)) %>%
   mutate(playoff = as.logical(playoff))
-
 
 #tidying and taming data for nba_elo_latest
-nba_elo_latest <- nba_elo_latest %>% clean_names()
-
 nba_elo_latest <- nba_elo_latest %>%
+  clean_names() %>%
   mutate_if(is.logical, as.numeric) %>%
   mutate(neutral = as.logical(neutral)) %>%
   mutate(playoff = as.logical(playoff))
-
 
 #setting up .rda
 usethis::use_data(nba_elo, overwrite = TRUE)
 usethis::use_data(nba_elo_latest, overwrite = TRUE)
-
