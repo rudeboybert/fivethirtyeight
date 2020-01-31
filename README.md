@@ -16,6 +16,8 @@ FiveThirtyEight <https://github.com/fivethirtyeight/data>. Note that
 while we received guidance from editors at 538, this package is not
 officially published by 538.
 
+Shout out to my 293 students\!
+
 ## Installation
 
 Get the latest released version from CRAN:
@@ -47,7 +49,7 @@ head(bechdel)
 View(bechdel)
 ```
 
-To see a detailed list of all 127 datasets, including information on the
+To see a detailed list of all 147 datasets, including information on the
 corresponding articles published on FiveThirtyEight.com, click
 [here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
 
