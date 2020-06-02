@@ -4,7 +4,8 @@
 \name{trumpworld_issues}
 \alias{trumpworld_issues}
 \title{What the World Thinks of Trump}
-\format{A data frame with 185 rows representing countries and 6 variables:
+\format{
+A data frame with 185 rows representing countries and 6 variables:
 \describe{
 \item{country}{The country whose population is being polled}
 \item{net_approval}{The difference in the number of respondents from the given country who approve and who disapprove of the issue (Trump proposal) in question (approve-disapprove)}
@@ -17,7 +18,8 @@
            3: Withdraw U.S. support from the Iran nuclear weapons agreement
            4: Withdraw U.S. support for major trade agreements
            5: Introduce tighter restrictions on those entering the U.S. from some majority-Muslim countries}
-}}
+}
+}
 \source{
 Pew Research Center \url{https://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
 }

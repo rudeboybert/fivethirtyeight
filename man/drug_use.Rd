@@ -4,7 +4,8 @@
 \name{drug_use}
 \alias{drug_use}
 \title{How Baby Boomers Get High}
-\format{A data frame with 17 rows representing age groups and 28 variables:
+\format{
+A data frame with 17 rows representing age groups and 28 variables:
 \describe{
   \item{age}{Age group}
   \item{n}{Number of people surveyed}
@@ -34,7 +35,8 @@
   \item{meth_freq}{Median number of times a user used meth}
   \item{sedative_use}{Percentage who used sedatives}
   \item{sedative_freq}{Median number of times a user used sedatives}
-}}
+}
+}
 \source{
 National Survey on Drug Use and Health from the Substance Abuse and
 Mental Health Data Archive \url{https://www.icpsr.umich.edu/icpsrweb/content/SAMHDA/index.html}.
@@ -55,11 +57,11 @@ library(tidyr)
 library(stringr)
 use <- drug_use \%>\%
   select(age, n, ends_with("_use")) \%>\%
-  gather(drug, use, -c(age, n)) \%>\%
+  pivot_longer(-c(age, n), names_to = "drug", values_to = "use") \%>\%
   mutate(drug = str_sub(drug, start=1, end=-5))
 freq <- drug_use \%>\%
   select(age, n, ends_with("_freq")) \%>\%
-  gather(drug, freq, -c(age, n)) \%>\%
+  pivot_longer(-c(age, n), names_to = "drug", values_to = "freq") \%>\%
   mutate(drug = str_sub(drug, start=1, end=-6))
 drug_use_tidy <- left_join(x=use, y=freq, by = c("age", "n", "drug")) \%>\%
   arrange(age)

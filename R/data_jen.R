@@ -34,7 +34,7 @@
 #' library(dplyr)
 #' library(tidyr)
 #' police_locals_tidy <- police_locals %>%
-#'    gather(key = "race", value = "perc_in", all:asian)
+#'    pivot_longer(all:asian, names_to = "race", values_to = "perc_in")
 "police_locals"
 
 #' Looking For Clues: Who Is Going To Run For President In 2016?
@@ -390,7 +390,7 @@
 #' library(tidyr)
 #' library(stringr)
 #' riddler_castles_tidy<-riddler_castles %>%
-#'    gather(key = castle , value = soldiers, castle1:castle10) %>%
+#'    pivot_longer(castle1:castle10, names_to = "castle" , values_to = "soldiers") %>%
 #'    mutate(castle = as.numeric(str_replace(castle, "castle","")))
 #' @seealso \code{\link{riddler_castles2}}
 "riddler_castles"
@@ -425,7 +425,7 @@
 #' library(tidyr)
 #' library(stringr)
 #' riddler_castles_tidy<-riddler_castles2 %>%
-#'    gather(key = castle , value = soldiers, castle1:castle10) %>%
+#'    pivot_longer(castle1:castle10, names_to = "castle" , values_to = "soldiers") %>%
 #'    mutate(castle = as.numeric(str_replace(castle, "castle","")))
 #' @seealso \code{\link{riddler_castles}}
 "riddler_castles2"

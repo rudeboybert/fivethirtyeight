@@ -4,7 +4,8 @@
 \name{twitter_presidents}
 \alias{twitter_presidents}
 \title{The Worst Tweeter in Politics Isn't Trump}
-\format{A data frame with 6439 rows describing individual tweets and 8 variables:
+\format{
+A data frame with 6439 rows describing individual tweets and 8 variables:
 \describe{
 \item{created_at}{The date and time the tweet was posted}
 \item{user}{The user posting the tweet}
@@ -13,7 +14,8 @@
 \item{replies}{The number of replies to the tweet}
 \item{retweets}{The number of retweets}
 \item{favorites}{The number of favorites}
-}}
+}
+}
 \source{
 Twitter \url{https://twitter.com/BarackObama} and \url{https://twitter.com/realDonaldTrump}
 }

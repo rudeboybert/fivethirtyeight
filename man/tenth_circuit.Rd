@@ -4,7 +4,8 @@
 \name{tenth_circuit}
 \alias{tenth_circuit}
 \title{For A Trump Nominee, Neil Gorsuch’s Record Is Surprisingly Moderate On Immigration}
-\format{A data frame with 954 rows representing cases and 13 variables:
+\format{
+A data frame with 954 rows representing cases and 13 variables:
 \describe{
   \item{title}{Name of the case}
   \item{date}{Date of decision}
@@ -19,7 +20,8 @@
   \item{vote2_liberal}{Vote of second judge. 1 = liberal, 0 = conservative.}
   \item{vote3_liberal}{Vote of third judge. 1 = liberal, 0 = conservative.}
   \item{category}{Category of case, immigration or discrimination}
-  }}
+  }
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/tenth-circuit}
 }

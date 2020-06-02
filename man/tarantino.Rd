@@ -4,13 +4,15 @@
 \name{tarantino}
 \alias{tarantino}
 \title{A Complete Catalog Of Every Time Someone Cursed Or Bled Out In A Quentin Tarantino Movie}
-\format{A data frame with 1894 rows representing curse/death instances and 4 variables:
+\format{
+A data frame with 1894 rows representing curse/death instances and 4 variables:
 \describe{
   \item{movie}{Film title}
   \item{profane}{Whether the event was a profane word (TRUE) or a death (FALSE)}
   \item{word}{The specific profane word, if the event was a word}
   \item{minutes_in}{The number of minutes into the film the event occurred}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/tarantino}
 }

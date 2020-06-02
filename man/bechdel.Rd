@@ -4,7 +4,8 @@
 \name{bechdel}
 \alias{bechdel}
 \title{The Dollar-And-Cents Case Against Hollywood's Exclusion of Women}
-\format{A data frame with 1794 rows representing movies and 15 variables:
+\format{
+A data frame with 1794 rows representing movies and 15 variables:
 \describe{
   \item{year}{Year of release}
   \item{imdb}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
@@ -21,7 +22,8 @@
   \item{intgross_2013}{Total International (i.e., worldwide) gross in 2013 inflation adjusted dollars}
   \item{period_code}{}
   \item{decade_code}{}
-}}
+}
+}
 \source{
 \url{http://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
 }

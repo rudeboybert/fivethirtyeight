@@ -4,7 +4,8 @@
 \name{mlb_as_team_talent}
 \alias{mlb_as_team_talent}
 \title{The Best MLB All-Star Teams Ever}
-\format{A data frame with 172 rows representing Major League Baseball seasons and 16 variables:
+\format{
+A data frame with 172 rows representing Major League Baseball seasons and 16 variables:
 \describe{
   \item{yearid}{The season in question}
   \item{gamenum}{Order of All-Star Game for the season (in years w/ multiple ASGs; set to 0 when only 1 per year)}
@@ -22,7 +23,8 @@
   \item{adj_pyth}{Adjusted pythagorean record; =(SOS*unadj_Pyth)/((2*unadj_Pyth*SOS)-SOS-unadj_Pyth+1)}
   \item{no_1_player}{Best player according to combo of actual PA/IP and talent}
   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent}
-}}
+}
+}
 \source{
 \url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
 }

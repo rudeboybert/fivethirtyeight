@@ -4,14 +4,16 @@
 \name{tv_hurricanes}
 \alias{tv_hurricanes}
 \title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
-\format{A data frame with 37 rows representing dates and 5 variables:
+\format{
+A data frame with 37 rows representing dates and 5 variables:
 \describe{
 \item{date}{Date}
 \item{harvey}{The percent of sentences in TV news that mention Hurricane Harvey on the given date}
 \item{irma}{The percent of sentences in TV news that mention Hurricane Irma}
 \item{maria}{The percent of sentences in TV news that mention Hurricane Maria}
 \item{jose}{The percent of sentences in TV news that mention Hurricane Irma}
-}}
+}
+}
 \source{
 Internet TV News Archive \url{https://archive.org/details/tv} and
 Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtsearch/iatv_ftxtsearch}

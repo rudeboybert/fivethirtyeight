@@ -4,11 +4,13 @@
 \name{male_flight_attend}
 \alias{male_flight_attend}
 \title{Dear Mona, How Many Flight Attendants Are Men?}
-\format{A data frame with 320 rows representing job categories and 2 variables:
+\format{
+A data frame with 320 rows representing job categories and 2 variables:
 \describe{
   \item{job_category}{Category of job}
   \item{percentage_male}{Percentage of workforce that are male}
-}}
+}
+}
 \source{
 IPUMS 2012 \url{https://usa.ipums.org/usa/}
 }

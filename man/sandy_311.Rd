@@ -4,7 +4,8 @@
 \name{sandy_311}
 \alias{sandy_311}
 \title{The (Very) Long Tail Of Hurricane Recovery}
-\format{A data frame with 1783 rows representing dates and 25 variables:
+\format{
+A data frame with 1783 rows representing dates and 25 variables:
 \describe{
 \item{date}{Date}
 \item{nyc_311}{No description provided.}
@@ -31,7 +32,8 @@
 \item{sbs}{The number of emergency hotline (311) calls made to Small Business Services related to Hurricane Sandy}
 \item{nys_emergency_mg}{The number of emergency hotline (311) calls made to NYS Emergency Management related to Hurricane Sandy}
 \item{total}{The total number of emergency hotline (311) calls made related to Hurricane Sandy}
-}}
+}
+}
 \source{
 Data from NYC Open Data \url{https://data.cityofnewyork.us/City-Government/311-Call-Center-Inquiry/tdd6-3ysr},
 Agency acronyms from the Data Dictionary. See also \url{https://github.com/fivethirtyeight/data/tree/master/sandy-311-calls}
@@ -49,7 +51,7 @@ The raw data behind the story
 library(dplyr)
 library(tidyr)
 sandy_311_tidy <- sandy_311 \%>\%
-  gather(agency, num_calls, -c("date", "total")) \%>\%
+  pivot_longer(-c("date", "total"), names_to = "agency", values_to = "num_calls") \%>\%
   arrange(date) \%>\%
   select(date, agency, num_calls, total) \%>\%
   rename(total_calls = total) \%>\%

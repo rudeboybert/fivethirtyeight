@@ -4,7 +4,8 @@
 \name{mueller_approval_polls}
 \alias{mueller_approval_polls}
 \title{Both Parties Think The Mueller Report Was Fair. They Just Completely Disagree On What It Says.}
-\format{A dataset with 65 rows representing every job approval poll of Robert Mueller that we could find from when Mueller was appointed as special council on May 17, 2017 through May 3, 2019 and 12 variables
+\format{
+A dataset with 65 rows representing every job approval poll of Robert Mueller that we could find from when Mueller was appointed as special council on May 17, 2017 through May 3, 2019 and 12 variables
 \describe{
 \item{start}{the start date of the poll}
 \item{end}{the end date of the poll}
@@ -18,7 +19,8 @@
 \item{approve_(republican)}{the number of approval from Republican}
 \item{approve_(democrat)}{the number of approval from Democrat}
 \item{url}{the url of the poll}
-}}
+}
+}
 \source{
 Polls, Washington Post / ABC and Washington Post / Schar School Polls
 }

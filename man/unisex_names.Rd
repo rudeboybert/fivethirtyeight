@@ -4,14 +4,16 @@
 \name{unisex_names}
 \alias{unisex_names}
 \title{The Most Common Unisex Names In America: Is Yours One Of Them?}
-\format{A data frame with 919 rows representing names and 5 variables:
+\format{
+A data frame with 919 rows representing names and 5 variables:
 \describe{
   \item{name}{First names from the Social Security Administration}
   \item{total}{Total number of living Americans with the name}
   \item{male_share}{Percentage of people with the name who are male}
   \item{female_share}{Percentage of people with the name who are female}
   \item{gap}{Gap between male_share and female_share}
-}}
+}
+}
 \source{
 Social Security Administration \url{https://www.ssa.gov/oact/babynames/limits.html}.  See \url{https://github.com/fivethirtyeight/data/tree/master/unisex-names}.
 }

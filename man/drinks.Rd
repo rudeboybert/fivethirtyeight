@@ -4,14 +4,16 @@
 \name{drinks}
 \alias{drinks}
 \title{Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?}
-\format{A data frame with 193 rows representing countries and 5 variables:
+\format{
+A data frame with 193 rows representing countries and 5 variables:
 \describe{
   \item{country}{country}
   \item{beer_servings}{Servings of beer in average serving sizes per person}
   \item{spirit_servings}{Servings of spirits in average serving sizes per person}
   \item{wine_servings}{Servings of wine in average serving sizes per person}
   \item{total_litres_of_pure_alcohol}{Total litres of pure alcohol per person}
-}}
+}
+}
 \source{
 World Health Organization, Global Information System on Alcohol and Health (GISAH), 2010.
 }
@@ -29,7 +31,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 drinks_tidy <- drinks \%>\%
-  gather(type, servings, -c(country, total_litres_of_pure_alcohol)) \%>\%
+  pivot_longer(cols = ends_with("servings"), names_to = "type", values_to = "servings") \%>\%
   mutate(
     type = str_sub(type, start=1, end=-10)
   ) \%>\%

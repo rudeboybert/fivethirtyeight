@@ -4,7 +4,8 @@
 \name{avengers}
 \alias{avengers}
 \title{Joining The Avengers Is As Deadly As Jumping Off A Four-Story Building}
-\format{A data frame with 173 rows representing characters and 21 variables:
+\format{
+A data frame with 173 rows representing characters and 21 variables:
 \describe{
   \item{url}{The URL of the comic character on the Marvel Wikia}
   \item{name_alias}{The full name or alias of the character}
@@ -27,7 +28,8 @@
   \item{death5}{TRUE if the Avenger died a fifth time after their fourth revival, FALSE if they did not, blank if not applicable}
   \item{return5}{TRUE if the Avenger returned from their fifth death, FALSE if they did not, blank if not applicable}
   \item{notes}{Descriptions of deaths and resurrections.}
-}}
+}
+}
 \source{
 Deaths of Marvel comic book characters between the time they joined the Avengers and April 30, 2015, the week before Secret Wars #1.
 }

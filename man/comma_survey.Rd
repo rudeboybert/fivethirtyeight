@@ -4,7 +4,8 @@
 \name{comma_survey}
 \alias{comma_survey}
 \title{Elitist, Superfluous, Or Popular? We Polled Americans on the Oxford Comma}
-\format{A data frame with 1129 rows representing respondents and 13 variables:
+\format{
+A data frame with 1129 rows representing respondents and 13 variables:
 \describe{
   \item{respondent_id}{Respondent ID}
   \item{gender}{Gender}
@@ -19,7 +20,8 @@
   \item{data_singular_plural}{When faced with using the word "data", have you ever spent time considering if the word was a singular or plural noun?}
   \item{care_data}{How much, if at all, do you care about the debate over the use of the word "data" as a singular or plural noun?}
   \item{care_proper_grammar}{In your opinion, how important or unimportant is proper use of grammar?}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/comma-survey}.
 }

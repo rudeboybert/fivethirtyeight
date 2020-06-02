@@ -21,7 +21,7 @@
 #' library(tidyr)
 #' library(stringr)
 #' ahca_polls_tidy <- ahca_polls %>%
-#'   gather(opinion, count, -c(start, end, pollster, text, url))
+#'   pivot_longer(-c(start, end, pollster, text, url), names_to = "opinion", values_to = "count")
 "ahca_polls"
 
 
@@ -104,7 +104,8 @@
 #' library(tidyr)
 #' library(stringr)
 #' candy_rankings_tidy <- candy_rankings %>%
-#'   gather(characteristics, present, -c(competitorname, sugarpercent, pricepercent, winpercent)) %>%
+#'   pivot_longer(-c(competitorname, sugarpercent, pricepercent, winpercent), 
+#'      names_to = "characteristics", values_to = "present") %>%
 #'   mutate(present = as.logical(present)) %>%
 #'   arrange(competitorname)
 "candy_rankings"
@@ -254,7 +255,8 @@
 #' library(tidyr)
 #' library(stringr)
 #' ratings_tidy <- ratings %>%
-#'   gather(votes, count, -c(timestamp, respondents, category, link, average, mean, median)) %>%
+#'   pivot_longer(-c(timestamp, respondents, category, link, average, mean, median),
+#'     names_to = "votes", values_to = "count") %>%
 #'   arrange(timestamp)
 "ratings"
 
@@ -340,8 +342,9 @@
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/mlb-elo/README.md}
 #' @examples
-#' # To obtain the entire dataset, run the code inside the following if statement:
-#' if(FALSE){
+#' \dontrun{
+#' 
+#' # To obtain the entire dataset, run the following code:
 #'   library(dplyr)
 #'   library(tidyr)
 #'   library(readr)

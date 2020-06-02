@@ -6,7 +6,11 @@
 \alias{state_index}
 \alias{state_words}
 \title{What America’s Governors Are Talking About}
-\format{2 data frames about the 50 U.S Governers' Speeches}
+\format{
+2 data frames about the 50 U.S Governers' Speeches
+
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 2223 rows and 9 columns.
+}
 \source{
 The chi-square test statistic \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.chi2.html#sklearn.feature_selection.chi2}
 }

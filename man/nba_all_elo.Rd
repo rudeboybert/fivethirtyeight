@@ -4,7 +4,8 @@
 \name{nba_all_elo}
 \alias{nba_all_elo}
 \title{The Complete History Of The NBA}
-\format{A data frame with 63157 rows representing basketball games and 23 variables:
+\format{
+A data frame with 63157 rows representing basketball games and 23 variables:
 \describe{
 \item{gameorder}{Play order of game in NBA history}
 \item{game_id}{Unique ID for each game}
@@ -28,7 +29,8 @@
 \item{opp_seasongame}{Number of games opponent has played in season}
 \item{game_result}{Win or loss for team in the team_id column}
 \item{forecast}{Elo-based chances of winning for the team in the team_id column, based on elo ratings and game location}
-\item{notes}{Additional information}}}
+\item{notes}{Additional information}}
+}
 \source{
 Basketball Reference: \url{http://www.basketball-reference.com/}.
 }

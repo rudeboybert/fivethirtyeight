@@ -4,7 +4,8 @@
 \name{bachelorette}
 \alias{bachelorette}
 \title{Bachelorette / Bachelor}
-\format{A data frame with 887 rows representing the Bachelorette and Bachelor contestants and 23 variables:
+\format{
+A data frame with 887 rows representing the Bachelorette and Bachelor contestants and 23 variables:
 \describe{
   \item{show}{Bachelor or Bachelorette.}
   \item{season}{Which season?}
@@ -29,7 +30,8 @@
   \item{dates_8}{Who was on which date in week 8.}
   \item{dates_9}{Who was on which date in week 9.}
   \item{dates_10}{Who was on which date in week 10.}
-}}
+}
+}
 \source{
 \url{https://bachelor-nation.fandom.com/wiki/Bachelor_Nation_Wiki}
 and then missing seasons were filled in by ABC and FiveThirtyEight staffers.

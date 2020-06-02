@@ -4,13 +4,15 @@
 \name{mediacloud_states}
 \alias{mediacloud_states}
 \title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
-\format{A data frame with 51 rows representing dates and 4 variables:
+\format{
+A data frame with 51 rows representing dates and 4 variables:
 \describe{
 \item{date}{Date}
 \item{texas}{The number of sentences in online news which mention Texas on the specified date}
 \item{puerto_rico}{The number of sentences in online news which mention Puerto Rico}
 \item{florida}{The number of sentences in online news which mention Florida}
-}}
+}
+}
 \source{
 Mediacloud \url{https://mediacloud.org/}
 }

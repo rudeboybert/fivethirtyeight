@@ -4,7 +4,8 @@
 \name{dem_candidates}
 \alias{dem_candidates}
 \title{Democratic Primary Candidates 2018}
-\format{A data frame with 811 rows representing Democratic candidates, and 32 variables:
+\format{
+A data frame with 811 rows representing Democratic candidates, and 32 variables:
 \describe{
   \item{candidate}{All candidates who received votes in 2018’s Democratic primary elections for U.S. Senate, U.S. House and governor in which no incumbent ran. Supplied by Ballotpedia.}
   \item{state}{The state in which the candidate ran. Supplied by Ballotpedia.}
@@ -39,7 +40,8 @@
   \item{wfp_endorsed}{“Yes” if the candidate was endorsed by the Working Families Party before the primary, according to the WFP website, candidate website or news reports. “No” if the candidate is running against a WFP-endorsed candidate or if the WFP specifically anti-endorsed or spent money to attack the candidate. If the WFP simply did not weigh in on the race, we left the cell blank.}
   \item{vote_vets_endorsed}{“Yes” if the candidate was endorsed by VoteVets before the primary, according to the VoteVets website, candidate website or news reports. “No” if the candidate is running against a VoteVets-endorsed candidate or if VoteVets specifically anti-endorsed or spent money to attack the candidate. If VoteVets simply did not weigh in on the race, we left the cell blank.}
   \item{no_labels_support}{“Yes” if a No Labels-affiliated group (Citizens for a Strong America Inc., Forward Not Back, Govern or Go Home, United for Progress Inc. or United Together) spent money in support of the candidate in the primary. “No” if the candidate is running against an candidate supported by a No Labels-affiliated group or if a No Labels-affiliated group specifically anti-endorsed or spent money to attack the candidate. If No Labels simply did not weigh in on the race, we left the cell blank.}
-  }}
+  }
+}
 \source{
 Ballotpedia, New York Times, and candidate websites. See also \url{https://github.com/fivethirtyeight/data/blob/master/primary-candidates-2018/README.md}
 }

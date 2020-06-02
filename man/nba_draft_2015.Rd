@@ -4,7 +4,8 @@
 \name{nba_draft_2015}
 \alias{nba_draft_2015}
 \title{Projecting The Top 50 Players In The 2015 NBA Draft Class}
-\format{A data frame with 1090 rows representing National Basketball Association players/prospects and 9 variables:
+\format{
+A data frame with 1090 rows representing National Basketball Association players/prospects and 9 variables:
 \describe{
   \item{player}{Player name}
   \item{position}{The player's position going into the draft}
@@ -15,7 +16,8 @@
   \item{starter}{Probability of becoming a starting-caliber player (10 per draft, SPM >= +0.5)}
   \item{role_player}{Probability of becoming a role player (25 per draft, SPM >= -1.4)}
   \item{bust}{Probability of becoming a bust (everyone else, SPM < -1.4)}
-}}
+}
+}
 \source{
 See \url{https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}
 }

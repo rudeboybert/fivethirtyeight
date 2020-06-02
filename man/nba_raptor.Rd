@@ -6,7 +6,11 @@
 \alias{raptor_by_player}
 \alias{raptor_by_team}
 \title{NBA Raptor}
-\format{2 dataframes about Raptor players and teams by era}
+\format{
+2 dataframes about Raptor players and teams by era
+
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 32055 rows and 24 columns.
+}
 \usage{
 raptor_by_player
 

@@ -4,7 +4,8 @@
 \name{goose}
 \alias{goose}
 \title{The Save Ruined Relief Pitching. The Goose Egg Can Fix It.}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
 (30,533 rows) see Examples below. The preview is a data frame with 10 rows 
 representing pitchers and 12 variables:
@@ -21,7 +22,8 @@ representing pitchers and 12 variables:
   \item{replacement_gpct}{Replacement-level goose percentage}
   \item{gwar}{Goose Wins Above Replacement}
   \item{key_retro}{Retrosheet unique player identifier}
-}}
+}
+}
 \source{
 Retrosheet \url{https://www.retrosheet.org/}
 }

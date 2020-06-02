@@ -4,7 +4,8 @@
 \name{US_births_2000_2014}
 \alias{US_births_2000_2014}
 \title{Some People Are Too Superstitious To Have A Baby On Friday The 13th}
-\format{A data frame with 5479 rows representing dates and 6 variables:
+\format{
+A data frame with 5479 rows representing dates and 6 variables:
 \describe{
   \item{year}{Year}
   \item{month}{Month}
@@ -12,7 +13,8 @@
   \item{date}{POSIX date}
   \item{day_of_week}{Abbreviation of day of week}
   \item{births}{Number of births}
-}}
+}
+}
 \source{
 Social Security Administration
 }

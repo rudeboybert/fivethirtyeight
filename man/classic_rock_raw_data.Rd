@@ -4,7 +4,8 @@
 \name{classic_rock_raw_data}
 \alias{classic_rock_raw_data}
 \title{Why Classic Rock Isn't What It Used To Be}
-\format{A data frame with 37,673 rows representing song plays and 8 variables:
+\format{
+A data frame with 37,673 rows representing song plays and 8 variables:
 \describe{
   \item{song}{Song name}
   \item{artist}{Artist name}
@@ -13,7 +14,8 @@
   \item{date_time}{Time of song play in date/time format}
   \item{unique_id}{Unique ID for each song play}
   \item{combined}{Song and artist name combined}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/classic-rock}
 }

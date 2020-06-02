@@ -4,14 +4,16 @@
 \name{fifa_audience}
 \alias{fifa_audience}
 \title{How To Break FIFA}
-\format{A data frame with 3652 rows representing guests and 6 variables:
+\format{
+A data frame with 3652 rows representing guests and 6 variables:
 \describe{
   \item{country}{FIFA member country}
   \item{confederation}{Confederation to which country belongs}
   \item{population_share}{Country's share of global population (percentage)}
   \item{tv_audience_share}{Country's share of global world cup TV Audience (percentage)}
   \item{gdp_weighted_share}{Country's GDP-weighted audience share (percentage)}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/fifa}
 }
@@ -29,7 +31,8 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 fifa_audience_tidy <- fifa_audience \%>\%
-  gather(type, share, -c(country, confederation)) \%>\%
+  pivot_longer(-c(country, confederation), 
+     names_to = "type", values_to = "share") \%>\%
   mutate(type = str_sub(type, start=1, end=-7)) \%>\%
   arrange(country)
 }

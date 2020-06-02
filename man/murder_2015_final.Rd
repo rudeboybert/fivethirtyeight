@@ -4,14 +4,16 @@
 \name{murder_2015_final}
 \alias{murder_2015_final}
 \title{A Handful Of Cities Are Driving 2016's Rise In Murder}
-\format{A data frame with 83 rows representing large US cities and 5 variables:
+\format{
+A data frame with 83 rows representing large US cities and 5 variables:
 \describe{
   \item{city}{Name of city}
   \item{state}{Name of state}
   \item{murders_2014}{Total murders in 2014}
   \item{murders_2015}{Total murders in 2015}
   \item{change}{2015 - 2014}
-}}
+}
+}
 \source{
 Unknown
 }

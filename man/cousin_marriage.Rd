@@ -4,11 +4,13 @@
 \name{cousin_marriage}
 \alias{cousin_marriage}
 \title{How Many Americans Are Married To Their Cousins?}
-\format{A data frame with 70 rows representing countries and 2 variables:
+\format{
+A data frame with 70 rows representing countries and 2 variables:
 \describe{
   \item{country}{Country}
   \item{percent}{Percent of marriages that are consanguineous}
-}}
+}
+}
 \source{
 consang.net
 }

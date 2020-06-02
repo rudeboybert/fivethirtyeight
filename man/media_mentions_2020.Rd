@@ -6,7 +6,11 @@
 \alias{media_mentions_cable}
 \alias{media_mentions_online}
 \title{2020 Presidential Candidates Media Mentions}
-\format{2 dataframes about 2020 presidential candidate media mentions}
+\format{
+2 dataframes about 2020 presidential candidate media mentions
+
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 954 rows and 6 columns.
+}
 \source{
 The GDELT Television API \url{https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/}, which processes the data from the TV News Archive \url{https://archive.org/details/tv}.
 

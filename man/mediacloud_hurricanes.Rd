@@ -4,14 +4,16 @@
 \name{mediacloud_hurricanes}
 \alias{mediacloud_hurricanes}
 \title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
-\format{A data frame with 38 rows representing dates and 5 variables:
+\format{
+A data frame with 38 rows representing dates and 5 variables:
 \describe{
 \item{date}{Date}
 \item{harvey}{The number of sentences in online news which mention Hurricane Harvey on the specified date}
 \item{irma}{The number of sentences in online news which mention Hurricane Irma}
 \item{maria}{The number of sentences in online news which mention Hurricane Maria}
 \item{jose}{The number of sentences in online news which mention Hurricane Jose}
-}}
+}
+}
 \source{
 Mediacloud \url{https://mediacloud.org/}
 }

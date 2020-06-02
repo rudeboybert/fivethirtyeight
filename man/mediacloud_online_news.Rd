@@ -4,11 +4,13 @@
 \name{mediacloud_online_news}
 \alias{mediacloud_online_news}
 \title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
-\format{A data frame with 49 rows representing media outlets and 2 variables:
+\format{
+A data frame with 49 rows representing media outlets and 2 variables:
 \describe{
 \item{name}{Name of media outlet source included in Media Cloud's "U.S. Top Online News" collection}
 \item{url}{URL of corresponding media outlet source}
-}}
+}
+}
 \source{
 Mediacloud \url{https://mediacloud.org/}
 }

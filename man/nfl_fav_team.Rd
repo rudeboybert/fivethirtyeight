@@ -4,7 +4,8 @@
 \name{nfl_fav_team}
 \alias{nfl_fav_team}
 \title{The Rams Are Dead To Me, So I Answered 3,352 Questions To Find A New NFL Team}
-\format{A data frame with 32 rows representing National Football League teams and 17 variables:
+\format{
+A data frame with 32 rows representing National Football League teams and 17 variables:
 \describe{
   \item{team}{Name of NFL team}
   \item{fan_relations}{Fan relations - Courtesy by players, coaches and front offices toward fans, and how well a team uses technology to reach them}
@@ -23,7 +24,8 @@
   \item{coaching}{Coaching - Strength of on-field leadership}
   \item{uniform}{Uniform - Stylishness of uniform design, according to Uni Watch's Paul Lukas}
   \item{big_market}{Big Market - Size of market in terms of population, where bigger is better}
-}}
+}
+}
 \source{
 \url{https://www.espn.com/sportsnation/teamrankings}, \url{https://www.allourideas.org/nflteampickingsample}
 }

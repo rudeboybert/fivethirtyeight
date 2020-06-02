@@ -4,13 +4,15 @@
 \name{undefeated}
 \alias{undefeated}
 \title{Mayweather Is Defined By The Zero Next To His Name}
-\format{A data frame with 2125 rows representing boxing matches and 4 variables:
+\format{
+A data frame with 2125 rows representing boxing matches and 4 variables:
 \describe{
 \item{name}{Name of boxer}
 \item{url}{URL with the boxer's record}
 \item{date}{Date of the match}
 \item{wins}{Number of cumulative wins for the boxer including the match at the specified date}
-}}
+}
+}
 \source{
 Box Rec \url{https://boxrec.com/}
 }

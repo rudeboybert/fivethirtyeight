@@ -4,7 +4,8 @@
 \name{librarians}
 \alias{librarians}
 \title{Where Are America's Librarians?}
-\format{A data frame with 371 rows representing areas in the US and 9 variables:
+\format{
+A data frame with 371 rows representing areas in the US and 9 variables:
 \describe{
   \item{prim_state}{}
   \item{area_name}{}
@@ -15,7 +16,8 @@
   \item{mor}{}
   \item{high_emp}{}
   \item{low_emp}{}
-}}
+}
+}
 \source{
 Bureau of Labor Statistics \url{https://www.bls.gov/oes/current/oes254021.htm#(1)}
 }

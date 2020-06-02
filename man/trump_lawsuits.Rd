@@ -4,7 +4,8 @@
 \name{trump_lawsuits}
 \alias{trump_lawsuits}
 \title{Trump Lawsuits}
-\format{A dataset with 57 rows representing lawsuits and 16 variables
+\format{
+A dataset with 57 rows representing lawsuits and 16 variables
 \describe{
 \item{docket_number}{Current docket number}
 \item{date_filed}{Date lawsuit was originally filed}
@@ -22,7 +23,8 @@
 \item{issue}{Key topic area raised in the case (i.e. emoluments, First Amendment, DACA, etc). Categories created based on key policy topic area or legal issue. Calls are subjective and based on reporting and may change.}
 \item{docket_orig}{Original docket number, if case has been appealed or changed jurisdiction}
 \item{status}{Whether the case, or the part of the case connected to Trump, is ongoing. | 1 = Case is ongoing; 2 = Case or part of case connected to Trump is closed}
-}}
+}
+}
 \source{
 Approval Polls
 }

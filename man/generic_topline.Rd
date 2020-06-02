@@ -4,7 +4,8 @@
 \name{generic_topline}
 \alias{generic_topline}
 \title{Congress Generic Ballot Polls}
-\format{A data frame with 751 rows representing polls and 9 variables:
+\format{
+A data frame with 751 rows representing polls and 9 variables:
 \describe{
   \item{subgroup}{No description provided.}
   \item{modeldate}{No description provided.}
@@ -16,7 +17,8 @@
   \item{rep_lo}{No description provided.}
   \item{timestamp}{No description provided.}
 
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}
 }

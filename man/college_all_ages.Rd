@@ -4,7 +4,8 @@
 \name{college_all_ages}
 \alias{college_all_ages}
 \title{The Economic Guide To Picking A College Major}
-\format{A data frame with 173 rows representing majors (all ages) and 11 variables:
+\format{
+A data frame with 173 rows representing majors (all ages) and 11 variables:
 \describe{
   \item{major_code}{Major code, FO1DP in ACS PUMS}
   \item{major}{Major description}
@@ -17,7 +18,8 @@
   \item{p25th}{25th percentile of earnings}
   \item{median}{Median earnings of full-time, year-round workers}
   \item{p75th}{75th percentile of earnings}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}.
 }

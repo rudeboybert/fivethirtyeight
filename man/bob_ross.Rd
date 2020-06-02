@@ -4,7 +4,8 @@
 \name{bob_ross}
 \alias{bob_ross}
 \title{A Statistical Analysis of the Work of Bob Ross}
-\format{A data frame with 403 rows representing episodes and 71 variables:
+\format{
+A data frame with 403 rows representing episodes and 71 variables:
 \describe{
   \item{episode}{Episode code}
   \item{season}{Season number}
@@ -77,7 +78,8 @@
   \item{window_frame}{Present (1) or not (0)}
   \item{winter}{Present (1) or not (0)}
   \item{wood_framed}{Present (1) or not (0)}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/bob-ross}
 }
@@ -97,7 +99,8 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 bob_ross_tidy <- bob_ross \%>\%
-  gather(object, present, -c(episode, season, episode_num, title)) \%>\%
+  pivot_longer(-c(episode, season, episode_num, title), 
+     names_to = "object", values_to = "present") \%>\%
   mutate(present = as.logical(present)) \%>\%
   arrange(episode, object)
 }

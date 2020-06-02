@@ -4,7 +4,8 @@
 \name{trump_approval_trend}
 \alias{trump_approval_trend}
 \title{How Popular is Donald Trump}
-\format{A data frame with 1044 rows representing poll trends and 11 variables:
+\format{
+A data frame with 1044 rows representing poll trends and 11 variables:
 \describe{
 \item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
 \item{modeldate}{The date the model was created}
@@ -15,7 +16,8 @@
 \item{disapprove_high}{Higher bound of the estimated disapproval percentage}
 \item{disapprove_low}{Lower bound of the estimated disapproval percentage}
 \item{timestamp}{Date and time the model was compiled}
-}}
+}
+}
 \source{
 \url{https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv}
 }

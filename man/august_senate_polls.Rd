@@ -4,7 +4,8 @@
 \name{august_senate_polls}
 \alias{august_senate_polls}
 \title{How Much Trouble Is Ted Cruz Really In?}
-\format{A data frame with 594 rows representing senate polls, and 11 variables:
+\format{
+A data frame with 594 rows representing senate polls, and 11 variables:
 \describe{
   \item{cycle}{the election year}
   \item{state}{the state of the poll}
@@ -17,7 +18,8 @@
   \item{rep_result}{the result percent of support for the Republican during the election}
   \item{error}{the difference between the percent of support of one party during the poll and the result percent of support for the same party during the election}
   \item{absolute_error}{the absolute value of the error value}
-  }}
+  }
+}
 \source{
 Emerson College’s poll of registered voters \url{https://www.emerson.edu/sites/default/files/Files/Academics/ecp-tx-aug2018-pr.pdf}
 }

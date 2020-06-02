@@ -4,7 +4,8 @@
 \name{candy_rankings}
 \alias{candy_rankings}
 \title{Candy Power Ranking}
-\format{A data frame with 85 rows representing Halloween candy and 13 variables:
+\format{
+A data frame with 85 rows representing Halloween candy and 13 variables:
 \describe{
   \item{competitorname}{The name of the Halloween candy.}
   \item{chocolate}{Does it contain chocolate?}
@@ -19,7 +20,8 @@
   \item{sugarpercent}{The percentile of sugar it falls under within the data set.}
   \item{pricepercent}{The unit price percentile compared to the rest of the set.}
   \item{winpercent}{The overall win percentage according to 269,000 matchups.}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking}
 }
@@ -36,7 +38,8 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 candy_rankings_tidy <- candy_rankings \%>\%
-  gather(characteristics, present, -c(competitorname, sugarpercent, pricepercent, winpercent)) \%>\%
+  pivot_longer(-c(competitorname, sugarpercent, pricepercent, winpercent), 
+     names_to = "characteristics", values_to = "present") \%>\%
   mutate(present = as.logical(present)) \%>\%
   arrange(competitorname)
 }

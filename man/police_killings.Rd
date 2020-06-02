@@ -4,7 +4,8 @@
 \name{police_killings}
 \alias{police_killings}
 \title{Where Police Have Killed Americans In 2015}
-\format{A data frame with 467 rows representing People who died from interactions with police and 34 variables:
+\format{
+A data frame with 467 rows representing People who died from interactions with police and 34 variables:
 \describe{
   \item{name}{Name of deceased}
   \item{age}{Age of deceased}
@@ -40,7 +41,8 @@
   \item{pov}{Tract-level poverty rate (official)}
   \item{urate}{Tract-level unemployment rate}
   \item{college}{Share of 25+ pop with BA or higher}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/police-killings}
 }

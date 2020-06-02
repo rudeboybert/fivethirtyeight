@@ -4,7 +4,8 @@
 \name{mlb_elo}
 \alias{mlb_elo}
 \title{MLB Elo}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
 (1871 to 2017 games) see Examples below. A data frame with 10 rows
 representing Elo ratings and 26 variables:
@@ -35,7 +36,8 @@ representing Elo ratings and 26 variables:
   \item{rating2_post}{No description provided.}
   \item{score1}{The number of runs scored by team1.}
   \item{score2}{The number of runs scored by team2.}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/mlb-elo/README.md}
 }
@@ -48,8 +50,9 @@ The raw data behind the stories:
 and "MLB Predictions" \url{https://projects.fivethirtyeight.com/2017-mlb-predictions/}.
 }
 \examples{
-# To obtain the entire dataset, run the code inside the following if statement:
-if(FALSE){
+\dontrun{
+
+# To obtain the entire dataset, run the following code:
   library(dplyr)
   library(tidyr)
   library(readr)

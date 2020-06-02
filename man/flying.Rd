@@ -4,7 +4,8 @@
 \name{flying}
 \alias{flying}
 \title{41 Percent Of Fliers Think You're Rude If You Recline Your Seat}
-\format{A data frame with 1040 rows representing respondents and 27 variables:
+\format{
+A data frame with 1040 rows representing respondents and 27 variables:
 \describe{
   \item{respondent_id}{RespondentID}
   \item{gender}{Gender}
@@ -33,7 +34,8 @@
   \item{get_up}{On a 6 hour flight from NYC to LA, how many times is it acceptable to get up if you're not in an aisle seat?}
   \item{electronics}{Have you ever used personal electronics during take off or landing in violation of a flight attendant's direction?}
   \item{smoked}{Have you ever smoked a cigarette in an airplane bathroom when it was against the rules?}
-}}
+}
+}
 \source{
 SurveyMonkey survey
 }

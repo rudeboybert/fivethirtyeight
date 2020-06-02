@@ -4,7 +4,8 @@
 \name{ratings}
 \alias{ratings}
 \title{An Inconvenient Sequel}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
 (80,053 rows) see Examples below. The preview is a data frame with 10 rows 
 representing movie ratings and 27 variables:
@@ -36,7 +37,8 @@ representing movie ratings and 27 variables:
   \item{pct_8}{The percentage of votes denoting a rating of eight that respondents gave.}
   \item{pct_9}{The percentage of votes denoting a rating of nine that respondents gave.}
   \item{pct_10}{The percentage of votes denoting a rating of ten that respondents gave.}
-}}
+}
+}
 \source{
 IMBD \url{https://www.imdb.com/title/tt6322922/ratings} and
 see \url{https://github.com/fivethirtyeight/data/tree/master/inconvenient-sequel}
@@ -72,7 +74,8 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 ratings_tidy <- ratings \%>\%
-  gather(votes, count, -c(timestamp, respondents, category, link, average, mean, median)) \%>\%
+  pivot_longer(-c(timestamp, respondents, category, link, average, mean, median),
+    names_to = "votes", values_to = "count") \%>\%
   arrange(timestamp)
 }
 \keyword{datasets}

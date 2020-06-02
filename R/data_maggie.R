@@ -122,7 +122,8 @@
 #' library(dplyr)
 #' library(tidyr)
 #' nfl_fandom_google_tidy <- nfl_fandom_google %>%
-#'   gather(sport, search_traffic, -c("dma", "trump_2016_vote")) %>%
+#'   pivot_longer(-c("dma", "trump_2016_vote"), 
+#'     names_to = "sport", values_to = "search_traffic") %>%
 #'   arrange(dma)
 #' @seealso \code{\link{nfl_fandom_surveymonkey}}
 "nfl_fandom_google"
@@ -168,9 +169,9 @@
 #' library(dplyr)
 #' library(tidyr)
 #' nfl_fandom_surveymonkey_tidy <- nfl_fandom_surveymonkey %>%
-#'   gather(key = race_party, value = percent,
-#'          -c("team", "total_respondents", "gop_percent", "dem_percent",
-#'             "ind_percent", "white_percent", "nonwhite_percent")) %>%
+#'   pivot_longer(-c("team", "total_respondents", "gop_percent", "dem_percent",
+#'             "ind_percent", "white_percent", "nonwhite_percent")
+#'             names_to = "race_party", values_to = "percent") %>%
 #'   arrange(team)
 #' @seealso \code{\link{nfl_fandom_google}}
 "nfl_fandom_surveymonkey"
@@ -416,7 +417,7 @@
 #' library(dplyr)
 #' library(tidyr)
 #' sandy_311_tidy <- sandy_311 %>%
-#'   gather(agency, num_calls, -c("date", "total")) %>%
+#'   pivot_longer(-c("date", "total"), names_to = "agency", values_to = "num_calls") %>%
 #'   arrange(date) %>%
 #'   select(date, agency, num_calls, total) %>%
 #'   rename(total_calls = total) %>%
@@ -570,7 +571,8 @@
 #' library(dplyr)
 #' library(tidyr)
 #' trumpworld_polls_tidy <- trumpworld_polls %>%
-#'   gather(country, percent_positive, -c("year", "avg", "question"))
+#'   pivot_longer(-c("year", "avg", "question"), 
+#'     names_to = "country", values_to = "percent_positive")
 #' @seealso \code{\link{trumpworld_issues}}
 "trumpworld_polls"
 
@@ -620,8 +622,9 @@
 #' @source Twitter
 #' @seealso \code{\link{twitter_presidents}}
 #' @examples
-#' # To obtain the entire dataset, run the code inside the following if statement:
-#' if(FALSE){
+#' \dontrun{
+#' 
+#' # To obtain the entire dataset, run the following code:
 #'   library(dplyr)
 #'   library(tidyr)
 #'   library(readr)

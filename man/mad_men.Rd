@@ -4,7 +4,8 @@
 \name{mad_men}
 \alias{mad_men}
 \title{"Mad Men" Is Ending. What's Next For The Cast?}
-\format{A data frame with 248 rows representing performers on TV shows and 15 variables:
+\format{
+A data frame with 248 rows representing performers on TV shows and 15 variables:
 \describe{
   \item{performer}{The name of the actor, according to IMDb. This is not a unique identifier - two performers appeared in more than one program}
   \item{show}{The television show where this actor appeared in more than half the episodes}
@@ -21,7 +22,8 @@
   \item{lead_notes}{The list of films counted in #LEAD}
   \item{support_notes}{The list of films counted in #SUPPORT}
   \item{show_notes}{The seasons of shows counted in #Shows}
-}}
+}
+}
 \source{
 IMDB \url{https://imdb.com}
 }

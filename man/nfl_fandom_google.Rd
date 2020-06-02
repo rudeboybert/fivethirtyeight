@@ -4,7 +4,8 @@
 \name{nfl_fandom_google}
 \alias{nfl_fandom_google}
 \title{How Every NFL Team’s Fans Lean Politically}
-\format{a data frame with 207 rows representing designated market areas and 9 variables:
+\format{
+a data frame with 207 rows representing designated market areas and 9 variables:
 \describe{
 \item{dma}{Designated Market Area}
 \item{nfl}{The percentage of search traffic in the media market region related to the NFL over the past 5 years}
@@ -14,7 +15,8 @@
 \item{cbb}{The percentage of search traffic in the region related to the CBB over the past 5 years}
 \item{cfb}{The percentage of search traffic in the region related to the CFB over the past 5 years}
 \item{trump_2016_vote}{The percentage of voters in the region who voted for Trump in the 2016 Presidential Election}
-}}
+}
+}
 \source{
 Google Trends \url{https://trends.google.com/}.
 }
@@ -31,7 +33,8 @@ The raw data behind the story
 library(dplyr)
 library(tidyr)
 nfl_fandom_google_tidy <- nfl_fandom_google \%>\%
-  gather(sport, search_traffic, -c("dma", "trump_2016_vote")) \%>\%
+  pivot_longer(-c("dma", "trump_2016_vote"), 
+    names_to = "sport", values_to = "search_traffic") \%>\%
   arrange(dma)
 }
 \seealso{

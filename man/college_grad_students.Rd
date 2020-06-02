@@ -4,7 +4,8 @@
 \name{college_grad_students}
 \alias{college_grad_students}
 \title{The Economic Guide To Picking A College Major}
-\format{A data frame with 173 rows representing majors (graduate vs nongraduate students) and 22 variables:
+\format{
+A data frame with 173 rows representing majors (graduate vs nongraduate students) and 22 variables:
 \describe{
   \item{major_code}{Major code, FO1DP in ACS PUMS}
   \item{major}{Major description}
@@ -28,7 +29,8 @@
   \item{nongrad_p75th}{75th percentile of earnings}
   \item{grad_share}{grad_total / (grad_total + nongrad_total)}
   \item{grad_premium}{(grad_median-nongrad_median)/nongrad_median}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}.
 }

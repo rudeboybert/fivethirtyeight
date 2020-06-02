@@ -4,7 +4,8 @@
 \name{cabinet_turnover}
 \alias{cabinet_turnover}
 \title{Two Years In, Turnover In Trump’s Cabinet Is Still Historically High}
-\format{A data frame with 312 rows representing cabinet members and 8 variables: 
+\format{
+A data frame with 312 rows representing cabinet members and 8 variables: 
 \describe{
   \item{president}{Surname of of sitting President}
   \item{position}{Cabinet Position}
@@ -14,7 +15,8 @@
   \item{length}{Length of Tenure, in days}
   \item{days}{Days into administration that the appointee left office}
   \item{combined}{Whether or not Cabinet member served in more than one administrations}
-  }}
+  }
+}
 \source{
 from Federal Government Websites and News Reports
 }

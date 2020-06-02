@@ -4,13 +4,15 @@
 \name{tv_states}
 \alias{tv_states}
 \title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
-\format{A data frame with 52 rows representing dates and 4 variables:
+\format{
+A data frame with 52 rows representing dates and 4 variables:
 \describe{
 \item{date}{Date}
 \item{florida}{The percent of sentences in TV News on the given day that mention Florida}
 \item{texas}{The percent of sentences in TV News on the given day that mention Texas}
 \item{puerto_rico}{The percent of sentences in TV News on the given day that mention Puerto Rico}
-}}
+}
+}
 \source{
 Internet TV News Archive \url{https://archive.org/details/tv} and
 Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtsearch/iatv_ftxtsearch}

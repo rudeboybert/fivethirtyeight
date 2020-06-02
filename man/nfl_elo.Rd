@@ -4,7 +4,8 @@
 \name{nfl_elo}
 \alias{nfl_elo}
 \title{The Complete History Of The NFL 2017 NFL Predictions}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
 (1920 to present games) see Examples below. The preview is a data frame with 
 10 rows representing games and 14 variables:
@@ -23,7 +24,8 @@ first 10 rows of this dataset is included; to obtain the entire dataset
  \item{elo2_post}{Team 2's Elo rating after the game}
  \item{score1}{Points scored by Team 1}
  \item{score2}{Points scored by Team 2}
-}}
+}
+}
 \source{
 See \url{https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv}
 # To obtain the entire dataset, run the following code:

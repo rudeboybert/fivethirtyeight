@@ -4,7 +4,8 @@
 \name{elo_blatter}
 \alias{elo_blatter}
 \title{Blatter's Reign At FIFA Hasn't Helped Soccer's Poor}
-\format{A data frame with 191 rows representing countries and 5 variables:
+\format{
+A data frame with 191 rows representing countries and 5 variables:
 \describe{
   \item{country}{FIFA member country}
   \item{elo98}{The team's Elo in 1998}
@@ -14,7 +15,8 @@
   \item{popu06}{The country's 2006 population}
   \item{gdp_source}{Source for gdp06}
   \item{popu_source}{Source for popu06}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/elo-blatter}.
 }

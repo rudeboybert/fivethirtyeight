@@ -4,7 +4,8 @@
 \name{mlb_as_play_talent}
 \alias{mlb_as_play_talent}
 \title{The Best MLB All-Star Teams Ever}
-\format{A data frame with 3930 rows representing Major League Baseball players in given seasons and 15 variables:
+\format{
+A data frame with 3930 rows representing Major League Baseball players in given seasons and 15 variables:
 \describe{
   \item{bbref_id}{Player's ID at Baseball-Reference.com}
   \item{yearid}{The season in question}
@@ -21,7 +22,8 @@
   \item{defper9innasg}{Expected defensive runs added above average (from talent) based on PA in ASG, scaled to a 9-inning game}
   \item{pitper9innasg}{Expected pitching runs added above average (from talent) based on IP in ASG, scaled to a 9-inning game}
   \item{totper9innasg}{Expected runs added above average (from talent) based on PA/IP in ASG, scaled to a 9-inning game}
-}}
+}
+}
 \source{
 \url{https://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
 }

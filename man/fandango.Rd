@@ -4,7 +4,8 @@
 \name{fandango}
 \alias{fandango}
 \title{Be Suspicious Of Online Movie Ratings, Especially Fandango's}
-\format{A data frame with 146 rows representing movies and 23 variables:
+\format{
+A data frame with 146 rows representing movies and 23 variables:
 \describe{
   \item{film}{The film in question}
   \item{year}{Year of film}
@@ -29,7 +30,8 @@
   \item{imdb_user_vote_count}{The number of user votes the film had on IMDb}
   \item{fandango_votes}{The number of user votes the film had on Fandango}
   \item{fandango_difference}{The difference between the presented Fandango_Stars and the actual Fandango_Ratingvalue}
-}}
+}
+}
 \source{
 The data from Fandango was pulled on Aug. 24, 2015.
 }

@@ -4,7 +4,8 @@
 \name{ncaa_w_bball_tourney}
 \alias{ncaa_w_bball_tourney}
 \title{The Rise And Fall Of Women's NCAA Tournament Dynasties}
-\format{A dataset with 2092 rows representing every team that has participated in the NCAA Division I Women's Basketball Tournament since it began in 1982 and 19 variables
+\format{
+A dataset with 2092 rows representing every team that has participated in the NCAA Division I Women's Basketball Tournament since it began in 1982 and 19 variables
 \describe{
 \item{year}{the year of the game which the team participated in}
 \item{school}{the school of the participating team}
@@ -24,7 +25,8 @@
 \item{full_w}{number of winning in full record}
 \item{full_l}{number of losses in full record}
 \item{full_percent}{percent of winning in full record}
-}}
+}
+}
 \source{
 NCAA
 }

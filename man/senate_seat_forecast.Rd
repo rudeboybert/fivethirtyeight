@@ -4,7 +4,8 @@
 \name{senate_seat_forecast}
 \alias{senate_seat_forecast}
 \title{Senate Forecast 2018}
-\format{A dataframe with 28353 rows representing seat-level results of the classic, lite, and deluxe Senate forecasts since Aug. 1, 2018 and 12 variables
+\format{
+A dataframe with 28353 rows representing seat-level results of the classic, lite, and deluxe Senate forecasts since Aug. 1, 2018 and 12 variables
 \describe{
 \item{forecastdate}{date of the forecast}
 \item{state}{state of the forecast}
@@ -18,7 +19,8 @@
 \item{voteshare}{the voteshare of the corresponding party}
 \item{p10_voteshare}{the top 10 percentile of the voteshare}
 \item{p90_voteshare}{the top 00 percentile of the voteshare}
-}}
+}
+}
 \source{
 FiveThirtyEight’s House, Senate And Governor Models
 Methodology:

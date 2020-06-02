@@ -4,7 +4,8 @@
 \name{generic_polllist}
 \alias{generic_polllist}
 \title{Congress Generic Ballot Polls}
-\format{A data frame with 934 rows representing polls and 21 variables:
+\format{
+A data frame with 934 rows representing polls and 21 variables:
 \describe{
   \item{subgroup}{No description provided.}
   \item{modeldate}{No description provided.}
@@ -27,7 +28,8 @@
   \item{question_id}{No description provided.}
   \item{createddate}{No description provided.}
   \item{timestamp}{No description provided.}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/congress-generic-ballot/README.md}
 }

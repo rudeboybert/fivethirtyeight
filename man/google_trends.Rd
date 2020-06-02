@@ -4,14 +4,16 @@
 \name{google_trends}
 \alias{google_trends}
 \title{The Media Really Started Paying Attention to Puerto Rico When Trump Did}
-\format{A data frame with 37 rows representing dates and 5 variables:
+\format{
+A data frame with 37 rows representing dates and 5 variables:
 \describe{
 \item{date}{Date}
 \item{hurricane_harvey_us}{US Google search interest on the specified date for Hurricane Harvey}
 \item{hurricane_irma_us}{US Google search interest on the specified date for Hurricane Irma}
 \item{hurricane_maria_us}{US Google search interest on the specified date for Hurricane Maria}
 \item{hurricane_jose_us}{US Google search interest on the specified date for Hurricane Jose}
-}}
+}
+}
 \source{
 Google Trends \url{https://trends.google.com/trends/}
 }

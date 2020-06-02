@@ -4,7 +4,8 @@
 \name{steak_survey}
 \alias{steak_survey}
 \title{How Americans Like Their Steak}
-\format{A data frame with 550 rows representing respondents and 15 variables:
+\format{
+A data frame with 550 rows representing respondents and 15 variables:
 \describe{
   \item{respondent_id}{Respondent ID}
   \item{lottery_a}{not sure}
@@ -21,7 +22,8 @@
   \item{hhold_income}{Household income}
   \item{educ}{Education level}
   \item{region}{Region of US}
-}}
+}
+}
 \source{
 See \url{https://fivethirtyeight.com/features/how-americans-like-their-steak/}
 }
