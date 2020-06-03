@@ -170,7 +170,7 @@
 #' library(tidyr)
 #' nfl_fandom_surveymonkey_tidy <- nfl_fandom_surveymonkey %>%
 #'   pivot_longer(-c("team", "total_respondents", "gop_percent", "dem_percent",
-#'             "ind_percent", "white_percent", "nonwhite_percent")
+#'             "ind_percent", "white_percent", "nonwhite_percent"),
 #'             names_to = "race_party", values_to = "percent") %>%
 #'   arrange(team)
 #' @seealso \code{\link{nfl_fandom_google}}
