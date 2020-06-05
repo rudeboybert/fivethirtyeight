@@ -46,7 +46,7 @@ RoxygenNote: 7.1.0
 Suggests:
     ggplot2,
     dplyr,
-    tidyr,
+    tidyr (>= 1.0.0),
     curl,
     readr,
     tibble,
