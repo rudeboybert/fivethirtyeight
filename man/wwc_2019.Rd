@@ -6,7 +6,11 @@
 \alias{wwc_2019_forecasts}
 \alias{wwc_2019_matches}
 \title{2019 Women's World Cup Predictions}
-\format{2 dataframes about the 2019 Women's World Cup matches and teams}
+\format{
+2 dataframes about the 2019 Women's World Cup matches and teams
+
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 52 rows and 18 columns.
+}
 \source{
 \url{https://projects.fivethirtyeight.com/soccer-api/international/2019/wwc_forecasts.csv}
 

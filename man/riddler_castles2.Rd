@@ -4,7 +4,8 @@
 \name{riddler_castles2}
 \alias{riddler_castles2}
 \title{The Battle For Riddler Nation, Round 2}
-\format{A data frame with 932 rows representing submissions and 11 variables:
+\format{
+A data frame with 932 rows representing submissions and 11 variables:
 \describe{
   \item{castle1}{Number of troops out of 100 send to castle 1}
   \item{castle2}{Number of troops out of 100 send to castle 2}
@@ -17,7 +18,8 @@
   \item{castle9}{Number of troops out of 100 send to castle 9}
   \item{castle10}{Number of troops out of 100 send to castle 10}
   \item{reason}{Why did you choose your troop deployment?}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/riddler-castles}
 }
@@ -36,7 +38,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 riddler_castles_tidy<-riddler_castles2 \%>\%
-   gather(key = castle , value = soldiers, castle1:castle10) \%>\%
+   pivot_longer(castle1:castle10, names_to = "castle" , values_to = "soldiers") \%>\%
    mutate(castle = as.numeric(str_replace(castle, "castle","")))
 }
 \seealso{

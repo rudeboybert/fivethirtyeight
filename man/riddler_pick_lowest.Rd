@@ -4,11 +4,13 @@
 \name{riddler_pick_lowest}
 \alias{riddler_pick_lowest}
 \title{Pick A Number, Any Number}
-\format{A data frame with 3660 rows representing dates and 1 variable:
+\format{
+A data frame with 3660 rows representing dates and 1 variable:
 \describe{
 \item{your_number}{Guessed number}
 \item{show_your_work}{People showing their work}
-}}
+}
+}
 \usage{
 riddler_pick_lowest
 }

@@ -4,7 +4,8 @@
 \name{nfl_fandom_surveymonkey}
 \alias{nfl_fandom_surveymonkey}
 \title{How Every NFL Team’s Fans Lean Politically}
-\format{a data frame with 33 rows representing teams and 25 variables:
+\format{
+a data frame with 33 rows representing teams and 25 variables:
 \describe{
 \item{team}{NFL team}
 \item{total_respondents}{Total number of poll respondents who ranked the given team in their top 3 favorites}
@@ -31,7 +32,8 @@
 \item{ind_percent}{Percent of fans who are independent}
 \item{white_percent}{Percent of fans who are White}
 \item{nonwhite_percent}{Percent of fans who are not White}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}
 }
@@ -48,9 +50,9 @@ The raw data behind the story
 library(dplyr)
 library(tidyr)
 nfl_fandom_surveymonkey_tidy <- nfl_fandom_surveymonkey \%>\%
-  gather(key = race_party, value = percent,
-         -c("team", "total_respondents", "gop_percent", "dem_percent",
-            "ind_percent", "white_percent", "nonwhite_percent")) \%>\%
+  pivot_longer(-c("team", "total_respondents", "gop_percent", "dem_percent",
+            "ind_percent", "white_percent", "nonwhite_percent"),
+            names_to = "race_party", values_to = "percent") \%>\%
   arrange(team)
 }
 \seealso{

@@ -4,7 +4,8 @@
 \name{spi_matches}
 \alias{spi_matches}
 \title{Match-by-match SPI ratings and forecasts back to 2016}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
 (30,533 rows) see Examples below. The preview is a data frame with 10 rows 
 representing soccer matches and 13 variables:
@@ -31,7 +32,8 @@ representing soccer matches and 13 variables:
   \item{nsxg2}{}
   \item{adj_score1}{}
   \item{adj_score2}{}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
 }

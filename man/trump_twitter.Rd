@@ -4,12 +4,14 @@
 \name{trump_twitter}
 \alias{trump_twitter}
 \title{The World's Favorite Donald Trump Tweets}
-\format{A data frame with 448 rows representing tweets and 3 variables:
+\format{
+A data frame with 448 rows representing tweets and 3 variables:
 \describe{
   \item{id}{}
   \item{created_at}{}
   \item{text}{}
-}}
+}
+}
 \source{
 Twitter \url{https://twitter.com/realdonaldtrump}
 }

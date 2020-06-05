@@ -4,7 +4,8 @@
 \name{pulitzer}
 \alias{pulitzer}
 \title{Do Pulitzers Help Newspapers Keep Readers?}
-\format{A data frame with 50 rows representing newspapers and 7 variables:
+\format{
+A data frame with 50 rows representing newspapers and 7 variables:
 \describe{
   \item{newspaper}{Newspaper}
   \item{circ2004}{Daily Circulation in 2004}
@@ -13,7 +14,8 @@
   \item{num_finals1990_2003}{Number of Pulitzer Prize winners and finalists from 1990 to 2003}
   \item{num_finals2004_2014}{Number of Pulitzer Prize winners and finalists from 2004 to 2014}
   \item{num_finals1990_2014}{Number of Pulitzer Prize winners and finalists from 1990 to 2014}
-}}
+}
+}
 \source{
 See \url{https://fivethirtyeight.com/features/do-pulitzers-help-newspapers-keep-readers/}
 }

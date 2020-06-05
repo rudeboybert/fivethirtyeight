@@ -4,7 +4,8 @@
 \name{forecast_results_2018}
 \alias{forecast_results_2018}
 \title{How FiveThirtyEight's 2018 Midterm Forecasts Did}
-\format{A dataframe with 1518 rows representing forecast results (as of December 3, 2018) and 11 variables:
+\format{
+A dataframe with 1518 rows representing forecast results (as of December 3, 2018) and 11 variables:
 \describe{
   \item{cycle}{cycle of the election}
   \item{branch}{branch of the election}
@@ -17,7 +18,8 @@
   \item{democrat_won}{whether the Democrat won}
   \item{republican_won}{whether the Republican won}
   \item{uncalled}{if a race was uncalled}
-  }}
+  }
+}
 \source{
 FiveThirtyEight's 2018 House Forecast \url{https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/}
 }

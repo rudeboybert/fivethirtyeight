@@ -4,7 +4,8 @@
 \name{murder_2016_prelim}
 \alias{murder_2016_prelim}
 \title{A Handful Of Cities Are Driving 2016's Rise In Murder}
-\format{A data frame with 79 rows representing large US cities and 7 variables:
+\format{
+A data frame with 79 rows representing large US cities and 7 variables:
 \describe{
   \item{city}{Name of city}
   \item{state}{Name of state}
@@ -13,7 +14,8 @@
   \item{change}{2016 - 2015}
   \item{source}{Source of data}
   \item{as_of}{2016 murders up to this date}
-}}
+}
+}
 \source{
 Listed as \code{source} variable in dataset
 }

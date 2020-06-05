@@ -4,7 +4,8 @@
 \name{love_actually_appearance}
 \alias{love_actually_appearance}
 \title{The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time}
-\format{A data frame with 71 rows representing scenes and 15 variables:
+\format{
+A data frame with 71 rows representing scenes and 15 variables:
 \describe{
   \item{scenes}{}
   \item{bill_nighy}{}
@@ -21,7 +22,8 @@
   \item{abdul_salis}{}
   \item{martin_freeman}{}
   \item{rowan_atkinson}{}
-}}
+}
+}
 \usage{
 love_actually_appearance
 }
@@ -37,7 +39,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 love_actually_appearance_tidy <- love_actually_appearance \%>\%
-  gather(actor, appears, -c(scenes)) \%>\%
+  pivot_longer(-scenes, names_to = "actor", values_to = "appears") \%>\%
   arrange(scenes)
 }
 \seealso{

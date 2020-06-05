@@ -5,7 +5,8 @@
 \alias{nba_carmelo}
 \title{The Complete History Of The NBA
 2017-18 NBA Predictions}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
 (1871 to 2017 games) see Examples below. A data frame with 10 rows representing games and 20 variables:
 \describe{
@@ -29,7 +30,8 @@ first 10 rows of this dataset is included; to obtain the entire dataset
  \item{carmelo_prob2}{Team 2's probability of winning based on CARMELO rating}
  \item{score1}{Points scored by Team 1}
  \item{score2}{Points scored by Team 2}
-}}
+}
+}
 \source{
 See \url{https://projects.fivethirtyeight.com/nba-model/nba_elo.csv}
 }

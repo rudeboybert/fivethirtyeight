@@ -4,11 +4,13 @@
 \name{tennis_players_time}
 \alias{tennis_players_time}
 \title{Why Some Tennis Matches Take Forever}
-\format{A data frame with 218 rows representing players and 2 variables:
+\format{
+A data frame with 218 rows representing players and 2 variables:
 \describe{
   \item{player}{Player Name}
   \item{sec_added}{Weighted average of seconds added per point as loser and winner of matches, 1991-2015, from regression model controlling for tournament, surface, year and other factors}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/tennis-time}
 }

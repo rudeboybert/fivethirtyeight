@@ -4,7 +4,8 @@
 \name{tennis_serve_time}
 \alias{tennis_serve_time}
 \title{Why Some Tennis Matches Take Forever}
-\format{A data frame with 120 rows representing serves and 7 variables:
+\format{
+A data frame with 120 rows representing serves and 7 variables:
 \describe{
   \item{server}{Name of player serving at 2015 French Open}
   \item{sec_between}{Time in seconds between end of marked point and next serve, timed by stopwatch app}
@@ -13,7 +14,8 @@
   \item{set}{Set number, out of five}
   \item{game}{Score in games within the set}
   \item{date}{Date}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/tennis-time}
 }

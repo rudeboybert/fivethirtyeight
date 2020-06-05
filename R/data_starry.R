@@ -153,9 +153,10 @@
 #' Methodology:
 #' \url{https://fivethirtyeight.com/methodology/how-fivethirtyeights-house-and-senate-models-work/}
 #' @seealso \code{\link{house_national_forecast}}
+#' 
 #' @examples
-#' if(FALSE){
-#'
+#' \dontrun{
+#' 
 #' # To obtain the entire dataset, run the following code:
 #' library(readr)
 #' library(dplyr)
@@ -507,7 +508,7 @@
 #'   select(-c(age_18_34, age_35_64, age_65_over, white_yes, white_no, children_yes,
 #'             children_no, overall)) %>%
 #'   # Convert data frame to tidy data (long) format:
-#'   gather(key = sexuality, value = ratio_by_sexuality, -c(question, response) )
+#'   pivot_longer(-c(question, response), names_to = "sexuality", values_to = "ratio_by_sexuality")
 #'
 #' # Visualize results
 #' ggplot(data = masculinity_tidy, aes(x = response, y = ratio_by_sexuality, fill = sexuality)) +

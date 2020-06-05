@@ -4,7 +4,8 @@
 \name{college_recent_grads}
 \alias{college_recent_grads}
 \title{The Economic Guide To Picking A College Major}
-\format{A data frame with 173 rows representing majors (recent graduates) and 21 variables:
+\format{
+A data frame with 173 rows representing majors (recent graduates) and 21 variables:
 \describe{
   \item{rank}{Rank by median earnings}
   \item{major_code}{Major code, FO1DP in ACS PUMS}
@@ -27,7 +28,8 @@
   \item{college_jobs}{Number with job requiring a college degree}
   \item{non_college_jobs}{Number with job not requiring a college degree}
   \item{low_wage_jobs}{Number in low-wage service jobs}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md}. Note that
 \code{women-stem.csv} was a subset of the original \code{recent-grads.csv}, so no data frame was created.

@@ -4,14 +4,16 @@
 \name{cand_state_20150114}
 \alias{cand_state_20150114}
 \title{Looking For Clues: Who Is Going To Run For President In 2016?}
-\format{A data frame with 25 rows representing potential presidential primary candidates and 5 variables:
+\format{
+A data frame with 25 rows representing potential presidential primary candidates and 5 variables:
 \describe{
   \item{person}{Potential presidential candidate}
   \item{party}{Political party}
   \item{date}{Date of event}
   \item{latest}{Latest statement}
   \item{score}{Likelihood of running score, 1 = Not running, 5 = Definitely running}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/potential-candidates}
 }

@@ -4,7 +4,8 @@
 \name{spi_global_rankings}
 \alias{spi_global_rankings}
 \title{Current SPI ratings and rankings for men's club teams}
-\format{A data frame with 453 rows representing soccer rankings and 7 variables:
+\format{
+A data frame with 453 rows representing soccer rankings and 7 variables:
 \describe{
   \item{name}{The name of the soccer club.}
   \item{league}{The name of the league to which the club belongs.}
@@ -13,7 +14,8 @@
   \item{off}{Offensive rating for a given team (the higher the value the stronger the team's offense).}
   \item{def}{Defensive rating for a given team (the lower the value the stronger the team's defense).}
   \item{spi}{A club's SPI score.}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
 }

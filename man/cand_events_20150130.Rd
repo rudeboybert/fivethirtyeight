@@ -4,7 +4,8 @@
 \name{cand_events_20150130}
 \alias{cand_events_20150130}
 \title{Who Will Run For President: Romney Is Out}
-\format{A data frame with 74 rows representing events attended by potential presidential primary candidates and 8 variables:
+\format{
+A data frame with 74 rows representing events attended by potential presidential primary candidates and 8 variables:
 \describe{
   \item{person}{Potential presidential candidate}
   \item{party}{Political party}
@@ -14,7 +15,8 @@
   \item{date}{Date of event}
   \item{link}{Link to event}
   \item{snippet}{Snippet of event description}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/potential-candidates}
 }

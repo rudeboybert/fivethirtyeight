@@ -4,7 +4,8 @@
 \name{endorsements}
 \alias{endorsements}
 \title{Pols And Polls Say The Same Thing: Jeb Bush Is A Weak Front-Runner}
-\format{A data frame with 109 rows representing candidates and 9 variables:
+\format{
+A data frame with 109 rows representing candidates and 9 variables:
 \describe{
   \item{year}{Election year}
   \item{party}{Political party}
@@ -15,7 +16,8 @@
   \item{percentage_of_money}{Percentage of total money raised by the candidate's political party through June 30th of the year before the primary}
   \item{primary_vote_percentage}{Percentage of votes won in the primary}
   \item{won_primary}{Did the candidate win the primary?}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/endorsements-june-30}
 }

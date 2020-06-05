@@ -4,12 +4,14 @@
 \name{trump_news}
 \alias{trump_news}
 \title{How Trump Hacked The Media}
-\format{A data frame with 286 rows representing lead stories and 3 variables:
+\format{
+A data frame with 286 rows representing lead stories and 3 variables:
 \describe{
   \item{date}{Date of lead story about Donald Trump.}
   \item{major_cat}{Story classification}
   \item{detail}{}
-}}
+}
+}
 \source{
 Memeorandum \url{https://www.memeorandum.com/}.
 }

@@ -4,7 +4,8 @@
 \name{biopics}
 \alias{biopics}
 \title{'Straight Outta Compton' Is The Rare Biopic Not About White Dudes}
-\format{A data frame with 761 rows representing movies and 14 variables:
+\format{
+A data frame with 761 rows representing movies and 14 variables:
 \describe{
   \item{title}{Title of the film.}
   \item{site}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
@@ -20,7 +21,8 @@
   \item{person_of_color}{Dummy variable that indicates person of color.}
   \item{subject_sex}{Sex of subject.}
   \item{lead_actor_actress}{The actor or actress who played the subject.}
-}}
+}
+}
 \source{
 IMDB \url{https://www.imdb.com/}
 }

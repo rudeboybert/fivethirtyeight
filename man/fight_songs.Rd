@@ -4,7 +4,8 @@
 \name{fight_songs}
 \alias{fight_songs}
 \title{Our Guide To The Exuberant Nonsense of College Fight Songs}
-\format{A data frame with 65 rows representing college fight songs, and 23 variables:
+\format{
+A data frame with 65 rows representing college fight songs, and 23 variables:
 \describe{
   \item{school}{school name}
   \item{conference}{school college football conference}
@@ -28,7 +29,8 @@
   \item{opponents}{TRUE if song mentions opponents, FALSE if not}
   \item{spelling}{TRUE if song spells something out, FALSE if not}
   \item{trope_count}{total number of tropes in song}
-  \item{spotify_id}{Spotify id for song}}}
+  \item{spotify_id}{Spotify id for song}}
+}
 \source{
 Spotify \url{https://www.spotify.com/us/}
 }

@@ -4,11 +4,13 @@
 \name{nba_tattoos}
 \alias{nba_tattoos}
 \title{Accurately Counting NBA Tattoos Isn't Easy, Even If You're Up Close}
-\format{A data frame with 636 rows representing National Basketball Association players and 2 variables:
+\format{
+A data frame with 636 rows representing National Basketball Association players and 2 variables:
 \describe{
   \item{player_name}{Name of player}
   \item{tattoos}{TRUE corresponds to player having tattoos, FALSE corresponds to not}
-}}
+}
+}
 \source{
 Ethan Swan \url{https://nbatattoos.tumblr.com/}
 }

@@ -4,7 +4,8 @@
 \name{governor_state_forecast}
 \alias{governor_state_forecast}
 \title{2018 Governors Forecast}
-\format{A dataframe with 7743 rows representing state-level results of the classic, lite, and deluxe  gubernatorial forecasts since Oct. 11, 2018. and 10 variables
+\format{
+A dataframe with 7743 rows representing state-level results of the classic, lite, and deluxe  gubernatorial forecasts since Oct. 11, 2018. and 10 variables
 \describe{
 \item{forecastdate}{date of the forecast}
 \item{state}{state of the forecast}
@@ -16,7 +17,8 @@
 \item{voteshare}{the voteshare of the corresponding party}
 \item{p10_voteshare}{the top 10 percentile of the voteshare}
 \item{p90_voteshare}{the top 00 percentile of the voteshare}
-}}
+}
+}
 \source{
 FiveThirtyEight’s House, Senate And Governor Models
 Methodology:

@@ -4,7 +4,8 @@
 \name{comic_characters}
 \alias{comic_characters}
 \title{Comic Books Are Still Made By Men, For Men And About Men}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
 (23,272 rows) see Examples below. The preview is a data frame with 10 rows 
 representing characters and 16 variables:
@@ -25,7 +26,8 @@ representing characters and 16 variables:
   \item{month}{The month of the character's first appearance in a comic book, if available}
   \item{year}{The year of the character's first appearance in a comic book, if available}
   \item{date}{The date of the character's first appearance in a comic book, if available}
-}}
+}
+}
 \source{
 DC Wikia \url{https://dc.wikia.com/wiki/Main_Page} and Marvel Wikia
 \url{https://marvel.wikia.com/Main_Page}. Characters were scraped on August 24,

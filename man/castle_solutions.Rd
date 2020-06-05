@@ -4,13 +4,15 @@
 \name{castle_solutions}
 \alias{castle_solutions}
 \title{Riddler Nation - Castles Puzzle}
-\format{A data frame with 13870 rows representing users, and 3 variables:
+\format{
+A data frame with 13870 rows representing users, and 3 variables:
 \describe{
   \item{user}{ID for the user who submitted the response}
   \item{castle}{which castle the user chose}
   \item{number_of_soldiers}{the number of soldiers they assigned to the castle}
   \item{strategy}{their reasoning/strategy for the number of soldiers}
-  }}
+  }
+}
 \usage{
 castle_solutions
 }

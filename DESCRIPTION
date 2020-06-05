@@ -42,11 +42,11 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/rudeboybert/fivethirtyeight
 BugReports: https://github.com/rudeboybert/fivethirtyeight/issues
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Suggests:
     ggplot2,
     dplyr,
-    tidyr,
+    tidyr (>= 1.0.0),
     curl,
     readr,
     tibble,

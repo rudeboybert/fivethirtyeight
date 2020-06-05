@@ -4,11 +4,13 @@
 \name{elasticity_by_state}
 \alias{elasticity_by_state}
 \title{Political Elasticity Scores}
-\format{A dataset with 435 rows representing each state and the District of Columbia and 2 variables
+\format{
+A dataset with 435 rows representing each state and the District of Columbia and 2 variables
 \describe{
 \item{state}{state}
 \item{pvi_538}{pvi}
-}}
+}
+}
 \source{
 An elasticity score measures how sensitive a state or district it is to changes in the national political environment.
 }

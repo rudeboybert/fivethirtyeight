@@ -4,7 +4,8 @@
 \name{pres_commencement}
 \alias{pres_commencement}
 \title{Sitting Presidents Give Way More Commencement Speeches Than They Used To}
-\format{A data frame with 154 rows representing speeches and 8 variables:
+\format{
+A data frame with 154 rows representing speeches and 8 variables:
 \describe{
   \item{pres}{Number of president (33 is Harry Truman, the 33rd president; 44 is Barack Obama, the 44th president)}
   \item{pres_name}{Name of president}
@@ -14,7 +15,8 @@
   \item{state}{State where speech was delivered}
   \item{building}{Name of building in which speech was delivered}
   \item{room}{Room in which speech was delivered}
-}}
+}
+}
 \source{
 American Presidency Project, Gerhard Peters and John T. Woolley \url{https://www.presidency.ucsb.edu}
 }

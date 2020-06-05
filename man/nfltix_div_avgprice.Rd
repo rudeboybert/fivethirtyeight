@@ -4,12 +4,14 @@
 \name{nfltix_div_avgprice}
 \alias{nfltix_div_avgprice}
 \title{Who Goes To Meaningless NFL Games And Why?}
-\format{A data frame with 108 rows representing National Football League games and 3 variables:
+\format{
+A data frame with 108 rows representing National Football League games and 3 variables:
 \describe{
   \item{event}{NFL divisional game info}
   \item{division}{NFL division}
   \item{avg_tix_price}{Average ticket price}
-}}
+}
+}
 \source{
 StubHub
 }

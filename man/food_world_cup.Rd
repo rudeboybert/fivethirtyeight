@@ -4,7 +4,8 @@
 \name{food_world_cup}
 \alias{food_world_cup}
 \title{The FiveThirtyEight International Food Association's 2014 World Cup}
-\format{A data frame with 1373 rows representing respondents and 48 variables:
+\format{
+A data frame with 1373 rows representing respondents and 48 variables:
 \describe{
   \item{respondent_id}{Respondent ID}
   \item{knowledge}{Generally speaking, how would you rate your level of knowledge of cuisines from different parts of the world?}
@@ -54,7 +55,8 @@
   \item{united_states}{Cuisine of the United States}
   \item{uruguay}{Cuisine of Uruguay}
   \item{vietnam}{Cuisine of Vietnam}
-}}
+}
+}
 \usage{
 food_world_cup
 }

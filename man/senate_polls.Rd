@@ -4,13 +4,15 @@
 \name{senate_polls}
 \alias{senate_polls}
 \title{Early Senate Polls Have Plenty to Tell Us About November}
-\format{A data frame with 107 rows representing a poll and 4 variables:
+\format{
+A data frame with 107 rows representing a poll and 4 variables:
 \describe{
   \item{year}{Year}
   \item{election_result}{Final poll margin}
   \item{presidential_approval}{Early presidential approval rating}
   \item{poll_average}{Early poll margin}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/early-senate-polls}
 }

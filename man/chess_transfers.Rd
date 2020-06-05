@@ -4,14 +4,16 @@
 \name{chess_transfers}
 \alias{chess_transfers}
 \title{Chess Transfers}
-\format{A data frame with 932 rows representing international player transfers and 5 variables:
+\format{
+A data frame with 932 rows representing international player transfers and 5 variables:
 \describe{
   \item{url}{The corresponding website on the World Chess Federation page which details the transfers of a given year.}
   \item{id}{An numeric identifier for the chess player who transferred.}
   \item{federation}{The current national federation of the chess player}
   \item{form_fed}{The national federation from which the chess player has transferred.}
   \item{transfer_date}{The date at which the transfer took place.}
-}}
+}
+}
 \source{
 World Chess Federation
 }

@@ -4,7 +4,8 @@
 \name{governor_national_forecast}
 \alias{governor_national_forecast}
 \title{2018 Governors Forecast}
-\format{A dataframe with 150 rows representing national-level results of the classic, lite, and deluxe gubernatorial forecasts since Oct. 11, 2018. and 11 variables
+\format{
+A dataframe with 150 rows representing national-level results of the classic, lite, and deluxe gubernatorial forecasts since Oct. 11, 2018. and 11 variables
 \describe{
 \item{forecastdate}{date of the forecast}
 \item{party}{the party of the forecast}
@@ -17,7 +18,8 @@
 \item{margin}{unknown}
 \item{p10_margin}{the margin of p10_seats}
 \item{p90_margin}{the margin of p90_seats}
-}}
+}
+}
 \source{
 FiveThirtyEight’s House, Senate And Governor Models
 Methodology:

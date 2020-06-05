@@ -4,7 +4,8 @@
 \name{mayweather_mcgregor_tweets}
 \alias{mayweather_mcgregor_tweets}
 \title{Mayweather Vs McGregor Tweets}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
 (12118 rows) see Examples below. A data frame with 10 rows representing tweets and 7 variables:
 \describe{
@@ -15,7 +16,8 @@ first 10 rows of this dataset is included; to obtain the entire dataset
   \item{retweeted}{Whether or not the tweet about the fight was retweeted.}
   \item{screen_name}{The screen name under which the tweet about the fight was posted.}
   \item{text}{The text contained in the tweet about the fight.}
-}}
+}
+}
 \source{
 This data contains 12,118 tweets that contain one or more emojis and
 match one or more of the following hashtags: #MayMac, #MayweatherMcGregor,

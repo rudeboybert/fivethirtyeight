@@ -4,7 +4,8 @@
 \name{weather_check}
 \alias{weather_check}
 \title{Where People Go To Check The Weather}
-\format{A data frame with 928 rows representing respondents and 9 variables:
+\format{
+A data frame with 928 rows representing respondents and 9 variables:
 \describe{
   \item{respondent_id}{Respondent ID}
   \item{ck_weather}{Do you typically check a daily weather report?}
@@ -15,7 +16,8 @@
   \item{female}{Gender}
   \item{hhold_income}{How much total combined money did all members of your HOUSEHOLD earn last year?}
   \item{region}{US Region}
-}}
+}
+}
 \source{
 The source of the data is a Survey Monkey Audience poll commissioned by FiveThirtyEight and conducted from April 6 to April 10, 2015.  See \url{https://github.com/fivethirtyeight/data/tree/master/weather-check}
 }

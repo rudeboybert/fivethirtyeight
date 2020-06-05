@@ -4,7 +4,8 @@
 \name{classic_rock_song_list}
 \alias{classic_rock_song_list}
 \title{Why Classic Rock Isn't What It Used To Be}
-\format{A data frame with 2230 rows representing unique songs and 7 variables:
+\format{
+A data frame with 2230 rows representing unique songs and 7 variables:
 \describe{
   \item{song}{Song name}
   \item{artist}{Artist name}
@@ -13,7 +14,8 @@
   \item{has_year}{Logical variable of whether release year is included}
   \item{playcount}{Number of plays across all stations}
   \item{playcount_has_year}{Number of plays across all stations if a year was found}
-}}
+}
+}
 \source{
 SongFacts and \url{https://github.com/fivethirtyeight/data/tree/master/classic-rock}
 }

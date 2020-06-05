@@ -4,7 +4,8 @@
 \name{ahca_polls}
 \alias{ahca_polls}
 \title{American Health Care Act Polls}
-\format{A data frame with 15 rows representing polls and 7 variables:
+\format{
+A data frame with 15 rows representing polls and 7 variables:
 \describe{
   \item{start}{Start date of the poll.}
   \item{end}{End date of the poll.}
@@ -13,7 +14,8 @@
   \item{oppose}{The number of negative responses to the question at the pollster.}
   \item{url}{The website associated with the polling question.}
   \item{text}{The polling question asked at the pollster.}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/blob/master/ahca-polls/README.md}
 }
@@ -31,6 +33,6 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 ahca_polls_tidy <- ahca_polls \%>\%
-  gather(opinion, count, -c(start, end, pollster, text, url))
+  pivot_longer(-c(start, end, pollster, text, url), names_to = "opinion", values_to = "count")
 }
 \keyword{datasets}

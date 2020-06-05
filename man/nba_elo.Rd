@@ -5,7 +5,11 @@
 \alias{nba_elo}
 \alias{nba_elo_latest}
 \title{NBA Elo Ratings}
-\format{2 data frames about NBA Elo prediction ratings}
+\format{
+2 data frames about NBA Elo prediction ratings
+
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 1230 rows and 24 columns.
+}
 \usage{
 nba_elo
 

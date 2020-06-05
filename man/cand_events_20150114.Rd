@@ -4,7 +4,8 @@
 \name{cand_events_20150114}
 \alias{cand_events_20150114}
 \title{Looking For Clues: Who Is Going To Run For President In 2016?}
-\format{A data frame with 42 rows representing events attended in Iowa and New Hampshire by potential presidential primary candidates and 8 variables:
+\format{
+A data frame with 42 rows representing events attended in Iowa and New Hampshire by potential presidential primary candidates and 8 variables:
 \describe{
   \item{person}{Potential presidential candidate}
   \item{party}{Political party}
@@ -14,7 +15,8 @@
   \item{date}{Date of event}
   \item{link}{Link to event}
   \item{snippet}{Snippet of event description}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/potential-candidates}
 }

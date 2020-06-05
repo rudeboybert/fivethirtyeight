@@ -4,7 +4,8 @@
 \name{love_actually_adj}
 \alias{love_actually_adj}
 \title{The Definitive Analysis Of 'Love Actually,' The Greatest Christmas Movie Of Our Time}
-\format{A data frame with 14 rows representing actors and 15 variables:
+\format{
+A data frame with 14 rows representing actors and 15 variables:
 \describe{
   \item{actors}{}
   \item{bill_nighy}{}
@@ -21,7 +22,8 @@
   \item{abdul_salis}{}
   \item{martin_freeman}{}
   \item{rowan_atkinson}{}
-}}
+}
+}
 \usage{
 love_actually_adj
 }

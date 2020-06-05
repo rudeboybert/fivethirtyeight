@@ -4,7 +4,8 @@
 \name{san_andreas}
 \alias{san_andreas}
 \title{The Rock Isn't Alone: Lots Of People Are Worried About 'The Big One'}
-\format{A data frame with 1013 rows representing respondents and 11 variables:
+\format{
+A data frame with 1013 rows representing respondents and 11 variables:
 \describe{
   \item{worry_general}{In general, how worried are you about earthquakes?}
   \item{worry_bigone}{How worried are you about the "Big One," a massive, catastrophic earthquake?}
@@ -17,7 +18,8 @@
   \item{female}{Gender}
   \item{hhold_income}{How much total combined money did all members of your HOUSEHOLD earn last year?}
   \item{region}{US Region}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/san-andreas}
 }

@@ -4,7 +4,8 @@
 \name{house_district_forecast}
 \alias{house_district_forecast}
 \title{2018 House Forecast}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset
 see Examples below. The preview is a data frame with 10 rows representing
 district-level results of the classic, lite, and deluxe house forecasts
@@ -21,7 +22,8 @@ since 2018/08/01 and 11 variables.
 \item{voteshare}{the voteshare of the corresponding party}
 \item{p10_voteshare}{the top 10 percentile of the voteshare}
 \item{p90_voteshare}{the top 00 percentile of the voteshare}
-}}
+}
+}
 \source{
 FiveThirtyEight’s House, Senate And Governor Models
 Methodology:
@@ -39,7 +41,7 @@ The raw data behind the story
 the original dataset included an empty column "special", which was removed.
 }
 \examples{
-if(FALSE){
+\dontrun{
 
 # To obtain the entire dataset, run the following code:
 library(readr)

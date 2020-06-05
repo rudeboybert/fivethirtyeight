@@ -4,7 +4,8 @@
 \name{trump_approval_poll}
 \alias{trump_approval_poll}
 \title{How Popular is Donald Trump}
-\format{A data frame with 3051 rows representing individual polls and 20 variables:
+\format{
+A data frame with 3051 rows representing individual polls and 20 variables:
 \describe{
 \item{subgroup}{The subgroup the poll falls into as defined by the type of people being polled (all polls, voters, adults)}
 \item{start_date}{The date the polling began}
@@ -25,7 +26,8 @@
 \item{question_id}{ID number for the question being polled}
 \item{created_date}{Date the poll was created}
 \item{timestamp}{Date and time the poll was compiled}
-}}
+}
+}
 \source{
 \url{https://projects.fivethirtyeight.com/trump-approval-data/approval_polllist.csv} and
 \url{https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv}

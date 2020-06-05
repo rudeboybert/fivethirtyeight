@@ -23,7 +23,8 @@
 #' library(tidyr)
 #' library(stringr)
 #' airline_safety_tidy <- airline_safety %>%
-#'   gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) %>%
+#'   pivot_longer(-c(airline, incl_reg_subsidiaries, avail_seat_km_per_week), 
+#'     names_to = "type", values_to = "count") %>%
 #'   mutate(
 #'     period = str_sub(type, start=-5),
 #'     period = str_replace_all(period, "_", "-"),
@@ -147,7 +148,7 @@
 #' library(tidyr)
 #' library(stringr)
 #' drinks_tidy <- drinks %>%
-#'   gather(type, servings, -c(country, total_litres_of_pure_alcohol)) %>%
+#'   pivot_longer(cols = ends_with("servings"), names_to = "type", values_to = "servings") %>%
 #'   mutate(
 #'     type = str_sub(type, start=1, end=-10)
 #'   ) %>%
@@ -275,7 +276,8 @@
 #' library(tidyr)
 #' library(stringr)
 #' bob_ross_tidy <- bob_ross %>%
-#'   gather(object, present, -c(episode, season, episode_num, title)) %>%
+#'   pivot_longer(-c(episode, season, episode_num, title), 
+#'      names_to = "object", values_to = "present") %>%
 #'   mutate(present = as.logical(present)) %>%
 #'   arrange(episode, object)
 "bob_ross"
@@ -659,11 +661,11 @@
 #' library(stringr)
 #' use <- drug_use %>%
 #'   select(age, n, ends_with("_use")) %>%
-#'   gather(drug, use, -c(age, n)) %>%
+#'   pivot_longer(-c(age, n), names_to = "drug", values_to = "use") %>%
 #'   mutate(drug = str_sub(drug, start=1, end=-5))
 #' freq <- drug_use %>%
 #'   select(age, n, ends_with("_freq")) %>%
-#'   gather(drug, freq, -c(age, n)) %>%
+#'   pivot_longer(-c(age, n), names_to = "drug", values_to = "freq") %>%
 #'   mutate(drug = str_sub(drug, start=1, end=-6))
 #' drug_use_tidy <- left_join(x=use, y=freq, by = c("age", "n", "drug")) %>%
 #'   arrange(age)
@@ -844,7 +846,8 @@
 #' library(tidyr)
 #' library(stringr)
 #' fifa_audience_tidy <- fifa_audience %>%
-#'   gather(type, share, -c(country, confederation)) %>%
+#'   pivot_longer(-c(country, confederation), 
+#'      names_to = "type", values_to = "share") %>%
 #'   mutate(type = str_sub(type, start=1, end=-7)) %>%
 #'   arrange(country)
 "fifa_audience"
@@ -997,7 +1000,7 @@
 #' library(tidyr)
 #' library(stringr)
 #' love_actually_appearance_tidy <- love_actually_appearance %>%
-#'   gather(actor, appears, -c(scenes)) %>%
+#'   pivot_longer(-scenes, names_to = "actor", values_to = "appears") %>%
 #'   arrange(scenes)
 "love_actually_appearance"
 

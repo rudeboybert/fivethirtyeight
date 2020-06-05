@@ -4,7 +4,8 @@
 \name{hist_ncaa_bball_casts}
 \alias{hist_ncaa_bball_casts}
 \title{The NCAA Bracket: Checking Our Work}
-\format{A data frame with 253 rows representing NCAA men's basketball tournament games and 6 variables:
+\format{
+A data frame with 253 rows representing NCAA men's basketball tournament games and 6 variables:
 \describe{
   \item{year}{}
   \item{round}{}
@@ -12,7 +13,8 @@
   \item{underdog}{}
   \item{favorite_prob}{}
   \item{favorite_win}{}
-}}
+}
+}
 \source{
 See \url{https://fivethirtyeight.com/features/the-ncaa-bracket-checking-our-work/}
 }

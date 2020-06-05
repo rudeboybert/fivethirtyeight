@@ -4,7 +4,8 @@
 \name{nflwr_hist}
 \alias{nflwr_hist}
 \title{The Football Hall Of Fame Has A Receiver Problem}
-\format{A data frame with 6496 rows representing National Football League wide receivers and 6 variables:
+\format{
+A data frame with 6496 rows representing National Football League wide receivers and 6 variables:
 \describe{
   \item{pfr_player_id}{Player identification code at \url{https://www.pro-football-reference.com/}}
   \item{player_name}{The player's name}
@@ -12,7 +13,8 @@
   \item{career_ranypa}{Adjusted Net Yards Per Attempt (relative to average) of player's career teams, weighted by TRY w/ each team}
   \item{career_wowy}{The amount by which \code{career_ranypa} exceeds what would be expected from his QBs' (age-adjusted) performance without the receiver}
   \item{bcs_rating}{The number of yards per game by which a player would outgain an average receiver on the same team, after adjusting for teammate quality and age (update of \url{http://www.sabernomics.com/sabernomics/index.php/2005/02/ranking-the-all-time-great-wide-receivers/})}
-}}
+}
+}
 \source{
 See \url{https://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}
 }

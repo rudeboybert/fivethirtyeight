@@ -4,7 +4,8 @@
 \name{police_locals}
 \alias{police_locals}
 \title{Most Police Don't Live In The Cities They Serve}
-\format{A data frame with 75 rows representing cities and 8 variables:
+\format{
+A data frame with 75 rows representing cities and 8 variables:
 \describe{
   \item{city}{U.S. city}
   \item{force_size}{Number of police officers serving that city}
@@ -14,7 +15,8 @@
   \item{black}{Percentage of black police officers who live in the city}
   \item{hispanic}{Percentage of Hispanic police officers who live in the city}
   \item{asian}{Percentage of Asian police officers who live in the city}
-}}
+}
+}
 \source{
 See \url{https://github.com/fivethirtyeight/data/tree/master/police-locals}
 }
@@ -43,6 +45,6 @@ Note: Missing values means that there are fewer than 100 police officers of that
 library(dplyr)
 library(tidyr)
 police_locals_tidy <- police_locals \%>\%
-   gather(key = "race", value = "perc_in", all:asian)
+   pivot_longer(all:asian, names_to = "race", values_to = "perc_in")
 }
 \keyword{datasets}

@@ -4,7 +4,8 @@
 \name{airline_safety}
 \alias{airline_safety}
 \title{Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?}
-\format{A data frame with 56 rows representing airlines and 9 variables:
+\format{
+A data frame with 56 rows representing airlines and 9 variables:
 \describe{
   \item{airline}{airline}
   \item{incl_reg_subsidiaries}{indicates that regional subsidiaries are included}
@@ -15,7 +16,8 @@
   \item{incidents_00_14}{Total number of incidents, 2000-2014}
   \item{fatal_accidents_00_14}{Total number of fatal accidents, 2000-2014}
   \item{fatalities_00_14}{Total number of fatalities, 2000-2014}
-}}
+}
+}
 \source{
 Aviation Safety Network \url{https://aviation-safety.net}.
 }
@@ -33,7 +35,8 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 airline_safety_tidy <- airline_safety \%>\%
-  gather(type, count, -c(airline, incl_reg_subsidiaries, avail_seat_km_per_week)) \%>\%
+  pivot_longer(-c(airline, incl_reg_subsidiaries, avail_seat_km_per_week), 
+    names_to = "type", values_to = "count") \%>\%
   mutate(
     period = str_sub(type, start=-5),
     period = str_replace_all(period, "_", "-"),

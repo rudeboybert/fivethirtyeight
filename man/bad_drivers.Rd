@@ -4,7 +4,8 @@
 \name{bad_drivers}
 \alias{bad_drivers}
 \title{Dear Mona, Which State Has The Worst Drivers?}
-\format{A data frame with 51 rows representing the 50 states + D.C. and 8 variables:
+\format{
+A data frame with 51 rows representing the 50 states + D.C. and 8 variables:
 \describe{
   \item{state}{State}
   \item{num_drivers}{Number of drivers involved in fatal collisions per billion miles}
@@ -14,7 +15,8 @@
   \item{perc_no_previous}{Percentage of drivers involved in fatal collisions who had not been involved in any previous accidents}
   \item{insurance_premiums}{Car insurance premiums ($)}
   \item{losses}{Losses incurred by insurance companies for collisions per insured driver ($)}
-}}
+}
+}
 \source{
 National Highway Traffic Safety Administration 2012, National Highway
 Traffic Safety Administration 2009 & 2012, National Association of Insurance

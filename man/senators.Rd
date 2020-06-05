@@ -4,7 +4,8 @@
 \name{senators}
 \alias{senators}
 \title{Senator Dataset}
-\format{Because of R package size restrictions, only a preview of the
+\format{
+Because of R package size restrictions, only a preview of the
 first 10 rows of this dataset is included; to obtain the entire dataset see
 Examples below. A data frame with 10 rows representing tweets and 10 variables:
 \describe{
@@ -18,7 +19,8 @@ Examples below. A data frame with 10 rows representing tweets and 10 variables:
 \item{bioguide_id}{The poster's member ID from the "Biographical Directory of the United States Congress"}
 \item{party}{The poster's political party affiliation}
 \item{state}{The state the poster represents in Congress}
-}}
+}
+}
 \source{
 Twitter
 }
@@ -32,8 +34,9 @@ Senator Dataset
 Data collected on Oct 19 and 20
 }
 \examples{
-# To obtain the entire dataset, run the code inside the following if statement:
-if(FALSE){
+\dontrun{
+
+# To obtain the entire dataset, run the following code:
   library(dplyr)
   library(tidyr)
   library(readr)

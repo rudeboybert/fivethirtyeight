@@ -4,7 +4,8 @@
 \name{foul_balls}
 \alias{foul_balls}
 \title{We Watched 906 Foul Balls To Find Out Where The Most Dangerous Ones}
-\format{A data frame with 906 rows representing foul balls and 7 variables:
+\format{
+A data frame with 906 rows representing foul balls and 7 variables:
 \describe{
   \item{matchup}{the two teams that played}
   \item{game_date}{date of the most foul heavy day at each stadium}
@@ -13,7 +14,8 @@
   \item{predicted_zone}{zone predicted the foul ball would land in guaging angles}
   \item{camera_zone}{actual zone the ball landed it confirmed by camera angles}
   \item{used_zone}{zone used for analysis}
-}}
+}
+}
 \source{
 Baseball Savant \url{https://baseballsavant.mlb.com/}.
 }

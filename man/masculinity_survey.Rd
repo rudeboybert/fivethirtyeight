@@ -4,7 +4,8 @@
 \name{masculinity_survey}
 \alias{masculinity_survey}
 \title{Masculinity Survey}
-\format{A dataset with 189 rows representing answers and 12 variables:
+\format{
+A dataset with 189 rows representing answers and 12 variables:
 \describe{
 \item{question}{the survey question}
 \item{response}{the survey response}
@@ -18,7 +19,8 @@
 \item{children_no}{the ratio of participants who do not have children who selected this response}
 \item{straight_yes}{the ratio of straight participants who selected this response}
 \item{straight_no}{the ratio of non-straight participants who selected this response}
-}}
+}
+}
 \source{
 The original survey responses and original datasets can be found here:
 \url{https://github.com/fivethirtyeight/data/tree/master/masculinity-survey}
@@ -49,7 +51,7 @@ masculinity_tidy <- masculinity_survey \%>\%
   select(-c(age_18_34, age_35_64, age_65_over, white_yes, white_no, children_yes,
             children_no, overall)) \%>\%
   # Convert data frame to tidy data (long) format:
-  gather(key = sexuality, value = ratio_by_sexuality, -c(question, response) )
+  pivot_longer(-c(question, response), names_to = "sexuality", values_to = "ratio_by_sexuality")
 
 # Visualize results
 ggplot(data = masculinity_tidy, aes(x = response, y = ratio_by_sexuality, fill = sexuality)) +

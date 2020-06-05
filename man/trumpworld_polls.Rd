@@ -4,7 +4,8 @@
 \name{trumpworld_polls}
 \alias{trumpworld_polls}
 \title{What the World Thinks of Trump}
-\format{A data frame with 32 rows representing years and 40 variables:
+\format{
+A data frame with 32 rows representing years and 40 variables:
 \describe{
 \item{year}{Year the poll was conducted}
 \item{avg}{The average percentage people who answered the poll question positively (support the president or have a favorable view of the U.S.)}
@@ -46,7 +47,8 @@
 \item{peru}{The percentage of people from Peru who answered the poll question positively}
 \item{venezuela}{The percentage of people from Venezuela who answered the poll question positively}
 \item{question}{The item being polled. Specifically, whether respondents: 1) Have a favorable view of the U.S. or 2) Trust the U.S. President when it comes to foreign affairs}
-}}
+}
+}
 \source{
 Pew Research Center \url{https://www.pewresearch.org/fact-tank/2017/07/17/9-charts-on-how-the-world-sees-trump/}
 }
@@ -64,7 +66,8 @@ Trump World Polls Dataset.
 library(dplyr)
 library(tidyr)
 trumpworld_polls_tidy <- trumpworld_polls \%>\%
-  gather(country, percent_positive, -c("year", "avg", "question"))
+  pivot_longer(-c("year", "avg", "question"), 
+    names_to = "country", values_to = "percent_positive")
 }
 \seealso{
 \code{\link{trumpworld_issues}}
