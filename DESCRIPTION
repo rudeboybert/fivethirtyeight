@@ -69,5 +69,7 @@ Suggests:
     wordcloud,
     corrplot,
     ggraph,
-    igraph
+    igraph,
+    fivethirtyeightdata.test
+Additional_repositories: https://mariumtapal/github.io/drat
 VignetteBuilder: knitr
