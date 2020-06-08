@@ -1,4 +1,4 @@
-Package: fivethirtyeight_test
+Package: fivethirtyeight.test
 Title: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight'
 Description: Datasets and code published by the data journalism website 
     'FiveThirtyEight' available at <https://github.com/fivethirtyeight/data>. 
