@@ -7,7 +7,7 @@
 
 .onAttach <- function(libname, pkgname) {
   if (!.pkgenv$has_data) {
-    msg <- paste("To use this package, you must install the",
+    msg <- paste("For all available datsets, you can install the",
                  "fivethirtyeightdata.test package. To install that ",
                  "package, run `install.packages('fivethirtyeightdata.test',",
                  "repos='https://mariumtapal.github.io/drat/', type='source')`.")
