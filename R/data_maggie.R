@@ -597,48 +597,7 @@
 #' }
 #' @details Data on President Obama's tweets collected on Oct 20, President Trump's tweets collected on Oct 23.
 #' @source Twitter \url{https://twitter.com/BarackObama} and \url{https://twitter.com/realDonaldTrump}
-#' @seealso \code{\link{senators}}
 "twitter_presidents"
-
-
-
-#' Senator Dataset
-#' @format Because of R package size restrictions, only a preview of the
-#' first 10 rows of this dataset is included; to obtain the entire dataset see
-#' Examples below. A data frame with 10 rows representing tweets and 10 variables:
-#' \describe{
-#' \item{created_at}{The date and time the tweet was posted}
-#' \item{user}{The user posting the tweet}
-#' \item{text}{The text of the tweet}
-#' \item{url}{The link to the tweet}
-#' \item{replies}{The number of replies to the tweet}
-#' \item{retweets}{The number of retweets}
-#' \item{favorites}{The number of favorites}
-#' \item{bioguide_id}{The poster's member ID from the "Biographical Directory of the United States Congress"}
-#' \item{party}{The poster's political party affiliation}
-#' \item{state}{The state the poster represents in Congress}
-#' }
-#' @details Data collected on Oct 19 and 20
-#' @source Twitter
-#' @seealso \code{\link{twitter_presidents}}
-#' @examples
-#' \dontrun{
-#' 
-#' # To obtain the entire dataset, run the following code:
-#'   library(dplyr)
-#'   library(tidyr)
-#'   library(readr)
-#'   url <- "https://raw.githubusercontent.com/fivethirtyeight/data/master/twitter-ratio/senators.csv"
-#'   senators <- read_csv(url) %>%
-#'     mutate(
-#'       party = as.factor(party),
-#'       state = as.factor(state),
-#'       created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
-#'       text =  gsub("[^\x01-\x7F]", "", text)
-#'     ) %>%
-#'     select(created_at, user, everything())
-#' }
-"senators"
 
 
 
