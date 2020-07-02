@@ -7,10 +7,12 @@
 
 .onAttach <- function(libname, pkgname) {
   if (!.pkgenv$has_data) {
-    msg <- paste("For all available datsets, you can install the",
-                 "fivethirtyeightdata.test package. To install that ",
-                 "package, run `install.packages('fivethirtyeightdata.test',",
-                 "repos='https://mariumtapal.github.io/drat/', type='source')`.")
+    msg <- paste("Some larger datasets need to be installed separately,",
+                 "like senators and house_district_forecast.",
+                 "To install these, we recommend you install the ",
+                 "fivethirtyeightdata.test package by running: ",
+                 "`install.packages("fivethirtyeightdata", ",
+                 "repos = "https://fivethirtyeightdata.github.io/drat/", type = "source")`")
     msg <- paste(strwrap(msg), collapse="\n")
     packageStartupMessage(msg)
   }
