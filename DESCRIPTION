@@ -70,6 +70,6 @@ Suggests:
     corrplot,
     ggraph,
     igraph,
-    fivethirtyeightdata.test
+    fivethirtyeightdata
 Additional_repositories: https://fivethirtyeightdata/github.io/drat
 VignetteBuilder: knitr
