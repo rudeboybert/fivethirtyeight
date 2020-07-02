@@ -53,4 +53,7 @@ The raw data behind the stories:
 "We Researched Hundreds Of Races. Here’s Who Democrats Are Nominating" \url{https://fivethirtyeight.com/features/democrats-primaries-candidates-demographics/}
 and "How’s The Progressive Wing Doing In Democratic Primaries So Far?" \url{https://fivethirtyeight.com/features/the-establishment-is-beating-the-progressive-wing-in-democratic-primaries-so-far/}.
 }
+\note{
+This data was also used in "We Looked At Hundreds Of Endorsements. Here’s Who Democrats Are Listening To" published on 2008-08-14 \url{https://fivethirtyeight.com/features/the-establishment-is-beating-the-progressive-wing-in-democratic-primaries-so-far/}
+}
 \keyword{datasets}
