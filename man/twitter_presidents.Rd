@@ -32,7 +32,4 @@ Presidents Dataset:
 
 Data on President Obama's tweets collected on Oct 20, President Trump's tweets collected on Oct 23.
 }
-\seealso{
-\code{\link{senators}}
-}
 \keyword{datasets}
