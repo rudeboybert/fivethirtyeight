@@ -196,7 +196,7 @@
 <h2 class="hasAnchor">
 <a href="#distribution-of-sentiment-scores" class="anchor"></a>Distribution of sentiment scores</h2>
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">trump_full_text_sent</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span>(<span class="no">score_factor</span>) <span class="kw">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">prop</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/prop.table.html">prop.table</a></span>(<span class="no">n</span>))</pre></body></html></div>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span>(<span class="no">score_factor</span>) <span class="kw">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">prop</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/proportions.html">prop.table</a></span>(<span class="no">n</span>))</pre></body></html></div>
 <pre><code>## # A tibble: 4 x 3
 ##   score_factor      n   prop
 ##   &lt;chr&gt;         &lt;int&gt;  &lt;dbl&gt;
