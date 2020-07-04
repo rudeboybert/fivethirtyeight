@@ -96,24 +96,6 @@ usethis::use_data(generic_topline, overwrite = TRUE)
 
 
 
-# inconvenient-sequel ----------------------------------------------------------
-ratings <- read_csv("data-raw/inconvenient-sequel/ratings.csv") %>%
-  mutate(category = as.factor(category)) %>% 
-  rename(
-    votes_1 = `1_votes`, votes_2 = `2_votes`, votes_3 = `3_votes`, 
-    votes_4 = `4_votes`, votes_5 = `5_votes`, votes_6 = `6_votes`,
-    votes_7 = `7_votes`, votes_8 = `8_votes`, votes_9 = `9_votes`,
-    votes_10 = `10_votes`,
-    pct_1 = `1_pct`, pct_2 = `2_pct`, pct_3 = `3_pct`, pct_4 = `4_pct`,
-    pct_5 = `5_pct`, pct_6 = `6_pct`, pct_7 = `7_pct`, pct_8 = `8_pct`,
-    pct_9 = `9_pct`, pct_10 = `10_pct`
-  ) %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(ratings, overwrite = TRUE)
-
-
-
 # mayweather-mcgregor ---------------------------------------------------------------
 mayweather_mcgregor_tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv") %>%
   mutate(
