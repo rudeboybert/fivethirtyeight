@@ -2,20 +2,6 @@ library(tidyverse)
 library(janitor)
 library(usethis)
 
-# nba-carmelo---------------------------------------------------------------------
-nba_carmelo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.csv") %>%
-  clean_names() %>%
-  mutate(
-    team1 = as.factor(team1),
-    team2 = as.factor(team2),
-    playoff = ifelse(playoff == "t", TRUE, FALSE),
-    playoff = ifelse(is.na(playoff), FALSE, TRUE),
-    neutral = ifelse(neutral == 1, TRUE, FALSE)
-  ) %>%
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(nba_carmelo, overwrite = TRUE)
-
 
 
 # nfl-elo---------------------------------------------------------------------
