@@ -367,14 +367,6 @@ antiquities_act <- antiquities_act %>%
          acres_affected = as.numeric(str_replace_all(acres_affected, "[^0-9\\.]","")))
 usethis::use_data(antiquities_act, overwrite = TRUE)
 
-# goose ---------------------------------------------------------------
-goose <- 
-  "https://github.com/fivethirtyeight/data/raw/master/goose/goose_rawdata.csv" %>% 
-  read_csv(na = c("", "NA")) %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(goose, overwrite = TRUE)
-
 # tenth-circuit ---------------------------------------------------------------
 tenth_circuit <- read_csv("data-raw/tenth-circuit/tenth-circuit.csv", na=c("","NA"))
 colnames(tenth_circuit) <- colnames(tenth_circuit) %>%

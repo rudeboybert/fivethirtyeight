@@ -452,39 +452,6 @@
 #' @source National Parks Conservation Association \url{https://www.npca.org/} and National Parks Service Archeology Program \url{https://www.nps.gov/history/archeology/sites/antiquities/MonumentsList.htm}
 "antiquities_act"
 
-#' The Save Ruined Relief Pitching. The Goose Egg Can Fix It.
-#'
-#' The raw data behind the story
-#' "The Save Ruined Relief Pitching. The Goose Egg Can Fix It."
-#' \url{https://fivethirtyeight.com/features/goose-egg-new-save-stat-relief-pitchers/}.
-#'
-#' @format Because of R package size restrictions, only a preview of the
-#' first 10 rows of this dataset is included; to obtain the entire dataset
-#' (30,533 rows) see Examples below. The preview is a data frame with 10 rows 
-#' representing pitchers and 12 variables:
-#' \describe{
-#'   \item{name}{Pitcher name}
-#'   \item{year}{Start year of season}
-#'   \item{team}{Retrosheet team code}
-#'   \item{league}{NL or AL}
-#'   \item{goose_eggs}{Goose eggs}
-#'   \item{broken_eggs}{Broken eggs}
-#'   \item{mehs}{Mehs}
-#'   \item{league_average_gpct}{League-average goose percentage}
-#'   \item{ppf}{Pitcher park factor}
-#'   \item{replacement_gpct}{Replacement-level goose percentage}
-#'   \item{gwar}{Goose Wins Above Replacement}
-#'   \item{key_retro}{Retrosheet unique player identifier}
-#' }
-#' @source Retrosheet \url{https://www.retrosheet.org/}
-#' @examples 
-#' # To obtain the entire dataset, run the following code:
-#' library(readr)
-#' library(dplyr)
-#' goose <- 
-#'   "https://github.com/fivethirtyeight/data/raw/master/goose/goose_rawdata.csv" %>% 
-#'   read_csv(na = c("", "NA"))
-"goose"
 
 #' For A Trump Nominee, Neil Gorsuch’s Record Is Surprisingly Moderate On Immigration
 #'
