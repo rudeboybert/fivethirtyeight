@@ -96,18 +96,6 @@ usethis::use_data(generic_topline, overwrite = TRUE)
 
 
 
-# mayweather-mcgregor ---------------------------------------------------------------
-mayweather_mcgregor_tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv") %>%
-  mutate(
-    emojis = as.logical(emojis),
-    retweeted = as.logical(retweeted),
-    id = as.character(id)
-  ) %>% 
-  slice(1:10)
-usethis::use_data(mayweather_mcgregor_tweets, overwrite = TRUE)
-
-
-
 # mlb-elo ---------------------------------------------------------------------------
 mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") %>%
   mutate(

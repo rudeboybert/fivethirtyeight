@@ -191,46 +191,6 @@
 
 
 
-#' Mayweather Vs McGregor Tweets
-#'
-#' The raw data behind the story
-#' "The Mayweather-McGregor Fight As Told Through Emojis"
-#' \url{https://fivethirtyeight.com/?post_type=fte_features&p=161615}.
-#'
-#' @format Because of R package size restrictions, only a preview of the
-#' first 10 rows of this dataset is included; to obtain the entire dataset
-#' (12118 rows) see Examples below. A data frame with 10 rows representing tweets and 7 variables:
-#' \describe{
-#'   \item{created_at}{Time and date at which the tweet associated with the Mayweather vs. McGregor fight was sent.}
-#'   \item{emojis}{Whether or not emojis were used in the tweet about the fight.}
-#'   \item{id}{A numerical identifier for each individual tweet about the fight.}
-#'   \item{link}{The link to the tweet about the fight on Twitter.}
-#'   \item{retweeted}{Whether or not the tweet about the fight was retweeted.}
-#'   \item{screen_name}{The screen name under which the tweet about the fight was posted.}
-#'   \item{text}{The text contained in the tweet about the fight.}
-#' }
-#' @source This data contains 12,118 tweets that contain one or more emojis and
-#' match one or more of the following hashtags: #MayMac, #MayweatherMcGregor,
-#' #MayweatherVMcGregor, #MayweatherVsMcGregor, #McGregor and #Mayweather.
-#' Data was collected on August 27, 2017 between 12:05 a.m. and 1:15 a.m. EDT
-#' using the Twitter streaming API. \url{https://github.com/fivethirtyeight/data/tree/master/mayweather-mcgregor}
-#' @examples
-#' # To obtain the entire dataset, run the following code:
-#' library(dplyr)
-#' library(readr)
-#' 
-#' mayweather_mcgregor_tweets <-
-#'   "https://raw.githubusercontent.com/fivethirtyeight/data/master/mayweather-mcgregor/tweets.csv" %>%
-#'   read_csv() %>%
-#'   mutate(
-#'     emojis = as.logical(emojis),
-#'     retweeted = as.logical(retweeted),
-#'     id = as.character(id)
-#'   )
-"mayweather_mcgregor_tweets"
-
-
-
 #' MLB Elo
 #'
 #' The raw data behind the stories:
