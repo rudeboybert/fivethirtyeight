@@ -1,7 +1,7 @@
 .pkgenv <- new.env(parent=emptyenv())
 
 .onLoad  <- function(libname, pkgname) {
-  has_data <- requireNamespace("fivethirtyeightdata.test", quietly = TRUE)
+  has_data <- requireNamespace("fivethirtyeightdata", quietly = TRUE)
   .pkgenv[["has_data"]] <- has_data
 }
 
@@ -21,8 +21,8 @@
 hasData <- function(has_data = .pkgenv$has_data) {
   if (!has_data) {
     msg <- paste("To use this function, you must have the",
-                 "`fivethirtyeightdata.test` package installed. See the",
-                 "`fivethirtyeightdata.test` package vignette for more details.")
+                 "`fivethirtyeightdata` package installed. See the",
+                 "`fivethirtyeightdata` package vignette for more details.")
     msg <- paste(strwrap(msg), collapse="\n")
     stop(msg)
   }
