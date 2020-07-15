@@ -29,6 +29,6 @@ The raw data behind the stories "Club Soccer Predictions"
 \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
 }
 \seealso{
-\code{\link{spi_matches}}
+\code{\link[fivethirtyeightdata]{spi_matches}}
 }
 \keyword{datasets}

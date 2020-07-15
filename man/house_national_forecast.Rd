@@ -38,6 +38,6 @@ The raw data behind the story
 The original dataset included a meaningless column called "state", and all variables under this column was "US". So this column was removed.
 }
 \seealso{
-\code{\link{house_district_forecast}}
+\code{\link[fivethirtyeightdata]{house_district_forecast}}
 }
 \keyword{datasets}
