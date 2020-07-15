@@ -191,53 +191,6 @@
 
 
 
-#' Match-by-match SPI ratings and forecasts back to 2016
-#'
-#' The raw data behind the stories "Club Soccer Predictions"
-#' \url{https://projects.fivethirtyeight.com/soccer-predictions/} and "Global Club Soccer Rankings"
-#' \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
-#'
-#' @format Because of R package size restrictions, only a preview of the
-#' first 10 rows of this dataset is included; to obtain the entire dataset
-#' (30,533 rows) see Examples below. The preview is a data frame with 10 rows 
-#' representing soccer matches and 13 variables:
-#' \describe{
-#'   \item{date}{The date that the match took place.}
-#'   \item{league_id}{A numerical identifier of the league within which the match was played.}
-#'   \item{league}{League name.}
-#'   \item{team1}{One team that participated in the match.}
-#'   \item{team2}{The other team that participated in the match.}
-#'   \item{spi1}{The SPI score of team1.}
-#'   \item{spi2}{The SPI score of team2.}
-#'   \item{prob1}{The probability that team1 would have won the match.}
-#'   \item{prob2}{The probability that team2 would have won the match.}
-#'   \item{probtie}{The probability that the match would have resulted in a tie.}
-#'   \item{proj_score1}{The predicted number of goals that team1 would have scored.}
-#'   \item{proj_score2}{The predicted number of goals that team2 would have scored.}
-#'   \item{importance1}{}
-#'   \item{importance2}{}
-#'   \item{score1}{The number of goals that team1 scored.}
-#'   \item{score2}{The number of goals that team2 scored.}
-#'   \item{xg1}{}
-#'   \item{xg2}{}
-#'   \item{nsxg1}{}
-#'   \item{nsxg2}{}
-#'   \item{adj_score1}{}
-#'   \item{adj_score2}{}
-#' }
-#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
-#' @seealso \code{\link{spi_global_rankings}}
-#' @examples 
-#' # To obtain the entire dataset, run the following code:
-#' library(readr)
-#' library(dplyr)
-#' spi_matches <- 
-#'   "https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv" %>% 
-#'   read_csv() 
-"spi_matches"
-
-
-
 #' Current SPI ratings and rankings for men's club teams
 #'
 #' The raw data behind the stories "Club Soccer Predictions"
@@ -256,9 +209,8 @@
 #'   \item{spi}{A club's SPI score.}
 #' }
 #' @source See \url{https://github.com/fivethirtyeight/data/blob/master/soccer-spi/README.md}
-#' @seealso \code{\link{spi_matches}}
+#' @seealso \code{\link[fivethirtyeightdata]{spi_matches}}
 "spi_global_rankings"
-
 
 
 

@@ -4,22 +4,6 @@ library(usethis)
 
 
 
-# nfl-elo---------------------------------------------------------------------
-nfl_elo <- 
-  "https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv" %>% 
-  read_csv() %>%
-  clean_names() %>%
-  mutate(
-    team1 = as.factor(team1),
-    team2 = as.factor(team2),
-    neutral = ifelse(neutral == 1, TRUE, FALSE)
-  ) %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(nfl_elo, overwrite = TRUE)
-
-
-
 # nfl-fandom---------------------------------------------------------------------
 nfl_fandom_google <- read_csv("data-raw/nfl-fandom/NFL_fandom_data-google_trends.csv", skip=1) %>%
   clean_names() %>%

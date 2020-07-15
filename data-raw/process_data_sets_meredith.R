@@ -97,14 +97,6 @@ usethis::use_data(generic_topline, overwrite = TRUE)
 
 
 # soccer-spi ------------------------------------------------------------------------
-# spi_matches
-spi_matches <- 
-  "https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv" %>% 
-  read_csv() %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(spi_matches, overwrite = TRUE)
-
 #spi_global_rankings
 spi_global_rankings <-
   read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_global_rankings.csv")
