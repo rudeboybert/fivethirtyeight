@@ -10,7 +10,7 @@
     msg <- paste("Some larger datasets need to be installed separately,",
                  "like senators and house_district_forecast.",
                  "To install these, we recommend you install the ",
-                 "fivethirtyeightdata.test package by running: ",
+                 "fivethirtyeightdata package by running: ",
                  "`install.packages('fivethirtyeightdata', ",
                  "repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')`")
     msg <- paste(strwrap(msg), collapse="\n")
