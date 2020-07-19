@@ -17,7 +17,7 @@ airline_safety <- airline_safety %>%
     # included
     incl_reg_subsidiaries = str_sub(airline, -1) == "*",
     airline = ifelse(incl_reg_subsidiaries, str_sub(airline, end=-2), airline)
-    ) %>%
+  ) %>%
   select(airline, incl_reg_subsidiaries, everything())
 usethis::use_data(airline_safety, overwrite = TRUE)
 
@@ -155,7 +155,7 @@ US_births_1994_2003 <- US_births_1994_2003 %>%
   mutate(
     date = ymd(paste(year, month, date_of_month)),
     day_of_week = wday(date, label=TRUE)
-    ) %>%
+  ) %>%
   select(year, month, date_of_month, date, everything())
 usethis::use_data(US_births_1994_2003, overwrite = TRUE)
 
@@ -204,7 +204,7 @@ classic_rock_raw_data <- classic_rock_raw_data %>%
   rename(
     song = song_clean,
     artist = artist_clean
-    ) %>%
+  ) %>%
   mutate(date_time = as.POSIXct(time, origin = "1970-01-01")) %>%
   select(song, artist, callsign, time, date_time, unique_id, combined)
 usethis::use_data(classic_rock_raw_data, overwrite = TRUE)
@@ -237,7 +237,7 @@ college_all_ages <- college_all_ages %>%
     median = as.double(median),
     p25th = as.double(p25th),
     major = str_to_title(major)
-    ) %>%
+  ) %>%
   select(major_code, major, major_category, total, employed,
          employed_fulltime_yearround, unemployed, unemployment_rate,
          p25th, median, p75th)
@@ -255,7 +255,7 @@ college_grad_students <- college_grad_students %>%
     grad_p75th= grad_p25,
     nongrad_p25th= nongrad_p25,
     nongrad_p75th= nongrad_p75
-    ) %>%
+  ) %>%
   mutate(
     grad_p25th = as.double(grad_p25th),
     nongrad_p25th = as.double(nongrad_p25th),
@@ -269,7 +269,7 @@ college_grad_students <- college_grad_students %>%
          nongrad_unemployed, nongrad_unemployment_rate,
          nongrad_p25th, nongrad_median, nongrad_p75th,
          grad_share, grad_premium
-         )
+  )
 usethis::use_data(college_grad_students, overwrite = TRUE)
 
 # Redundant: These are the first three columns of college_all_ages and
@@ -292,7 +292,7 @@ college_recent_grads <- college_recent_grads %>%
     employed_fulltime_yearround = full_time_year_round,
     employed_fulltime = full_time,
     employed_parttime = part_time
-    ) %>%
+  ) %>%
   mutate(
     p25th = as.double(p25th),
     median = as.double(median),
@@ -305,7 +305,7 @@ college_recent_grads <- college_recent_grads %>%
          unemployed, unemployment_rate,
          p25th, median, p75th,
          college_jobs, non_college_jobs, low_wage_jobs
-         )
+  )
 usethis::use_data(college_recent_grads, overwrite = TRUE)
 
 # Redundant: Simply a subset of college_recent_grads
@@ -319,6 +319,48 @@ usethis::use_data(college_recent_grads, overwrite = TRUE)
 #     major = str_to_title(major)
 #     )
 # usethis::use_data(college_women_stem, overwrite = TRUE)
+
+
+
+# comic-characters -------------------------------------------------------------
+
+# This dataset has been moved to the `fivethirtyeightdata` package
+
+# Get DC characters:
+comic_characters_dc <- 
+  "data-raw/comic-characters/dc-wikia-data.csv" %>% 
+  read_csv() %>% 
+  clean_names() %>% 
+  mutate(publisher = "DC")
+
+# Get Marvel characters:
+comic_characters_marvel <- 
+  "data-raw/comic-characters/marvel-wikia-data.csv" %>% 
+  read_csv() %>% 
+  clean_names() %>% 
+  mutate(publisher = "Marvel")
+
+# Merge two dataset and perform further data wrangling:
+comic_characters <-
+  comic_characters_dc %>% 
+  bind_rows(comic_characters_marvel) %>% 
+  separate(first_appearance, c("year2", "month"), ", ", remove = FALSE) %>%
+  mutate(
+    # If month was missing, set as January and day as 01:
+    month = ifelse(is.na(month), "01", month),
+    day = "01",
+    # Note some years missing:
+    date = ymd(paste(year, month, day, sep = "-")),
+    align = factor(
+      align, 
+      levels = c("Bad Characters", "Reformed Criminals", "Netural Characters", "Good Characters"),
+      ordered = TRUE)
+  ) %>%
+  select(publisher, everything(), -c(year2, day)) %>% 
+  # Given that data frame is large, only include preview of data in package:
+  slice(1:10)
+usethis::use_data(comic_characters, overwrite = TRUE)
+
 
 
 
@@ -339,7 +381,7 @@ comma_survey <- comma_survey %>%
     data_singular_plural=`when_faced_with_using_the_word_\"data\",_have_you_ever_spent_time_considering_if_the_word_was_a_singular_or_plural_noun?`,
     care_data = `how_much,_if_at_all,_do_you_care_about_the_debate_over_the_use_of_the_word_\"data\"_as_a_singluar_or_plural_noun?`,
     care_proper_grammar =`in_your_opinion,_how_important_or_unimportant_is_proper_use_of_grammar?`
-    ) %>%
+  ) %>%
   mutate(
     # Set levels to factors
     age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60"), ordered=TRUE),
@@ -413,7 +455,7 @@ daily_show_guests <- daily_show_guests %>%
     show=mdy(show),
     # Try to consolidate category of guest a bit
     google_knowledge_occupation = tolower(google_knowledge_occupation)
-    )
+  )
 usethis::use_data(daily_show_guests, overwrite = TRUE)
 
 
@@ -482,7 +524,7 @@ fandango <- fandango %>%
   mutate(
     year = str_replace_all(year, "\\)", ""),
     year = as.numeric(year)
-    )
+  )
 usethis::use_data(fandango, overwrite = TRUE)
 
 fandango_scrape <- read_csv("data-raw/fandango/fandango_scrape.csv")
@@ -613,7 +655,7 @@ flying <- flying %>%
          baby, unruly_child,
          two_arm_rests, middle_arm_rest,
          everything()
-         )
+  )
 
 levels(flying$recline_rude) <- c("No", "Somewhat", "Very")
 levels(flying$switch_seats_friends) <- c("No", "Somewhat", "Very")
@@ -652,10 +694,10 @@ food_world_cup <- food_world_cup %>%
     interest = str_replace_all(interest, "\xca", ""),
     knowledge = factor(knowledge, levels = c(
       "Novice", "Intermediate", "Advanced", "Expert"
-      ), ordered=TRUE),
+    ), ordered=TRUE),
     interest = factor(interest, levels = c(
       "Not at all", "Not much", "Some", "A lot"
-      ), ordered=TRUE),
+    ), ordered=TRUE),
     age = factor(age, levels = c("18-29", "30-44", "45-60", "> 60")),
     household_income = factor(household_income, levels = c(
       "$0 - $24,999", "$25,000 - $49,999", "$50,000 - $99,999",
@@ -696,6 +738,5 @@ love_actually_appearance <- read_csv("data-raw/love-actually/love_actually_appea
 love_actually_appearance <- replace(love_actually_appearance, is.na(love_actually_appearance), FALSE)
 
 usethis::use_data(love_actually_appearance, overwrite = TRUE)
-
 
 

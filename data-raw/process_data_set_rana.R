@@ -5,6 +5,8 @@ library(janitor)
 library(usethis)
 library(tidyr)
 
+# This dataset has been moved to the `fivethirtyeightdata` package
+
 # mlb-quasi-win-shares
 quasi_winshares <- read_csv("data-raw/mlb-quasi-win-shares/quasi_winshares.csv") %>%
   clean_names() %>%

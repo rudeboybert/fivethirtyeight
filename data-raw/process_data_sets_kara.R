@@ -4,6 +4,8 @@ library(lubridate)
 library(janitor)
 library(usethis)
 
+# These datasets have been moved to the `fivethirtyeightdata` package
+
 #reading in csv
 nba_elo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.csv")
 nba_elo_latest <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo_latest.csv")

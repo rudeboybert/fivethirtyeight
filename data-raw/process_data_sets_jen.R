@@ -139,8 +139,8 @@ san_andreas <- san_andreas %>%
                                   levels = c("Not at all familiar", "Not so familiar", "Somewhat familiar",
                                              "Very familiar","Extremely familiar"), ordered=TRUE),
          fam_yellowstone = factor(fam_yellowstone,
-                                 levels = c("Not at all familiar", "Not so familiar", "Somewhat familiar",
-                                            "Very familiar","Extremely familiar"), ordered=TRUE),
+                                  levels = c("Not at all familiar", "Not so familiar", "Somewhat familiar",
+                                             "Very familiar","Extremely familiar"), ordered=TRUE),
          age = factor(age, levels = c("18 - 29", "30 - 44", "45 - 59", "60"),
                       labels = c("18 - 29", "30 - 44", "45 - 59", "60+"), ordered=TRUE),
          female = ifelse(female == "Female", TRUE, FALSE),
@@ -308,8 +308,8 @@ colnames(weather_check) <- c("respondent_id",
 weather_check <- weather_check %>%
   mutate(ck_weather = ifelse(ck_weather == "Yes", TRUE, FALSE),
          ck_weather_watch = factor(ck_weather_watch,
-                                        levels = c("Very unlikely", "Somewhat unlikely",
-                                                   "Somewhat likely", "Very likely"), ordered=TRUE),
+                                   levels = c("Very unlikely", "Somewhat unlikely",
+                                              "Somewhat likely", "Very likely"), ordered=TRUE),
          age = factor(age,
                       levels = c("18 - 29", "30 - 44", "45 - 59", "60+")),
          female = ifelse(female == "Female", TRUE, FALSE),
@@ -367,6 +367,17 @@ antiquities_act <- antiquities_act %>%
          acres_affected = as.numeric(str_replace_all(acres_affected, "[^0-9\\.]","")))
 usethis::use_data(antiquities_act, overwrite = TRUE)
 
+
+# goose ---------------------------------------------------------------
+# This dataset has been moved to the `fivethirtyeightdata` package
+
+goose <- 
+  "https://github.com/fivethirtyeight/data/raw/master/goose/goose_rawdata.csv" %>% 
+  read_csv(na = c("", "NA")) %>% 
+  # Given that data frame is large, only include preview of data in package:
+  slice(1:10)
+usethis::use_data(goose, overwrite = TRUE)
+
 # tenth-circuit ---------------------------------------------------------------
 tenth_circuit <- read_csv("data-raw/tenth-circuit/tenth-circuit.csv", na=c("","NA"))
 colnames(tenth_circuit) <- colnames(tenth_circuit) %>%
@@ -379,5 +390,4 @@ tenth_circuit <- tenth_circuit %>%
          vote2_liberal = vote2,
          vote3_liberal = vote3)
 usethis::use_data(tenth_circuit, overwrite = TRUE)
-
 

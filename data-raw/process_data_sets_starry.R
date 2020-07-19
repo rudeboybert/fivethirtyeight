@@ -75,6 +75,21 @@ usethis::use_data(governor_state_forecast, overwrite = TRUE)
 
 
 # house-forecast-2018 ---------------------------------------------------------------
+# The `house_district_forecast` dataset has been moved to the `fivethirtyeightdata` package
+house_district_forecast <- 
+  "https://projects.fivethirtyeight.com/congress-model-2018/house_district_forecast.csv" %>% 
+  read_csv() %>%
+  clean_names() %>%
+  mutate(
+    state = as.factor(state),
+    district = as.factor(district),
+    party = as.factor(party),
+    model = as.factor(model)
+  ) %>%
+  select(-special) %>% 
+  # Given that data frame is large, only include preview of data in package:
+  slice(1:10)
+
 house_national_forecast <- 
   "https://projects.fivethirtyeight.com/congress-model-2018/house_national_forecast.csv" %>% 
   read_csv() %>%
@@ -85,6 +100,7 @@ house_national_forecast <-
   ) %>%
   select(-state)
 
+usethis::use_data(house_district_forecast, overwrite = TRUE) 
 usethis::use_data(house_national_forecast, overwrite = TRUE)
 
 
@@ -136,7 +152,7 @@ partisan_lean_district <- partisan_lean_district %>%
     pvi_party = as.factor(pvi_party), 
     pvi_amount = as.numeric(pvi_amount)
   ) 
-  
+
 usethis::use_data(partisan_lean_district, overwrite = TRUE)
 
 partisan_lean_state <- read_csv("data-raw/partisan-lean/fivethirtyeight_partisan_lean_STATES.csv") %>% 
@@ -175,7 +191,7 @@ russia_investigation <- read_csv("data-raw/russia-investigation/russia-investiga
     type = as.factor(type),
     president = as.factor(president)
   )
-  
+
 usethis::use_data(russia_investigation, overwrite = TRUE)
 
 # senate-forecast-2018 ---------------------------------------------------------------
@@ -221,5 +237,5 @@ masculinity_survey <- read_csv("data-raw/masculinity-survey/masculinity-survey-r
   clean_names() %>% 
   mutate(question = as.factor(question),
          response = as.factor(response)
-         )
+  )
 usethis::use_data(masculinity_survey, overwrite = TRUE)

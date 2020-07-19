@@ -4,6 +4,8 @@ library(lubridate)
 library(janitor)
 library(usethis)
 
+# These datasets have been moved to the `fivethirtyeightdata` package
+
 # Historical Raptor by Player
 historical_raptor_by_player <- read_csv("data-raw/nba-raptor/historical_RAPTOR_by_player.csv") %>%
   mutate(
