@@ -57,7 +57,7 @@ We are aware of [this tweet](https://twitter.com/MonaChalabi/status/127071588353
 
 ## Note
 
-Some large datasets that could not be hosted in `fivethirtyeight` due to CRAN size restrictions are now included in the `fivethirtyeightdata` add-on package which is hosted via a `drat` repository. Instructions to install `fivethirtyeightdata` can be found in `README.md` of the `fivethirtyeight` package.
+Some large datasets that could not be hosted in `fivethirtyeight` due to CRAN size restrictions are now included in the `fivethirtyeightdata` add-on package which is hosted via a `drat` repository. More detail can be found in the "Add-on Package" section of `fivethirtyeight` package `README.md`.
 
 There are `r all_datasets %>% length()` datasets between the `fivethirtyeight` and `fivethirtyeightdata` packages. `fivethirtyeight` includes `r nrow(data(package = "fivethirtyeight")[[3]])` datasets while `fivethirtyeightdata` includes the remaining `r all_fivethirtyeightdata %>% length()`.
 
