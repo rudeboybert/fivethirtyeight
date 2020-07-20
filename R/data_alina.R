@@ -41,4 +41,5 @@
 #'   \item{no_labels_support}{“Yes” if a No Labels-affiliated group (Citizens for a Strong America Inc., Forward Not Back, Govern or Go Home, United for Progress Inc. or United Together) spent money in support of the candidate in the primary. “No” if the candidate is running against an candidate supported by a No Labels-affiliated group or if a No Labels-affiliated group specifically anti-endorsed or spent money to attack the candidate. If No Labels simply did not weigh in on the race, we left the cell blank.}
 #'   }
 #' @source Ballotpedia, New York Times, and candidate websites. See also \url{https://github.com/fivethirtyeight/data/blob/master/primary-candidates-2018/README.md}
+#' @note This data was also used in "We Looked At Hundreds Of Endorsements. Here’s Who Democrats Are Listening To" published on 2008-08-14 \url{https://fivethirtyeight.com/features/the-establishment-is-beating-the-progressive-wing-in-democratic-primaries-so-far/}
 "dem_candidates"

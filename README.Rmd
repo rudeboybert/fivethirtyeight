@@ -16,10 +16,13 @@ library(fivethirtyeight)
 
 # fivethirtyeight
 
+<!-- badges: start -->
 [![Build Status](https://travis-ci.org/rudeboybert/fivethirtyeight.svg?branch=master)](https://travis-ci.org/rudeboybert/fivethirtyeight)
+[![R build status](https://github.com/rudeboybert/fivethirtyeight/workflows/R-CMD-check/badge.svg)](https://github.com/rudeboybert/fivethirtyeight/actions)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/fivethirtyeight)](https://cran.r-project.org/package=fivethirtyeight)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/fivethirtyeight)](https://www.r-pkg.org/pkg/fivethirtyeight)
+<!-- badges: end -->
 
 An R package that provides access to the code and data sets published by FiveThirtyEight <https://github.com/fivethirtyeight/data>. Note that while we received guidance from editors at 538, this package is not officially published by 538. 
 
