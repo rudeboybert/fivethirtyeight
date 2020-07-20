@@ -42,6 +42,7 @@ Or the development version from GitHub:
 remotes::install_github("rudeboybert/fivethirtyeight", build_vignettes = TRUE)
 ```
 
+TODO: Add reasoning + instructions for `fivethirtyeightdata` package installation here!
 
 
 ## Usage
