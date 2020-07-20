@@ -322,48 +322,6 @@ usethis::use_data(college_recent_grads, overwrite = TRUE)
 
 
 
-# comic-characters -------------------------------------------------------------
-
-# This dataset has been moved to the `fivethirtyeightdata` package
-
-# Get DC characters:
-comic_characters_dc <- 
-  "data-raw/comic-characters/dc-wikia-data.csv" %>% 
-  read_csv() %>% 
-  clean_names() %>% 
-  mutate(publisher = "DC")
-
-# Get Marvel characters:
-comic_characters_marvel <- 
-  "data-raw/comic-characters/marvel-wikia-data.csv" %>% 
-  read_csv() %>% 
-  clean_names() %>% 
-  mutate(publisher = "Marvel")
-
-# Merge two dataset and perform further data wrangling:
-comic_characters <-
-  comic_characters_dc %>% 
-  bind_rows(comic_characters_marvel) %>% 
-  separate(first_appearance, c("year2", "month"), ", ", remove = FALSE) %>%
-  mutate(
-    # If month was missing, set as January and day as 01:
-    month = ifelse(is.na(month), "01", month),
-    day = "01",
-    # Note some years missing:
-    date = ymd(paste(year, month, day, sep = "-")),
-    align = factor(
-      align, 
-      levels = c("Bad Characters", "Reformed Criminals", "Netural Characters", "Good Characters"),
-      ordered = TRUE)
-  ) %>%
-  select(publisher, everything(), -c(year2, day)) %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(comic_characters, overwrite = TRUE)
-
-
-
-
 # comma-survey ------------------------------------------------------------
 comma_survey <- read_csv("data-raw/comma-survey/comma-survey.csv")
 colnames(comma_survey) <- colnames(comma_survey) %>%

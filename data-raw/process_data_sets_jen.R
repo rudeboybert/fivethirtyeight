@@ -368,15 +368,6 @@ antiquities_act <- antiquities_act %>%
 usethis::use_data(antiquities_act, overwrite = TRUE)
 
 
-# goose ---------------------------------------------------------------
-# This dataset has been moved to the `fivethirtyeightdata` package
-
-goose <- 
-  "https://github.com/fivethirtyeight/data/raw/master/goose/goose_rawdata.csv" %>% 
-  read_csv(na = c("", "NA")) %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(goose, overwrite = TRUE)
 
 # tenth-circuit ---------------------------------------------------------------
 tenth_circuit <- read_csv("data-raw/tenth-circuit/tenth-circuit.csv", na=c("","NA"))

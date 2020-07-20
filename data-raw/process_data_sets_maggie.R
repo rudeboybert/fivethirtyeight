@@ -2,40 +2,6 @@ library(tidyverse)
 library(janitor)
 library(usethis)
 
-# nba-carmelo---------------------------------------------------------------------
-# This dataset has been moved to the `fivethirtyeightdata` package
-nba_carmelo <- read_csv("https://projects.fivethirtyeight.com/nba-model/nba_elo.csv") %>%
-  clean_names() %>%
-  mutate(
-    team1 = as.factor(team1),
-    team2 = as.factor(team2),
-    playoff = ifelse(playoff == "t", TRUE, FALSE),
-    playoff = ifelse(is.na(playoff), FALSE, TRUE),
-    neutral = ifelse(neutral == 1, TRUE, FALSE)
-  ) %>%
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(nba_carmelo, overwrite = TRUE)
-
-
-
-# nfl-elo---------------------------------------------------------------------
-# This dataset has been moved to the `fivethirtyeightdata` package
-nfl_elo <- 
-  "https://projects.fivethirtyeight.com/nfl-api/nfl_elo.csv" %>% 
-  read_csv() %>%
-  clean_names() %>%
-  mutate(
-    team1 = as.factor(team1),
-    team2 = as.factor(team2),
-    neutral = ifelse(neutral == 1, TRUE, FALSE)
-  ) %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(nfl_elo, overwrite = TRUE)
-
-
-
 # nfl-fandom---------------------------------------------------------------------
 nfl_fandom_google <- read_csv("data-raw/nfl-fandom/NFL_fandom_data-google_trends.csv", skip=1) %>%
   clean_names() %>%
@@ -275,35 +241,6 @@ trumpworld_us <- read_csv("data-raw/trump-world-trust/TRUMPWORLD-us.csv") %>%
   mutate(question = "Trust President")
 trumpworld_polls <- bind_rows(trumpworld_pres, trumpworld_us)
 usethis::use_data(trumpworld_polls, overwrite = TRUE)
-
-
-
-# twitter-ratio---------------------------------------------------------------------
-# These datasets have been moved to the `fivethirtyeightdata` package
-barack_obama <- read_csv("data-raw/twitter-ratio/BarackObama.csv") %>%
-  mutate(
-    created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
-    text =  gsub("[^\x01-\x7F]", "", text)
-  )
-real_donald_trump <- read_csv("data-raw/twitter-ratio/realDonaldTrump.csv") %>%
-  mutate(
-    created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
-    text =  gsub("[^\x01-\x7F]", "", text)
-  )
-twitter_presidents <- bind_rows(barack_obama, real_donald_trump) %>%
-  select(created_at, user, everything())
-usethis::use_data(twitter_presidents, overwrite=TRUE)
-
-senators <- read_csv("data-raw/twitter-ratio/senators.csv") %>%
-  mutate(
-    party = as.factor(party),
-    state = as.factor(state),
-    created_at = as.POSIXct(created_at, tz = "GMT", format = "%m/%d/%Y %H:%M"),
-    text =  gsub("[^\x01-\x7F]", "", text)
-  ) %>%
-  select(created_at, user, everything()) %>%
-  slice(1:10)
-usethis::use_data(senators, overwrite = TRUE)
 
 
 

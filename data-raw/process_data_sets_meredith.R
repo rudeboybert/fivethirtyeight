@@ -96,62 +96,10 @@ usethis::use_data(generic_topline, overwrite = TRUE)
 
 
 
-# inconvenient-sequel ----------------------------------------------------------
-# This dataset has been moved to the `fivethirtyeightdata` package
-ratings <- read_csv("data-raw/inconvenient-sequel/ratings.csv") %>%
-  mutate(category = as.factor(category)) %>% 
-  rename(
-    votes_1 = `1_votes`, votes_2 = `2_votes`, votes_3 = `3_votes`, 
-    votes_4 = `4_votes`, votes_5 = `5_votes`, votes_6 = `6_votes`,
-    votes_7 = `7_votes`, votes_8 = `8_votes`, votes_9 = `9_votes`,
-    votes_10 = `10_votes`,
-    pct_1 = `1_pct`, pct_2 = `2_pct`, pct_3 = `3_pct`, pct_4 = `4_pct`,
-    pct_5 = `5_pct`, pct_6 = `6_pct`, pct_7 = `7_pct`, pct_8 = `8_pct`,
-    pct_9 = `9_pct`, pct_10 = `10_pct`
-  ) %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(ratings, overwrite = TRUE)
-
-
-
-# mayweather-mcgregor ---------------------------------------------------------------
-# This dataset has been moved to the `fivethirtyeightdata` package
-mayweather_mcgregor_tweets <- read_csv("data-raw/mayweather-mcgregor/tweets.csv") %>%
-  mutate(
-    emojis = as.logical(emojis),
-    retweeted = as.logical(retweeted),
-    id = as.character(id)
-  ) %>% 
-  slice(1:10)
-usethis::use_data(mayweather_mcgregor_tweets, overwrite = TRUE)
-
-
-
-# mlb-elo ---------------------------------------------------------------------------
-# This dataset has been moved to the `fivethirtyeightdata` package
-mlb_elo <- read_csv("https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv") %>%
-  mutate(
-    playoff = as.factor(playoff),
-    playoff = ifelse(playoff == "<NA>", NA, playoff),
-    neutral = as.logical(neutral)
-  ) %>%
-  slice(1:100)
-usethis::use_data(mlb_elo, overwrite = TRUE)
 
 
 
 # soccer-spi ------------------------------------------------------------------------
-
-# This dataset has been moved to the `fivethirtyeightdata` package
-# spi_matches
-spi_matches <- 
-  "https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv" %>% 
-  read_csv() %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
-usethis::use_data(spi_matches, overwrite = TRUE)
-
 #spi_global_rankings
 spi_global_rankings <-
   read_csv("https://projects.fivethirtyeight.com/soccer-api/club/spi_global_rankings.csv")

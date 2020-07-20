@@ -32,6 +32,32 @@ Or the development version from GitHub:
 remotes::install_github("rudeboybert/fivethirtyeight", build_vignettes = TRUE)
 ```
 
+### Add-on Package
+
+Some large datasets that could not be hosted in `fivethirtyeight` due to
+CRAN size resctrictions are included in the `fivethirtyeightdata` add-on
+package which is hosted by a `drat` repository.
+
+You can run the following to get the latest released version of
+`fivethirtyeightdata`:
+
+``` r
+install.packages('fivethirtyeightdata',
+  repos = "https://fivethirtyeightdata.github.io/drat/",
+  type = "source"
+)
+```
+
+Or alternately, you can add the drat repository, so that you can install
+the `fivethirtyeightdata` package using the `install.packages()`
+function and update it via the `update.packages()` function:
+
+``` r
+# install.packages("drat")
+drat::addRepo("fivethirtyeightdata")
+install.packages("fivethirtyeightdata")
+```
+
 ## Usage
 
 ``` r
@@ -47,7 +73,7 @@ head(bechdel)
 View(bechdel)
 ```
 
-To see a detailed list of all 127 datasets, including information on the
+To see a detailed list of all 128 datasets, including information on the
 corresponding articles published on FiveThirtyEight.com, click
 [here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
 

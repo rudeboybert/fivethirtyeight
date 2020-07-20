@@ -75,20 +75,6 @@ usethis::use_data(governor_state_forecast, overwrite = TRUE)
 
 
 # house-forecast-2018 ---------------------------------------------------------------
-# The `house_district_forecast` dataset has been moved to the `fivethirtyeightdata` package
-house_district_forecast <- 
-  "https://projects.fivethirtyeight.com/congress-model-2018/house_district_forecast.csv" %>% 
-  read_csv() %>%
-  clean_names() %>%
-  mutate(
-    state = as.factor(state),
-    district = as.factor(district),
-    party = as.factor(party),
-    model = as.factor(model)
-  ) %>%
-  select(-special) %>% 
-  # Given that data frame is large, only include preview of data in package:
-  slice(1:10)
 
 house_national_forecast <- 
   "https://projects.fivethirtyeight.com/congress-model-2018/house_national_forecast.csv" %>% 
