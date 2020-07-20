@@ -29,7 +29,7 @@ datasets <-
     `Author 1` = ARTICLE_AUTHOR_1,
     `Author 2` = ARTICLE_AUTHOR_2,
     `Author 3` = ARTICLE_AUTHOR_3,
-    Preview = `ONLY PREVIEW OF FIRST 10 ROWS INCLUDED IN PACKAGE?`,
+    `In fivethirtyeightdata?` = `IN FIVETHIRTYEIGHTDATA?`,
     Date = ARTICLE_DATE,
     URL = ARTICLE_URL
   ) %>% 
@@ -41,25 +41,37 @@ datasets <-
   ) %>% 
   arrange(`Data Frame Name`)
 
-preview_only_datasets <- datasets %>% 
-  filter(Preview == "Y") %>% 
-  pull(`Data Frame Name`)
+all_fivethirtyeightdata <- datasets %>% 
+  filter(`In fivethirtyeightdata?` == "Y") %>% 
+  pull(`Data Frame Name`) %>% 
+  unique()
+
+all_datasets <-  datasets %>% 
+  pull(`Data Frame Name`) %>% 
+  unique()
 ```
+
+## Acknowledgement
+
+We are aware of [this tweet](https://twitter.com/MonaChalabi/status/1270715883531300866) by Mona Chalabi. Although, we have not decided the future of the `fivethirtyeight` package (and subsequently, the `fivethirtyeightdata` package), we re-iterate that this package is not officially published by 538.
 
 ## Note
 
-All `r nrow(data(package = "fivethirtyeight")[[3]])` datasets included in the `fivethirtyeight` package are listed in the next section. However due to CRAN-hosted R package size restrictions, the following `r length(preview_only_datasets)` datasets out of `r nrow(data(package = "fivethirtyeight")[[3]])` only consist of a preview of the first 10 rows of the full dataset. Code to load the full dataset into R are provided in the respective help file example. For example, type `?house_district_forecast` into R.
+Some large datasets that could not be hosted in `fivethirtyeight` due to CRAN size restrictions are now included in the `fivethirtyeightdata` add-on package which is hosted via a `drat` repository. Instructions to install `fivethirtyeightdata` can be found in `README.md` of the `fivethirtyeight` package.
 
+There are `r all_datasets %>% length()` datasets between the `fivethirtyeight` and `fivethirtyeightdata` packages. `fivethirtyeight` includes `r nrow(data(package = "fivethirtyeight")[[3]])` datasets while `fivethirtyeightdata` includes the remaining `r all_fivethirtyeightdata %>% length()`.
+
+`fivethirtyeightdata` includes the following datasets:
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
-preview_only_datasets
+all_fivethirtyeightdata
 ```
 
 ## All datasets
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 datasets %>% 
-  mutate(`Data Frame Name` = paste("`", `Data Frame Name`, "`", sep="")) %>% 
-  select(-Preview) %>% 
+  mutate(`Data Frame Name` = paste("`", `Data Frame Name`, "`", sep=""),
+         `In fivethirtyeightdata?` = ifelse(is.na(`In fivethirtyeightdata?`), "", "Yes")) %>% 
   kable()
 ```
 
