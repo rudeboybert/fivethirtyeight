@@ -14,7 +14,9 @@
                  "`install.packages('fivethirtyeightdata', ",
                  "repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')`")
     msg <- paste(strwrap(msg), collapse="\n")
-    packageStartupMessage(msg)
+    packageStartupMessage(msg) }
+  else {
+    library(fivethirtyeightdata)
   }
 }
 
