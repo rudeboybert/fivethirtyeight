@@ -54,5 +54,5 @@ Suggests:
     knitr,
     gridExtra,
     fivethirtyeightdata
-Additional_repositories: https://github.com/fivethirtyeightdata/fivethirtyeightdata
+Additional_repositories: https://fivethirtyeightdata.github.io/drat
 VignetteBuilder: knitr
