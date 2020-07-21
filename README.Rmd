@@ -58,8 +58,6 @@ drat::addRepo("fivethirtyeightdata")
 install.packages("fivethirtyeightdata")
 ```
 
-Once installed, the `fivethirtyeightdata` package will automatically load with the `fivethirtyeight` package by calling `library(fivethirtyeight)`.
-
 
 
 ## Usage
