@@ -11,8 +11,8 @@
                  "like senators and house_district_forecast.",
                  "To install these, we recommend you install the ",
                  "fivethirtyeightdata package by running: ",
-                 "`install.packages('fivethirtyeightdata', ",
-                 "repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')`")
+                 "install.packages('fivethirtyeightdata', ",
+                 "repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')")
     msg <- paste(strwrap(msg), collapse="\n")
     packageStartupMessage(msg) }
   else {
