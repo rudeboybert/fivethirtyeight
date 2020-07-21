@@ -37,32 +37,14 @@ Or the development version from GitHub:
 remotes::install_github("rudeboybert/fivethirtyeight", build_vignettes = TRUE)
 ```
 
-### Add-on Package
-
-Some large datasets that could not be hosted in `fivethirtyeight` due to
-CRAN size resctrictions are now included in the `fivethirtyeightdata`
-add-on package which is hosted via a `drat` repository.
-
-To get the latest released version of `fivethirtyeightdata`, you can add
-the drat repository, so that you can install the package using the
-`install.packages()` function and update it via the `update.packages()`
-function:
-
-``` r
-# If you haven't installed the drat package yet, do so:
-# install.packages("drat")
-drat::addRepo("fivethirtyeightdata")
-install.packages("fivethirtyeightdata")
-```
-
 ## Usage
+
+All data in the `fivethirtyeight` package are lazy-loaded, so you can
+access any dataset without running `data()`:
 
 ``` r
 library(fivethirtyeight)
 
-# Load the bechdel data set. Note that all data in the fivethirtyeight package
-# is lazy-loaded, so one can also access this data without running data(bechdel).
-data(bechdel)
 head(bechdel)
 ?bechdel
 
@@ -73,6 +55,37 @@ View(bechdel)
 To see a detailed list of all 128 datasets, including information on the
 corresponding articles published on FiveThirtyEight.com, click
 [here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
+
+## Add-on Package
+
+There are also 19 datasets that could not be included in
+`fivethirtyeight` due to CRAN package size restrictions:
+
+    #>  [1] "castle_solutions"           "castle_solutions_2"        
+    #>  [3] "castle_solutions_3"         "comic_characters"          
+    #>  [5] "goose"                      "house_district_forecast"   
+    #>  [7] "mayweather_mcgregor_tweets" "mlb_elo"                   
+    #>  [9] "nba_all_elo"                "nba_carmelo"               
+    #> [11] "nba_elo"                    "nfl_elo"                   
+    #> [13] "quasi_winshares"            "raptor_by_player"          
+    #> [15] "raptor_by_team"             "ratings"                   
+    #> [17] "senators"                   "spi_matches"               
+    #> [19] "twitter_presidents"
+
+These 19 datasets are included in the `fivethirtyeightdata` add-on
+package, which you can install by running:
+
+``` r
+install.packages('fivethirtyeightdata', repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')
+```
+
+So for example, to load the `senators` dataset, run:
+
+``` r
+library(fivethirtyeight)
+library(fivethirtyeightdata)
+senators
+```
 
 ## Article in “Technology Innovations in Statistics Education”
 
@@ -125,26 +138,3 @@ vignette("user_contributed_vignettes", package = "fivethirtyeight")
         [GitHub](https://github.com/fivethirtyeight/data) with
     2.  the data frames in the package with
     3.  information on the corresponding article
-
-<!--
-## Collaborate
-
-### Data Analysis Examples in Vignettes
-
-In many instances, the data sets on the original 538 GitHub repository had the R code used in the analysis. We would love to have these, or any other interesting analyses, in the form of package vignettes. We ask you follow these guidelines as much as possible:
-
-1. Use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) packages: `ggplot2`, `dplyr`, `tidyr`, `modelr`, etc.
-1. Use [R Markdown](https://rmarkdown.rstudio.com/):
-    + In particular the Package Vignette (HTML) template option when creating an R Markdown document.
-    + Have the name of the R Markdown file match the name of the data set. Ex: `vignettes/bechdel.Rmd`
-1. Follow the GitHub fork/pull request [model](https://guides.github.com/introduction/flow/). Otherwise, contact us directly.
-
-
-
-### Contributing to the Package
-
-If you want to contribute to the package:
-
-* We followed the principles in Hadley Wickham's [R packages](https://r-pkgs.had.co.nz/) book
-* Preliminary instructions for automating R package documentation and collecting data about the data sets is available [here](https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md).
--->
