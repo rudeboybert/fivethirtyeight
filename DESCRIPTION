@@ -71,5 +71,5 @@ Suggests:
     ggraph,
     igraph,
     fivethirtyeightdata
-Additional_repositories: https://fivethirtyeightdata/github.io/drat
+Additional_repositories: https://fivethirtyeightdata.github.io/drat
 VignetteBuilder: knitr
