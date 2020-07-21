@@ -2792,7 +2792,6 @@
 #' }
 #'
 #' @source Partisan lean is the average difference between how a state or district votes and how the country votes overall, with 2016 presidential election results weighted 50 percent, 2012 presidential election results weighted 25 percent and results from elections for the state legislature weighted 25 percent.
-#' @seealso \code{\link{partisan_lean_state}}
 #' @note The original dataset only has 2 columns: "district" and "pvi_538". I separated each of the 2 columns into two.
 #' For example, in row 1 of the dataset, the original "district" = "AK-1", and I separated it into "state" = "Arkansas" and "district_number" = "1";
 #' the original "pvi_538" = "R+15.21", and I separated it into “pvi_party" = "R" and "pvi_amount" = "15.21".

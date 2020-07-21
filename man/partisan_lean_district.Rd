@@ -37,7 +37,5 @@ In addition, I used the full names for all states instead of abbreviations.
 }
 \seealso{
 \code{\link{partisan_lean_state}}
-
-\code{\link{partisan_lean_state}}
 }
 \keyword{datasets}
