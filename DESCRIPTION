@@ -20,7 +20,7 @@ Authors@R: c(
     person("Olivia", "Barrows", role = "ctb"),
     person("Jojo", "Miller", role = "ctb"),
     person("Jayla", "Nakayama", role = "ctb"),
-    person("Rana", "Gahwagy", role="ctb", email = "r.w.g1@hotmail.com"),
+    person("Rana", "Gahwagy", role="ctb", email = "r.w.g1@hotmail.com", comment = c(ORCID = "0000-0002-6331-2840")),
     person("Natalia", "Iannucci", email = "iannuccinatalia@gmail.com", role = "ctb", comment = c(ORCID = "0000-0001-5663-1731")),
     person("Marium", "Tapal", email = "mariumtapal@gmail.com", role = "ctb", comment = c(ORCID = "0000-0001-5093-6462")),
     person("Irene", "Ryan", email = "ryan.irene3@gmail.com", role = "ctb"),
