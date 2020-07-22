@@ -73,7 +73,8 @@ There are also 19 datasets that could not be included in
     #> [19] "twitter_presidents"
 
 These 19 datasets are included in the `fivethirtyeightdata` add-on
-package, which you can install by running:
+package, which you can install by
+running:
 
 ``` r
 install.packages('fivethirtyeightdata', repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')
@@ -113,14 +114,14 @@ package’s construction and example uses are included as well.*
 For some data sets, there are user-contributed example analyses in the
 form a package vignette. For example, look at [“Bechdel analysis using
 the
-`tidyverse`”](https://fivethirtyeight-r.netlify.com/articles/bechdel.html)
+`tidyverse`”](https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bechdel.html)
 based on the `bechdel` dataset used in the article [The Dollar-And-Cents
 Case Against Hollywood’s Exclusion of
 Women](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women).
 For a complete list of vignettes run
 
 ``` r
-vignette("user_contributed_vignettes", package = "fivethirtyeight")
+vignette("user_contributed_vignettes", package = "fivethirtyeightdata")
 ```
 
 ## More Information

@@ -101,12 +101,12 @@ The `fivethirtyeight` package was featured in [The fivethirtyeight R Package: "T
 
 ## Data Analysis Examples in Vignettes
 
-For some data sets, there are user-contributed example analyses in the form a package vignette. For example, look at ["Bechdel analysis using the `tidyverse`"](https://fivethirtyeight-r.netlify.com/articles/bechdel.html) based on the `bechdel` dataset used in the article 
+For some data sets, there are user-contributed example analyses in the form a package vignette. For example, look at ["Bechdel analysis using the `tidyverse`"](https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bechdel.html) based on the `bechdel` dataset used in the article 
 [The Dollar-And-Cents Case Against Hollywood's Exclusion of
 Women](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women). For a complete list of vignettes run
 
 ```{r, eval = FALSE}
-vignette("user_contributed_vignettes", package = "fivethirtyeight")
+vignette("user_contributed_vignettes", package = "fivethirtyeightdata")
 ```
 
 
