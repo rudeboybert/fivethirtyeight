@@ -17,7 +17,6 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck", "vctrs"))
-          install.packages('fivethirtyeightdata', repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
