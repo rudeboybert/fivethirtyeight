@@ -17,10 +17,9 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck", "vctrs"))
-          remotes::install_deps(dependencies = NA)
+          install.packages('fivethirtyeightdata', repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')
+          remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
-        run: |
-          install.packages(c("knitr", "rmarkdown"))
-          rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
