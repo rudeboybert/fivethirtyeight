@@ -73,8 +73,7 @@ There are also 19 datasets that could not be included in
     #> [19] "twitter_presidents"
 
 These 19 datasets are included in the `fivethirtyeightdata` add-on
-package, which you can install by
-running:
+package, which you can install by running:
 
 ``` r
 install.packages('fivethirtyeightdata', repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')
@@ -129,9 +128,9 @@ vignette("user_contributed_vignettes", package = "fivethirtyeightdata")
   - [Andrew
     Flowers](https://www.linkedin.com/in/andrew-flowers-1319934/) gave a
     great demonstration of the package and the `bechdel` vignette during
-    his rstudio::conf talk in Orlando, Florida in January. The video of
-    his talk is available
-    [here](https://www.rstudio.com/resources/videos/finding-and-telling-stories-with-r/).
+    his rstudio::conf talk in Orlando, Florida in January 2017. The
+    video of his talk is available
+    [here](https://rstudio.com/resources/rstudioconf-2017/finding-and-telling-stories-with-r/).
   - Click this [Google
     Sheet](https://docs.google.com/spreadsheets/d/1IMWAHNPIDzplafWW6AGnGyHmB1BMjohEw_V5HmT70Gs/edit#gid=840984416)
     for a master spreadsheet connecting
