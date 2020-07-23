@@ -23,7 +23,7 @@
 #' vignette("fivethirtyeight", package = "fivethirtyeight")
 #'
 #' # Some data sets include vignettes with an example analysis 
-#' (these are in the fivethirtyeightdata package):
+#' # (these are in the fivethirtyeightdata package):
 #' \dontrun{vignette("bechdel", package = "fivethirtyeightdata")}
 #'
 #' # To browse all vignettes (these are in the fivethirtyeightdata package):
