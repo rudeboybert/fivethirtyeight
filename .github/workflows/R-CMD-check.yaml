@@ -21,6 +21,6 @@ jobs:
         shell: Rscript {0}
       - name: Check
         run: |
-          install.packages("knitr", "rmarkdown")
+          install.packages(c("knitr", "rmarkdown"))
           rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
