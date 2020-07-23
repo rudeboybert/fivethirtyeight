@@ -20,5 +20,7 @@ jobs:
           remotes::install_deps(dependencies = NA)
         shell: Rscript {0}
       - name: Check
-        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+        run: |
+          install.packages("knitr", "rmarkdown")
+          rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
