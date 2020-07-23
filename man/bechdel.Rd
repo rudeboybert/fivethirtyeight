@@ -36,7 +36,7 @@ The raw data behind the story
 \url{https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/}.
 }
 \details{
-A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://CRAN.R-project.org/package=fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running:
-\code{vignette("bechdel", package = "fivethirtyeight")}
+A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bechdel.html}{CRAN} or by running:
+\code{vignette("bechdel", package = "fivethirtyeightdata")}
 }
 \keyword{datasets}

@@ -115,8 +115,8 @@
 #' }
 #'
 #' @details
-#' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://CRAN.R-project.org/package=fivethirtyeight/vignettes/bechdel.html}{CRAN} or by running:
-#' \code{vignette("bechdel", package = "fivethirtyeight")}
+#' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bechdel.html}{CRAN} or by running:
+#' \code{vignette("bechdel", package = "fivethirtyeightdata")}
 #'
 #' @source \url{http://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
 "bechdel"
@@ -1294,7 +1294,7 @@
 #'   \item{career_try}{Career True Receiving Yards}
 #'   \item{career_ranypa}{Adjusted Net Yards Per Attempt (relative to average) of player's career teams, weighted by TRY w/ each team}
 #'   \item{career_wowy}{The amount by which \code{career_ranypa} exceeds what would be expected from his QBs' (age-adjusted) performance without the receiver}
-#'   \item{bcs_rating}{The number of yards per game by which a player would outgain an average receiver on the same team, after adjusting for teammate quality and age (update of \url{http://www.sabernomics.com/sabernomics/index.php/2005/02/ranking-the-all-time-great-wide-receivers/})}
+#'   \item{bcs_rating}{The number of yards per game by which a player would outgain an average receiver on the same team, after adjusting for teammate quality and age}
 #' }
 #' @source See \url{https://fivethirtyeight.com/features/the-football-hall-of-fame-has-a-receiver-problem/}
 "nflwr_hist"

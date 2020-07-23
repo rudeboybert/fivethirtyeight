@@ -12,7 +12,7 @@ A data frame with 6496 rows representing National Football League wide receivers
   \item{career_try}{Career True Receiving Yards}
   \item{career_ranypa}{Adjusted Net Yards Per Attempt (relative to average) of player's career teams, weighted by TRY w/ each team}
   \item{career_wowy}{The amount by which \code{career_ranypa} exceeds what would be expected from his QBs' (age-adjusted) performance without the receiver}
-  \item{bcs_rating}{The number of yards per game by which a player would outgain an average receiver on the same team, after adjusting for teammate quality and age (update of \url{http://www.sabernomics.com/sabernomics/index.php/2005/02/ranking-the-all-time-great-wide-receivers/})}
+  \item{bcs_rating}{The number of yards per game by which a player would outgain an average receiver on the same team, after adjusting for teammate quality and age}
 }
 }
 \source{
