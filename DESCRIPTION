@@ -52,6 +52,7 @@ Suggests:
     stringr,
     broom,
     knitr,
+    rmarkdown,
     gridExtra,
     fivethirtyeightdata
 Additional_repositories: https://fivethirtyeightdata.github.io/drat
