@@ -6,7 +6,7 @@ author: "Albert Y. Kim, Chester Ismay, and Jennifer Chunn"
 bibliography: bibliography.bib
 output: rmarkdown::html_vignette
 vignette: |
-  %\VignetteIndexEntry{Article in Technology Innovations in Statistics Education}
+  %\VignetteIndexEntry{The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

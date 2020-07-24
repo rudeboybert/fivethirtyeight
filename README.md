@@ -39,12 +39,12 @@ remotes::install_github("rudeboybert/fivethirtyeight", build_vignettes = TRUE)
 
 ## Usage
 
+All data in the `fivethirtyeight` package are lazy-loaded, so you can
+access any dataset without running `data()`:
+
 ``` r
 library(fivethirtyeight)
 
-# Load the bechdel data set. Note that all data in the fivethirtyeight package
-# is lazy-loaded, so one can also access this data without running data(bechdel).
-data(bechdel)
 head(bechdel)
 ?bechdel
 
@@ -52,9 +52,40 @@ head(bechdel)
 View(bechdel)
 ```
 
-To see a detailed list of all 127 datasets, including information on the
+To see a detailed list of all 128 datasets, including information on the
 corresponding articles published on FiveThirtyEight.com, click
 [here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
+
+## Add-on Package
+
+There are also 19 datasets that could not be included in
+`fivethirtyeight` due to CRAN package size restrictions:
+
+    #>  [1] "castle_solutions"           "castle_solutions_2"        
+    #>  [3] "castle_solutions_3"         "comic_characters"          
+    #>  [5] "goose"                      "house_district_forecast"   
+    #>  [7] "mayweather_mcgregor_tweets" "mlb_elo"                   
+    #>  [9] "nba_all_elo"                "nba_carmelo"               
+    #> [11] "nba_elo"                    "nfl_elo"                   
+    #> [13] "quasi_winshares"            "raptor_by_player"          
+    #> [15] "raptor_by_team"             "ratings"                   
+    #> [17] "senators"                   "spi_matches"               
+    #> [19] "twitter_presidents"
+
+These 19 datasets are included in the `fivethirtyeightdata` add-on
+package, which you can install by running:
+
+``` r
+install.packages('fivethirtyeightdata', repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')
+```
+
+So for example, to load the `senators` dataset, run:
+
+``` r
+library(fivethirtyeight)
+library(fivethirtyeightdata)
+senators
+```
 
 ## Article in “Technology Innovations in Statistics Education”
 
@@ -82,14 +113,14 @@ package’s construction and example uses are included as well.*
 For some data sets, there are user-contributed example analyses in the
 form a package vignette. For example, look at [“Bechdel analysis using
 the
-`tidyverse`”](https://fivethirtyeight-r.netlify.com/articles/bechdel.html)
+`tidyverse`”](https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bechdel.html)
 based on the `bechdel` dataset used in the article [The Dollar-And-Cents
 Case Against Hollywood’s Exclusion of
 Women](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women).
 For a complete list of vignettes run
 
 ``` r
-vignette("user_contributed_vignettes", package = "fivethirtyeight")
+vignette("user_contributed_vignettes", package = "fivethirtyeightdata")
 ```
 
 ## More Information
@@ -97,9 +128,9 @@ vignette("user_contributed_vignettes", package = "fivethirtyeight")
   - [Andrew
     Flowers](https://www.linkedin.com/in/andrew-flowers-1319934/) gave a
     great demonstration of the package and the `bechdel` vignette during
-    his rstudio::conf talk in Orlando, Florida in January. The video of
-    his talk is available
-    [here](https://www.rstudio.com/resources/videos/finding-and-telling-stories-with-r/).
+    his rstudio::conf talk in Orlando, Florida in January 2017. The
+    video of his talk is available
+    [here](https://rstudio.com/resources/rstudioconf-2017/finding-and-telling-stories-with-r/).
   - Click this [Google
     Sheet](https://docs.google.com/spreadsheets/d/1IMWAHNPIDzplafWW6AGnGyHmB1BMjohEw_V5HmT70Gs/edit#gid=840984416)
     for a master spreadsheet connecting
@@ -107,26 +138,3 @@ vignette("user_contributed_vignettes", package = "fivethirtyeight")
         [GitHub](https://github.com/fivethirtyeight/data) with
     2.  the data frames in the package with
     3.  information on the corresponding article
-
-<!--
-## Collaborate
-
-### Data Analysis Examples in Vignettes
-
-In many instances, the data sets on the original 538 GitHub repository had the R code used in the analysis. We would love to have these, or any other interesting analyses, in the form of package vignettes. We ask you follow these guidelines as much as possible:
-
-1. Use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) packages: `ggplot2`, `dplyr`, `tidyr`, `modelr`, etc.
-1. Use [R Markdown](https://rmarkdown.rstudio.com/):
-    + In particular the Package Vignette (HTML) template option when creating an R Markdown document.
-    + Have the name of the R Markdown file match the name of the data set. Ex: `vignettes/bechdel.Rmd`
-1. Follow the GitHub fork/pull request [model](https://guides.github.com/introduction/flow/). Otherwise, contact us directly.
-
-
-
-### Contributing to the Package
-
-If you want to contribute to the package:
-
-* We followed the principles in Hadley Wickham's [R packages](https://r-pkgs.had.co.nz/) book
-* Preliminary instructions for automating R package documentation and collecting data about the data sets is available [here](https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md).
--->

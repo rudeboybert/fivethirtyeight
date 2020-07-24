@@ -1,21 +1,46 @@
 # fivethirtyeight 0.5.0.9000
 
-* Wide to long/tidy data format in data examples now done with `tidyr::pivot_longer()` instead of `tidyr::gather()`
+* Wide to long/tidy data format in data examples now done with
+`tidyr::pivot_longer()` instead of `tidyr::gather()`
 * Added new data sets:
-    + By Natalia Iannucci: `media_mentions_cable`, `media_mentions_online`
-    + By Marium Tapal: `state_index`, `state_words`
-    + By Lizette Carpenter: `cabinet_turnover`
-    + By Irene Ryan: `castle_solutions`, `castle_solutions_2`, `castle_solutions_3`
-    + By Alina Barylsky: `dem_candidates`
-    + By Rana Gahwagy:`quasi_winshares`
-    + By Danica Miguel : `raptor_by_player`,`raptor_by_team`
-    + By Sunni Raleigh: `wwc_2019_forecasts`, `wwc_2019_matches`
-    + By Anna Ballou: `foul_balls` 
-    + By Jane Bang: `nba_draymond`
-    + By Jordan Moody: `fight_songs`
-    + By Kara Van Allen: `nba_elo`, `nba_elo_latest`
-    + By Jessica Keast: `nba_all_elo`
-    + By Fatima Keita: `impeachment_polls`
+    + By Natalia Iannucci @niannucci: `media_mentions_cable`, `media_mentions_online`
+    + By Marium Tapal @mariumtapal: `state_index`, `state_words`
+    + By Lizette Carpenter @lcarpenter20: `cabinet_turnover`
+    + By Irene Ryan @ireneryan: `castle_solutions`, `castle_solutions_2`, `castle_solutions_3`
+    + By Alina Barylsky @abarylsky: `dem_candidates`
+    + By Rana Gahwagy @ranawg:`quasi_winshares`
+    + By Danica Miguel @danicamiguel: `raptor_by_player`,`raptor_by_team`
+    + By Sunni Raleigh @sunniraleigh: `wwc_2019_forecasts`, `wwc_2019_matches`
+    + By Anna Ballou @aballou16: `foul_balls` 
+    + By Jane Bang @Janebang: `nba_draymond`
+    + By Jordan Moody @jormacmoo: `fight_songs`
+    + By Kara Van Allen @kvanallen: `nba_elo`, `nba_elo_latest`
+    + By Jessica Keast @jkeast: `nba_all_elo`
+    + By Fatima Keita @fatimak98: `impeachment_polls`
+* Marium Tapal @mariumtapal created
+[`fivethirtyeightdata`](https://github.com/fivethirtyeightdata) package using
+`drat` package to store large files. This is due to CRAN package size
+restrictions:
+    + When installing `fivethirtyeight` user is now prompted to install
+    `fivethirtyeightdata`
+    + Moved all user-contributed vignettes to `fivethirtyeightdata` to keep
+    package size down
+    + Moved the following large datasets to `fivethirtyeightdata`  
+    ```
+    [1] "castle_solutions"           "castle_solutions_2"
+    [3] "castle_solutions_3"         "comic_characters"
+    [5] "goose"                      "house_district_forecast"
+    [7] "mayweather_mcgregor_tweets" "mlb_elo"
+    [9] "nba_all_elo"                "nba_carmelo"
+    [11] "nba_elo"                    "nfl_elo"
+    [13] "quasi_winshares"            "raptor_by_player"
+    [15] "raptor_by_team"             "ratings"
+    [17] "senators"                   "spi_matches"
+    [19] "twitter_presidents"
+    ```
+    
+
+
 
 
 
