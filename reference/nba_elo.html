@@ -100,28 +100,7 @@ https://projects.fivethirtyeight.com/complete-history-of-the-nba" />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
-    </li>
-    <li>
-      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting</a>
-    </li>
-    <li>
-      <a href="../articles/comics_gender.html">Gender in Comic Books</a>
-    </li>
-    <li>
       <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
-    </li>
-    <li>
-      <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
-    </li>
-    <li>
-      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
     <li>
       <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
@@ -153,7 +132,7 @@ https://projects.fivethirtyeight.com/complete-history-of-the-nba" />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>NBA Elo Ratings</h1>
-    <small class="dont-index">Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data_kara.R'><code>R/data_kara.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>nba_elo.Rd</code></div>
     </div>
 
@@ -163,37 +142,12 @@ https://projects.fivethirtyeight.com/complete-history-of-the-nba" />
 <a href='https://projects.fivethirtyeight.com/complete-history-of-the-nba'>https://projects.fivethirtyeight.com/complete-history-of-the-nba</a></p>
     </div>
 
-    <pre class="usage"><span class='no'>nba_elo</span>
-
-<span class='no'>nba_elo_latest</span></pre>
+    <pre class="usage"><span class='no'>nba_elo_latest</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>2 data frames about NBA Elo prediction ratings</p>
-<p>An object of class <code>spec_tbl_df</code> (inherits from <code>tbl_df</code>, <code>tbl</code>, <code>data.frame</code>) with 1230 rows and 24 columns.</p>
-    <h2 class="hasAnchor" id="nba-elo"><a class="anchor" href="#nba-elo"></a>nba_elo</h2>
-
-    
-
-<p>A data frame with 69636 rows representing every game in the NBA, and 24 variables:</p><dl'>
-  <dt>date</dt><dd><p>Date</p></dd>
-  <dt>season</dt><dd><p>the season in which the game was played</p></dd>
-  <dt>neutral</dt><dd><p>True if the game was played on neutral territory, False if not</p></dd>
-  <dt>playoff</dt><dd><p>True if the game was played in a playoff, False if not</p></dd>
-  <dt>team1</dt><dd><p>name of first team</p></dd>
-  <dt>team2</dt><dd><p>name of second team</p></dd>
-  <dt>elo1_pre</dt><dd><p>Team 1 Elo rating before game</p></dd>
-  <dt>elo2_pre</dt><dd><p>Team 2 Elo rating before game</p></dd>
-  <dt>elo_prob1</dt><dd><p>Team 1's probability of winning based on Elo rating</p></dd>
-  <dt>elo_prob2</dt><dd><p>Team 2's probability of winning based on Elo rating</p></dd>
-  <dt>elo1_post</dt><dd><p>Team 1 Elo rating after the game</p></dd>
-  <dt>elo2_post</dt><dd><p>Team 2 Elo rating after the game</p></dd>
-  <dt>score1</dt><dd><p>the score of team 1</p></dd>
-  <dt>score2</dt><dd><p>the score of team 2</p></dd>
-  
-</dl>
-
+    <p>An object of class <code>spec_tbl_df</code> (inherits from <code>tbl_df</code>, <code>tbl</code>, <code>data.frame</code>) with 1230 rows and 24 columns.</p>
     <h2 class="hasAnchor" id="nba-elo-latest"><a class="anchor" href="#nba-elo-latest"></a>nba_elo_latest</h2>
 
     

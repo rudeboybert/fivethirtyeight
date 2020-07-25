@@ -97,28 +97,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
-    </li>
-    <li>
-      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting</a>
-    </li>
-    <li>
-      <a href="../articles/comics_gender.html">Gender in Comic Books</a>
-    </li>
-    <li>
       <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
-    </li>
-    <li>
-      <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
-    </li>
-    <li>
-      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
     <li>
       <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
@@ -162,35 +141,54 @@
 </li>
 <li>Added new data sets:
 <ul>
-<li>By Natalia Iannucci: <code>media_mentions_cable</code>, <code>media_mentions_online</code>
+<li>By Natalia Iannucci <a href='https://github.com/niannucci'>@niannucci</a>: <code>media_mentions_cable</code>, <code>media_mentions_online</code>
 </li>
-<li>By Marium Tapal: <code>state_index</code>, <code>state_words</code>
+<li>By Marium Tapal <a href='https://github.com/mariumtapal'>@mariumtapal</a>: <code>state_index</code>, <code>state_words</code>
 </li>
-<li>By Lizette Carpenter: <code>cabinet_turnover</code>
+<li>By Lizette Carpenter <a href='https://github.com/lcarpenter20'>@lcarpenter20</a>: <code>cabinet_turnover</code>
 </li>
-<li>By Irene Ryan: <code>castle_solutions</code>, <code>castle_solutions_2</code>, <code>castle_solutions_3</code>
+<li>By Irene Ryan <a href='https://github.com/ireneryan'>@ireneryan</a>: <code>castle_solutions</code>, <code>castle_solutions_2</code>, <code>castle_solutions_3</code>
 </li>
-<li>By Alina Barylsky: <code>dem_candidates</code>
+<li>By Alina Barylsky <a href='https://github.com/abarylsky'>@abarylsky</a>: <code>dem_candidates</code>
 </li>
-<li>By Rana Gahwagy:<code>quasi_winshares</code>
+<li>By Rana Gahwagy <a href='https://github.com/ranawg'>@ranawg</a>:<code>quasi_winshares</code>
 </li>
-<li>By Danica Miguel : <code>raptor_by_player</code>,<code>raptor_by_team</code>
+<li>By Danica Miguel <a href='https://github.com/danicamiguel'>@danicamiguel</a>: <code>raptor_by_player</code>,<code>raptor_by_team</code>
 </li>
-<li>By Sunni Raleigh: <code>wwc_2019_forecasts</code>, <code>wwc_2019_matches</code>
+<li>By Sunni Raleigh <a href='https://github.com/sunniraleigh'>@sunniraleigh</a>: <code>wwc_2019_forecasts</code>, <code>wwc_2019_matches</code>
 </li>
-<li>By Anna Ballou: <code>foul_balls</code>
+<li>By Anna Ballou <a href='https://github.com/aballou16'>@aballou16</a>: <code>foul_balls</code>
 </li>
-<li>By Jane Bang: <code>nba_draymond</code>
+<li>By Jane Bang <a href='https://github.com/Janebang'>@Janebang</a>: <code>nba_draymond</code>
 </li>
-<li>By Jordan Moody: <code>fight_songs</code>
+<li>By Jordan Moody <a href='https://github.com/jormacmoo'>@jormacmoo</a>: <code>fight_songs</code>
 </li>
-<li>By Kara Van Allen: <code>nba_elo</code>, <code>nba_elo_latest</code>
+<li>By Kara Van Allen <a href='https://github.com/kvanallen'>@kvanallen</a>: <code>nba_elo</code>, <code>nba_elo_latest</code>
 </li>
-<li>By Jessica Keast: <code>nba_all_elo</code>
+<li>By Jessica Keast <a href='https://github.com/jkeast'>@jkeast</a>: <code>nba_all_elo</code>
 </li>
-<li>By Fatima Keita: <code>impeachment_polls</code>
+<li>By Fatima Keita <a href='https://github.com/fatimak98'>@fatimak98</a>: <code>impeachment_polls</code>
 </li>
 </ul>
+</li>
+<li>Marium Tapal <a href='https://github.com/mariumtapal'>@mariumtapal</a> created <a href="https://github.com/fivethirtyeightdata"><code>fivethirtyeightdata</code></a> package using <code>drat</code> package to store large files. This is due to CRAN package size restrictions:
+<ul>
+<li>When installing <code>fivethirtyeight</code> user is now prompted to install <code>fivethirtyeightdata</code>
+</li>
+<li>Moved all user-contributed vignettes to <code>fivethirtyeightdata</code> to keep package size down</li>
+<li>Moved the following large datasets to <code>fivethirtyeightdata</code><br>
+</li>
+</ul>
+<pre><code>[1] "castle_solutions"           "castle_solutions_2"
+[3] "castle_solutions_3"         "comic_characters"
+[5] "goose"                      "house_district_forecast"
+[7] "mayweather_mcgregor_tweets" "mlb_elo"
+[9] "nba_all_elo"                "nba_carmelo"
+[11] "nba_elo"                    "nfl_elo"
+[13] "quasi_winshares"            "raptor_by_player"
+[15] "raptor_by_team"             "ratings"
+[17] "senators"                   "spi_matches"
+[19] "twitter_presidents"</code></pre>
 </li>
 </ul>
 </div>

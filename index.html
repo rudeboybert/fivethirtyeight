@@ -60,28 +60,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="articles/biopics.html">Looking at Biopics of Hollywood</a>
-    </li>
-    <li>
-      <a href="articles/bob_ross.html">Bob Ross - Joy of Painting</a>
-    </li>
-    <li>
-      <a href="articles/comics_gender.html">Gender in Comic Books</a>
-    </li>
-    <li>
       <a href="articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
-    </li>
-    <li>
-      <a href="articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
-    </li>
-    <li>
-      <a href="articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
     <li>
       <a href="articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
@@ -114,6 +93,7 @@
 <div id="fivethirtyeight" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#fivethirtyeight" class="anchor"></a>fivethirtyeight</h1></div>
+<!-- badges: start -->
 
 <p>An R package that provides access to the code and data sets published by FiveThirtyEight <a href="https://github.com/fivethirtyeight/data" class="uri">https://github.com/fivethirtyeight/data</a>. Note that while we received guidance from editors at 538, this package is not officially published by 538.</p>
 <div id="installation" class="section level2">
@@ -129,17 +109,36 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
+<p>All data in the <code>fivethirtyeight</code> package are lazy-loaded, so you can access any dataset without running <code><a href="https://rdrr.io/r/utils/data.html">data()</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeight</span>)
 
-<span class="co"># Load the bechdel data set. Note that all data in the fivethirtyeight package</span>
-<span class="co"># is lazy-loaded, so one can also access this data without running data(bechdel).</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">bechdel</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">bechdel</span>)
 ?<span class="no">bechdel</span>
 
 <span class="co"># If using RStudio:</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span>(<span class="no">bechdel</span>)</pre></div>
-<p>To see a detailed list of all 127 datasets, including information on the corresponding articles published on FiveThirtyEight.com, click <a href="https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html">here</a>.</p>
+<p>To see a detailed list of all 128 datasets, including information on the corresponding articles published on FiveThirtyEight.com, click <a href="https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html">here</a>.</p>
+</div>
+<div id="add-on-package" class="section level2">
+<h2 class="hasAnchor">
+<a href="#add-on-package" class="anchor"></a>Add-on Package</h2>
+<p>There are also 19 datasets that could not be included in <code>fivethirtyeight</code> due to CRAN package size restrictions:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">#&gt;  [1] "castle_solutions"           "castle_solutions_2"        </span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;  [3] "castle_solutions_3"         "comic_characters"          </span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt;  [5] "goose"                      "house_district_forecast"   </span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;  [7] "mayweather_mcgregor_tweets" "mlb_elo"                   </span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt;  [9] "nba_all_elo"                "nba_carmelo"               </span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; [11] "nba_elo"                    "nfl_elo"                   </span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [13] "quasi_winshares"            "raptor_by_player"          </span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; [15] "raptor_by_team"             "ratings"                   </span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; [17] "senators"                   "spi_matches"               </span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; [19] "twitter_presidents"</span></a></code></pre></div>
+<p>These 19 datasets are included in the <code>fivethirtyeightdata</code> add-on package, which you can install by running:</p>
+<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">'fivethirtyeightdata'</span>, <span class="kw">repos</span> <span class="kw">=</span> <span class="st">'https://fivethirtyeightdata.github.io/drat/'</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">'source'</span>)</pre></div>
+<p>So for example, to load the <code>senators</code> dataset, run:</p>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeight</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeightdata</span>)
+<span class="no">senators</span></pre></div>
 </div>
 <div id="article-in-technology-innovations-in-statistics-education" class="section level2">
 <h2 class="hasAnchor">
@@ -150,15 +149,15 @@
 <div id="data-analysis-examples-in-vignettes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-analysis-examples-in-vignettes" class="anchor"></a>Data Analysis Examples in Vignettes</h2>
-<p>For some data sets, there are user-contributed example analyses in the form a package vignette. For example, look at <a href="https://fivethirtyeight-r.netlify.com/articles/bechdel.html">“Bechdel analysis using the <code>tidyverse</code>”</a> based on the <code>bechdel</code> dataset used in the article <a href="https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women">The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women</a>. For a complete list of vignettes run</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"user_contributed_vignettes"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"fivethirtyeight"</span>)</pre></div>
+<p>For some data sets, there are user-contributed example analyses in the form a package vignette. For example, look at <a href="https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bechdel.html">“Bechdel analysis using the <code>tidyverse</code>”</a> based on the <code>bechdel</code> dataset used in the article <a href="https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women">The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women</a>. For a complete list of vignettes run</p>
+<div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"user_contributed_vignettes"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"fivethirtyeightdata"</span>)</pre></div>
 </div>
 <div id="more-information" class="section level2">
 <h2 class="hasAnchor">
 <a href="#more-information" class="anchor"></a>More Information</h2>
 <ul>
 <li>
-<a href="https://www.linkedin.com/in/andrew-flowers-1319934/">Andrew Flowers</a> gave a great demonstration of the package and the <code>bechdel</code> vignette during his rstudio::conf talk in Orlando, Florida in January. The video of his talk is available <a href="https://www.rstudio.com/resources/videos/finding-and-telling-stories-with-r/">here</a>.</li>
+<a href="https://www.linkedin.com/in/andrew-flowers-1319934/">Andrew Flowers</a> gave a great demonstration of the package and the <code>bechdel</code> vignette during his rstudio::conf talk in Orlando, Florida in January 2017. The video of his talk is available <a href="https://rstudio.com/resources/rstudioconf-2017/finding-and-telling-stories-with-r/">here</a>.</li>
 <li>Click this <a href="https://docs.google.com/spreadsheets/d/1IMWAHNPIDzplafWW6AGnGyHmB1BMjohEw_V5HmT70Gs/edit#gid=840984416">Google Sheet</a> for a master spreadsheet connecting
 <ol>
 <li>the original 538 data on <a href="https://github.com/fivethirtyeight/data">GitHub</a> with</li>
@@ -167,28 +166,6 @@
 </ol>
 </li>
 </ul>
-<!--
-## Collaborate
-
-### Data Analysis Examples in Vignettes
-
-In many instances, the data sets on the original 538 GitHub repository had the R code used in the analysis. We would love to have these, or any other interesting analyses, in the form of package vignettes. We ask you follow these guidelines as much as possible:
-
-1. Use [`tidyverse`](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/) packages: `ggplot2`, `dplyr`, `tidyr`, `modelr`, etc.
-1. Use [R Markdown](https://rmarkdown.rstudio.com/):
-    + In particular the Package Vignette (HTML) template option when creating an R Markdown document.
-    + Have the name of the R Markdown file match the name of the data set. Ex: `vignettes/bechdel.Rmd`
-1. Follow the GitHub fork/pull request [model](https://guides.github.com/introduction/flow/). Otherwise, contact us directly.
-
-
-
-### Contributing to the Package
-
-If you want to contribute to the package:
-
-* We followed the principles in Hadley Wickham's [R packages](https://r-pkgs.had.co.nz/) book
-* Preliminary instructions for automating R package documentation and collecting data about the data sets is available [here](https://github.com/rudeboybert/fivethirtyeight/blob/master/data_import_procedure.md).
--->
 </div>
 </div>
   </div>
@@ -239,6 +216,7 @@ If you want to contribute to the package:
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/rudeboybert/fivethirtyeight"><img src="https://travis-ci.org/rudeboybert/fivethirtyeight.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://github.com/rudeboybert/fivethirtyeight/actions"><img src="https://github.com/rudeboybert/fivethirtyeight/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://cran.r-project.org/package=fivethirtyeight"><img src="https://www.r-pkg.org/badges/version/fivethirtyeight" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://www.r-pkg.org/pkg/fivethirtyeight"><img src="https://cranlogs.r-pkg.org/badges/fivethirtyeight" alt="CRAN RStudio mirror downloads"></a></li>

@@ -2,15 +2,8 @@ pandoc: '2.2'
 pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
-  NBA: NBA.html
-  bechdel: bechdel.html
-  biopics: biopics.html
-  bob_ross: bob_ross.html
-  comics_gender: comics_gender.html
   fivethirtyeight: fivethirtyeight.html
   tame: tame.html
-  tarantino_swears: tarantino_swears.html
-  trump_twitter: trump_twitter.html
   user_contributed_vignettes: user_contributed_vignettes.html
-last_built: 2020-07-20T11:33Z
+last_built: 2020-07-25T00:05Z
 

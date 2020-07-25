@@ -57,28 +57,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/NBA.html">2015 NBA player predictions analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/bechdel.html">Bechdel analysis using the `tidyverse`</a>
-    </li>
-    <li>
-      <a href="../articles/biopics.html">Looking at Biopics of Hollywood</a>
-    </li>
-    <li>
-      <a href="../articles/bob_ross.html">Bob Ross - Joy of Painting</a>
-    </li>
-    <li>
-      <a href="../articles/comics_gender.html">Gender in Comic Books</a>
-    </li>
-    <li>
       <a href="../articles/tame.html">The `fivethirtyeight` R Package: "Tame Data" Principles for Introductory Statistics and Data Science Courses</a>
-    </li>
-    <li>
-      <a href="../articles/tarantino_swears.html">How Many Fucks Does Tarantino Give?</a>
-    </li>
-    <li>
-      <a href="../articles/trump_twitter.html">Trump Twitter analysis using the `tidyverse`</a>
     </li>
     <li>
       <a href="../articles/user_contributed_vignettes.html">User-Contributed Vignettes</a>
@@ -191,7 +170,7 @@ Grolemund and Wickham’s ‘Data/Science Pipeline’
 ?<span class="no">bechdel</span>
 <span class="co"># If using RStudio:</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span>(<span class="no">bechdel</span>)</pre></body></html></div>
-<p>The current version of the <code>fivethirtyeight</code> package (v0.5.0.9000) contains 147 datasets, a detailed list of which can be viewed by running:</p>
+<p>The current version of the <code>fivethirtyeight</code> package (v0.5.0.9000) contains 128 datasets, a detailed list of which can be viewed by running:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"fivethirtyeight"</span>, <span class="kw">package</span><span class="kw">=</span><span class="st">"fivethirtyeight"</span>)</pre></body></html></div>
 </div>
 <div id="example-usage" class="section level2">
@@ -227,7 +206,7 @@ Grolemund and Wickham’s ‘Data/Science Pipeline’
 <span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's </span>
 <span class="co">#&gt; 0.06745 0.14271 0.22620 0.30409 0.35694 1.52230       4</span></pre></body></html></div>
 <p>then have students produce a scatterplot visualizing the relationship between these two variables (see Figure ):</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">hate_crimes</span>$<span class="no">gini_index</span>, <span class="no">hate_crimes</span>$<span class="no">hate_crimes_per_100k_splc</span>,
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="no">hate_crimes</span>$<span class="no">gini_index</span>, <span class="no">hate_crimes</span>$<span class="no">hate_crimes_per_100k_splc</span>,
      <span class="kw">xlab</span> <span class="kw">=</span> <span class="st">"Gini index"</span>, <span class="kw">ylab</span> <span class="kw">=</span> <span class="st">"Hate crime rate per 100K"</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span>(<span class="st">"Hate Crimes per 100K Nov 9-18 2016 (SPLC)"</span>)</pre></body></html></div>
 <div class="figure" style="text-align: center">
@@ -425,7 +404,7 @@ Attitudes about bringing babies on a flight.
 <span class="co">#&gt; 4  1999     1             4 1999-01-04 Mon          10396</span>
 <span class="co">#&gt; 5  1999     1             5 1999-01-05 Tues         12004</span>
 <span class="co">#&gt; 6  1999     1             6 1999-01-06 Wed          11718</span>
-<span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">US_births_1999</span>$<span class="no">date</span>, <span class="no">US_births_1999</span>$<span class="no">births</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"l"</span>,
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="no">US_births_1999</span>$<span class="no">date</span>, <span class="no">US_births_1999</span>$<span class="no">births</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"l"</span>,
      <span class="kw">xlab</span> <span class="kw">=</span> <span class="st">"Date"</span>, <span class="kw">ylab</span> <span class="kw">=</span> <span class="st">"# of births"</span>)</pre></body></html></div>
 <div class="figure" style="text-align: center">
 <img src="Figures/US-births-1.png" alt="Number of US births in 1999." width="614.4"><p class="caption">
