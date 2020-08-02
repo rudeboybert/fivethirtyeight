@@ -16,6 +16,7 @@ library(dplyr)
 library(readr)
 library(knitr)
 library(tibble)
+library(curl)
 
 # Import master Google Sheet of all 538 data available here:
 # https://docs.google.com/spreadsheets/d/1IMWAHNPIDzplafWW6AGnGyHmB1BMjohEw_V5HmT70Gs/edit#gid=840984416

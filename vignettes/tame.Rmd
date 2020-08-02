@@ -32,6 +32,7 @@ library(dplyr)
 library(broom)
 library(knitr)
 library(gridExtra)
+library(curl)
 ```
 
 This is an HTML version of a [Technology Innovations in Statistics Education](https://escholarship.org/uc/item/0rx1231m#main) article.
