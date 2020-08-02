@@ -1,4 +1,4 @@
-# fivethirtyeight 0.5.0.9000
+# fivethirtyeight 0.6.0
 
 * Wide to long/tidy data format in data examples now done with
 `tidyr::pivot_longer()` instead of `tidyr::gather()`
@@ -38,9 +38,6 @@ restrictions:
     [17] "senators"                   "spi_matches"
     [19] "twitter_presidents"
     ```
-    
-
-
 
 
 
@@ -94,6 +91,8 @@ Ex: `bechdel$clean_test`
     in the corresponding help/roxygen code file.
 * Added `CITATION`
 
+
+
 # fivethirtyeight 0.3.0
 
 * Added new and missing data sets: `riddler_castles2`, `antiquities_act`, `goose`,
@@ -106,6 +105,7 @@ restrictions. Other crowd-sourced analysis vignettes still available
 * Other minor changes:
     + Fixed levels in `bechdel$clean_test` and `bechdel$test` to match
     hierarchical nature of test
+
 
 
 # fivethirtyeight 0.2.0
@@ -122,6 +122,7 @@ so that data plays nice with tidyverse tools.
     + [Removed explicit loading of data in vignette](https://github.com/rudeboybert/fivethirtyeight/pull/2)
     + `fivethirtyeight` main vignette reads data set list from Google Sheets
     master document [https://goo.gl/OT8iHa](https://goo.gl/OT8iHa)
+
 
 
 # fivethirtyeight 0.1.0
