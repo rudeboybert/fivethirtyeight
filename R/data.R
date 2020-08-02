@@ -1094,10 +1094,10 @@
 #'   \item{mlb_avg_rpg}{MLB average runs scored/game that season}
 #'   \item{talent_rspg}{Expected runs scored per game based on talent (MLB R/G + team OFF talent)}
 #'   \item{talent_rapg}{Expected runs allowed per game based on talent (MLB R/G - team DEF talent- team PIT talent)}
-#'   \item{unadj_pyth}{Unadjusted pythagorean talent rating; PYTH =(RSPG^1.83)/(RSPG^1.83+RAPG^1.83)}
+#'   \item{unadj_pyth}{Unadjusted Pythagorean talent rating; PYTH =(RSPG^1.83)/(RSPG^1.83+RAPG^1.83)}
 #'   \item{timeline_adj}{Estimate of relative league quality where 2015 MLB = 1.00}
 #'   \item{sos}{Strength of schedule faced; adjusts an assumed .500 SOS downward based on timeline adjustment}
-#'   \item{adj_pyth}{Adjusted pythagorean record; =(SOS*unadj_Pyth)/((2*unadj_Pyth*SOS)-SOS-unadj_Pyth+1)}
+#'   \item{adj_pyth}{Adjusted Pythagorean record; =(SOS*unadj_Pyth)/((2*unadj_Pyth*SOS)-SOS-unadj_Pyth+1)}
 #'   \item{no_1_player}{Best player according to combo of actual PA/IP and talent}
 #'   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent}
 #' }
@@ -2870,8 +2870,8 @@
 #' \item{name}{Name of the person charged (if applicable). Will be blank if there were no charges.}
 #' \item{indictment_days}{Length, in days, from the start of the investigation to the date the person was charged (if applicable). Days will be negative if the charge occurred before the investigation began.}
 #' \item{type}{Result of charge (if applicable)}
-#' \item{cp_date}{Date the person pled guilty or was convicted (if applicable)}
-#' \item{cp_days}{Length, in days, from the start of the investigation to the date the person pled guilty or was convicted (if applicable)}
+#' \item{cp_date}{Date the person plead guilty or was convicted (if applicable)}
+#' \item{cp_days}{Length, in days, from the start of the investigation to the date the person plead guilty or was convicted (if applicable)}
 #' \item{overturned}{Whether or not the relevant person's conviction was overturned}
 #' \item{pardoned}{Whether or not the relevant person's charge was pardoned}
 #' \item{american}{Whether or not the relevant person's charge was a U.S. resident}
@@ -3089,14 +3089,14 @@ NULL
 
 #' @rdname state_of_the_state
 #' 
-#' @format 2 data frames about the 50 U.S Governers' Speeches
+#' @format 2 data frames about the 50 U.S Governors' Speeches
 #' 
 #' @section state_index:
 #' A data frame with 50 rows representing the 50 U.S. states and 5 variables:
 #' \describe{
 #'   \item{state}{the state}
-#'   \item{governer}{the name of the state's governer}
-#'   \item{party}{the party of the state's governer}
+#'   \item{governor}{the name of the state's governor}
+#'   \item{party}{the party of the state's governor}
 #'   \item{filename}{the filename of the speech in the speeches folder at \url{https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw/state-of-the-state/speeches}}
 #'   \item{url}{a link to an official/media source for the speech}
 #'   }
@@ -3258,7 +3258,7 @@ NULL
 #'   \item{game_date}{date of the most foul heavy day at each stadium}
 #'   \item{type_of_hit}{fly, grounder, line drive, popup, batter hits self}
 #'   \item{exit_velocity}{recorded velocity of each hit}
-#'   \item{predicted_zone}{zone predicted the foul ball would land in guaging angles}
+#'   \item{predicted_zone}{zone predicted the foul ball would land in gauging angles}
 #'   \item{camera_zone}{actual zone the ball landed it confirmed by camera angles}
 #'   \item{used_zone}{zone used for analysis}
 #' }
@@ -3407,7 +3407,7 @@ NULL
 #'   \item{text}{poll question}
 #'   \item{category}{category of poll question with 5 categories: impeach and remove, begin proceedings, begin inquiry, reasons, impeach}
 #'   \item{include}{yes/no logical -- value unknown}
-#'   \item{yes}{Percent of repsondents in sample who answered "Yes" to the poll question}
+#'   \item{yes}{Percent of respondents in sample who answered "Yes" to the poll question}
 #'   \item{no}{Percent of respondents in sample  who answered "No" to the poll question}
 #'   \item{unsure}{Percent of respondents in sample who did not answer "Yes" or "No" to the poll question}
 #'   \item{rep_sample}{number of Republican respondents in sample}

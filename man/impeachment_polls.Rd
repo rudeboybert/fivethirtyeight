@@ -17,7 +17,7 @@ A data frame with 388 rows of polling data and 24 variables:
   \item{text}{poll question}
   \item{category}{category of poll question with 5 categories: impeach and remove, begin proceedings, begin inquiry, reasons, impeach}
   \item{include}{yes/no logical -- value unknown}
-  \item{yes}{Percent of repsondents in sample who answered "Yes" to the poll question}
+  \item{yes}{Percent of respondents in sample who answered "Yes" to the poll question}
   \item{no}{Percent of respondents in sample  who answered "No" to the poll question}
   \item{unsure}{Percent of respondents in sample who did not answer "Yes" or "No" to the poll question}
   \item{rep_sample}{number of Republican respondents in sample}

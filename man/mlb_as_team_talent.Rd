@@ -17,10 +17,10 @@ A data frame with 172 rows representing Major League Baseball seasons and 16 var
   \item{mlb_avg_rpg}{MLB average runs scored/game that season}
   \item{talent_rspg}{Expected runs scored per game based on talent (MLB R/G + team OFF talent)}
   \item{talent_rapg}{Expected runs allowed per game based on talent (MLB R/G - team DEF talent- team PIT talent)}
-  \item{unadj_pyth}{Unadjusted pythagorean talent rating; PYTH =(RSPG^1.83)/(RSPG^1.83+RAPG^1.83)}
+  \item{unadj_pyth}{Unadjusted Pythagorean talent rating; PYTH =(RSPG^1.83)/(RSPG^1.83+RAPG^1.83)}
   \item{timeline_adj}{Estimate of relative league quality where 2015 MLB = 1.00}
   \item{sos}{Strength of schedule faced; adjusts an assumed .500 SOS downward based on timeline adjustment}
-  \item{adj_pyth}{Adjusted pythagorean record; =(SOS*unadj_Pyth)/((2*unadj_Pyth*SOS)-SOS-unadj_Pyth+1)}
+  \item{adj_pyth}{Adjusted Pythagorean record; =(SOS*unadj_Pyth)/((2*unadj_Pyth*SOS)-SOS-unadj_Pyth+1)}
   \item{no_1_player}{Best player according to combo of actual PA/IP and talent}
   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent}
 }
