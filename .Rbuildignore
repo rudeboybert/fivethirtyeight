@@ -8,6 +8,7 @@
 ^README\.md$
 ^README\.Rmd$
 ^data-raw$
+^revdep$
 ^docs$
 ^images_for_guide$
 ^doc$
