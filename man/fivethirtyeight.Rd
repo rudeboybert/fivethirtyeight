@@ -17,7 +17,7 @@ library(fivethirtyeight)
 head(bechdel)
 
 # All information about any data set can be found in the help file:
-?bechdel
+\donttest{?bechdel}
 
 # To view a list of all data sets:
 data(package = "fivethirtyeight")
@@ -27,8 +27,8 @@ vignette("fivethirtyeight", package = "fivethirtyeight")
 
 # Some data sets include vignettes with an example analysis 
 # (these are in the fivethirtyeightdata package):
-\dontrun{vignette("bechdel", package = "fivethirtyeightdata")}
+\donttest{vignette("bechdel", package = "fivethirtyeightdata")}
 
 # To browse all vignettes (these are in the fivethirtyeightdata package):
-\dontrun{browseVignettes(package = "fivethirtyeightdata")}
+\donttest{browseVignettes(package = "fivethirtyeightdata")}
 }
