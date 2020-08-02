@@ -3,8 +3,10 @@
 language: R
 r:
   - oldrel
+    # Don't use vdiffr on old R release
+    env: VDIFFR_RUN_TESTS=false
   - release
-#  - devel
+  - devel
 sudo: true
 cache: packages
 apt_packages:
