@@ -25,6 +25,6 @@ The raw data behind the story
 \url{https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/}.
 An analysis using this data was contributed by Olivia Barrows, Jojo Miller, and Jayla Nakayama
 as a package vignette at
-\url{https://fivethirtyeight-r.netlify.com/articles/tarantino_swears.html}.
+\url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/tarantino_swears.html}.
 }
 \keyword{datasets}

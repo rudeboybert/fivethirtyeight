@@ -29,6 +29,6 @@ The raw data behind the story
 "Projecting The Top 50 Players In The 2015 NBA Draft Class"
 \url{https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}.
 An analysis using this data was contributed by G. Elliott Morris as a package vignette at
-\url{https://fivethirtyeight-r.netlify.com/articles/nba.html}.
+\url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/NBA.html}.
 }
 \keyword{datasets}
