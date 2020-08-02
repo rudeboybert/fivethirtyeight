@@ -6,7 +6,7 @@
 * GitHub Actions
     + ubuntu-16.04: release
     + windows: release
-    + macOS: release, devel
+    + macOS: release
 * Rhub
     + Fedora Linux, R-devel, clang, gfortran
     + Windows Server 2008 R2 SP1, R-devel, 32/64 bit
@@ -14,6 +14,11 @@
 
 ## R CMD check results
 
+Per Brian Ripley's email, this is a submission that addresses the problems shown
+on https://cran.r-project.org/web/checks/check_results_fivethirtyeight.html. I
+am submitting before the 2020-08-05 deadline.
+
+NOTES:
 
 * Rhub (R-release, R-devel) returned 4 NOTES that the following URL's were
 possibly invalid, however upon testing them individually, they all worked fine:
@@ -21,7 +26,11 @@ possibly invalid, however upon testing them individually, they all worked fine:
     + https://digital.library.unt.edu/ark:/67531/metadc815038/m2/1/high_res_d/98-19_2006Jun08.pdf
     + https://genius.com/
     + https://www.nps.gov/history/archeology/sites/antiquities/MonumentsList.htm
-* NOTE: Package unavailable to check Rd xrefs: 'fivethirtyeightdata'. This is a drat package
+* win-builder () returned 3 NOTES because 'fivethirtyeightdata' is not a CRAN
+package, but rather a drat package https://fivethirtyeightdata.github.io/drat:
+    + Suggests or Enhances not in mainstream repositories: fivethirtyeightdata
+    + Package suggested but not available for checking: 'fivethirtyeightdata'
+    + Package unavailable to check Rd xrefs: 'fivethirtyeightdata'
 
 
 
