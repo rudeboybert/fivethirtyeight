@@ -2579,7 +2579,7 @@
 #'   \item{error}{the difference between the percent of support of one party during the poll and the result percent of support for the same party during the election}
 #'   \item{absolute_error}{the absolute value of the error value}
 #'   }
-#' @source Emerson College’s poll of registered voters \url{https://www.emerson.edu/sites/default/files/Files/Academics/ecp-tx-aug2018-pr.pdf}
+#' @source Emerson College’s poll of registered voters
 "august_senate_polls"
 
 #' The 2020 Endorsement Primary - Which Democratic candidates are receiving the most support from prominent members of their party?

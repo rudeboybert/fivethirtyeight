@@ -21,7 +21,7 @@ A data frame with 594 rows representing senate polls, and 11 variables:
   }
 }
 \source{
-Emerson College’s poll of registered voters \url{https://www.emerson.edu/sites/default/files/Files/Academics/ecp-tx-aug2018-pr.pdf}
+Emerson College’s poll of registered voters
 }
 \usage{
 august_senate_polls
