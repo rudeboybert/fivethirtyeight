@@ -14,16 +14,16 @@ officially published by 538. Contribute to this package at
 \examples{
 # Example usage:
 library(fivethirtyeight)
-head(bechdel)
+\donttest{head(bechdel)}
 
 # All information about any data set can be found in the help file:
 \donttest{?bechdel}
 
 # To view a list of all data sets:
-data(package = "fivethirtyeight")
+\donttest{data(package = "fivethirtyeight")}
 
 # To view a detailed list of all data sets:
-vignette("fivethirtyeight", package = "fivethirtyeight")
+\donttest{vignette("fivethirtyeight", package = "fivethirtyeight")}
 
 # Some data sets include vignettes with an example analysis 
 # (these are in the fivethirtyeightdata package):
