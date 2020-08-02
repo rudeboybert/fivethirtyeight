@@ -155,7 +155,7 @@
 #' "'Straight Outta Compton' Is The Rare Biopic Not About White Dudes"
 #' \url{https://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/}.
 #' An analysis using this data was contributed by Pradeep Adhokshaja as a package vignette at
-#' \url{https://fivethirtyeight-r.netlify.com/articles/biopics.html}.
+#' \url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/biopics.html}.
 #'
 #' @format A data frame with 761 rows representing movies and 14 variables:
 #' \describe{
@@ -183,7 +183,7 @@
 #' "A Statistical Analysis of the Work of Bob Ross"
 #' \url{https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/}.
 #' An analysis using this data was contributed by Jonathan Bouchet as a package vignette at
-#' \url{https://fivethirtyeight-r.netlify.com/articles/bob_ross.html}.
+#' \url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bob_ross.html}.
 #'
 #' @format A data frame with 403 rows representing episodes and 71 variables:
 #' \describe{
@@ -1173,7 +1173,7 @@
 #' "Projecting The Top 50 Players In The 2015 NBA Draft Class"
 #' \url{https://fivethirtyeight.com/features/projecting-the-top-50-players-in-the-2015-nba-draft-class/}.
 #' An analysis using this data was contributed by G. Elliott Morris as a package vignette at
-#' \url{https://fivethirtyeight-r.netlify.com/articles/nba.html}.
+#' \url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/NBA.html}.
 #'
 #' @format A data frame with 1090 rows representing National Basketball Association players/prospects and 9 variables:
 #' \describe{
@@ -1629,7 +1629,7 @@
 #' \url{https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/}.
 #' An analysis using this data was contributed by Olivia Barrows, Jojo Miller, and Jayla Nakayama
 #' as a package vignette at
-#' \url{https://fivethirtyeight-r.netlify.com/articles/tarantino_swears.html}.
+#' \url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/tarantino_swears.html}.
 #'
 #' @format A data frame with 1894 rows representing curse/death instances and 4 variables:
 #' \describe{
@@ -1717,7 +1717,7 @@
 #' \url{https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/}.
 #' Tweets posted on twitter by Donald Trump (@@realDonaldTrump).
 #' An analysis using this data was contributed by Adam Spannbauer as a package vignette at
-#' \url{https://fivethirtyeight-r.netlify.com/articles/trump_twitter.html}.
+#' \url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/trump_twitter.html}.
 #'
 #' @format A data frame with 448 rows representing tweets and 3 variables:
 #' \describe{
