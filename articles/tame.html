@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="tame_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>The <code>fivethirtyeight</code> R Package: “Tame Data” Principles for Introductory Statistics and Data Science Courses</h1>
@@ -170,7 +170,7 @@ Grolemund and Wickham’s ‘Data/Science Pipeline’
 ?<span class="no">bechdel</span>
 <span class="co"># If using RStudio:</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span>(<span class="no">bechdel</span>)</pre></body></html></div>
-<p>The current version of the <code>fivethirtyeight</code> package (v0.5.0.9000) contains 128 datasets, a detailed list of which can be viewed by running:</p>
+<p>The current version of the <code>fivethirtyeight</code> package (v0.6.0.9000) contains 128 datasets, a detailed list of which can be viewed by running:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"fivethirtyeight"</span>, <span class="kw">package</span><span class="kw">=</span><span class="st">"fivethirtyeight"</span>)</pre></body></html></div>
 </div>
 <div id="example-usage" class="section level2">
@@ -411,7 +411,7 @@ Attitudes about bringing babies on a flight.
 Number of US births in 1999.
 </p>
 </div>
-<p>One exercise we can assign to students is for them to investigate the anomalous spike in the number of births that occured roughly a month before October 1st, 1999:</p>
+<p>One exercise we can assign to students is for them to investigate the anomalous spike in the number of births that occurred roughly a month before October 1st, 1999:</p>
 <div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">US_births_1999</span>[<span class="fu"><a href="https://rdrr.io/r/base/which.min.html">which.max</a></span>(<span class="no">US_births_1999</span>$<span class="no">births</span>), ])
 <span class="co">#&gt; # A tibble: 1 x 6</span>
 <span class="co">#&gt;    year month date_of_month date       day_of_week births</span>
@@ -534,19 +534,19 @@ USA vs France alcohol consumption.
 <a href="#references" class="anchor"></a>References</h1>
 <div id="refs" class="references">
 <div id="ref-rmarkdown">
-<p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, Rob Hyndman, and Ruben Arslan. 2017. <em>Rmarkdown: Dynamic Documents for R</em> (version R package version 1.6). <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+<p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, Rob Hyndman, and Ruben Arslan. 2017. <em>Rmarkdown: Dynamic Documents for R</em> (version R package version 1.6). <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 </div>
 <div id="ref-ASA_guidelines_2014">
-<p>American Statistical Association Undergraduate Guidelines Workgroup. 2014. “2014 Curriculum Guidelines for Undergraduate Programs in Statistical Science.” Alexandria, VA: American Statistical Association. <a href="https://www.amstat.org/asa/files/pdfs/EDU-guidelines2014-11-15.pdf" class="uri">https://www.amstat.org/asa/files/pdfs/EDU-guidelines2014-11-15.pdf</a>.</p>
+<p>American Statistical Association Undergraduate Guidelines Workgroup. 2014. “2014 Curriculum Guidelines for Undergraduate Programs in Statistical Science.” Alexandria, VA: American Statistical Association. <a href="https://www.amstat.org/asa/files/pdfs/EDU-guidelines2014-11-15.pdf">https://www.amstat.org/asa/files/pdfs/EDU-guidelines2014-11-15.pdf</a>.</p>
 </div>
 <div id="ref-baby13_538">
-<p>Bialik, Carl. 2016. “Some People Are Too Superstitious to Have a Baby on Friday the 13th.” 2016. <a href="https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a>.</p>
+<p>Bialik, Carl. 2016. “Some People Are Too Superstitious to Have a Baby on Friday the 13th.” 2016. <a href="https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/">https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a>.</p>
 </div>
 <div id="ref-gapminder">
-<p>Bryan, Jennifer. 2015. <em>Gapminder: Data from Gapminder</em> (version R package version 0.2.0). <a href="https://CRAN.R-project.org/package=gapminder" class="uri">https://CRAN.R-project.org/package=gapminder</a>.</p>
+<p>Bryan, Jennifer. 2015. <em>Gapminder: Data from Gapminder</em> (version R package version 0.2.0). <a href="https://CRAN.R-project.org/package=gapminder">https://CRAN.R-project.org/package=gapminder</a>.</p>
 </div>
 <div id="ref-drink_538">
-<p>Chalabi, Mona. 2014. “Dear Mona Followup: Where Do People Drink the Most Beer, Wine and Spirits?” 2014. <a href="https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a>.</p>
+<p>Chalabi, Mona. 2014. “Dear Mona Followup: Where Do People Drink the Most Beer, Wine and Spirits?” 2014. <a href="https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/">https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a>.</p>
 </div>
 <div id="ref-cobb_2015">
 <p>Cobb, George. 2015. “Mere Renovation is Too Little Too Late: We Need to Rethink our Undergraduate Curriculum from the Ground Up.” <em>The American Statistician</em> 69 (4): 266–82.</p>
@@ -555,46 +555,46 @@ USA vs France alcohol consumption.
 <p>DeVeaux, Richard, Mahesh Agarwal, Maia Averett, Benjamin Baumer, Andrew Bray, Thomas Bressoud, Lance Bryant, et al. 2016. “Curriculum Guidelines for Undergraduate Programs in Data Science.” <em>The Annual Review of Statistics and Its Application</em> 4: 15–30.</p>
 </div>
 <div id="ref-GAISE_2016">
-<p>GAISE College Report ASA Revision Committee. 2016. “Guidelines for Assessment and Instruction in Statistics Education (GAISE) in Statistics Education (GAISE) College Report College Report 2016.” Alexandria, VA: American Statistical Association. <a href="https://www.amstat.org/asa/education/Guidelines-for-Assessment-and-Instruction-in-Statistics-Education-Reports.aspx" class="uri">https://www.amstat.org/asa/education/Guidelines-for-Assessment-and-Instruction-in-Statistics-Education-Reports.aspx</a>.</p>
+<p>GAISE College Report ASA Revision Committee. 2016. “Guidelines for Assessment and Instruction in Statistics Education (GAISE) in Statistics Education (GAISE) College Report College Report 2016.” Alexandria, VA: American Statistical Association. <a href="https://www.amstat.org/asa/education/Guidelines-for-Assessment-and-Instruction-in-Statistics-Education-Reports.aspx">https://www.amstat.org/asa/education/Guidelines-for-Assessment-and-Instruction-in-Statistics-Education-Reports.aspx</a>.</p>
 </div>
 <div id="ref-gould_2010">
 <p>Gould, Robert. 2010. “Statistics and the Modern Student.” <em>International Statistics Review</em> 78 (2): 297–315.</p>
 </div>
 <div id="ref-lubridate">
-<p>Grolemund, Garrett, and Hadley Wickham. 2011. “Dates and Times Made Easy with lubridate.” <em>Journal of Statistical Software</em> 40 (3): 1–25. <a href="https://www.jstatsoft.org/v40/i03/" class="uri">https://www.jstatsoft.org/v40/i03/</a>.</p>
+<p>Grolemund, Garrett, and Hadley Wickham. 2011. “Dates and Times Made Easy with lubridate.” <em>Journal of Statistical Software</em> 40 (3): 1–25. <a href="https://www.jstatsoft.org/v40/i03/">https://www.jstatsoft.org/v40/i03/</a>.</p>
 </div>
 <div id="ref-R4DS">
-<p>———. 2017. <em>R for Data Science</em>. O’Reilly Media. <a href="http://r4ds.had.co.nz/" class="uri">http://r4ds.had.co.nz/</a>.</p>
+<p>———. 2017. <em>R for Data Science</em>. O’Reilly Media. <a href="http://r4ds.had.co.nz/">http://r4ds.had.co.nz/</a>.</p>
 </div>
 <div id="ref-fliers_538">
-<p>Hickey, Walt. 2014a. “41 Percent of Fliers Think You’re Rude If You Recline Your Seat.” 2014. <a href="https://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/" class="uri">https://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/</a>.</p>
+<p>Hickey, Walt. 2014a. “41 Percent of Fliers Think You’re Rude If You Recline Your Seat.” 2014. <a href="https://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/">https://fivethirtyeight.com/datalab/airplane-etiquette-recline-seat/</a>.</p>
 </div>
 <div id="ref-bechdel_538">
-<p>———. 2014b. “The Dollar-and-Cents Case Against Hollywood’s Exclusion of Women.” 2014. <a href="https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/" class="uri">https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/</a>.</p>
+<p>———. 2014b. “The Dollar-and-Cents Case Against Hollywood’s Exclusion of Women.” 2014. <a href="https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/">https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/</a>.</p>
 </div>
 <div id="ref-horton_baumer_wickham_2015">
 <p>Horton, Nicholas J., Ben Baumer, and Hadley Wickham. 2015. “Setting the stage for data science: integration of data management skills in introductory and second courses in statistics.” <em>CHANCE</em> 28 (2): 40–50.</p>
 </div>
 <div id="ref-moderndive">
-<p>Ismay, Chester, and Albert Y Kim. 2017a. “An Introduction to Statistical and Data Sciences via R.” 2017. <a href="https://www.moderndive.com/" class="uri">https://www.moderndive.com/</a>.</p>
+<p>Ismay, Chester, and Albert Y Kim. 2017a. “An Introduction to Statistical and Data Sciences via R.” 2017. <a href="https://www.moderndive.com/">https://www.moderndive.com/</a>.</p>
 </div>
 <div id="ref-ismay_datacamp">
-<p>———. 2017b. “Effective Data Storytelling Using the ‘Tidyverse‘.” 2017. <a href="https://www.datacamp.com/courses/effective-data-storytelling-using-the-tidyverse" class="uri">https://www.datacamp.com/courses/effective-data-storytelling-using-the-tidyverse</a>.</p>
+<p>———. 2017b. “Effective Data Storytelling Using the ‘Tidyverse‘.” 2017. <a href="https://www.datacamp.com/courses/effective-data-storytelling-using-the-tidyverse">https://www.datacamp.com/courses/effective-data-storytelling-using-the-tidyverse</a>.</p>
 </div>
 <div id="ref-bear_tweet">
-<p>Jedamski, Derek. 2015. “Twitter.” 2015. <a href="https://twitter.com/d_jedamski/status/631150332941332480" class="uri">https://twitter.com/d_jedamski/status/631150332941332480</a>.</p>
+<p>Jedamski, Derek. 2015. “Twitter.” 2015. <a href="https://twitter.com/d_jedamski/status/631150332941332480">https://twitter.com/d_jedamski/status/631150332941332480</a>.</p>
 </div>
 <div id="ref-kim_escobedo_land_2015">
 <p>Kim, Albert Y., and Adriana Escobedo-Land. 2015. “OkCupid Profile Data for Introductory Statistics and Data Science Courses.” <em>Journal of Statistics Education</em> 23 (2): 97–107.</p>
 </div>
 <div id="ref-NYT_2014">
-<p>Lohr, Steve. 2014. “For Big-Data Scientists, ’Janitor Work’ Is Key Hurdle to Insights.” <em>New York Times</em>, August. <a href="https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html" class="uri">https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html</a>.</p>
+<p>Lohr, Steve. 2014. “For Big-Data Scientists, ’Janitor Work’ Is Key Hurdle to Insights.” <em>New York Times</em>, August. <a href="https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html">https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html</a>.</p>
 </div>
 <div id="ref-hatecrime_538">
-<p>Majumder, Maimuna. 2017. “Higher Rates of Hate Crimes Are Tied to Income Inequality.” 2017. <a href="https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/" class="uri">https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/</a>.</p>
+<p>Majumder, Maimuna. 2017. “Higher Rates of Hate Crimes Are Tied to Income Inequality.” 2017. <a href="https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/">https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/</a>.</p>
 </div>
 <div id="ref-mckinsey_2011">
-<p>Manyika, James, Michael Chui, Brad Brown, Jacques Bughin, Richard Dobbs, Charles Roxburgh, and Angela Hung Byers. 2011. <a href="https://www.mckinsey.com/business-functions/digital-mckinsey/our-insights/big-data-the-next-frontier-for-innovation" class="uri">https://www.mckinsey.com/business-functions/digital-mckinsey/our-insights/big-data-the-next-frontier-for-innovation</a>.</p>
+<p>Manyika, James, Michael Chui, Brad Brown, Jacques Bughin, Richard Dobbs, Charles Roxburgh, and Angela Hung Byers. 2011. <a href="https://www.mckinsey.com/business-functions/digital-mckinsey/our-insights/big-data-the-next-frontier-for-innovation">https://www.mckinsey.com/business-functions/digital-mckinsey/our-insights/big-data-the-next-frontier-for-innovation</a>.</p>
 </div>
 <div id="ref-mcnamara_horton_2017">
 <p>McNamara, Amelia, and Nicholas J. Horton. 2017. “Wrangling categorical data in R.” <em>The American Statistician</em>.</p>
@@ -609,19 +609,19 @@ USA vs France alcohol consumption.
 <p>Wickham, Hadley. 2014. “Tidy Data.” <em>Journal of Statistical Software</em> 59 (10): 1–23.</p>
 </div>
 <div id="ref-R_packages">
-<p>———. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. O’Reilly. <a href="http://r-pkgs.had.co.nz/" class="uri">http://r-pkgs.had.co.nz/</a>.</p>
+<p>———. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. O’Reilly. <a href="http://r-pkgs.had.co.nz/">http://r-pkgs.had.co.nz/</a>.</p>
 </div>
 <div id="ref-babynames">
-<p>———. 2017a. <em>Babynames: US Baby Names 1880-2015</em> (version R package version 0.3.0). <a href="https://CRAN.R-project.org/package=babynames" class="uri">https://CRAN.R-project.org/package=babynames</a>.</p>
+<p>———. 2017a. <em>Babynames: US Baby Names 1880-2015</em> (version R package version 0.3.0). <a href="https://CRAN.R-project.org/package=babynames">https://CRAN.R-project.org/package=babynames</a>.</p>
 </div>
 <div id="ref-forcats">
-<p>———. 2017b. <em>Forcats: Tools for Working with Categorical Variables (Factors)</em> (version R package version 0.2.0). <a href="https://CRAN.R-project.org/package=forcats" class="uri">https://CRAN.R-project.org/package=forcats</a>.</p>
+<p>———. 2017b. <em>Forcats: Tools for Working with Categorical Variables (Factors)</em> (version R package version 0.2.0). <a href="https://CRAN.R-project.org/package=forcats">https://CRAN.R-project.org/package=forcats</a>.</p>
 </div>
 <div id="ref-wickham_2017">
-<p>———. 2017c. “The tidy tools manifesto.” <a href="https://cran.r-project.org/package=tidyverse/vignettes/manifesto.html" class="uri">https://cran.r-project.org/package=tidyverse/vignettes/manifesto.html</a>.</p>
+<p>———. 2017c. “The tidy tools manifesto.” <a href="https://cran.r-project.org/package=tidyverse/vignettes/manifesto.html">https://cran.r-project.org/package=tidyverse/vignettes/manifesto.html</a>.</p>
 </div>
 <div id="ref-tidyverse">
-<p>———. 2017d. <em>Tidyverse: Easily Install and Load ’Tidyverse’ Packages</em> (version R package version 1.1.1). <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>.</p>
+<p>———. 2017d. <em>Tidyverse: Easily Install and Load ’Tidyverse’ Packages</em> (version R package version 1.1.1). <a href="https://www.tidyverse.org/">https://www.tidyverse.org/</a>.</p>
 </div>
 </div>
 </div>
