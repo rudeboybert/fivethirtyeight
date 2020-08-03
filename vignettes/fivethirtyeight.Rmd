@@ -26,14 +26,14 @@ datasets_master <-
   filter(!is.na(DATAFRAME_NAME)) %>% 
   transmute(
     `Data Frame Name` = DATAFRAME_NAME,
+    `In fivethirtyeightdata?` = `IN FIVETHIRTYEIGHTDATA?`,
     `Article Title` = ARTICLE_TITLE,
-    `Filed Under` = ARTICLE_FILED_UNDER,
+    URL = ARTICLE_URL,
     `Author 1` = ARTICLE_AUTHOR_1,
     `Author 2` = ARTICLE_AUTHOR_2,
     `Author 3` = ARTICLE_AUTHOR_3,
-    `In fivethirtyeightdata?` = `IN FIVETHIRTYEIGHTDATA?`,
     Date = ARTICLE_DATE,
-    URL = ARTICLE_URL
+    `Filed Under` = ARTICLE_FILED_UNDER
   ) %>% 
   mutate(
     `Filed Under` = ifelse(is.na(`Filed Under`), "", `Filed Under`),
