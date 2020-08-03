@@ -91,7 +91,7 @@ The raw data behind the story
 "A Statistical Analysis of the Work of Bob Ross"
 \url{https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/}.
 An analysis using this data was contributed by Jonathan Bouchet as a package vignette at
-\url{https://fivethirtyeight-r.netlify.com/articles/bob_ross.html}.
+\url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bob_ross.html}.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:

@@ -7,7 +7,7 @@
 \alias{state_words}
 \title{What America’s Governors Are Talking About}
 \format{
-2 data frames about the 50 U.S Governers' Speeches
+2 data frames about the 50 U.S Governors' Speeches
 
 An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 2223 rows and 9 columns.
 }
@@ -29,8 +29,8 @@ The raw data behind the story
 A data frame with 50 rows representing the 50 U.S. states and 5 variables:
 \describe{
   \item{state}{the state}
-  \item{governer}{the name of the state's governer}
-  \item{party}{the party of the state's governer}
+  \item{governor}{the name of the state's governor}
+  \item{party}{the party of the state's governor}
   \item{filename}{the filename of the speech in the speeches folder at \url{https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw/state-of-the-state/speeches}}
   \item{url}{a link to an official/media source for the speech}
   }

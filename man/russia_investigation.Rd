@@ -14,8 +14,8 @@ A dataset with 194 rows representing every special investigation since the Water
 \item{name}{Name of the person charged (if applicable). Will be blank if there were no charges.}
 \item{indictment_days}{Length, in days, from the start of the investigation to the date the person was charged (if applicable). Days will be negative if the charge occurred before the investigation began.}
 \item{type}{Result of charge (if applicable)}
-\item{cp_date}{Date the person pled guilty or was convicted (if applicable)}
-\item{cp_days}{Length, in days, from the start of the investigation to the date the person pled guilty or was convicted (if applicable)}
+\item{cp_date}{Date the person plead guilty or was convicted (if applicable)}
+\item{cp_days}{Length, in days, from the start of the investigation to the date the person plead guilty or was convicted (if applicable)}
 \item{overturned}{Whether or not the relevant person's conviction was overturned}
 \item{pardoned}{Whether or not the relevant person's charge was pardoned}
 \item{american}{Whether or not the relevant person's charge was a U.S. resident}

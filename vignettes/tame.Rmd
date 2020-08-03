@@ -32,6 +32,7 @@ library(dplyr)
 library(broom)
 library(knitr)
 library(gridExtra)
+library(curl)
 ```
 
 This is an HTML version of a [Technology Innovations in Statistics Education](https://escholarship.org/uc/item/0rx1231m#main) article.
@@ -319,7 +320,7 @@ plot(US_births_1999$date, US_births_1999$births, type = "l",
      xlab = "Date", ylab = "# of births")
 ```
 
-One exercise we can assign to students is for them to investigate the anomalous spike in the number of births that occured roughly a month before October 1st, 1999:
+One exercise we can assign to students is for them to investigate the anomalous spike in the number of births that occurred roughly a month before October 1st, 1999:
 
 ```{r}
 head(US_births_1999[which.max(US_births_1999$births), ])

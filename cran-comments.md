@@ -1,37 +1,37 @@
-## Resubmission
-
-This is a resubmission. In this version I have:
-
-* Fixed the NOTEs involving URLs with spaces
-* Fixed the ERROR involving reading a CSV file off the web
-
-
 ## Test environments
 
-* local OS X install, R 3.6.1.
-* ubuntu 14.04 (on travis-ci), R 3.6.1.
-* Rhub
+* local macOS install, R 4.0.1
+* ubuntu 16.04.6 on travis-ci (release, devel, oldrel)
+* win-builder (release, devel, oldrel)
+* GitHub Actions
+    + ubuntu-16.04: release
+    + windows: release
+    + macOS: release
+* Rhub via devtools::check_rhub(env_vars=c(R_COMPILE_AND_INSTALL_PACKAGES = "always"))
     + Windows Server 2008 R2 SP1, R-devel, 32/64 bit
     + Ubuntu Linux 16.04 LTS, R-release, GCC
-    + Fedora Linux, R-devel, clang, gfortran
-* win-builder (devel and release)
 
 
 ## R CMD check results
 
-There were originally no ERRORs or WARNINGs. There were 3 NOTEs:
+Per Brian Ripley's email, this is a submission that addresses the problems shown
+on https://cran.r-project.org/web/checks/check_results_fivethirtyeight.html. I
+am submitting before the 2020-08-05 deadline.
 
-* From Rhub (R-devel): one example had CPU or elapsed time > 5s (`comic_characters`), but this NOTE did not occur in any other test environment.
-* From Rhub (R-release): one example had CPU or elapsed time > 5s (`ratings`), but this NOTE did not occur in any other test environment.
-* From win-builder (both devel and release), it said that 4 URLs were possibly invalid, however upon testing them individually, they all worked fine. 
+NOTES:
 
-On 2020-07-23:
-
-* From win-builder (both devel and release), it said that 1 URL was possibly invalid, however upon testing it individually, it worked fine. 
-* From win-builder (both devel and release), note on the `fivethirtyeightdata` suggested package not available for checking. Another note on it not being available checking for Rd cross references. This package is not on CRAN but on GitHub.
-* From win-builder (both devel and release) and Rhub (both devel and release), there is a note for large components which is supposed to be disabled according to Hadley: https://github.com/r-lib/devtools/issues/1767.
-* From Rhub (R-release): it said that 4 URLs were possibly invalid, however upon testing them individually, they all worked fine. (There are two more which have been fixed)
-* From Rhub (R-devel): it said that 3 URLs were possibly invalid, however upon testing them individually, they all worked fine. (There are two more which have been fixed)
+* Rhub (release, devel) returned 4 NOTES that the following URL's were
+possibly invalid, however upon testing them individually, they all worked fine:
+    + https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/
+    + https://digital.library.unt.edu/ark:/67531/metadc815038/m2/1/high_res_d/98-19_2006Jun08.pdf
+    + https://genius.com/
+    + https://www.nps.gov/history/archeology/sites/antiquities/MonumentsList.htm
+* win-builder (release, devel, oldrel) returned 3 NOTES because
+'fivethirtyeightdata' is not a CRAN package, but rather a drat package
+https://fivethirtyeightdata.github.io/drat:
+    + Suggests or Enhances not in mainstream repositories: fivethirtyeightdata
+    + Package suggested but not available for checking: 'fivethirtyeightdata'
+    + Package unavailable to check Rd xrefs: 'fivethirtyeightdata'
 
 
 

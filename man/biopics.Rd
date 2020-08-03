@@ -34,6 +34,6 @@ The raw data behind the story
 "'Straight Outta Compton' Is The Rare Biopic Not About White Dudes"
 \url{https://fivethirtyeight.com/features/straight-outta-compton-is-the-rare-biopic-not-about-white-dudes/}.
 An analysis using this data was contributed by Pradeep Adhokshaja as a package vignette at
-\url{https://fivethirtyeight-r.netlify.com/articles/biopics.html}.
+\url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/biopics.html}.
 }
 \keyword{datasets}

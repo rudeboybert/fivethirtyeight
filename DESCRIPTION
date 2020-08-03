@@ -4,7 +4,7 @@ Description: Datasets and code published by the data journalism website
     'FiveThirtyEight' available at <https://github.com/fivethirtyeight/data>. 
     Note that while we received guidance from editors at 'FiveThirtyEight', this 
     package is not officially published by 'FiveThirtyEight'.
-Version: 0.5.0.9000
+Version: 0.6.0.9000
 Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7824-306X")),
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut", comment = c(ORCID = "0000-0003-2820-2547")),
@@ -20,6 +20,7 @@ Authors@R: c(
     person("Olivia", "Barrows", role = "ctb"),
     person("Jojo", "Miller", role = "ctb"),
     person("Jayla", "Nakayama", role = "ctb"),
+    person("Ben", "Baumer", email = "ben.baumer@gmail.com", role = "ctb", comment = c(ORCID = "0000-0002-3279-0516")),
     person("Rana", "Gahwagy", role="ctb", email = "r.w.g1@hotmail.com", comment = c(ORCID = "0000-0002-6331-2840")),
     person("Natalia", "Iannucci", email = "iannuccinatalia@gmail.com", role = "ctb", comment = c(ORCID = "0000-0001-5663-1731")),
     person("Marium", "Tapal", email = "mariumtapal@gmail.com", role = "ctb", comment = c(ORCID = "0000-0001-5093-6462")),
@@ -54,7 +55,7 @@ Suggests:
     knitr,
     rmarkdown,
     gridExtra,
-    utf8,
+    curl,
     fivethirtyeightdata
 Additional_repositories: https://fivethirtyeightdata.github.io/drat
 VignetteBuilder: knitr

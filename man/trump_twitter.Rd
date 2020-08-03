@@ -24,6 +24,6 @@ The raw data behind the story
 \url{https://fivethirtyeight.com/features/the-worlds-favorite-donald-trump-tweets/}.
 Tweets posted on twitter by Donald Trump (@realDonaldTrump).
 An analysis using this data was contributed by Adam Spannbauer as a package vignette at
-\url{https://fivethirtyeight-r.netlify.com/articles/trump_twitter.html}.
+\url{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/trump_twitter.html}.
 }
 \keyword{datasets}

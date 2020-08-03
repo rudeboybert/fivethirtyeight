@@ -16,6 +16,7 @@ library(dplyr)
 library(readr)
 library(knitr)
 library(tibble)
+library(curl)
 
 # Import master Google Sheet of all 538 data available here:
 # https://docs.google.com/spreadsheets/d/1IMWAHNPIDzplafWW6AGnGyHmB1BMjohEw_V5HmT70Gs/edit#gid=840984416
@@ -88,7 +89,7 @@ if(FALSE){
 ```
 
 
-## Acknowledgement
+## Acknowledgment
 
 We are aware of [this tweet](https://twitter.com/MonaChalabi/status/1270715883531300866){target="_blank"} by Mona Chalabi. Although, we have not yet decided the future of the `fivethirtyeight` package (and subsequently, the `fivethirtyeightdata` package), we re-iterate that this package is not officially published by 538.
 

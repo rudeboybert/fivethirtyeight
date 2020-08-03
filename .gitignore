@@ -9,5 +9,6 @@ inst/doc
 */.DS_Store
 .DS_Store
 docs/*
+revdep/*
 doc
 Meta
