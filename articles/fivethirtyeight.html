@@ -119,8 +119,10 @@
 ## [15] "raptor_by_team"             "ratings"                   
 ## [17] "senators"                   "spi_matches"               
 ## [19] "twitter_presidents"</code></pre>
-<p>These 19 datasets are included in the <code>fivethirtyeightdata</code> add-on package<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. So for example, to load the <code>senators</code> dataset, run:</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeight</span>)
+<p>These 19 datasets are included in the <code>fivethirtyeightdata</code> add-on package<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, which you can install by running:</p>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">'fivethirtyeightdata'</span>, <span class="kw">repos</span> <span class="kw">=</span> <span class="st">'https://fivethirtyeightdata.github.io/drat/'</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">'source'</span>)</pre></body></html></div>
+<p>So for example, to load the <code>senators</code> dataset, run:</p>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeight</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeightdata</span>)
 <span class="no">senators</span></pre></body></html></div>
 </div>
