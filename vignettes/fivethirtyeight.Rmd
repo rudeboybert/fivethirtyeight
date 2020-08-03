@@ -102,7 +102,13 @@ There are `r all_fivethirtyeight_datasets %>% length()` datasets included in the
 all_fivethirtyeightdata_datasets
 ```
 
-These `r all_fivethirtyeightdata_datasets %>% length()` datasets are included in the `fivethirtyeightdata` add-on package^[The `fivethirtyeightdata` package is hosted via a [`drat` repository](https://CRAN.R-project.org/package=drat/vignettes/DratForPackageAuthors.html){target="_blank"}]. So for example, to load the `senators` dataset, run:
+These `r all_fivethirtyeightdata_datasets %>% length()` datasets are included in the `fivethirtyeightdata` add-on package^[The `fivethirtyeightdata` package is hosted via a [`drat` repository](https://CRAN.R-project.org/package=drat/vignettes/DratForPackageAuthors.html){target="_blank"}], which you can install by running:
+
+```{r, eval=FALSE}
+install.packages('fivethirtyeightdata', repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')
+```
+
+So for example, to load the `senators` dataset, run:
 
 ```{r, eval = FALSE}
 library(fivethirtyeight)
