@@ -59,7 +59,7 @@ head(bechdel)
 View(bechdel)
 ```
 
-To see a detailed list of all `r nrow(data(package = "fivethirtyeight")[[3]])` datasets, including information on the corresponding articles published on FiveThirtyEight.com, click [here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
+To see a detailed list of all `r nrow(data(package = "fivethirtyeight")[[3]]) - 1` datasets, including information on the corresponding articles published on FiveThirtyEight.com, click [here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
 
 
 ## Add-on Package 

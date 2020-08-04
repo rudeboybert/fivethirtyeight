@@ -19,7 +19,7 @@ library(tibble)
 library(curl)
 
 # Pull all dataset names
-all_datasets <-  datasets_master %>% 
+all_datasets <- datasets_master %>% 
   pull(`Data Frame Name`) %>% 
   unique()
 
@@ -54,6 +54,7 @@ if(FALSE){
   # Get data set names as listed in pkg
   pkg_data_list <- data(package = "fivethirtyeight")[["results"]] %>% 
     as_tibble() %>% 
+    filter(Item != "datasets_master") %>% 
     pull(Item) %>% 
     sort()
   
