@@ -55,7 +55,6 @@ Suggests:
     knitr,
     rmarkdown,
     patchwork,
-    curl,
     fivethirtyeightdata
 Additional_repositories: https://fivethirtyeightdata.github.io/drat
 VignetteBuilder: knitr

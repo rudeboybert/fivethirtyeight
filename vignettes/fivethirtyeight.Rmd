@@ -16,7 +16,6 @@ library(dplyr)
 library(readr)
 library(knitr)
 library(tibble)
-library(curl)
 
 # Pull all dataset names
 all_datasets <- datasets_master %>% 
