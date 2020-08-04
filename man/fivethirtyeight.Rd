@@ -24,11 +24,4 @@ library(fivethirtyeight)
 
 # To view a detailed list of all data sets:
 \donttest{vignette("fivethirtyeight", package = "fivethirtyeight")}
-
-# Some data sets include vignettes with an example analysis 
-# (these are in the fivethirtyeightdata package):
-\donttest{vignette("bechdel", package = "fivethirtyeightdata")}
-
-# To browse all vignettes (these are in the fivethirtyeightdata package):
-\donttest{browseVignettes(package = "fivethirtyeightdata")}
 }

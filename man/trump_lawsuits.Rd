@@ -5,7 +5,25 @@
 \alias{trump_lawsuits}
 \title{Trump Lawsuits}
 \format{
-
+A dataset with 57 rows representing lawsuits and 16 variables
+\describe{
+\item{docket_number}{Current docket number}
+\item{date_filed}{Date lawsuit was originally filed}
+\item{case_name}{Case name (current)}
+\item{plaintiff}{Names of plaintiffs (if more than five, "et al" for plaintiffs who are not in case name)}
+\item{defendant}{Names of defendants (if more than five, "et al" for defendants who are not in case name)}
+\item{current_location}{Court the lawsuit is currently in front of}
+\item{previous_location}{Other courts the case has appeared before}
+\item{jurisdiction}{Where the case is being heard | 1 = Federal; 2 = State}
+\item{judge}{Names of the judges the case is currently before}
+\item{nature}{PACER code for nature of lawsuit (Not relevant for criminal cases) \url{https://pacer.uscourts.gov/help/faqs/what-nature-suit-code}}
+\item{trump_category}{Whether the case is related to action before Trump was president, his personal conduct as president, or a policy action as president | 1 = Case directed at pre-presidency action; 2 = Case directed at personal action of Trump as president; 3 = Case directed at policy action of Trump as president}
+\item{capacity}{The capacity in which Trump is implicated | 1 = Case directed at Trump personally; 2 = Case directed at action of Trump administration; 3 = Trump as plaintiff; 4 = Trump administration as plaintiff; 5 = Case directed at Trump associate; 6 = Other}
+\item{type}{Criminal vs. civil | 1 = Criminal; 2 = Civil}
+\item{issue}{Key topic area raised in the case (i.e. emoluments, First Amendment, DACA, etc). Categories created based on key policy topic area or legal issue. Calls are subjective and based on reporting and may change.}
+\item{docket_orig}{Original docket number, if case has been appealed or changed jurisdiction}
+\item{status}{Whether the case, or the part of the case connected to Trump, is ongoing. | 1 = Case is ongoing; 2 = Case or part of case connected to Trump is closed}
+}
 }
 \source{
 Approval Polls

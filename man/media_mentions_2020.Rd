@@ -12,7 +12,7 @@
 An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 954 rows and 6 columns.
 }
 \source{
-The GDELT Television API \url{https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/}, which processes the data from the TV News Archive \url{https://archive.org/details/tv}.
+The GDELT Television API https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/, which processes the data from the TV News Archive \url{https://archive.org/details/tv}.
 
 Two collections in the Media Cloud \url{https://mediacloud.org/} database U.S. Top Online News \url{https://sources.mediacloud.org/#/collections/58722749} and U.S. Top Digital Native News \url{https://sources.mediacloud.org/#/collections/57078150}
 }
