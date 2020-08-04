@@ -1,4 +1,8 @@
-# fivethirtyeight 0.6.0.9000
+# fivethirtyeight 0.6.1
+
+* Changed all vignette code to no longer dynamically read data off the web, per
+CRAN policy on internet access. All relevant outputs and figures are now hard
+coded.
 
 
 
