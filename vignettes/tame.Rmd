@@ -31,8 +31,8 @@ library(ggplot2)
 library(dplyr)
 library(broom)
 library(knitr)
-library(gridExtra)
 library(curl)
+library(patchwork)
 ```
 
 This is an HTML version of a [Technology Innovations in Statistics Education](https://escholarship.org/uc/item/0rx1231m#main) article.
@@ -387,7 +387,6 @@ ggplot(bechdel, aes(x = five_year, fill = clean_test)) +
 ```{r, eval=FALSE, echo=FALSE}
 # This code is a repeat of the above code and is hidden from the user. It saves
 # a png output of the figure.
-library(patchwork)
 year_bins <- c("'70-'74", "'75-'79", "'80-'84", "'85-'89", "'90-'94", 
                "'95-'99", "'00-'04", "'05-'09", "'10-'13")
 
