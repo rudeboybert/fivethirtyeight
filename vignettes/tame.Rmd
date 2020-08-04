@@ -261,10 +261,17 @@ Whereas the first three subpoints relating to data frame and variable naming are
 
 As an example of the importance of preprocessing variable names, consider the data corresponding to the FiveThirtyEight article "41 Percent Of Fliers Think You’re Rude If You Recline Your Seat" [@fliers_538] where survey respondents were asked, among other things, if 1) they considered it rude to bring a baby on a flight and 2) whether or not they had children under the age of 18. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight>  and can be accessed via the shortened bit.ly link <https://bit.ly/2vg8gTf>. We load and save this in a data frame `flying_raw` and look at the first 5 variable names:
 
-```{r}
+```{r, eval=FALSE}
 library(readr)
 flying_raw <- read_csv("https://bit.ly/2vg8gTf")
 colnames(flying_raw)[1:5]
+```
+```
+#> [1] "RespondentID"                               
+#> [2] "How often do you travel by plane?"          
+#> [3] "Do you ever recline your seat when you fly?"
+#> [4] "How tall are you?"                          
+#> [5] "Do you have any children under 18?"
 ```
 
 We contrast this to the corresponding `flying` data frame in the `fivethirtyeight` package:
@@ -303,11 +310,22 @@ Although recent advances such as the `lubridate` package have made wrangling dat
 
 As an example of the importance of preprocessing dates, consider the data corresponding to the FiveThirtyEight article "Some People Are Too Superstitious To Have A Baby On Friday The 13th" [@baby13_538] of the number of daily births in the United States between 1994 and 2003. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight/> and can be accessed via the shortened bit.ly link <https://bit.ly/2vgRFiw>. We load this data, filter for only those rows corresponding to 1999 births, and save this in a data frame `US_births_1999_raw`. The raw data is saved in a format that makes it difficult for novices to create a time series plot. Furthermore, people do not typically think of the day of the week (Sunday, Monday, etc) in terms of a numerical value between 1 and 7.
 
-```{r}
+```{r, eval=FALSE}
 library(readr)
 US_births_1999_2003_raw <- read_csv("https://bit.ly/2vgRFiw")
 US_births_1999_raw <- US_births_1999_2003_raw[US_births_1999_2003_raw$year == 1999, ]
 head(US_births_1999_raw)
+```
+```
+#> # A tibble: 6 x 5
+#>    year month date_of_month day_of_week births
+#>   <dbl> <dbl>         <dbl>       <dbl>  <dbl>
+#> 1  1999     1             1           5   8163
+#> 2  1999     1             2           6   7637
+#> 3  1999     1             3           7   7416
+#> 4  1999     1             4           1  10396
+#> 5  1999     1             5           2  12004
+#> 6  1999     1             6           3  11718
 ```
 
 In contrast, when using the pre-processed `US_births_1994_2003` data frame from the `fivethirtyeight` package we observe that there is a variable `date`, which can be treated as a numerical variable. This allows for the `date` variable to be plotted with informative tick marks on the x-axis as in Figure \ref{fig:US-births}. Furthermore, the day of the week is indicated with more informative text rather that values between 1 and 7.  
