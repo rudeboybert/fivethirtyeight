@@ -1,3 +1,24 @@
+#' Master list of all datasets
+#'
+#' All datasets included in both fivethirtyeight and fivethirtyeightdata
+#' packages
+#'
+#' @format A data frame with 9 variables:
+#' \describe{
+#'   \item{Data Frame Name}{Name of lazy-loaded data frame}
+#'   \item{In fivethirtyeightdata?}{Whether the (large) dataset is in the fivethirtyeightdata package}
+#'   \item{Article Title}{Title as it appears on FiveThirtyEight.com}
+#'   \item{URL}{Link to article on FiveThirtyEight.com}
+#'   \item{Author 1}{Main author}
+#'   \item{Author 2}{Second author (if any)}
+#'   \item{Author 3}{Third author (if any)}
+#'   \item{Date}{Date published}
+#'   \item{Filed Under}{Tag for article}
+#' }
+"datasets_master"
+
+
+
 # Datasets documented by Albert Y. Kim
 
 #' Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?
