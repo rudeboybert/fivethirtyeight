@@ -386,7 +386,8 @@ ggplot(bechdel, aes(x = five_year, fill = clean_test)) +
 
 ```{r, eval=FALSE, echo=FALSE}
 # This code is a repeat of the above code and is hidden from the user. It saves
-# a png output of the figure.
+# a png output of the figure. We do this b/c bit.ly short link redirects are
+# unstable in CRAN
 year_bins <- c("'70-'74", "'75-'79", "'80-'84", "'85-'89", "'90-'94", 
                "'95-'99", "'00-'04", "'05-'09", "'10-'13")
 

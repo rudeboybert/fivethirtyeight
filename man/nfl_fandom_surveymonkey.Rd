@@ -35,7 +35,7 @@ a data frame with 33 rows representing teams and 25 variables:
 }
 }
 \source{
-See \url{https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}
+See \url{https://github.com/fivethirtyeight/data/blob/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}
 }
 \usage{
 nfl_fandom_surveymonkey

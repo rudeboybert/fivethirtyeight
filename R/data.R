@@ -119,7 +119,7 @@
 #' @format A data frame with 1794 rows representing movies and 15 variables:
 #' \describe{
 #'   \item{year}{Year of release}
-#'   \item{imdb}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
+#'   \item{imdb}{Text to construct IMDB url. Ex: https://www.imdb.com/title/tt1711425}
 #'   \item{title}{Movie test}
 #'   \item{test}{bechdel test result (detailed, with discrepancies indicated)}
 #'   \item{clean_test}{bechdel test result (detailed): \code{ok} = passes test, \code{dubious}, \code{men} = women only talk about men, \code{notalk} = women don't talk to each other, \code{nowomen} = fewer than two women }
@@ -181,7 +181,7 @@
 #' @format A data frame with 761 rows representing movies and 14 variables:
 #' \describe{
 #'   \item{title}{Title of the film.}
-#'   \item{site}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
+#'   \item{site}{Text to construct IMDB url. Ex: https://www.imdb.com/title/tt1711425}
 #'   \item{country}{Country of origin.}
 #'   \item{year_release}{Year of release.}
 #'   \item{box_office}{Gross earnings at U.S. box office.}
@@ -1053,7 +1053,7 @@
 #'   \item{high_emp}{}
 #'   \item{low_emp}{}
 #' }
-#' @source Bureau of Labor Statistics \url{https://www.bls.gov/oes/current/oes254021.htm#(1)}
+#' @source Bureau of Labor Statistics \url{https://www.bls.gov/oes/current/oes254022.htm}
 "librarians"
 
 #' "Mad Men" Is Ending. What's Next For The Cast?
@@ -2129,7 +2129,7 @@
 #' \item{cfb}{The percentage of search traffic in the region related to the CFB over the past 5 years}
 #' \item{trump_2016_vote}{The percentage of voters in the region who voted for Trump in the 2016 Presidential Election}
 #' }
-#' @source Google Trends \url{https://trends.google.com/}.
+#' @source Google Trends \url{https://trends.google.com/trends/}.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(dplyr)
@@ -2175,7 +2175,7 @@
 #' \item{white_percent}{Percent of fans who are White}
 #' \item{nonwhite_percent}{Percent of fans who are not White}
 #' }
-#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(dplyr)
@@ -2989,7 +2989,7 @@
 #' \item{previous_location}{Other courts the case has appeared before}
 #' \item{jurisdiction}{Where the case is being heard | 1 = Federal; 2 = State}
 #' \item{judge}{Names of the judges the case is currently before}
-#' \item{nature}{PACER code for nature of lawsuit (Not relevant for criminal cases) \url{https://www.pacer.gov/documents/natsuit.pdf}}
+#' \item{nature}{PACER code for nature of lawsuit (Not relevant for criminal cases) \url{https://pacer.uscourts.gov/sites/default/files/files/nature%20of%20suit%20codes.pdf}}
 #' \item{trump_category}{Whether the case is related to action before Trump was president, his personal conduct as president, or a policy action as president | 1 = Case directed at pre-presidency action; 2 = Case directed at personal action of Trump as president; 3 = Case directed at policy action of Trump as president}
 #' \item{capacity}{The capacity in which Trump is implicated | 1 = Case directed at Trump personally; 2 = Case directed at action of Trump administration; 3 = Trump as plaintiff; 4 = Trump administration as plaintiff; 5 = Case directed at Trump associate; 6 = Other}
 #' \item{type}{Criminal vs. civil | 1 = Criminal; 2 = Civil}
