@@ -54,7 +54,7 @@ View(bechdel)
 
 To see a detailed list of all 128 datasets, including information on the
 corresponding articles published on FiveThirtyEight.com, click
-[here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
+[here](https://fivethirtyeight-r.netlify.app/articles/fivethirtyeight.html).
 
 ## Add-on Package
 
@@ -73,7 +73,8 @@ There are also 19 datasets that could not be included in
     #> [19] "twitter_presidents"
 
 These 19 datasets are included in the `fivethirtyeightdata` add-on
-package, which you can install by running:
+package, which you can install by
+running:
 
 ``` r
 install.packages('fivethirtyeightdata', repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')
