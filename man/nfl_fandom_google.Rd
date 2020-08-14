@@ -18,7 +18,7 @@ a data frame with 207 rows representing designated market areas and 9 variables:
 }
 }
 \source{
-Google Trends \url{https://trends.google.com/}.
+Google Trends \url{https://trends.google.com/trends/}.
 }
 \usage{
 nfl_fandom_google

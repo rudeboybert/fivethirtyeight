@@ -19,7 +19,7 @@ A data frame with 344 rows representing acts and 9 variables (Note that 7 of the
 }
 }
 \source{
-National Parks Conservation Association \url{https://www.npca.org/} and National Parks Service Archeology Program \url{https://www.nps.gov/history/archeology/sites/antiquities/MonumentsList.htm}
+National Parks Conservation Association \url{https://www.npca.org/} and National Parks Service Archeology Program https://www.nps.gov/history/archeology/sites/antiquities/MonumentsList.htm
 }
 \usage{
 antiquities_act
