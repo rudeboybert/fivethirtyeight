@@ -1,3 +1,9 @@
+# fivethirtyeight 0.6.1.9000
+
+* 
+
+
+
 # fivethirtyeight 0.6.1
 
 * Changed all vignette code to no longer dynamically read data off the web, per
