@@ -54,7 +54,7 @@ At the time of release of the `fivethirtyeight` package, the authors were all te
 1. **Real enough** to ensure that there is context;
 1. **Realistic enough** to convey to students that data as it exists "in the wild" often needs wrangling/pre-processing;
 
-It is against this backdrop that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at FiveThirtyEight. [FiveThirtyEight.com](https://www.FiveThirtyEight.com) is a data-driven journalism website founded by Nate Silver and owned by Disney/ESPN that reports on politics, economics, sports, and other current events. FiveThirtyEight has been forward-thinking in making the data used in many of their articles open and accessible on their GitHub repository page <https://github.com/fivethirtyeight/data> (GitHub is a web-based repository for collaboration on code and data). Our `fivethirtyeight` R package goes one step further by making this data and its corresponding documentation easily accessible, all with students in introductory statistics and data science courses that use R in mind. The homepage for the `fivethirtyeight` R package can be found at <https://fivethirtyeight-r.netlify.com/>.
+It is against this backdrop that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at FiveThirtyEight. [FiveThirtyEight.com](https://www.FiveThirtyEight.com) is a data-driven journalism website founded by Nate Silver and owned by Disney/ESPN that reports on politics, economics, sports, and other current events. FiveThirtyEight has been forward-thinking in making the data used in many of their articles open and accessible on their GitHub repository page <https://github.com/fivethirtyeight/data> (GitHub is a web-based repository for collaboration on code and data). Our `fivethirtyeight` R package goes one step further by making this data and its corresponding documentation easily accessible, all with students in introductory statistics and data science courses that use R in mind. The homepage for the `fivethirtyeight` R package can be found at <https://fivethirtyeight-r.netlify.app/>.
 
 
 ## Educational Landscape
@@ -96,7 +96,7 @@ Building off this precedent, we created the `fivethirtyeight` R package of data 
     1. If documented, the data sources.
     1. A link to the original article on FiveThirtyEight. We felt that inclusion of these links was critical to provide information on the data's context, thereby emphasizing how "real" the data are.
 1. **Made the data easy to explore**: We pre-process the data "just enough" to balance between the two conflicting goals from Section 1.2, thereby providing students access to data that is both "rich" and "realistic", but not so much so that we run counter to the goal of "minimizing prerequisites to research." We explicitly define what is meant by "just enough" in the Section 3: "Tame Data" Principles for Introductory Statistics and Data Science Courses.
-1. **Made example data analyses easy to access and reproduce**: We include crowd-sourced data analysis examples in *vignettes* written in R Markdown, available at <https://fivethirtyeight-r.netlify.com/articles/>.
+1. **Made example data analyses easy to access and reproduce**: We include crowd-sourced data analysis examples in *vignettes* written in R Markdown, available at <https://fivethirtyeight-r.netlify.app/articles/>.
 
 
 ## Basic Usage
@@ -200,7 +200,7 @@ As described in the `bechdel` help file, the variable `title` identifies the mov
 vignette("bechdel", package="fivethirtyeight")
 ```
 
-A list of all user contributed vignettes, which are hosted on the package homepage at <https://fivethirtyeight-r.netlify.com/articles/>, can viewed by running:
+A list of all user contributed vignettes, which are hosted on the package homepage at <https://fivethirtyeight-r.netlify.app/articles/>, can viewed by running:
 
 ```{r, eval=FALSE}
 vignette("user_contributed_vignettes", package="fivethirtyeight")
