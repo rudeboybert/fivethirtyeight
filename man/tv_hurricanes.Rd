@@ -16,7 +16,7 @@ A data frame with 37 rows representing dates and 5 variables:
 }
 \source{
 Internet TV News Archive \url{https://archive.org/details/tv} and
-Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtsearch/iatv_ftxtsearch}
+Television Explorer
 }
 \usage{
 tv_hurricanes

@@ -25,7 +25,7 @@ A data frame with 1794 rows representing movies and 15 variables:
 }
 }
 \source{
-\url{http://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
+\url{https://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
 }
 \usage{
 bechdel

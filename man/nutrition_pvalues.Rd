@@ -13,7 +13,7 @@ A data frame with 27716 rows representing Regression fits for p-hacking and 3 va
 }
 }
 \source{
-See \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}
+See \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/}
 }
 \usage{
 nutrition_pvalues
@@ -21,6 +21,6 @@ nutrition_pvalues
 \description{
 The raw data behind the story
 "You Can't Trust What You Read About Nutrition"
-\url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}.
+\url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/}.
 }
 \keyword{datasets}

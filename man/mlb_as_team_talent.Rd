@@ -26,7 +26,7 @@ A data frame with 172 rows representing Major League Baseball seasons and 16 var
 }
 }
 \source{
-\url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
+\url{http://baseball-reference.com/} , \url{http://chadwick-bureau.com}, Fangraphs
 }
 \usage{
 mlb_as_team_talent

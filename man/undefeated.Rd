@@ -14,7 +14,7 @@ A data frame with 2125 rows representing boxing matches and 4 variables:
 }
 }
 \source{
-Box Rec \url{https://boxrec.com/}
+Box Rec
 }
 \usage{
 undefeated

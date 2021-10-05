@@ -19,7 +19,7 @@ A data frame with 371 rows representing areas in the US and 9 variables:
 }
 }
 \source{
-Bureau of Labor Statistics \url{https://www.bls.gov/oes/current/oes254022.htm}
+Bureau of Labor Statistics
 }
 \usage{
 librarians
