@@ -16,7 +16,6 @@ vignette: |
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "Figures/",
   warning = FALSE,
   message = FALSE
 )
@@ -24,7 +23,7 @@ scale_fill_discrete <- function(...) scale_fill_brewer(... ,  type = "div", pale
 ```
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE, fig.height = 4)
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
 library(fivethirtyeight)
 # library(tidyverse)
 library(ggplot2)
@@ -451,7 +450,7 @@ drinks_tidy_US_FR <- drinks %>%
   filter(country %in% c("USA", "France")) %>% 
   gather(type, servings, -c(country, total_litres_of_pure_alcohol))
 drinks_tidy_US_FR
-````
+```
 
 This formatting of the data now allows itself to be used as input to the `ggplot()` function to create an appropriate barplot in Figure \ref{fig:drinks}. Note in this case since the number of servings is pretabulated in the variable `servings`, which in turn is mapped to the y-axis, we use `geom_col()` instead of `geom_bar()` (`geom_col()` is equivalent to `geom_bar(stat = "identity")`).
 
