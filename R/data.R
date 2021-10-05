@@ -139,7 +139,7 @@
 #' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bechdel.html}{CRAN} or by running:
 #' \code{vignette("bechdel", package = "fivethirtyeightdata")}
 #'
-#' @source \url{http://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
+#' @source \url{https://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
 "bechdel"
 
 #' Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?
@@ -1053,7 +1053,7 @@
 #'   \item{high_emp}{}
 #'   \item{low_emp}{}
 #' }
-#' @source Bureau of Labor Statistics \url{https://www.bls.gov/oes/current/oes254022.htm}
+#' @source Bureau of Labor Statistics
 "librarians"
 
 #' "Mad Men" Is Ending. What's Next For The Cast?
@@ -1122,7 +1122,7 @@
 #'   \item{no_1_player}{Best player according to combo of actual PA/IP and talent}
 #'   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent}
 #' }
-#' @source \url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
+#' @source \url{http://baseball-reference.com/} , \url{http://chadwick-bureau.com}, Fangraphs
 "mlb_as_team_talent"
 
 #' The Best MLB All-Star Teams Ever
@@ -1251,7 +1251,7 @@
 #'   \item{uniform}{Uniform - Stylishness of uniform design, according to Uni Watch's Paul Lukas}
 #'   \item{big_market}{Big Market - Size of market in terms of population, where bigger is better}
 #' }
-#' @source \url{https://www.espn.com/sportsnation/teamrankings}, \url{https://www.allourideas.org/nflteampickingsample}
+#' @source \url{https://www.allourideas.org/nflteampickingsample}
 "nfl_fav_team"
 
 #' The NFL's Uneven History Of Punishing Domestic Violence
@@ -1339,7 +1339,7 @@
 #'
 #' The raw data behind the story
 #' "You Can't Trust What You Read About Nutrition"
-#' \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}.
+#' \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/}.
 #'
 #' @format A data frame with 27716 rows representing Regression fits for p-hacking and 3 variables:
 #' \describe{
@@ -1347,7 +1347,7 @@
 #'   \item{characteristic}{Name of characteristic (predictor/independent variable)}
 #'   \item{p_values}{P-value from regression fit}
 #' }
-#' @source See \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}
+#' @source See \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/}
 "nutrition_pvalues"
 
 #' The Dallas Shooting Was Among The Deadliest For Police In U.S. History
@@ -1373,7 +1373,7 @@
 #'
 #' The raw data behind the story
 #' "Where Police Have Killed Americans In 2015"
-#' \url{https://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015}.
+#' \url{https://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015/}.
 #'
 #' @format A data frame with 467 rows representing People who died from interactions with police and 34 variables:
 #' \describe{
@@ -1910,7 +1910,7 @@
 #'
 #' The raw data behind the story
 #' "Why The GOP Is So Hell-Bent On Passing An Unpopular Health Care Bill"
-#' \url{https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill}.
+#' \url{https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill/}.
 #'
 #' @format A data frame with 15 rows representing polls and 7 variables:
 #' \describe{
@@ -2092,7 +2092,7 @@
 #' The raw data behind the stories "Club Soccer Predictions"
 #' \url{https://projects.fivethirtyeight.com/soccer-predictions/} and
 #' "Global Club Soccer Rankings"
-#' \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
+#' \url{https://projects.fivethirtyeight.com/soccer-predictions/global-club-rankings/}.
 #'
 #' @format A data frame with 453 rows representing soccer rankings and 7 variables:
 #' \describe{
@@ -2116,7 +2116,7 @@
 #'
 #' The raw data behind the story
 #' "How Every NFL Team’s Fans Lean Politically"
-#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: Google Trends Data.
+#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically/}: Google Trends Data.
 #'
 #' @format a data frame with 207 rows representing designated market areas and 9 variables:
 #' \describe{
@@ -2145,7 +2145,7 @@
 #'
 #' The raw data behind the story
 #' "How Every NFL Team’s Fans Lean Politically"
-#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: SurveyMonkey Data.
+#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically/}: SurveyMonkey Data.
 #'
 #' @format a data frame with 33 rows representing teams and 25 variables:
 #' \describe{
@@ -2307,7 +2307,7 @@
 #' \item{jose}{The percent of sentences in TV news that mention Hurricane Irma}
 #' }
 #' @source Internet TV News Archive \url{https://archive.org/details/tv} and
-#' Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtsearch/iatv_ftxtsearch}
+#' Television Explorer
 #' @seealso \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}},
 #' \code{\link{mediacloud_online_news}}, \code{\link{mediacloud_trump}},
 #' \code{\link{tv_hurricanes_by_network}}, \code{\link{tv_states}}, \code{\link{google_trends}}
@@ -2330,7 +2330,7 @@
 #' \item{msnbc}{The percent of sentences on MSNBC News that mention the hurricane in question}
 #' }
 #' @source Internet TV News Archive \url{https://archive.org/details/tv} and
-#' Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtsearch/iatv_ftxtsearch}
+#' Television Explorer
 #' @seealso \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}}, \code{\link{mediacloud_online_news}},
 #' \code{\link{mediacloud_trump}}, \code{\link{tv_hurricanes}}, \code{\link{tv_states}}, \code{\link{google_trends}}
 "tv_hurricanes_by_network"
@@ -2350,7 +2350,7 @@
 #' \item{puerto_rico}{The percent of sentences in TV News on the given day that mention Puerto Rico}
 #' }
 #' @source Internet TV News Archive \url{https://archive.org/details/tv} and
-#' Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtsearch/iatv_ftxtsearch}
+#' Television Explorer
 #' @seealso \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}}, \code{\link{mediacloud_online_news}},
 #' \code{\link{mediacloud_trump}}, \code{\link{tv_hurricanes}}, \code{\link{tv_hurricanes_by_network}}, \code{\link{google_trends}}
 "tv_states"
@@ -2573,7 +2573,7 @@
 #' \item{date}{Date of the match}
 #' \item{wins}{Number of cumulative wins for the boxer including the match at the specified date}
 #' }
-#' @source Box Rec \url{https://boxrec.com/}
+#' @source Box Rec
 "undefeated"
 
 
@@ -3004,7 +3004,7 @@
 #'
 #' This folder contains the data behind the story:
 #' "What Do Men Think It Means To Be A Man?"
-#' \url{https://fivethirtyeight.com/features/what-do-men-think-it-means-to-be-a-man}
+#' \url{https://fivethirtyeight.com/features/what-do-men-think-it-means-to-be-a-man/}
 #' @format A dataset with 189 rows representing answers and 12 variables:
 #' \describe{
 #' \item{question}{the survey question}

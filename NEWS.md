@@ -77,7 +77,7 @@ instead of using less informative `geom_point()`
 
 # fivethirtyeight 0.4.0
 
-* Package website now at <http://fivethirtyeight-r.netlify.app/>
+* Package website now at <https://fivethirtyeight-r.netlify.app/>
 * Added new data sets:
     + By Meredith Manley: `ahca_polls`, `bachelorette`, `candy_rankings`, 
     `chess_transfers`, `generic_polllist`, `generic_topline`, 
@@ -115,7 +115,7 @@ Ex: `bechdel$clean_test`
 * Only main and `bechdel` vignettes included in package b/c of CRAN package size
 restrictions. Other crowd-sourced analysis vignettes still available
     + In development version
-    + On package website under "Articles" <http://fivethirtyeight-r.netlify.app/>
+    + On package website under "Articles" <https://fivethirtyeight-r.netlify.app/>
 * Other minor changes:
     + Fixed levels in `bechdel$clean_test` and `bechdel$test` to match
     hierarchical nature of test
