@@ -12,3 +12,4 @@ docs/*
 revdep/*
 doc
 Meta
+.DS_Store
