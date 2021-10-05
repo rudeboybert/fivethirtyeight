@@ -4,7 +4,7 @@ Description: Datasets and code published by the data journalism website
     'FiveThirtyEight' available at <https://github.com/fivethirtyeight/data>. 
     Note that while we received guidance from editors at 'FiveThirtyEight', this 
     package is not officially published by 'FiveThirtyEight'.
-Version: 0.6.1.9000
+Version: 0.6.2
 Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7824-306X")),
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut", comment = c(ORCID = "0000-0003-2820-2547")),

@@ -1,6 +1,6 @@
-# fivethirtyeight 0.6.1.9000
+# fivethirtyeight 0.6.2
 
-* 
+* Fixed bugs in `tame.Rmd` vignettes
 
 
 
