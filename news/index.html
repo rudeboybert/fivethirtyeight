@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1.9000</span>
       </span>
     </div>
 
@@ -79,7 +79,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -111,7 +111,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -132,10 +132,20 @@
       <small>Source: <a href='https://github.com/rudeboybert/fivethirtyeight/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="fivethirtyeight-0609000" class="section level1">
-<h1 class="page-header" data-toc-text="0.6.0.9000">
-<a href="#fivethirtyeight-0609000" class="anchor"></a>fivethirtyeight 0.6.0.9000<small> Unreleased </small>
+    <div id="fivethirtyeight-0619000" class="section level1">
+<h1 class="page-header" data-toc-text="0.6.1.9000">
+<a href="#fivethirtyeight-0619000" class="anchor"></a>fivethirtyeight 0.6.1.9000<small> Unreleased </small>
 </h1>
+<ul><li>
+</li></ul>
+</div>
+    <div id="fivethirtyeight-061" class="section level1">
+<h1 class="page-header" data-toc-text="0.6.1">
+<a href="#fivethirtyeight-061" class="anchor"></a>fivethirtyeight 0.6.1<small> 2020-08-05 </small>
+</h1>
+<ul>
+<li>Changed all vignette code to no longer dynamically read data off the web, per CRAN policy on internet access. All relevant outputs and figures are now hard coded.</li>
+</ul>
 </div>
     <div id="fivethirtyeight-060" class="section level1">
 <h1 class="page-header" data-toc-text="0.6.0">
@@ -206,7 +216,7 @@
 </li>
 <li>Removed tidyverse from <code>DESCRIPTION</code> Depends, Imports, or Suggests fields</li>
 <li>Added <code>state_info</code> data frame of state name, abbreviation, US census division/region</li>
-<li>Added <code>state_abbrev</code> variable to <code>hate_crimes</code> dataset so that users can plot state abbreviations via <code>geom_text(aes(label = state_abbrev))</code> instead of using less informative <code>geom_point()</code>
+<li>Added <code>state_abbrev</code> variable to <code>hate_crimes</code> dataset so that users can plot state abbreviations via <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text(aes(label = state_abbrev))</a></code> instead of using less informative <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>
 </li>
 <li>Given CRAN package size restrictions, the following datasets only consist of a preview of the first 10 rows of the entire dataset: <code>comic_characters</code>, <code>goose</code>, <code>house_district_forecast</code>, <code>mlb_elo</code>, <code>nba_carmelo</code>, <code>nfl_elo</code>, <code>ratings</code>, <code>senators</code>, and <code>spi_matches</code>. Code to load the entire dataset are provided in the respective help file examples.</li>
 <li>Added new data sets:
@@ -221,7 +231,7 @@
 <a href="#fivethirtyeight-040" class="anchor"></a>fivethirtyeight 0.4.0<small> 2018-02-11 </small>
 </h1>
 <ul>
-<li>Package website now at <a href="http://fivethirtyeight-r.netlify.com/" class="uri">http://fivethirtyeight-r.netlify.com/</a>
+<li>Package website now at <a href="http://fivethirtyeight-r.netlify.app/" class="uri">http://fivethirtyeight-r.netlify.app/</a>
 </li>
 <li>Added new data sets:
 <ul>
@@ -255,7 +265,7 @@
 <li>Only main and <code>bechdel</code> vignettes included in package b/c of CRAN package size restrictions. Other crowd-sourced analysis vignettes still available
 <ul>
 <li>In development version</li>
-<li>On package website under “Articles” <a href="http://fivethirtyeight-r.netlify.com/" class="uri">http://fivethirtyeight-r.netlify.com/</a>
+<li>On package website under “Articles” <a href="http://fivethirtyeight-r.netlify.app/" class="uri">http://fivethirtyeight-r.netlify.app/</a>
 </li>
 </ul>
 </li>
@@ -314,7 +324,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

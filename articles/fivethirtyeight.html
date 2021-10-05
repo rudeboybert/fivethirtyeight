@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1.9000</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -71,7 +71,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -91,7 +91,7 @@
       <h1 data-toc-skip>fivethirtyeight Package</h1>
                         <h4 class="author">Albert Y. Kim, Chester Ismay, and Jennifer Chunn</h4>
             
-            <h4 class="date">2020-08-03</h4>
+            <h4 class="date">2021-10-05</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/rudeboybert/fivethirtyeight/blob/master/vignettes/fivethirtyeight.Rmd"><code>vignettes/fivethirtyeight.Rmd</code></a></small>
       <div class="hidden name"><code>fivethirtyeight.Rmd</code></div>
@@ -120,11 +120,13 @@
 ## [17] "senators"                   "spi_matches"               
 ## [19] "twitter_presidents"</code></pre>
 <p>These 19 datasets are included in the <code>fivethirtyeightdata</code> add-on package<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, which you can install by running:</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">'fivethirtyeightdata'</span>, <span class="kw">repos</span> <span class="kw">=</span> <span class="st">'https://fivethirtyeightdata.github.io/drat/'</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">'source'</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'fivethirtyeightdata'</span>, repos <span class="op">=</span> <span class="st">'https://fivethirtyeightdata.github.io/drat/'</span>, type <span class="op">=</span> <span class="st">'source'</span><span class="op">)</span></code></pre></div>
 <p>So for example, to load the <code>senators</code> dataset, run:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeight</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeightdata</span>)
-<span class="no">senators</span></pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rudeboybert/fivethirtyeight">fivethirtyeight</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fivethirtyeightdata</span><span class="op">)</span>
+<span class="va">senators</span></code></pre></div>
 </div>
 <div id="all-datasets" class="section level2">
 <h2 class="hasAnchor">
@@ -154,6 +156,28 @@
 <th align="left">Filed Under</th>
 </tr></thead>
 <tbody>
+<tr class="odd">
+<td align="left"><code>US_births_1994_2003</code></td>
+<td align="left"></td>
+<td align="left">Some People Are Too Superstitious To Have A Baby On Friday The 13th</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a></td>
+<td align="left">Carl Bialik</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016-05-13</td>
+<td align="left">Parenting</td>
+</tr>
+<tr class="even">
+<td align="left"><code>US_births_2000_2014</code></td>
+<td align="left"></td>
+<td align="left">Some People Are Too Superstitious To Have A Baby On Friday The 13th</td>
+<td align="left"><a href="http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a></td>
+<td align="left">Carl Bialik</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016-05-13</td>
+<td align="left">Parenting</td>
+</tr>
 <tr class="odd">
 <td align="left"><code>ahca_polls</code></td>
 <td align="left"></td>
@@ -1728,28 +1752,6 @@
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><code>US_births_1994_2003</code></td>
-<td align="left"></td>
-<td align="left">Some People Are Too Superstitious To Have A Baby On Friday The 13th</td>
-<td align="left"><a href="http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a></td>
-<td align="left">Carl Bialik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">2016-05-13</td>
-<td align="left">Parenting</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>US_births_2000_2014</code></td>
-<td align="left"></td>
-<td align="left">Some People Are Too Superstitious To Have A Baby On Friday The 13th</td>
-<td align="left"><a href="http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/" class="uri">http://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/</a></td>
-<td align="left">Carl Bialik</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">2016-05-13</td>
-<td align="left">Parenting</td>
-</tr>
-<tr class="even">
 <td align="left"><code>weather_check</code></td>
 <td align="left"></td>
 <td align="left">Where People Go To Check The Weather</td>
@@ -1884,7 +1886,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

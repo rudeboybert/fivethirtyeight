@@ -74,7 +74,7 @@ https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1.9000</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@ https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -114,7 +114,7 @@ https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -142,12 +142,12 @@ https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that
 <a href='https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/'>https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/</a>.</p>
     </div>
 
-    <pre class="usage"><span class='no'>airline_safety</span></pre>
+    <pre class="usage"><span class='va'>airline_safety</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 56 rows representing airlines and 9 variables:</p><dl'>
+    <p>A data frame with 56 rows representing airlines and 9 variables:</p><dl>
   <dt>airline</dt><dd><p>airline</p></dd>
   <dt>incl_reg_subsidiaries</dt><dd><p>indicates that regional subsidiaries are included</p></dd>
   <dt>avail_seat_km_per_week</dt><dd><p>available seat kilometers flown every week</p></dd>
@@ -166,17 +166,18 @@ https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyr</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>stringr</span>)
-<span class='no'>airline_safety_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>airline_safety</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span>(-<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>airline</span>, <span class='no'>incl_reg_subsidiaries</span>, <span class='no'>avail_seat_km_per_week</span>),
-    <span class='kw'>names_to</span> <span class='kw'>=</span> <span class='st'>"type"</span>, <span class='kw'>values_to</span> <span class='kw'>=</span> <span class='st'>"count"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_sub.html'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>start</span><span class='kw'>=</span>-<span class='fl'>5</span>),
-    <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span>(<span class='no'>period</span>, <span class='st'>"_"</span>, <span class='st'>"-"</span>),
-    <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_sub.html'>str_sub</a></span>(<span class='no'>type</span>, <span class='kw'>end</span><span class='kw'>=</span>-<span class='fl'>7</span>)
-  )</div></pre>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyr.tidyverse.org'>tidyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://stringr.tidyverse.org'>stringr</a></span><span class='op'>)</span>
+<span class='va'>airline_safety_tidy</span> <span class='op'>&lt;-</span> <span class='va'>airline_safety</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>airline</span>, <span class='va'>incl_reg_subsidiaries</span>, <span class='va'>avail_seat_km_per_week</span><span class='op'>)</span>, 
+    names_to <span class='op'>=</span> <span class='st'>"type"</span>, values_to <span class='op'>=</span> <span class='st'>"count"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>
+    period <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_sub.html'>str_sub</a></span><span class='op'>(</span><span class='va'>type</span>, start<span class='op'>=</span><span class='op'>-</span><span class='fl'>5</span><span class='op'>)</span>,
+    period <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='va'>period</span>, <span class='st'>"_"</span>, <span class='st'>"-"</span><span class='op'>)</span>,
+    type <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_sub.html'>str_sub</a></span><span class='op'>(</span><span class='va'>type</span>, end<span class='op'>=</span><span class='op'>-</span><span class='fl'>7</span><span class='op'>)</span>
+  <span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -192,7 +193,7 @@ https://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -34,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1.9000</span>
       </span>
     </div>
 
@@ -42,7 +42,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -74,7 +74,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -100,24 +100,27 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Get the latest released version from CRAN:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"fivethirtyeight"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"fivethirtyeight"</span><span class="op">)</span></code></pre></div>
 <p>Or the development version from GitHub:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># If you haven't installed the remotes package yet, do so:</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># If you haven't installed the remotes package yet, do so:</span>
 <span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"rudeboybert/fivethirtyeight"</span>, <span class="kw">build_vignettes</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"rudeboybert/fivethirtyeight"</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>All data in the <code>fivethirtyeight</code> package are lazy-loaded, so you can access any dataset without running <code><a href="https://rdrr.io/r/utils/data.html">data()</a></code>:</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeight</span>)
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rudeboybert/fivethirtyeight">fivethirtyeight</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">bechdel</span>)
-?<span class="no">bechdel</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">bechdel</span><span class="op">)</span>
+<span class="op">?</span><span class="va">bechdel</span>
 
 <span class="co"># If using RStudio:</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span>(<span class="no">bechdel</span>)</pre></div>
-<p>To see a detailed list of all 128 datasets, including information on the corresponding articles published on FiveThirtyEight.com, click <a href="https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html">here</a>.</p>
+<span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">bechdel</span><span class="op">)</span></code></pre></div>
+<p>To see a detailed list of all 128 datasets, including information on the corresponding articles published on FiveThirtyEight.com, click <a href="https://fivethirtyeight-r.netlify.app/articles/fivethirtyeight.html">here</a>.</p>
 </div>
 <div id="add-on-package" class="section level2">
 <h2 class="hasAnchor">
@@ -134,11 +137,13 @@
 <span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; [17] "senators"                   "spi_matches"               </span></span>
 <span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt; [19] "twitter_presidents"</span></span></code></pre></div>
 <p>These 19 datasets are included in the <code>fivethirtyeightdata</code> add-on package, which you can install by running:</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">'fivethirtyeightdata'</span>, <span class="kw">repos</span> <span class="kw">=</span> <span class="st">'https://fivethirtyeightdata.github.io/drat/'</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">'source'</span>)</pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'fivethirtyeightdata'</span>, repos <span class="op">=</span> <span class="st">'https://fivethirtyeightdata.github.io/drat/'</span>, type <span class="op">=</span> <span class="st">'source'</span><span class="op">)</span></code></pre></div>
 <p>So for example, to load the <code>senators</code> dataset, run:</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeight</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">fivethirtyeightdata</span>)
-<span class="no">senators</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rudeboybert/fivethirtyeight">fivethirtyeight</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fivethirtyeightdata</span><span class="op">)</span>
+<span class="va">senators</span></code></pre></div>
 </div>
 <div id="article-in-technology-innovations-in-statistics-education" class="section level2">
 <h2 class="hasAnchor">
@@ -150,7 +155,8 @@
 <h2 class="hasAnchor">
 <a href="#data-analysis-examples-in-vignettes" class="anchor"></a>Data Analysis Examples in Vignettes</h2>
 <p>For some data sets, there are user-contributed example analyses in the form a package vignette. For example, look at <a href="https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bechdel.html">“Bechdel analysis using the <code>tidyverse</code>”</a> based on the <code>bechdel</code> dataset used in the article <a href="https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women">The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women</a>. For a complete list of vignettes run</p>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"user_contributed_vignettes"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"fivethirtyeightdata"</span>)</pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"user_contributed_vignettes"</span>, package <span class="op">=</span> <span class="st">"fivethirtyeightdata"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="more-information" class="section level2">
 <h2 class="hasAnchor">
@@ -231,7 +237,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

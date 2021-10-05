@@ -75,7 +75,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1.9000</span>
       </span>
     </div>
 
@@ -83,7 +83,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -115,7 +115,7 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -144,12 +144,12 @@ Analysis of the submitted solutions can be found at: https://fivethirtyeight.com
 Analysis of the submitted solutions can be found at: <a href='https://fivethirtyeight.com/features/can-you-save-the-drowning-swimmer/'>https://fivethirtyeight.com/features/can-you-save-the-drowning-swimmer/</a></p>
     </div>
 
-    <pre class="usage"><span class='no'>riddler_castles</span></pre>
+    <pre class="usage"><span class='va'>riddler_castles</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 1387 rows representing submissions and 11 variables:</p><dl'>
+    <p>A data frame with 1387 rows representing submissions and 11 variables:</p><dl>
   <dt>castle1</dt><dd><p>Number of troops out of 100 send to castle 1</p></dd>
   <dt>castle2</dt><dd><p>Number of troops out of 100 send to castle 2</p></dd>
   <dt>castle3</dt><dd><p>Number of troops out of 100 send to castle 3</p></dd>
@@ -173,12 +173,13 @@ Analysis of the submitted solutions can be found at: <a href='https://fivethirty
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyr</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>stringr</span>)
-<span class='no'>riddler_castles_tidy</span><span class='kw'>&lt;-</span><span class='no'>riddler_castles</span> <span class='kw'>%&gt;%</span>
-   <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span>(<span class='no'>castle1</span>:<span class='no'>castle10</span>, <span class='kw'>names_to</span> <span class='kw'>=</span> <span class='st'>"castle"</span> , <span class='kw'>values_to</span> <span class='kw'>=</span> <span class='st'>"soldiers"</span>) <span class='kw'>%&gt;%</span>
-   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>castle</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span>(<span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace</a></span>(<span class='no'>castle</span>, <span class='st'>"castle"</span>,<span class='st'>""</span>)))</div></pre>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyr.tidyverse.org'>tidyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://stringr.tidyverse.org'>stringr</a></span><span class='op'>)</span>
+<span class='va'>riddler_castles_tidy</span><span class='op'>&lt;-</span><span class='va'>riddler_castles</span> <span class='op'>%&gt;%</span>
+   <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span><span class='va'>castle1</span><span class='op'>:</span><span class='va'>castle10</span>, names_to <span class='op'>=</span> <span class='st'>"castle"</span> , values_to <span class='op'>=</span> <span class='st'>"soldiers"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>castle <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace</a></span><span class='op'>(</span><span class='va'>castle</span>, <span class='st'>"castle"</span>,<span class='st'>""</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -194,7 +195,7 @@ Analysis of the submitted solutions can be found at: <a href='https://fivethirty
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

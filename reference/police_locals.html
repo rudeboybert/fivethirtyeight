@@ -74,7 +74,7 @@ https://fivethirtyeight.com/features/most-police-dont-live-in-the-cities-they-se
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1.9000</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@ https://fivethirtyeight.com/features/most-police-dont-live-in-the-cities-they-se
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -114,7 +114,7 @@ https://fivethirtyeight.com/features/most-police-dont-live-in-the-cities-they-se
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -142,12 +142,12 @@ https://fivethirtyeight.com/features/most-police-dont-live-in-the-cities-they-se
 <a href='https://fivethirtyeight.com/features/most-police-dont-live-in-the-cities-they-serve/'>https://fivethirtyeight.com/features/most-police-dont-live-in-the-cities-they-serve/</a>.</p>
     </div>
 
-    <pre class="usage"><span class='no'>police_locals</span></pre>
+    <pre class="usage"><span class='va'>police_locals</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 75 rows representing cities and 8 variables:</p><dl'>
+    <p>A data frame with 75 rows representing cities and 8 variables:</p><dl>
   <dt>city</dt><dd><p>U.S. city</p></dd>
   <dt>force_size</dt><dd><p>Number of police officers serving that city</p></dd>
   <dt>all</dt><dd><p>Percentage of the total police force that lives in the city</p></dd>
@@ -175,10 +175,11 @@ https://fivethirtyeight.com/features/most-police-dont-live-in-the-cities-they-se
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyr</span>)
-<span class='no'>police_locals_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>police_locals</span> <span class='kw'>%&gt;%</span>
-   <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span>(<span class='no'>all</span>:<span class='no'>asian</span>, <span class='kw'>names_to</span> <span class='kw'>=</span> <span class='st'>"race"</span>, <span class='kw'>values_to</span> <span class='kw'>=</span> <span class='st'>"perc_in"</span>)</div></pre>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyr.tidyverse.org'>tidyr</a></span><span class='op'>)</span>
+<span class='va'>police_locals_tidy</span> <span class='op'>&lt;-</span> <span class='va'>police_locals</span> <span class='op'>%&gt;%</span>
+   <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span><span class='va'>all</span><span class='op'>:</span><span class='va'>asian</span>, names_to <span class='op'>=</span> <span class='st'>"race"</span>, values_to <span class='op'>=</span> <span class='st'>"perc_in"</span><span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -194,7 +195,7 @@ https://fivethirtyeight.com/features/most-police-dont-live-in-the-cities-they-se
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

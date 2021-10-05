@@ -74,7 +74,7 @@ https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically: 
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1.9000</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@ https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically: 
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -114,7 +114,7 @@ https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically: 
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -142,12 +142,12 @@ https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically: 
 <a href='https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically'>https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically</a>: SurveyMonkey Data.</p>
     </div>
 
-    <pre class="usage"><span class='no'>nfl_fandom_surveymonkey</span></pre>
+    <pre class="usage"><span class='va'>nfl_fandom_surveymonkey</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>a data frame with 33 rows representing teams and 25 variables:</p><dl'>
+    <p>a data frame with 33 rows representing teams and 25 variables:</p><dl>
 <dt>team</dt><dd><p>NFL team</p></dd>
 <dt>total_respondents</dt><dd><p>Total number of poll respondents who ranked the given team in their top 3 favorites</p></dd>
 <dt>asian_dem</dt><dd><p>Number of Asian, democrat poll respondents who ranked the given team in their top 3 favorites</p></dd>
@@ -178,20 +178,21 @@ https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically: 
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>See <a href='https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv'>https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv</a></p>
+    <p>See <a href='https://github.com/fivethirtyeight/data/blob/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv'>https://github.com/fivethirtyeight/data/blob/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv</a></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='nfl_fandom_google.html'>nfl_fandom_google</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># To convert data frame to tidy data (long) format, run:</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyr</span>)
-<span class='no'>nfl_fandom_surveymonkey_tidy</span> <span class='kw'>&lt;-</span> <span class='no'>nfl_fandom_surveymonkey</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span>(-<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"team"</span>, <span class='st'>"total_respondents"</span>, <span class='st'>"gop_percent"</span>, <span class='st'>"dem_percent"</span>,
-            <span class='st'>"ind_percent"</span>, <span class='st'>"white_percent"</span>, <span class='st'>"nonwhite_percent"</span>),
-            <span class='kw'>names_to</span> <span class='kw'>=</span> <span class='st'>"race_party"</span>, <span class='kw'>values_to</span> <span class='kw'>=</span> <span class='st'>"percent"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span>(<span class='no'>team</span>)</div></pre>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyr.tidyverse.org'>tidyr</a></span><span class='op'>)</span>
+<span class='va'>nfl_fandom_surveymonkey_tidy</span> <span class='op'>&lt;-</span> <span class='va'>nfl_fandom_surveymonkey</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"team"</span>, <span class='st'>"total_respondents"</span>, <span class='st'>"gop_percent"</span>, <span class='st'>"dem_percent"</span>,
+            <span class='st'>"ind_percent"</span>, <span class='st'>"white_percent"</span>, <span class='st'>"nonwhite_percent"</span><span class='op'>)</span>,
+            names_to <span class='op'>=</span> <span class='st'>"race_party"</span>, values_to <span class='op'>=</span> <span class='st'>"percent"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='va'>team</span><span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -207,7 +208,7 @@ https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically: 
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

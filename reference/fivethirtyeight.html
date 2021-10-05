@@ -40,11 +40,11 @@
 
 
 <meta property="og:title" content="fivethirtyeight: Data and Code Behind the Stories and Interactives at 'FiveThirtyEight' — fivethirtyeight" />
-<meta property="og:description" content="An R package that provides access to the code and data sets
-published by FiveThirtyEight https://github.com/fivethirtyeight/data. Note
-that while we received guidance from editors at 538, this package is not
-officially published by 538. Contribute to this package at
-https://github.com/rudeboybert/fivethirtyeight." />
+<meta property="og:description" content="An R package that provides access to the code and data sets published by
+FiveThirtyEight https://github.com/fivethirtyeight/data. Note that
+while we received guidance from editors at 538, this package is not
+officially published by 538. You can explore all datasets here:
+https://fivethirtyeight-r.netlify.app/articles/fivethirtyeight.html" />
 
 
 
@@ -76,7 +76,7 @@ https://github.com/rudeboybert/fivethirtyeight." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fivethirtyeight</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.1.9000</span>
       </span>
     </div>
 
@@ -84,7 +84,7 @@ https://github.com/rudeboybert/fivethirtyeight." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -116,7 +116,7 @@ https://github.com/rudeboybert/fivethirtyeight." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rudeboybert/fivethirtyeight/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -139,11 +139,11 @@ https://github.com/rudeboybert/fivethirtyeight." />
     </div>
 
     <div class="ref-description">
-    <p>An R package that provides access to the code and data sets
-published by FiveThirtyEight <a href='https://github.com/fivethirtyeight/data'>https://github.com/fivethirtyeight/data</a>. Note
-that while we received guidance from editors at 538, this package is not
-officially published by 538. Contribute to this package at
-<a href='https://github.com/rudeboybert/fivethirtyeight'>https://github.com/rudeboybert/fivethirtyeight</a>.</p>
+    <p>An R package that provides access to the code and data sets published by
+FiveThirtyEight <a href='https://github.com/fivethirtyeight/data'>https://github.com/fivethirtyeight/data</a>. Note that
+while we received guidance from editors at 538, this package is not
+officially published by 538. You can explore all datasets here:
+<a href='https://fivethirtyeight-r.netlify.app/articles/fivethirtyeight.html'>https://fivethirtyeight-r.netlify.app/articles/fivethirtyeight.html</a></p>
     </div>
 
 
@@ -151,31 +151,25 @@ officially published by 538. Contribute to this package at
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Example usage:</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>fivethirtyeight</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>bechdel</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 6 x 15</span><span>
-#&gt;    year imdb  title test  clean_test binary budget domgross intgross code 
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;ord&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>013 tt17… 21 &amp;… nota… notalk     FAIL   1.30</span><span style='color: #555555;'>e</span><span>7 25</span><span style='text-decoration: underline;'>682</span><span>380   4.22</span><span style='color: #555555;'>e</span><span>7 2013…
-#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>012 tt13… Dred… ok-d… ok         PASS   4.50</span><span style='color: #555555;'>e</span><span>7 13</span><span style='text-decoration: underline;'>414</span><span>714   4.09</span><span style='color: #555555;'>e</span><span>7 2012…
-#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>013 tt20… 12 Y… nota… notalk     FAIL   2.00</span><span style='color: #555555;'>e</span><span>7 53</span><span style='text-decoration: underline;'>107</span><span>035   1.59</span><span style='color: #555555;'>e</span><span>8 2013…
-#&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>013 tt12… 2 Gu… nota… notalk     FAIL   6.10</span><span style='color: #555555;'>e</span><span>7 75</span><span style='text-decoration: underline;'>612</span><span>460   1.32</span><span style='color: #555555;'>e</span><span>8 2013…
-#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>013 tt04… 42    men   men        FAIL   4.00</span><span style='color: #555555;'>e</span><span>7 95</span><span style='text-decoration: underline;'>020</span><span>213   9.50</span><span style='color: #555555;'>e</span><span>7 2013…
-#&gt; </span><span style='color: #555555;'>6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>013 tt13… 47 R… men   men        FAIL   2.25</span><span style='color: #555555;'>e</span><span>8 38</span><span style='text-decoration: underline;'>362</span><span>475   1.46</span><span style='color: #555555;'>e</span><span>8 2013…
-#&gt; </span><span style='color: #555555;'># … with 5 more variables: budget_2013 </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, domgross_2013 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   intgross_2013 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, period_code </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, decade_code </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span></div><div class='input'>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/rudeboybert/fivethirtyeight'>fivethirtyeight</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>bechdel</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 6 × 15</span>
+#&gt;    year imdb      title  test   clean_test binary budget domgross intgross code 
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;ord&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>
+#&gt; <span style='color: #BCBCBC;'>1</span>  <span style='text-decoration: underline;'>2</span>013 tt1711425 21 &amp; … notalk notalk     FAIL   1.3 <span style='color: #949494;'>e</span>7 25<span style='text-decoration: underline;'>682</span>380   4.22<span style='color: #949494;'>e</span>7 2013…
+#&gt; <span style='color: #BCBCBC;'>2</span>  <span style='text-decoration: underline;'>2</span>012 tt1343727 Dredd… ok-di… ok         PASS   4.5 <span style='color: #949494;'>e</span>7 13<span style='text-decoration: underline;'>414</span>714   4.09<span style='color: #949494;'>e</span>7 2012…
+#&gt; <span style='color: #BCBCBC;'>3</span>  <span style='text-decoration: underline;'>2</span>013 tt2024544 12 Ye… notal… notalk     FAIL   2   <span style='color: #949494;'>e</span>7 53<span style='text-decoration: underline;'>107</span>035   1.59<span style='color: #949494;'>e</span>8 2013…
+#&gt; <span style='color: #BCBCBC;'>4</span>  <span style='text-decoration: underline;'>2</span>013 tt1272878 2 Guns notalk notalk     FAIL   6.1 <span style='color: #949494;'>e</span>7 75<span style='text-decoration: underline;'>612</span>460   1.32<span style='color: #949494;'>e</span>8 2013…
+#&gt; <span style='color: #BCBCBC;'>5</span>  <span style='text-decoration: underline;'>2</span>013 tt0453562 42     men    men        FAIL   4   <span style='color: #949494;'>e</span>7 95<span style='text-decoration: underline;'>020</span>213   9.50<span style='color: #949494;'>e</span>7 2013…
+#&gt; <span style='color: #BCBCBC;'>6</span>  <span style='text-decoration: underline;'>2</span>013 tt1335975 47 Ro… men    men        FAIL   2.25<span style='color: #949494;'>e</span>8 38<span style='text-decoration: underline;'>362</span>475   1.46<span style='color: #949494;'>e</span>8 2013…
+#&gt; <span style='color: #949494;'># … with 5 more variables: budget_2013 &lt;int&gt;, domgross_2013 &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   intgross_2013 &lt;dbl&gt;, period_code &lt;int&gt;, decade_code &lt;int&gt;</span></div><div class='input'>
 <span class='co'># All information about any data set can be found in the help file:</span>
-?<span class='no'>bechdel</span>
+<span class='op'>?</span><span class='va'>bechdel</span>
 
 <span class='co'># To view a list of all data sets:</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"fivethirtyeight"</span>)
-
-<span class='co'># To view a detailed list of all data sets:</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/vignette.html'>vignette</a></span>(<span class='st'>"fivethirtyeight"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"fivethirtyeight"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: vignette ‘fivethirtyeight’ not found</span></div><div class='input'>
-<span class='co'># Some data sets include vignettes with an example analysis </span>
-<span class='co'># (these are in the fivethirtyeightdata package):</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/vignette.html'>vignette</a></span>(<span class='st'>"bechdel"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"fivethirtyeightdata"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: vignette ‘bechdel’ not found</span></div><div class='input'>
-<span class='co'># To browse all vignettes (these are in the fivethirtyeightdata package):</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/browseVignettes.html'>browseVignettes</a></span>(<span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"fivethirtyeightdata"</span>)</div><div class='output co'>#&gt; <span class='message'>No vignettes found by browseVignettes(package = "fivethirtyeightdata")</span></div></span></pre>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span>package <span class='op'>=</span> <span class='st'>"fivethirtyeight"</span><span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -191,7 +185,7 @@ officially published by 538. Contribute to this package at
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
