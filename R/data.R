@@ -1122,7 +1122,7 @@
 #'   \item{no_1_player}{Best player according to combo of actual PA/IP and talent}
 #'   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent}
 #' }
-#' @source \url{https://baseball-reference.com/} , \url{http://chadwick-bureau.com}, Fangraphs
+#' @source \url{https://www.baseball-reference.com/} , \url{http://chadwick-bureau.com}, Fangraphs
 "mlb_as_team_talent"
 
 #' The Best MLB All-Star Teams Ever
@@ -1149,7 +1149,7 @@
 #'   \item{pitper9innasg}{Expected pitching runs added above average (from talent) based on IP in ASG, scaled to a 9-inning game}
 #'   \item{totper9innasg}{Expected runs added above average (from talent) based on PA/IP in ASG, scaled to a 9-inning game}
 #' }
-#' @source \url{https://baseball-reference.com/} , \url{http://chadwick-bureau.com}, Fangraphs
+#' @source \url{https://www.baseball-reference.com/} , \url{http://chadwick-bureau.com}, Fangraphs
 "mlb_as_play_talent"
 
 #' A Handful Of Cities Are Driving 2016's Rise In Murder
