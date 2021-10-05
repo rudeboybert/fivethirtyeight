@@ -115,7 +115,7 @@ balance being:
 1. Easily and quickly accessible to novices, so that we [minimize the prerequisites to research](https://arxiv.org/abs/1507.05346). 
 
 It has been our experience that many data sets that exist in R packages, such as the 
- [`nycflights13`](https://github.com/hadley/nycflights13), 
+ [`nycflights13`](https://github.com/tidyverse/nycflights13), 
 [`babynames`](https://github.com/hadley/babynames), and [`gapminder`](https://github.com/jennybc/gapminder)
 packages, are of great pedagogical value as they:
 
