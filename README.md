@@ -5,10 +5,7 @@
 
 <!-- badges: start -->
 
-[![Build
-Status](https://travis-ci.org/rudeboybert/fivethirtyeight.svg?branch=master)](https://travis-ci.org/rudeboybert/fivethirtyeight)
-[![R build
-status](https://github.com/rudeboybert/fivethirtyeight/workflows/R-CMD-check/badge.svg)](https://github.com/rudeboybert/fivethirtyeight/actions)
+[![R-CMD-check](https://github.com/rudeboybert/fivethirtyeight/workflows/R-CMD-check/badge.svg)](https://github.com/rudeboybert/fivethirtyeight/actions)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fivethirtyeight)](https://cran.r-project.org/package=fivethirtyeight)
@@ -54,7 +51,7 @@ View(bechdel)
 
 To see a detailed list of all 128 datasets, including information on the
 corresponding articles published on FiveThirtyEight.com, click
-[here](https://fivethirtyeight-r.netlify.app/articles/fivethirtyeight.html).
+[here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
 
 ## Add-on Package
 
@@ -73,8 +70,7 @@ There are also 19 datasets that could not be included in
     #> [19] "twitter_presidents"
 
 These 19 datasets are included in the `fivethirtyeightdata` add-on
-package, which you can install by
-running:
+package, which you can install by running:
 
 ``` r
 install.packages('fivethirtyeightdata', repos = 'https://fivethirtyeightdata.github.io/drat/', type = 'source')
