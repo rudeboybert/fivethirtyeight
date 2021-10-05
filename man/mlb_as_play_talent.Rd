@@ -25,7 +25,7 @@ A data frame with 3930 rows representing Major League Baseball players in given 
 }
 }
 \source{
-\url{https://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
+\url{https://www.baseball-reference.com/} , \url{http://chadwick-bureau.com}, Fangraphs
 }
 \usage{
 mlb_as_play_talent
