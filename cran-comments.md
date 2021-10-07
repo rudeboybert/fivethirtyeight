@@ -1,3 +1,26 @@
+## Resubmission
+
+This is a resubmission to address the following comments:
+
+Found the following (possibly) invalid URLs:
+
+     URL: https://bit.ly/2uD3ls6 (moved to
+https://raw.githubusercontent.com/rudeboybert/fivethirtyeight/master/data-raw/bechdel/movies.csv)
+       From: inst/doc/tame.html
+       Status: 301
+       Message: Moved Permanently
+     URL: https://bit.ly/2vg8gTf (moved to
+https://raw.githubusercontent.com/fivethirtyeight/data/master/flying-etiquette-survey/flying-etiquette.csv)
+       From: inst/doc/tame.html
+       Status: 301
+       Message: Moved Permanently
+     URL: https://bit.ly/2vgRFiw (moved to
+https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_1994-2003_CDC_NCHS.csv)
+       From: inst/doc/tame.html
+       Status: 301
+       Message: Moved Permanently
+
+
 ## Test environments
 
 * local macOS install, R 4.1.0
