@@ -1,3 +1,24 @@
+#' Master list of all datasets
+#'
+#' All datasets included in both fivethirtyeight and fivethirtyeightdata
+#' packages
+#'
+#' @format A data frame with 9 variables:
+#' \describe{
+#'   \item{Data Frame Name}{Name of lazy-loaded data frame}
+#'   \item{In fivethirtyeightdata?}{Whether the (large) dataset is in the fivethirtyeightdata package}
+#'   \item{Article Title}{Title as it appears on FiveThirtyEight.com}
+#'   \item{URL}{Link to article on FiveThirtyEight.com}
+#'   \item{Author 1}{Main author}
+#'   \item{Author 2}{Second author (if any)}
+#'   \item{Author 3}{Third author (if any)}
+#'   \item{Date}{Date published}
+#'   \item{Filed Under}{Tag for article}
+#' }
+"datasets_master"
+
+
+
 # Datasets documented by Albert Y. Kim
 
 #' Should Travelers Avoid Flying Airlines That Have Had Crashes in the Past?
@@ -98,7 +119,7 @@
 #' @format A data frame with 1794 rows representing movies and 15 variables:
 #' \describe{
 #'   \item{year}{Year of release}
-#'   \item{imdb}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
+#'   \item{imdb}{Text to construct IMDB url. Ex: https://www.imdb.com/title/tt1711425}
 #'   \item{title}{Movie test}
 #'   \item{test}{bechdel test result (detailed, with discrepancies indicated)}
 #'   \item{clean_test}{bechdel test result (detailed): \code{ok} = passes test, \code{dubious}, \code{men} = women only talk about men, \code{notalk} = women don't talk to each other, \code{nowomen} = fewer than two women }
@@ -118,7 +139,7 @@
 #' A vignette of an analysis of this dataset using the \code{tidyverse} can be found on \href{https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bechdel.html}{CRAN} or by running:
 #' \code{vignette("bechdel", package = "fivethirtyeightdata")}
 #'
-#' @source \url{http://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
+#' @source \url{https://bechdeltest.com/} and \url{https://www.the-numbers.com/}. The original data can be found at \url{https://github.com/fivethirtyeight/data/tree/master/bechdel}.
 "bechdel"
 
 #' Dear Mona Followup: Where Do People Drink The Most Beer, Wine And Spirits?
@@ -160,7 +181,7 @@
 #' @format A data frame with 761 rows representing movies and 14 variables:
 #' \describe{
 #'   \item{title}{Title of the film.}
-#'   \item{site}{Text to construct IMDB url. Ex: \url{https://www.imdb.com/title/tt1711425}}
+#'   \item{site}{Text to construct IMDB url. Ex: https://www.imdb.com/title/tt1711425}
 #'   \item{country}{Country of origin.}
 #'   \item{year_release}{Year of release.}
 #'   \item{box_office}{Gross earnings at U.S. box office.}
@@ -993,7 +1014,7 @@
 #'   \item{line}{Lyrics}
 #'   \item{url}{Genius link}
 #' }
-#' @source Genius \url{https://genius.com/}
+#' @source Genius https://genius.com/
 "hiphop_cand_lyrics"
 
 #' The NCAA Bracket: Checking Our Work
@@ -1032,7 +1053,7 @@
 #'   \item{high_emp}{}
 #'   \item{low_emp}{}
 #' }
-#' @source Bureau of Labor Statistics \url{https://www.bls.gov/oes/current/oes254021.htm#(1)}
+#' @source Bureau of Labor Statistics
 "librarians"
 
 #' "Mad Men" Is Ending. What's Next For The Cast?
@@ -1101,7 +1122,7 @@
 #'   \item{no_1_player}{Best player according to combo of actual PA/IP and talent}
 #'   \item{no_2_player}{2nd-best player according to combo of actual PA/IP and talent}
 #' }
-#' @source \url{http://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
+#' @source \url{https://www.baseball-reference.com/} , \url{http://chadwick-bureau.com}, Fangraphs
 "mlb_as_team_talent"
 
 #' The Best MLB All-Star Teams Ever
@@ -1128,7 +1149,7 @@
 #'   \item{pitper9innasg}{Expected pitching runs added above average (from talent) based on IP in ASG, scaled to a 9-inning game}
 #'   \item{totper9innasg}{Expected runs added above average (from talent) based on PA/IP in ASG, scaled to a 9-inning game}
 #' }
-#' @source \url{https://baseball-reference.com} , \url{http://chadwick-bureau.com}, Fangraphs
+#' @source \url{https://www.baseball-reference.com/} , \url{http://chadwick-bureau.com}, Fangraphs
 "mlb_as_play_talent"
 
 #' A Handful Of Cities Are Driving 2016's Rise In Murder
@@ -1230,7 +1251,7 @@
 #'   \item{uniform}{Uniform - Stylishness of uniform design, according to Uni Watch's Paul Lukas}
 #'   \item{big_market}{Big Market - Size of market in terms of population, where bigger is better}
 #' }
-#' @source \url{https://www.espn.com/sportsnation/teamrankings}, \url{https://www.allourideas.org/nflteampickingsample}
+#' @source \url{https://www.allourideas.org/nflteampickingsample}
 "nfl_fav_team"
 
 #' The NFL's Uneven History Of Punishing Domestic Violence
@@ -1318,7 +1339,7 @@
 #'
 #' The raw data behind the story
 #' "You Can't Trust What You Read About Nutrition"
-#' \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}.
+#' \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/}.
 #'
 #' @format A data frame with 27716 rows representing Regression fits for p-hacking and 3 variables:
 #' \describe{
@@ -1326,7 +1347,7 @@
 #'   \item{characteristic}{Name of characteristic (predictor/independent variable)}
 #'   \item{p_values}{P-value from regression fit}
 #' }
-#' @source See \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition}
+#' @source See \url{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/}
 "nutrition_pvalues"
 
 #' The Dallas Shooting Was Among The Deadliest For Police In U.S. History
@@ -1352,7 +1373,7 @@
 #'
 #' The raw data behind the story
 #' "Where Police Have Killed Americans In 2015"
-#' \url{https://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015}.
+#' \url{https://fivethirtyeight.com/features/where-police-have-killed-americans-in-2015/}.
 #'
 #' @format A data frame with 467 rows representing People who died from interactions with police and 34 variables:
 #' \describe{
@@ -1852,7 +1873,7 @@
 #'   \item{pres_or_congress}{President or congress that issued action}
 #'   \item{acres_affected}{Acres affected by action. Note that total current acreage is not included. National monuments that cover ocean are listed in square miles.}
 #' }
-#' @source National Parks Conservation Association \url{https://www.npca.org/} and National Parks Service Archeology Program \url{https://www.nps.gov/history/archeology/sites/antiquities/MonumentsList.htm}
+#' @source National Parks Conservation Association \url{https://www.npca.org/} and National Parks Service Archeology Program https://www.nps.gov/history/archeology/sites/antiquities/MonumentsList.htm
 "antiquities_act"
 
 #' For A Trump Nominee, Neil Gorsuch’s Record Is Surprisingly Moderate On Immigration
@@ -1889,7 +1910,7 @@
 #'
 #' The raw data behind the story
 #' "Why The GOP Is So Hell-Bent On Passing An Unpopular Health Care Bill"
-#' \url{https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill}.
+#' \url{https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill/}.
 #'
 #' @format A data frame with 15 rows representing polls and 7 variables:
 #' \describe{
@@ -2071,7 +2092,7 @@
 #' The raw data behind the stories "Club Soccer Predictions"
 #' \url{https://projects.fivethirtyeight.com/soccer-predictions/} and
 #' "Global Club Soccer Rankings"
-#' \url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
+#' \url{https://projects.fivethirtyeight.com/soccer-predictions/global-club-rankings/}.
 #'
 #' @format A data frame with 453 rows representing soccer rankings and 7 variables:
 #' \describe{
@@ -2095,7 +2116,7 @@
 #'
 #' The raw data behind the story
 #' "How Every NFL Team’s Fans Lean Politically"
-#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: Google Trends Data.
+#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically/}: Google Trends Data.
 #'
 #' @format a data frame with 207 rows representing designated market areas and 9 variables:
 #' \describe{
@@ -2108,7 +2129,7 @@
 #' \item{cfb}{The percentage of search traffic in the region related to the CFB over the past 5 years}
 #' \item{trump_2016_vote}{The percentage of voters in the region who voted for Trump in the 2016 Presidential Election}
 #' }
-#' @source Google Trends \url{https://trends.google.com/}.
+#' @source Google Trends \url{https://trends.google.com/trends/}.
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(dplyr)
@@ -2124,7 +2145,7 @@
 #'
 #' The raw data behind the story
 #' "How Every NFL Team’s Fans Lean Politically"
-#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: SurveyMonkey Data.
+#' \url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically/}: SurveyMonkey Data.
 #'
 #' @format a data frame with 33 rows representing teams and 25 variables:
 #' \describe{
@@ -2154,7 +2175,7 @@
 #' \item{white_percent}{Percent of fans who are White}
 #' \item{nonwhite_percent}{Percent of fans who are not White}
 #' }
-#' @source See \url{https://github.com/fivethirtyeight/data/tree/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}
+#' @source See \url{https://github.com/fivethirtyeight/data/blob/master/nfl-fandom/NFL_fandom_data-surveymonkey.csv}
 #' @examples
 #' # To convert data frame to tidy data (long) format, run:
 #' library(dplyr)
@@ -2286,7 +2307,7 @@
 #' \item{jose}{The percent of sentences in TV news that mention Hurricane Irma}
 #' }
 #' @source Internet TV News Archive \url{https://archive.org/details/tv} and
-#' Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtsearch/iatv_ftxtsearch}
+#' Television Explorer
 #' @seealso \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}},
 #' \code{\link{mediacloud_online_news}}, \code{\link{mediacloud_trump}},
 #' \code{\link{tv_hurricanes_by_network}}, \code{\link{tv_states}}, \code{\link{google_trends}}
@@ -2309,7 +2330,7 @@
 #' \item{msnbc}{The percent of sentences on MSNBC News that mention the hurricane in question}
 #' }
 #' @source Internet TV News Archive \url{https://archive.org/details/tv} and
-#' Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtsearch/iatv_ftxtsearch}
+#' Television Explorer
 #' @seealso \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}}, \code{\link{mediacloud_online_news}},
 #' \code{\link{mediacloud_trump}}, \code{\link{tv_hurricanes}}, \code{\link{tv_states}}, \code{\link{google_trends}}
 "tv_hurricanes_by_network"
@@ -2329,7 +2350,7 @@
 #' \item{puerto_rico}{The percent of sentences in TV News on the given day that mention Puerto Rico}
 #' }
 #' @source Internet TV News Archive \url{https://archive.org/details/tv} and
-#' Television Explorer \url{https://television.gdeltproject.org/cgi-bin/iatv_ftxtsearch/iatv_ftxtsearch}
+#' Television Explorer
 #' @seealso \code{\link{mediacloud_hurricanes}}, \code{\link{mediacloud_states}}, \code{\link{mediacloud_online_news}},
 #' \code{\link{mediacloud_trump}}, \code{\link{tv_hurricanes}}, \code{\link{tv_hurricanes_by_network}}, \code{\link{google_trends}}
 "tv_states"
@@ -2552,7 +2573,7 @@
 #' \item{date}{Date of the match}
 #' \item{wins}{Number of cumulative wins for the boxer including the match at the specified date}
 #' }
-#' @source Box Rec \url{https://boxrec.com/}
+#' @source Box Rec
 "undefeated"
 
 
@@ -2881,7 +2902,7 @@
 #' @source Information for this story is drawn from an original data set of special counsel, independent counsel and special prosecutor investigations from 1973 to 2019. The data set was created by consulting historical sources, including final reports generated by independent counsels, special counsels and special prosecutors; reports in Congressional Quarterly; and contemporaneous news stories. Secondary historical sources were also consulted, including a 2006 Congressional Research Service report about independent counsel investigations and a history of the Watergate investigation by Stanley Kutler. Data about pardons was obtained from the Office of the Pardon Attorney. Indicted organizations were excluded from our analysis. The data set, which is available on Github, includes the names of all people charged as part of these investigations, as well as the outcome of their cases and the dates of major actions in their cases.
 #'
 #' 2006 Congressional Research Service report:
-#' \url{https://digital.library.unt.edu/ark:/67531/metadc815038/m2/1/high_res_d/98-19_2006Jun08.pdf}
+#' https://digital.library.unt.edu/ark:/67531/metadc815038/m2/1/high_res_d/98-19_2006Jun08.pdf
 #'
 #' dataset in GitHub:
 #' \url{https://github.com/fivethirtyeight/data/tree/master/russia-investigation}
@@ -2968,7 +2989,7 @@
 #' \item{previous_location}{Other courts the case has appeared before}
 #' \item{jurisdiction}{Where the case is being heard | 1 = Federal; 2 = State}
 #' \item{judge}{Names of the judges the case is currently before}
-#' \item{nature}{PACER code for nature of lawsuit (Not relevant for criminal cases) \url{https://www.pacer.gov/documents/natsuit.pdf}}
+#' \item{nature}{PACER code for nature of lawsuit (Not relevant for criminal cases) \url{https://pacer.uscourts.gov/help/faqs/what-nature-suit-code}}
 #' \item{trump_category}{Whether the case is related to action before Trump was president, his personal conduct as president, or a policy action as president | 1 = Case directed at pre-presidency action; 2 = Case directed at personal action of Trump as president; 3 = Case directed at policy action of Trump as president}
 #' \item{capacity}{The capacity in which Trump is implicated | 1 = Case directed at Trump personally; 2 = Case directed at action of Trump administration; 3 = Trump as plaintiff; 4 = Trump administration as plaintiff; 5 = Case directed at Trump associate; 6 = Other}
 #' \item{type}{Criminal vs. civil | 1 = Criminal; 2 = Civil}
@@ -2983,7 +3004,7 @@
 #'
 #' This folder contains the data behind the story:
 #' "What Do Men Think It Means To Be A Man?"
-#' \url{https://fivethirtyeight.com/features/what-do-men-think-it-means-to-be-a-man}
+#' \url{https://fivethirtyeight.com/features/what-do-men-think-it-means-to-be-a-man/}
 #' @format A dataset with 189 rows representing answers and 12 variables:
 #' \describe{
 #' \item{question}{the survey question}
@@ -3055,7 +3076,7 @@ NULL
 #'   \item{pct_of_all_candidate_clips}{percentage of clips in which that specific candidate is mentioned out of all clips mentioning any candidate for that week (matched_clips / all_candidate_clips)}
 #'   \item{query}{query used for the GDELT Television API}
 #' }
-#' @source The GDELT Television API \url{https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/}, which processes the data from the TV News Archive \url{https://archive.org/details/tv}.
+#' @source The GDELT Television API https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/, which processes the data from the TV News Archive \url{https://archive.org/details/tv}.
 "media_mentions_cable"
 
 #' @rdname media_mentions_2020

@@ -27,7 +27,7 @@ A data frame with 32 rows representing National Football League teams and 17 var
 }
 }
 \source{
-\url{https://www.espn.com/sportsnation/teamrankings}, \url{https://www.allourideas.org/nflteampickingsample}
+\url{https://www.allourideas.org/nflteampickingsample}
 }
 \usage{
 nfl_fav_team

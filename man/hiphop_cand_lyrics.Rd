@@ -18,7 +18,7 @@ A data frame with 377 rows representing hip-hop songs referencing POTUS candidat
 }
 }
 \source{
-Genius \url{https://genius.com/}
+Genius https://genius.com/
 }
 \usage{
 hiphop_cand_lyrics

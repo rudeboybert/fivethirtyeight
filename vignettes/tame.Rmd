@@ -16,7 +16,6 @@ vignette: |
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "Figures/",
   warning = FALSE,
   message = FALSE
 )
@@ -24,15 +23,14 @@ scale_fill_discrete <- function(...) scale_fill_brewer(... ,  type = "div", pale
 ```
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE, fig.height = 4)
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
 library(fivethirtyeight)
 # library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(broom)
 library(knitr)
-library(gridExtra)
-library(curl)
+library(patchwork)
 ```
 
 This is an HTML version of a [Technology Innovations in Statistics Education](https://escholarship.org/uc/item/0rx1231m#main) article.
@@ -55,7 +53,7 @@ At the time of release of the `fivethirtyeight` package, the authors were all te
 1. **Real enough** to ensure that there is context;
 1. **Realistic enough** to convey to students that data as it exists "in the wild" often needs wrangling/pre-processing;
 
-It is against this backdrop that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at FiveThirtyEight. [FiveThirtyEight.com](https://www.FiveThirtyEight.com) is a data-driven journalism website founded by Nate Silver and owned by Disney/ESPN that reports on politics, economics, sports, and other current events. FiveThirtyEight has been forward-thinking in making the data used in many of their articles open and accessible on their GitHub repository page <https://github.com/fivethirtyeight/data> (GitHub is a web-based repository for collaboration on code and data). Our `fivethirtyeight` R package goes one step further by making this data and its corresponding documentation easily accessible, all with students in introductory statistics and data science courses that use R in mind. The homepage for the `fivethirtyeight` R package can be found at <https://fivethirtyeight-r.netlify.app/>.
+It is against this backdrop that we present `fivethirtyeight`: an R package of data and code behind the stories and interactives at FiveThirtyEight. [FiveThirtyEight.com](https://fivethirtyeight.com/) is a data-driven journalism website founded by Nate Silver and owned by Disney/ESPN that reports on politics, economics, sports, and other current events. FiveThirtyEight has been forward-thinking in making the data used in many of their articles open and accessible on their GitHub repository page <https://github.com/fivethirtyeight/data> (GitHub is a web-based repository for collaboration on code and data). Our `fivethirtyeight` R package goes one step further by making this data and its corresponding documentation easily accessible, all with students in introductory statistics and data science courses that use R in mind. The homepage for the `fivethirtyeight` R package can be found at <https://fivethirtyeight-r.netlify.app/>.
 
 
 ## Educational Landscape
@@ -89,7 +87,7 @@ As a means to this end we created the `fivethirtyeight` package, whose features 
 
 Many canonical datasets, such as `iris`, `UCBAdmissions`, Old `faithful`, and `anscombe`'s quartet have long been available for use in R. Other datasets, such as `mtcars` and `diamonds`, are used by many R packages as common examples to demonstrate the package's functionality. More interestingly, many newer and larger datasets are included in R packages devoted exclusively to their dissemination, such as `nycflights13`, `babynames`, `gapminder`, and `okcupiddata` [@horton_baumer_wickham_2015; @babynames; @gapminder; @kim_escobedo_land_2015]. Disseminating data via R packages has numerous advantages, in particular standardized web-based installation and relatively simple data-loading procedures.
 
-Building off this precedent, we created the `fivethirtyeight` R package of data and code behind the stories and interactive visualizations at [FiveThirtyEight.com](https://www.FiveThirtyEight.com). All with the goal of providing the novice student a "low barrier to entry" to exploring datasets that satisfy the 3 R's, we
+Building off this precedent, we created the `fivethirtyeight` R package of data and code behind the stories and interactive visualizations at [FiveThirtyEight.com](https://fivethirtyeight.com/). All with the goal of providing the novice student a "low barrier to entry" to exploring datasets that satisfy the 3 R's, we
 
 1. **Made the data easy to load**: All data is loaded from an R package, instead of through the importing of comma separated values (CSV) files, Excel spreadsheets, and other file formats.
 1. **Made the data easy to understand**: We provide ample documentation in the help file for each dataset, including:
@@ -259,12 +257,19 @@ By advocating for the shielding of novices from such pre-processing, we are not 
 
 Whereas the first three subpoints relating to data frame and variable naming are more cosmetic in nature, the fourth principle relates to an R-specific issue faced by novices. Variable names that include spaces require different treatment than those that do not, specifically the use of tick marks when referring to them.  While this is a topic R users eventually have to learn, we argue that it is not an immediate priority. 
 
-As an example of the importance of preprocessing variable names, consider the data corresponding to the FiveThirtyEight article "41 Percent Of Fliers Think You’re Rude If You Recline Your Seat" [@fliers_538] where survey respondents were asked, among other things, if 1) they considered it rude to bring a baby on a flight and 2) whether or not they had children under the age of 18. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight>  and can be accessed via the shortened bit.ly link <https://bit.ly/2vg8gTf>. We load and save this in a data frame `flying_raw` and look at the first 5 variable names:
+As an example of the importance of preprocessing variable names, consider the data corresponding to the FiveThirtyEight article "41 Percent Of Fliers Think You’re Rude If You Recline Your Seat" [@fliers_538] where survey respondents were asked, among other things, if 1) they considered it rude to bring a baby on a flight and 2) whether or not they had children under the age of 18. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight> and can be accessed [online](https://raw.githubusercontent.com/fivethirtyeight/data/master/flying-etiquette-survey/flying-etiquette.csv). We load and save this in a data frame `flying_raw` and look at the first 5 variable names:
 
-```{r}
+```{r, eval=FALSE}
 library(readr)
 flying_raw <- read_csv("https://bit.ly/2vg8gTf")
 colnames(flying_raw)[1:5]
+```
+```
+#> [1] "RespondentID"                               
+#> [2] "How often do you travel by plane?"          
+#> [3] "Do you ever recline your seat when you fly?"
+#> [4] "How tall are you?"                          
+#> [5] "Do you have any children under 18?"
 ```
 
 We contrast this to the corresponding `flying` data frame in the `fivethirtyeight` package:
@@ -301,13 +306,24 @@ ggplot(flying, aes(x = children_under_18, fill = baby)) +
 
 Although recent advances such as the `lubridate` package have made wrangling dates much easier, performing such tasks can still be very challenging for students who have not had experience [@lubridate]. In datasets where only a numerical variable indicating the year exists, it can be argued no pre-processing is necessary. However, when a month and/or day variables exist along with a year variable, we argue that pre-processing should be done. Specifically, they should be combined and converted to `Date` objects. This allows for easy creation of time series plots with well formatted x-axes and for performing of basic date arithmetic.
 
-As an example of the importance of preprocessing dates, consider the data corresponding to the FiveThirtyEight article "Some People Are Too Superstitious To Have A Baby On Friday The 13th" [@baby13_538] of the number of daily births in the United States between 1994 and 2003. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight/> and can be accessed via the shortened bit.ly link <https://bit.ly/2vgRFiw>. We load this data, filter for only those rows corresponding to 1999 births, and save this in a data frame `US_births_1999_raw`. The raw data is saved in a format that makes it difficult for novices to create a time series plot. Furthermore, people do not typically think of the day of the week (Sunday, Monday, etc) in terms of a numerical value between 1 and 7.
+As an example of the importance of preprocessing dates, consider the data corresponding to the FiveThirtyEight article "Some People Are Too Superstitious To Have A Baby On Friday The 13th" [@baby13_538] of the number of daily births in the United States between 1994 and 2003. The raw data corresponding to this article is saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight/> and can be accessed [online](https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_1994-2003_CDC_NCHS.csv). We load this data, filter for only those rows corresponding to 1999 births, and save this in a data frame `US_births_1999_raw`. The raw data is saved in a format that makes it difficult for novices to create a time series plot. Furthermore, people do not typically think of the day of the week (Sunday, Monday, etc) in terms of a numerical value between 1 and 7.
 
-```{r}
+```{r, eval=FALSE}
 library(readr)
 US_births_1999_2003_raw <- read_csv("https://bit.ly/2vgRFiw")
 US_births_1999_raw <- US_births_1999_2003_raw[US_births_1999_2003_raw$year == 1999, ]
 head(US_births_1999_raw)
+```
+```
+#> # A tibble: 6 x 5
+#>    year month date_of_month day_of_week births
+#>   <dbl> <dbl>         <dbl>       <dbl>  <dbl>
+#> 1  1999     1             1           5   8163
+#> 2  1999     1             2           6   7637
+#> 3  1999     1             3           7   7416
+#> 4  1999     1             4           1  10396
+#> 5  1999     1             5           2  12004
+#> 6  1999     1             6           3  11718
 ```
 
 In contrast, when using the pre-processed `US_births_1994_2003` data frame from the `fivethirtyeight` package we observe that there is a variable `date`, which can be treated as a numerical variable. This allows for the `date` variable to be plotted with informative tick marks on the x-axis as in Figure \ref{fig:US-births}. Furthermore, the day of the week is indicated with more informative text rather that values between 1 and 7.  
@@ -339,9 +355,9 @@ As an example of the importance of preprocessing categorical variables, consider
 knitr::include_graphics("images/hickey-bechdel-11.png")
 ```
 
-We now reconstruct this graphic using the data provided by FiveThirtyEight using both the raw data saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight> (accessible via the shortened bit.ly link <https://bit.ly/2uD3ls6>) and using the pre-processed version in the `fivethirtyeight` R package. In both cases, we discretize the `year` variable into 5-year bins using the vector `year_bins` and plot a stacked barplot of proportions. 
+We now reconstruct this graphic using the data provided by FiveThirtyEight using both the raw data saved in CSV format on FiveThirtyEight's GitHub repository page <https://github.com/fivethirtyeight> which can be accessed [online](https://raw.githubusercontent.com/rudeboybert/fivethirtyeight/master/data-raw/bechdel/movies.csv) and using the pre-processed version in the `fivethirtyeight` R package. In both cases, we discretize the `year` variable into 5-year bins using the vector `year_bins` and plot a stacked barplot of proportions. 
 
-```{r, fig.width=16/2.5, fig.height=9/2.5, fig.align='center', eval=FALSE, fig.cap="Using original bechdel data."}
+```{r, eval=FALSE}
 year_bins <- c("'70-'74", "'75-'79", "'80-'84", "'85-'89", "'90-'94", 
                "'95-'99", "'00-'04", "'05-'09", "'10-'13")
 
@@ -366,7 +382,10 @@ ggplot(bechdel, aes(x = five_year, fill = clean_test)) +
   scale_fill_brewer(palette = "YlGnBu")
 ```
 
-```{r bechdel, fig.height=6.5,  fig.width=16/2.5, echo=FALSE, fig.align='center', fig.cap="Barcharts of Bechdel Test results across time."}
+```{r, eval=FALSE, echo=FALSE}
+# This code is a repeat of the above code and is hidden from the user. It saves
+# a png output of the figure. We do this b/c bit.ly short link redirects are
+# unstable in CRAN
 year_bins <- c("'70-'74", "'75-'79", "'80-'84", "'85-'89", "'90-'94", 
                "'95-'99", "'00-'04", "'05-'09", "'10-'13")
 
@@ -389,7 +408,14 @@ plot2 <- ggplot(bechdel, aes(x = five_year, fill = clean_test)) +
   labs(x = "Year", y = "Proportion", fill = "Bechdel Test", 
        title = "Using fivethirtyeight package data")+
   scale_fill_brewer(palette="YlGnBu")
-grid.arrange(plot1, plot2, nrow=2)
+
+bechdel_plot <- plot1 / plot2
+
+ggsave("vignettes/images/bechdel.png", plot = bechdel_plot, height = 6.5, width = 16/2.5)
+```
+
+```{r bechdel, out.width= "100%", echo=FALSE, fig.align='center', fig.cap="Barcharts of Bechdel Test results across time."}
+knitr::include_graphics("images/bechdel.png")
 ```
 
 We observe in the top plot of Figure \ref{fig:bechdel} based on the raw data has the uninformative default alphabetical ordering of the Bechdel Test outcomes, whereas the bottom plot in Figure \ref{fig:bechdel} based on the pre-processed `bechdel` data from the `fivethirtyeight` package has the correct hierarchical ordering of the outcomes.
@@ -424,7 +450,7 @@ drinks_tidy_US_FR <- drinks %>%
   filter(country %in% c("USA", "France")) %>% 
   gather(type, servings, -c(country, total_litres_of_pure_alcohol))
 drinks_tidy_US_FR
-````
+```
 
 This formatting of the data now allows itself to be used as input to the `ggplot()` function to create an appropriate barplot in Figure \ref{fig:drinks}. Note in this case since the number of servings is pretabulated in the variable `servings`, which in turn is mapped to the y-axis, we use `geom_col()` instead of `geom_bar()` (`geom_col()` is equivalent to `geom_bar(stat = "identity")`).
 
@@ -443,7 +469,7 @@ ggplot(drinks_tidy_US_FR, aes(x=type, y=servings, fill=country)) +
 
 One immediate application of this package for instructors is to increase the data-centricism of their courses with minimal disruption to the syllabus. The data are easy to load via an R package and the help files contain contextual information, including a description of all variables and a link to the original article.  For courses with a data science component, the datasets can provide students opportunities to "flex their data science muscles," in particular those relating to data visualization and wrangling. For example, Ismay had their SOC 301 Social Statistics  students at Pacific University use these datasets for their group projects, which can be accessed at <https://ismayc.github.io/soc301_s2017/>. Finally, as stated in Section 2.3, for courses where data wrangling is a learning goal in and of itself, the source code converting the raw data to tame data format can be used as examples for students to learn more sophisticated data wrangling tools, such as those needed to wrangle dates and strings/text data.
 
-Additionally, this package is being used in other statistics and data science pedagogical initiatives. Ismay and Kim have incorporated this package into "ModernDive: An Introduction to Statistical and Data Sciences via R" [@moderndive], an open source, fully reproducible electronic textbook available at <https://www.moderndive.com>. Ismay is creating a companion DataCamp course "Effective Data Storytelling Using the `tidyverse`" [@ismay_datacamp]; DataCamp is an online interactive environment for learning data science currently via R and Python.
+Additionally, this package is being used in other statistics and data science pedagogical initiatives. Ismay and Kim have incorporated this package into "ModernDive: An Introduction to Statistical and Data Sciences via R" [@moderndive], an open source, fully reproducible electronic textbook available at <https://moderndive.com/>. Ismay is creating a companion DataCamp course "Effective Data Storytelling Using the `tidyverse`" [@ismay_datacamp]; DataCamp is an online interactive environment for learning data science currently via R and Python.
 
 
 ## Biographies

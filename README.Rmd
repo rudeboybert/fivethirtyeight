@@ -17,8 +17,7 @@ library(dplyr)
 # fivethirtyeight
 
 <!-- badges: start -->
-[![Build Status](https://travis-ci.org/rudeboybert/fivethirtyeight.svg?branch=master)](https://travis-ci.org/rudeboybert/fivethirtyeight)
-[![R build status](https://github.com/rudeboybert/fivethirtyeight/workflows/R-CMD-check/badge.svg)](https://github.com/rudeboybert/fivethirtyeight/actions)
+[![R-CMD-check](https://github.com/rudeboybert/fivethirtyeight/workflows/R-CMD-check/badge.svg)](https://github.com/rudeboybert/fivethirtyeight/actions)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/fivethirtyeight)](https://cran.r-project.org/package=fivethirtyeight)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/fivethirtyeight)](https://www.r-pkg.org/pkg/fivethirtyeight)
@@ -59,7 +58,8 @@ head(bechdel)
 View(bechdel)
 ```
 
-To see a detailed list of all `r nrow(data(package = "fivethirtyeight")[[3]])` datasets, including information on the corresponding articles published on FiveThirtyEight.com, click [here](https://fivethirtyeight-r.netlify.app/articles/fivethirtyeight.html).
+To see a detailed list of all `r nrow(data(package = "fivethirtyeight")[[3]]) - 1` datasets, including information on the corresponding articles published on FiveThirtyEight.com, click [here](https://fivethirtyeight-r.netlify.com/articles/fivethirtyeight.html).
+
 
 
 ## Add-on Package 

@@ -16,7 +16,7 @@ A dataset with 57 rows representing lawsuits and 16 variables
 \item{previous_location}{Other courts the case has appeared before}
 \item{jurisdiction}{Where the case is being heard | 1 = Federal; 2 = State}
 \item{judge}{Names of the judges the case is currently before}
-\item{nature}{PACER code for nature of lawsuit (Not relevant for criminal cases) \url{https://www.pacer.gov/documents/natsuit.pdf}}
+\item{nature}{PACER code for nature of lawsuit (Not relevant for criminal cases) \url{https://pacer.uscourts.gov/help/faqs/what-nature-suit-code}}
 \item{trump_category}{Whether the case is related to action before Trump was president, his personal conduct as president, or a policy action as president | 1 = Case directed at pre-presidency action; 2 = Case directed at personal action of Trump as president; 3 = Case directed at policy action of Trump as president}
 \item{capacity}{The capacity in which Trump is implicated | 1 = Case directed at Trump personally; 2 = Case directed at action of Trump administration; 3 = Trump as plaintiff; 4 = Trump administration as plaintiff; 5 = Case directed at Trump associate; 6 = Other}
 \item{type}{Criminal vs. civil | 1 = Criminal; 2 = Civil}

@@ -18,7 +18,7 @@ a data frame with 207 rows representing designated market areas and 9 variables:
 }
 }
 \source{
-Google Trends \url{https://trends.google.com/}.
+Google Trends \url{https://trends.google.com/trends/}.
 }
 \usage{
 nfl_fandom_google
@@ -26,7 +26,7 @@ nfl_fandom_google
 \description{
 The raw data behind the story
 "How Every NFL Team’s Fans Lean Politically"
-\url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically}: Google Trends Data.
+\url{https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically/}: Google Trends Data.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:

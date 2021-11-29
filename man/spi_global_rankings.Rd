@@ -26,7 +26,7 @@ spi_global_rankings
 The raw data behind the stories "Club Soccer Predictions"
 \url{https://projects.fivethirtyeight.com/soccer-predictions/} and
 "Global Club Soccer Rankings"
-\url{https://projects.fivethirtyeight.com/global-club-soccer-rankings/}.
+\url{https://projects.fivethirtyeight.com/soccer-predictions/global-club-rankings/}.
 }
 \seealso{
 \code{\link[fivethirtyeightdata]{spi_matches}}

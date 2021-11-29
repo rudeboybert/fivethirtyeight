@@ -25,7 +25,7 @@ ahca_polls
 \description{
 The raw data behind the story
 "Why The GOP Is So Hell-Bent On Passing An Unpopular Health Care Bill"
-\url{https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill}.
+\url{https://fivethirtyeight.com/features/why-the-gop-is-so-hell-bent-on-passing-an-unpopular-health-care-bill/}.
 }
 \examples{
 # To convert data frame to tidy data (long) format, run:
