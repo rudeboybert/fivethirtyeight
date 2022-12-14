@@ -27,12 +27,15 @@ jobs:
       RSPM: ${{ matrix.config.rspm }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
           
-      - uses: r-lib/actions/setup-pandoc@master
+      - uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: '2.17.1' # The pandoc version to download (if necessary) and use.
+      - run: echo "# Test" | pandoc -t html
       
       - name: Install dependencies
         run: |
