@@ -794,7 +794,7 @@
 #' \url{https://fivethirtyeight.com/features/the-fivethirtyeight-international-food-associations-2014-world-cup/}.
 #' For all the countries below, the response to the following question is presented:
 #' "Please rate how much you like the traditional cuisine of X"
-#' \itemize{
+#' \describe{
 #'  \item{5: }{I love this country's traditional cuisine. I think it's one of the best in the world.}
 #'  \item{4: }{I like this country's traditional cuisine. I think it's considerably above average.}
 #'  \item{3: }{I'm OK with this county's traditional cuisine. I think it's about average.}
