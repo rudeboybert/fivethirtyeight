@@ -13,3 +13,5 @@ This file contains links to the data behind our [Club Soccer Predictions](https:
 `spi_global_rankings.csv` contains current SPI ratings and rankings for men's club teams.
 
 `spi_global_rankings_intl.csv` contains current SPI ratings and rankings for men's international teams.
+
+> **Note (2025–2026):** Following ABC News's shutdown of FiveThirtyEight, `https://projects.fivethirtyeight.com/soccer-predictions/` and the live `spi_matches.csv` endpoints now 301-redirect to `https://abcnews.com/politics`. For an active, daily-updated open dataset and keyless JSON API covering club attack/defence ratings, Dixon–Coles match probabilities, and 10,000-simulation league projections across 93 leagues, see [Football Charts](https://www.football-charts.com/data).
