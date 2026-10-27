@@ -14,7 +14,7 @@ nba_elo_latest
 \description{
 The raw data behind all nba predictions, including the story
 "The Complete History of the NBA"
-\url{https://projects.fivethirtyeight.com/complete-history-of-the-nba}
+\url{https://projects.fivethirtyeight.com/complete-history-of-the-nba} (now redirects to ABC News; archived data: \url{https://web.archive.org/web/20250306125344id_/https://projects.fivethirtyeight.com/nba-model/nba_elo.csv}; current-season data in the same layout: \url{https://clutchledger.com/data/}).
 }
 \section{nba_elo_latest}{
 
